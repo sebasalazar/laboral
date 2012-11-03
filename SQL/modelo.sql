@@ -62,6 +62,9 @@ CREATE TABLE estudiantes (
     telefono varchar(50),
     celular varchar(50),
     email varchar(255),
+    estado char(1) NOT NULL DEFAULT 'A', -- A: Alumno -- E: Egresado -- T: Titulado
+    busqueda boolean NOT NULL DEFAULT FALSE, -- Si se encuentra o no buscando trabajo (solicitado por docentes y adm)
+  --curriculum varchar(255), -- ubicación del curriculum (dirección archivo) (solicitado por adm actual)
     UNIQUE (rut),
     UNIQUE(email),
     PRIMARY KEY (pk)
@@ -92,8 +95,6 @@ CREATE TABLE departamentos (
         UNIQUE(departamento),
         PRIMARY KEY(pk)
 );
-
-
 
 -- 
 -- Esta tabla almacena las escuelas de los departamentos.
@@ -151,11 +152,57 @@ CREATE TABLE accesos (
     rut int NOT NULL,
     fecha timestamptz NOT NULL DEFAULT NOW(),
     ip varchar(255) DEFAULT '127.0.0.1',
-    PRIMARY KEY (pk),
+    PRIMARY KEY (pk)
 );
 
 
+--
+-- Modelo "Universidad" Grupo 1: Sebastián Menéndez Sáez, Claudio Piña Novoa, Oscar León Trureo
+--
+
+-- 
+--  Tabla que almacenará los docentes que cumplen un cago administrativo en la universidad.
+--
+
+DROP TABLE IF EXISTS cargos_adm CASCADE;
+CREATE TABLE cargos_adm CASCADE(
+    pk serial NOT NULL,
+    nombre_cargo varchar(255) NOT NULL,
+    fecha_inicio date NOT NULL,
+    fecha_fin date NOT NULL,
+    docente_fk int NOT NULL REFERENCES docentes(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    descripcion text,
+    UNIQUE(nombre_cargo),
+    PRIMARY KEY (pk)
+);
 
 
+-- 
+-- Algunos Academicos y Administrativos pidieron poder seguir el perfil de algunos alumnos
+-- esta taba almacenará los seguimientos de academicos a alumnos.
+--
+DROP TABLE IF EXISTS seguimiento_academicos CASCADE;
+CREATE TABLE seguimiento_academicos CASCADE(
+    pk bigserial NOT NULL,
+    academico_fk int NOT NULL REFERENCES docentes(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    estudiante_fk int NOT NULL REFERENCES estudiantes(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    PRIMARY KEY (pk)
+);
+
+--
+-- Sugerencia trabajo, algunos academicos pidieron que se pudiera sugerir trabajos a alumnos que estuvieran siguiendo
+-- 
+DROP TABLE IF EXISTS sugerencias_trabajo CASCADE;
+CREATE TABLE sugerencias_trabajo(
+        pk NOT NULL,
+        academico_fk int NOT NULL REFERENCES docentes(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+        estudiante_fk int NOT NULL REFERENCES estudiantes(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+        trabajo_fk int NOT NULL REFERENCES trabajos(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+        PRIMARY KEY (pk)
+);
+
+--
+-- FIN GRUPO 1
+--
 
 COMMIT:
