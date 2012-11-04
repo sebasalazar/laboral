@@ -206,3 +206,46 @@ CREATE TABLE sugerencias_trabajo(
 --
 
 COMMIT:
+
+--
+-- Grupo OneUP
+--
+
+-- tabla de empresas
+
+DROP TABLE IF EXISTS empresas CASCADE;
+CREATE TABLE empresas (
+        pk serial NOT NULL,
+        rut int NOT NULL,
+	empresa varchar (255) NOT NULL,
+	telefono varchar(50) NOT NULL,
+	mail varchar(255) NOT NULL,
+        region_fk int NOT NULL REFERENCES regiones(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+        UNIQUE(rut),
+	UNIQUE(empresa),
+        PRIMARY KEY(pk)
+);
+
+
+
+-- oferta laboral de la empresa, ésta la verán las empresas para saber a quien contratar o qué perfil corresponde
+-- para el trabajo ofrecido
+
+DROP TABLE IF EXISTS ofertas_laborales CASCADE;
+CREATE TABLE ofertas_laborales (
+    pk serial NOT NULL,
+    empresa_fk int NOT NULL REFERENCES empresas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    rubro varchar(255), -- industria -- informatica -- gestion -- etc
+    descripcion_rubro text,
+    renta int NOT NULL,
+    vacantes smallint NOT NULL,
+    plazo date,
+    UNIQUE (rubro),
+    PRIMARY KEY (pk)
+);
+
+--
+-- Fin Grupo OneUP
+-- 
+
+COMMIT:
