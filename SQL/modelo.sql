@@ -51,6 +51,13 @@ DROP TABLE IF EXISTS estados CASCADE;
 CREATE TABLE estados CASCADE (
     pk int NOT NULL,
     nombre varchar(255) NOT NULL,
+    PRIMARY KEY(pk)
+);
+
+DROP TABLE IF EXISTS curriculums CASCADE;
+CREATE TABLE curriculums (
+    pk int NOT NULL, -- hay que definir que debe llevar el curriculum
+    PRIMARY KEY(pk)
 );
 
 DROP TABLE IF EXISTS estudiantes CASCADE;
@@ -69,9 +76,12 @@ CREATE TABLE estudiantes (
     email varchar(255),
     estado int NOT NULL REFERENCES estados(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     busqueda boolean NOT NULL DEFAULT FALSE, -- Si se encuentra o no buscando trabajo (solicitado por docentes y adm)
-  --curriculum varchar(255), -- ubicación del curriculum (dirección archivo) (solicitado por adm actual)
+    archivo_curriculum varchar(255), -- ubicación del curriculum (dirección archivo) (solicitado por adm actual)
+    curriculum int NOT NULL REFERENCES curriculums(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     UNIQUE (rut),
     UNIQUE(email),
+    UNIQUE(archivo_curriculum),
+    UNIQUE(curriculum),
     PRIMARY KEY (pk)
 );
 
@@ -181,28 +191,18 @@ CREATE TABLE cargos_adm CASCADE(
     PRIMARY KEY (pk)
 );
 
-
--- 
--- Algunos Academicos y Administrativos pidieron poder seguir el perfil de algunos alumnos
--- esta taba almacenará los seguimientos de academicos a alumnos.
---
-DROP TABLE IF EXISTS seguimiento_academicos CASCADE;
-CREATE TABLE seguimiento_academicos CASCADE(
-    pk bigserial NOT NULL,
-    academico_fk int NOT NULL REFERENCES docentes(pk) ON UPDATE CASCADE ON DELETE CASCADE,
-    estudiante_fk int NOT NULL REFERENCES estudiantes(pk) ON UPDATE CASCADE ON DELETE CASCADE,
-    PRIMARY KEY (pk)
-);
-
 --
 -- Sugerencia trabajo, algunos academicos pidieron que se pudiera sugerir trabajos a alumnos que estuvieran siguiendo
 -- 
+
 DROP TABLE IF EXISTS sugerencias_trabajo CASCADE;
 CREATE TABLE sugerencias_trabajo(
         pk NOT NULL,
-        academico_fk int NOT NULL REFERENCES docentes(pk) ON UPDATE CASCADE ON DELETE CASCADE,
         estudiante_fk int NOT NULL REFERENCES estudiantes(pk) ON UPDATE CASCADE ON DELETE CASCADE,
         trabajo_fk int NOT NULL REFERENCES trabajos(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+        docente int NOT NULL REFERENCES docentes(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+        fecha_sugerencia timestamptz NOT NULL DEFAULT NOW(),
+        fecha_fin date NOT NULL,
         PRIMARY KEY (pk)
 );
 
