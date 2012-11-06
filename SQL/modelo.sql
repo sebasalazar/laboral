@@ -47,6 +47,11 @@ CREATE TABLE estados_civiles (
     PRIMARY KEY (pk)
 );
 
+DROP TABLE IF EXISTS estados CASCADE;
+CREATE TABLE estados CASCADE (
+    pk int NOT NULL,
+    nombre varchar(255) NOT NULL,
+);
 
 DROP TABLE IF EXISTS estudiantes CASCADE;
 CREATE TABLE estudiantes (
@@ -62,7 +67,7 @@ CREATE TABLE estudiantes (
     telefono varchar(50),
     celular varchar(50),
     email varchar(255),
-    estado char(1) NOT NULL DEFAULT 'A', -- A: Alumno -- E: Egresado -- T: Titulado
+    estado int NOT NULL REFERENCES estados(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     busqueda boolean NOT NULL DEFAULT FALSE, -- Si se encuentra o no buscando trabajo (solicitado por docentes y adm)
   --curriculum varchar(255), -- ubicación del curriculum (dirección archivo) (solicitado por adm actual)
     UNIQUE (rut),
