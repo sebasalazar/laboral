@@ -4,17 +4,22 @@
 $this->pageTitle=Yii::app()->name;
 ?>
 
-<h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
+<h1>Bienvenido a <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
+<br />
+<div>
+    <div>
+        <h3>Misión</h3>
+        <p align="justify">La Universidad Tecnológica Metropolitana, es una Institución de Educación superior estatal y autónoma socialmente responsable, ubicada en la Región Metropolitana, y tiene como Misión:
+        Formar personas con altas capacidades académicas y profesionales, en el ámbito preferentemente tecnológico, apoyada en la generación, transferencia, aplicación y difusión del conocimiento en las áreas del saber que le son propias, para contribuir al desarrollo sustentable del país y de la sociedad de la que forma parte.</p>
 
-<p>Congratulations! You have successfully created your Yii application.</p>
-
-<p>You may change the content of this page by modifying the following two files:</p>
-<ul>
-	<li>View file: <code><?php echo __FILE__; ?></code></li>
-	<li>Layout file: <code><?php echo $this->getLayoutFile('main'); ?></code></li>
-</ul>
-
-<p>For more details on how to further develop this application, please read
-the <a href="http://www.yiiframework.com/doc/">documentation</a>.
-Feel free to ask in the <a href="http://www.yiiframework.com/forum/">forum</a>,
-should you have any questions.</p>
+        <h3>Visión</h3>
+        <p align="justify">La Universidad Tecnológica Metropolitana, será reconocida por
+        la formación de sus egresados, la calidad de su educación continua,
+        por la construcción de capacidades de investigación y creación,
+        innovación y transferencia en algunas áreas del saber, por
+        la equidad social en su acceso, su tolerancia y pluralismo, por su
+        cuerpo académico de excelencia y por una gestión institucional
+        que asegura su sustentabilidad y la práctica de mecanismos de
+        aseguramiento de la calidad en todo su quehacer.</p>
+    </div>
+</div>
