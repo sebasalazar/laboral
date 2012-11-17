@@ -17,10 +17,11 @@ CREATE TABLE roles (
 -- 
 DROP TABLE IF EXISTS usuarios CASCADE;
 CREATE TABLE usuarios (
-    rut int NOT NULL,
-    contrasena varchar(40) NOT NULL, -- SHA1
+    id int NOT NULL,
+    username int NOT NULL,
+    password varchar(40) NOT NULL, -- SHA1
     roles int NOT NULL DEFAULT '0', -- Mapa de Bits con los roles del sistema
-    PRIMARY KEY(rut)
+    PRIMARY KEY(id)
 );
 
 --
