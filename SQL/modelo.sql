@@ -17,10 +17,12 @@ CREATE TABLE roles (
 -- 
 DROP TABLE IF EXISTS usuarios CASCADE;
 CREATE TABLE usuarios (
-    id int NOT NULL,
+    id int serial NOT NULL,
     username int NOT NULL, --rut
     password varchar(40) NOT NULL, -- SHA1
+    salt varchar(32) NOT NULL,
     roles int NOT NULL DEFAULT '0', -- Mapa de Bits con los roles del sistema
+    UNIQUE (username),
     PRIMARY KEY(id)
 );
 
