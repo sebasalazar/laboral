@@ -1,0 +1,29 @@
+.contenido {
+   width: 100%;
+   margin: 0 auto 0 auto;
+   padding: 10px;
+   display: table;
+}
+
+.columna{
+    display: table-row;
+    float: left;
+}
+
+.columna_1{
+    margin-right: 20px;
+    width: 65%;
+}
+
+.columna_2{
+    width: 30%;
+}
+
+.fila{
+    display: table-cell;
+}
+
+.centrar{
+    display: block;
+    margin: auto auto auto auto; 
+}
