@@ -22,8 +22,17 @@
 
 <div class="container" id="page">
 
-	<div id="header">
-		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
+	<div id="header" class="contenido">
+		<div id="logo" class="columna columna_1"><?php echo CHtml::encode(Yii::app()->name); ?></div>
+                <?php
+                    $r = 1;
+                    if($r == 1){
+                        echo "<div class='panelAdmin'>";
+                        echo "<b id='negrita'>Panel de Administración</b>";
+                        echo "<br /><br />Administrar";
+                        echo "</div>";
+                    }
+                ?>
 	</div><!-- header -->
 
 	<div id="mainmenu">

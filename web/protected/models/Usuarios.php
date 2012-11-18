@@ -4,7 +4,7 @@
  * This is the model class for table "usuarios".
  *
  * The followings are the available columns in table 'usuarios':
- * @property integer $id
+ * @property string $id
  * @property integer $username
  * @property string $password
  * @property string $salt
@@ -40,7 +40,8 @@ class Usuarios extends CActiveRecord
 		return array(
 			array('username, password, salt', 'required'),
 			array('username, roles', 'numerical', 'integerOnly'=>true),
-			array('password, salt', 'length', 'max'=>32),
+			array('password', 'length', 'max'=>40),
+			array('salt', 'length', 'max'=>32),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, username, password, salt, roles', 'safe', 'on'=>'search'),
@@ -83,7 +84,7 @@ class Usuarios extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
+		$criteria->compare('id',$this->id,true);
 		$criteria->compare('username',$this->username);
 		$criteria->compare('password',$this->password,true);
 		$criteria->compare('salt',$this->salt,true);
