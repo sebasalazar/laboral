@@ -37,7 +37,7 @@ class UsuariosController extends Controller
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				'users'=>array('1234567'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
