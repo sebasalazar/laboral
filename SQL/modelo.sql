@@ -374,6 +374,9 @@ CREATE TABLE experiencias (
     PRIMARY KEY(pk)
 );
 
+--
+-- Tabla de curriculums
+--
 
 DROP TABLE IF EXISTS curriculums CASCADE;
 CREATE TABLE curriculums (
@@ -382,5 +385,19 @@ CREATE TABLE curriculums (
     PRIMARY KEY(pk)
 );
 
+--
+-- Tabla de practicas
+--
 
-COMMIT;
+DROP TABLE IF EXISTS practicas CASCADE;
+CREATE TABLE practicas (
+    pk serial NOT NULL,
+    estudiante_fk int NOT NULL REFERENCES estudiantes(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    empresa_fk int NOT NULL REFERENCES empresas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    area_practica varchar(255),
+    inicio_practica date NOT NULL,
+    fin_practica date NOT NULL,
+    PRIMARY KEY(pk)
+);
+
+COMMIT:
