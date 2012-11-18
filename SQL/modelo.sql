@@ -109,7 +109,7 @@ CREATE TABLE estados (
 -- 
 DROP TABLE IF EXISTS estudiantes CASCADE;
 CREATE TABLE estudiantes (
-    pk bigserial NOT NULL,
+    pk serial NOT NULL,
     nombres varchar(255) NOT NULL,
     apellidos varchar(255) NOT NULL,
     rut int NOT NULL,
@@ -174,7 +174,7 @@ CREATE TABLE escuelas (
 --
 DROP TABLE IF EXISTS docentes CASCADE;
 CREATE TABLE docentes (
-    pk bigserial NOT NULL,
+    pk serial NOT NULL,
     nombres varchar(255) NOT NULL,
     apellidos varchar(255) NOT NULL,
     rut int NOT NULL,
