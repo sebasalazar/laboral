@@ -17,7 +17,7 @@ CREATE TABLE roles (
 -- 
 DROP TABLE IF EXISTS usuarios CASCADE;
 CREATE TABLE usuarios (
-    id int serial NOT NULL,
+    id serial NOT NULL,
     username int NOT NULL, --rut
     password varchar(40) NOT NULL, -- SHA1
     salt varchar(32) NOT NULL,
