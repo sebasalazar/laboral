@@ -30,8 +30,9 @@ $this->pageTitle=Yii::app()->name;
    <div class="columna columna_2">
        <div class="fila">
             <br /><br />
-            <?php echo CHtml::image('images/bolsaempleo.jpg','Bolsa de Trabajo',array('width'=>300,'height'=>230,'class'=>'centrar')); ?>
+            <?php echo CHtml::image('images/bolsaempleo.jpg','Bolsa de Trabajo',array('width'=>300,'height'=>230,'class'=>'centar')); ?>
        </div>
    </div>
    </div>
 </div>
+<br />

@@ -24,15 +24,32 @@
 
 	<div id="header" class="contenido">
 		<div id="logo" class="columna columna_1"><?php echo CHtml::encode(Yii::app()->name); ?></div>
-                <?php
-                    $r = 1;
-                    if($r == 1){
-                        echo "<div class='panelAdmin'>";
-                        echo "<b id='negrita'>Panel de Administración</b>";
-                        echo "<br /><br />Administrar";
-                        echo "</div>";
-                    }
-                ?>
+                    <?php
+                        if(Yii::app()->user->getModel(Yii::app()->user->id) != null)
+                        {
+                            echo "<br /><div class='panelAdmin'>";
+                            echo "<u> &nbsp;&nbsp;&nbsp;Panel de Administración &nbsp;&nbsp;&nbsp;</u><br /><br />";
+                            $usuario_nombre = Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->nombres;
+                            if($usuario_nombre != null)
+                                echo "Bienvenido, <b>".$usuario_nombre."</b><br >";
+                            if(Yii::app()->user->getModel(Yii::app()->user->id)->roles == 1){
+                                echo CHtml::link('Administrar')." - ";
+                            }
+                            echo CHtml::link('Perfil')." - ".CHtml::link('Salir',array('/site/logout'));
+                            echo "</div>";
+                        }
+                        else
+                        {
+                            echo "<br /><div class='panelAdmin'>";
+                            echo "<u> &nbsp;&nbsp;&nbsp;Panel de Administración &nbsp;&nbsp;&nbsp;</u><br /><br />";
+                            echo "Bienvenido, <b>".Yii::app()->user->name."</b><br >";
+                            if(Yii::app()->user->getModel(Yii::app()->user->id) != null && Yii::app()->user->getModel(Yii::app()->user->id)->roles == 1){
+                                echo CHtml::link('Administrar')." - ";
+                            }
+                            echo CHtml::link('Iniciar Sesión',array('/site/login'));
+                            echo "</div>";
+                        }
+                    ?>
 	</div><!-- header -->
 
 	<div id="mainmenu">
@@ -40,10 +57,10 @@
 			'items'=>array(
 				array('label'=>'Inicio', 'url'=>array('/site/index')),
 				array('label'=>'Contacto', 'url'=>array('/site/contact')),
-				array('label'=>'Registrarse', 'url'=>array('/usuarios/create')),
+				array('label'=>'Registrarse', 'url'=>array('/usuarios/pcreate')),
                                 array('label'=>'Acerca de', 'url'=>array('/site/page', 'view'=>'about')),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+				array('label'=>'Logout', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
 		)); ?>
 	</div><!-- mainmenu -->

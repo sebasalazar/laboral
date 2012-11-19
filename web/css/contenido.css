@@ -23,9 +23,12 @@
     display: table-cell;
 }
 
-.centrar{
-    display: block;
-    margin: auto auto auto auto; 
+.centrar1{
+    margin-left: 5%;
+}
+
+.registro{
+    margin-left: 20px;
 }
 
 .panelAdmin{

@@ -28,12 +28,12 @@ class UsuariosController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','create','pcreate'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('*'),
+				'actions'=>array('update'),
+				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
@@ -55,7 +55,7 @@ class UsuariosController extends Controller
 			'model'=>$this->loadModel($id),
 		));
 	}
-
+        
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
@@ -70,13 +70,16 @@ class UsuariosController extends Controller
 		if(isset($_POST['Usuarios']))
 		{
 			$model->attributes=$_POST['Usuarios'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			if($model->save()){
+                                $model1 = new Docentes;
+                                $model1->attributes=$_POST['Docentes'];
+                                $model1->rut = $model->username;
+                            if($model1->save())
+				$this->redirect(array('site/index'));
+                        }
 		}
 
-		$this->render('create',array(
-			'model'=>$model,
-		));
+		$this->render('create',array('model'=>$model));
 	}
 
 	/**
@@ -142,8 +145,13 @@ class UsuariosController extends Controller
 			'model'=>$model,
 		));
 	}
+        
+        public function actionPcreate()
+        {
+            $this->render('pcreate');
+        }
 
-	/**
+        /**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer the ID of the model to be loaded

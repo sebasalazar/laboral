@@ -8,7 +8,7 @@
 class UserIdentity extends CUserIdentity
 {
         private $_id;
-
+        private $_roles;
         /**
          * Authenticates a user.
          * @return boolean whether authentication succeeds.
@@ -37,5 +37,9 @@ class UserIdentity extends CUserIdentity
         public function getId()
         {
                 return $this->_id;
+        }
+        public function getRoles()
+        {
+                return $this->_roles;
         }
 }
