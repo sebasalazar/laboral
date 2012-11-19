@@ -60,10 +60,9 @@ class UsuariosController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
+	public function actionCreate($tipo)
 	{
 		$model=new Usuarios;
-
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -79,7 +78,7 @@ class UsuariosController extends Controller
                         }
 		}
 
-		$this->render('create',array('model'=>$model));
+		$this->render('create',array('model'=>$model,'tipo'=>$tipo));
 	}
 
 	/**

@@ -15,7 +15,42 @@ class WebUser extends CWebUser {
   public function getModelUsuarioCompleto($rut)
   {
       $docente = Docentes::model()->findByAttributes(array('rut'=>$rut));
-      return $docente;
+      if($docente != null)
+        return $docente;
+      else
+      {
+          /* $empresa = //aqui va modelo empresa
+          if()
+          {
+              
+          }
+          else
+          {
+              //aqui estudiante
+          }*/
+      }
+          
+  }
+  
+  public function getTipoUsuario($rut)
+  {
+      $docente = Docentes::model()->findByAttributes(array('rut'=>$rut));
+      if($docente != null)
+      {
+          return 3;
+      }
+      else
+      {
+          /* $empresa = //aqui va modelo empresa
+          if()
+          {
+              return 2;
+          }
+          else
+          {
+              return 1;//aqui estudiante
+          }*/
+      }
   }
 }
 ?>

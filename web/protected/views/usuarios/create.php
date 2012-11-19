@@ -10,5 +10,4 @@ $this->breadcrumbs=array(
 ?>
 
 <h1>Registro de Usuarios</h1>
-
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model,'tipoUsuario'=>$tipo)); ?>
