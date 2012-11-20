@@ -19,15 +19,15 @@ class WebUser extends CWebUser {
         return $docente;
       else
       {
-          /* $empresa = //aqui va modelo empresa
-          if()
+          $empresa = Empresas::model()->findByAttributes(array('rut'=>$rut));
+          if($empresa != null)
           {
-              
+              return $empresa;
           }
           else
           {
               //aqui estudiante
-          }*/
+          }
       }
           
   }
@@ -41,15 +41,15 @@ class WebUser extends CWebUser {
       }
       else
       {
-          /* $empresa = //aqui va modelo empresa
-          if()
+          $empresa = Empresas::model()->findByAttributes(array('rut'=>$rut));
+          if($empresa != null)
           {
-              return 2;
+              return $empresa;
           }
           else
           {
               return 1;//aqui estudiante
-          }*/
+          }
       }
   }
 }

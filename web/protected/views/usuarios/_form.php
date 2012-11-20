@@ -26,6 +26,7 @@
 		<?php echo $form->passwordField($model,'password',array('size'=>20,'maxlength'=>40)); ?>
 		<?php echo $form->error($model,'password'); ?>
 	</div>
+        
         <?php
             if($tipoUsuario == 3) //Tipo de usuario "docente"
             {
@@ -107,6 +108,81 @@
         <?php
             }
         ?>
+        
+        
+        <?php if($tipoUsuario == 2) // usuario "empresa"
+              {
+        ?>
+                <div class="row">
+                        <?php echo $form->labelEx(Empresas::model(),'rut'); ?>
+                        <?php echo $form->textField(Empresas::model(),'rut'); ?>
+                        <?php echo $form->error(Empresas::model(),'rut'); ?>
+                </div>
+
+                <div class="row">
+                        <?php echo $form->labelEx(Empresas::model(),'nombre'); ?>
+                        <?php echo $form->textField(Empresas::model(),'nombre',array('size'=>60,'maxlength'=>255)); ?>
+                        <?php echo $form->error(Empresas::model(),'nombre'); ?>
+                </div>
+
+                <div class="row">
+                        <?php echo $form->labelEx(Empresas::model(),'nombre_represen_legal'); ?>
+                        <?php echo $form->textField(Empresas::model(),'nombre_represen_legal',array('size'=>60,'maxlength'=>255)); ?>
+                        <?php echo $form->error(Empresas::model(),'nombre_represen_legal'); ?>
+                </div>
+
+                <div class="row">
+                        <?php echo $form->labelEx(Empresas::model(),'direccion'); ?>
+                        <?php echo $form->textField(Empresas::model(),'direccion',array('size'=>60,'maxlength'=>255)); ?>
+                        <?php echo $form->error(Empresas::model(),'direccion'); ?>
+                </div>
+
+                <div class="row">
+                        <?php echo $form->labelEx(Empresas::model(),'comuna_fk'); ?>
+                        <?php echo $form->textField(Empresas::model(),'comuna_fk'); ?>
+                        <?php echo $form->error(Empresas::model(),'comuna_fk'); ?>
+                </div>
+
+                <div class="row">
+                        <?php echo $form->labelEx(Empresas::model(),'codigo_postal'); ?>
+                        <?php echo $form->textField(Empresas::model(),'codigo_postal'); ?>
+                        <?php echo $form->error(Empresas::model(),'codigo_postal'); ?>
+                </div>
+
+                <div class="row">
+                        <?php echo $form->labelEx(Empresas::model(),'telefono'); ?>
+                        <?php echo $form->textField(Empresas::model(),'telefono',array('size'=>50,'maxlength'=>50)); ?>
+                        <?php echo $form->error(Empresas::model(),'telefono'); ?>
+                </div>
+
+                <div class="row">
+                        <?php echo $form->labelEx(Empresas::model(),'email'); ?>
+                        <?php echo $form->textField(Empresas::model(),'email',array('size'=>60,'maxlength'=>255)); ?>
+                        <?php echo $form->error(Empresas::model(),'email'); ?>
+                </div>
+
+                <div class="row">
+                        <?php echo $form->labelEx(Empresas::model(),'actividad'); ?>
+                        <?php echo $form->textField(Empresas::model(),'actividad',array('size'=>60,'maxlength'=>255)); ?>
+                        <?php echo $form->error(Empresas::model(),'actividad'); ?>
+                </div>
+
+                <div class="row">
+                        <?php echo $form->labelEx(Empresas::model(),'descripcion_negocio'); ?>
+                        <?php echo $form->textField(Empresas::model(),'descripcion_negocio',array('size'=>60,'maxlength'=>255)); ?>
+                        <?php echo $form->error(Empresas::model(),'descripcion_negocio'); ?>
+                </div>
+
+                <div class="row">
+                        <?php echo $form->labelEx(Empresas::model(),'web'); ?>
+                        <?php echo $form->textField(Empresas::model(),'web',array('size'=>60,'maxlength'=>255)); ?>
+                        <?php echo $form->error(Empresas::model(),'web'); ?>
+                </div>
+        
+        <?php
+            }
+        ?>
+        
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
