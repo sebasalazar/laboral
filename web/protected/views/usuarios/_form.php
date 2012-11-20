@@ -114,12 +114,6 @@
               {
         ?>
                 <div class="row">
-                        <?php echo $form->labelEx(Empresas::model(),'rut'); ?>
-                        <?php echo $form->textField(Empresas::model(),'rut'); ?>
-                        <?php echo $form->error(Empresas::model(),'rut'); ?>
-                </div>
-
-                <div class="row">
                         <?php echo $form->labelEx(Empresas::model(),'nombre'); ?>
                         <?php echo $form->textField(Empresas::model(),'nombre',array('size'=>60,'maxlength'=>255)); ?>
                         <?php echo $form->error(Empresas::model(),'nombre'); ?>

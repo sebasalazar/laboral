@@ -44,7 +44,7 @@ class WebUser extends CWebUser {
           $empresa = Empresas::model()->findByAttributes(array('rut'=>$rut));
           if($empresa != null)
           {
-              return $empresa;
+              return 2;
           }
           else
           {
