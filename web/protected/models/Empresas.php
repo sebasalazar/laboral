@@ -4,7 +4,7 @@
  * This is the model class for table "empresas".
  *
  * The followings are the available columns in table 'empresas':
- * @property string $pk
+ * @property integer $pk
  * @property integer $rut
  * @property string $nombre
  * @property string $nombre_represen_legal
@@ -16,6 +16,12 @@
  * @property string $actividad
  * @property string $descripcion_negocio
  * @property string $web
+ *
+ * The followings are the available model relations:
+ * @property Practicas[] $practicases
+ * @property Comunas $comunaFk
+ * @property OfertasLaborales[] $ofertasLaborales
+ * @property EncargadosEmpresas[] $encargadosEmpresases
  */
 class Empresas extends CActiveRecord
 {
@@ -63,6 +69,10 @@ class Empresas extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'practicases' => array(self::HAS_MANY, 'Practicas', 'empresa_fk'),
+			'comunaFk' => array(self::BELONGS_TO, 'Comunas', 'comuna_fk'),
+			'ofertasLaborales' => array(self::HAS_MANY, 'OfertasLaborales', 'empresa_fk'),
+			'encargadosEmpresases' => array(self::HAS_MANY, 'EncargadosEmpresas', 'empresa_fk'),
 		);
 	}
 
@@ -98,7 +108,7 @@ class Empresas extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('pk',$this->pk,true);
+		$criteria->compare('pk',$this->pk);
 		$criteria->compare('rut',$this->rut);
 		$criteria->compare('nombre',$this->nombre,true);
 		$criteria->compare('nombre_represen_legal',$this->nombre_represen_legal,true);

@@ -4,9 +4,12 @@
  * This is the model class for table "jornadas".
  *
  * The followings are the available columns in table 'jornadas':
- * @property string $pk
+ * @property integer $pk
  * @property string $jornada
  * @property string $descripcion
+ *
+ * The followings are the available model relations:
+ * @property OfertasLaborales[] $ofertasLaborales
  */
 class Jornadas extends CActiveRecord
 {
@@ -53,6 +56,7 @@ class Jornadas extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'ofertasLaborales' => array(self::HAS_MANY, 'OfertasLaborales', 'jornada_fk'),
 		);
 	}
 
@@ -79,7 +83,7 @@ class Jornadas extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('pk',$this->pk,true);
+		$criteria->compare('pk',$this->pk);
 		$criteria->compare('jornada',$this->jornada,true);
 		$criteria->compare('descripcion',$this->descripcion,true);
 

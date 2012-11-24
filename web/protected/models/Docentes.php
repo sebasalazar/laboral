@@ -4,7 +4,7 @@
  * This is the model class for table "docentes".
  *
  * The followings are the available columns in table 'docentes':
- * @property string $pk
+ * @property integer $pk
  * @property string $nombres
  * @property string $apellidos
  * @property integer $rut
@@ -17,6 +17,13 @@
  * @property string $telefono
  * @property string $celular
  * @property string $email
+ *
+ * The followings are the available model relations:
+ * @property SugerenciasTrabajo[] $sugerenciasTrabajos
+ * @property Comunas $comuna
+ * @property EstadosCiviles $ecFk
+ * @property Departamentos $departamentoFk
+ * @property CargosAdm[] $cargosAdms
  */
 class Docentes extends CActiveRecord
 {
@@ -65,6 +72,11 @@ class Docentes extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'sugerenciasTrabajos' => array(self::HAS_MANY, 'SugerenciasTrabajo', 'docente_fk'),
+			'comuna' => array(self::BELONGS_TO, 'Comunas', 'comuna_id'),
+			'ecFk' => array(self::BELONGS_TO, 'EstadosCiviles', 'ec_fk'),
+			'departamentoFk' => array(self::BELONGS_TO, 'Departamentos', 'departamento_fk'),
+			'cargosAdms' => array(self::HAS_MANY, 'CargosAdm', 'docente_fk'),
 		);
 	}
 
@@ -101,7 +113,7 @@ class Docentes extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('pk',$this->pk,true);
+		$criteria->compare('pk',$this->pk);
 		$criteria->compare('nombres',$this->nombres,true);
 		$criteria->compare('apellidos',$this->apellidos,true);
 		$criteria->compare('rut',$this->rut);

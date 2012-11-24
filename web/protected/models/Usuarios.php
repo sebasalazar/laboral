@@ -4,7 +4,7 @@
  * This is the model class for table "usuarios".
  *
  * The followings are the available columns in table 'usuarios':
- * @property string $id
+ * @property integer $id
  * @property integer $username
  * @property string $password
  * @property string $salt
@@ -84,7 +84,7 @@ class Usuarios extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id,true);
+		$criteria->compare('id',$this->id);
 		$criteria->compare('username',$this->username);
 		$criteria->compare('password',$this->password,true);
 		$criteria->compare('salt',$this->salt,true);
@@ -95,24 +95,21 @@ class Usuarios extends CActiveRecord
 		));
 	}
         
-        // hash password
-        public function hashPassword($password, $salt)
-        {
-            return md5($salt.$password);
-        }
-
-        // password validation
         public function validatePassword($password)
         {
-            return $this->hashPassword($password,$this->salt)===$this->password;
+           return $this->hashPassword($password)===$this->password;
         }
-
-        //generate salt
+        
+        public function hashPassword($password)
+        {
+           return md5($password);
+        }
+        
         public function generateSalt()
         {
             return uniqid('',true);
         }
-
+        
         public function beforeValidate()
         {
             $this->salt = $this->generateSalt();

@@ -4,9 +4,12 @@
  * This is the model class for table "niveles_estudios".
  *
  * The followings are the available columns in table 'niveles_estudios':
- * @property string $pk
+ * @property integer $pk
  * @property string $estudios
  * @property string $descripcion
+ *
+ * The followings are the available model relations:
+ * @property OfertasLaborales[] $ofertasLaborales
  */
 class NivelesEstudios extends CActiveRecord
 {
@@ -53,6 +56,7 @@ class NivelesEstudios extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'ofertasLaborales' => array(self::HAS_MANY, 'OfertasLaborales', 'nivel_estudio_fk'),
 		);
 	}
 
@@ -79,7 +83,7 @@ class NivelesEstudios extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('pk',$this->pk,true);
+		$criteria->compare('pk',$this->pk);
 		$criteria->compare('estudios',$this->estudios,true);
 		$criteria->compare('descripcion',$this->descripcion,true);
 

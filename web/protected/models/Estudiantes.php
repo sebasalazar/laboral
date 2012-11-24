@@ -4,7 +4,7 @@
  * This is the model class for table "estudiantes".
  *
  * The followings are the available columns in table 'estudiantes':
- * @property string $pk
+ * @property integer $pk
  * @property string $nombres
  * @property string $apellidos
  * @property integer $rut
@@ -17,8 +17,17 @@
  * @property string $celular
  * @property string $email
  * @property integer $estado
- * @property integer $busqueda
+ * @property boolean $busqueda
  * @property string $archivo_curriculum
+ *
+ * The followings are the available model relations:
+ * @property Practicas[] $practicases
+ * @property Comunas $comuna
+ * @property EstadosCiviles $ecFk
+ * @property Estados $estado0
+ * @property Curriculums[] $curriculums
+ * @property Postulaciones[] $postulaciones
+ * @property SugerenciasTrabajo[] $sugerenciasTrabajos
  */
 class Estudiantes extends CActiveRecord
 {
@@ -49,10 +58,11 @@ class Estudiantes extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('nombres, apellidos, rut, fecha_nacimiento, direccion, comuna_id, ec_fk, estado', 'required'),
-			array('rut, comuna_id, ec_fk, estado, busqueda', 'numerical', 'integerOnly'=>true),
+			array('rut, comuna_id, ec_fk, estado', 'numerical', 'integerOnly'=>true),
 			array('nombres, apellidos, direccion, email, archivo_curriculum', 'length', 'max'=>255),
 			array('genero', 'length', 'max'=>1),
 			array('telefono, celular', 'length', 'max'=>50),
+			array('busqueda', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('pk, nombres, apellidos, rut, fecha_nacimiento, genero, direccion, comuna_id, ec_fk, telefono, celular, email, estado, busqueda, archivo_curriculum', 'safe', 'on'=>'search'),
@@ -67,6 +77,13 @@ class Estudiantes extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'practicases' => array(self::HAS_MANY, 'Practicas', 'estudiante_fk'),
+			'comuna' => array(self::BELONGS_TO, 'Comunas', 'comuna_id'),
+			'ecFk' => array(self::BELONGS_TO, 'EstadosCiviles', 'ec_fk'),
+			'estado0' => array(self::BELONGS_TO, 'Estados', 'estado'),
+			'curriculums' => array(self::HAS_MANY, 'Curriculums', 'estudiante_fk'),
+			'postulaciones' => array(self::HAS_MANY, 'Postulaciones', 'estudiante_fk'),
+			'sugerenciasTrabajos' => array(self::HAS_MANY, 'SugerenciasTrabajo', 'estudiante_fk'),
 		);
 	}
 
@@ -105,7 +122,7 @@ class Estudiantes extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('pk',$this->pk,true);
+		$criteria->compare('pk',$this->pk);
 		$criteria->compare('nombres',$this->nombres,true);
 		$criteria->compare('apellidos',$this->apellidos,true);
 		$criteria->compare('rut',$this->rut);

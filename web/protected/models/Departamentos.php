@@ -4,10 +4,15 @@
  * This is the model class for table "departamentos".
  *
  * The followings are the available columns in table 'departamentos':
- * @property string $pk
+ * @property integer $pk
  * @property integer $facultad_fk
  * @property string $departamento
  * @property string $descripcion
+ *
+ * The followings are the available model relations:
+ * @property Docentes[] $docentes
+ * @property Facultades $facultadFk
+ * @property Escuelas[] $escuelases
  */
 class Departamentos extends CActiveRecord
 {
@@ -55,6 +60,9 @@ class Departamentos extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'docentes' => array(self::HAS_MANY, 'Docentes', 'departamento_fk'),
+			'facultadFk' => array(self::BELONGS_TO, 'Facultades', 'facultad_fk'),
+			'escuelases' => array(self::HAS_MANY, 'Escuelas', 'departamento_fk'),
 		);
 	}
 
@@ -82,7 +90,7 @@ class Departamentos extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('pk',$this->pk,true);
+		$criteria->compare('pk',$this->pk);
 		$criteria->compare('facultad_fk',$this->facultad_fk);
 		$criteria->compare('departamento',$this->departamento,true);
 		$criteria->compare('descripcion',$this->descripcion,true);

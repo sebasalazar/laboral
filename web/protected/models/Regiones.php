@@ -4,11 +4,14 @@
  * This is the model class for table "regiones".
  *
  * The followings are the available columns in table 'regiones':
- * @property string $pk
+ * @property integer $pk
  * @property string $region
  * @property string $corfo
  * @property string $codigo
  * @property integer $numero
+ *
+ * The followings are the available model relations:
+ * @property Provincias[] $provinciases
  */
 class Regiones extends CActiveRecord
 {
@@ -56,6 +59,7 @@ class Regiones extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'provinciases' => array(self::HAS_MANY, 'Provincias', 'region_fk'),
 		);
 	}
 
@@ -84,7 +88,7 @@ class Regiones extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('pk',$this->pk,true);
+		$criteria->compare('pk',$this->pk);
 		$criteria->compare('region',$this->region,true);
 		$criteria->compare('corfo',$this->corfo,true);
 		$criteria->compare('codigo',$this->codigo,true);

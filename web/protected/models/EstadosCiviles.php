@@ -4,9 +4,13 @@
  * This is the model class for table "estados_civiles".
  *
  * The followings are the available columns in table 'estados_civiles':
- * @property string $pk
+ * @property integer $pk
  * @property string $estado
  * @property string $descripcion
+ *
+ * The followings are the available model relations:
+ * @property Estudiantes[] $estudiantes
+ * @property Docentes[] $docentes
  */
 class EstadosCiviles extends CActiveRecord
 {
@@ -52,6 +56,8 @@ class EstadosCiviles extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'estudiantes' => array(self::HAS_MANY, 'Estudiantes', 'ec_fk'),
+			'docentes' => array(self::HAS_MANY, 'Docentes', 'ec_fk'),
 		);
 	}
 
@@ -78,7 +84,7 @@ class EstadosCiviles extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('pk',$this->pk,true);
+		$criteria->compare('pk',$this->pk);
 		$criteria->compare('estado',$this->estado,true);
 		$criteria->compare('descripcion',$this->descripcion,true);
 

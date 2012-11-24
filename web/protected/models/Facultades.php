@@ -4,9 +4,12 @@
  * This is the model class for table "facultades".
  *
  * The followings are the available columns in table 'facultades':
- * @property string $pk
+ * @property integer $pk
  * @property string $facultad
  * @property string $descripcion
+ *
+ * The followings are the available model relations:
+ * @property Departamentos[] $departamentoses
  */
 class Facultades extends CActiveRecord
 {
@@ -53,6 +56,7 @@ class Facultades extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'departamentoses' => array(self::HAS_MANY, 'Departamentos', 'facultad_fk'),
 		);
 	}
 
@@ -79,7 +83,7 @@ class Facultades extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('pk',$this->pk,true);
+		$criteria->compare('pk',$this->pk);
 		$criteria->compare('facultad',$this->facultad,true);
 		$criteria->compare('descripcion',$this->descripcion,true);
 

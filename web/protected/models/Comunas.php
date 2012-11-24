@@ -4,9 +4,15 @@
  * This is the model class for table "comunas".
  *
  * The followings are the available columns in table 'comunas':
- * @property string $pk
+ * @property integer $pk
  * @property integer $provincia_fk
  * @property string $nombre
+ *
+ * The followings are the available model relations:
+ * @property Empresas[] $empresases
+ * @property Estudiantes[] $estudiantes
+ * @property Docentes[] $docentes
+ * @property Provincias $provinciaFk
  */
 class Comunas extends CActiveRecord
 {
@@ -53,6 +59,10 @@ class Comunas extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'empresases' => array(self::HAS_MANY, 'Empresas', 'comuna_fk'),
+			'estudiantes' => array(self::HAS_MANY, 'Estudiantes', 'comuna_id'),
+			'docentes' => array(self::HAS_MANY, 'Docentes', 'comuna_id'),
+			'provinciaFk' => array(self::BELONGS_TO, 'Provincias', 'provincia_fk'),
 		);
 	}
 
@@ -79,7 +89,7 @@ class Comunas extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('pk',$this->pk,true);
+		$criteria->compare('pk',$this->pk);
 		$criteria->compare('provincia_fk',$this->provincia_fk);
 		$criteria->compare('nombre',$this->nombre,true);
 
