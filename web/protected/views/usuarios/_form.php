@@ -12,17 +12,32 @@
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
-	<?php echo $form->errorSummary($model); ?>
+        
+        <?php
+            if($tipoUsuario == 3)
+                echo $form->errorSummary($model1);
+            elseif ($tipoUsuario == 2)
+                echo $form->errorSummary($model2);
+            elseif($tipoUsuario == 1)
+                echo $form->errorSummary($model3); 
+        ?>
+        
+        <?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'username'); ?>
+		<?php echo $form->labelEx($model,'Rut: <span class="required">*</span>'); ?>
+                <p class="hint">
+                   Ej: 11.111.111-3
+                </p>
 		<?php echo $form->textField($model,'username'); ?>
 		<?php echo $form->error($model,'username'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'password'); ?>
+		<?php echo $form->labelEx($model,'contraseña: <span class="required">*</span>'); ?>
+                <p class="hint">
+                   Nota: 5 Caracteres como minimo, 40 Caracteres como máximo.
+                </p>
 		<?php echo $form->passwordField($model,'password',array('size'=>20,'maxlength'=>40)); ?>
 		<?php echo $form->error($model,'password'); ?>
 	</div>
@@ -32,19 +47,28 @@
             {
         ?>
                 <div class="row">
-                        <?php echo $form->labelEx(Docentes::model(),'Nombres: '); ?>
+                        <?php echo $form->labelEx(Docentes::model(),'Nombres: <span class="required">*</span>'); ?>
+                        <p class="hint">
+                            Ej: Marcelo Fernando.
+                        </p>
                         <?php echo $form->textField(Docentes::model(),'nombres'); ?>
                         <?php echo $form->error(Docentes::model(),'nombres'); ?>
                 </div>
 
                 <div class="row">
-                        <?php echo $form->labelEx(Docentes::model(),'Apellidos: '); ?>
+                        <?php echo $form->labelEx(Docentes::model(),'Apellidos: <span class="required">*</span>'); ?>
+                        <p class="hint">
+                            Ej: Perez Gonzales.
+                        </p>
                         <?php echo $form->textField(Docentes::model(),'apellidos'); ?>
                         <?php echo $form->error(Docentes::model(),'apellidos'); ?>
                 </div>
 
                 <div class="row">
-                        <?php echo $form->labelEx(Docentes::model(),'Fecha de Nacimiento: '); ?>
+                        <?php echo $form->labelEx(Docentes::model(),'Fecha de Nacimiento: <span class="required">*</span>'); ?>
+                        <p class="hint">
+                            Ej: dd/mm/aa.
+                        </p>
                         <?php echo $form->dateField(Docentes::model(),'fecha_nacimiento'); ?>
                         <?php echo $form->error(Docentes::model(),'fecha_nacimiento'); ?>
                 </div>
@@ -56,13 +80,13 @@
                 </div>
 
                 <div class="row">
-                        <?php echo $form->labelEx(Docentes::model(),'Direccion: '); ?>
+                        <?php echo $form->labelEx(Docentes::model(),'Direccion: <span class="required">*</span>'); ?>
                         <?php echo $form->textArea(Docentes::model(),'direccion',array('size'=>255,'maxlength'=>255)); ?>
                         <?php echo $form->error(Docentes::model(),'direccion'); ?>
                 </div>
 
                 <div class="row">
-                        <?php echo $form->labelEx(Docentes::model(),'Comuna: '); ?>
+                        <?php echo $form->labelEx(Docentes::model(),'Comuna: <span class="required">*</span>'); ?>
                         <?php 
                               $datos = CHtml::listData(Comunas::model()->findAll(),'pk','nombre');
                               echo $form->DropDownList(Docentes::model(),'comuna_id',$datos, array('empty'=>'Seleccione una Comuna'));
@@ -71,7 +95,7 @@
                 </div>
 
                 <div class="row">
-                        <?php echo $form->labelEx(Docentes::model(),'Departamentos: '); ?>
+                        <?php echo $form->labelEx(Docentes::model(),'Departamentos: <span class="required">*</span>'); ?>
                         <?php 
                               $datos = CHtml::listData(Departamentos::model()->findAll(),'pk','departamento');
                               echo $form->DropDownList(Docentes::model(),'departamento_fk',$datos, array('empty'=>'Seleccione un Departamento'));
@@ -80,7 +104,7 @@
                 </div>
 
                 <div class="row">
-                        <?php echo $form->labelEx(Docentes::model(),'Estado Civil: '); ?>
+                        <?php echo $form->labelEx(Docentes::model(),'Estado Civil: <span class="required">*</span>'); ?>
                         <?php 
                               $datos = CHtml::listData(EstadosCiviles::model()->findAll(),'pk','estado');
                               echo $form->DropDownList(Docentes::model(),'ec_fk',$datos, array('empty'=>'Seleccione un Estado Civil'));
@@ -89,19 +113,28 @@
                 </div>
 
                 <div class="row">
-                        <?php echo $form->labelEx(Docentes::model(),'Celular: '); ?>
+                        <?php echo $form->labelEx(Docentes::model(),'Celular: <span class="required">*</span>'); ?>
+                        <p class="hint">
+                            Nota: Celular de contacto del alumno.
+                        </p>
                         <?php echo $form->textField(Docentes::model(),'celular'); ?>
                         <?php echo $form->error(Docentes::model(),'celular'); ?>
                 </div>
 
                 <div class="row">
-                        <?php echo $form->labelEx(Docentes::model(),'Telefono: '); ?>
+                        <?php echo $form->labelEx(Docentes::model(),'Telefono: <span class="required">*</span>'); ?>
+                        <p class="hint">
+                            Nota: Telefono fijo de contacto.
+                        </p>
                         <?php echo $form->textField(Docentes::model(),'telefono'); ?>
                         <?php echo $form->error(Docentes::model(),'telefono'); ?>
                 </div>
 
                 <div class="row">
-                        <?php echo $form->labelEx(Docentes::model(),'Email: '); ?>
+                        <?php echo $form->labelEx(Docentes::model(),'Email: <span class="required">*</span>'); ?>
+                        <p class="hint">
+                            Nota: E-mail de Contacto.
+                        </p>
                         <?php echo $form->textField(Docentes::model(),'email'); ?>
                         <?php echo $form->error(Docentes::model(),'email'); ?>
                 </div>
