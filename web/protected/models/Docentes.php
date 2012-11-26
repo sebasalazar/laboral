@@ -53,8 +53,8 @@ class Docentes extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nombres, apellidos, rut, fecha_nacimiento, direccion, comuna_id, ec_fk, departamento_fk', 'required'),
-			array('rut, comuna_id, ec_fk, departamento_fk', 'numerical', 'integerOnly'=>true),
+			array('rut, nombres, apellidos, rut, fecha_nacimiento, direccion, comuna_id, ec_fk, departamento_fk', 'required'),
+			array('comuna_id, ec_fk, departamento_fk', 'numerical', 'integerOnly'=>true),
 			array('nombres, apellidos, direccion, email', 'length', 'max'=>255),
 			array('genero', 'length', 'max'=>1),
 			array('telefono', 'length', 'min'=>7,'max'=>7),

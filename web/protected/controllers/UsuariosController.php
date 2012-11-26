@@ -68,10 +68,10 @@ class UsuariosController extends Controller
                 $model3 = new Estudiantes;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
 		if(isset($_POST['Usuarios']))
 		{
 			$model->attributes=$_POST['Usuarios'];
+                        $model->username = intval(preg_replace("/[^0-9]/", "", $_POST['rut_demo_2']));
 			if(isset($_POST['Docentes']))
 			{
                                 $model1->attributes=$_POST['Docentes'];
@@ -79,6 +79,11 @@ class UsuariosController extends Controller
 				if($model1->save() && $model->save()){
 					$this->redirect(array('site/index'));
                         	}
+                                else
+                                {
+                                        $model1->deleteByPk($model1->pk);
+                                        $model1->deleteByPk($model->id);
+                                }
 			}
 			if(isset($_POST['Empresas']))
 			{

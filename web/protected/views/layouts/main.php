@@ -71,9 +71,9 @@
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Inicio', 'url'=>array('/site/index')),
-				array('label'=>'Contacto', 'url'=>array('/site/contact')),
-				array('label'=>'Registrarse', 'url'=>array('/usuarios/pcreate')),
                                 array('label'=>'Acerca de', 'url'=>array('/site/page', 'view'=>'about')),
+				array('label'=>'Contacto', 'url'=>array('/site/contact')),                                
+				array('label'=>'Registrarse', 'url'=>array('/usuarios/pcreate')),                                
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),

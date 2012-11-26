@@ -12,14 +12,21 @@ $(document).ready(function(){
 $('#rut_demo_2').Rut({
   on_success: function(){ 
       validation: true;
-      $("#rut").text("Rut Valido!"); 
+      $("#rut").hide("fast");
+      $("#rut").text("Rut Valido!");
+      $("#rut").show("slow");
+      $("#rut").css("background","#BCE774");
+      $("#rut").css("border","2px solid #60BF60");
   } 
 });
 $('#rut_demo_2').Rut({ 
   on_error: function(){
       validation: true;
+      $("#rut").hide("fast");
       $("#rut").text("Rut Invalido!");
-      alert('Rut incorrecto');
+      $("#rut").show("slow");
+      $("#rut").css("background","#FEE");
+      $("#rut").css("border","2px solid #C00");
   }
 });
 $("#content > ul").tabs();
@@ -53,25 +60,31 @@ $("#content > ul").tabs();
                 <div class="columna">
                     <?php echo $form->labelEx($model,'Rut: <span class="required">*</span>'); ?>
                     <p class="hint">
-                       Nota: Sin puntos ni guion<br />
+                       Nota: Sin puntos ni guion.<br />
                        Ej: 171548928
                     </p>
                     <?php echo $form->textField($model,'username',array('id'=>'rut_demo_2','name'=>'rut_demo_2')); ?>
                     <?php echo $form->error($model,'username'); ?>
                 </div>
-                <div class="columna rut">
-                        asdsad
+                <div class="columna">
+                    <p id="rut" class="validarRut"></p>
                 </div>
             </div>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'contraseña: <span class="required">*</span>'); ?>
-                <p class="hint">
-                   Nota: 5 Caracteres como minimo, 40 Caracteres como máximo.
-                </p>
-		<?php echo $form->passwordField($model,'password',array('size'=>20,'maxlength'=>40)); ?>
-		<?php echo $form->error($model,'password'); ?>
+            <div class="contenido">
+                <div class="columna">
+                    <?php echo $form->labelEx($model,'contraseña: <span class="required">*</span>'); ?>
+                    <p class="hint">
+                       Nota: 5 min, 40 Max.
+                    </p>
+                    <?php echo $form->passwordField($model,'password',array('size'=>20,'maxlength'=>40)); ?>
+                    <?php echo $form->error($model,'password'); ?>
+                </div>
+                <div class="columna">
+                </div>
+            </div>
 	</div>
         
         <?php
@@ -243,7 +256,7 @@ $("#content > ul").tabs();
         ?>
         
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('id'=>'quitar')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
