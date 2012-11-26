@@ -62,6 +62,7 @@ class UsuariosController extends Controller
 	 */
 	public function actionCreate($tipo)
 	{
+		
 		$model=new Usuarios;
                 $model1 = new Docentes;
                 $model2 = new Empresas;
@@ -94,15 +95,10 @@ class UsuariosController extends Controller
 						$this->redirect(array('site/index'));
                         	}
 			}
-			if(isset($_POST['Docentes']))
+			
+			if(isset($_POST['Estudiantes']))
 			{
 				if($model->save()){
-
-                                	$modelEstudiante = new Estudiantes;
-                                	$modelEstudiante->attributes=$_POST['Estudiantes'];
-                                	$modelEstudiante->rut = $model->username;
-                            		if($model1->save())
-
                                 	$model3->attributes=$_POST['Estudiantes'];
                                 	$model3->rut = $model->username;
                             		if($model3->save())
@@ -110,6 +106,7 @@ class UsuariosController extends Controller
                         	}
 			}
 		}
+
 		$this->render('create',array('model'=>$model,'model1'=>$model1,'model2'=>$model2,'model3'=>$model3,'tipo'=>$tipo));
 	}
 
