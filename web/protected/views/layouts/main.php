@@ -28,25 +28,28 @@
                         {
                             echo "<br /><div class='panelAdmin'>";
                             echo "<u> &nbsp;&nbsp;&nbsp;Panel de Administración &nbsp;&nbsp;&nbsp;</u><br /><br />";
-                          //  $usuario_nombre = Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->nombres;
-                          //  $tipo = Yii::app()->user->getTipoUsuario(Yii::app()->user->name);
-//                            if($tipo == 3)
-//                            {
-//                                $tipo = "Docente";
-//                            }
-//                            elseif($tipo == 2)
-//                            {
-//                                $tipo = "Empresa";
-//                            }
-//                            elseif($tipo == 1)
-//                            {
-//                                $tipo = "Estudiante";
-//                            }
-//                            if($usuario_nombre != null)
-//                                echo "Bienvenido, <b>".$usuario_nombre."</b><br > (".$tipo.")";
-//                            if(Yii::app()->user->getModel(Yii::app()->user->id)->roles == 1){
-//                                echo CHtml::link('Administrar')." - ";
-//                            }
+                            
+                            $tipo = Yii::app()->user->getTipoUsuario(Yii::app()->user->name);
+                            if($tipo == 3)
+                            {
+                                $usuario_nombre = Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->nombres;
+                                $tipo = "Docente";
+                            }
+                            elseif($tipo == 2)
+                            {
+                                $usuario_nombre = Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->nombre;
+                                $tipo = "Empresa";
+                            }
+                            elseif($tipo == 1)
+                            {
+                                $usuario_nombre = Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->nombres;
+                                $tipo = "Estudiante";
+                            }
+                            if($usuario_nombre != null)
+                                echo "Bienvenido, <b>".$usuario_nombre."</b><br > (".$tipo.")";
+                            if(Yii::app()->user->getModel(Yii::app()->user->id)->roles == 1){
+                                echo CHtml::link('Administrar')." - ";
+                            }
                             echo CHtml::link('Perfil')." - ".CHtml::link('Salir',array('/site/logout'));
                             echo "</div>";
                         }
