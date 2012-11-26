@@ -26,15 +26,18 @@ class WebUser extends CWebUser {
           }
           else
           {
-              //aqui estudiante
+              $estudiante = Estudiantes::model()->findByAttributes(array('rut'=>$rut));
+              if($estudiante != null)
+              {
+                  return $estudiante;
+              }
           }
       }
-          
   }
   
   public function getTipoUsuario($rut)
   {
-      $docente = Docentes::model()->findByAttributes(array('rut'=>$rut));
+       $docente = Docentes::model()->findByAttributes(array('rut'=>$rut));
       if($docente != null)
       {
           return 3;
@@ -48,7 +51,10 @@ class WebUser extends CWebUser {
           }
           else
           {
-              return 1;//aqui estudiante
+              $estudiante = Estudiantes::model()->findByAttributes(array('rut'=>$rut));
+              if($estudiante != null){
+                  return 1;
+              }
           }
       }
   }

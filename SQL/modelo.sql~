@@ -17,10 +17,13 @@ CREATE TABLE roles (
 -- 
 DROP TABLE IF EXISTS usuarios CASCADE;
 CREATE TABLE usuarios (
-    rut int NOT NULL,
-    contrasena varchar(40) NOT NULL, -- SHA1
+    id serial NOT NULL,
+    username int NOT NULL, --rut
+    password varchar(40) NOT NULL, -- SHA1
+    salt varchar(32) NOT NULL,
     roles int NOT NULL DEFAULT '0', -- Mapa de Bits con los roles del sistema
-    PRIMARY KEY(rut)
+    UNIQUE (username),
+    PRIMARY KEY(id)
 );
 
 --
@@ -100,13 +103,26 @@ CREATE TABLE estados (
     PRIMARY KEY(pk)
 );
 
+--
+-- Tabla almacena carrera de la Universidad
+--
+DROP TABLE IF EXISTS carreras CASCADE;
+CREATE TABLE carreras (
+    pk serial NOT NULL,
+    cod_carrera int NOT NULL,
+    nombre_carrera varchar(50) NOT NULL,
+    UNIQUE(cod_carrera),
+    UNIQUE(nombre_carrera),
+    PRIMARY KEY(pk)
+);
+   
 
 --
 -- Estudiante
 -- 
 DROP TABLE IF EXISTS estudiantes CASCADE;
 CREATE TABLE estudiantes (
-    pk bigserial NOT NULL,
+    pk serial NOT NULL,
     nombres varchar(255) NOT NULL,
     apellidos varchar(255) NOT NULL,
     rut int NOT NULL,
@@ -115,10 +131,12 @@ CREATE TABLE estudiantes (
     direccion varchar(255) NOT NULL,
     comuna_id int NOT NULL REFERENCES comunas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     ec_fk int NOT NULL REFERENCES estados_civiles(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    carrera_fk NOT NULL REFERENCES carreras(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     telefono varchar(50),
     celular varchar(50),
     email varchar(255),
     estado int NOT NULL REFERENCES estados(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    usuario_fk int NOT NULL REFERENCES usuarios(id) ON UPDATE CASCADE ON DELETE CASCADE,
     busqueda boolean NOT NULL DEFAULT FALSE, -- Si se encuentra o no buscando trabajo (solicitado por docentes y adm)
     archivo_curriculum varchar(255), -- ubicación del curriculum (dirección archivo) (solicitado por adm actual)
     UNIQUE (rut),
@@ -126,7 +144,8 @@ CREATE TABLE estudiantes (
     UNIQUE(archivo_curriculum),
     PRIMARY KEY (pk)
 );
-   
+
+
 -- 
 -- Tabla almacena las facultades de la Universidad.
 -- 
@@ -171,7 +190,7 @@ CREATE TABLE escuelas (
 --
 DROP TABLE IF EXISTS docentes CASCADE;
 CREATE TABLE docentes (
-    pk bigserial NOT NULL,
+    pk serial NOT NULL,
     nombres varchar(255) NOT NULL,
     apellidos varchar(255) NOT NULL,
     rut int NOT NULL,
@@ -180,7 +199,8 @@ CREATE TABLE docentes (
     direccion varchar(255) NOT NULL,
     comuna_id int NOT NULL REFERENCES comunas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     ec_fk int NOT NULL REFERENCES estados_civiles(pk) ON UPDATE CASCADE ON DELETE CASCADE,
-    departamento_fk int NOT NULL REFERENCES docentes(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    departamento_fk int NOT NULL REFERENCES departamentos(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+  --usuario_fk int NOT NULL REFERENCES usuarios(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     telefono varchar(50),
     celular varchar(50),
     email varchar(255),
@@ -370,6 +390,9 @@ CREATE TABLE experiencias (
     PRIMARY KEY(pk)
 );
 
+--
+-- Tabla de curriculums
+--
 
 DROP TABLE IF EXISTS curriculums CASCADE;
 CREATE TABLE curriculums (
@@ -378,5 +401,19 @@ CREATE TABLE curriculums (
     PRIMARY KEY(pk)
 );
 
+--
+-- Tabla de practicas
+--
 
-COMMIT;
+DROP TABLE IF EXISTS practicas CASCADE;
+CREATE TABLE practicas (
+    pk serial NOT NULL,
+    estudiante_fk int NOT NULL REFERENCES estudiantes(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    empresa_fk int NOT NULL REFERENCES empresas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    area_practica varchar(255),
+    inicio_practica date NOT NULL,
+    fin_practica date NOT NULL,
+    PRIMARY KEY(pk)
+);
+
+COMMIT:

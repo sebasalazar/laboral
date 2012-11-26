@@ -89,21 +89,17 @@ class UsuariosController extends Controller
 						$this->redirect(array('site/index'));
                         	}
 			}
-			/*
-			if(isset($_POST['Estudiantes']))
+			if(isset($_POST['Docentes']))
 			{
 				if($model->save()){
-                                	$model3 = new Estudiantes;
-                                	$model3->attributes=$_POST['Estudiantes'];
-                                	$model3->rut = $model->username;
-                            		if($model3->save())
+                                	$modelEstudiante = new Estudiantes;
+                                	$modelEstudiante->attributes=$_POST['Estudiantes'];
+                                	$modelEstudiante->rut = $model->username;
+                            		if($model1->save())
 						$this->redirect(array('site/index'));
                         	}
 			}
-			*/
-			
 		}
-
 		$this->render('create',array('model'=>$model,'tipo'=>$tipo));
 	}
 

@@ -177,8 +177,103 @@
             }
         ?>
         
+          <?php if($tipoUsuario == 1) // usuario "alumno"
+              {
+        ?>    
+                <div class="row">
+                        <?php echo $form->labelEx(Estudiantes::model(),'nombres'); ?>
+                        <?php echo $form->textField(Estudiantes::model(),'nombres',array('size'=>60,'maxlength'=>255)); ?>
+                        <?php echo $form->error(Estudiantes::model(),'nombres'); ?>
+                </div>
+
+               <div class="row">
+                    <?php echo $form->labelEx(Estudiantes::model(),'apellidos'); ?>
+                    <?php echo $form->textField(Estudiantes::model(),'apellidos',array('size'=>60,'maxlength'=>255)); ?>
+                    <?php echo $form->error(Estudiantes::model(),'apellidos'); ?>
+                </div>
+                
+                <div class="row">
+		<?php echo $form->labelEx(Estudiantes::model(),'rut'); ?>
+		<?php echo $form->textField(Estudiantes::model(),'rut'); ?>
+		<?php echo $form->error(Estudiantes::model(),'rut'); ?>
+                </div>
+
+                <div class="row">
+                        <?php echo $form->labelEx(Estudiantes::model(),'fecha_nacimiento'); ?>
+                        <?php echo $form->dateField(Estudiantes::model(),'fecha_nacimiento'); ?>
+                        <?php echo $form->error(Estudiantes::model(),'fecha_nacimiento'); ?>
+                </div>
+
+                <div class="row">
+                        <?php echo $form->labelEx(Estudiantes::model(),'genero'); ?>
+                        <?php echo $form->radioButtonList(Estudiantes::model(),'genero',array('F'=>'Femenino','M'=>'Masculino'),array('separator'=>'  ', 'labelOptions'=>array('style'=>'display:inline'))); ?>
+                        <?php echo $form->error(Estudiantes::model(),'genero'); ?>
+                </div>
+
+                <div class="row">
+                        <?php echo $form->labelEx(Estudiantes::model(),'direccion'); ?>
+                        <?php echo $form->textField(Estudiantes::model(),'direccion',array('size'=>60,'maxlength'=>255)); ?>
+                        <?php echo $form->error(Estudiantes::model(),'direccion'); ?>
+                </div>
+
+                <div class="row">
+                        <?php echo $form->labelEx(Estudiantes::model(),'Comuna'); ?>
+                         <?php $datos4 = CHtml::listData(Comunas::model()->findAll(),'pk','nombre'); ?>
+                        <?php echo $form->DropDownList(Comunas::model(),'pk',$datos4, array('empty'=>'Seleccione...')); ?>
+                        
+                        <?php echo $form->error(Estudiantes::model(),'comuna_id'); ?>
+                </div>
+
+                <div class="row">
+                        <?php echo $form->labelEx(Estudiantes::model(),'Estado Civil'); ?>
+                        <?php $datos2 = CHtml::listData(EstadosCiviles::model()->findAll(),'pk','estado'); ?>
+                        <?php echo $form->DropDownList(Estudiantes::model(),'ec_fk',$datos2, array('empty'=>'Seleccione...')); ?>
+                        <?php echo $form->error(Estudiantes::model(),'ec_fk'); ?>
+                </div>
+
+                <div class="row">
+                        <?php echo $form->labelEx(Estudiantes::model(),'telefono'); ?>
+                        <?php echo $form->textField(Estudiantes::model(),'telefono',array('size'=>50,'maxlength'=>50)); ?>
+                        <?php echo $form->error(Estudiantes::model(),'telefono'); ?>
+                </div>
+
+                <div class="row">
+                        <?php echo $form->labelEx(Estudiantes::model(),'celular'); ?>
+                        <?php echo $form->textField(Estudiantes::model(),'celular',array('size'=>50,'maxlength'=>50)); ?>
+                        <?php echo $form->error(Estudiantes::model(),'celular'); ?>
+                </div>
+
+                <div class="row">
+                        <?php echo $form->labelEx(Estudiantes::model(),'email'); ?>
+                        <?php echo $form->textField(Estudiantes::model(),'email',array('size'=>60,'maxlength'=>255)); ?>
+                        <?php echo $form->error(Estudiantes::model(),'email'); ?>
+                </div>
+
+                <div class="row">
+                        <?php echo $form->labelEx(Estudiantes::model(),'Estado en UTEM'); ?>
+                        <?php $datos5 = CHtml::listData(Estados::model()->findAll(),'pk','nombre'); ?>
+                        <?php echo $form->DropDownList(Estados::model(),'pk',$datos5, array('empty'=>'Seleccione...')); ?>
+                        <?php echo $form->error(Estudiantes::model(),'estado'); ?>
+                </div>
+
+                <div class="row">
+                        <?php echo $form->labelEx(Estudiantes::model(),'¿Buscando trabajo en la actualidad?'); ?>
+                         <?php echo $form->checkBox(Estudiantes::model(),'busqueda'); ?>
+                            
+                        <?php echo $form->error(Estudiantes::model(),'busqueda'); ?>
+                </div>
+
+                <div class="row">
+                        <?php echo $form->labelEx(Estudiantes::model(),'archivo_curriculum'); ?>
+                        <?php echo $form->textField(Estudiantes::model(),'archivo_curriculum',array('size'=>60,'maxlength'=>255)); ?>
+                        <?php echo $form->error(Estudiantes::model(),'archivo_curriculum'); ?>
+                </div>       
+        <?php
+            }
+        ?>
+        
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Registrar' : 'Save'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
