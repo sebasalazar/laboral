@@ -4,8 +4,43 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="form">
+<?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
+<?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/assets/7b79631/Rut/jquery.Rut.js'); ?>
 
+<script type="text/javascript">
+$(document).ready(function(){
+// Demo 2
+$('#rut_demo_1').Rut({ 
+  on_error: function(){ alert('Rut incorrecto'); } 
+});
+// Demo 3
+$('#rut_demo_3, #rut_demo_4').Rut({
+  on_error: function(){ alert('Rut incorrecto'); }, 
+  on_success: function(){ alert('Rut correcto') } 
+});
+// Demo 5
+$('#rut_demo_5').Rut({
+  on_error: function(){ alert('Rut incorrecto'); },
+  format_on: 'keyup' 
+});
+// Demo 6
+$('#rut_demo_6').Rut({
+  validation: false,
+  format_on: 'keyup',
+  digito_verificador: '#digito_verificador_demo_6' 
+});
+
+$('#rut_demo_7').Rut({
+  digito_verificador: '#digito_verificador_demo_7',
+  on_error: function(){ alert('Rut incorrecto'); }
+});
+
+$("#content > ul").tabs();
+});
+</script>
+
+<div class="form">
+    
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'usuarios-form',
 	'enableAjaxValidation'=>false,
@@ -27,9 +62,10 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'Rut: <span class="required">*</span>'); ?>
                 <p class="hint">
-                   Ej: 11.111.111-3
+                   Nota: Sin puntos ni guion<br />
+                   Ej: 171548928
                 </p>
-		<?php echo $form->textField($model,'username'); ?>
+		<?php echo $form->textField($model,'username',array('id'=>'rut_demo_1','name'=>'rut_demo_1')); ?>
 		<?php echo $form->error($model,'username'); ?>
 	</div>
 
