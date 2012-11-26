@@ -16,7 +16,6 @@
  * @property string $cargo
  * @property string $fecha_publicacion
  * @property string $beneficios
- * @property string $nivel_estudios
  * @property integer $jornada_fk
  * @property integer $contrato_fk
  * @property integer $activo
@@ -58,13 +57,13 @@ class OfertasLaborales extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('empresa_fk, rubro_fk, nivel_estudio_fk, renta, vacantes, descripcion, cargo, fecha_publicacion, nivel_estudios, jornada_fk, contrato_fk, activo', 'required'),
+			array('empresa_fk, rubro_fk, nivel_estudio_fk, renta, vacantes, descripcion, cargo, fecha_publicacion, jornada_fk, contrato_fk, activo', 'required'),
 			array('empresa_fk, rubro_fk, nivel_estudio_fk, vacantes, jornada_fk, contrato_fk, activo', 'numerical', 'integerOnly'=>true),
-			array('descripcion, ubicacion, cargo, beneficios, nivel_estudios', 'length', 'max'=>255),
+			array('descripcion, ubicacion, cargo, beneficios', 'length', 'max'=>255),
 			array('plazo', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('pk, empresa_fk, rubro_fk, nivel_estudio_fk, renta, vacantes, plazo, descripcion, ubicacion, cargo, fecha_publicacion, beneficios, nivel_estudios, jornada_fk, contrato_fk, activo', 'safe', 'on'=>'search'),
+			array('pk, empresa_fk, rubro_fk, nivel_estudio_fk, renta, vacantes, plazo, descripcion, ubicacion, cargo, fecha_publicacion, beneficios, jornada_fk, contrato_fk, activo', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -104,7 +103,6 @@ class OfertasLaborales extends CActiveRecord
 			'cargo' => 'Cargo',
 			'fecha_publicacion' => 'Fecha Publicacion',
 			'beneficios' => 'Beneficios',
-			'nivel_estudios' => 'Nivel Estudios',
 			'jornada_fk' => 'Jornada Fk',
 			'contrato_fk' => 'Contrato Fk',
 			'activo' => 'Activo',
@@ -134,7 +132,6 @@ class OfertasLaborales extends CActiveRecord
 		$criteria->compare('cargo',$this->cargo,true);
 		$criteria->compare('fecha_publicacion',$this->fecha_publicacion,true);
 		$criteria->compare('beneficios',$this->beneficios,true);
-		$criteria->compare('nivel_estudios',$this->nivel_estudios,true);
 		$criteria->compare('jornada_fk',$this->jornada_fk);
 		$criteria->compare('contrato_fk',$this->contrato_fk);
 		$criteria->compare('activo',$this->activo);

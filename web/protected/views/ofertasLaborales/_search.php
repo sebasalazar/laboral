@@ -72,11 +72,6 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'nivel_estudios'); ?>
-		<?php echo $form->textField($model,'nivel_estudios',array('size'=>60,'maxlength'=>255)); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->label($model,'jornada_fk'); ?>
 		<?php echo $form->textField($model,'jornada_fk'); ?>
 	</div>

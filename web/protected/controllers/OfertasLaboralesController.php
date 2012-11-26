@@ -37,7 +37,7 @@ class OfertasLaboralesController extends Controller
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				'users'=>array('174018367'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -66,10 +66,11 @@ class OfertasLaboralesController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+                
 		if(isset($_POST['OfertasLaborales']))
 		{
 			$model->attributes=$_POST['OfertasLaborales'];
+                        $model->activo = 1;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->pk));
 		}

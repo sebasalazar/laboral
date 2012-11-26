@@ -33,8 +33,7 @@
 	<?php echo CHtml::encode($data->plazo); ?>
 	<br />
 
-	<?php /*
-	<b><?php echo CHtml::encode($data->getAttributeLabel('descripcion')); ?>:</b>
+	<?php echo CHtml::encode($data->getAttributeLabel('descripcion')); ?>:</b>
 	<?php echo CHtml::encode($data->descripcion); ?>
 	<br />
 
@@ -54,10 +53,6 @@
 	<?php echo CHtml::encode($data->beneficios); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('nivel_estudios')); ?>:</b>
-	<?php echo CHtml::encode($data->nivel_estudios); ?>
-	<br />
-
 	<b><?php echo CHtml::encode($data->getAttributeLabel('jornada_fk')); ?>:</b>
 	<?php echo CHtml::encode($data->jornada_fk); ?>
 	<br />
@@ -69,7 +64,5 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('activo')); ?>:</b>
 	<?php echo CHtml::encode($data->activo); ?>
 	<br />
-
-	*/ ?>
 
 </div>

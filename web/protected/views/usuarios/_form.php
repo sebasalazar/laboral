@@ -27,6 +27,7 @@ $('#rut_demo_2').Rut({
       $("#rut").show("slow");
       $("#rut").css("background","#FEE");
       $("#rut").css("border","2px solid #C00");
+      $("#rut_demo_2").val("");
   }
 });
 $("#content > ul").tabs();
@@ -255,7 +256,7 @@ $("#content > ul").tabs();
             }
         ?>
         
-          <?php if($tipoUsuario == 1) // usuario "alumno"
+	<?php if($tipoUsuario == 1) // usuario "alumno"
               {
         ?>    
                 <div class="row">
@@ -356,13 +357,9 @@ $("#content > ul").tabs();
         <?php
             }
         ?>
-        
+
 	<div class="row buttons">
-
-		<?php //echo CHtml::submitButton($model->isNewRecord ? 'Registrar' : 'Save'); ?>
-
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('id'=>'quitar')); ?>
-
 	</div>
 
 <?php $this->endWidget(); ?>

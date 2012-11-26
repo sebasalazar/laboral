@@ -6,14 +6,29 @@ $this->breadcrumbs=array(
 	'Ofertas Laborales'=>array('index'),
 	$model->pk,
 );
-
-$this->menu=array(
-	array('label'=>'List OfertasLaborales', 'url'=>array('index')),
-	array('label'=>'Create OfertasLaborales', 'url'=>array('create')),
-	array('label'=>'Update OfertasLaborales', 'url'=>array('update', 'id'=>$model->pk)),
-	array('label'=>'Delete OfertasLaborales', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage OfertasLaborales', 'url'=>array('admin')),
-);
+if(Yii::app()->user->getModel(Yii::app()->user->id) != null)
+{
+    $tipo = Yii::app()->user->getTipoUsuario(Yii::app()->user->name);
+    if($tipo == 3){
+        $this->menu=array(
+                array('label'=>'Lista Ofertas Laborales', 'url'=>array('index')),
+                array('label'=>'Create Ofertas Laborales', 'url'=>array('create')),
+        );
+    }
+    elseif ($tipo == 2) 
+    {
+        $this->menu=array(
+                array('label'=>'Lista Ofertas Laborales', 'url'=>array('index')),
+                array('label'=>'Create Ofertas Laborales', 'url'=>array('create')),
+        );
+    }
+    elseif($tipo == 1)
+    {
+        $this->menu=array(
+                array('label'=>'Lista Ofertas Laborales', 'url'=>array('index')),
+        );
+    }
+}
 ?>
 
 <h1>View OfertasLaborales #<?php echo $model->pk; ?></h1>
@@ -33,7 +48,6 @@ $this->menu=array(
 		'cargo',
 		'fecha_publicacion',
 		'beneficios',
-		'nivel_estudios',
 		'jornada_fk',
 		'contrato_fk',
 		'activo',
