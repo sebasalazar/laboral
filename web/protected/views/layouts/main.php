@@ -14,7 +14,6 @@
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/contenido.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
-
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
@@ -69,9 +68,9 @@
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Inicio', 'url'=>array('/site/index')),
-				array('label'=>'Contacto', 'url'=>array('/site/contact')),
-				array('label'=>'Registrarse', 'url'=>array('/usuarios/pcreate')),
                                 array('label'=>'Acerca de', 'url'=>array('/site/page', 'view'=>'about')),
+				array('label'=>'Contacto', 'url'=>array('/site/contact')),                                
+				array('label'=>'Registrarse', 'url'=>array('/usuarios/pcreate')),                                
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),

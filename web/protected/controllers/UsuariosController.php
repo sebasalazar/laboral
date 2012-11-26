@@ -63,26 +63,31 @@ class UsuariosController extends Controller
 	public function actionCreate($tipo)
 	{
 		$model=new Usuarios;
+                $model1 = new Docentes;
+                $model2 = new Empresas;
+                $model3 = new Estudiantes;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
 		if(isset($_POST['Usuarios']))
 		{
 			$model->attributes=$_POST['Usuarios'];
+                        $model->username = intval(preg_replace("/[^0-9]/", "", $_POST['rut_demo_2']));
 			if(isset($_POST['Docentes']))
 			{
-				if($model->save()){
-                                	$model1 = new Docentes;
-                                	$model1->attributes=$_POST['Docentes'];
-                                	$model1->rut = $model->username;
-                            		if($model1->save())
-						$this->redirect(array('site/index'));
+                                $model1->attributes=$_POST['Docentes'];
+                                $model1->rut = $model->username;
+				if($model1->save() && $model->save()){
+					$this->redirect(array('site/index'));
                         	}
+                                else
+                                {
+                                        $model1->deleteByPk($model1->pk);
+                                        $model1->deleteByPk($model->id);
+                                }
 			}
 			if(isset($_POST['Empresas']))
 			{
 				if($model->save()){
-                                	$model2 = new Empresas;
                                 	$model2->attributes=$_POST['Empresas'];
                                 	$model2->rut = $model->username;
                             		if($model2->save())
@@ -92,15 +97,20 @@ class UsuariosController extends Controller
 			if(isset($_POST['Docentes']))
 			{
 				if($model->save()){
+
                                 	$modelEstudiante = new Estudiantes;
                                 	$modelEstudiante->attributes=$_POST['Estudiantes'];
                                 	$modelEstudiante->rut = $model->username;
                             		if($model1->save())
+
+                                	$model3->attributes=$_POST['Estudiantes'];
+                                	$model3->rut = $model->username;
+                            		if($model3->save())
 						$this->redirect(array('site/index'));
                         	}
 			}
 		}
-		$this->render('create',array('model'=>$model,'tipo'=>$tipo));
+		$this->render('create',array('model'=>$model,'model1'=>$model1,'model2'=>$model2,'model3'=>$model3,'tipo'=>$tipo));
 	}
 
 	/**

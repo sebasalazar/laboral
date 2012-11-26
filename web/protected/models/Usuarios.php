@@ -39,9 +39,9 @@ class Usuarios extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('username, password, salt', 'required'),
-			array('username, roles', 'numerical', 'integerOnly'=>true),
-			array('password', 'length', 'max'=>40),
-			array('salt', 'length', 'max'=>32),
+			array('roles', 'numerical', 'integerOnly'=>true),
+			array('password', 'length', 'min'=>5, 'max'=>40),
+			array('salt', 'length','max'=>32),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, username, password, salt, roles', 'safe', 'on'=>'search'),
