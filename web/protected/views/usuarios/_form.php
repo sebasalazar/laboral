@@ -285,7 +285,7 @@ $("#content > ul").tabs();
                 <div class="row">
                         <?php echo $form->labelEx(Estudiantes::model(),'genero'); ?>
                         <?php echo $form->radioButtonList(Estudiantes::model(),'genero',array('F'=>'Femenino','M'=>'Masculino'),array('separator'=>'  ', 'labelOptions'=>array('style'=>'display:inline'))); ?>
-                        <?php echo $form->error(Estudiantes::model(),'genero'); ?>
+                        <?php echo $form->error(Estudiantes::model(),'genero'); ?>x
                 </div>
 
                 <div class="row">
@@ -296,16 +296,16 @@ $("#content > ul").tabs();
 
                 <div class="row">
                         <?php echo $form->labelEx(Estudiantes::model(),'Comuna'); ?>
-                         <?php $datos4 = CHtml::listData(Comunas::model()->findAll(),'pk','nombre'); ?>
-                        <?php echo $form->DropDownList(Comunas::model(),'pk',$datos4, array('empty'=>'Seleccione...')); ?>
+                         <?php $datos = CHtml::listData(Comunas::model()->findAll(),'pk','nombre'); ?>
+                        <?php echo $form->DropDownList(Estudiantes::model(),'comuna_id',$datos, array('empty'=>'Seleccione...')); ?>
                         
                         <?php echo $form->error(Estudiantes::model(),'comuna_id'); ?>
                 </div>
 
                 <div class="row">
                         <?php echo $form->labelEx(Estudiantes::model(),'Estado Civil'); ?>
-                        <?php $datos2 = CHtml::listData(EstadosCiviles::model()->findAll(),'pk','estado'); ?>
-                        <?php echo $form->DropDownList(Estudiantes::model(),'ec_fk',$datos2, array('empty'=>'Seleccione...')); ?>
+                        <?php $datos = CHtml::listData(EstadosCiviles::model()->findAll(),'pk','estado'); ?>
+                        <?php echo $form->DropDownList(Estudiantes::model(),'ec_fk',$datos, array('empty'=>'Seleccione...')); ?>
                         <?php echo $form->error(Estudiantes::model(),'ec_fk'); ?>
                 </div>
 
@@ -326,11 +326,18 @@ $("#content > ul").tabs();
                         <?php echo $form->textField(Estudiantes::model(),'email',array('size'=>60,'maxlength'=>255)); ?>
                         <?php echo $form->error(Estudiantes::model(),'email'); ?>
                 </div>
-
+                
+                <div class="row">
+                        <?php echo $form->labelEx(Estudiantes::model(),'Carrera'); ?>
+                        <?php $datos = CHtml::listData(Carreras::model()->findAll(),'pk','nombre_carrera'); ?>
+                        <?php echo $form->DropDownList(Estudiantes::model(),'carrera_fk',$datos, array('empty'=>'Seleccione...')); ?>
+                        <?php echo $form->error(Estudiantes::model(),'carrera_fk'); ?>
+                </div>
+        
                 <div class="row">
                         <?php echo $form->labelEx(Estudiantes::model(),'Estado en UTEM'); ?>
-                        <?php $datos5 = CHtml::listData(Estados::model()->findAll(),'pk','nombre'); ?>
-                        <?php echo $form->DropDownList(Estados::model(),'pk',$datos5, array('empty'=>'Seleccione...')); ?>
+                        <?php $datos = CHtml::listData(Estados::model()->findAll(),'pk','nombre'); ?>
+                        <?php echo $form->DropDownList(Estudiantes::model(),'estado',$datos, array('empty'=>'Seleccione...')); ?>
                         <?php echo $form->error(Estudiantes::model(),'estado'); ?>
                 </div>
 
