@@ -44,11 +44,11 @@ CREATE TABLE accesos (
 DROP TABLE IF EXISTS regiones CASCADE;
 CREATE TABLE regiones (
         pk serial NOT NULL,
-        region varchar(255) NOT NULL,
-        corfo varchar(255) NOT NULL,
+        nombre varchar(255) NOT NULL,
+        zona_corfo varchar(255) NOT NULL,
         codigo varchar(5) NOT NULL,
         numero smallint NOT NULL,
-        UNIQUE(region),
+        UNIQUE(nombre),
         UNIQUE(codigo),
         UNIQUE(numero),
         PRIMARY KEY(pk)
@@ -110,7 +110,7 @@ DROP TABLE IF EXISTS carreras CASCADE;
 CREATE TABLE carreras (
     pk serial NOT NULL,
     cod_carrera int NOT NULL,
-    nombre_carrera varchar(50) NOT NULL,
+    nombre_carrera varchar(255) NOT NULL,
     UNIQUE(cod_carrera),
     UNIQUE(nombre_carrera),
     PRIMARY KEY(pk)
@@ -415,4 +415,4 @@ CREATE TABLE practicas (
     PRIMARY KEY(pk)
 );
 
-COMMIT:
+COMMIT;
