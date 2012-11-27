@@ -30,17 +30,17 @@
                             echo "<u> &nbsp;&nbsp;&nbsp;Panel de Administración &nbsp;&nbsp;&nbsp;</u><br /><br />";
                             
                             $tipo = Yii::app()->user->getTipoUsuario(Yii::app()->user->name);
-                            if($tipo == 3)
+                            if($tipo == 3) // Docente
                             {
                                 $usuario_nombre = Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->nombres;
                                 $tipo = "Docente";
                             }
-                            elseif($tipo == 2)
+                            elseif($tipo == 2) //Empresa
                             {
                                 $usuario_nombre = Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->nombre;
                                 $tipo = "Empresa";
                             }
-                            elseif($tipo == 1)
+                            elseif($tipo == 1) //Estudiante
                             {
                                 $usuario_nombre = Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->nombres;
                                 $tipo = "Estudiante";
