@@ -6242,3 +6242,34 @@ Stack trace:
 REQUEST_URI=/laboral/web/index.php?r=usuarios/create&tipo=1
 HTTP_REFERER=http://localhost/laboral/web/index.php?r=usuarios/create&tipo=1
 ---
+2012/11/27 02:22:18 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] FATAL:  password authentication failed for user "postgres"
+FATAL:  password authentication failed for user "postgres"' in /var/www/laboral/web/yii/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/laboral/web/yii/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/laboral/web/yii/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/laboral/web/yii/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(624): CApplication->getDb()
+#5 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(2311): CActiveRecord->getDbConnection()
+#6 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(388): CActiveRecordMetaData->__construct(Object(Usuarios))
+#7 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(403): CActiveRecord::model('Usuarios')
+#8 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(78): CActiveRecord->getMetaData()
+#9 /var/www/laboral/web/protected/controllers/UsuariosController.php(66): CActiveRecord->__construct()
+#10 [internal function]: UsuariosController->actionCreate('1')
+#11 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(UsuariosController), Array)
+#12 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(UsuariosController), Object(ReflectionMethod), Array)
+#13 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#14 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#15 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#16 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#17 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#18 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#19 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#20 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#22 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('usuarios/create')
+#23 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#24 /var/www/laboral/web/index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/laboral/web/index.php?r=usuarios/create&tipo=1
+---
