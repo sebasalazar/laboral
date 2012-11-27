@@ -17,13 +17,13 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'nombres'); ?>
-		<?php echo $form->textField($model,'nombres',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->textField($model,'nombres',array('size'=>60,'maxlength'=>30)); ?>
 		<?php echo $form->error($model,'nombres'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'apellidos'); ?>
-		<?php echo $form->textField($model,'apellidos',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->textField($model,'apellidos',array('size'=>60,'maxlength'=>30)); ?>
 		<?php echo $form->error($model,'apellidos'); ?>
 	</div>
 
@@ -47,7 +47,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'direccion'); ?>
-		<?php echo $form->textField($model,'direccion',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->textField($model,'direccion',array('size'=>60,'maxlength'=>35)); ?>
 		<?php echo $form->error($model,'direccion'); ?>
 	</div>
 
@@ -65,13 +65,13 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'telefono'); ?>
-		<?php echo $form->textField($model,'telefono',array('size'=>50,'maxlength'=>50)); ?>
+		<?php echo $form->textField($model,'telefono',array('size'=>9,'maxlength'=>9)); ?>
 		<?php echo $form->error($model,'telefono'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'celular'); ?>
-		<?php echo $form->textField($model,'celular',array('size'=>50,'maxlength'=>50)); ?>
+		<?php echo $form->textField($model,'celular',array('size'=>8,'maxlength'=>8)); ?>
 		<?php echo $form->error($model,'celular'); ?>
 	</div>
 

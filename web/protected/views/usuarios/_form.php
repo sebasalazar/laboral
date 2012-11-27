@@ -39,6 +39,7 @@ $("#content > ul").tabs();
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'usuarios-validation',
 	'enableAjaxValidation'=>false,
+        'htmlOptions' => array('enctype' => 'multipart/form-data')
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
@@ -223,7 +224,7 @@ $("#content > ul").tabs();
                 </div>
 
                 <div class="row">
-                        <?php echo $form->labelEx(Empresas::model(),'telefono'); ?>
+                        <?php echo $form->labelEx(Empresas::model(),'telefono: <span class="required">*</span>'); ?>
                         <?php echo $form->textField(Empresas::model(),'telefono',array('size'=>50,'maxlength'=>50)); ?>
                         <?php echo $form->error(Empresas::model(),'telefono'); ?>
                 </div>
@@ -261,20 +262,14 @@ $("#content > ul").tabs();
         ?>    
                 <div class="row">
                         <?php echo $form->labelEx(Estudiantes::model(),'nombres'); ?>
-                        <?php echo $form->textField(Estudiantes::model(),'nombres',array('size'=>60,'maxlength'=>255)); ?>
+                        <?php echo $form->textField(Estudiantes::model(),'nombres'); ?>
                         <?php echo $form->error(Estudiantes::model(),'nombres'); ?>
                 </div>
 
                <div class="row">
                     <?php echo $form->labelEx(Estudiantes::model(),'apellidos'); ?>
-                    <?php echo $form->textField(Estudiantes::model(),'apellidos',array('size'=>60,'maxlength'=>255)); ?>
+                    <?php echo $form->textField(Estudiantes::model(),'apellidos'); ?>
                     <?php echo $form->error(Estudiantes::model(),'apellidos'); ?>
-                </div>
-                
-                <div class="row">
-		<?php echo $form->labelEx(Estudiantes::model(),'rut'); ?>
-		<?php echo $form->textField(Estudiantes::model(),'rut'); ?>
-		<?php echo $form->error(Estudiantes::model(),'rut'); ?>
                 </div>
 
                 <div class="row">
@@ -291,7 +286,7 @@ $("#content > ul").tabs();
 
                 <div class="row">
                         <?php echo $form->labelEx(Estudiantes::model(),'direccion'); ?>
-                        <?php echo $form->textField(Estudiantes::model(),'direccion',array('size'=>60,'maxlength'=>255)); ?>
+                        <?php echo $form->textField(Estudiantes::model(),'direccion',array('size'=>35,'maxlength'=>35)); ?>
                         <?php echo $form->error(Estudiantes::model(),'direccion'); ?>
                 </div>
 
@@ -311,14 +306,14 @@ $("#content > ul").tabs();
                 </div>
 
                 <div class="row">
-                        <?php echo $form->labelEx(Estudiantes::model(),'telefono'); ?>
-                        <?php echo $form->textField(Estudiantes::model(),'telefono',array('size'=>50,'maxlength'=>50)); ?>
+                        <?php echo $form->labelEx(Estudiantes::model(),'telefono: <span class="required">*</span>'); ?>
+                        <?php echo $form->textField(Estudiantes::model(),'telefono'); ?>
                         <?php echo $form->error(Estudiantes::model(),'telefono'); ?>
                 </div>
 
                 <div class="row">
                         <?php echo $form->labelEx(Estudiantes::model(),'celular'); ?>
-                        <?php echo $form->textField(Estudiantes::model(),'celular',array('size'=>50,'maxlength'=>50)); ?>
+                        <?php echo $form->textField(Estudiantes::model(),'celular'); ?>
                         <?php echo $form->error(Estudiantes::model(),'celular'); ?>
                 </div>
 
@@ -351,7 +346,7 @@ $("#content > ul").tabs();
 
                 <div class="row">
                         <?php echo $form->labelEx(Estudiantes::model(),'archivo_curriculum'); ?>
-                        <?php echo $form->textField(Estudiantes::model(),'archivo_curriculum',array('size'=>60,'maxlength'=>255)); ?>
+                        <?php echo $form->fileField(Estudiantes::model(),'archivo_curriculum',array('size'=>60,'maxlength'=>255)); ?>
                         <?php echo $form->error(Estudiantes::model(),'archivo_curriculum'); ?>
                 </div>       
         <?php

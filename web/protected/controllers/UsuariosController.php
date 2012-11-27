@@ -102,7 +102,13 @@ class UsuariosController extends Controller
                                 	$model3->attributes=$_POST['Estudiantes'];
                                 	$model3->rut = $model->username;
                                         
+                                        
+                                        
                             		if($model3->save())
+                                            $cv = CUploadedFile::getInstance ($model3, 'archivo_curriculum');
+                                            if(!empty($cv)){
+                                                $cv->saveAs('cv/' . $cv);
+                                            }
 						$this->redirect(array('site/index'));
                         	}
 			}

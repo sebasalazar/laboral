@@ -57,9 +57,11 @@ class Estudiantes extends CActiveRecord
 		return array(
 			array('nombres, apellidos, rut, fecha_nacimiento, direccion, comuna_id, ec_fk, carrera_fk, estado', 'required'),
 			array('rut, comuna_id, ec_fk, carrera_fk, estado', 'numerical', 'integerOnly'=>true),
-			array('nombres, apellidos, direccion, email, archivo_curriculum', 'length', 'max'=>255),
+			array('nombres, apellidos, direccion, archivo_curriculum', 'length', 'max'=>30),
 			array('genero', 'length', 'max'=>1),
-			array('telefono, celular', 'length', 'max'=>50),
+                    	array('telefono', 'length', 'min'=>9,'max'=>9),
+                        array('celular', 'length', 'min'=>8, 'max'=>8),
+                        array('email', 'email'),
 			array('busqueda', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
