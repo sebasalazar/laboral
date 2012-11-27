@@ -55,7 +55,10 @@ class Estudiantes extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nombres, apellidos, rut, fecha_nacimiento, direccion, comuna_id, ec_fk, carrera_fk, estado', 'required'),
+                    
+			array('apellidos, rut, fecha_nacimiento, direccion, comuna_id, ec_fk, carrera_fk, estado','required'),
+                        array('email','required', 'message'=>'debe ingresar mail'),
+                        array('nombres','required', 'message'=>'debe ingresar Nombres'),
 			array('rut, comuna_id, ec_fk, carrera_fk, estado', 'numerical', 'integerOnly'=>true),
 			array('nombres, apellidos, direccion, archivo_curriculum', 'length', 'max'=>30),
 			array('genero', 'length', 'max'=>1),

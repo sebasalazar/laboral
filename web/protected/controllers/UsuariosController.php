@@ -94,6 +94,11 @@ class UsuariosController extends Controller
                             		if($model2->save())
 						$this->redirect(array('site/index'));
                         	}
+                                                                else
+                                {
+                                        $model1->deleteByPk($model2->pk);
+                                        $model1->deleteByPk($model->id);
+                                }
 			}
 			
 			if(isset($_POST['Estudiantes']))
@@ -102,15 +107,22 @@ class UsuariosController extends Controller
                                 	$model3->attributes=$_POST['Estudiantes'];
                                 	$model3->rut = $model->username;
                                         
-                                        
-                                        
-                            		if($model3->save())
+                                        if($model3->validate()){
+                                            if($model3->save())
                                             $cv = CUploadedFile::getInstance ($model3, 'archivo_curriculum');
                                             if(!empty($cv)){
                                                 $cv->saveAs('cv/' . $cv);
                                             }
 						$this->redirect(array('site/index'));
+                                        }
+                                        
+                            		
                         	}
+                          else
+                                {
+                                        $model3->deleteByPk($model3->pk);
+                                        $model3->deleteByPk($model->id);
+                                }
 			}
 		}
 

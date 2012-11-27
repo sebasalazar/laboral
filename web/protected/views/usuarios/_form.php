@@ -6,7 +6,8 @@
 
 <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
 <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/assets/7b79631/Rut/jquery.Rut.js'); ?>
-
+<script src="jvalidate/js/jquery_1.4.js" type="text/javascript"><!--mce:0--><!--mce:0--></script>
+<script src="jvalidate/js/jquery_validate.js" type="text/javascript"><!--mce:1--><!--mce:1--></script>
 <script type="text/javascript">
 $(document).ready(function(){
 $('#rut_demo_2').Rut({
@@ -88,7 +89,7 @@ $("#content > ul").tabs();
                 </div>
             </div>
 	</div>
-        
+
         <?php
             if($tipoUsuario == 3) //Tipo de usuario "docente"
             {
@@ -259,39 +260,40 @@ $("#content > ul").tabs();
         
 	<?php if($tipoUsuario == 1) // usuario "alumno"
               {
-        ?>    
+        ?>   
                 <div class="row">
-                        <?php echo $form->labelEx(Estudiantes::model(),'nombres'); ?>
+                        <?php echo $form->labelEx(Estudiantes::model(),'nombres <span class="required">*</span> '); ?>
                         <?php echo $form->textField(Estudiantes::model(),'nombres'); ?>
                         <?php echo $form->error(Estudiantes::model(),'nombres'); ?>
                 </div>
 
                <div class="row">
-                    <?php echo $form->labelEx(Estudiantes::model(),'apellidos'); ?>
+                    <?php echo $form->labelEx(Estudiantes::model(),'apellidos <span class="required">*</span>'); ?>
+                   
                     <?php echo $form->textField(Estudiantes::model(),'apellidos'); ?>
                     <?php echo $form->error(Estudiantes::model(),'apellidos'); ?>
                 </div>
 
                 <div class="row">
-                        <?php echo $form->labelEx(Estudiantes::model(),'fecha_nacimiento'); ?>
+                        <?php echo $form->labelEx(Estudiantes::model(),'fecha_nacimiento <span class="required">*</span>'); ?>
                         <?php echo $form->dateField(Estudiantes::model(),'fecha_nacimiento'); ?>
                         <?php echo $form->error(Estudiantes::model(),'fecha_nacimiento'); ?>
                 </div>
 
                 <div class="row">
-                        <?php echo $form->labelEx(Estudiantes::model(),'genero'); ?>
+                        <?php echo $form->labelEx(Estudiantes::model(),'genero <span class="required">*</span>'); ?>
                         <?php echo $form->radioButtonList(Estudiantes::model(),'genero',array('F'=>'Femenino','M'=>'Masculino'),array('separator'=>'  ', 'labelOptions'=>array('style'=>'display:inline'))); ?>
-                        <?php echo $form->error(Estudiantes::model(),'genero'); ?>x
+                        <?php echo $form->error(Estudiantes::model(),'genero'); ?>
                 </div>
 
                 <div class="row">
-                        <?php echo $form->labelEx(Estudiantes::model(),'direccion'); ?>
+                        <?php echo $form->labelEx(Estudiantes::model(),'direccion <span class="required">*</span>'); ?>
                         <?php echo $form->textField(Estudiantes::model(),'direccion',array('size'=>35,'maxlength'=>35)); ?>
                         <?php echo $form->error(Estudiantes::model(),'direccion'); ?>
                 </div>
 
                 <div class="row">
-                        <?php echo $form->labelEx(Estudiantes::model(),'Comuna'); ?>
+                        <?php echo $form->labelEx(Estudiantes::model(),'Comuna <span class="required">*</span>'); ?>
                          <?php $datos = CHtml::listData(Comunas::model()->findAll(),'pk','nombre'); ?>
                         <?php echo $form->DropDownList(Estudiantes::model(),'comuna_id',$datos, array('empty'=>'Seleccione...')); ?>
                         
@@ -299,7 +301,7 @@ $("#content > ul").tabs();
                 </div>
 
                 <div class="row">
-                        <?php echo $form->labelEx(Estudiantes::model(),'Estado Civil'); ?>
+                        <?php echo $form->labelEx(Estudiantes::model(),'Estado Civil <span class="required">*</span>'); ?>
                         <?php $datos = CHtml::listData(EstadosCiviles::model()->findAll(),'pk','estado'); ?>
                         <?php echo $form->DropDownList(Estudiantes::model(),'ec_fk',$datos, array('empty'=>'Seleccione...')); ?>
                         <?php echo $form->error(Estudiantes::model(),'ec_fk'); ?>
@@ -318,20 +320,21 @@ $("#content > ul").tabs();
                 </div>
 
                 <div class="row">
-                        <?php echo $form->labelEx(Estudiantes::model(),'email'); ?>
+                        <?php echo $form->labelEx(Estudiantes::model(),'email <span class="required">*</span>'); ?>
                         <?php echo $form->textField(Estudiantes::model(),'email',array('size'=>60,'maxlength'=>255)); ?>
                         <?php echo $form->error(Estudiantes::model(),'email'); ?>
                 </div>
                 
                 <div class="row">
-                        <?php echo $form->labelEx(Estudiantes::model(),'Carrera'); ?>
+                        <?php echo $form->labelEx(Estudiantes::model(),'Carrera <span class="required">*</span>'); ?>
                         <?php $datos = CHtml::listData(Carreras::model()->findAll(),'pk','nombre_carrera'); ?>
                         <?php echo $form->DropDownList(Estudiantes::model(),'carrera_fk',$datos, array('empty'=>'Seleccione...')); ?>
                         <?php echo $form->error(Estudiantes::model(),'carrera_fk'); ?>
                 </div>
         
                 <div class="row">
-                        <?php echo $form->labelEx(Estudiantes::model(),'Estado en UTEM'); ?>
+                        <?php echo $form->labelEx(Estudiantes::model(),'Estado en UTEM <span class="required">*</span>'); ?>
+                       
                         <?php $datos = CHtml::listData(Estados::model()->findAll(),'pk','nombre'); ?>
                         <?php echo $form->DropDownList(Estudiantes::model(),'estado',$datos, array('empty'=>'Seleccione...')); ?>
                         <?php echo $form->error(Estudiantes::model(),'estado'); ?>
@@ -339,8 +342,7 @@ $("#content > ul").tabs();
 
                 <div class="row">
                         <?php echo $form->labelEx(Estudiantes::model(),'¿Buscando trabajo en la actualidad?'); ?>
-                         <?php echo $form->checkBox(Estudiantes::model(),'busqueda'); ?>
-                            
+                        <?php echo $form->checkBox(Estudiantes::model(),'busqueda'); ?>  
                         <?php echo $form->error(Estudiantes::model(),'busqueda'); ?>
                 </div>
 

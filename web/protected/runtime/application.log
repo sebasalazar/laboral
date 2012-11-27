@@ -6273,3 +6273,546 @@ Stack trace:
 #25 {main}
 REQUEST_URI=/laboral/web/index.php?r=usuarios/create&tipo=1
 ---
+2012/11/27 02:29:28 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23505]: Unique violation: 7 ERROR:  llave duplicada viola restricción de unicidad «estudiantes_archivo_curriculum_key»
+DETAIL:  Ya existe la llave (archivo_curriculum)=().. The SQL statement executed was: INSERT INTO "estudiantes" ("genero", "busqueda", "nombres", "apellidos", "fecha_nacimiento", "direccion", "comuna_id", "ec_fk", "telefono", "celular", "email", "carrera_fk", "estado", "archivo_curriculum", "rut") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14).
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (107)
+in /var/www/laboral/web/index.php (13)
+2012/11/27 02:29:28 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23505]: Unique violation: 7 ERROR:  llave duplicada viola restricción de unicidad «estudiantes_archivo_curriculum_key»
+DETAIL:  Ya existe la llave (archivo_curriculum)=().. The SQL statement executed was: INSERT INTO "estudiantes" ("genero", "busqueda", "nombres", "apellidos", "fecha_nacimiento", "direccion", "comuna_id", "ec_fk", "telefono", "celular", "email", "carrera_fk", "estado", "archivo_curriculum", "rut") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/UsuariosController.php(107): CActiveRecord->save()
+#3 [internal function]: UsuariosController->actionCreate('1')
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(UsuariosController), Array)
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(UsuariosController), Object(ReflectionMethod), Array)
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('usuarios/create')
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/laboral/web/index.php?r=usuarios/create&tipo=1
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=usuarios/create&tipo=1
+---
+2012/11/27 02:32:05 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23505]: Unique violation: 7 ERROR:  llave duplicada viola restricción de unicidad «estudiantes_archivo_curriculum_key»
+DETAIL:  Ya existe la llave (archivo_curriculum)=().. The SQL statement executed was: INSERT INTO "estudiantes" ("genero", "busqueda", "nombres", "apellidos", "fecha_nacimiento", "direccion", "comuna_id", "ec_fk", "telefono", "celular", "email", "carrera_fk", "estado", "archivo_curriculum", "rut") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14).
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (107)
+in /var/www/laboral/web/index.php (13)
+2012/11/27 02:32:05 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23505]: Unique violation: 7 ERROR:  llave duplicada viola restricción de unicidad «estudiantes_archivo_curriculum_key»
+DETAIL:  Ya existe la llave (archivo_curriculum)=().. The SQL statement executed was: INSERT INTO "estudiantes" ("genero", "busqueda", "nombres", "apellidos", "fecha_nacimiento", "direccion", "comuna_id", "ec_fk", "telefono", "celular", "email", "carrera_fk", "estado", "archivo_curriculum", "rut") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/UsuariosController.php(107): CActiveRecord->save()
+#3 [internal function]: UsuariosController->actionCreate('1')
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(UsuariosController), Array)
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(UsuariosController), Object(ReflectionMethod), Array)
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('usuarios/create')
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/laboral/web/index.php?r=usuarios/create&tipo=1
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=usuarios/create&tipo=1
+---
+2012/11/27 02:36:34 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23505]: Unique violation: 7 ERROR:  llave duplicada viola restricción de unicidad «estudiantes_archivo_curriculum_key»
+DETAIL:  Ya existe la llave (archivo_curriculum)=().. The SQL statement executed was: INSERT INTO "estudiantes" ("genero", "busqueda", "nombres", "apellidos", "fecha_nacimiento", "direccion", "comuna_id", "ec_fk", "telefono", "celular", "email", "carrera_fk", "estado", "archivo_curriculum", "rut") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14).
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (107)
+in /var/www/laboral/web/index.php (13)
+2012/11/27 02:36:34 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23505]: Unique violation: 7 ERROR:  llave duplicada viola restricción de unicidad «estudiantes_archivo_curriculum_key»
+DETAIL:  Ya existe la llave (archivo_curriculum)=().. The SQL statement executed was: INSERT INTO "estudiantes" ("genero", "busqueda", "nombres", "apellidos", "fecha_nacimiento", "direccion", "comuna_id", "ec_fk", "telefono", "celular", "email", "carrera_fk", "estado", "archivo_curriculum", "rut") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/UsuariosController.php(107): CActiveRecord->save()
+#3 [internal function]: UsuariosController->actionCreate('1')
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(UsuariosController), Array)
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(UsuariosController), Object(ReflectionMethod), Array)
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('usuarios/create')
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/laboral/web/index.php?r=usuarios/create&tipo=1
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=usuarios/create&tipo=1
+---
+2012/11/27 02:36:52 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23505]: Unique violation: 7 ERROR:  llave duplicada viola restricción de unicidad «usuarios_username_key»
+DETAIL:  Ya existe la llave (username)=(163584379).. The SQL statement executed was: INSERT INTO "usuarios" ("roles", "password", "username", "salt") VALUES (:yp0, :yp1, :yp2, :yp3).
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (101)
+in /var/www/laboral/web/index.php (13)
+2012/11/27 02:36:52 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23505]: Unique violation: 7 ERROR:  llave duplicada viola restricción de unicidad «usuarios_username_key»
+DETAIL:  Ya existe la llave (username)=(163584379).. The SQL statement executed was: INSERT INTO "usuarios" ("roles", "password", "username", "salt") VALUES (:yp0, :yp1, :yp2, :yp3)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/UsuariosController.php(101): CActiveRecord->save()
+#3 [internal function]: UsuariosController->actionCreate('1')
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(UsuariosController), Array)
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(UsuariosController), Object(ReflectionMethod), Array)
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('usuarios/create')
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/laboral/web/index.php?r=usuarios/create&tipo=1
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=usuarios/create&tipo=1
+---
+2012/11/27 02:37:31 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  la sintaxis de entrada no es válida para integer: «16323762-8». The SQL statement executed was: SELECT * FROM "usuarios" "t" WHERE username=? LIMIT 1.
+in /var/www/laboral/web/protected/components/UserIdentity.php (18)
+in /var/www/laboral/web/protected/models/LoginForm.php (52)
+in /var/www/laboral/web/protected/controllers/SiteController.php (94)
+2012/11/27 02:37:31 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  la sintaxis de entrada no es válida para integer: «16323762-8». The SQL statement executed was: SELECT * FROM "usuarios" "t" WHERE username=? LIMIT 1' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/CDbCommand.php(408): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1291): CDbCommand->queryRow()
+#2 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1396): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/laboral/web/protected/components/UserIdentity.php(18): CActiveRecord->find('username=?', Array)
+#4 /var/www/laboral/web/protected/models/LoginForm.php(52): UserIdentity->authenticate()
+#5 /var/www/laboral/web/yii/framework/validators/CInlineValidator.php(43): LoginForm->authenticate('password', Array)
+#6 /var/www/laboral/web/yii/framework/validators/CValidator.php(214): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#7 /var/www/laboral/web/yii/framework/base/CModel.php(158): CValidator->validate(Object(LoginForm), NULL)
+#8 /var/www/laboral/web/protected/controllers/SiteController.php(94): CModel->validate()
+#9 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionLogin()
+#10 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/laboral/web/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#12 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('login')
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/login')
+#15 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /var/www/laboral/web/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/laboral/web/index.php?r=site/login
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=site/login
+---
+2012/11/27 02:37:50 [error] [php] Undefined variable: usuario_nombre (/var/www/laboral/web/protected/views/layouts/main.php:48)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/widgets/CContentDecorator.php(77): SiteController->renderFile()
+#1 /var/www/laboral/web/yii/framework/web/widgets/CContentDecorator.php(55): CContentDecorator->decorate()
+#2 /var/www/laboral/web/yii/framework/web/widgets/COutputProcessor.php(45): CContentDecorator->processOutput()
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(207): CContentDecorator->run()
+#4 /var/www/laboral/web/yii/framework/web/CBaseController.php(301): SiteController->endWidget()
+#5 /var/www/laboral/web/protected/views/layouts/column1.php(6): SiteController->endContent()
+#6 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require()
+#7 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): SiteController->renderInternal()
+#8 /var/www/laboral/web/yii/framework/web/CController.php(785): SiteController->renderFile()
+#9 /var/www/laboral/web/protected/controllers/SiteController.php(32): SiteController->render()
+#10 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#11 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#12 /var/www/laboral/web/yii/framework/web/CController.php(287): SiteController->runAction()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): SiteController->runActionWithFilters()
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): SiteController->run()
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php
+in /var/www/laboral/web/protected/views/layouts/main.php (48)
+in /var/www/laboral/web/protected/views/layouts/column1.php (6)
+in /var/www/laboral/web/protected/controllers/SiteController.php (32)
+2012/11/27 02:37:56 [error] [php] Undefined variable: usuario_nombre (/var/www/laboral/web/protected/views/layouts/main.php:48)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/widgets/CContentDecorator.php(77): SiteController->renderFile()
+#1 /var/www/laboral/web/yii/framework/web/widgets/CContentDecorator.php(55): CContentDecorator->decorate()
+#2 /var/www/laboral/web/yii/framework/web/widgets/COutputProcessor.php(45): CContentDecorator->processOutput()
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(207): CContentDecorator->run()
+#4 /var/www/laboral/web/yii/framework/web/CBaseController.php(301): SiteController->endWidget()
+#5 /var/www/laboral/web/protected/views/layouts/column1.php(6): SiteController->endContent()
+#6 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require()
+#7 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): SiteController->renderInternal()
+#8 /var/www/laboral/web/yii/framework/web/CController.php(785): SiteController->renderFile()
+#9 /var/www/laboral/web/protected/controllers/SiteController.php(98): SiteController->render()
+#10 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionLogin()
+#11 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#12 /var/www/laboral/web/yii/framework/web/CController.php(287): SiteController->runAction()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): SiteController->runActionWithFilters()
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): SiteController->run()
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=site/login
+in /var/www/laboral/web/protected/views/layouts/main.php (48)
+in /var/www/laboral/web/protected/views/layouts/column1.php (6)
+in /var/www/laboral/web/protected/controllers/SiteController.php (98)
+2012/11/27 02:37:56 [error] [php] Undefined variable: usuario_nombre (/var/www/laboral/web/protected/views/layouts/main.php:48)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/widgets/CContentDecorator.php(77): SiteController->renderFile()
+#1 /var/www/laboral/web/yii/framework/web/widgets/CContentDecorator.php(55): CContentDecorator->decorate()
+#2 /var/www/laboral/web/yii/framework/web/widgets/COutputProcessor.php(45): CContentDecorator->processOutput()
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(207): CContentDecorator->run()
+#4 /var/www/laboral/web/yii/framework/web/CBaseController.php(301): SiteController->endWidget()
+#5 /var/www/laboral/web/protected/views/layouts/column1.php(6): SiteController->endContent()
+#6 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require()
+#7 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): SiteController->renderInternal()
+#8 /var/www/laboral/web/yii/framework/web/CController.php(785): SiteController->renderFile()
+#9 /var/www/laboral/web/protected/controllers/SiteController.php(32): SiteController->render()
+#10 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#11 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#12 /var/www/laboral/web/yii/framework/web/CController.php(287): SiteController->runAction()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): SiteController->runActionWithFilters()
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): SiteController->run()
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=site/index
+in /var/www/laboral/web/protected/views/layouts/main.php (48)
+in /var/www/laboral/web/protected/views/layouts/column1.php (6)
+in /var/www/laboral/web/protected/controllers/SiteController.php (32)
+2012/11/27 02:37:58 [error] [php] Undefined variable: usuario_nombre (/var/www/laboral/web/protected/views/layouts/main.php:48)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/widgets/CContentDecorator.php(77): OfertasLaboralesController->renderFile()
+#1 /var/www/laboral/web/yii/framework/web/widgets/CContentDecorator.php(55): CContentDecorator->decorate()
+#2 /var/www/laboral/web/yii/framework/web/widgets/COutputProcessor.php(45): CContentDecorator->processOutput()
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(207): CContentDecorator->run()
+#4 /var/www/laboral/web/yii/framework/web/CBaseController.php(301): OfertasLaboralesController->endWidget()
+#5 /var/www/laboral/web/protected/views/layouts/column2.php(22): OfertasLaboralesController->endContent()
+#6 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require()
+#7 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): OfertasLaboralesController->renderInternal()
+#8 /var/www/laboral/web/yii/framework/web/CController.php(785): OfertasLaboralesController->renderFile()
+#9 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(129): OfertasLaboralesController->render()
+#10 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(50): OfertasLaboralesController->actionIndex()
+#11 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): OfertasLaboralesController->runAction()
+#13 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#15 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): OfertasLaboralesController->filterAccessControl()
+#16 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#17 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/laboral/web/yii/framework/web/CController.php(266): OfertasLaboralesController->runActionWithFilters()
+#19 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): OfertasLaboralesController->run()
+#20 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#21 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/index
+in /var/www/laboral/web/protected/views/layouts/main.php (48)
+in /var/www/laboral/web/protected/views/layouts/column2.php (22)
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (129)
+2012/11/27 02:37:59 [error] [php] Undefined variable: usuario_nombre (/var/www/laboral/web/protected/views/layouts/main.php:48)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/widgets/CContentDecorator.php(77): SiteController->renderFile()
+#1 /var/www/laboral/web/yii/framework/web/widgets/CContentDecorator.php(55): CContentDecorator->decorate()
+#2 /var/www/laboral/web/yii/framework/web/widgets/COutputProcessor.php(45): CContentDecorator->processOutput()
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(207): CContentDecorator->run()
+#4 /var/www/laboral/web/yii/framework/web/CBaseController.php(301): SiteController->endWidget()
+#5 /var/www/laboral/web/protected/views/layouts/column1.php(6): SiteController->endContent()
+#6 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require()
+#7 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): SiteController->renderInternal()
+#8 /var/www/laboral/web/yii/framework/web/CController.php(785): SiteController->renderFile()
+#9 /var/www/laboral/web/yii/framework/web/actions/CViewAction.php(141): SiteController->render()
+#10 /var/www/laboral/web/yii/framework/web/actions/CAction.php(75): CViewAction->run()
+#11 /var/www/laboral/web/yii/framework/web/CController.php(309): CViewAction->runWithParams()
+#12 /var/www/laboral/web/yii/framework/web/CController.php(287): SiteController->runAction()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): SiteController->runActionWithFilters()
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): SiteController->run()
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=site/page&view=about
+in /var/www/laboral/web/protected/views/layouts/main.php (48)
+in /var/www/laboral/web/protected/views/layouts/column1.php (6)
+in /var/www/laboral/web/index.php (13)
+2012/11/27 02:38:06 [error] [php] Undefined variable: usuario_nombre (/var/www/laboral/web/protected/views/layouts/main.php:48)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/widgets/CContentDecorator.php(77): SiteController->renderFile()
+#1 /var/www/laboral/web/yii/framework/web/widgets/CContentDecorator.php(55): CContentDecorator->decorate()
+#2 /var/www/laboral/web/yii/framework/web/widgets/COutputProcessor.php(45): CContentDecorator->processOutput()
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(207): CContentDecorator->run()
+#4 /var/www/laboral/web/yii/framework/web/CBaseController.php(301): SiteController->endWidget()
+#5 /var/www/laboral/web/protected/views/layouts/column1.php(6): SiteController->endContent()
+#6 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require()
+#7 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): SiteController->renderInternal()
+#8 /var/www/laboral/web/yii/framework/web/CController.php(785): SiteController->renderFile()
+#9 /var/www/laboral/web/protected/controllers/SiteController.php(32): SiteController->render()
+#10 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#11 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#12 /var/www/laboral/web/yii/framework/web/CController.php(287): SiteController->runAction()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): SiteController->runActionWithFilters()
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): SiteController->run()
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/
+in /var/www/laboral/web/protected/views/layouts/main.php (48)
+in /var/www/laboral/web/protected/views/layouts/column1.php (6)
+in /var/www/laboral/web/protected/controllers/SiteController.php (32)
+2012/11/27 02:38:09 [error] [php] Undefined variable: usuario_nombre (/var/www/laboral/web/protected/views/layouts/main.php:48)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/widgets/CContentDecorator.php(77): SiteController->renderFile()
+#1 /var/www/laboral/web/yii/framework/web/widgets/CContentDecorator.php(55): CContentDecorator->decorate()
+#2 /var/www/laboral/web/yii/framework/web/widgets/COutputProcessor.php(45): CContentDecorator->processOutput()
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(207): CContentDecorator->run()
+#4 /var/www/laboral/web/yii/framework/web/CBaseController.php(301): SiteController->endWidget()
+#5 /var/www/laboral/web/protected/views/layouts/column1.php(6): SiteController->endContent()
+#6 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require()
+#7 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): SiteController->renderInternal()
+#8 /var/www/laboral/web/yii/framework/web/CController.php(785): SiteController->renderFile()
+#9 /var/www/laboral/web/protected/controllers/SiteController.php(32): SiteController->render()
+#10 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#11 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#12 /var/www/laboral/web/yii/framework/web/CController.php(287): SiteController->runAction()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): SiteController->runActionWithFilters()
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): SiteController->run()
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/
+in /var/www/laboral/web/protected/views/layouts/main.php (48)
+in /var/www/laboral/web/protected/views/layouts/column1.php (6)
+in /var/www/laboral/web/protected/controllers/SiteController.php (32)
+2012/11/27 02:56:46 [error] [exception.CException] exception 'CException' with message 'Property "CEmailValidator.0" is not defined.' in /var/www/laboral/web/yii/framework/base/CComponent.php:174
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/validators/CValidator.php(190): CComponent->__set('0', 'required')
+#1 /var/www/laboral/web/yii/framework/base/CModel.php(285): CValidator::createValidator('email', Object(Estudiantes), 'email', Array)
+#2 /var/www/laboral/web/yii/framework/base/CModel.php(259): CModel->createValidators()
+#3 /var/www/laboral/web/yii/framework/base/CModel.php(302): CModel->getValidators('nombres <span c...')
+#4 /var/www/laboral/web/yii/framework/web/helpers/CHtml.php(1197): CModel->isAttributeRequired('nombres <span c...')
+#5 /var/www/laboral/web/yii/framework/web/widgets/CActiveForm.php(563): CHtml::activeLabelEx(Object(Estudiantes), 'nombres <span c...', Array)
+#6 /var/www/laboral/web/protected/views/usuarios/_form.php(264): CActiveForm->labelEx(Object(Estudiantes), 'nombres <span c...')
+#7 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#8 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#9 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#10 /var/www/laboral/web/protected/views/usuarios/create.php(13): CController->renderPartial('_form', Array)
+#11 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#12 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#13 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#14 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('create', Array, true)
+#15 /var/www/laboral/web/protected/controllers/UsuariosController.php(117): CController->render('create', Array)
+#16 [internal function]: UsuariosController->actionCreate('1')
+#17 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(UsuariosController), Array)
+#18 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(UsuariosController), Object(ReflectionMethod), Array)
+#19 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#20 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#21 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#22 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#23 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#24 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#25 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#26 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#28 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('usuarios/create')
+#29 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#30 /var/www/laboral/web/index.php(13): CApplication->run()
+#31 {main}
+REQUEST_URI=/laboral/web/index.php?r=usuarios/create&tipo=1
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=usuarios/pcreate
+---
+2012/11/27 02:57:40 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23505]: Unique violation: 7 ERROR:  llave duplicada viola restricción de unicidad «usuarios_username_key»
+DETAIL:  Ya existe la llave (username)=(0).. The SQL statement executed was: INSERT INTO "usuarios" ("roles", "password", "username", "salt") VALUES (:yp0, :yp1, :yp2, :yp3).
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (101)
+in /var/www/laboral/web/index.php (13)
+2012/11/27 02:57:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23505]: Unique violation: 7 ERROR:  llave duplicada viola restricción de unicidad «usuarios_username_key»
+DETAIL:  Ya existe la llave (username)=(0).. The SQL statement executed was: INSERT INTO "usuarios" ("roles", "password", "username", "salt") VALUES (:yp0, :yp1, :yp2, :yp3)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/UsuariosController.php(101): CActiveRecord->save()
+#3 [internal function]: UsuariosController->actionCreate('1')
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(UsuariosController), Array)
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(UsuariosController), Object(ReflectionMethod), Array)
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('usuarios/create')
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/laboral/web/index.php?r=usuarios/create&tipo=1
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=usuarios/create&tipo=1
+---
+2012/11/27 03:43:08 [error] [exception.CException] exception 'CException' with message 'Property "CEmailValidator.0" is not defined.' in /var/www/laboral/web/yii/framework/base/CComponent.php:174
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/validators/CValidator.php(190): CComponent->__set('0', 'required')
+#1 /var/www/laboral/web/yii/framework/base/CModel.php(285): CValidator::createValidator('email', Object(Estudiantes), 'email', Array)
+#2 /var/www/laboral/web/yii/framework/base/CModel.php(259): CModel->createValidators()
+#3 /var/www/laboral/web/yii/framework/base/CModel.php(302): CModel->getValidators('nombres <span c...')
+#4 /var/www/laboral/web/yii/framework/web/helpers/CHtml.php(1197): CModel->isAttributeRequired('nombres <span c...')
+#5 /var/www/laboral/web/yii/framework/web/widgets/CActiveForm.php(563): CHtml::activeLabelEx(Object(Estudiantes), 'nombres <span c...', Array)
+#6 /var/www/laboral/web/protected/views/usuarios/_form.php(264): CActiveForm->labelEx(Object(Estudiantes), 'nombres <span c...')
+#7 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#8 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#9 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#10 /var/www/laboral/web/protected/views/usuarios/create.php(13): CController->renderPartial('_form', Array)
+#11 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#12 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#13 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#14 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('create', Array, true)
+#15 /var/www/laboral/web/protected/controllers/UsuariosController.php(117): CController->render('create', Array)
+#16 [internal function]: UsuariosController->actionCreate('1')
+#17 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(UsuariosController), Array)
+#18 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(UsuariosController), Object(ReflectionMethod), Array)
+#19 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#20 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#21 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#22 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#23 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#24 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#25 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#26 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#28 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('usuarios/create')
+#29 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#30 /var/www/laboral/web/index.php(13): CApplication->run()
+#31 {main}
+REQUEST_URI=/laboral/web/index.php?r=usuarios/create&tipo=1
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=usuarios/create&tipo=1
+---
+2012/11/27 16:37:05 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23505]: Unique violation: 7 ERROR:  llave duplicada viola restricción de unicidad «usuarios_username_key»
+DETAIL:  Ya existe la llave (username)=(0).. The SQL statement executed was: INSERT INTO "usuarios" ("roles", "password", "username", "salt") VALUES (:yp0, :yp1, :yp2, :yp3).
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (106)
+in /var/www/laboral/web/index.php (13)
+2012/11/27 16:37:05 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23505]: Unique violation: 7 ERROR:  llave duplicada viola restricción de unicidad «usuarios_username_key»
+DETAIL:  Ya existe la llave (username)=(0).. The SQL statement executed was: INSERT INTO "usuarios" ("roles", "password", "username", "salt") VALUES (:yp0, :yp1, :yp2, :yp3)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/UsuariosController.php(106): CActiveRecord->save()
+#3 [internal function]: UsuariosController->actionCreate('1')
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(UsuariosController), Array)
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(UsuariosController), Object(ReflectionMethod), Array)
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('usuarios/create')
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/laboral/web/index.php?r=usuarios/create&tipo=1
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=usuarios/create&tipo=1
+---
+2012/11/27 16:53:49 [error] [exception.CException] exception 'CException' with message 'Property "CRequiredValidator.0" is not defined.' in /var/www/laboral/web/yii/framework/base/CComponent.php:174
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/validators/CValidator.php(190): CComponent->__set('0', 'email')
+#1 /var/www/laboral/web/yii/framework/base/CModel.php(285): CValidator::createValidator('required', Object(Estudiantes), 'email', Array)
+#2 /var/www/laboral/web/yii/framework/base/CModel.php(259): CModel->createValidators()
+#3 /var/www/laboral/web/yii/framework/base/CModel.php(302): CModel->getValidators('nombres <span c...')
+#4 /var/www/laboral/web/yii/framework/web/helpers/CHtml.php(1197): CModel->isAttributeRequired('nombres <span c...')
+#5 /var/www/laboral/web/yii/framework/web/widgets/CActiveForm.php(563): CHtml::activeLabelEx(Object(Estudiantes), 'nombres <span c...', Array)
+#6 /var/www/laboral/web/protected/views/usuarios/_form.php(265): CActiveForm->labelEx(Object(Estudiantes), 'nombres <span c...')
+#7 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#8 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#9 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#10 /var/www/laboral/web/protected/views/usuarios/create.php(13): CController->renderPartial('_form', Array)
+#11 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#12 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#13 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#14 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('create', Array, true)
+#15 /var/www/laboral/web/protected/controllers/UsuariosController.php(127): CController->render('create', Array)
+#16 [internal function]: UsuariosController->actionCreate('1')
+#17 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(UsuariosController), Array)
+#18 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(UsuariosController), Object(ReflectionMethod), Array)
+#19 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#20 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#21 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#22 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#23 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#24 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#25 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#26 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#28 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('usuarios/create')
+#29 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#30 /var/www/laboral/web/index.php(13): CApplication->run()
+#31 {main}
+REQUEST_URI=/laboral/web/index.php?r=usuarios/create&tipo=1
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=usuarios/pcreate
+---
+2012/11/27 16:57:51 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23505]: Unique violation: 7 ERROR:  llave duplicada viola restricción de unicidad «usuarios_username_key»
+DETAIL:  Ya existe la llave (username)=(0).. The SQL statement executed was: INSERT INTO "usuarios" ("roles", "password", "username", "salt") VALUES (:yp0, :yp1, :yp2, :yp3).
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (106)
+in /var/www/laboral/web/index.php (13)
+2012/11/27 16:57:51 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23505]: Unique violation: 7 ERROR:  llave duplicada viola restricción de unicidad «usuarios_username_key»
+DETAIL:  Ya existe la llave (username)=(0).. The SQL statement executed was: INSERT INTO "usuarios" ("roles", "password", "username", "salt") VALUES (:yp0, :yp1, :yp2, :yp3)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/UsuariosController.php(106): CActiveRecord->save()
+#3 [internal function]: UsuariosController->actionCreate('1')
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(UsuariosController), Array)
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(UsuariosController), Object(ReflectionMethod), Array)
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('usuarios/create')
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/laboral/web/index.php?r=usuarios/create&tipo=1
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=usuarios/create&tipo=1
+---
+2012/11/27 16:58:11 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23505]: Unique violation: 7 ERROR:  llave duplicada viola restricción de unicidad «usuarios_username_key»
+DETAIL:  Ya existe la llave (username)=(0).. The SQL statement executed was: INSERT INTO "usuarios" ("roles", "password", "username", "salt") VALUES (:yp0, :yp1, :yp2, :yp3).
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (106)
+in /var/www/laboral/web/index.php (13)
+2012/11/27 16:58:11 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23505]: Unique violation: 7 ERROR:  llave duplicada viola restricción de unicidad «usuarios_username_key»
+DETAIL:  Ya existe la llave (username)=(0).. The SQL statement executed was: INSERT INTO "usuarios" ("roles", "password", "username", "salt") VALUES (:yp0, :yp1, :yp2, :yp3)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/UsuariosController.php(106): CActiveRecord->save()
+#3 [internal function]: UsuariosController->actionCreate('1')
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(UsuariosController), Array)
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(UsuariosController), Object(ReflectionMethod), Array)
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('usuarios/create')
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/laboral/web/index.php?r=usuarios/create&tipo=1
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=usuarios/create&tipo=1
+---
