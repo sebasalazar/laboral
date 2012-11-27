@@ -71,6 +71,7 @@
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Inicio', 'url'=>array('/site/index')),
+                                array('label'=>'Ofertas de Trabajo', 'url'=>array('/ofertasLaborales/index')),
                                 array('label'=>'Acerca de', 'url'=>array('/site/page', 'view'=>'about')),
 				array('label'=>'Contacto', 'url'=>array('/site/contact')),                                
 				array('label'=>'Registrarse', 'url'=>array('/usuarios/pcreate')),                                
