@@ -62,8 +62,7 @@ class UsuariosController extends Controller
 	 */
 	public function actionCreate($tipo)
 	{
-		
-		$model=new Usuarios;
+		$model= new Usuarios;
                 $model1 = new Docentes;
                 $model2 = new Empresas;
                 $model3 = new Estudiantes;
@@ -73,7 +72,7 @@ class UsuariosController extends Controller
 		{
 			$model->attributes=$_POST['Usuarios'];
                         $model->username = intval(preg_replace("/[^0-9]/", "", $_POST['rut_demo_2']));
-			if(isset($_POST['Docentes']))
+                        if(isset($_POST['Docentes']) && $busqueda == null)
 			{
                                 $model1->attributes=$_POST['Docentes'];
                                 $model1->rut = $model->username;
@@ -86,7 +85,8 @@ class UsuariosController extends Controller
                                         $model1->deleteByPk($model->id);
                                 }
 			}
-			if(isset($_POST['Empresas']))
+                        
+			if(isset($_POST['Empresas']) && $busqueda == null)
 			{
 				if($model->save()){
                                 	$model2->attributes=$_POST['Empresas'];
@@ -94,19 +94,18 @@ class UsuariosController extends Controller
                             		if($model2->save())
 						$this->redirect(array('site/index'));
                         	}
-                                                                else
+                                else
                                 {
                                         $model1->deleteByPk($model2->pk);
                                         $model1->deleteByPk($model->id);
                                 }
 			}
 			
-			if(isset($_POST['Estudiantes']))
+			if(isset($_POST['Estudiantes']) && $busqueda == null)
 			{
 				if($model->save()){
                                 	$model3->attributes=$_POST['Estudiantes'];
                                 	$model3->rut = $model->username;
-                                        
                                         if($model3->validate()){
                                             if($model3->save())
                                             $cv = CUploadedFile::getInstance ($model3, 'archivo_curriculum');
@@ -118,15 +117,13 @@ class UsuariosController extends Controller
                                         
                             		
                         	}
-                          else
+                                else
                                 {
                                         $model3->deleteByPk($model3->pk);
                                         $model3->deleteByPk($model->id);
                                 }
-			}
 		}
-
-		$this->render('create',array('model'=>$model,'model1'=>$model1,'model2'=>$model2,'model3'=>$model3,'tipo'=>$tipo));
+                $this->render('create',array('model'=>$model,'model1'=>$model1,'model2'=>$model2,'model3'=>$model3,'tipo'=>$tipo));
 	}
 
 	/**
