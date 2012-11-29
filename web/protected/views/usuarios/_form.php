@@ -6,8 +6,7 @@
 
 <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
 <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/assets/7b79631/Rut/jquery.Rut.js'); ?>
-<script src="jvalidate/js/jquery_1.4.js" type="text/javascript"><!--mce:0--><!--mce:0--></script>
-<script src="jvalidate/js/jquery_validate.js" type="text/javascript"><!--mce:1--><!--mce:1--></script>
+<!-- si van a implementar jquery haganlo con registerScriptFile y que los script de los demás. -->
 <script type="text/javascript">
 $(document).ready(function(){
 $('#rut_demo_2').Rut({
@@ -66,7 +65,7 @@ $("#content > ul").tabs();
                        Nota: Sin puntos ni guion.<br />
                        Ej: 171548928
                     </p>
-                    <?php echo $form->textField($model,'username',array('id'=>'rut_demo_2','name'=>'rut_demo_2')); ?>
+                    <?php echo $form->textField($model,'username',array('id'=>'rut_demo_2','name'=>'rut_demo_2', 'required'=>'required')); ?>
                     <?php echo $form->error($model,'username'); ?>
                 </div>
                 <div class="columna">
@@ -82,7 +81,7 @@ $("#content > ul").tabs();
                     <p class="hint">
                        Nota: 5 min, 40 Max.
                     </p>
-                    <?php echo $form->passwordField($model,'password',array('size'=>20,'maxlength'=>40)); ?>
+                    <?php echo $form->passwordField($model,'password',array('size'=>20, 'maxlength'=>40, 'required'=>'required')); ?>
                     <?php echo $form->error($model,'password'); ?>
                 </div>
                 <div class="columna">
@@ -99,7 +98,7 @@ $("#content > ul").tabs();
                         <p class="hint">
                             Ej: Marcelo Fernando.
                         </p>
-                        <?php echo $form->textField(Docentes::model(),'nombres'); ?>
+                        <?php echo $form->textField(Docentes::model(),'nombres', array('required'=>'required')); ?>
                         <?php echo $form->error(Docentes::model(),'nombres'); ?>
                 </div>
 
@@ -108,7 +107,7 @@ $("#content > ul").tabs();
                         <p class="hint">
                             Ej: Perez Gonzales.
                         </p>
-                        <?php echo $form->textField(Docentes::model(),'apellidos'); ?>
+                        <?php echo $form->textField(Docentes::model(),'apellidos', array('required'=>'required')); ?>
                         <?php echo $form->error(Docentes::model(),'apellidos'); ?>
                 </div>
 
@@ -117,7 +116,7 @@ $("#content > ul").tabs();
                         <p class="hint">
                             Ej: dd/mm/aa.
                         </p>
-                        <?php echo $form->dateField(Docentes::model(),'fecha_nacimiento'); ?>
+                        <?php echo $form->dateField(Docentes::model(),'fecha_nacimiento', array('required'=>'required')); ?>
                         <?php echo $form->error(Docentes::model(),'fecha_nacimiento'); ?>
                 </div>
 
@@ -129,7 +128,7 @@ $("#content > ul").tabs();
 
                 <div class="row">
                         <?php echo $form->labelEx(Docentes::model(),'Direccion: <span class="required">*</span>'); ?>
-                        <?php echo $form->textArea(Docentes::model(),'direccion',array('size'=>255,'maxlength'=>255)); ?>
+                        <?php echo $form->textArea(Docentes::model(),'direccion',array('size'=>255,'maxlength'=>255, 'required'=>'required')); ?>
                         <?php echo $form->error(Docentes::model(),'direccion'); ?>
                 </div>
 
@@ -137,7 +136,7 @@ $("#content > ul").tabs();
                         <?php echo $form->labelEx(Docentes::model(),'Comuna: <span class="required">*</span>'); ?>
                         <?php 
                               $datos = CHtml::listData(Comunas::model()->findAll(),'pk','nombre');
-                              echo $form->DropDownList(Docentes::model(),'comuna_id',$datos, array('empty'=>'Seleccione una Comuna'));
+                              echo $form->DropDownList(Docentes::model(),'comuna_id',$datos, array('empty'=>'Seleccione una Comuna', 'required'=>'required'));
                         ?>
                         <?php echo $form->error(Docentes::model(),'comuna_id'); ?>
                 </div>
@@ -146,7 +145,7 @@ $("#content > ul").tabs();
                         <?php echo $form->labelEx(Docentes::model(),'Departamentos: <span class="required">*</span>'); ?>
                         <?php 
                               $datos = CHtml::listData(Departamentos::model()->findAll(),'pk','departamento');
-                              echo $form->DropDownList(Docentes::model(),'departamento_fk',$datos, array('empty'=>'Seleccione un Departamento'));
+                              echo $form->DropDownList(Docentes::model(),'departamento_fk',$datos, array('empty'=>'Seleccione un Departamento', 'required'=>'required'));
                         ?>
                         <?php echo $form->error(Docentes::model(),'departamento_fk'); ?>
                 </div>
@@ -155,7 +154,7 @@ $("#content > ul").tabs();
                         <?php echo $form->labelEx(Docentes::model(),'Estado Civil: <span class="required">*</span>'); ?>
                         <?php 
                               $datos = CHtml::listData(EstadosCiviles::model()->findAll(),'pk','estado');
-                              echo $form->DropDownList(Docentes::model(),'ec_fk',$datos, array('empty'=>'Seleccione un Estado Civil'));
+                              echo $form->DropDownList(Docentes::model(),'ec_fk',$datos, array('empty'=>'Seleccione un Estado Civil', 'required'=>'required'));
                         ?>
                         <?php echo $form->error(Docentes::model(),'ec_fk'); ?>
                 </div>
@@ -165,7 +164,7 @@ $("#content > ul").tabs();
                         <p class="hint">
                             Nota: Celular de contacto del alumno.
                         </p>
-                        <?php echo $form->textField(Docentes::model(),'celular'); ?>
+                        <?php echo $form->textField(Docentes::model(), 'celular', array('required'=>'required')); ?>
                         <?php echo $form->error(Docentes::model(),'celular'); ?>
                 </div>
 
@@ -174,7 +173,7 @@ $("#content > ul").tabs();
                         <p class="hint">
                             Nota: Telefono fijo de contacto.
                         </p>
-                        <?php echo $form->textField(Docentes::model(),'telefono'); ?>
+                        <?php echo $form->textField(Docentes::model(), 'telefono', array('required'=>'required')); ?>
                         <?php echo $form->error(Docentes::model(),'telefono'); ?>
                 </div>
 
@@ -183,7 +182,7 @@ $("#content > ul").tabs();
                         <p class="hint">
                             Nota: E-mail de Contacto.
                         </p>
-                        <?php echo $form->textField(Docentes::model(),'email'); ?>
+                        <?php echo $form->textField(Docentes::model(), 'email', array('required'=>'required')); ?>
                         <?php echo $form->error(Docentes::model(),'email'); ?>
                 </div>
         <?php

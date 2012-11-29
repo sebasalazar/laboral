@@ -72,21 +72,21 @@ class UsuariosController extends Controller
 		{
 			$model->attributes=$_POST['Usuarios'];
                         $model->username = intval(preg_replace("/[^0-9]/", "", $_POST['rut_demo_2']));
-                        if(isset($_POST['Docentes']) && $busqueda == null)
+                        if(isset($_POST['Docentes']))
 			{
                                 $model1->attributes=$_POST['Docentes'];
                                 $model1->rut = $model->username;
-				if($model1->save() && $model->save()){
-					$this->redirect(array('site/index'));
-                        	}
-                                else
-                                {
-                                        $model1->deleteByPk($model1->pk);
-                                        $model1->deleteByPk($model->id);
-                                }
+                                    if($model1->save() && $model->save()){
+                                            $this->redirect(array('site/index'));
+                                    }
+                                    else
+                                    {
+                                            $model1->deleteByPk($model1->pk);
+                                            $model1->deleteByPk($model->id);
+                                    }
 			}
                         
-			if(isset($_POST['Empresas']) && $busqueda == null)
+			if(isset($_POST['Empresas']))
 			{
 				if($model->save()){
                                 	$model2->attributes=$_POST['Empresas'];
@@ -100,21 +100,19 @@ class UsuariosController extends Controller
                                         $model1->deleteByPk($model->id);
                                 }
 			}
-			
-			if(isset($_POST['Estudiantes']) && $busqueda == null)
+			if(isset($_POST['Estudiantes']))
 			{
 				if($model->save()){
                                 	$model3->attributes=$_POST['Estudiantes'];
                                 	$model3->rut = $model->username;
                                         if($model3->validate()){
                                             if($model3->save())
-                                            $cv = CUploadedFile::getInstance ($model3, 'archivo_curriculum');
+                                                $cv = CUploadedFile::getInstance ($model3, 'archivo_curriculum');
                                             if(!empty($cv)){
                                                 $cv->saveAs('cv/' . $cv);
                                             }
 						$this->redirect(array('site/index'));
-                                        }
-                                        
+                                        } 
                             		
                         	}
                                 else
@@ -122,6 +120,7 @@ class UsuariosController extends Controller
                                         $model3->deleteByPk($model3->pk);
                                         $model3->deleteByPk($model->id);
                                 }
+                        }
 		}
                 $this->render('create',array('model'=>$model,'model1'=>$model1,'model2'=>$model2,'model3'=>$model3,'tipo'=>$tipo));
 	}

@@ -7104,3 +7104,231 @@ Stack trace:
 REQUEST_URI=/web/index.php?r=usuarios/create&tipo=3
 in /opt/lampp/htdocs/web/protected/controllers/UsuariosController.php (72)
 in /opt/lampp/htdocs/web/index.php (13)
+2012/11/29 20:37:23 [error] [php] Undefined variable: busqueda (/opt/lampp/htdocs/web/protected/controllers/UsuariosController.php:75)
+Stack trace:
+#0 /opt/lampp/htdocs/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#1 /opt/lampp/htdocs/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#2 /opt/lampp/htdocs/web/yii/framework/web/filters/CFilterChain.php(134): UsuariosController->runAction()
+#3 /opt/lampp/htdocs/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#4 /opt/lampp/htdocs/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#5 /opt/lampp/htdocs/web/yii/framework/web/filters/CInlineFilter.php(59): UsuariosController->filterAccessControl()
+#6 /opt/lampp/htdocs/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#7 /opt/lampp/htdocs/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#8 /opt/lampp/htdocs/web/yii/framework/web/CController.php(266): UsuariosController->runActionWithFilters()
+#9 /opt/lampp/htdocs/web/yii/framework/web/CWebApplication.php(283): UsuariosController->run()
+#10 /opt/lampp/htdocs/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#11 /opt/lampp/htdocs/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#12 /opt/lampp/htdocs/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/web/index.php?r=usuarios/create&tipo=3
+in /opt/lampp/htdocs/web/protected/controllers/UsuariosController.php (75)
+in /opt/lampp/htdocs/web/index.php (13)
+2012/11/29 20:37:35 [error] [php] Undefined variable: busqueda (/opt/lampp/htdocs/web/protected/controllers/UsuariosController.php:75)
+Stack trace:
+#0 /opt/lampp/htdocs/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#1 /opt/lampp/htdocs/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#2 /opt/lampp/htdocs/web/yii/framework/web/filters/CFilterChain.php(134): UsuariosController->runAction()
+#3 /opt/lampp/htdocs/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#4 /opt/lampp/htdocs/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#5 /opt/lampp/htdocs/web/yii/framework/web/filters/CInlineFilter.php(59): UsuariosController->filterAccessControl()
+#6 /opt/lampp/htdocs/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#7 /opt/lampp/htdocs/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#8 /opt/lampp/htdocs/web/yii/framework/web/CController.php(266): UsuariosController->runActionWithFilters()
+#9 /opt/lampp/htdocs/web/yii/framework/web/CWebApplication.php(283): UsuariosController->run()
+#10 /opt/lampp/htdocs/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#11 /opt/lampp/htdocs/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#12 /opt/lampp/htdocs/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/web/index.php?r=usuarios/create&tipo=3
+in /opt/lampp/htdocs/web/protected/controllers/UsuariosController.php (75)
+in /opt/lampp/htdocs/web/index.php (13)
+2012/11/29 20:38:50 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "docentes_rut_key"
+DETAIL:  Key (rut)=(174018367) already exists.. The SQL statement executed was: INSERT INTO "docentes" ("genero", "nombres", "apellidos", "fecha_nacimiento", "direccion", "comuna_id", "departamento_fk", "ec_fk", "celular", "telefono", "email", "rut") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11).
+in /opt/lampp/htdocs/web/protected/controllers/UsuariosController.php (80)
+in /opt/lampp/htdocs/web/index.php (13)
+2012/11/29 20:38:50 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "docentes_rut_key"
+DETAIL:  Key (rut)=(174018367) already exists.. The SQL statement executed was: INSERT INTO "docentes" ("genero", "nombres", "apellidos", "fecha_nacimiento", "direccion", "comuna_id", "departamento_fk", "ec_fk", "celular", "telefono", "email", "rut") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11)' in /opt/lampp/htdocs/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /opt/lampp/htdocs/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /opt/lampp/htdocs/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /opt/lampp/htdocs/web/protected/controllers/UsuariosController.php(80): CActiveRecord->save()
+#3 [internal function]: UsuariosController->actionCreate('3')
+#4 /opt/lampp/htdocs/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(UsuariosController), Array)
+#5 /opt/lampp/htdocs/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(UsuariosController), Object(ReflectionMethod), Array)
+#6 /opt/lampp/htdocs/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /opt/lampp/htdocs/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /opt/lampp/htdocs/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /opt/lampp/htdocs/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 /opt/lampp/htdocs/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /opt/lampp/htdocs/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /opt/lampp/htdocs/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /opt/lampp/htdocs/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /opt/lampp/htdocs/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#15 /opt/lampp/htdocs/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('usuarios/create')
+#16 /opt/lampp/htdocs/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /opt/lampp/htdocs/web/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/web/index.php?r=usuarios/create&tipo=3
+HTTP_REFERER=http://localhost/web/index.php?r=usuarios/create&tipo=3
+---
+2012/11/29 20:39:58 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "docentes_rut_key"
+DETAIL:  Key (rut)=(174018367) already exists.. The SQL statement executed was: INSERT INTO "docentes" ("genero", "nombres", "apellidos", "fecha_nacimiento", "direccion", "comuna_id", "departamento_fk", "ec_fk", "celular", "telefono", "email", "rut") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11).
+in /opt/lampp/htdocs/web/protected/controllers/UsuariosController.php (80)
+in /opt/lampp/htdocs/web/index.php (13)
+2012/11/29 20:39:58 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "docentes_rut_key"
+DETAIL:  Key (rut)=(174018367) already exists.. The SQL statement executed was: INSERT INTO "docentes" ("genero", "nombres", "apellidos", "fecha_nacimiento", "direccion", "comuna_id", "departamento_fk", "ec_fk", "celular", "telefono", "email", "rut") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11)' in /opt/lampp/htdocs/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /opt/lampp/htdocs/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /opt/lampp/htdocs/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /opt/lampp/htdocs/web/protected/controllers/UsuariosController.php(80): CActiveRecord->save()
+#3 [internal function]: UsuariosController->actionCreate('3')
+#4 /opt/lampp/htdocs/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(UsuariosController), Array)
+#5 /opt/lampp/htdocs/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(UsuariosController), Object(ReflectionMethod), Array)
+#6 /opt/lampp/htdocs/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /opt/lampp/htdocs/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /opt/lampp/htdocs/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /opt/lampp/htdocs/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 /opt/lampp/htdocs/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /opt/lampp/htdocs/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /opt/lampp/htdocs/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /opt/lampp/htdocs/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /opt/lampp/htdocs/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#15 /opt/lampp/htdocs/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('usuarios/create')
+#16 /opt/lampp/htdocs/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /opt/lampp/htdocs/web/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/web/index.php?r=usuarios/create&tipo=3
+HTTP_REFERER=http://localhost/web/index.php?r=usuarios/create&tipo=3
+---
+2012/11/29 20:40:00 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "docentes_rut_key"
+DETAIL:  Key (rut)=(174018367) already exists.. The SQL statement executed was: INSERT INTO "docentes" ("genero", "nombres", "apellidos", "fecha_nacimiento", "direccion", "comuna_id", "departamento_fk", "ec_fk", "celular", "telefono", "email", "rut") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11).
+in /opt/lampp/htdocs/web/protected/controllers/UsuariosController.php (80)
+in /opt/lampp/htdocs/web/index.php (13)
+2012/11/29 20:40:00 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "docentes_rut_key"
+DETAIL:  Key (rut)=(174018367) already exists.. The SQL statement executed was: INSERT INTO "docentes" ("genero", "nombres", "apellidos", "fecha_nacimiento", "direccion", "comuna_id", "departamento_fk", "ec_fk", "celular", "telefono", "email", "rut") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11)' in /opt/lampp/htdocs/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /opt/lampp/htdocs/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /opt/lampp/htdocs/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /opt/lampp/htdocs/web/protected/controllers/UsuariosController.php(80): CActiveRecord->save()
+#3 [internal function]: UsuariosController->actionCreate('3')
+#4 /opt/lampp/htdocs/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(UsuariosController), Array)
+#5 /opt/lampp/htdocs/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(UsuariosController), Object(ReflectionMethod), Array)
+#6 /opt/lampp/htdocs/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /opt/lampp/htdocs/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /opt/lampp/htdocs/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /opt/lampp/htdocs/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 /opt/lampp/htdocs/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /opt/lampp/htdocs/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /opt/lampp/htdocs/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /opt/lampp/htdocs/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /opt/lampp/htdocs/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#15 /opt/lampp/htdocs/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('usuarios/create')
+#16 /opt/lampp/htdocs/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /opt/lampp/htdocs/web/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/web/index.php?r=usuarios/create&tipo=3
+HTTP_REFERER=http://localhost/web/index.php?r=usuarios/create&tipo=3
+---
+2012/11/29 20:43:30 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "docentes_rut_key"
+DETAIL:  Key (rut)=(174018367) already exists.. The SQL statement executed was: INSERT INTO "docentes" ("genero", "nombres", "apellidos", "fecha_nacimiento", "direccion", "comuna_id", "departamento_fk", "ec_fk", "celular", "telefono", "email", "rut") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11).
+in /opt/lampp/htdocs/web/protected/controllers/UsuariosController.php (79)
+in /opt/lampp/htdocs/web/index.php (13)
+2012/11/29 20:43:30 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "docentes_rut_key"
+DETAIL:  Key (rut)=(174018367) already exists.. The SQL statement executed was: INSERT INTO "docentes" ("genero", "nombres", "apellidos", "fecha_nacimiento", "direccion", "comuna_id", "departamento_fk", "ec_fk", "celular", "telefono", "email", "rut") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11)' in /opt/lampp/htdocs/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /opt/lampp/htdocs/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /opt/lampp/htdocs/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /opt/lampp/htdocs/web/protected/controllers/UsuariosController.php(79): CActiveRecord->save()
+#3 [internal function]: UsuariosController->actionCreate('3')
+#4 /opt/lampp/htdocs/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(UsuariosController), Array)
+#5 /opt/lampp/htdocs/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(UsuariosController), Object(ReflectionMethod), Array)
+#6 /opt/lampp/htdocs/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /opt/lampp/htdocs/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /opt/lampp/htdocs/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /opt/lampp/htdocs/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 /opt/lampp/htdocs/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /opt/lampp/htdocs/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /opt/lampp/htdocs/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /opt/lampp/htdocs/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /opt/lampp/htdocs/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#15 /opt/lampp/htdocs/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('usuarios/create')
+#16 /opt/lampp/htdocs/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /opt/lampp/htdocs/web/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/web/index.php?r=usuarios/create&tipo=3
+HTTP_REFERER=http://localhost/web/index.php?r=usuarios/create&tipo=3
+---
+2012/11/29 20:44:05 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "docentes_rut_key"
+DETAIL:  Key (rut)=(174018367) already exists.. The SQL statement executed was: INSERT INTO "docentes" ("genero", "nombres", "apellidos", "fecha_nacimiento", "direccion", "comuna_id", "departamento_fk", "ec_fk", "celular", "telefono", "email", "rut") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11).
+in /opt/lampp/htdocs/web/protected/controllers/UsuariosController.php (80)
+in /opt/lampp/htdocs/web/index.php (13)
+2012/11/29 20:44:05 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "docentes_rut_key"
+DETAIL:  Key (rut)=(174018367) already exists.. The SQL statement executed was: INSERT INTO "docentes" ("genero", "nombres", "apellidos", "fecha_nacimiento", "direccion", "comuna_id", "departamento_fk", "ec_fk", "celular", "telefono", "email", "rut") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11)' in /opt/lampp/htdocs/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /opt/lampp/htdocs/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /opt/lampp/htdocs/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /opt/lampp/htdocs/web/protected/controllers/UsuariosController.php(80): CActiveRecord->save()
+#3 [internal function]: UsuariosController->actionCreate('3')
+#4 /opt/lampp/htdocs/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(UsuariosController), Array)
+#5 /opt/lampp/htdocs/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(UsuariosController), Object(ReflectionMethod), Array)
+#6 /opt/lampp/htdocs/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /opt/lampp/htdocs/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /opt/lampp/htdocs/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /opt/lampp/htdocs/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 /opt/lampp/htdocs/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /opt/lampp/htdocs/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /opt/lampp/htdocs/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /opt/lampp/htdocs/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /opt/lampp/htdocs/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#15 /opt/lampp/htdocs/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('usuarios/create')
+#16 /opt/lampp/htdocs/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /opt/lampp/htdocs/web/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/web/index.php?r=usuarios/create&tipo=3
+HTTP_REFERER=http://localhost/web/index.php?r=usuarios/create&tipo=3
+---
+2012/11/29 20:46:35 [error] [php] Undefined index: Usuariosaaa (/opt/lampp/htdocs/web/protected/controllers/UsuariosController.php:73)
+Stack trace:
+#0 /opt/lampp/htdocs/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#1 /opt/lampp/htdocs/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#2 /opt/lampp/htdocs/web/yii/framework/web/filters/CFilterChain.php(134): UsuariosController->runAction()
+#3 /opt/lampp/htdocs/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#4 /opt/lampp/htdocs/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#5 /opt/lampp/htdocs/web/yii/framework/web/filters/CInlineFilter.php(59): UsuariosController->filterAccessControl()
+#6 /opt/lampp/htdocs/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#7 /opt/lampp/htdocs/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#8 /opt/lampp/htdocs/web/yii/framework/web/CController.php(266): UsuariosController->runActionWithFilters()
+#9 /opt/lampp/htdocs/web/yii/framework/web/CWebApplication.php(283): UsuariosController->run()
+#10 /opt/lampp/htdocs/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#11 /opt/lampp/htdocs/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#12 /opt/lampp/htdocs/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/web/index.php?r=usuarios/create&tipo=3
+in /opt/lampp/htdocs/web/protected/controllers/UsuariosController.php (73)
+in /opt/lampp/htdocs/web/index.php (13)
+2012/11/29 20:46:55 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "docentes_rut_key"
+DETAIL:  Key (rut)=(174018367) already exists.. The SQL statement executed was: INSERT INTO "docentes" ("genero", "nombres", "apellidos", "fecha_nacimiento", "direccion", "comuna_id", "departamento_fk", "ec_fk", "celular", "telefono", "email", "rut") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11).
+in /opt/lampp/htdocs/web/protected/controllers/UsuariosController.php (80)
+in /opt/lampp/htdocs/web/index.php (13)
+2012/11/29 20:46:55 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "docentes_rut_key"
+DETAIL:  Key (rut)=(174018367) already exists.. The SQL statement executed was: INSERT INTO "docentes" ("genero", "nombres", "apellidos", "fecha_nacimiento", "direccion", "comuna_id", "departamento_fk", "ec_fk", "celular", "telefono", "email", "rut") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11)' in /opt/lampp/htdocs/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /opt/lampp/htdocs/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /opt/lampp/htdocs/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /opt/lampp/htdocs/web/protected/controllers/UsuariosController.php(80): CActiveRecord->save()
+#3 [internal function]: UsuariosController->actionCreate('3')
+#4 /opt/lampp/htdocs/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(UsuariosController), Array)
+#5 /opt/lampp/htdocs/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(UsuariosController), Object(ReflectionMethod), Array)
+#6 /opt/lampp/htdocs/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /opt/lampp/htdocs/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /opt/lampp/htdocs/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /opt/lampp/htdocs/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 /opt/lampp/htdocs/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /opt/lampp/htdocs/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /opt/lampp/htdocs/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /opt/lampp/htdocs/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /opt/lampp/htdocs/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#15 /opt/lampp/htdocs/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('usuarios/create')
+#16 /opt/lampp/htdocs/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /opt/lampp/htdocs/web/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/web/index.php?r=usuarios/create&tipo=3
+HTTP_REFERER=http://localhost/web/index.php?r=usuarios/create&tipo=3
+---
