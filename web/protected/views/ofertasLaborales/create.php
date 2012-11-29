@@ -33,6 +33,6 @@ if(Yii::app()->user->getModel(Yii::app()->user->id) != null)
 
 ?>
 
-<h1>Create OfertasLaborales</h1>
+<h1>Publicar un Oferta Laboral</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -122,10 +122,9 @@ class OfertasController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Ofertas');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		//$dataProvider=new CActiveDataProvider('Ofertas');
+                $model = OfertasLaborales::model()->findAll();
+		$this->render('index',array('model'=>$model));
 	}
 
 	/**

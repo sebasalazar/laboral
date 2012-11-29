@@ -6,35 +6,32 @@ $this->breadcrumbs=array(
 	'Ofertas Laborales',
 );
 
-if(Yii::app()->user->getModel(Yii::app()->user->id) != null)
-{
-    $tipo = Yii::app()->user->getTipoUsuario(Yii::app()->user->name);
-    if($tipo == 3){
-        $this->menu=array(
-                array('label'=>'Lista Ofertas Laborales', 'url'=>array('index')),
-                array('label'=>'Create Ofertas Laborales', 'url'=>array('create')),
-        );
-    }
-    elseif ($tipo == 2) 
-    {
-        $this->menu=array(
-                array('label'=>'Lista Ofertas Laborales', 'url'=>array('index')),
-                array('label'=>'Create Ofertas Laborales', 'url'=>array('create')),
-        );
-    }
-    elseif($tipo == 1)
-    {
-        $this->menu=array(
-                array('label'=>'Lista Ofertas Laborales', 'url'=>array('index')),
-        );
-    }
-}
-
 ?>
 
 <h1>Ofertas Laborales</h1>
 
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-)); ?>
+<?php 
+    $this->widget('ext.groupgridview.GroupGridView', array(
+      'id' => 'grid1',
+      'dataProvider' => $dp,
+      'mergeColumns' => array('fecha_publicacion', 'rubro_fk'),
+      'columns' => array(
+          'fecha_publicacion',
+          array(
+              'header'=>'Rubro',
+              'name'=>'rubro_fk',
+              'value' => '$data->rubroFk->rubro',
+          ),
+          'cargo',
+          array(
+              'header'=>'Nivel de estudios Deseable',
+              'name'=>'nivel_estudio_fk',
+              'value' => '$data->nivelEstudioFk->estudios',
+          ),
+        array(
+        'class'=>'CButtonColumn',
+        'template'=>'{view}',
+    ),    
+      ),
+    ));
+?>
