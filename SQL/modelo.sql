@@ -1,4 +1,4 @@
-BEGIN TRANSACTION;
+﻿BEGIN TRANSACTION;
 
 --
 -- Roles dentro del sistema
@@ -411,7 +411,7 @@ CREATE TABLE practicas (
     area_practica varchar(255),
     inicio_practica date NOT NULL,
     fin_practica date NOT NULL,
-    remuneración int,
+    remuneracion int,
     PRIMARY KEY(pk)
 );
 
