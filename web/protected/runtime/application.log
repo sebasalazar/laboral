@@ -1308,3 +1308,73 @@ Stack trace:
 REQUEST_URI=/web/index.php?r=ofertasLaborales/index
 HTTP_REFERER=http://localhost/web/index.php?r=ofertasLaborales/create
 ---
+2012/11/30 23:20:18 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" and accepting
+	TCP/IP connections on port 5432?' in C:\xampp\htdocs\webGit\yii\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\xampp\htdocs\webGit\yii\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\webGit\yii\framework\db\CDbConnection.php(309): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\webGit\yii\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\webGit\yii\framework\base\CApplication.php(431): CModule->getComponent('db')
+#4 C:\xampp\htdocs\webGit\yii\framework\db\ar\CActiveRecord.php(624): CApplication->getDb()
+#5 C:\xampp\htdocs\webGit\yii\framework\db\ar\CActiveRecord.php(2311): CActiveRecord->getDbConnection()
+#6 C:\xampp\htdocs\webGit\yii\framework\db\ar\CActiveRecord.php(388): CActiveRecordMetaData->__construct(Object(Usuarios))
+#7 C:\xampp\htdocs\webGit\protected\models\Usuarios.php(22): CActiveRecord::model('Usuarios')
+#8 C:\xampp\htdocs\webGit\protected\components\WebUser.php(11): Usuarios::model()
+#9 C:\xampp\htdocs\webGit\protected\views\layouts\main.php(27): WebUser->getModel(NULL)
+#10 C:\xampp\htdocs\webGit\yii\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#11 C:\xampp\htdocs\webGit\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\webGit\yii\framework\web\widgets\CContentDecorator.php(77): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\webGit\yii\framework\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate('<div id="conten...')
+#14 C:\xampp\htdocs\webGit\yii\framework\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput('<div id="conten...')
+#15 C:\xampp\htdocs\webGit\yii\framework\web\CBaseController.php(207): COutputProcessor->run()
+#16 C:\xampp\htdocs\webGit\yii\framework\web\CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#17 C:\xampp\htdocs\webGit\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#18 C:\xampp\htdocs\webGit\yii\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#19 C:\xampp\htdocs\webGit\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#20 C:\xampp\htdocs\webGit\yii\framework\web\CController.php(785): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#21 C:\xampp\htdocs\webGit\protected\controllers\SiteController.php(32): CController->render('index')
+#22 C:\xampp\htdocs\webGit\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#23 C:\xampp\htdocs\webGit\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#24 C:\xampp\htdocs\webGit\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#25 C:\xampp\htdocs\webGit\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 C:\xampp\htdocs\webGit\yii\framework\web\CWebApplication.php(283): CController->run('')
+#27 C:\xampp\htdocs\webGit\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('')
+#28 C:\xampp\htdocs\webGit\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#29 C:\xampp\htdocs\webGit\index.php(13): CApplication->run()
+#30 {main}
+REQUEST_URI=/webGit/
+---
+2012/12/01 01:24:39 [error] [exception.CException] exception 'CException' with message 'Property "Practicas.Empresa" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(144): CComponent->__get('Empresa')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2158): CActiveRecord->__get('Empresa')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1515): CHtml::resolveValue(Object(Practicas), 'Empresa')
+#3 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(764): CHtml::activeDropDownList(Object(Practicas), 'Empresa', Array, Array)
+#4 C:\xampp\htdocs\webGit\protected\views\practicas\_form.php(22): CActiveForm->dropDownList(Object(Practicas), 'Empresa', Array, Array)
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\webGit\protected\views\practicas\create.php(19): CController->renderPartial('_form', Array)
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('create', Array, true)
+#13 C:\xampp\htdocs\webGit\protected\controllers\PracticasController.php(79): CController->render('create', Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): PracticasController->actionCreate()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('create')
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('practicas/creat...')
+#25 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\webGit\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/webGit/index.php?r=practicas/create
+HTTP_REFERER=http://localhost/webGit/index.php
+---

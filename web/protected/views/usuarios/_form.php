@@ -213,7 +213,10 @@ $("#content > ul").tabs();
 
                 <div class="row">
                         <?php echo $form->labelEx(Empresas::model(),'comuna_fk'); ?>
-                        <?php echo $form->textField(Empresas::model(),'comuna_fk'); ?>
+                        <?php
+                              $datos = CHtml::listData(Comunas::model()->findAll(),'pk','nombre');
+                              echo $form->DropDownList(Empresas::model(),'comuna_fk',$datos,array('empty'=>'Seleccione una Comuna'));
+                        ?>
                         <?php echo $form->error(Empresas::model(),'comuna_fk'); ?>
                 </div>
 
@@ -224,7 +227,7 @@ $("#content > ul").tabs();
                 </div>
 
                 <div class="row">
-                        <?php echo $form->labelEx(Empresas::model(),'telefono: <span class="required">*</span>'); ?>
+                        <?php echo $form->labelEx(Empresas::model(),'telefono'); ?>
                         <?php echo $form->textField(Empresas::model(),'telefono',array('size'=>50,'maxlength'=>50)); ?>
                         <?php echo $form->error(Empresas::model(),'telefono'); ?>
                 </div>
@@ -257,6 +260,7 @@ $("#content > ul").tabs();
             }
         ?>
         
+       
 	<?php if($tipoUsuario == 1) // usuario "alumno"
               {
         ?>   
