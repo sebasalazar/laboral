@@ -28,12 +28,6 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'rut'); ?>
-		<?php echo $form->textField($model,'rut'); ?>
-		<?php echo $form->error($model,'rut'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->labelEx($model,'fecha_nacimiento'); ?>
 		<?php echo $form->textField($model,'fecha_nacimiento'); ?>
 		<?php echo $form->error($model,'fecha_nacimiento'); ?>

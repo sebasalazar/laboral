@@ -29,8 +29,9 @@ $this->breadcrumbs=array(
               'value' => '$data->nivelEstudioFk->estudios',
           ),
         array(
-        'class'=>'CButtonColumn',
-        'template'=>'{view}',
+            'header'=>'Revisar',
+            'class'=>'CButtonColumn',
+            'template'=>'{view}',
     ),    
       ),
     ));

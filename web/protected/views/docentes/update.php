@@ -16,6 +16,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update Docentes <?php echo $model->pk; ?></h1>
+<h1>Actualizar Datos Personales del Usuario: <?php echo $model->rut; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -32,7 +32,7 @@ class DocentesController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','perfil'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -86,21 +86,24 @@ class DocentesController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
+            if(Yii::app()->user->getModelUsuarioCompletoId($id)->rut == Yii::app()->user->name)
+            {
+                    $model=$this->loadModel($id);
+                    if(isset($_POST['Docentes']))
+                    {
+                            $model->attributes=$_POST['Docentes'];
+                            if($model->save())
+                                    $this->redirect(array('view','id'=>$model->pk));
+                    }
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Docentes']))
-		{
-			$model->attributes=$_POST['Docentes'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->pk));
-		}
-
-		$this->render('update',array(
-			'model'=>$model,
-		));
+                    $this->render('update',array(
+                            'model'=>$model,
+                    ));
+            }
+            else
+            {
+                    throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
+            }
 	}
 
 	/**
@@ -155,7 +158,16 @@ class DocentesController extends Controller
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
 	}
-
+        
+        public function actionPerfil($id)
+        {
+            if($id == Yii::app()->user->name)
+                $this->render('perfil');
+            else
+                throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
+        }
+        
+        
 	/**
 	 * Performs the AJAX validation.
 	 * @param CModel the model to be validated
