@@ -31,25 +31,52 @@ if(Yii::app()->user->getModel(Yii::app()->user->id) != null)
 }
 ?>
 
-<h1>View OfertasLaborales #<?php echo $model->pk; ?></h1>
+<h1>Trabajo #<?php echo $model->pk; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'pk',
-		'empresa_fk',
-		'rubro_fk',
-		'nivel_estudio_fk',
-		'renta',
-		'vacantes',
-		'plazo',
+                'fecha_publicacion',
+                 array(
+                   'label'=>'Empresa: ',
+                   'value'=>$model->empresaFk->nombre,
+                 ),
+		array(
+                   'label'=>'Rubro: ',
+                   'value'=>$model->rubroFk->rubro,
+                 ),
+		array(
+                   'label'=>'Nivel Estudios Solicitados: ',
+                   'value'=>$model->nivelEstudioFk->estudios,
+                 ),
+		array(
+                   'label'=>'Renta: ',
+                   'value'=> '$'.$model->renta,
+                 ),
+		array(
+                   'label'=>'Numero de Vacantes: ',
+                   'value'=> $model->vacantes,
+                 ),
 		'descripcion',
-		'ubicacion',
-		'cargo',
-		'fecha_publicacion',
-		'beneficios',
-		'jornada_fk',
-		'contrato_fk',
-		'activo',
+		array(
+                   'label'=>'Ubicación: ',
+                   'value'=> $model->ubicacion,
+                 ),
+		array(
+                   'label'=>'Cargo a Postular: ',
+                   'value'=> $model->cargo,
+                 ),
+		array(
+                   'label'=>'Beneficios: ',
+                   'value'=> $model->beneficios,
+                 ),
+		array(
+                   'label'=>'Tipo Jornada: ',
+                   'value'=> $model->jornadaFk->jornada,
+                 ),
+		array(
+                   'label'=>'Beneficios: ',
+                   'value'=> $model->contratoFk->contrato,
+                 ),
 	),
 )); ?>
