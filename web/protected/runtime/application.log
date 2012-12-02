@@ -5782,3 +5782,20 @@ Stack trace:
 REQUEST_URI=/web/index.php?r=ofertasLaborales/view&id=75
 HTTP_REFERER=http://localhost/web/index.php?r=ofertasLaborales/index
 ---
+2012/12/02 03:00:23 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /opt/lampp/htdocs/web/yii/framework/web/auth/CAccessControlFilter.php:170
+Stack trace:
+#0 /opt/lampp/htdocs/web/yii/framework/web/auth/CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 /opt/lampp/htdocs/web/yii/framework/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /opt/lampp/htdocs/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 /opt/lampp/htdocs/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 /opt/lampp/htdocs/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /opt/lampp/htdocs/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#6 /opt/lampp/htdocs/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /opt/lampp/htdocs/web/yii/framework/web/CWebApplication.php(283): CController->run('admin')
+#8 /opt/lampp/htdocs/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('docentes/admin')
+#9 /opt/lampp/htdocs/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /opt/lampp/htdocs/web/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/web/index.php?r=docentes/admin
+HTTP_REFERER=http://localhost/web/index.php?r=docentes/update&id=28
+---
