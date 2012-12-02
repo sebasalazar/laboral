@@ -32,11 +32,11 @@ class DocentesController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','perfil'),
+				'actions'=>array('update','perfil'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete','create'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -106,11 +106,6 @@ class DocentesController extends Controller
             }
 	}
 
-	/**
-	 * Deletes a particular model.
-	 * If deletion is successful, the browser will be redirected to the 'admin' page.
-	 * @param integer $id the ID of the model to be deleted
-	 */
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
@@ -131,9 +126,6 @@ class DocentesController extends Controller
 		));
 	}
 
-	/**
-	 * Manages all models.
-	 */
 	public function actionAdmin()
 	{
 		$model=new Docentes('search');
