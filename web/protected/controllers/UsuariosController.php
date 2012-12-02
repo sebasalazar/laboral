@@ -103,29 +103,26 @@ class UsuariosController extends Controller
 			
 			if(isset($_POST['Estudiantes']))
 			{
-				if($model->save()){
-                                	$model3->attributes=$_POST['Estudiantes'];
-                                	$model3->rut = $model->username;
-                                        
-                                        if($model3->validate()){
-                                            if($model3->save())
-                                            $cv = CUploadedFile::getInstance ($model3, 'archivo_curriculum');
-                                            if(!empty($cv)){
-                                                $cv->saveAs('cv/' . $cv);
-                                            }
-						$this->redirect(array('site/index'));
-                                        }
-                                        
-                            		
+                            $model3->attributes=$_POST['Estudiantes'];
+                            $model3->rut = $model->username;  
+                            $model3->archivo_curriculum = $model3->rut;
+                            if($model->validate() && $model3->validate()){
+                                if($model->save()){                                       
+                                    if($model3->save())
+                                        $cv = CUploadedFile::getInstance ($model3, 'archivo_curriculum');
+                                    if(!empty($cv)){
+                                        $cv->saveAs('cv/' . $model3->rut . '.pdf');
+                                    }
+                                        $this->redirect(array('site/index'));      
                         	}
-                          else
+                                else
                                 {
                                         $model3->deleteByPk($model3->pk);
                                         $model3->deleteByPk($model->id);
                                 }
+                            }
 			}
 		}
-
 		$this->render('create',array('model'=>$model,'model1'=>$model1,'model2'=>$model2,'model3'=>$model3,'tipo'=>$tipo));
 	}
 

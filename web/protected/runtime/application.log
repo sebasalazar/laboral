@@ -6816,3 +6816,267 @@ Stack trace:
 REQUEST_URI=/laboral/web/index.php?r=usuarios/create&tipo=1
 HTTP_REFERER=http://localhost/laboral/web/index.php?r=usuarios/create&tipo=1
 ---
+2012/11/27 19:36:51 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (108)
+in /var/www/laboral/web/index.php (13)
+2012/11/27 20:03:24 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (108)
+in /var/www/laboral/web/index.php (13)
+2012/11/27 20:08:38 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "usuarios_username_key"
+DETAIL:  Key (username)=(19) already exists.. The SQL statement executed was: INSERT INTO "usuarios" ("roles", "password", "username", "salt") VALUES (:yp0, :yp1, :yp2, :yp3).
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (107)
+in /var/www/laboral/web/index.php (13)
+2012/11/27 20:08:38 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "usuarios_username_key"
+DETAIL:  Key (username)=(19) already exists.. The SQL statement executed was: INSERT INTO "usuarios" ("roles", "password", "username", "salt") VALUES (:yp0, :yp1, :yp2, :yp3)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/UsuariosController.php(107): CActiveRecord->save()
+#3 [internal function]: UsuariosController->actionCreate('1')
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(UsuariosController), Array)
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(UsuariosController), Object(ReflectionMethod), Array)
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('usuarios/create')
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/laboral/web/index.php?r=usuarios/create&tipo=1
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=usuarios/create&tipo=1
+---
+2012/12/01 21:50:21 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for integer: "cristian". The SQL statement executed was: SELECT * FROM "usuarios" "t" WHERE username=? LIMIT 1.
+in /var/www/laboral/web/protected/components/UserIdentity.php (18)
+in /var/www/laboral/web/protected/models/LoginForm.php (52)
+in /var/www/laboral/web/protected/controllers/SiteController.php (94)
+2012/12/01 21:50:21 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for integer: "cristian". The SQL statement executed was: SELECT * FROM "usuarios" "t" WHERE username=? LIMIT 1' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/CDbCommand.php(408): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1291): CDbCommand->queryRow()
+#2 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1396): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/laboral/web/protected/components/UserIdentity.php(18): CActiveRecord->find('username=?', Array)
+#4 /var/www/laboral/web/protected/models/LoginForm.php(52): UserIdentity->authenticate()
+#5 /var/www/laboral/web/yii/framework/validators/CInlineValidator.php(43): LoginForm->authenticate('password', Array)
+#6 /var/www/laboral/web/yii/framework/validators/CValidator.php(214): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#7 /var/www/laboral/web/yii/framework/base/CModel.php(158): CValidator->validate(Object(LoginForm), NULL)
+#8 /var/www/laboral/web/protected/controllers/SiteController.php(94): CModel->validate()
+#9 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionLogin()
+#10 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/laboral/web/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#12 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('login')
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/login')
+#15 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /var/www/laboral/web/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/laboral/web/index.php?r=site/login
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=site/login
+---
+2012/12/01 21:50:21 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for integer: "cristian". The SQL statement executed was: SELECT * FROM "usuarios" "t" WHERE username=? LIMIT 1.
+in /var/www/laboral/web/protected/components/UserIdentity.php (18)
+in /var/www/laboral/web/protected/models/LoginForm.php (52)
+in /var/www/laboral/web/protected/controllers/SiteController.php (94)
+2012/12/01 21:50:21 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for integer: "cristian". The SQL statement executed was: SELECT * FROM "usuarios" "t" WHERE username=? LIMIT 1' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/CDbCommand.php(408): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1291): CDbCommand->queryRow()
+#2 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1396): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/laboral/web/protected/components/UserIdentity.php(18): CActiveRecord->find('username=?', Array)
+#4 /var/www/laboral/web/protected/models/LoginForm.php(52): UserIdentity->authenticate()
+#5 /var/www/laboral/web/yii/framework/validators/CInlineValidator.php(43): LoginForm->authenticate('password', Array)
+#6 /var/www/laboral/web/yii/framework/validators/CValidator.php(214): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#7 /var/www/laboral/web/yii/framework/base/CModel.php(158): CValidator->validate(Object(LoginForm), NULL)
+#8 /var/www/laboral/web/protected/controllers/SiteController.php(94): CModel->validate()
+#9 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionLogin()
+#10 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/laboral/web/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#12 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('login')
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/login')
+#15 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /var/www/laboral/web/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/laboral/web/index.php?r=site/login
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=site/login
+---
+2012/12/01 22:58:08 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "usuarios_username_key"
+DETAIL:  Key (username)=(19) already exists.. The SQL statement executed was: INSERT INTO "usuarios" ("roles", "password", "username", "salt") VALUES (:yp0, :yp1, :yp2, :yp3).
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (107)
+in /var/www/laboral/web/index.php (13)
+2012/12/01 22:58:08 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "usuarios_username_key"
+DETAIL:  Key (username)=(19) already exists.. The SQL statement executed was: INSERT INTO "usuarios" ("roles", "password", "username", "salt") VALUES (:yp0, :yp1, :yp2, :yp3)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/UsuariosController.php(107): CActiveRecord->save()
+#3 [internal function]: UsuariosController->actionCreate('1')
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(UsuariosController), Array)
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(UsuariosController), Object(ReflectionMethod), Array)
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('usuarios/create')
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/laboral/web/index.php?r=usuarios/create&tipo=1
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=usuarios/create&tipo=1
+---
+2012/12/01 23:00:25 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (108)
+in /var/www/laboral/web/index.php (13)
+2012/12/01 23:09:42 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (106)
+in /var/www/laboral/web/index.php (13)
+2012/12/01 23:09:42 [error] [exception.CException] exception 'CException' with message 'Estudiantes and its behaviors do not have a method or closure named "strlower".' in /var/www/laboral/web/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(226): CComponent->__call('strlower', Array)
+#1 /var/www/laboral/web/protected/controllers/UsuariosController.php(108): CActiveRecord->__call('strlower', Array)
+#2 /var/www/laboral/web/protected/controllers/UsuariosController.php(108): Estudiantes->strlower(NULL)
+#3 [internal function]: UsuariosController->actionCreate('1')
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(UsuariosController), Array)
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(UsuariosController), Object(ReflectionMethod), Array)
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('usuarios/create')
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/laboral/web/index.php?r=usuarios/create&tipo=1
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=usuarios/create&tipo=1
+---
+2012/12/01 23:17:42 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (106)
+in /var/www/laboral/web/index.php (13)
+2012/12/01 23:18:22 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (106)
+in /var/www/laboral/web/index.php (13)
+2012/12/01 23:19:06 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (106)
+in /var/www/laboral/web/index.php (13)
+2012/12/01 23:19:07 [error] [php] move_uploaded_file(): The second argument to copy() function cannot be a directory (/var/www/laboral/web/yii/framework/web/CUploadedFile.php:197)
+Stack trace:
+#0 unknown(0): UsuariosController->actionCreate()
+#1 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#2 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#3 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#4 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): UsuariosController->runAction()
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#7 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): UsuariosController->filterAccessControl()
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /var/www/laboral/web/yii/framework/web/CController.php(266): UsuariosController->runActionWithFilters()
+#11 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): UsuariosController->run()
+#12 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#13 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=usuarios/create&tipo=1
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (114)
+in /var/www/laboral/web/index.php (13)
+2012/12/01 23:22:14 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (106)
+in /var/www/laboral/web/index.php (13)
+2012/12/01 23:23:00 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (106)
+in /var/www/laboral/web/index.php (13)
+2012/12/01 23:28:03 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (106)
+in /var/www/laboral/web/index.php (13)
+2012/12/01 23:30:10 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (106)
+in /var/www/laboral/web/index.php (13)
+2012/12/01 23:31:56 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (106)
+in /var/www/laboral/web/index.php (13)
+2012/12/01 23:31:56 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "usuarios_username_key"
+DETAIL:  Key (username)=(19) already exists.. The SQL statement executed was: INSERT INTO "usuarios" ("roles", "password", "username", "salt") VALUES (:yp0, :yp1, :yp2, :yp3).
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (110)
+in /var/www/laboral/web/index.php (13)
+2012/12/01 23:31:56 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "usuarios_username_key"
+DETAIL:  Key (username)=(19) already exists.. The SQL statement executed was: INSERT INTO "usuarios" ("roles", "password", "username", "salt") VALUES (:yp0, :yp1, :yp2, :yp3)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/UsuariosController.php(110): CActiveRecord->save()
+#3 [internal function]: UsuariosController->actionCreate('1')
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(UsuariosController), Array)
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(UsuariosController), Object(ReflectionMethod), Array)
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('usuarios/create')
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/laboral/web/index.php?r=usuarios/create&tipo=1
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=usuarios/create&tipo=1
+---
+2012/12/01 23:36:06 [error] [exception.CException] exception 'CException' with message 'Property "CUniqueValidator.username" is not defined.' in /var/www/laboral/web/yii/framework/base/CComponent.php:174
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/validators/CValidator.php(190): CComponent->__set('username', 'Usuarios.userna...')
+#1 /var/www/laboral/web/yii/framework/base/CModel.php(285): CValidator::createValidator('unique', Object(Usuarios), 'username', Array)
+#2 /var/www/laboral/web/yii/framework/base/CModel.php(259): CModel->createValidators()
+#3 /var/www/laboral/web/yii/framework/base/CModel.php(302): CModel->getValidators('Rut: <span clas...')
+#4 /var/www/laboral/web/yii/framework/web/helpers/CHtml.php(1197): CModel->isAttributeRequired('Rut: <span clas...')
+#5 /var/www/laboral/web/yii/framework/web/widgets/CActiveForm.php(563): CHtml::activeLabelEx(Object(Usuarios), 'Rut: <span clas...', Array)
+#6 /var/www/laboral/web/protected/views/usuarios/_form.php(63): CActiveForm->labelEx(Object(Usuarios), 'Rut: <span clas...')
+#7 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#8 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#9 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#10 /var/www/laboral/web/protected/views/usuarios/create.php(13): CController->renderPartial('_form', Array)
+#11 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#12 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#13 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#14 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('create', Array, true)
+#15 /var/www/laboral/web/protected/controllers/UsuariosController.php(126): CController->render('create', Array)
+#16 [internal function]: UsuariosController->actionCreate('1')
+#17 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(UsuariosController), Array)
+#18 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(UsuariosController), Object(ReflectionMethod), Array)
+#19 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#20 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#21 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#22 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#23 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#24 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#25 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#26 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#28 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('usuarios/create')
+#29 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#30 /var/www/laboral/web/index.php(13): CApplication->run()
+#31 {main}
+REQUEST_URI=/laboral/web/index.php?r=usuarios/create&tipo=1
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=usuarios/pcreate
+---
+2012/12/01 23:37:31 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (106)
+in /var/www/laboral/web/index.php (13)
+2012/12/01 23:39:48 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (106)
+in /var/www/laboral/web/index.php (13)

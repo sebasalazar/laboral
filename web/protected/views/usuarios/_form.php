@@ -6,8 +6,7 @@
 
 <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
 <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/assets/7b79631/Rut/jquery.Rut.js'); ?>
-<script src="jvalidate/js/jquery_1.4.js" type="text/javascript"><!--mce:0--><!--mce:0--></script>
-<script src="jvalidate/js/jquery_validate.js" type="text/javascript"><!--mce:1--><!--mce:1--></script>
+
 <script type="text/javascript">
 $(document).ready(function(){
 $('#rut_demo_2').Rut({

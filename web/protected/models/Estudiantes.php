@@ -66,6 +66,8 @@ class Estudiantes extends CActiveRecord
                         array('celular', 'length', 'min'=>8, 'max'=>8),
                         array('email', 'email'),
 			array('busqueda', 'safe'),
+                        array('archivo_curriculum','file', 'types' => 'pdf' ),
+                        array('email', 'unique'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('pk, nombres, apellidos, rut, fecha_nacimiento, genero, direccion, comuna_id, ec_fk, carrera_fk, telefono, celular, email, estado, busqueda, archivo_curriculum', 'safe', 'on'=>'search'),
