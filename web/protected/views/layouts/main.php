@@ -33,25 +33,22 @@
                             if($tipo == 3) // Docente
                             {
                                 $usuario_nombre = Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->nombres;
-                                $tipo = "Docente";
+                                if($usuario_nombre != null)
+                                echo "Bienvenido, <b>".$usuario_nombre."</b><br >";
+                                echo CHtml::link('Perfil', array('/docentes/perfil', 'id'=>Yii::app()->user->name))." - ".CHtml::link('Salir',array('/site/logout'));
+                                echo "</div>";
                             }
                             elseif($tipo == 2) //Empresa
                             {
                                 $usuario_nombre = Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->nombre;
-                                $tipo = "Empresa";
                             }
                             elseif($tipo == 1) //Estudiante
                             {
                                 $usuario_nombre = Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->nombres;
-                                $tipo = "Estudiante";
                             }
-                            if($usuario_nombre != null)
-                                echo "Bienvenido, <b>".$usuario_nombre."</b><br > (".$tipo.")";
                             if(Yii::app()->user->getModel(Yii::app()->user->id)->roles == 1){
                                 echo CHtml::link('Administrar')." - ";
                             }
-                            echo CHtml::link('Perfil')." - ".CHtml::link('Salir',array('/site/logout'));
-                            echo "</div>";
                         }
                         else
                         {
@@ -67,19 +64,73 @@
                     ?>
 	</div><!-- header -->
 
-	<div id="mainmenu">
-		<?php $this->widget('zii.widgets.CMenu',array(
-			'items'=>array(
-				array('label'=>'Inicio', 'url'=>array('/site/index')),
-                                array('label'=>'Ofertas de Trabajo', 'url'=>array('/ofertasLaborales/index')),
-                                array('label'=>'Acerca de', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contacto', 'url'=>array('/site/contact')),                                
-				array('label'=>'Registrarse', 'url'=>array('/usuarios/pcreate')),                                
-				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-			),
-		)); ?>
-	</div><!-- mainmenu -->
+        
+        
+        <?php // En caso de no haber naie logeado muestra las opciones por defecto
+        if(Yii::app()->user->getModel(Yii::app()->user->id) == null)
+        {
+            echo '<div id="mainmenu">';
+            $this->widget('zii.widgets.CMenu',array(
+                'items'=>array(
+                    array('label'=>'Inicio', 'url'=>array('/site/index', 'visible'=>!Yii::app()->user->isGuest)),
+                    array('label'=>'Ofertas de Trabajo', 'url'=>array('/ofertasLaborales/index')),
+                    array('label'=>'Acerca de', 'url'=>array('/site/page', 'view'=>'about', 'visible'=>!Yii::app()->user->isGuest)),
+                    array('label'=>'Contacto', 'url'=>array('/site/contact', 'visible'=>!Yii::app()->user->isGuest)),                                
+                    array('label'=>'Registrarse', 'url'=>array('/usuarios/pcreate', 'visible'=>!Yii::app()->user->isGuest)),                                
+                    array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+                    array('label'=>'Logout', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+                               ),
+                    )              
+             );
+             echo '</div><!-- mainmenu -->';
+        }
+        ?>
+
+        <?php // en caso de login muestra opciones específicas
+        if(Yii::app()->user->getModel(Yii::app()->user->id) != null)
+        {
+            $tipo = Yii::app()->user->getTipoUsuario(Yii::app()->user->name);
+            if($tipo == 2)
+            {
+                echo '<div id="mainmenu">';
+                $this->widget('zii.widgets.CMenu',array(
+                    'items'=>array(
+                        array('label'=>'Inicio', 'url'=>array('/site/index', 'visible'=>!Yii::app()->user->isGuest)),
+                        array('label'=>'Practicas', 'url'=>array('/practicas/create')),
+                        //array('label'=>'Acerca de', 'url'=>array('/site/page', 'view'=>'about', 'visible'=>!Yii::app()->user->isGuest)),
+                        //array('label'=>'Contacto', 'url'=>array('/site/contact', 'visible'=>!Yii::app()->user->isGuest)),                                
+                        //array('label'=>'Registrarse', 'url'=>array('/usuarios/pcreate', 'visible'=>!Yii::app()->user->isGuest)),                                
+                        //array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+                        array('label'=>'Logout', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+                                  ),
+                        )              
+                 );
+                 echo '</div><!-- mainmenu -->';
+             }
+             elseif($tipo == 3)
+             {
+                    echo '<div id="mainmenu">';
+                    $this->widget('zii.widgets.CMenu',array(
+                           'items'=>array(
+                                            array('label'=>'Inicio', 'url'=>array('/site/index', 'visible'=>!Yii::app()->user->isGuest)),
+                                            array('label'=>'Ofertas de Trabajo', 'url'=>array('/ofertasLaborales/index')),
+                                            array('label'=>'Acerca de', 'url'=>array('/site/page', 'view'=>'about', 'visible'=>!Yii::app()->user->isGuest)),
+                                            array('label'=>'Contacto', 'url'=>array('/site/contact', 'visible'=>!Yii::app()->user->isGuest)),                                                              
+                                            array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+                                            array('label'=>'Logout', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+                          ),
+                    )              
+             );
+             echo '</div><!-- mainmenu -->';
+             }/*
+             elseif($tipo == 1)
+             {
+                 EStudiantes
+             }*/
+        }
+        ?>
+   
+        
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
 			'links'=>$this->breadcrumbs,

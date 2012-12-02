@@ -61,7 +61,7 @@ return array(
 			'password' => '1234',
 			'charset' => 'utf8',
 		),*/
-
+            
         //Configuracion para postgresql
          'db'=>array(
          'connectionString' => 'pgsql:host=localhost;port=5432;dbname=bolsaLaboral',
@@ -91,7 +91,6 @@ return array(
 		),
 	),
 
-	// application-level parameters that can be accessed
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page

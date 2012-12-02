@@ -62,8 +62,7 @@ class UsuariosController extends Controller
 	 */
 	public function actionCreate($tipo)
 	{
-		
-		$model=new Usuarios;
+		$model= new Usuarios;
                 $model1 = new Docentes;
                 $model2 = new Empresas;
                 $model3 = new Estudiantes;
@@ -73,18 +72,18 @@ class UsuariosController extends Controller
 		{
 			$model->attributes=$_POST['Usuarios'];
                         $model->username = intval(preg_replace("/[^0-9]/", "", $_POST['rut_demo_2']));
-			if(isset($_POST['Docentes']))
+                        if(isset($_POST['Docentes']))
 			{
                                 $model1->attributes=$_POST['Docentes'];
                                 $model1->rut = $model->username;
-				if($model1->save() && $model->save()){
-					$this->redirect(array('site/index'));
-                        	}
-                                else
-                                {
-                                        $model1->deleteByPk($model1->pk);
-                                        $model1->deleteByPk($model->id);
-                                }
+                                    if($model1->save() && $model->save()){
+                                            $this->redirect(array('site/index'));
+                                    }
+                                    else
+                                    {
+                                            $model1->deleteByPk($model1->pk);
+                                            $model1->deleteByPk($model->id);
+                                    }
 			}
 			if(isset($_POST['Empresas']))
 			{
@@ -94,13 +93,12 @@ class UsuariosController extends Controller
                             		if($model2->save())
 						$this->redirect(array('site/index'));
                         	}
-                                                                else
+                                else
                                 {
                                         $model1->deleteByPk($model2->pk);
                                         $model1->deleteByPk($model->id);
                                 }
 			}
-			
 			if(isset($_POST['Estudiantes']))
 			{
                             $model3->attributes=$_POST['Estudiantes'];
@@ -113,18 +111,14 @@ class UsuariosController extends Controller
                                     if(!empty($cv)){
                                         $cv->saveAs('cv/' . $model3->rut . '.pdf');
                                     }
-                                        $this->redirect(array('site/index'));      
-                        	}
-                                else
-                                {
-                                        $model3->deleteByPk($model3->pk);
-                                        $model3->deleteByPk($model->id);
-                                }
+                                        $this->redirect(array('site/index'));   
                             }
 			}
 		}
-		$this->render('create',array('model'=>$model,'model1'=>$model1,'model2'=>$model2,'model3'=>$model3,'tipo'=>$tipo));
+                    $this->render('create',array('model'=>$model,'model1'=>$model1,'model2'=>$model2,'model3'=>$model3,'tipo'=>$tipo));
+                }
 	}
+	
 
 	/**
 	 * Updates a particular model.
