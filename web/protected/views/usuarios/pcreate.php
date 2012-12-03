@@ -13,7 +13,7 @@
         //Tipo 3: Docente 
 ?>
 <?php echo CHtml::link($UsuarioImagen,array('usuarios/create', 'tipo'=>1)); ?>
-<?php echo CHtml::link($EmpresaImagen,array('usuarios/create','tipo'=>2));; ?>
-<?php echo CHtml::link($DocenteImagen,array('usuarios/create','tipo'=>3));; ?>
+<?php echo CHtml::link($EmpresaImagen,array('usuarios/create','tipo'=>2)); ?>
+<?php echo CHtml::link($DocenteImagen,array('usuarios/create','tipo'=>3)); ?>
 <br /><br />
 </div>

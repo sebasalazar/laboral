@@ -6063,3 +6063,21 @@ in /var/www/laboral/web/index.php (13)
 2012/12/01 23:39:48 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
 in /var/www/laboral/web/protected/controllers/UsuariosController.php (106)
 in /var/www/laboral/web/index.php (13)
+2012/12/03 10:37:01 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/laboral/web/yii/framework/web/CController.php:337
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#3 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#9 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('usuarios/create')
+#10 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /var/www/laboral/web/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/laboral/web/index.php?r=usuarios/create
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=usuarios/
+---

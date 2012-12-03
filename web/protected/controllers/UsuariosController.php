@@ -114,9 +114,9 @@ class UsuariosController extends Controller
                                         $this->redirect(array('site/index'));   
                             }
 			}
-		}
-                    $this->render('create',array('model'=>$model,'model1'=>$model1,'model2'=>$model2,'model3'=>$model3,'tipo'=>$tipo));
+                    } 
                 }
+                 $this->render('create',array('model'=>$model,'model1'=>$model1,'model2'=>$model2,'model3'=>$model3,'tipo'=>$tipo));
 	}
 	
 
