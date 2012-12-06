@@ -22,6 +22,7 @@ $this->menu=array(
       'id' => 'grid1',
       'dataProvider' => $dp,
       'mergeColumns' => array('fecha_publicacion', 'rubro_fk'),
+      'filter'=>$model,
       'columns' => array(
           'fecha_publicacion',
           array(

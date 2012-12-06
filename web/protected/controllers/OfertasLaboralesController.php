@@ -123,6 +123,7 @@ class OfertasLaboralesController extends Controller
 	 */
 	public function actionIndex()
 	{
+            $model = OfertasLaborales::model();
             $dp = new CActiveDataProvider('OfertasLaborales', array(
                     'sort'=>array(
                             'attributes' => array(
@@ -138,7 +139,7 @@ class OfertasLaboralesController extends Controller
                          ),
                      )); 
 
-             $this->render('index', array('dp' => $dp));
+             $this->render('index', array('dp' => $dp, 'model'=>$model));
 	}
 
 	/**
