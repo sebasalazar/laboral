@@ -41,10 +41,18 @@
                             elseif($tipo == 2) //Empresa
                             {
                                 $usuario_nombre = Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->nombre;
+                                if($usuario_nombre != null)
+                                echo "Bienvenido, <b>".$usuario_nombre."</b><br >";
+                                echo CHtml::link('Perfil', array('/docentes/perfil', 'id'=>Yii::app()->user->name))." - ".CHtml::link('Salir',array('/site/logout'));
+                                echo "</div>";
                             }
                             elseif($tipo == 1) //Estudiante
                             {
                                 $usuario_nombre = Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->nombres;
+                                if($usuario_nombre != null)
+                                echo "Bienvenido, <b>".$usuario_nombre."</b><br >";
+                                echo CHtml::link('Perfil', array('/docentes/perfil', 'id'=>Yii::app()->user->name))." - ".CHtml::link('Salir',array('/site/logout'));
+                                echo "</div>";
                             }
                             if(Yii::app()->user->getModel(Yii::app()->user->id)->roles == 1){
                                 echo CHtml::link('Administrar')." - ";
@@ -92,18 +100,20 @@
             $tipo = Yii::app()->user->getTipoUsuario(Yii::app()->user->name);
             if($tipo == 2)
             {
-                echo '<div id="mainmenu">';
-                $this->widget('zii.widgets.CMenu',array(
-                    'items'=>array(
-                        array('label'=>'Inicio', 'url'=>array('/site/index', 'visible'=>!Yii::app()->user->isGuest)),
-                        array('label'=>'Practicas', 'url'=>array('/practicas/create')),
-                        array('label'=>'Acerca de', 'url'=>array('/site/page', 'view'=>'about', 'visible'=>!Yii::app()->user->isGuest)),
-                        //array('label'=>'Contacto', 'url'=>array('/site/contact', 'visible'=>!Yii::app()->user->isGuest)),                                
-                        //array('label'=>'Registrarse', 'url'=>array('/usuarios/pcreate', 'visible'=>!Yii::app()->user->isGuest)),                                
-                        //array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-                        array('label'=>'Logout', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-                                  ),
-                        )              
+                echo "<div id='mainmenu'>";
+                    $this->widget('zii.widgets.CMenu',array(
+                            'items'=>array(
+                                            array('label'=>'Inicio', 'url'=>array('/site/index', 'visible'=>!Yii::app()->user->isGuest)),
+                                            array('label'=>'Encargado de Empresa', 'url'=>array('/encargadosEmpresas/create')),
+                                            array('label'=>'Practicas', 'url'=>array('/practicas/create')),
+                                            //array('label'=>'Ver Practicas', 'url'=>array('/practicas/index')),
+                                            //array('label'=>'Acerca de', 'url'=>array('/site/page', 'view'=>'about', 'visible'=>!Yii::app()->user->isGuest)),
+                                            //array('label'=>'Contacto', 'url'=>array('/site/contact', 'visible'=>!Yii::app()->user->isGuest)),                                
+                                            //array('label'=>'Registrarse', 'url'=>array('/usuarios/pcreate', 'visible'=>!Yii::app()->user->isGuest)),                                
+                                            //array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+                                            array('label'=>'Logout', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+                          ),
+                    )             
                  );
                  echo '</div><!-- mainmenu -->';
              }

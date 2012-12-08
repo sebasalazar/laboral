@@ -28,12 +28,6 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'nombre_represen_legal'); ?>
-		<?php echo $form->textField($model,'nombre_represen_legal',array('size'=>60,'maxlength'=>255)); ?>
-		<?php echo $form->error($model,'nombre_represen_legal'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->labelEx($model,'direccion'); ?>
 		<?php echo $form->textField($model,'direccion',array('size'=>60,'maxlength'=>255)); ?>
 		<?php echo $form->error($model,'direccion'); ?>
@@ -64,9 +58,9 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'actividad'); ?>
-		<?php echo $form->textField($model,'actividad',array('size'=>60,'maxlength'=>255)); ?>
-		<?php echo $form->error($model,'actividad'); ?>
+		<?php echo $form->labelEx($model,'actividad_fk'); ?>
+		<?php echo $form->textField($model,'actividad_fk'); ?>
+		<?php echo $form->error($model,'actividad_fk'); ?>
 	</div>
 
 	<div class="row">

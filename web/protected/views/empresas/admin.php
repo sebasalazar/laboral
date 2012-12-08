@@ -48,14 +48,13 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'pk',
 		'rut',
 		'nombre',
-		'nombre_represen_legal',
 		'direccion',
 		'comuna_fk',
-		/*
 		'codigo_postal',
+		/*
 		'telefono',
 		'email',
-		'actividad',
+		'actividad_fk',
 		'descripcion_negocio',
 		'web',
 		*/

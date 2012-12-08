@@ -6,14 +6,14 @@
  * The followings are the available columns in table 'encargados_empresas':
  * @property string $pk
  * @property integer $empresa_fk
+ * @property integer $rut_encargado
  * @property string $nombre
  * @property string $apellidos
  * @property string $genero
+ * @property string $direccion
+ * @property integer $comun_fk
  * @property string $email
  * @property string $telefono
- *
- * The followings are the available model relations:
- * @property Empresas $empresaFk
  */
 class EncargadosEmpresas extends CActiveRecord
 {
@@ -43,14 +43,14 @@ class EncargadosEmpresas extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('empresa_fk, nombre, apellidos, email, telefono', 'required'),
-			array('empresa_fk', 'numerical', 'integerOnly'=>true),
-			array('nombre, apellidos, email', 'length', 'max'=>255),
+			array('empresa_fk, rut_encargado, nombre, apellidos, direccion, comun_fk, email, telefono', 'required'),
+			array('empresa_fk, rut_encargado, comun_fk', 'numerical', 'integerOnly'=>true),
+			array('nombre, apellidos, direccion, email', 'length', 'max'=>255),
 			array('genero', 'length', 'max'=>1),
 			array('telefono', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('pk, empresa_fk, nombre, apellidos, genero, email, telefono', 'safe', 'on'=>'search'),
+			array('pk, empresa_fk, rut_encargado, nombre, apellidos, genero, direccion, comun_fk, email, telefono', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -62,7 +62,6 @@ class EncargadosEmpresas extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'empresaFk' => array(self::BELONGS_TO, 'Empresas', 'empresa_fk'),
 		);
 	}
 
@@ -74,9 +73,12 @@ class EncargadosEmpresas extends CActiveRecord
 		return array(
 			'pk' => 'Pk',
 			'empresa_fk' => 'Empresa Fk',
+			'rut_encargado' => 'Rut Encargado',
 			'nombre' => 'Nombre',
 			'apellidos' => 'Apellidos',
 			'genero' => 'Genero',
+			'direccion' => 'Direccion',
+			'comun_fk' => 'Comun Fk',
 			'email' => 'Email',
 			'telefono' => 'Telefono',
 		);
@@ -95,9 +97,12 @@ class EncargadosEmpresas extends CActiveRecord
 
 		$criteria->compare('pk',$this->pk,true);
 		$criteria->compare('empresa_fk',$this->empresa_fk);
+		$criteria->compare('rut_encargado',$this->rut_encargado);
 		$criteria->compare('nombre',$this->nombre,true);
 		$criteria->compare('apellidos',$this->apellidos,true);
 		$criteria->compare('genero',$this->genero,true);
+		$criteria->compare('direccion',$this->direccion,true);
+		$criteria->compare('comun_fk',$this->comun_fk);
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('telefono',$this->telefono,true);
 

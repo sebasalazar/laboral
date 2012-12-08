@@ -6,9 +6,11 @@
  * The followings are the available columns in table 'practicas':
  * @property string $pk
  * @property integer $empresa_fk
- * @property string $area_practica
+ * @property integer $encargado_fk
+ * @property integer $area_practica_fk
  * @property string $inicio_practica
  * @property string $fin_practica
+ * @property integer $horario_fk
  * @property integer $remuneracion
  */
 class Practicas extends CActiveRecord
@@ -39,12 +41,11 @@ class Practicas extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('empresa_fk, inicio_practica, fin_practica', 'required'),
-			array('empresa_fk, remuneracion', 'numerical', 'integerOnly'=>true),
-			array('area_practica', 'length', 'max'=>255),
+			array('empresa_fk, encargado_fk, area_practica_fk, inicio_practica, fin_practica, horario_fk', 'required'),
+			array('empresa_fk, encargado_fk, area_practica_fk, horario_fk, remuneracion', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('pk, empresa_fk, area_practica, inicio_practica, fin_practica, remuneracion', 'safe', 'on'=>'search'),
+			array('pk, empresa_fk, encargado_fk, area_practica_fk, inicio_practica, fin_practica, horario_fk, remuneracion', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -67,9 +68,11 @@ class Practicas extends CActiveRecord
 		return array(
 			'pk' => 'Pk',
 			'empresa_fk' => 'Empresa Fk',
-			'area_practica' => 'Area Practica',
+			'encargado_fk' => 'Encargado Fk',
+			'area_practica_fk' => 'Area Practica Fk',
 			'inicio_practica' => 'Inicio Practica',
 			'fin_practica' => 'Fin Practica',
+			'horario_fk' => 'Horario Fk',
 			'remuneracion' => 'Remuneracion',
 		);
 	}
@@ -87,9 +90,11 @@ class Practicas extends CActiveRecord
 
 		$criteria->compare('pk',$this->pk,true);
 		$criteria->compare('empresa_fk',$this->empresa_fk);
-		$criteria->compare('area_practica',$this->area_practica,true);
+		$criteria->compare('encargado_fk',$this->encargado_fk);
+		$criteria->compare('area_practica_fk',$this->area_practica_fk);
 		$criteria->compare('inicio_practica',$this->inicio_practica,true);
 		$criteria->compare('fin_practica',$this->fin_practica,true);
+		$criteria->compare('horario_fk',$this->horario_fk);
 		$criteria->compare('remuneracion',$this->remuneracion);
 
 		return new CActiveDataProvider($this, array(

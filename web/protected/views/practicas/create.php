@@ -6,7 +6,6 @@ $this->breadcrumbs=array(
 	'Practicases'=>array('index'),
 	'Create',
 );
-
 /*
 $this->menu=array(
 	array('label'=>'List Practicas', 'url'=>array('index')),
@@ -14,6 +13,6 @@ $this->menu=array(
 );*/
 ?>
 
-<h1>Crear nueva practica</h1>
+<h1>Crear nueva Practica</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

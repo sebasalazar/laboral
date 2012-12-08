@@ -23,9 +23,11 @@ $this->menu=array(
 	'attributes'=>array(
 		'pk',
 		'empresa_fk',
-		'area_practica',
+		'encargado_fk',
+		'area_practica_fk',
 		'inicio_practica',
 		'fin_practica',
+		'horario_fk',
 		'remuneracion',
 	),
 )); ?>

@@ -4,24 +4,17 @@
  * This is the model class for table "empresas".
  *
  * The followings are the available columns in table 'empresas':
- * @property integer $pk
+ * @property string $pk
  * @property integer $rut
  * @property string $nombre
- * @property string $nombre_represen_legal
  * @property string $direccion
  * @property integer $comuna_fk
  * @property integer $codigo_postal
  * @property string $telefono
  * @property string $email
- * @property string $actividad
+ * @property integer $actividad_fk
  * @property string $descripcion_negocio
  * @property string $web
- *
- * The followings are the available model relations:
- * @property Practicas[] $practicases
- * @property Comunas $comunaFk
- * @property OfertasLaborales[] $ofertasLaborales
- * @property EncargadosEmpresas[] $encargadosEmpresases
  */
 class Empresas extends CActiveRecord
 {
@@ -51,13 +44,13 @@ class Empresas extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('rut, nombre, direccion, comuna_fk, codigo_postal, telefono, actividad, descripcion_negocio', 'required'),
-			array('rut, comuna_fk, codigo_postal', 'numerical', 'integerOnly'=>true),
-			array('nombre, nombre_represen_legal, direccion, email, actividad, descripcion_negocio, web', 'length', 'max'=>255),
+			array('rut, nombre, direccion, comuna_fk, codigo_postal, telefono, actividad_fk, descripcion_negocio', 'required'),
+			array('rut, comuna_fk, codigo_postal, actividad_fk', 'numerical', 'integerOnly'=>true),
+			array('nombre, direccion, email, descripcion_negocio, web', 'length', 'max'=>255),
 			array('telefono', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('pk, rut, nombre, nombre_represen_legal, direccion, comuna_fk, codigo_postal, telefono, email, actividad, descripcion_negocio, web', 'safe', 'on'=>'search'),
+			array('pk, rut, nombre, direccion, comuna_fk, codigo_postal, telefono, email, actividad_fk, descripcion_negocio, web', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -69,10 +62,6 @@ class Empresas extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'practicases' => array(self::HAS_MANY, 'Practicas', 'empresa_fk'),
-			'comunaFk' => array(self::BELONGS_TO, 'Comunas', 'comuna_fk'),
-			'ofertasLaborales' => array(self::HAS_MANY, 'OfertasLaborales', 'empresa_fk'),
-			'encargadosEmpresases' => array(self::HAS_MANY, 'EncargadosEmpresas', 'empresa_fk'),
 		);
 	}
 
@@ -85,13 +74,12 @@ class Empresas extends CActiveRecord
 			'pk' => 'Pk',
 			'rut' => 'Rut',
 			'nombre' => 'Nombre',
-			'nombre_represen_legal' => 'Nombre Represen Legal',
 			'direccion' => 'Direccion',
 			'comuna_fk' => 'Comuna Fk',
 			'codigo_postal' => 'Codigo Postal',
 			'telefono' => 'Telefono',
 			'email' => 'Email',
-			'actividad' => 'Actividad',
+			'actividad_fk' => 'Actividad Fk',
 			'descripcion_negocio' => 'Descripcion Negocio',
 			'web' => 'Web',
 		);
@@ -108,16 +96,15 @@ class Empresas extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('pk',$this->pk);
+		$criteria->compare('pk',$this->pk,true);
 		$criteria->compare('rut',$this->rut);
 		$criteria->compare('nombre',$this->nombre,true);
-		$criteria->compare('nombre_represen_legal',$this->nombre_represen_legal,true);
 		$criteria->compare('direccion',$this->direccion,true);
 		$criteria->compare('comuna_fk',$this->comuna_fk);
 		$criteria->compare('codigo_postal',$this->codigo_postal);
 		$criteria->compare('telefono',$this->telefono,true);
 		$criteria->compare('email',$this->email,true);
-		$criteria->compare('actividad',$this->actividad,true);
+		$criteria->compare('actividad_fk',$this->actividad_fk);
 		$criteria->compare('descripcion_negocio',$this->descripcion_negocio,true);
 		$criteria->compare('web',$this->web,true);
 
