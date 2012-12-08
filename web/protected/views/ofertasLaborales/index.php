@@ -19,16 +19,23 @@ $this->menu=array(
 
 <?php 
     $this->widget('ext.groupgridview.GroupGridView', array(
-      'id' => 'grid1',
-      'dataProvider' => $dp,
-      'mergeColumns' => array('fecha_publicacion', 'rubro_fk'),
+      'id' => 'ofertas',
+      'dataProvider' => $model->search(),
+      //'mergeColumns' => array('fecha_publicacion', 'rubro_fk'),
       'filter'=>$model,
       'columns' => array(
+          'pk',
           'fecha_publicacion',
-          array(
+          /*array(
               'header'=>'Rubro',
               'name'=>'rubro_fk',
               'value' => '$data->rubroFk->rubro',
+          ),*/
+          array(
+            'header'=>'Rubro',
+            'name' => 'rubro_fk',
+            'filter' => CHtml::listData(Rubros::model()->findAll(), 'pk', 'rubro'),
+            'value' => '$data->rubroFk->rubro',
           ),
           'cargo',
           array(

@@ -47,7 +47,11 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'columns'=>array(
 		'pk',
 		'empresa_fk',
-		'rubro_fk',
+		array(
+                    'header'=>'Rubro',
+                    'name'=>'rubro_fk',
+                    'value' => '$data->rubroFk->rubro',
+                ),
 		'nivel_estudio_fk',
 		'renta',
 		'vacantes',

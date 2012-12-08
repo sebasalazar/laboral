@@ -135,7 +135,6 @@ class OfertasLaborales extends CActiveRecord
 		$criteria->compare('jornada_fk',$this->jornada_fk);
 		$criteria->compare('contrato_fk',$this->contrato_fk);
 		$criteria->compare('activo',$this->activo);
-
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
