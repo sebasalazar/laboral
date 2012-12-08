@@ -24,7 +24,12 @@ $this->menu=array(
       //'mergeColumns' => array('fecha_publicacion', 'rubro_fk'),
       'filter'=>$model,
       'columns' => array(
-          'fecha_publicacion',
+          array(
+            'header'=>'Fecha Publicación',
+            'name'=>'fecha_publicacion',
+            'filter'=>false,
+            'value'=>'Yii::app()->dateFormatter->format("d MMM y",strtotime($data->fecha_publicacion))',
+          ),
           array(
             'header'=>'Rubro',
             'name' => 'rubro_fk',

@@ -36,8 +36,11 @@ if(Yii::app()->user->getModel(Yii::app()->user->id) != null)
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-                'fecha_publicacion',
-                 array(
+                array(
+                   'label'=>'Fecha Publicación: ',
+                   'value'=>Yii::app()->dateFormatter->format("d MMMM y",strtotime($model->fecha_publicacion)),
+                 ),
+                array(
                    'label'=>'Empresa: ',
                    'value'=>$model->empresaFk->nombre,
                  ),
