@@ -58,6 +58,11 @@ class WebUser extends CWebUser {
       }
   }
   
+  public function getAdmin()
+  {
+      return '174018367';
+  }
+  
   public function getTipoUsuario($rut)
   {
        $docente = Docentes::model()->findByAttributes(array('rut'=>$rut));

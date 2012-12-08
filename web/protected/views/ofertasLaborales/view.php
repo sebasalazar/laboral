@@ -49,6 +49,10 @@ if(Yii::app()->user->getModel(Yii::app()->user->id) != null)
                    'label'=>'Nivel Estudios Solicitados: ',
                    'value'=>$model->nivelEstudioFk->estudios,
                  ),
+                array(
+                   'label'=>'Cierre: ',
+                   'value'=>Yii::app()->dateFormatter->format("d MMMM y",strtotime($model->plazo)),
+                 ),
 		array(
                    'label'=>'Renta: ',
                    'value'=> '$'.$model->renta,
