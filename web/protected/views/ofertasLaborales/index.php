@@ -24,13 +24,7 @@ $this->menu=array(
       //'mergeColumns' => array('fecha_publicacion', 'rubro_fk'),
       'filter'=>$model,
       'columns' => array(
-          'pk',
           'fecha_publicacion',
-          /*array(
-              'header'=>'Rubro',
-              'name'=>'rubro_fk',
-              'value' => '$data->rubroFk->rubro',
-          ),*/
           array(
             'header'=>'Rubro',
             'name' => 'rubro_fk',
@@ -41,6 +35,7 @@ $this->menu=array(
           array(
               'header'=>'Nivel de estudios Deseable',
               'name'=>'nivel_estudio_fk',
+              'filter'=> CHtml::listData(NivelesEstudios::model()->findAll(), 'pk', 'estudios'),
               'value' => '$data->nivelEstudioFk->estudios',
           ),
         array(

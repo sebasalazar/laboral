@@ -53,26 +53,23 @@ return array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
 		),
 		// uncomment the following to use a MySQL database
-<<<<<<< HEAD
 		/*
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=bollaboral',
-=======
+
 		/**/
 		/*'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=laboral',
->>>>>>> aa9c402430e9a569ad843f676de6b829f591ddf9
+
 			'emulatePrepare' => true,
 			'username' => '',
 			'password' => '1234',
 			'charset' => 'utf8',
-<<<<<<< HEAD
 		),
-            */
-=======
-		),*/
             
->>>>>>> aa9c402430e9a569ad843f676de6b829f591ddf9
+		), 
+                 
+                 */
         //Configuracion para postgresql
          'db'=>array(
          'connectionString' => 'pgsql:host=localhost;port=5432;dbname=bolsaLaboral',
