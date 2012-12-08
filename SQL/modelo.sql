@@ -419,4 +419,42 @@ CREATE TABLE practicas (
     PRIMARY KEY(pk)
 );
 
+
+--
+--Tabla encargado practicas
+--
+DROP TABLE IF EXISTS encargados_practicas CASCADE;
+CREATE TABLE encargados_practicas (
+    pk serial NOT NULL,
+    rut_epracti int NOT NULL,
+    nombre_encargado varchar(255) NOT NULL,
+    apellido_encargado varchar(255) NOT NULL,
+    empresa_fk int NOT NULL REFERENCES empresas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    area_practica_fk int NOT NULL REFERENCES rubros(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    PRIMARY KEY(pk)
+);
+
+
+
+--
+--Tablas evaluacion de practicas
+--
+
+DROP TABLE IF EXISTS evaluaciones_practicas CASCADE;
+CREATE TABLE evaluaciones_practicas (
+    pk serial NOT NULL,
+    estudiant_fk int NOT NULL REFERENCES estudiantes(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    encar_practicas_fk int NOT NULL REFERENCES encargados_practicas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    cargo_asignado varchar(255) NOT NULL,
+    conocimientos_demostrados smallint NOT NULL, --de 0 a 16
+    eficacia smallint NOT NULL,       --de 0 a 16
+    grado_cumplimiento smallint NOT NULL,  --de 0 a 12
+    puntualidad_respeto smallint NOT NULL, --de 0 a 10
+    integracion_adaptacion smallint NOT NULL,  --de 0 a 10
+    responsabilidad_superacion smallint NOT NULL, --de 0 a 14
+    capacidades_personales smallint NOT NULL,  --de 0 a 8
+    iniciativa_creativi_improvi smallint NOT NULL, --de 0 a 14
+    PRIMARY KEY(pk)
+);
+
 COMMIT;

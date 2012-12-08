@@ -105,7 +105,9 @@
                             'items'=>array(
                                             array('label'=>'Inicio', 'url'=>array('/site/index', 'visible'=>!Yii::app()->user->isGuest)),
                                             array('label'=>'Encargado de Empresa', 'url'=>array('/encargadosEmpresas/create')),
+                                            array('label'=>'Encargado de Practicas', 'url'=>array('/encargadosPracticas/create')),
                                             array('label'=>'Practicas', 'url'=>array('/practicas/create')),
+                                            array('label'=>'Evaluar Practica', 'url'=>array('/evaluacionesPracticas/create')),
                                             //array('label'=>'Ver Practicas', 'url'=>array('/practicas/index')),
                                             //array('label'=>'Acerca de', 'url'=>array('/site/page', 'view'=>'about', 'visible'=>!Yii::app()->user->isGuest)),
                                             //array('label'=>'Contacto', 'url'=>array('/site/contact', 'visible'=>!Yii::app()->user->isGuest)),                                
