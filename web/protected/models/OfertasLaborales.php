@@ -29,6 +29,9 @@
  * @property TiposContratos $contratoFk
  * @property SugerenciasTrabajo[] $sugerenciasTrabajos
  */
+
+
+
 class OfertasLaborales extends CActiveRecord
 {
 	/**
@@ -52,6 +55,18 @@ class OfertasLaborales extends CActiveRecord
 	/**
 	 * @return array validation rules for model attributes.
 	 */
+        
+        public function completo($pkestudiante)
+        {
+            $sql = "SELECT completo FROM estudiantes WHERE pk='$pkestudiantes'";            
+            
+            $connection = Yii::app()->db;
+            $command = $connection->createCommand($sql);
+            $dataReader = $command->queryAll();
+            return $dataReader;
+        }
+        
+        
 	public function rules()
 	{
 		// NOTE: you should only define rules for those attributes that
@@ -64,7 +79,8 @@ class OfertasLaborales extends CActiveRecord
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('pk, empresa_fk, rubro_fk, nivel_estudio_fk, renta, vacantes, plazo, descripcion, ubicacion, cargo, fecha_publicacion, beneficios, jornada_fk, contrato_fk, activo', 'safe', 'on'=>'search'),
-		);
+		
+        );
 	}
 
 	/**
@@ -85,6 +101,11 @@ class OfertasLaborales extends CActiveRecord
 		);
 	}
 
+        public function afterFind()
+{
+$this->fecha_publicacion= Yii::app()->dateformatter->format("dd-MM-yyyy",$this->fecha_publicacion);
+parent::afterFind();
+}
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */

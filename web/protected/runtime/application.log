@@ -6081,3 +6081,1948 @@ Stack trace:
 REQUEST_URI=/laboral/web/index.php?r=usuarios/create
 HTTP_REFERER=http://localhost/laboral/web/index.php?r=usuarios/
 ---
+2012/12/06 23:21:23 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (104)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:01:46 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (104)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:03:40 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (104)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:05:05 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (104)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:05:46 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (104)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:06:21 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (104)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:21:06 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (104)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:27:55 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (104)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:29:29 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (104)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:34:40 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (104)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:55:44 [warning] [application] Failed to set unsafe attribute "empresa_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:55:44 [warning] [application] Failed to set unsafe attribute "rubro_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:55:44 [warning] [application] Failed to set unsafe attribute "nivel_estudio_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:55:44 [warning] [application] Failed to set unsafe attribute "renta" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:55:44 [warning] [application] Failed to set unsafe attribute "vacantes" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:55:44 [warning] [application] Failed to set unsafe attribute "plazo" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:55:44 [warning] [application] Failed to set unsafe attribute "descripcion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:55:44 [warning] [application] Failed to set unsafe attribute "ubicacion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:55:44 [warning] [application] Failed to set unsafe attribute "cargo" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:55:44 [warning] [application] Failed to set unsafe attribute "fecha_publicacion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:55:44 [warning] [application] Failed to set unsafe attribute "beneficios" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:55:44 [warning] [application] Failed to set unsafe attribute "jornada_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:55:44 [warning] [application] Failed to set unsafe attribute "contrato_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:55:44 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23502]: Not null violation: 7 ERROR:  el valor null para la columna «empresa_fk» viola la restricción not null. The SQL statement executed was: INSERT INTO "ofertas_laborales" ("ubicacion", "beneficios", "activo") VALUES (:yp0, :yp1, :yp2).
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (74)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:55:44 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23502]: Not null violation: 7 ERROR:  el valor null para la columna «empresa_fk» viola la restricción not null. The SQL statement executed was: INSERT INTO "ofertas_laborales" ("ubicacion", "beneficios", "activo") VALUES (:yp0, :yp1, :yp2)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(74): CActiveRecord->save()
+#3 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(50): OfertasLaboralesController->actionCreate()
+#4 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#13 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#14 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/laboral/web/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/create
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/create
+---
+2012/12/07 17:56:20 [warning] [application] Failed to set unsafe attribute "empresa_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:56:20 [warning] [application] Failed to set unsafe attribute "rubro_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:56:20 [warning] [application] Failed to set unsafe attribute "nivel_estudio_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:56:20 [warning] [application] Failed to set unsafe attribute "renta" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:56:20 [warning] [application] Failed to set unsafe attribute "vacantes" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:56:20 [warning] [application] Failed to set unsafe attribute "plazo" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:56:20 [warning] [application] Failed to set unsafe attribute "descripcion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:56:20 [warning] [application] Failed to set unsafe attribute "ubicacion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:56:20 [warning] [application] Failed to set unsafe attribute "cargo" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:56:20 [warning] [application] Failed to set unsafe attribute "fecha_publicacion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:56:20 [warning] [application] Failed to set unsafe attribute "beneficios" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:56:20 [warning] [application] Failed to set unsafe attribute "jornada_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:56:20 [warning] [application] Failed to set unsafe attribute "contrato_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:56:20 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23502]: Not null violation: 7 ERROR:  el valor null para la columna «empresa_fk» viola la restricción not null. The SQL statement executed was: INSERT INTO "ofertas_laborales" ("ubicacion", "beneficios", "activo") VALUES (:yp0, :yp1, :yp2).
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (74)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:56:20 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23502]: Not null violation: 7 ERROR:  el valor null para la columna «empresa_fk» viola la restricción not null. The SQL statement executed was: INSERT INTO "ofertas_laborales" ("ubicacion", "beneficios", "activo") VALUES (:yp0, :yp1, :yp2)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(74): CActiveRecord->save()
+#3 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(50): OfertasLaboralesController->actionCreate()
+#4 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#13 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#14 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/laboral/web/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/create
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/create
+---
+2012/12/07 17:58:17 [warning] [application] Failed to set unsafe attribute "empresa_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:58:17 [warning] [application] Failed to set unsafe attribute "rubro_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:58:17 [warning] [application] Failed to set unsafe attribute "nivel_estudio_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:58:17 [warning] [application] Failed to set unsafe attribute "renta" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:58:17 [warning] [application] Failed to set unsafe attribute "vacantes" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:58:17 [warning] [application] Failed to set unsafe attribute "plazo" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:58:17 [warning] [application] Failed to set unsafe attribute "descripcion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:58:17 [warning] [application] Failed to set unsafe attribute "ubicacion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:58:17 [warning] [application] Failed to set unsafe attribute "cargo" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:58:17 [warning] [application] Failed to set unsafe attribute "fecha_publicacion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:58:17 [warning] [application] Failed to set unsafe attribute "beneficios" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:58:17 [warning] [application] Failed to set unsafe attribute "jornada_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:58:17 [warning] [application] Failed to set unsafe attribute "contrato_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:58:17 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23502]: Not null violation: 7 ERROR:  el valor null para la columna «empresa_fk» viola la restricción not null. The SQL statement executed was: INSERT INTO "ofertas_laborales" ("ubicacion", "beneficios", "activo") VALUES (:yp0, :yp1, :yp2).
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (74)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 17:58:17 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23502]: Not null violation: 7 ERROR:  el valor null para la columna «empresa_fk» viola la restricción not null. The SQL statement executed was: INSERT INTO "ofertas_laborales" ("ubicacion", "beneficios", "activo") VALUES (:yp0, :yp1, :yp2)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(74): CActiveRecord->save()
+#3 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(50): OfertasLaboralesController->actionCreate()
+#4 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#13 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#14 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/laboral/web/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/create
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/create
+---
+2012/12/07 20:46:05 [warning] [application] Failed to set unsafe attribute "empresa_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:46:05 [warning] [application] Failed to set unsafe attribute "rubro_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:46:05 [warning] [application] Failed to set unsafe attribute "nivel_estudio_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:46:05 [warning] [application] Failed to set unsafe attribute "renta" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:46:05 [warning] [application] Failed to set unsafe attribute "vacantes" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:46:05 [warning] [application] Failed to set unsafe attribute "plazo" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:46:05 [warning] [application] Failed to set unsafe attribute "descripcion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:46:05 [warning] [application] Failed to set unsafe attribute "ubicacion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:46:05 [warning] [application] Failed to set unsafe attribute "cargo" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:46:05 [warning] [application] Failed to set unsafe attribute "fecha_publicacion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:46:05 [warning] [application] Failed to set unsafe attribute "beneficios" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:46:05 [warning] [application] Failed to set unsafe attribute "jornada_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:46:05 [warning] [application] Failed to set unsafe attribute "contrato_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:46:05 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23502]: Not null violation: 7 ERROR:  el valor null para la columna «empresa_fk» viola la restricción not null. The SQL statement executed was: INSERT INTO "ofertas_laborales" ("ubicacion", "beneficios", "activo") VALUES (:yp0, :yp1, :yp2).
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (74)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:46:05 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23502]: Not null violation: 7 ERROR:  el valor null para la columna «empresa_fk» viola la restricción not null. The SQL statement executed was: INSERT INTO "ofertas_laborales" ("ubicacion", "beneficios", "activo") VALUES (:yp0, :yp1, :yp2)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(74): CActiveRecord->save()
+#3 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(50): OfertasLaboralesController->actionCreate()
+#4 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#13 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#14 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/laboral/web/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/create
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/create
+---
+2012/12/07 20:46:27 [warning] [application] Failed to set unsafe attribute "empresa_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:46:27 [warning] [application] Failed to set unsafe attribute "rubro_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:46:27 [warning] [application] Failed to set unsafe attribute "nivel_estudio_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:46:27 [warning] [application] Failed to set unsafe attribute "renta" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:46:27 [warning] [application] Failed to set unsafe attribute "vacantes" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:46:27 [warning] [application] Failed to set unsafe attribute "plazo" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:46:27 [warning] [application] Failed to set unsafe attribute "descripcion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:46:27 [warning] [application] Failed to set unsafe attribute "ubicacion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:46:27 [warning] [application] Failed to set unsafe attribute "cargo" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:46:27 [warning] [application] Failed to set unsafe attribute "fecha_publicacion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:46:27 [warning] [application] Failed to set unsafe attribute "beneficios" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:46:27 [warning] [application] Failed to set unsafe attribute "jornada_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:46:27 [warning] [application] Failed to set unsafe attribute "contrato_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:46:27 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23502]: Not null violation: 7 ERROR:  el valor null para la columna «empresa_fk» viola la restricción not null. The SQL statement executed was: INSERT INTO "ofertas_laborales" ("ubicacion", "beneficios", "activo") VALUES (:yp0, :yp1, :yp2).
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (74)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:46:27 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23502]: Not null violation: 7 ERROR:  el valor null para la columna «empresa_fk» viola la restricción not null. The SQL statement executed was: INSERT INTO "ofertas_laborales" ("ubicacion", "beneficios", "activo") VALUES (:yp0, :yp1, :yp2)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(74): CActiveRecord->save()
+#3 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(50): OfertasLaboralesController->actionCreate()
+#4 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#13 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#14 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/laboral/web/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/create
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/create
+---
+2012/12/07 20:47:32 [warning] [application] Failed to set unsafe attribute "empresa_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:47:32 [warning] [application] Failed to set unsafe attribute "rubro_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:47:32 [warning] [application] Failed to set unsafe attribute "nivel_estudio_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:47:32 [warning] [application] Failed to set unsafe attribute "renta" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:47:32 [warning] [application] Failed to set unsafe attribute "vacantes" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:47:32 [warning] [application] Failed to set unsafe attribute "plazo" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:47:32 [warning] [application] Failed to set unsafe attribute "descripcion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:47:32 [warning] [application] Failed to set unsafe attribute "ubicacion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:47:32 [warning] [application] Failed to set unsafe attribute "cargo" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:47:32 [warning] [application] Failed to set unsafe attribute "fecha_publicacion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:47:32 [warning] [application] Failed to set unsafe attribute "beneficios" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:47:32 [warning] [application] Failed to set unsafe attribute "jornada_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:47:32 [warning] [application] Failed to set unsafe attribute "contrato_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:47:32 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23502]: Not null violation: 7 ERROR:  el valor null para la columna «empresa_fk» viola la restricción not null. The SQL statement executed was: INSERT INTO "ofertas_laborales" ("ubicacion", "beneficios", "activo") VALUES (:yp0, :yp1, :yp2).
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (74)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:47:32 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23502]: Not null violation: 7 ERROR:  el valor null para la columna «empresa_fk» viola la restricción not null. The SQL statement executed was: INSERT INTO "ofertas_laborales" ("ubicacion", "beneficios", "activo") VALUES (:yp0, :yp1, :yp2)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(74): CActiveRecord->save()
+#3 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(50): OfertasLaboralesController->actionCreate()
+#4 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#13 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#14 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/laboral/web/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/create
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/create
+---
+2012/12/07 20:49:03 [warning] [application] Failed to set unsafe attribute "empresa_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:49:03 [warning] [application] Failed to set unsafe attribute "rubro_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:49:03 [warning] [application] Failed to set unsafe attribute "nivel_estudio_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:49:03 [warning] [application] Failed to set unsafe attribute "renta" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:49:03 [warning] [application] Failed to set unsafe attribute "vacantes" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:49:03 [warning] [application] Failed to set unsafe attribute "plazo" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:49:03 [warning] [application] Failed to set unsafe attribute "descripcion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:49:03 [warning] [application] Failed to set unsafe attribute "ubicacion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:49:03 [warning] [application] Failed to set unsafe attribute "cargo" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:49:03 [warning] [application] Failed to set unsafe attribute "fecha_publicacion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:49:03 [warning] [application] Failed to set unsafe attribute "beneficios" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:49:03 [warning] [application] Failed to set unsafe attribute "jornada_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:49:03 [warning] [application] Failed to set unsafe attribute "contrato_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:49:03 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23502]: Not null violation: 7 ERROR:  el valor null para la columna «empresa_fk» viola la restricción not null. The SQL statement executed was: INSERT INTO "ofertas_laborales" ("ubicacion", "beneficios", "activo") VALUES (:yp0, :yp1, :yp2).
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (74)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:49:03 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23502]: Not null violation: 7 ERROR:  el valor null para la columna «empresa_fk» viola la restricción not null. The SQL statement executed was: INSERT INTO "ofertas_laborales" ("ubicacion", "beneficios", "activo") VALUES (:yp0, :yp1, :yp2)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(74): CActiveRecord->save()
+#3 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(50): OfertasLaboralesController->actionCreate()
+#4 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#13 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#14 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/laboral/web/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/create
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/create
+---
+2012/12/07 20:50:37 [warning] [application] Failed to set unsafe attribute "empresa_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:50:37 [warning] [application] Failed to set unsafe attribute "rubro_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:50:37 [warning] [application] Failed to set unsafe attribute "nivel_estudio_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:50:37 [warning] [application] Failed to set unsafe attribute "renta" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:50:37 [warning] [application] Failed to set unsafe attribute "vacantes" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:50:37 [warning] [application] Failed to set unsafe attribute "plazo" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:50:37 [warning] [application] Failed to set unsafe attribute "descripcion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:50:37 [warning] [application] Failed to set unsafe attribute "ubicacion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:50:37 [warning] [application] Failed to set unsafe attribute "cargo" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:50:37 [warning] [application] Failed to set unsafe attribute "fecha_publicacion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:50:37 [warning] [application] Failed to set unsafe attribute "beneficios" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:50:37 [warning] [application] Failed to set unsafe attribute "jornada_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:50:37 [warning] [application] Failed to set unsafe attribute "contrato_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:50:37 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23502]: Not null violation: 7 ERROR:  el valor null para la columna «rubro_fk» viola la restricción not null. The SQL statement executed was: INSERT INTO "ofertas_laborales" ("ubicacion", "beneficios", "activo") VALUES (:yp0, :yp1, :yp2).
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (74)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:50:37 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23502]: Not null violation: 7 ERROR:  el valor null para la columna «rubro_fk» viola la restricción not null. The SQL statement executed was: INSERT INTO "ofertas_laborales" ("ubicacion", "beneficios", "activo") VALUES (:yp0, :yp1, :yp2)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(74): CActiveRecord->save()
+#3 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(50): OfertasLaboralesController->actionCreate()
+#4 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#13 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#14 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/laboral/web/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/create
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/create
+---
+2012/12/07 20:51:02 [warning] [application] Failed to set unsafe attribute "empresa_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:51:02 [warning] [application] Failed to set unsafe attribute "rubro_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:51:02 [warning] [application] Failed to set unsafe attribute "nivel_estudio_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:51:02 [warning] [application] Failed to set unsafe attribute "renta" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:51:02 [warning] [application] Failed to set unsafe attribute "vacantes" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:51:02 [warning] [application] Failed to set unsafe attribute "plazo" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:51:02 [warning] [application] Failed to set unsafe attribute "descripcion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:51:02 [warning] [application] Failed to set unsafe attribute "ubicacion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:51:02 [warning] [application] Failed to set unsafe attribute "cargo" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:51:02 [warning] [application] Failed to set unsafe attribute "fecha_publicacion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:51:02 [warning] [application] Failed to set unsafe attribute "beneficios" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:51:02 [warning] [application] Failed to set unsafe attribute "jornada_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:51:02 [warning] [application] Failed to set unsafe attribute "contrato_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:51:02 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23502]: Not null violation: 7 ERROR:  el valor null para la columna «nivel_estudio_fk» viola la restricción not null. The SQL statement executed was: INSERT INTO "ofertas_laborales" ("ubicacion", "beneficios", "activo") VALUES (:yp0, :yp1, :yp2).
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (74)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:51:02 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23502]: Not null violation: 7 ERROR:  el valor null para la columna «nivel_estudio_fk» viola la restricción not null. The SQL statement executed was: INSERT INTO "ofertas_laborales" ("ubicacion", "beneficios", "activo") VALUES (:yp0, :yp1, :yp2)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(74): CActiveRecord->save()
+#3 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(50): OfertasLaboralesController->actionCreate()
+#4 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#13 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#14 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/laboral/web/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/create
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/create
+---
+2012/12/07 20:51:47 [warning] [application] Failed to set unsafe attribute "empresa_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:51:47 [warning] [application] Failed to set unsafe attribute "rubro_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:51:47 [warning] [application] Failed to set unsafe attribute "nivel_estudio_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:51:47 [warning] [application] Failed to set unsafe attribute "renta" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:51:47 [warning] [application] Failed to set unsafe attribute "vacantes" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:51:47 [warning] [application] Failed to set unsafe attribute "plazo" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:51:47 [warning] [application] Failed to set unsafe attribute "descripcion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:51:47 [warning] [application] Failed to set unsafe attribute "ubicacion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:51:47 [warning] [application] Failed to set unsafe attribute "cargo" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:51:47 [warning] [application] Failed to set unsafe attribute "fecha_publicacion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:51:47 [warning] [application] Failed to set unsafe attribute "beneficios" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:51:47 [warning] [application] Failed to set unsafe attribute "jornada_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:51:47 [warning] [application] Failed to set unsafe attribute "contrato_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:51:47 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23502]: Not null violation: 7 ERROR:  el valor null para la columna «renta» viola la restricción not null. The SQL statement executed was: INSERT INTO "ofertas_laborales" ("ubicacion", "beneficios", "activo") VALUES (:yp0, :yp1, :yp2).
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (74)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:51:47 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23502]: Not null violation: 7 ERROR:  el valor null para la columna «renta» viola la restricción not null. The SQL statement executed was: INSERT INTO "ofertas_laborales" ("ubicacion", "beneficios", "activo") VALUES (:yp0, :yp1, :yp2)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(74): CActiveRecord->save()
+#3 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(50): OfertasLaboralesController->actionCreate()
+#4 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#13 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#14 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/laboral/web/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/create
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/create
+---
+2012/12/07 20:52:19 [warning] [application] Failed to set unsafe attribute "empresa_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:52:19 [warning] [application] Failed to set unsafe attribute "rubro_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:52:19 [warning] [application] Failed to set unsafe attribute "nivel_estudio_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:52:19 [warning] [application] Failed to set unsafe attribute "renta" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:52:19 [warning] [application] Failed to set unsafe attribute "vacantes" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:52:19 [warning] [application] Failed to set unsafe attribute "plazo" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:52:19 [warning] [application] Failed to set unsafe attribute "descripcion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:52:19 [warning] [application] Failed to set unsafe attribute "ubicacion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:52:19 [warning] [application] Failed to set unsafe attribute "cargo" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:52:19 [warning] [application] Failed to set unsafe attribute "fecha_publicacion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:52:19 [warning] [application] Failed to set unsafe attribute "beneficios" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:52:19 [warning] [application] Failed to set unsafe attribute "jornada_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:52:19 [warning] [application] Failed to set unsafe attribute "contrato_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:52:19 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23502]: Not null violation: 7 ERROR:  el valor null para la columna «vacantes» viola la restricción not null. The SQL statement executed was: INSERT INTO "ofertas_laborales" ("ubicacion", "beneficios", "activo") VALUES (:yp0, :yp1, :yp2).
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (74)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:52:19 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23502]: Not null violation: 7 ERROR:  el valor null para la columna «vacantes» viola la restricción not null. The SQL statement executed was: INSERT INTO "ofertas_laborales" ("ubicacion", "beneficios", "activo") VALUES (:yp0, :yp1, :yp2)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(74): CActiveRecord->save()
+#3 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(50): OfertasLaboralesController->actionCreate()
+#4 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#13 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#14 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/laboral/web/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/create
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/create
+---
+2012/12/07 20:54:41 [error] [php] Undefined variable: dataProvider (/var/www/laboral/web/protected/views/ofertas/index.php:18)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(870): OfertasController->renderFile()
+#1 /var/www/laboral/web/yii/framework/web/CController.php(783): OfertasController->renderPartial()
+#2 /var/www/laboral/web/protected/controllers/OfertasController.php(127): OfertasController->render()
+#3 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(50): OfertasController->actionIndex()
+#4 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): OfertasController->runAction()
+#6 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#8 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): OfertasController->filterAccessControl()
+#9 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#10 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /var/www/laboral/web/yii/framework/web/CController.php(266): OfertasController->runActionWithFilters()
+#12 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): OfertasController->run()
+#13 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#14 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=ofertas
+in /var/www/laboral/web/protected/views/ofertas/index.php (18)
+in /var/www/laboral/web/protected/controllers/OfertasController.php (127)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:55:15 [warning] [application] Failed to set unsafe attribute "empresa_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:55:15 [warning] [application] Failed to set unsafe attribute "rubro_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:55:15 [warning] [application] Failed to set unsafe attribute "nivel_estudio_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:55:15 [warning] [application] Failed to set unsafe attribute "renta" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:55:15 [warning] [application] Failed to set unsafe attribute "vacantes" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:55:15 [warning] [application] Failed to set unsafe attribute "plazo" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:55:15 [warning] [application] Failed to set unsafe attribute "descripcion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:55:15 [warning] [application] Failed to set unsafe attribute "ubicacion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:55:15 [warning] [application] Failed to set unsafe attribute "cargo" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:55:15 [warning] [application] Failed to set unsafe attribute "fecha_publicacion" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:55:15 [warning] [application] Failed to set unsafe attribute "beneficios" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:55:15 [warning] [application] Failed to set unsafe attribute "jornada_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:55:15 [warning] [application] Failed to set unsafe attribute "contrato_fk" of "OfertasLaborales".
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (72)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:55:15 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23502]: Not null violation: 7 ERROR:  el valor null para la columna «empresa_fk» viola la restricción not null. The SQL statement executed was: INSERT INTO "ofertas_laborales" ("ubicacion", "beneficios", "activo") VALUES (:yp0, :yp1, :yp2).
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (74)
+in /var/www/laboral/web/index.php (13)
+2012/12/07 20:55:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23502]: Not null violation: 7 ERROR:  el valor null para la columna «empresa_fk» viola la restricción not null. The SQL statement executed was: INSERT INTO "ofertas_laborales" ("ubicacion", "beneficios", "activo") VALUES (:yp0, :yp1, :yp2)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(74): CActiveRecord->save()
+#3 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(50): OfertasLaboralesController->actionCreate()
+#4 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#13 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#14 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/laboral/web/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/create
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/create
+---
+2012/12/07 21:01:41 [error] [exception.CException] exception 'CException' with message 'OfertasLaborales has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' in /var/www/laboral/web/yii/framework/base/CModel.php:287
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/base/CModel.php(259): CModel->createValidators()
+#1 /var/www/laboral/web/yii/framework/web/helpers/CHtml.php(1871): CModel->getValidators('fecha_publicaci...')
+#2 /var/www/laboral/web/yii/framework/web/helpers/CHtml.php(1217): CHtml::activeInputField('text', Object(OfertasLaborales), 'fecha_publicaci...', Array)
+#3 /var/www/laboral/web/yii/framework/zii/widgets/grid/CDataColumn.php(98): CHtml::activeTextField(Object(OfertasLaborales), 'fecha_publicaci...', Array)
+#4 /var/www/laboral/web/yii/framework/zii/widgets/grid/CGridColumn.php(110): CDataColumn->renderFilterCellContent()
+#5 /var/www/laboral/web/yii/framework/zii/widgets/grid/CGridView.php(477): CGridColumn->renderFilterCell()
+#6 /var/www/laboral/web/yii/framework/zii/widgets/grid/CGridView.php(455): CGridView->renderFilter()
+#7 /var/www/laboral/web/yii/framework/zii/widgets/grid/CGridView.php(425): CGridView->renderTableHeader()
+#8 /var/www/laboral/web/yii/framework/zii/widgets/CBaseListView.php(161): CGridView->renderItems()
+#9 [internal function]: CBaseListView->renderSection(Array)
+#10 /var/www/laboral/web/yii/framework/zii/widgets/CBaseListView.php(144): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{item...')
+#11 /var/www/laboral/web/yii/framework/zii/widgets/CBaseListView.php(129): CBaseListView->renderContent()
+#12 /var/www/laboral/web/yii/framework/web/CBaseController.php(174): CBaseListView->run()
+#13 /var/www/laboral/web/protected/views/ofertasLaborales/index.php(45): CBaseController->widget('ext.groupgridvi...', Array)
+#14 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#15 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#16 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#17 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('index', Array, true)
+#18 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(142): CController->render('index', Array)
+#19 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(50): OfertasLaboralesController->actionIndex()
+#20 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#21 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#22 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#23 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#24 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#25 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#26 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#27 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('index')
+#29 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#30 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#31 /var/www/laboral/web/index.php(13): CApplication->run()
+#32 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/index
+---
+2012/12/07 21:01:45 [error] [exception.CException] exception 'CException' with message 'OfertasLaborales has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' in /var/www/laboral/web/yii/framework/base/CModel.php:287
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/base/CModel.php(259): CModel->createValidators()
+#1 /var/www/laboral/web/yii/framework/base/CModel.php(302): CModel->getValidators('Empresa: ')
+#2 /var/www/laboral/web/yii/framework/web/helpers/CHtml.php(1197): CModel->isAttributeRequired('Empresa: ')
+#3 /var/www/laboral/web/yii/framework/web/widgets/CActiveForm.php(563): CHtml::activeLabelEx(Object(OfertasLaborales), 'Empresa: ', Array)
+#4 /var/www/laboral/web/protected/views/ofertasLaborales/_form.php(19): CActiveForm->labelEx(Object(OfertasLaborales), 'Empresa: ')
+#5 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#6 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#7 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#8 /var/www/laboral/web/protected/views/ofertasLaborales/create.php(38): CController->renderPartial('_form', Array)
+#9 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#10 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#11 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#12 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('create', Array, true)
+#13 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(80): CController->render('create', Array)
+#14 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(50): OfertasLaboralesController->actionCreate()
+#15 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#16 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#17 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#18 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#19 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#20 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#21 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#22 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#24 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#25 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#26 /var/www/laboral/web/index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/create
+---
+2012/12/07 21:01:48 [error] [exception.CException] exception 'CException' with message 'OfertasLaborales has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' in /var/www/laboral/web/yii/framework/base/CModel.php:287
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/base/CModel.php(259): CModel->createValidators()
+#1 /var/www/laboral/web/yii/framework/base/CModel.php(302): CModel->getValidators('Empresa: ')
+#2 /var/www/laboral/web/yii/framework/web/helpers/CHtml.php(1197): CModel->isAttributeRequired('Empresa: ')
+#3 /var/www/laboral/web/yii/framework/web/widgets/CActiveForm.php(563): CHtml::activeLabelEx(Object(OfertasLaborales), 'Empresa: ', Array)
+#4 /var/www/laboral/web/protected/views/ofertasLaborales/_form.php(19): CActiveForm->labelEx(Object(OfertasLaborales), 'Empresa: ')
+#5 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#6 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#7 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#8 /var/www/laboral/web/protected/views/ofertasLaborales/create.php(38): CController->renderPartial('_form', Array)
+#9 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#10 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#11 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#12 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('create', Array, true)
+#13 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(80): CController->render('create', Array)
+#14 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(50): OfertasLaboralesController->actionCreate()
+#15 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#16 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#17 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#18 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#19 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#20 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#21 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#22 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#24 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('OfertasLaborale...')
+#25 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#26 /var/www/laboral/web/index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/laboral/web/index.php?r=OfertasLaborales/create
+---
+2012/12/07 21:44:25 [error] [exception.CException] exception 'CException' with message 'Property "CHttpRequest.OfertasLaborales" is not defined.' in /var/www/laboral/web/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/laboral/web/protected/views/ofertasLaborales/view.php(85): CComponent->__get('OfertasLaborale...')
+#1 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#2 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#3 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#4 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('view', Array, true)
+#5 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(56): CController->render('view', Array)
+#6 [internal function]: OfertasLaboralesController->actionView('16')
+#7 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OfertasLaboralesController), Array)
+#8 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OfertasLaboralesController), Object(ReflectionMethod), Array)
+#9 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#10 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#12 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#13 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#14 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#16 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('view')
+#18 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#19 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#20 /var/www/laboral/web/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=16
+---
+2012/12/07 21:44:36 [error] [exception.CException] exception 'CException' with message 'Property "CHttpRequest.ofertasLaborales" is not defined.' in /var/www/laboral/web/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/laboral/web/protected/views/ofertasLaborales/view.php(85): CComponent->__get('ofertasLaborale...')
+#1 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#2 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#3 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#4 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('view', Array, true)
+#5 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(56): CController->render('view', Array)
+#6 [internal function]: OfertasLaboralesController->actionView('13')
+#7 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OfertasLaboralesController), Array)
+#8 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OfertasLaboralesController), Object(ReflectionMethod), Array)
+#9 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#10 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#12 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#13 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#14 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#16 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('view')
+#18 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#19 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#20 /var/www/laboral/web/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=13
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/index
+---
+2012/12/07 21:46:01 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/laboral/web/yii/framework/web/CController.php:337
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#3 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('view')
+#9 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#10 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /var/www/laboral/web/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=13
+---
+2012/12/07 21:46:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "ofertasLaborales".' in /var/www/laboral/web/yii/framework/web/CController.php:484
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(271): CController->missingAction('ofertasLaborale...')
+#1 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('ofertasLaborale...')
+#2 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#3 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/www/laboral/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/ofertasLaborales
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=13
+---
+2012/12/07 21:46:32 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/laboral/web/yii/framework/web/CController.php:337
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#3 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('view')
+#9 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#10 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /var/www/laboral/web/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=16
+---
+2012/12/07 21:48:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "postular".' in /var/www/laboral/web/yii/framework/web/CController.php:484
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(271): CController->missingAction('postular')
+#1 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('postular')
+#2 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('OfertasLaborale...')
+#3 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/www/laboral/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/laboral/web/index.php?r=OfertasLaborales/postular
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=13
+---
+2012/12/07 22:05:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "postular".' in /var/www/laboral/web/yii/framework/web/CController.php:484
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(271): CController->missingAction('postular')
+#1 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('postular')
+#2 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('OfertasLaborale...')
+#3 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/www/laboral/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/laboral/web/index.php?r=OfertasLaborales/postular
+---
+2012/12/07 22:06:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "postular".' in /var/www/laboral/web/yii/framework/web/CController.php:484
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(271): CController->missingAction('postular')
+#1 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('postular')
+#2 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('OfertasLaborale...')
+#3 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/www/laboral/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/laboral/web/index.php?r=OfertasLaborales/postular
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=16
+---
+2012/12/07 22:09:16 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/laboral/web/yii/framework/web/CController.php:337
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#3 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('postular')
+#9 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('OfertasLaborale...')
+#10 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /var/www/laboral/web/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/laboral/web/index.php?r=OfertasLaborales/postular
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=16
+---
+2012/12/07 22:38:59 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/laboral/web/yii/framework/web/CController.php:337
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#3 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('postular')
+#9 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('OfertasLaborale...')
+#10 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /var/www/laboral/web/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/laboral/web/index.php?r=OfertasLaborales/postular
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=16
+---
+2012/12/07 22:57:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "sdafasdf".' in /var/www/laboral/web/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('sdafasdf')
+#1 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/laboral/web/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/laboral/web/index.php?r=sdafasdf
+---
+2012/12/07 22:57:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "polacionesstu".' in /var/www/laboral/web/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('polacionesstu')
+#1 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/laboral/web/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/laboral/web/index.php?r=polacionesstu
+---
+2012/12/07 22:57:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "polaciones".' in /var/www/laboral/web/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('polaciones')
+#1 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/laboral/web/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/laboral/web/index.php?r=polaciones
+---
+2012/12/07 22:58:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "crate".' in /var/www/laboral/web/yii/framework/web/CController.php:484
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(271): CController->missingAction('crate')
+#1 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('crate')
+#2 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('postulaciones/c...')
+#3 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/www/laboral/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/laboral/web/index.php?r=postulaciones/crate
+---
+2012/12/08 15:31:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "postular".' in /var/www/laboral/web/yii/framework/web/CController.php:484
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(271): CController->missingAction('postular')
+#1 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('postular')
+#2 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('OfertasLaborale...')
+#3 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/www/laboral/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/laboral/web/index.php?r=OfertasLaborales/postular
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=16
+---
+2012/12/08 15:31:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Pstular/create".' in /var/www/laboral/web/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Pstular/create')
+#1 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/laboral/web/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/laboral/web/index.php?r=Pstular/create&0=
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=16
+---
+2012/12/08 15:31:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Postular/create".' in /var/www/laboral/web/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postular/create')
+#1 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/laboral/web/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postular/create&0=
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=16
+---
+2012/12/08 15:32:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Postular/create".' in /var/www/laboral/web/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postular/create')
+#1 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/laboral/web/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postular/create
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=16
+---
+2012/12/08 15:32:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Postular".' in /var/www/laboral/web/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postular')
+#1 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/laboral/web/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postular
+---
+2012/12/08 15:32:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Postular/create".' in /var/www/laboral/web/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postular/create')
+#1 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/laboral/web/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postular/create
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=16
+---
+2012/12/08 19:53:19 [error] [php] Undefined variable: user (/var/www/laboral/web/protected/views/ofertasLaborales/view.php:89)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(870): OfertasLaboralesController->renderFile()
+#1 /var/www/laboral/web/yii/framework/web/CController.php(783): OfertasLaboralesController->renderPartial()
+#2 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(56): OfertasLaboralesController->render()
+#3 unknown(0): OfertasLaboralesController->actionView()
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): OfertasLaboralesController->runAction()
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): OfertasLaboralesController->filterAccessControl()
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): OfertasLaboralesController->runActionWithFilters()
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): OfertasLaboralesController->run()
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=13
+in /var/www/laboral/web/protected/views/ofertasLaborales/view.php (89)
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (56)
+in /var/www/laboral/web/index.php (13)
+2012/12/08 19:58:02 [error] [exception.CException] exception 'CException' with message 'Property "Empresas.usuarios" is not defined.' in /var/www/laboral/web/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('usuarios')
+#1 /var/www/laboral/web/protected/views/ofertasLaborales/view.php(89): CActiveRecord->__get('usuarios')
+#2 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#4 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#5 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('view', Array, true)
+#6 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(56): CController->render('view', Array)
+#7 [internal function]: OfertasLaboralesController->actionView('13')
+#8 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OfertasLaboralesController), Array)
+#9 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OfertasLaboralesController), Object(ReflectionMethod), Array)
+#10 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('view')
+#19 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#20 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/laboral/web/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=13
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/index
+---
+2012/12/08 19:58:50 [error] [exception.CException] exception 'CException' with message 'Property "Usuarios.usuarios" is not defined.' in /var/www/laboral/web/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('usuarios')
+#1 /var/www/laboral/web/protected/views/ofertasLaborales/view.php(89): CActiveRecord->__get('usuarios')
+#2 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#4 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#5 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('view', Array, true)
+#6 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(56): CController->render('view', Array)
+#7 [internal function]: OfertasLaboralesController->actionView('15')
+#8 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OfertasLaboralesController), Array)
+#9 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OfertasLaboralesController), Object(ReflectionMethod), Array)
+#10 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('view')
+#19 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#20 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/laboral/web/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=15
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/index
+---
+2012/12/08 20:01:48 [error] [exception.CException] exception 'CException' with message 'Property "Usuarios.users" is not defined.' in /var/www/laboral/web/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('users')
+#1 /var/www/laboral/web/protected/views/ofertasLaborales/view.php(89): CActiveRecord->__get('users')
+#2 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#4 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#5 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('view', Array, true)
+#6 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(56): CController->render('view', Array)
+#7 [internal function]: OfertasLaboralesController->actionView('16')
+#8 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OfertasLaboralesController), Array)
+#9 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OfertasLaboralesController), Object(ReflectionMethod), Array)
+#10 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('view')
+#19 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#20 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/laboral/web/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=16
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/index
+---
+2012/12/08 20:02:12 [error] [exception.CException] exception 'CException' with message 'Property "Usuarios.usuarios" is not defined.' in /var/www/laboral/web/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('usuarios')
+#1 /var/www/laboral/web/protected/views/ofertasLaborales/view.php(89): CActiveRecord->__get('usuarios')
+#2 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#4 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#5 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('view', Array, true)
+#6 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(56): CController->render('view', Array)
+#7 [internal function]: OfertasLaboralesController->actionView('15')
+#8 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OfertasLaboralesController), Array)
+#9 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OfertasLaboralesController), Object(ReflectionMethod), Array)
+#10 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('view')
+#19 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#20 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/laboral/web/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=15
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/index
+---
+2012/12/08 20:02:50 [error] [exception.CException] exception 'CException' with message 'Property "Usuarios.usuarios" is not defined.' in /var/www/laboral/web/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('usuarios')
+#1 /var/www/laboral/web/protected/views/ofertasLaborales/view.php(89): CActiveRecord->__get('usuarios')
+#2 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#4 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#5 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('view', Array, true)
+#6 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(56): CController->render('view', Array)
+#7 [internal function]: OfertasLaboralesController->actionView('16')
+#8 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OfertasLaboralesController), Array)
+#9 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OfertasLaboralesController), Object(ReflectionMethod), Array)
+#10 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('view')
+#19 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#20 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/laboral/web/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=16
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/index
+---
+2012/12/08 20:07:54 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.username" is not defined.' in /var/www/laboral/web/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/auth/CWebUser.php(141): CComponent->__get('username')
+#1 /var/www/laboral/web/protected/views/ofertasLaborales/view.php(89): CWebUser->__get('username')
+#2 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#4 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#5 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('view', Array, true)
+#6 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(56): CController->render('view', Array)
+#7 [internal function]: OfertasLaboralesController->actionView('16')
+#8 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OfertasLaboralesController), Array)
+#9 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OfertasLaboralesController), Object(ReflectionMethod), Array)
+#10 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('view')
+#19 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#20 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/laboral/web/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=16
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/index
+---
+2012/12/08 20:08:00 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.username" is not defined.' in /var/www/laboral/web/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/auth/CWebUser.php(141): CComponent->__get('username')
+#1 /var/www/laboral/web/protected/views/ofertasLaborales/view.php(89): CWebUser->__get('username')
+#2 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#4 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#5 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('view', Array, true)
+#6 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(56): CController->render('view', Array)
+#7 [internal function]: OfertasLaboralesController->actionView('13')
+#8 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OfertasLaboralesController), Array)
+#9 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OfertasLaboralesController), Object(ReflectionMethod), Array)
+#10 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('view')
+#19 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#20 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/laboral/web/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=13
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/index
+---
+2012/12/08 20:08:25 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.username" is not defined.' in /var/www/laboral/web/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/auth/CWebUser.php(141): CComponent->__get('username')
+#1 /var/www/laboral/web/protected/views/ofertasLaborales/view.php(89): CWebUser->__get('username')
+#2 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#4 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#5 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('view', Array, true)
+#6 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(56): CController->render('view', Array)
+#7 [internal function]: OfertasLaboralesController->actionView('15')
+#8 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OfertasLaboralesController), Array)
+#9 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OfertasLaboralesController), Object(ReflectionMethod), Array)
+#10 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('view')
+#19 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#20 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/laboral/web/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=15
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/index
+---
+2012/12/08 20:08:51 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.usuarios" is not defined.' in /var/www/laboral/web/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/base/CModule.php(106): CComponent->__get('usuarios')
+#1 /var/www/laboral/web/protected/views/ofertasLaborales/view.php(89): CModule->__get('usuarios')
+#2 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#4 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#5 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('view', Array, true)
+#6 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(56): CController->render('view', Array)
+#7 [internal function]: OfertasLaboralesController->actionView('16')
+#8 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OfertasLaboralesController), Array)
+#9 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OfertasLaboralesController), Object(ReflectionMethod), Array)
+#10 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('view')
+#19 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#20 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/laboral/web/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=16
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/index
+---
+2012/12/08 20:12:30 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (104)
+in /var/www/laboral/web/index.php (13)
+2012/12/08 20:21:07 [error] [php] Undefined variable: pk (/var/www/laboral/web/protected/views/ofertasLaborales/view.php:89)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(870): OfertasLaboralesController->renderFile()
+#1 /var/www/laboral/web/yii/framework/web/CController.php(783): OfertasLaboralesController->renderPartial()
+#2 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(56): OfertasLaboralesController->render()
+#3 unknown(0): OfertasLaboralesController->actionView()
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): OfertasLaboralesController->runAction()
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): OfertasLaboralesController->filterAccessControl()
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): OfertasLaboralesController->runActionWithFilters()
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): OfertasLaboralesController->run()
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=14
+in /var/www/laboral/web/protected/views/ofertasLaborales/view.php (89)
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (56)
+in /var/www/laboral/web/index.php (13)
+2012/12/08 21:05:40 [error] [php] include(completo.php): failed to open stream: No such file or directory (/var/www/laboral/web/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/validators/CValidator.php(187): import()
+#1 /var/www/laboral/web/yii/framework/base/CModel.php(285): createValidator()
+#2 /var/www/laboral/web/yii/framework/base/CModel.php(259): Estudiantes->createValidators()
+#3 /var/www/laboral/web/yii/framework/base/CModel.php(302): Estudiantes->getValidators()
+#4 /var/www/laboral/web/yii/framework/web/helpers/CHtml.php(1197): Estudiantes->isAttributeRequired()
+#5 /var/www/laboral/web/yii/framework/web/widgets/CActiveForm.php(563): activeLabelEx()
+#6 /var/www/laboral/web/protected/views/usuarios/_form.php(314): CActiveForm->labelEx()
+#7 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require()
+#8 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): UsuariosController->renderInternal()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(870): UsuariosController->renderFile()
+#10 /var/www/laboral/web/protected/views/usuarios/create.php(13): UsuariosController->renderPartial()
+#11 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require()
+#12 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): UsuariosController->renderInternal()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(870): UsuariosController->renderFile()
+#14 /var/www/laboral/web/yii/framework/web/CController.php(783): UsuariosController->renderPartial()
+#15 /var/www/laboral/web/protected/controllers/UsuariosController.php(119): UsuariosController->render()
+#16 unknown(0): UsuariosController->actionCreate()
+#17 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#18 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#19 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#20 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): UsuariosController->runAction()
+#21 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#22 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#23 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): UsuariosController->filterAccessControl()
+#24 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#25 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#26 /var/www/laboral/web/yii/framework/web/CController.php(266): UsuariosController->runActionWithFilters()
+#27 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): UsuariosController->run()
+#28 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#29 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#30 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=usuarios/create&tipo=1
+in /var/www/laboral/web/protected/views/usuarios/_form.php (314)
+in /var/www/laboral/web/protected/views/usuarios/create.php (13)
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (119)
+2012/12/08 21:06:44 [error] [php] include(completo.php): failed to open stream: No such file or directory (/var/www/laboral/web/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/validators/CValidator.php(187): import()
+#1 /var/www/laboral/web/yii/framework/base/CModel.php(285): createValidator()
+#2 /var/www/laboral/web/yii/framework/base/CModel.php(259): Estudiantes->createValidators()
+#3 /var/www/laboral/web/yii/framework/base/CModel.php(302): Estudiantes->getValidators()
+#4 /var/www/laboral/web/yii/framework/web/helpers/CHtml.php(1197): Estudiantes->isAttributeRequired()
+#5 /var/www/laboral/web/yii/framework/web/widgets/CActiveForm.php(563): activeLabelEx()
+#6 /var/www/laboral/web/protected/views/usuarios/_form.php(314): CActiveForm->labelEx()
+#7 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require()
+#8 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): UsuariosController->renderInternal()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(870): UsuariosController->renderFile()
+#10 /var/www/laboral/web/protected/views/usuarios/create.php(13): UsuariosController->renderPartial()
+#11 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require()
+#12 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): UsuariosController->renderInternal()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(870): UsuariosController->renderFile()
+#14 /var/www/laboral/web/yii/framework/web/CController.php(783): UsuariosController->renderPartial()
+#15 /var/www/laboral/web/protected/controllers/UsuariosController.php(119): UsuariosController->render()
+#16 unknown(0): UsuariosController->actionCreate()
+#17 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#18 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#19 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#20 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): UsuariosController->runAction()
+#21 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#22 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#23 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): UsuariosController->filterAccessControl()
+#24 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#25 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#26 /var/www/laboral/web/yii/framework/web/CController.php(266): UsuariosController->runActionWithFilters()
+#27 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): UsuariosController->run()
+#28 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#29 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#30 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=usuarios/create&tipo=1
+in /var/www/laboral/web/protected/views/usuarios/_form.php (314)
+in /var/www/laboral/web/protected/views/usuarios/create.php (13)
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (119)
+2012/12/08 21:07:25 [error] [php] include(completo.php): failed to open stream: No such file or directory (/var/www/laboral/web/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/validators/CValidator.php(187): import()
+#1 /var/www/laboral/web/yii/framework/base/CModel.php(285): createValidator()
+#2 /var/www/laboral/web/yii/framework/base/CModel.php(259): Estudiantes->createValidators()
+#3 /var/www/laboral/web/yii/framework/base/CModel.php(302): Estudiantes->getValidators()
+#4 /var/www/laboral/web/yii/framework/web/helpers/CHtml.php(1197): Estudiantes->isAttributeRequired()
+#5 /var/www/laboral/web/yii/framework/web/widgets/CActiveForm.php(563): activeLabelEx()
+#6 /var/www/laboral/web/protected/views/usuarios/_form.php(314): CActiveForm->labelEx()
+#7 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require()
+#8 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): UsuariosController->renderInternal()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(870): UsuariosController->renderFile()
+#10 /var/www/laboral/web/protected/views/usuarios/create.php(13): UsuariosController->renderPartial()
+#11 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require()
+#12 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): UsuariosController->renderInternal()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(870): UsuariosController->renderFile()
+#14 /var/www/laboral/web/yii/framework/web/CController.php(783): UsuariosController->renderPartial()
+#15 /var/www/laboral/web/protected/controllers/UsuariosController.php(119): UsuariosController->render()
+#16 unknown(0): UsuariosController->actionCreate()
+#17 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#18 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#19 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#20 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): UsuariosController->runAction()
+#21 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#22 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#23 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): UsuariosController->filterAccessControl()
+#24 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#25 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#26 /var/www/laboral/web/yii/framework/web/CController.php(266): UsuariosController->runActionWithFilters()
+#27 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): UsuariosController->run()
+#28 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#29 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#30 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=usuarios/create&tipo=1
+in /var/www/laboral/web/protected/views/usuarios/_form.php (314)
+in /var/www/laboral/web/protected/views/usuarios/create.php (13)
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (119)
+2012/12/08 21:11:21 [error] [php] include(completo.php): failed to open stream: No such file or directory (/var/www/laboral/web/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/validators/CValidator.php(187): import()
+#1 /var/www/laboral/web/yii/framework/base/CModel.php(285): createValidator()
+#2 /var/www/laboral/web/yii/framework/base/CModel.php(259): Estudiantes->createValidators()
+#3 /var/www/laboral/web/yii/framework/base/CModel.php(302): Estudiantes->getValidators()
+#4 /var/www/laboral/web/yii/framework/web/helpers/CHtml.php(1197): Estudiantes->isAttributeRequired()
+#5 /var/www/laboral/web/yii/framework/web/widgets/CActiveForm.php(563): activeLabelEx()
+#6 /var/www/laboral/web/protected/views/usuarios/_form.php(314): CActiveForm->labelEx()
+#7 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require()
+#8 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): UsuariosController->renderInternal()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(870): UsuariosController->renderFile()
+#10 /var/www/laboral/web/protected/views/usuarios/create.php(13): UsuariosController->renderPartial()
+#11 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require()
+#12 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): UsuariosController->renderInternal()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(870): UsuariosController->renderFile()
+#14 /var/www/laboral/web/yii/framework/web/CController.php(783): UsuariosController->renderPartial()
+#15 /var/www/laboral/web/protected/controllers/UsuariosController.php(119): UsuariosController->render()
+#16 unknown(0): UsuariosController->actionCreate()
+#17 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#18 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#19 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#20 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): UsuariosController->runAction()
+#21 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#22 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#23 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): UsuariosController->filterAccessControl()
+#24 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#25 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#26 /var/www/laboral/web/yii/framework/web/CController.php(266): UsuariosController->runActionWithFilters()
+#27 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): UsuariosController->run()
+#28 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#29 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#30 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=usuarios/create&tipo=1
+in /var/www/laboral/web/protected/views/usuarios/_form.php (314)
+in /var/www/laboral/web/protected/views/usuarios/create.php (13)
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (119)
+2012/12/08 21:12:41 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (104)
+in /var/www/laboral/web/index.php (13)
+2012/12/08 21:13:15 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (104)
+in /var/www/laboral/web/index.php (13)
+2012/12/08 21:13:48 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (104)
+in /var/www/laboral/web/index.php (13)
+2012/12/08 21:13:48 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23505]: Unique violation: 7 ERROR:  llave duplicada viola restricción de unicidad «estudiantes_rut_key»
+DETAIL:  Ya existe la llave (rut)=(163237628).. The SQL statement executed was: INSERT INTO "estudiantes" ("genero", "busqueda", "completo", "nombres", "apellidos", "fecha_nacimiento", "direccion", "comuna_id", "ec_fk", "telefono", "celular", "email", "carrera_fk", "estado", "rut", "archivo_curriculum") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15).
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (109)
+in /var/www/laboral/web/index.php (13)
+2012/12/08 21:13:49 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23505]: Unique violation: 7 ERROR:  llave duplicada viola restricción de unicidad «estudiantes_rut_key»
+DETAIL:  Ya existe la llave (rut)=(163237628).. The SQL statement executed was: INSERT INTO "estudiantes" ("genero", "busqueda", "completo", "nombres", "apellidos", "fecha_nacimiento", "direccion", "comuna_id", "ec_fk", "telefono", "celular", "email", "carrera_fk", "estado", "rut", "archivo_curriculum") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/UsuariosController.php(109): CActiveRecord->save()
+#3 [internal function]: UsuariosController->actionCreate('1')
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(UsuariosController), Array)
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(UsuariosController), Object(ReflectionMethod), Array)
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('usuarios/create')
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/laboral/web/index.php?r=usuarios/create&tipo=1
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=usuarios/create&tipo=1
+---
+2012/12/08 21:23:32 [error] [php] urlencode() expects parameter 1 to be string, object given (/var/www/laboral/web/yii/framework/web/CUrlManager.php:438)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CUrlManager.php(308): CUrlManager->createUrlDefault()
+#1 /var/www/laboral/web/yii/framework/base/CApplication.php(524): CUrlManager->createUrl()
+#2 /var/www/laboral/web/yii/framework/web/CController.php(968): CWebApplication->createUrl()
+#3 /var/www/laboral/web/yii/framework/web/helpers/CHtml.php(1107): OfertasLaboralesController->createUrl()
+#4 /var/www/laboral/web/yii/framework/web/helpers/CHtml.php(381): normalizeUrl()
+#5 /var/www/laboral/web/protected/views/ofertasLaborales/view.php(95): link()
+#6 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require()
+#7 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): OfertasLaboralesController->renderInternal()
+#8 /var/www/laboral/web/yii/framework/web/CController.php(870): OfertasLaboralesController->renderFile()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(783): OfertasLaboralesController->renderPartial()
+#10 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(56): OfertasLaboralesController->render()
+#11 unknown(0): OfertasLaboralesController->actionView()
+#12 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#13 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#14 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#15 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): OfertasLaboralesController->runAction()
+#16 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#17 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#18 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): OfertasLaboralesController->filterAccessControl()
+#19 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#20 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#21 /var/www/laboral/web/yii/framework/web/CController.php(266): OfertasLaboralesController->runActionWithFilters()
+#22 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): OfertasLaboralesController->run()
+#23 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#24 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#25 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=16
+in /var/www/laboral/web/protected/views/ofertasLaborales/view.php (95)
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (56)
+in /var/www/laboral/web/index.php (13)
+2012/12/08 21:25:21 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.estudiantes" is not defined.' in /var/www/laboral/web/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/base/CModule.php(106): CComponent->__get('estudiantes')
+#1 /var/www/laboral/web/protected/views/ofertasLaborales/view.php(92): CModule->__get('estudiantes')
+#2 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#4 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#5 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('view', Array, true)
+#6 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(56): CController->render('view', Array)
+#7 [internal function]: OfertasLaboralesController->actionView('16')
+#8 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OfertasLaboralesController), Array)
+#9 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OfertasLaboralesController), Object(ReflectionMethod), Array)
+#10 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('view')
+#19 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#20 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/laboral/web/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=16
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/index
+---
+2012/12/08 21:51:02 [error] [php] Missing argument 3 for CHtml::listData(), called in /var/www/laboral/web/protected/views/ofertasLaborales/view.php on line 88 and defined (/var/www/laboral/web/yii/framework/web/helpers/CHtml.php:1765)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): OfertasLaboralesController->renderInternal()
+#1 /var/www/laboral/web/yii/framework/web/CController.php(870): OfertasLaboralesController->renderFile()
+#2 /var/www/laboral/web/yii/framework/web/CController.php(783): OfertasLaboralesController->renderPartial()
+#3 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(56): OfertasLaboralesController->render()
+#4 unknown(0): OfertasLaboralesController->actionView()
+#5 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#6 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): OfertasLaboralesController->runAction()
+#9 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#10 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#11 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): OfertasLaboralesController->filterAccessControl()
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#14 /var/www/laboral/web/yii/framework/web/CController.php(266): OfertasLaboralesController->runActionWithFilters()
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): OfertasLaboralesController->run()
+#16 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#17 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#18 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=14
+in /var/www/laboral/web/protected/views/ofertasLaborales/view.php (88)
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (56)
+in /var/www/laboral/web/index.php (13)
+2012/12/08 21:51:25 [error] [php] Missing argument 3 for CHtml::listData(), called in /var/www/laboral/web/protected/views/ofertasLaborales/view.php on line 88 and defined (/var/www/laboral/web/yii/framework/web/helpers/CHtml.php:1765)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): OfertasLaboralesController->renderInternal()
+#1 /var/www/laboral/web/yii/framework/web/CController.php(870): OfertasLaboralesController->renderFile()
+#2 /var/www/laboral/web/yii/framework/web/CController.php(783): OfertasLaboralesController->renderPartial()
+#3 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(56): OfertasLaboralesController->render()
+#4 unknown(0): OfertasLaboralesController->actionView()
+#5 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#6 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): OfertasLaboralesController->runAction()
+#9 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#10 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#11 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): OfertasLaboralesController->filterAccessControl()
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#14 /var/www/laboral/web/yii/framework/web/CController.php(266): OfertasLaboralesController->runActionWithFilters()
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): OfertasLaboralesController->run()
+#16 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#17 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#18 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=14
+in /var/www/laboral/web/protected/views/ofertasLaborales/view.php (88)
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (56)
+in /var/www/laboral/web/index.php (13)
+2012/12/08 22:02:43 [error] [php] Undefined variable: sql (/var/www/laboral/web/protected/views/ofertasLaborales/view.php:88)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(870): OfertasLaboralesController->renderFile()
+#1 /var/www/laboral/web/yii/framework/web/CController.php(783): OfertasLaboralesController->renderPartial()
+#2 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(56): OfertasLaboralesController->render()
+#3 unknown(0): OfertasLaboralesController->actionView()
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): OfertasLaboralesController->runAction()
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): OfertasLaboralesController->filterAccessControl()
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): OfertasLaboralesController->runActionWithFilters()
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): OfertasLaboralesController->run()
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=13
+in /var/www/laboral/web/protected/views/ofertasLaborales/view.php (88)
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (56)
+in /var/www/laboral/web/index.php (13)
+2012/12/08 22:02:45 [error] [php] Undefined variable: sql (/var/www/laboral/web/protected/views/ofertasLaborales/view.php:88)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(870): OfertasLaboralesController->renderFile()
+#1 /var/www/laboral/web/yii/framework/web/CController.php(783): OfertasLaboralesController->renderPartial()
+#2 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(56): OfertasLaboralesController->render()
+#3 unknown(0): OfertasLaboralesController->actionView()
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): OfertasLaboralesController->runAction()
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): OfertasLaboralesController->filterAccessControl()
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): OfertasLaboralesController->runActionWithFilters()
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): OfertasLaboralesController->run()
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=13
+in /var/www/laboral/web/protected/views/ofertasLaborales/view.php (88)
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (56)
+in /var/www/laboral/web/index.php (13)
+2012/12/08 23:06:05 [error] [php] Undefined variable: tipo (/var/www/laboral/web/protected/views/ofertasLaborales/view.php:89)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(870): OfertasLaboralesController->renderFile()
+#1 /var/www/laboral/web/yii/framework/web/CController.php(783): OfertasLaboralesController->renderPartial()
+#2 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(56): OfertasLaboralesController->render()
+#3 unknown(0): OfertasLaboralesController->actionView()
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): OfertasLaboralesController->runAction()
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): OfertasLaboralesController->filterAccessControl()
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): OfertasLaboralesController->runActionWithFilters()
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): OfertasLaboralesController->run()
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=16
+in /var/www/laboral/web/protected/views/ofertasLaborales/view.php (89)
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (56)
+in /var/www/laboral/web/index.php (13)
+2012/12/08 23:06:46 [error] [php] Undefined variable: tipo (/var/www/laboral/web/protected/views/ofertasLaborales/view.php:89)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(870): OfertasLaboralesController->renderFile()
+#1 /var/www/laboral/web/yii/framework/web/CController.php(783): OfertasLaboralesController->renderPartial()
+#2 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(64): OfertasLaboralesController->render()
+#3 unknown(0): OfertasLaboralesController->actionView()
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): OfertasLaboralesController->runAction()
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): OfertasLaboralesController->filterAccessControl()
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): OfertasLaboralesController->runActionWithFilters()
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): OfertasLaboralesController->run()
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=16
+in /var/www/laboral/web/protected/views/ofertasLaborales/view.php (89)
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (64)
+in /var/www/laboral/web/index.php (13)
+2012/12/08 23:07:50 [error] [php] Undefined variable: tipo (/var/www/laboral/web/protected/views/ofertasLaborales/view.php:89)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(870): OfertasLaboralesController->renderFile()
+#1 /var/www/laboral/web/yii/framework/web/CController.php(783): OfertasLaboralesController->renderPartial()
+#2 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(64): OfertasLaboralesController->render()
+#3 unknown(0): OfertasLaboralesController->actionView()
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): OfertasLaboralesController->runAction()
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): OfertasLaboralesController->filterAccessControl()
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): OfertasLaboralesController->runActionWithFilters()
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): OfertasLaboralesController->run()
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=14
+in /var/www/laboral/web/protected/views/ofertasLaborales/view.php (89)
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (64)
+in /var/www/laboral/web/index.php (13)
+2012/12/09 11:39:01 [error] [php] Undefined variable: tipo (/var/www/laboral/web/protected/views/ofertasLaborales/view.php:89)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(870): OfertasLaboralesController->renderFile()
+#1 /var/www/laboral/web/yii/framework/web/CController.php(783): OfertasLaboralesController->renderPartial()
+#2 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(64): OfertasLaboralesController->render()
+#3 unknown(0): OfertasLaboralesController->actionView()
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): OfertasLaboralesController->runAction()
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): OfertasLaboralesController->filterAccessControl()
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): OfertasLaboralesController->runActionWithFilters()
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): OfertasLaboralesController->run()
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=16
+in /var/www/laboral/web/protected/views/ofertasLaborales/view.php (89)
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (64)
+in /var/www/laboral/web/index.php (13)
+2012/12/09 11:46:39 [error] [php] Undefined variable: tipo (/var/www/laboral/web/protected/views/ofertasLaborales/view.php:91)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(870): OfertasLaboralesController->renderFile()
+#1 /var/www/laboral/web/yii/framework/web/CController.php(783): OfertasLaboralesController->renderPartial()
+#2 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(64): OfertasLaboralesController->render()
+#3 unknown(0): OfertasLaboralesController->actionView()
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): OfertasLaboralesController->runAction()
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): OfertasLaboralesController->filterAccessControl()
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): OfertasLaboralesController->runActionWithFilters()
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): OfertasLaboralesController->run()
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=16
+in /var/www/laboral/web/protected/views/ofertasLaborales/view.php (91)
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (64)
+in /var/www/laboral/web/index.php (13)

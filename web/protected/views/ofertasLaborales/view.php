@@ -6,6 +6,7 @@ $this->breadcrumbs=array(
 	'Ofertas Laborales'=>array('index'),
 	$model->pk,
 );
+$tipo = 0;
 if(Yii::app()->user->getModel(Yii::app()->user->id) != null)
 {
     $tipo = Yii::app()->user->getTipoUsuario(Yii::app()->user->name);
@@ -26,12 +27,14 @@ if(Yii::app()->user->getModel(Yii::app()->user->id) != null)
     {
         $this->menu=array(
                 array('label'=>'Lista Ofertas Laborales', 'url'=>array('index')),
+            
         );
+
     }
 }
 ?>
 
-<h1>Trabajo #<?php echo $model->pk; ?></h1>
+<h1>Trabajo ></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -79,4 +82,24 @@ if(Yii::app()->user->getModel(Yii::app()->user->id) != null)
                    'value'=> $model->contratoFk->contrato,
                  ),
 	),
-)); ?>
+            
+)
+        );
+echo CHtml::link('Atras',array('OfertasLaborales/index'));?>
+
+<?php 
+
+if($tipo == 1){
+   // if($datos==false){
+    echo CHtml::link(
+    'Postular',
+     array('Postulaciones/create','oferta_laboral_fk'=>$model->pk,'estudiante_fk'=>Yii::app()->user->id),
+      
+     array('confirm' => '¿Esta seguro que desea postular?')
+);//}
+/*else{
+    
+}*/
+
+}
+?>

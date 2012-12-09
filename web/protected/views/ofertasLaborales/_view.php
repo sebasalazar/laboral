@@ -64,5 +64,4 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('activo')); ?>:</b>
 	<?php echo CHtml::encode($data->activo); ?>
 	<br />
-
 </div>
