@@ -8,7 +8,8 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'UTEM - Bolsa de Trabajo',
-
+        'sourceLanguage' => 'es',
+        'language' => 'es',
 	// preloading 'log' component
 	'preload'=>array('log'),
 
@@ -53,15 +54,23 @@ return array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
 		),
 		// uncomment the following to use a MySQL database
+		/*
+		'db'=>array(
+			'connectionString' => 'mysql:host=localhost;dbname=bollaboral',
+
 		/**/
 		/*'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=laboral',
+
 			'emulatePrepare' => true,
-			'username' => 'root',
+			'username' => '',
 			'password' => '1234',
 			'charset' => 'utf8',
-		),*/
+		),
             
+		), 
+                 
+                 */
         //Configuracion para postgresql
          'db'=>array(
          'connectionString' => 'pgsql:host=localhost;port=5432;dbname=bolsaLaboral',

@@ -9,6 +9,6 @@ $this->breadcrumbs=array(
 );
 ?>
 
-<h1>Actualizar Datos Personales del Usuario: <?php echo $model->rut; ?></h1>
+<h1>Actualizar Datos Personales</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

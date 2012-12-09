@@ -45,7 +45,7 @@ public function actionLiquidar()
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
-				'users'=>array('174018367'),
+				'users'=>array(Yii::app()->user->getAdmin()),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -131,23 +131,11 @@ public function actionLiquidar()
 	 */
 	public function actionIndex()
 	{
-            $model = OfertasLaborales::model();
-            $dp = new CActiveDataProvider('OfertasLaborales', array(
-                    'sort'=>array(
-                            'attributes' => array(
-                               'fecha_publicacion' => array(
-                                 'asc' => 'fecha_publicacion ASC, rubro_fk ASC',
-                                 'desc' => 'fecha_publicacion DESC, rubro_fk ASC',
-                               )
-                            ),
-                           'defaultOrder' => 'fecha_publicacion, rubro_fk',
-                         ),
-                         'pagination' => array(
-                            'pagesize' => 30,
-                         ),
-                     )); 
-
-             $this->render('index', array('dp' => $dp, 'model'=>$model));
+            $model=new OfertasLaborales('search');
+            $model->unsetAttributes();  // clear any default values
+            if(isset($_GET['OfertasLaborales']))
+                    $model->attributes=$_GET['OfertasLaborales'];
+            $this->render('index', array('model'=>$model));
 	}
 
 	/**

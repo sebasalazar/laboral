@@ -17,10 +17,6 @@
 	<?php echo CHtml::encode($data->nombre); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('nombre_represen_legal')); ?>:</b>
-	<?php echo CHtml::encode($data->nombre_represen_legal); ?>
-	<br />
-
 	<b><?php echo CHtml::encode($data->getAttributeLabel('direccion')); ?>:</b>
 	<?php echo CHtml::encode($data->direccion); ?>
 	<br />
@@ -33,17 +29,17 @@
 	<?php echo CHtml::encode($data->codigo_postal); ?>
 	<br />
 
-	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('telefono')); ?>:</b>
 	<?php echo CHtml::encode($data->telefono); ?>
 	<br />
 
+	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('email')); ?>:</b>
 	<?php echo CHtml::encode($data->email); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('actividad')); ?>:</b>
-	<?php echo CHtml::encode($data->actividad); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('actividad_fk')); ?>:</b>
+	<?php echo CHtml::encode($data->actividad_fk); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('descripcion_negocio')); ?>:</b>

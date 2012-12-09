@@ -37,7 +37,7 @@ class UsuariosController extends Controller
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
-				'users'=>array('1234567'),
+				'users'=>array(Yii::app()->user->getAdmin()),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -67,7 +67,7 @@ class UsuariosController extends Controller
                 $model2 = new Empresas;
                 $model3 = new Estudiantes;
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		//$this->performAjaxValidation($model);
 		if(isset($_POST['Usuarios']))
 		{
 			$model->attributes=$_POST['Usuarios'];
@@ -76,7 +76,7 @@ class UsuariosController extends Controller
 			{
                                 $model1->attributes=$_POST['Docentes'];
                                 $model1->rut = $model->username;
-                                    if($model1->save() && $model->save()){
+                                    if($model->validate() && $model1->validate() && $model1->save() && $model->save()){
                                             $this->redirect(array('site/index'));
                                     }
                                     else
@@ -116,7 +116,7 @@ class UsuariosController extends Controller
 			}
                     } 
                 }
-                 $this->render('create',array('model'=>$model,'model1'=>$model1,'model2'=>$model2,'model3'=>$model3,'tipo'=>$tipo));
+                $this->render('create',array('model'=>$model,'model1'=>$model1,'model2'=>$model2,'model3'=>$model3,'tipo'=>$tipo));
 	}
 	
 

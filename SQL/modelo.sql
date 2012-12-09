@@ -233,13 +233,12 @@ CREATE TABLE empresas (
     pk serial NOT NULL,
     rut int NOT NULL,
     nombre varchar(255) NOT NULL,
-    nombre_represen_legal VARCHAR(255),
     direccion varchar(255) NOT NULL,
     comuna_fk int NOT NULL REFERENCES comunas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     codigo_postal int NOT NULL,
     telefono varchar(50) NOT NULL,  
     email varchar(255), 
-    actividad varchar(255) NOT NULL,  
+    actividad_fk int NOT NULL REFERENCES rubros(pk) ON UPDATE CASCADE ON DELETE CASCADE,  
     descripcion_negocio varchar(255) NOT NULL,
     web varchar(255) NOT NULL DEFAULT '',
     PRIMARY KEY(pk)
@@ -250,11 +249,14 @@ CREATE TABLE empresas (
 -- 
 DROP TABLE IF EXISTS encargados_empresas CASCADE;
 CREATE TABLE encargados_empresas (
-    pk bigserial NOT NULL,
+    pk serial NOT NULL,
     empresa_fk int NOT NULL REFERENCES empresas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    rut_encargado int NOT NULL,
     nombre varchar(255) NOT NULL,
     apellidos varchar(255) NOT NULL,
     genero char(1) NOT NULL DEFAULT 'F', -- M: Masculino -- F: Femenino
+    direccion varchar(255) NOT NULL,
+    comun_fk int NOT NULL REFERENCES comunas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     email varchar(255) NOT NULL,
     telefono varchar(50) NOT NULL,
     UNIQUE (empresa_fk, email),
@@ -408,10 +410,50 @@ DROP TABLE IF EXISTS practicas CASCADE;
 CREATE TABLE practicas (
     pk serial NOT NULL,
     empresa_fk int NOT NULL REFERENCES empresas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
-    area_practica varchar(255),
+    encargado_fk int NOT NULL REFERENCES encargados_empresas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    area_practica_fk int NOT NULL REFERENCES rubros(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     inicio_practica date NOT NULL,
     fin_practica date NOT NULL,
+    horario_fk int NOT NULL REFERENCES jornadas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     remuneracion int,
+    PRIMARY KEY(pk)
+);
+
+
+--
+--Tabla encargado practicas
+--
+DROP TABLE IF EXISTS encargados_practicas CASCADE;
+CREATE TABLE encargados_practicas (
+    pk serial NOT NULL,
+    rut_epracti int NOT NULL,
+    nombre_encargado varchar(255) NOT NULL,
+    apellido_encargado varchar(255) NOT NULL,
+    empresa_fk int NOT NULL REFERENCES empresas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    area_practica_fk int NOT NULL REFERENCES rubros(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    PRIMARY KEY(pk)
+);
+
+
+
+--
+--Tablas evaluacion de practicas
+--
+
+DROP TABLE IF EXISTS evaluaciones_practicas CASCADE;
+CREATE TABLE evaluaciones_practicas (
+    pk serial NOT NULL,
+    estudiant_fk int NOT NULL REFERENCES estudiantes(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    encar_practicas_fk int NOT NULL REFERENCES encargados_practicas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    cargo_asignado varchar(255) NOT NULL,
+    conocimientos_demostrados smallint NOT NULL, --de 0 a 16
+    eficacia smallint NOT NULL,       --de 0 a 16
+    grado_cumplimiento smallint NOT NULL,  --de 0 a 12
+    puntualidad_respeto smallint NOT NULL, --de 0 a 10
+    integracion_adaptacion smallint NOT NULL,  --de 0 a 10
+    responsabilidad_superacion smallint NOT NULL, --de 0 a 14
+    capacidades_personales smallint NOT NULL,  --de 0 a 8
+    iniciativa_creativi_improvi smallint NOT NULL, --de 0 a 14
     PRIMARY KEY(pk)
 );
 

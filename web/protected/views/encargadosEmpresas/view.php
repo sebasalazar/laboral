@@ -23,9 +23,12 @@ $this->menu=array(
 	'attributes'=>array(
 		'pk',
 		'empresa_fk',
+		'rut_encargado',
 		'nombre',
 		'apellidos',
 		'genero',
+		'direccion',
+		'comun_fk',
 		'email',
 		'telefono',
 	),

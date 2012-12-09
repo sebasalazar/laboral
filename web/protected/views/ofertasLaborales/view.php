@@ -34,13 +34,17 @@ if(Yii::app()->user->getModel(Yii::app()->user->id) != null)
 }
 ?>
 
-<h1>Trabajo ></h1>
+<h1>Detalle Oferta Laboral</h1>
+
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-                'fecha_publicacion',
-                 array(
+                array(
+                   'label'=>'Fecha Publicación: ',
+                   'value'=>Yii::app()->dateFormatter->format("d MMMM y",strtotime($model->fecha_publicacion)),
+                 ),
+                array(
                    'label'=>'Empresa: ',
                    'value'=>$model->empresaFk->nombre,
                  ),
@@ -51,6 +55,10 @@ if(Yii::app()->user->getModel(Yii::app()->user->id) != null)
 		array(
                    'label'=>'Nivel Estudios Solicitados: ',
                    'value'=>$model->nivelEstudioFk->estudios,
+                 ),
+                array(
+                   'label'=>'Cierre: ',
+                   'value'=>Yii::app()->dateFormatter->format("d MMMM y",strtotime($model->plazo)),
                  ),
 		array(
                    'label'=>'Renta: ',
@@ -85,7 +93,7 @@ if(Yii::app()->user->getModel(Yii::app()->user->id) != null)
             
 )
         );
-echo CHtml::link('Atras',array('OfertasLaborales/index'));?>
+?>
 
 <?php 
 

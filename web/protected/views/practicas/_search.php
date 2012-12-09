@@ -22,8 +22,13 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'area_practica'); ?>
-		<?php echo $form->textField($model,'area_practica',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->label($model,'encargado_fk'); ?>
+		<?php echo $form->textField($model,'encargado_fk'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'area_practica_fk'); ?>
+		<?php echo $form->textField($model,'area_practica_fk'); ?>
 	</div>
 
 	<div class="row">
@@ -34,6 +39,11 @@
 	<div class="row">
 		<?php echo $form->label($model,'fin_practica'); ?>
 		<?php echo $form->textField($model,'fin_practica'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'horario_fk'); ?>
+		<?php echo $form->textField($model,'horario_fk'); ?>
 	</div>
 
 	<div class="row">

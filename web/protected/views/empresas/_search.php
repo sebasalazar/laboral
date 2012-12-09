@@ -27,11 +27,6 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'nombre_represen_legal'); ?>
-		<?php echo $form->textField($model,'nombre_represen_legal',array('size'=>60,'maxlength'=>255)); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->label($model,'direccion'); ?>
 		<?php echo $form->textField($model,'direccion',array('size'=>60,'maxlength'=>255)); ?>
 	</div>
@@ -57,8 +52,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'actividad'); ?>
-		<?php echo $form->textField($model,'actividad',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->label($model,'actividad_fk'); ?>
+		<?php echo $form->textField($model,'actividad_fk'); ?>
 	</div>
 
 	<div class="row">
