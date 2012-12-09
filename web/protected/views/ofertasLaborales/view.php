@@ -12,8 +12,9 @@ if(Yii::app()->user->getModel(Yii::app()->user->id) != null)
     $tipo = Yii::app()->user->getTipoUsuario(Yii::app()->user->name);
     if($tipo == 3){
         $this->menu=array(
-                array('label'=>'Lista Ofertas Laborales', 'url'=>array('index')),
-                array('label'=>'Create Ofertas Laborales', 'url'=>array('create')),
+            array('label'=>'Actualizar datos personales', 'url'=>array('update', 'id'=>Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk)),
+            array('label'=>'Publicar Ofertas de Trabajo', 'url'=>array('ofertasLaborales/create')),
+            array('label'=>'Ofertas de Trabajo Publicadas', 'url'=>array('')),
         );
     }
     elseif ($tipo == 2) 

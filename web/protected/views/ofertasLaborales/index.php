@@ -9,9 +9,10 @@ $this->breadcrumbs=array(
 ?>
 <?php
 $this->menu=array(
-        array('label'=>'Buscar', 'url'=>array('#')),
-	array('label'=>'Publicar una Oferta Laboral', 'url'=>array('ofertasLaborales/create'), 'visible'=>!Yii::app()->user->isGuest),
-	array('label'=>'Publicar Practica', 'url'=>array('#'), 'visible'=>!Yii::app()->user->isGuest),
+                array('label'=>'Ofertas Laborales', 'url'=>array('ofertasLaborales/index')),
+                array('label'=>'Buscar', 'url'=>array('')),
+                array('label'=>'Publicar una Oferta Laboral', 'url'=>array('ofertasLaborales/create'), 'visible'=>!Yii::app()->user->isGuest),
+                array('label'=>'Publicar Practica', 'url'=>array('#'), 'visible'=>!Yii::app()->user->isGuest),
 );
 ?>
 
