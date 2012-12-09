@@ -45,19 +45,16 @@ $("#content > ul").tabs();
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
-        
-        
+
         
         <?php
             if($tipoUsuario == 3)
-                echo $form->errorSummary($model1);
+                echo $form->errorSummary(array($model,$model1));
             elseif ($tipoUsuario == 2)
-                echo $form->errorSummary($model2);
+                echo $form->errorSummary(array($model,$model2));
             elseif($tipoUsuario == 1)
-                echo $form->errorSummary($model3); 
+                echo $form->errorSummary(array($model,$model3)); 
         ?>
-        
-        <?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
             <div class="contenido">

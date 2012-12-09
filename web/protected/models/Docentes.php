@@ -60,6 +60,7 @@ class Docentes extends CActiveRecord
 			array('telefono', 'length', 'min'=>7,'max'=>7),
                         array('celular', 'length', 'min'=>8, 'max'=>8),
                         array('email', 'email'),
+                        array('email', 'unique'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('pk, nombres, apellidos, rut, fecha_nacimiento, genero, direccion, comuna_id, ec_fk, departamento_fk, telefono, celular, email', 'safe', 'on'=>'search'),
