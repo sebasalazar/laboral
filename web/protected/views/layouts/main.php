@@ -43,7 +43,7 @@
                                 $usuario_nombre = Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->nombre;
                                 if($usuario_nombre != null)
                                 echo "Bienvenido, <b>".$usuario_nombre."</b><br >";
-                                echo CHtml::link('Perfil', array('/docentes/perfil', 'id'=>Yii::app()->user->name))." - ".CHtml::link('Salir',array('/site/logout'));
+                                echo CHtml::link('Perfil', array('/empresas/perfil', 'id'=>Yii::app()->user->name))." - ".CHtml::link('Salir',array('/site/logout'));
                                 echo "</div>";
                             }
                             elseif($tipo == 1) //Estudiante
@@ -51,7 +51,7 @@
                                 $usuario_nombre = Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->nombres;
                                 if($usuario_nombre != null)
                                 echo "Bienvenido, <b>".$usuario_nombre."</b><br >";
-                                echo CHtml::link('Perfil', array('/docentes/perfil', 'id'=>Yii::app()->user->name))." - ".CHtml::link('Salir',array('/site/logout'));
+                                echo CHtml::link('Perfil', array('/estudiantes/perfil', 'id'=>Yii::app()->user->name))." - ".CHtml::link('Salir',array('/site/logout'));
                                 echo "</div>";
                             }
                             if(Yii::app()->user->getModel(Yii::app()->user->id)->roles == 1){

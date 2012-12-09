@@ -153,8 +153,11 @@ class DocentesController extends Controller
         
         public function actionPerfil($id)
         {
+            $model= Docentes::model()->findByPk(Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk);
             if($id == Yii::app()->user->name)
-                $this->render('perfil');
+                $this->render('perfil', array(
+                        'model'=>$model
+                ));
             else
                 throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
         }

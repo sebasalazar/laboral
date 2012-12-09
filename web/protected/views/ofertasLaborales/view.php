@@ -31,7 +31,7 @@ if(Yii::app()->user->getModel(Yii::app()->user->id) != null)
 }
 ?>
 
-<h1>Trabajo #<?php echo $model->pk; ?></h1>
+<h1>Detalle Oferta Laboral</h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

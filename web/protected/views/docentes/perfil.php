@@ -7,3 +7,22 @@ $this->menu=array(
 );
 
 ?>
+
+<?php $this->widget('zii.widgets.CDetailView', array(
+	'data'=>$model,
+	'attributes'=>array(
+		'pk',
+		'nombres',
+		'apellidos',
+		'rut',
+		'fecha_nacimiento',
+		'genero',
+		'direccion',
+		'comuna_id',
+		'ec_fk',
+		'departamento_fk',
+		'telefono',
+		'celular',
+		'email',
+	),
+)); ?>
