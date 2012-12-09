@@ -1,8 +1,5 @@
 <?php
  
-// this file must be stored in:
-// protected/components/WebUser.php
- 
 class WebUser extends CWebUser {
  
   private $_model;
@@ -63,6 +60,18 @@ class WebUser extends CWebUser {
       return '174018367';
   }
   
+  public function roles($rolDB){   //funcion que recibe un numero entero (decimal) y lo pasa a binario (para el mapa bit de roles)
+      $i = 3;                      //Visto en Clases.
+      while($rolDB != 0){
+          $resto = $rolDB%2;
+          $rolDB = $rolDB/2;
+          $rol[$i] = $resto;
+          $i = $i - 1;
+      }
+      return $rol;
+  }
+
+
   public function getTipoUsuario($rut)
   {
        $docente = Docentes::model()->findByAttributes(array('rut'=>$rut));
