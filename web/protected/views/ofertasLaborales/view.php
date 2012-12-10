@@ -101,13 +101,9 @@ if($tipo == 1){
    // if($datos==false){
     echo CHtml::link(
     'Postular',
-     array('Postulaciones/create','oferta_laboral_fk'=>$model->pk,'estudiante_fk'=>Yii::app()->user->id),
-      
+     array('Postulaciones/registrar','oferta_laboral_fk'=>$model->pk,'estudiante_fk'=>Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk,'fecha'=>date("d-m-Y")),    
      array('confirm' => '¿Esta seguro que desea postular?')
-);//}
-/*else{
-    
-}*/
+);}
 
-}
+
 ?>

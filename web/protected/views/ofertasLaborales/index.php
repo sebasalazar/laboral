@@ -44,7 +44,7 @@ $this->menu=array(
               'value' => '$data->nivelEstudioFk->estudios',
           ),
         array(
-            'header'=>'Revisar',
+            'header'=>'Detalle',
             'class'=>'CButtonColumn',
             'template'=>'{view}',
     ),    

@@ -24,7 +24,7 @@ class PostulacionesController extends Controller
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-	public function accessRules()
+/*	public function accessRules()
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
@@ -60,10 +60,10 @@ class PostulacionesController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate($oferta_laboral_fk,$estudiante_fk)
+	public function actionCreate()
 	{
 		$model=new Postulaciones;
-                 
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -78,6 +78,28 @@ class PostulacionesController extends Controller
 			'model'=>$model,
 		));
 	}
+        	public function actionRegistrar($oferta_laboral_fk,$estudiante_fk,$fecha)
+	{
+		$model=new Postulaciones;
+                $model->oferta_laboral_fk = $oferta_laboral_fk;
+                $model->estudiante_fk = $estudiante_fk;
+                $model->fecha = $fecha;
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+               $model->save();
+               $this->redirect(array('OfertasLaborales/index'));
+	/*	if(isset($_POST['Postulaciones']))
+		{
+			$model->attributes=$_POST['Postulaciones'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->pk));
+		}
+
+		$this->render('create',array(
+			'model'=>$model,
+		));*/
+	}
+
 
 	/**
 	 * Updates a particular model.

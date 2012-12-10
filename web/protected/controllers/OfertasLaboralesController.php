@@ -19,20 +19,13 @@ class OfertasLaboralesController extends Controller
 		);
 	}
         
-public function actionLiquidar()
-        {
-            $this->_atributo1 = $_POST['variable1'];
-            $this->_atributo2 = $_POST['variable2'];
-            
-            $liquidacion = Liquidacion::model()->liquidar($this->_atributo1, $this->_atributo2);
-            $this->renderPartial('_liquidar', array ('liquidacion'=>$liquidacion));
-        }
+
 	/**
 	 * Specifies the access control rules.
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-	/*public function accessRules()
+	public function accessRules()
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions

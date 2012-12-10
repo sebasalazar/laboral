@@ -1,0 +1,1234 @@
+2012/12/09 17:03:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "perfil" solicitada.' in /var/www/laboral/web/yii/framework/web/CController.php:484
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(271): CController->missingAction('perfil')
+#1 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('perfil')
+#2 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('estudiantes/per...')
+#3 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/www/laboral/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/laboral/web/index.php?r=estudiantes/perfil&id=163237628
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/index
+---
+2012/12/09 17:03:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "perfil" solicitada.' in /var/www/laboral/web/yii/framework/web/CController.php:484
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(271): CController->missingAction('perfil')
+#1 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('perfil')
+#2 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('estudiantes/per...')
+#3 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/www/laboral/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/laboral/web/index.php?r=estudiantes/perfil&id=163237628
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=Postulaciones/create&oferta_laboral_fk=13&estudiante_fk=5
+---
+2012/12/09 17:11:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "perfil" solicitada.' in /var/www/laboral/web/yii/framework/web/CController.php:484
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(271): CController->missingAction('perfil')
+#1 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('perfil')
+#2 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('estudiantes/per...')
+#3 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/www/laboral/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/laboral/web/index.php?r=estudiantes/perfil&id=163237628
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=estudiantes/perfil&id=163237628
+---
+2012/12/09 17:13:13 [error] [exception.CException] exception 'CException' with message 'Propiedad "Empresas"."actividad_fk" no se encuentra definida.' in /var/www/laboral/web/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('actividad_fk')
+#1 /var/www/laboral/web/yii/framework/web/helpers/CHtml.php(2158): CActiveRecord->__get('actividad_fk')
+#2 /var/www/laboral/web/yii/framework/web/helpers/CHtml.php(1515): CHtml::resolveValue(Object(Empresas), 'actividad_fk')
+#3 /var/www/laboral/web/yii/framework/web/widgets/CActiveForm.php(764): CHtml::activeDropDownList(Object(Empresas), 'actividad_fk', Array, Array)
+#4 /var/www/laboral/web/protected/views/usuarios/_form.php(318): CActiveForm->dropDownList(Object(Empresas), 'actividad_fk', Array, Array)
+#5 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#6 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#7 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#8 /var/www/laboral/web/protected/views/usuarios/create.php(13): CController->renderPartial('_form', Array)
+#9 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#10 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#11 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#12 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('create', Array, true)
+#13 /var/www/laboral/web/protected/controllers/UsuariosController.php(119): CController->render('create', Array)
+#14 [internal function]: UsuariosController->actionCreate('2')
+#15 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(UsuariosController), Array)
+#16 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(UsuariosController), Object(ReflectionMethod), Array)
+#17 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#18 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#19 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#20 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#21 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#22 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#23 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#24 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#26 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('usuarios/create')
+#27 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#28 /var/www/laboral/web/index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/laboral/web/index.php?r=usuarios/create&tipo=2
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=usuarios/pcreate&visible=
+---
+2012/12/09 18:18:30 [error] [exception.CException] exception 'CException' with message 'Propiedad "CHttpRequest"."getPost" no se encuentra definida.' in /var/www/laboral/web/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/laboral/web/protected/views/ofertasLaborales/view.php(104): CComponent->__get('getPost')
+#1 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#2 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#3 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#4 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('view', Array, true)
+#5 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(57): CController->render('view', Array)
+#6 [internal function]: OfertasLaboralesController->actionView('13')
+#7 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OfertasLaboralesController), Array)
+#8 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OfertasLaboralesController), Object(ReflectionMethod), Array)
+#9 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#10 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#12 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#13 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#14 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#16 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('view')
+#18 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#19 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#20 /var/www/laboral/web/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=13
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/index
+---
+2012/12/09 18:19:14 [error] [php] Missing argument 1 for CHttpRequest::getPost(), called in /var/www/laboral/web/protected/views/ofertasLaborales/view.php on line 104 and defined (/var/www/laboral/web/yii/framework/web/CHttpRequest.php:186)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): OfertasLaboralesController->renderInternal()
+#1 /var/www/laboral/web/yii/framework/web/CController.php(870): OfertasLaboralesController->renderFile()
+#2 /var/www/laboral/web/yii/framework/web/CController.php(783): OfertasLaboralesController->renderPartial()
+#3 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(57): OfertasLaboralesController->render()
+#4 unknown(0): OfertasLaboralesController->actionView()
+#5 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#6 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): OfertasLaboralesController->runAction()
+#9 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#10 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#11 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): OfertasLaboralesController->filterAccessControl()
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#14 /var/www/laboral/web/yii/framework/web/CController.php(266): OfertasLaboralesController->runActionWithFilters()
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): OfertasLaboralesController->run()
+#16 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#17 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#18 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=14
+in /var/www/laboral/web/protected/views/ofertasLaborales/view.php (104)
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (57)
+in /var/www/laboral/web/index.php (13)
+2012/12/09 18:20:57 [error] [php] Missing argument 1 for CHttpRequest::getPost(), called in /var/www/laboral/web/protected/views/ofertasLaborales/view.php on line 104 and defined (/var/www/laboral/web/yii/framework/web/CHttpRequest.php:186)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): OfertasLaboralesController->renderInternal()
+#1 /var/www/laboral/web/yii/framework/web/CController.php(870): OfertasLaboralesController->renderFile()
+#2 /var/www/laboral/web/yii/framework/web/CController.php(783): OfertasLaboralesController->renderPartial()
+#3 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(57): OfertasLaboralesController->render()
+#4 unknown(0): OfertasLaboralesController->actionView()
+#5 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#6 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): OfertasLaboralesController->runAction()
+#9 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#10 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#11 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): OfertasLaboralesController->filterAccessControl()
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#14 /var/www/laboral/web/yii/framework/web/CController.php(266): OfertasLaboralesController->runActionWithFilters()
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): OfertasLaboralesController->run()
+#16 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#17 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#18 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=13
+in /var/www/laboral/web/protected/views/ofertasLaborales/view.php (104)
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (57)
+in /var/www/laboral/web/index.php (13)
+2012/12/09 19:21:44 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/laboral/web/yii/framework/web/auth/CAccessControlFilter.php:170
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/auth/CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(WebUser), 'Usted no se enc...')
+#1 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#6 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('registrar')
+#8 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postulaciones/r...')
+#9 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /var/www/laboral/web/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar&oferta_laboral_fk=&estudiante_fk=
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=13
+---
+2012/12/09 19:35:00 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/laboral/web/yii/framework/web/CController.php:337
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#3 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('registrar')
+#9 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postulaciones/r...')
+#10 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /var/www/laboral/web/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=13
+---
+2012/12/09 19:35:37 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/laboral/web/yii/framework/web/CController.php:337
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#3 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('registrar')
+#9 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postulaciones/r...')
+#10 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /var/www/laboral/web/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=13
+---
+2012/12/09 19:36:22 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/laboral/web/yii/framework/web/CController.php:337
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#3 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('registrar')
+#9 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postulaciones/r...')
+#10 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /var/www/laboral/web/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=13
+---
+2012/12/09 19:36:28 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/laboral/web/yii/framework/web/CController.php:337
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#3 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('registrar')
+#9 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postulaciones/r...')
+#10 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /var/www/laboral/web/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=14
+---
+2012/12/09 19:37:36 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/laboral/web/yii/framework/web/CController.php:337
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#3 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('registrar')
+#9 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postulaciones/r...')
+#10 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /var/www/laboral/web/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=14
+---
+2012/12/09 19:38:47 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/laboral/web/yii/framework/web/CController.php:337
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#3 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('registrar')
+#9 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('postulaciones/r...')
+#10 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /var/www/laboral/web/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/laboral/web/index.php?r=postulaciones/registrar
+---
+2012/12/09 19:38:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "create3" solicitada.' in /var/www/laboral/web/yii/framework/web/CController.php:484
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(271): CController->missingAction('create3')
+#1 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create3')
+#2 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postulaciones/c...')
+#3 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/www/laboral/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/create3
+---
+2012/12/09 19:39:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "create3" solicitada.' in /var/www/laboral/web/yii/framework/web/CController.php:484
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(271): CController->missingAction('create3')
+#1 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create3')
+#2 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postulaciones/c...')
+#3 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/www/laboral/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/create3
+---
+2012/12/09 19:39:08 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/laboral/web/yii/framework/web/CController.php:337
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#3 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('registrar')
+#9 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postulaciones/r...')
+#10 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /var/www/laboral/web/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar
+---
+2012/12/09 19:41:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "create3" solicitada.' in /var/www/laboral/web/yii/framework/web/CController.php:484
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(271): CController->missingAction('create3')
+#1 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create3')
+#2 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postulaciones/c...')
+#3 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/www/laboral/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/create3
+---
+2012/12/09 19:41:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "create3" solicitada.' in /var/www/laboral/web/yii/framework/web/CController.php:484
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(271): CController->missingAction('create3')
+#1 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('create3')
+#2 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postulaciones/c...')
+#3 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/www/laboral/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/create3
+---
+2012/12/09 19:41:08 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/laboral/web/yii/framework/web/CController.php:337
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#3 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('registrar')
+#9 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('postulaciones/r...')
+#10 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /var/www/laboral/web/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/laboral/web/index.php?r=postulaciones/registrar
+---
+2012/12/09 19:41:11 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/laboral/web/yii/framework/web/CController.php:337
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#3 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('registrar')
+#9 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postulaciones/r...')
+#10 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /var/www/laboral/web/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=14
+---
+2012/12/09 19:41:56 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/laboral/web/yii/framework/web/CController.php:337
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#3 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('registrar')
+#9 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postulaciones/r...')
+#10 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /var/www/laboral/web/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=14
+---
+2012/12/09 20:16:17 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/laboral/web/yii/framework/web/CController.php:337
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#3 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('registrar')
+#9 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postulaciones/r...')
+#10 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /var/www/laboral/web/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=14
+---
+2012/12/09 20:19:16 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/laboral/web/yii/framework/web/CController.php:337
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#3 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('registrar')
+#9 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postulaciones/r...')
+#10 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /var/www/laboral/web/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=13
+---
+2012/12/09 20:20:04 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/laboral/web/yii/framework/web/CController.php:337
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#3 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('registrar')
+#9 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postulaciones/r...')
+#10 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /var/www/laboral/web/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=13
+---
+2012/12/09 20:21:54 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/laboral/web/yii/framework/web/CController.php:337
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#3 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('registrar')
+#9 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postulaciones/r...')
+#10 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /var/www/laboral/web/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=13
+---
+2012/12/09 20:21:55 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (/var/www/laboral/web/yii/framework/web/helpers/CHtml.php:85)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/helpers/CHtml.php(140): renderAttributes()
+#1 /var/www/laboral/web/yii/framework/web/helpers/CHtml.php(383): tag()
+#2 /var/www/laboral/web/protected/views/ofertasLaborales/view.php(113): link()
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require()
+#4 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): OfertasLaboralesController->renderInternal()
+#5 /var/www/laboral/web/yii/framework/web/CController.php(870): OfertasLaboralesController->renderFile()
+#6 /var/www/laboral/web/yii/framework/web/CController.php(783): OfertasLaboralesController->renderPartial()
+#7 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(57): OfertasLaboralesController->render()
+#8 unknown(0): OfertasLaboralesController->actionView()
+#9 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#10 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#11 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): OfertasLaboralesController->runAction()
+#13 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#15 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): OfertasLaboralesController->filterAccessControl()
+#16 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#17 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/laboral/web/yii/framework/web/CController.php(266): OfertasLaboralesController->runActionWithFilters()
+#19 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): OfertasLaboralesController->run()
+#20 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#21 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=13
+in /var/www/laboral/web/protected/views/ofertasLaborales/view.php (113)
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (57)
+in /var/www/laboral/web/index.php (13)
+2012/12/09 20:22:03 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (/var/www/laboral/web/yii/framework/web/helpers/CHtml.php:85)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/helpers/CHtml.php(140): renderAttributes()
+#1 /var/www/laboral/web/yii/framework/web/helpers/CHtml.php(383): tag()
+#2 /var/www/laboral/web/protected/views/ofertasLaborales/view.php(113): link()
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require()
+#4 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): OfertasLaboralesController->renderInternal()
+#5 /var/www/laboral/web/yii/framework/web/CController.php(870): OfertasLaboralesController->renderFile()
+#6 /var/www/laboral/web/yii/framework/web/CController.php(783): OfertasLaboralesController->renderPartial()
+#7 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(57): OfertasLaboralesController->render()
+#8 unknown(0): OfertasLaboralesController->actionView()
+#9 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#10 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#11 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): OfertasLaboralesController->runAction()
+#13 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#15 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): OfertasLaboralesController->filterAccessControl()
+#16 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#17 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/laboral/web/yii/framework/web/CController.php(266): OfertasLaboralesController->runActionWithFilters()
+#19 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): OfertasLaboralesController->run()
+#20 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#21 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=13
+in /var/www/laboral/web/protected/views/ofertasLaborales/view.php (113)
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (57)
+in /var/www/laboral/web/index.php (13)
+2012/12/09 20:22:48 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (/var/www/laboral/web/yii/framework/web/helpers/CHtml.php:85)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/helpers/CHtml.php(140): renderAttributes()
+#1 /var/www/laboral/web/yii/framework/web/helpers/CHtml.php(383): tag()
+#2 /var/www/laboral/web/protected/views/ofertasLaborales/view.php(113): link()
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require()
+#4 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): OfertasLaboralesController->renderInternal()
+#5 /var/www/laboral/web/yii/framework/web/CController.php(870): OfertasLaboralesController->renderFile()
+#6 /var/www/laboral/web/yii/framework/web/CController.php(783): OfertasLaboralesController->renderPartial()
+#7 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(57): OfertasLaboralesController->render()
+#8 unknown(0): OfertasLaboralesController->actionView()
+#9 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#10 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#11 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): OfertasLaboralesController->runAction()
+#13 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#15 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): OfertasLaboralesController->filterAccessControl()
+#16 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#17 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/laboral/web/yii/framework/web/CController.php(266): OfertasLaboralesController->runActionWithFilters()
+#19 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): OfertasLaboralesController->run()
+#20 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#21 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=13
+in /var/www/laboral/web/protected/views/ofertasLaborales/view.php (113)
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (57)
+in /var/www/laboral/web/index.php (13)
+2012/12/09 20:39:54 [error] [php] Use of undefined constant oferta_laboral_fk - assumed 'oferta_laboral_fk' (/var/www/laboral/web/protected/views/ofertasLaborales/view.php:115)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(870): OfertasLaboralesController->renderFile()
+#1 /var/www/laboral/web/yii/framework/web/CController.php(783): OfertasLaboralesController->renderPartial()
+#2 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(57): OfertasLaboralesController->render()
+#3 unknown(0): OfertasLaboralesController->actionView()
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): OfertasLaboralesController->runAction()
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): OfertasLaboralesController->filterAccessControl()
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): OfertasLaboralesController->runActionWithFilters()
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): OfertasLaboralesController->run()
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=13
+in /var/www/laboral/web/protected/views/ofertasLaborales/view.php (115)
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (57)
+in /var/www/laboral/web/index.php (13)
+2012/12/09 20:39:58 [error] [php] Use of undefined constant oferta_laboral_fk - assumed 'oferta_laboral_fk' (/var/www/laboral/web/protected/views/ofertasLaborales/view.php:115)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(870): OfertasLaboralesController->renderFile()
+#1 /var/www/laboral/web/yii/framework/web/CController.php(783): OfertasLaboralesController->renderPartial()
+#2 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(57): OfertasLaboralesController->render()
+#3 unknown(0): OfertasLaboralesController->actionView()
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): OfertasLaboralesController->runAction()
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): OfertasLaboralesController->filterAccessControl()
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): OfertasLaboralesController->runActionWithFilters()
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): OfertasLaboralesController->run()
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=13
+in /var/www/laboral/web/protected/views/ofertasLaborales/view.php (115)
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (57)
+in /var/www/laboral/web/index.php (13)
+2012/12/09 20:46:28 [error] [php] Undefined variable: oferta_laboral_fk (/var/www/laboral/web/protected/views/ofertasLaborales/view.php:114)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(870): OfertasLaboralesController->renderFile()
+#1 /var/www/laboral/web/yii/framework/web/CController.php(783): OfertasLaboralesController->renderPartial()
+#2 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(57): OfertasLaboralesController->render()
+#3 unknown(0): OfertasLaboralesController->actionView()
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): OfertasLaboralesController->runAction()
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): OfertasLaboralesController->filterAccessControl()
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): OfertasLaboralesController->runActionWithFilters()
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): OfertasLaboralesController->run()
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=13
+in /var/www/laboral/web/protected/views/ofertasLaborales/view.php (114)
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (57)
+in /var/www/laboral/web/index.php (13)
+2012/12/09 21:17:01 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/laboral/web/yii/framework/web/CController.php:337
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#3 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('registrar')
+#9 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postulaciones/r...')
+#10 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /var/www/laboral/web/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar&oferta_laboral_fk=13&estudiante_fk=163237628&0%5Bconfirm%5D=%C2%BFEsta+seguro+que+desea+postular%3F
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=13
+---
+2012/12/09 21:21:16 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23503]: Foreign key violation: 7 ERROR:  inserción o actualización en la tabla «postulaciones» viola la llave foránea «postulaciones_estudiante_fk_fkey»
+DETAIL:  La llave (estudiante_fk)=(163237628) no está presente en la tabla «estudiantes».. The SQL statement executed was: INSERT INTO "postulaciones" ("oferta_laboral_fk", "estudiante_fk", "fecha") VALUES (:yp0, :yp1, :yp2).
+in /var/www/laboral/web/protected/controllers/PostulacionesController.php (89)
+in /var/www/laboral/web/index.php (13)
+2012/12/09 21:21:16 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23503]: Foreign key violation: 7 ERROR:  inserción o actualización en la tabla «postulaciones» viola la llave foránea «postulaciones_estudiante_fk_fkey»
+DETAIL:  La llave (estudiante_fk)=(163237628) no está presente en la tabla «estudiantes».. The SQL statement executed was: INSERT INTO "postulaciones" ("oferta_laboral_fk", "estudiante_fk", "fecha") VALUES (:yp0, :yp1, :yp2)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/PostulacionesController.php(89): CActiveRecord->save()
+#3 [internal function]: PostulacionesController->actionRegistrar('13', '163237628', '09-12-2012')
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(PostulacionesController), Array)
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(PostulacionesController), Object(ReflectionMethod), Array)
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('registrar')
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postulaciones/r...')
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar&oferta_laboral_fk=13&estudiante_fk=163237628&fecha=09-12-2012
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=13
+---
+2012/12/09 21:22:54 [error] [exception.CException] exception 'CException' with message 'Propiedad "WebUser"."pk" no se encuentra definida.' in /var/www/laboral/web/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/auth/CWebUser.php(141): CComponent->__get('pk')
+#1 /var/www/laboral/web/protected/views/ofertasLaborales/view.php(104): CWebUser->__get('pk')
+#2 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#4 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#5 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('view', Array, true)
+#6 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(57): CController->render('view', Array)
+#7 [internal function]: OfertasLaboralesController->actionView('13')
+#8 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OfertasLaboralesController), Array)
+#9 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OfertasLaboralesController), Object(ReflectionMethod), Array)
+#10 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('view')
+#19 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#20 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/laboral/web/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=13
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/index
+---
+2012/12/09 21:22:56 [error] [exception.CException] exception 'CException' with message 'Propiedad "WebUser"."pk" no se encuentra definida.' in /var/www/laboral/web/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/auth/CWebUser.php(141): CComponent->__get('pk')
+#1 /var/www/laboral/web/protected/views/ofertasLaborales/view.php(104): CWebUser->__get('pk')
+#2 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#4 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#5 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('view', Array, true)
+#6 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(57): CController->render('view', Array)
+#7 [internal function]: OfertasLaboralesController->actionView('13')
+#8 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OfertasLaboralesController), Array)
+#9 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OfertasLaboralesController), Object(ReflectionMethod), Array)
+#10 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('view')
+#19 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#20 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/laboral/web/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=13
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/index
+---
+2012/12/09 21:23:08 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23503]: Foreign key violation: 7 ERROR:  inserción o actualización en la tabla «postulaciones» viola la llave foránea «postulaciones_estudiante_fk_fkey»
+DETAIL:  La llave (estudiante_fk)=(5) no está presente en la tabla «estudiantes».. The SQL statement executed was: INSERT INTO "postulaciones" ("oferta_laboral_fk", "estudiante_fk", "fecha") VALUES (:yp0, :yp1, :yp2).
+in /var/www/laboral/web/protected/controllers/PostulacionesController.php (89)
+in /var/www/laboral/web/index.php (13)
+2012/12/09 21:23:08 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23503]: Foreign key violation: 7 ERROR:  inserción o actualización en la tabla «postulaciones» viola la llave foránea «postulaciones_estudiante_fk_fkey»
+DETAIL:  La llave (estudiante_fk)=(5) no está presente en la tabla «estudiantes».. The SQL statement executed was: INSERT INTO "postulaciones" ("oferta_laboral_fk", "estudiante_fk", "fecha") VALUES (:yp0, :yp1, :yp2)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/PostulacionesController.php(89): CActiveRecord->save()
+#3 [internal function]: PostulacionesController->actionRegistrar('13', '5', '09-12-2012')
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(PostulacionesController), Array)
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(PostulacionesController), Object(ReflectionMethod), Array)
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('registrar')
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postulaciones/r...')
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar&oferta_laboral_fk=13&estudiante_fk=5&fecha=09-12-2012
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=13
+---
+2012/12/09 21:26:37 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23503]: Foreign key violation: 7 ERROR:  inserción o actualización en la tabla «postulaciones» viola la llave foránea «postulaciones_estudiante_fk_fkey»
+DETAIL:  La llave (estudiante_fk)=(5) no está presente en la tabla «estudiantes».. The SQL statement executed was: INSERT INTO "postulaciones" ("oferta_laboral_fk", "estudiante_fk", "fecha") VALUES (:yp0, :yp1, :yp2).
+in /var/www/laboral/web/protected/controllers/PostulacionesController.php (89)
+in /var/www/laboral/web/index.php (13)
+2012/12/09 21:26:37 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23503]: Foreign key violation: 7 ERROR:  inserción o actualización en la tabla «postulaciones» viola la llave foránea «postulaciones_estudiante_fk_fkey»
+DETAIL:  La llave (estudiante_fk)=(5) no está presente en la tabla «estudiantes».. The SQL statement executed was: INSERT INTO "postulaciones" ("oferta_laboral_fk", "estudiante_fk", "fecha") VALUES (:yp0, :yp1, :yp2)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/PostulacionesController.php(89): CActiveRecord->save()
+#3 [internal function]: PostulacionesController->actionRegistrar('13', '5', '09-12-2012')
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(PostulacionesController), Array)
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(PostulacionesController), Object(ReflectionMethod), Array)
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('registrar')
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postulaciones/r...')
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar&oferta_laboral_fk=13&estudiante_fk=5&fecha=09-12-2012
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=13
+---
+2012/12/09 21:28:53 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23503]: Foreign key violation: 7 ERROR:  inserción o actualización en la tabla «postulaciones» viola la llave foránea «postulaciones_estudiante_fk_fkey»
+DETAIL:  La llave (estudiante_fk)=(5) no está presente en la tabla «estudiantes».. The SQL statement executed was: INSERT INTO "postulaciones" ("oferta_laboral_fk", "estudiante_fk", "fecha") VALUES (:yp0, :yp1, :yp2).
+in /var/www/laboral/web/protected/controllers/PostulacionesController.php (89)
+in /var/www/laboral/web/index.php (13)
+2012/12/09 21:28:53 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23503]: Foreign key violation: 7 ERROR:  inserción o actualización en la tabla «postulaciones» viola la llave foránea «postulaciones_estudiante_fk_fkey»
+DETAIL:  La llave (estudiante_fk)=(5) no está presente en la tabla «estudiantes».. The SQL statement executed was: INSERT INTO "postulaciones" ("oferta_laboral_fk", "estudiante_fk", "fecha") VALUES (:yp0, :yp1, :yp2)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/PostulacionesController.php(89): CActiveRecord->save()
+#3 [internal function]: PostulacionesController->actionRegistrar('13', '5', '09-12-2012')
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(PostulacionesController), Array)
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(PostulacionesController), Object(ReflectionMethod), Array)
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('registrar')
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postulaciones/r...')
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar&oferta_laboral_fk=13&estudiante_fk=5&fecha=09-12-2012
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=13
+---
+2012/12/09 21:31:18 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23503]: Foreign key violation: 7 ERROR:  inserción o actualización en la tabla «postulaciones» viola la llave foránea «postulaciones_estudiante_fk_fkey»
+DETAIL:  La llave (estudiante_fk)=(5) no está presente en la tabla «estudiantes».. The SQL statement executed was: INSERT INTO "postulaciones" ("oferta_laboral_fk", "estudiante_fk", "fecha") VALUES (:yp0, :yp1, :yp2).
+in /var/www/laboral/web/protected/controllers/PostulacionesController.php (89)
+in /var/www/laboral/web/index.php (13)
+2012/12/09 21:31:18 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23503]: Foreign key violation: 7 ERROR:  inserción o actualización en la tabla «postulaciones» viola la llave foránea «postulaciones_estudiante_fk_fkey»
+DETAIL:  La llave (estudiante_fk)=(5) no está presente en la tabla «estudiantes».. The SQL statement executed was: INSERT INTO "postulaciones" ("oferta_laboral_fk", "estudiante_fk", "fecha") VALUES (:yp0, :yp1, :yp2)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/PostulacionesController.php(89): CActiveRecord->save()
+#3 [internal function]: PostulacionesController->actionRegistrar('13', '5', '09-12-2012')
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(PostulacionesController), Array)
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(PostulacionesController), Object(ReflectionMethod), Array)
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('registrar')
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postulaciones/r...')
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar&oferta_laboral_fk=13&estudiante_fk=5&fecha=09-12-2012
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=13
+---
+2012/12/09 21:33:07 [error] [exception.CException] exception 'CException' with message 'Propiedad "Postulaciones"."oferta_laboral_pk" no se encuentra definida.' in /var/www/laboral/web/yii/framework/base/CComponent.php:174
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(160): CComponent->__set('oferta_laboral_...', '13')
+#1 /var/www/laboral/web/protected/controllers/PostulacionesController.php(84): CActiveRecord->__set('oferta_laboral_...', '13')
+#2 [internal function]: PostulacionesController->actionRegistrar('13', '5', '09-12-2012')
+#3 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(PostulacionesController), Array)
+#4 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(PostulacionesController), Object(ReflectionMethod), Array)
+#5 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#6 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#8 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#12 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('registrar')
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postulaciones/r...')
+#15 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /var/www/laboral/web/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar&oferta_laboral_fk=13&estudiante_fk=5&fecha=09-12-2012
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=13
+---
+2012/12/09 21:33:34 [error] [exception.CException] exception 'CException' with message 'Propiedad "Postulaciones"."oferta_laboral_pk" no se encuentra definida.' in /var/www/laboral/web/yii/framework/base/CComponent.php:174
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(160): CComponent->__set('oferta_laboral_...', '13')
+#1 /var/www/laboral/web/protected/controllers/PostulacionesController.php(84): CActiveRecord->__set('oferta_laboral_...', '13')
+#2 [internal function]: PostulacionesController->actionRegistrar('13', '163237628', '09-12-2012')
+#3 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(PostulacionesController), Array)
+#4 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(PostulacionesController), Object(ReflectionMethod), Array)
+#5 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#6 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#8 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#12 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('registrar')
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postulaciones/r...')
+#15 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /var/www/laboral/web/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar&oferta_laboral_fk=13&estudiante_fk=163237628&fecha=09-12-2012
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=13
+---
+2012/12/09 21:33:55 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23503]: Foreign key violation: 7 ERROR:  inserción o actualización en la tabla «postulaciones» viola la llave foránea «postulaciones_estudiante_fk_fkey»
+DETAIL:  La llave (estudiante_fk)=(163237628) no está presente en la tabla «estudiantes».. The SQL statement executed was: INSERT INTO "postulaciones" ("oferta_laboral_fk", "estudiante_fk", "fecha") VALUES (:yp0, :yp1, :yp2).
+in /var/www/laboral/web/protected/controllers/PostulacionesController.php (89)
+in /var/www/laboral/web/index.php (13)
+2012/12/09 21:33:55 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23503]: Foreign key violation: 7 ERROR:  inserción o actualización en la tabla «postulaciones» viola la llave foránea «postulaciones_estudiante_fk_fkey»
+DETAIL:  La llave (estudiante_fk)=(163237628) no está presente en la tabla «estudiantes».. The SQL statement executed was: INSERT INTO "postulaciones" ("oferta_laboral_fk", "estudiante_fk", "fecha") VALUES (:yp0, :yp1, :yp2)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/PostulacionesController.php(89): CActiveRecord->save()
+#3 [internal function]: PostulacionesController->actionRegistrar('13', '163237628', '09-12-2012')
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(PostulacionesController), Array)
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(PostulacionesController), Object(ReflectionMethod), Array)
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('registrar')
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postulaciones/r...')
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar&oferta_laboral_fk=13&estudiante_fk=163237628&fecha=09-12-2012
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=13
+---
+2012/12/09 21:38:26 [error] [exception.CException] exception 'CException' with message 'Propiedad "CWebApplication"."estudiantes" no se encuentra definida.' in /var/www/laboral/web/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/base/CModule.php(106): CComponent->__get('estudiantes')
+#1 /var/www/laboral/web/protected/views/ofertasLaborales/view.php(104): CModule->__get('estudiantes')
+#2 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#4 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#5 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('view', Array, true)
+#6 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(57): CController->render('view', Array)
+#7 [internal function]: OfertasLaboralesController->actionView('13')
+#8 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OfertasLaboralesController), Array)
+#9 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OfertasLaboralesController), Object(ReflectionMethod), Array)
+#10 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('view')
+#19 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#20 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/laboral/web/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=13
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/index
+---
+2012/12/09 21:38:32 [error] [exception.CException] exception 'CException' with message 'Propiedad "CWebApplication"."estudiantes" no se encuentra definida.' in /var/www/laboral/web/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/base/CModule.php(106): CComponent->__get('estudiantes')
+#1 /var/www/laboral/web/protected/views/ofertasLaborales/view.php(104): CModule->__get('estudiantes')
+#2 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#4 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#5 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('view', Array, true)
+#6 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(57): CController->render('view', Array)
+#7 [internal function]: OfertasLaboralesController->actionView('13')
+#8 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OfertasLaboralesController), Array)
+#9 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OfertasLaboralesController), Object(ReflectionMethod), Array)
+#10 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('view')
+#19 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#20 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/laboral/web/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=13
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/index
+---
+2012/12/09 21:39:42 [error] [exception.CException] exception 'CException' with message 'Propiedad "CWebApplication"."estudiantes" no se encuentra definida.' in /var/www/laboral/web/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/base/CModule.php(106): CComponent->__get('estudiantes')
+#1 /var/www/laboral/web/protected/views/ofertasLaborales/view.php(104): CModule->__get('estudiantes')
+#2 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#4 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#5 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('view', Array, true)
+#6 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(57): CController->render('view', Array)
+#7 [internal function]: OfertasLaboralesController->actionView('13')
+#8 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OfertasLaboralesController), Array)
+#9 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OfertasLaboralesController), Object(ReflectionMethod), Array)
+#10 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('view')
+#19 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#20 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/laboral/web/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=13
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/index
+---
+2012/12/09 21:46:16 [error] [exception.CException] exception 'CException' with message 'Propiedad "Estudiantes"."estudiantes" no se encuentra definida.' in /var/www/laboral/web/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('estudiantes')
+#1 /var/www/laboral/web/protected/views/ofertasLaborales/view.php(111): CActiveRecord->__get('estudiantes')
+#2 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#4 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#5 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('view', Array, true)
+#6 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(57): CController->render('view', Array)
+#7 [internal function]: OfertasLaboralesController->actionView('13')
+#8 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OfertasLaboralesController), Array)
+#9 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OfertasLaboralesController), Object(ReflectionMethod), Array)
+#10 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('view')
+#19 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#20 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/laboral/web/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=13
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/index
+---
+2012/12/09 21:49:40 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23503]: Foreign key violation: 7 ERROR:  inserción o actualización en la tabla «postulaciones» viola la llave foránea «postulaciones_estudiante_fk_fkey»
+DETAIL:  La llave (estudiante_fk)=(163237628) no está presente en la tabla «estudiantes».. The SQL statement executed was: INSERT INTO "postulaciones" ("oferta_laboral_fk", "estudiante_fk", "fecha") VALUES (:yp0, :yp1, :yp2).
+in /var/www/laboral/web/protected/controllers/PostulacionesController.php (93)
+in /var/www/laboral/web/index.php (13)
+2012/12/09 21:49:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23503]: Foreign key violation: 7 ERROR:  inserción o actualización en la tabla «postulaciones» viola la llave foránea «postulaciones_estudiante_fk_fkey»
+DETAIL:  La llave (estudiante_fk)=(163237628) no está presente en la tabla «estudiantes».. The SQL statement executed was: INSERT INTO "postulaciones" ("oferta_laboral_fk", "estudiante_fk", "fecha") VALUES (:yp0, :yp1, :yp2)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/PostulacionesController.php(93): CActiveRecord->save()
+#3 [internal function]: PostulacionesController->actionRegistrar('13', '163237628', '09-12-2012')
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(PostulacionesController), Array)
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(PostulacionesController), Object(ReflectionMethod), Array)
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('registrar')
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postulaciones/r...')
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar&oferta_laboral_fk=13&estudiante_fk=163237628&fecha=09-12-2012
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=Postulaciones/registrar&oferta_laboral_fk=13&estudiante_fk=163237628&fecha=09-12-2012
+---
+2012/12/09 21:50:38 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23503]: Foreign key violation: 7 ERROR:  inserción o actualización en la tabla «postulaciones» viola la llave foránea «postulaciones_estudiante_fk_fkey»
+DETAIL:  La llave (estudiante_fk)=(163237628) no está presente en la tabla «estudiantes».. The SQL statement executed was: INSERT INTO "postulaciones" ("oferta_laboral_fk", "estudiante_fk", "fecha") VALUES (:yp0, :yp1, :yp2).
+in /var/www/laboral/web/protected/controllers/PostulacionesController.php (93)
+in /var/www/laboral/web/index.php (13)
+2012/12/09 21:50:38 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23503]: Foreign key violation: 7 ERROR:  inserción o actualización en la tabla «postulaciones» viola la llave foránea «postulaciones_estudiante_fk_fkey»
+DETAIL:  La llave (estudiante_fk)=(163237628) no está presente en la tabla «estudiantes».. The SQL statement executed was: INSERT INTO "postulaciones" ("oferta_laboral_fk", "estudiante_fk", "fecha") VALUES (:yp0, :yp1, :yp2)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/PostulacionesController.php(93): CActiveRecord->save()
+#3 [internal function]: PostulacionesController->actionRegistrar('13', '163237628', '09-12-2012')
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(PostulacionesController), Array)
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(PostulacionesController), Object(ReflectionMethod), Array)
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('registrar')
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postulaciones/r...')
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar&oferta_laboral_fk=13&estudiante_fk=163237628&fecha=09-12-2012
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=Postulaciones/registrar&oferta_laboral_fk=13&estudiante_fk=163237628&fecha=09-12-2012
+---
+2012/12/09 21:51:41 [error] [exception.CException] exception 'CException' with message 'Propiedad "CWebApplication"."estudiantes" no se encuentra definida.' in /var/www/laboral/web/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/base/CModule.php(106): CComponent->__get('estudiantes')
+#1 /var/www/laboral/web/protected/views/ofertasLaborales/view.php(104): CModule->__get('estudiantes')
+#2 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#4 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#5 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('view', Array, true)
+#6 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(57): CController->render('view', Array)
+#7 [internal function]: OfertasLaboralesController->actionView('13')
+#8 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OfertasLaboralesController), Array)
+#9 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OfertasLaboralesController), Object(ReflectionMethod), Array)
+#10 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('view')
+#19 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#20 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/laboral/web/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=13
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/index
+---
+2012/12/09 21:52:07 [error] [exception.CException] exception 'CException' with message 'Propiedad "OfertasLaborales"."estudiantes" no se encuentra definida.' in /var/www/laboral/web/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('estudiantes')
+#1 /var/www/laboral/web/protected/views/ofertasLaborales/view.php(104): CActiveRecord->__get('estudiantes')
+#2 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#4 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#5 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('view', Array, true)
+#6 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(57): CController->render('view', Array)
+#7 [internal function]: OfertasLaboralesController->actionView('13')
+#8 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OfertasLaboralesController), Array)
+#9 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OfertasLaboralesController), Object(ReflectionMethod), Array)
+#10 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('view')
+#19 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#20 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/laboral/web/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=13
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/index
+---
+2012/12/09 21:52:55 [error] [exception.CException] exception 'CException' with message 'Propiedad "Estudiantes"."estudiantes" no se encuentra definida.' in /var/www/laboral/web/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('estudiantes')
+#1 /var/www/laboral/web/protected/views/ofertasLaborales/view.php(104): CActiveRecord->__get('estudiantes')
+#2 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#4 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#5 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('view', Array, true)
+#6 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(57): CController->render('view', Array)
+#7 [internal function]: OfertasLaboralesController->actionView('14')
+#8 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OfertasLaboralesController), Array)
+#9 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OfertasLaboralesController), Object(ReflectionMethod), Array)
+#10 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('view')
+#19 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#20 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/laboral/web/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=14
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/index
+---
+2012/12/09 21:55:46 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/laboral/web/yii/framework/web/CController.php:337
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#3 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('registrar')
+#9 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postulaciones/r...')
+#10 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /var/www/laboral/web/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar&oferta_laboral_fk=13&0=1&fecha=09-12-2012
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=13
+---
+2012/12/09 22:01:37 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23503]: Foreign key violation: 7 ERROR:  inserción o actualización en la tabla «postulaciones» viola la llave foránea «postulaciones_estudiante_fk_fkey»
+DETAIL:  La llave (estudiante_fk)=(163237628) no está presente en la tabla «estudiantes».. The SQL statement executed was: INSERT INTO "postulaciones" ("oferta_laboral_fk", "estudiante_fk", "fecha") VALUES (:yp0, :yp1, :yp2).
+in /var/www/laboral/web/protected/controllers/PostulacionesController.php (93)
+in /var/www/laboral/web/index.php (13)
+2012/12/09 22:01:37 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23503]: Foreign key violation: 7 ERROR:  inserción o actualización en la tabla «postulaciones» viola la llave foránea «postulaciones_estudiante_fk_fkey»
+DETAIL:  La llave (estudiante_fk)=(163237628) no está presente en la tabla «estudiantes».. The SQL statement executed was: INSERT INTO "postulaciones" ("oferta_laboral_fk", "estudiante_fk", "fecha") VALUES (:yp0, :yp1, :yp2)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/PostulacionesController.php(93): CActiveRecord->save()
+#3 [internal function]: PostulacionesController->actionRegistrar('13', '163237628', '09-12-2012')
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(PostulacionesController), Array)
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(PostulacionesController), Object(ReflectionMethod), Array)
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('registrar')
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postulaciones/r...')
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar&oferta_laboral_fk=13&estudiante_fk=163237628&fecha=09-12-2012
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=Postulaciones/registrar&oferta_laboral_fk=13&estudiante_fk=163237628&fecha=09-12-2012
+---
+2012/12/09 22:04:50 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23505]: Unique violation: 7 ERROR:  llave duplicada viola restricción de unicidad «postulaciones_oferta_laboral_fk_estudiante_fk_key»
+DETAIL:  Ya existe la llave (oferta_laboral_fk, estudiante_fk)=(13, 2).. The SQL statement executed was: INSERT INTO "postulaciones" ("oferta_laboral_fk", "estudiante_fk", "fecha") VALUES (:yp0, :yp1, :yp2).
+in /var/www/laboral/web/protected/controllers/PostulacionesController.php (89)
+in /var/www/laboral/web/index.php (13)
+2012/12/09 22:04:50 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23505]: Unique violation: 7 ERROR:  llave duplicada viola restricción de unicidad «postulaciones_oferta_laboral_fk_estudiante_fk_key»
+DETAIL:  Ya existe la llave (oferta_laboral_fk, estudiante_fk)=(13, 2).. The SQL statement executed was: INSERT INTO "postulaciones" ("oferta_laboral_fk", "estudiante_fk", "fecha") VALUES (:yp0, :yp1, :yp2)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/PostulacionesController.php(89): CActiveRecord->save()
+#3 [internal function]: PostulacionesController->actionRegistrar('13', '2', '09-12-2012')
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(PostulacionesController), Array)
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(PostulacionesController), Object(ReflectionMethod), Array)
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('registrar')
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postulaciones/r...')
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar&oferta_laboral_fk=13&estudiante_fk=2&fecha=09-12-2012
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=13
+---
