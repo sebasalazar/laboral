@@ -1330,3 +1330,206 @@ Stack trace:
 #30 {main}
 REQUEST_URI=/laboral/web/
 ---
+2012/12/09 22:55:01 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "postulaciones_oferta_laboral_fk_estudiante_fk_key"
+DETAIL:  Key (oferta_laboral_fk, estudiante_fk)=(23, 4) already exists.. The SQL statement executed was: INSERT INTO "postulaciones" ("oferta_laboral_fk", "estudiante_fk", "fecha") VALUES (:yp0, :yp1, :yp2).
+in /var/www/laboral/web/protected/controllers/PostulacionesController.php (89)
+in /var/www/laboral/web/index.php (13)
+2012/12/09 22:55:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "postulaciones_oferta_laboral_fk_estudiante_fk_key"
+DETAIL:  Key (oferta_laboral_fk, estudiante_fk)=(23, 4) already exists.. The SQL statement executed was: INSERT INTO "postulaciones" ("oferta_laboral_fk", "estudiante_fk", "fecha") VALUES (:yp0, :yp1, :yp2)' in /var/www/laboral/web/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/laboral/web/protected/controllers/PostulacionesController.php(89): CActiveRecord->save()
+#3 [internal function]: PostulacionesController->actionRegistrar('23', '4', '09-12-2012')
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(PostulacionesController), Array)
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(PostulacionesController), Object(ReflectionMethod), Array)
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('registrar')
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Postulaciones/r...')
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar&oferta_laboral_fk=23&estudiante_fk=4&fecha=09-12-2012
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=23
+---
+2012/12/10 00:22:58 [error] [exception.CException] exception 'CException' with message 'Propiedad "WebUser"."bootstrap" no se encuentra definida.' in /var/www/laboral/web/yii/framework/base/CComponent.php:174
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/auth/CWebUser.php(155): CComponent->__set('bootstrap', Array)
+#1 /var/www/laboral/web/yii/framework/YiiBase.php(222): CWebUser->__set('bootstrap', Array)
+#2 /var/www/laboral/web/yii/framework/base/CModule.php(387): YiiBase::createComponent(Array)
+#3 /var/www/laboral/web/yii/framework/base/CModule.php(104): CModule->getComponent('user')
+#4 /var/www/laboral/web/protected/views/layouts/main.php(27): CModule->__get('user')
+#5 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#6 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#7 /var/www/laboral/web/yii/framework/web/widgets/CContentDecorator.php(77): CBaseController->renderFile('/var/www/labora...', Array, true)
+#8 /var/www/laboral/web/yii/framework/web/widgets/CContentDecorator.php(55): CContentDecorator->decorate('<div id="conten...')
+#9 /var/www/laboral/web/yii/framework/web/widgets/COutputProcessor.php(45): CContentDecorator->processOutput('<div id="conten...')
+#10 /var/www/laboral/web/yii/framework/web/CBaseController.php(207): COutputProcessor->run()
+#11 /var/www/laboral/web/yii/framework/web/CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#12 /var/www/laboral/web/protected/views/layouts/column1.php(6): CBaseController->endContent()
+#13 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#14 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#15 /var/www/laboral/web/yii/framework/web/CController.php(785): CBaseController->renderFile('/var/www/labora...', Array, true)
+#16 /var/www/laboral/web/protected/controllers/SiteController.php(32): CController->render('index')
+#17 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#18 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#19 /var/www/laboral/web/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#20 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('')
+#22 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('')
+#23 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#24 /var/www/laboral/web/index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/laboral/web/
+---
+2012/12/10 00:34:58 [error] [exception.CException] exception 'CException' with message 'Alias "ext.bootstrap.components.Bootstrap" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /var/www/laboral/web/yii/framework/YiiBase.php:318
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/YiiBase.php(198): YiiBase::import('ext.bootstrap.c...', true)
+#1 /var/www/laboral/web/yii/framework/base/CModule.php(387): YiiBase::createComponent(Array)
+#2 /var/www/laboral/web/yii/framework/base/CModule.php(493): CModule->getComponent('bootstrap')
+#3 /var/www/laboral/web/yii/framework/base/CApplication.php(146): CModule->preloadComponents()
+#4 /var/www/laboral/web/yii/framework/YiiBase.php(127): CApplication->__construct('/var/www/labora...')
+#5 /var/www/laboral/web/yii/framework/YiiBase.php(100): YiiBase::createApplication('CWebApplication', '/var/www/labora...')
+#6 /var/www/laboral/web/index.php(13): YiiBase::createWebApplication('/var/www/labora...')
+#7 {main}
+REQUEST_URI=/laboral/web/
+---
+2012/12/10 00:41:42 [error] [exception.CException] exception 'CException' with message 'Alias "ext.bootstrap.components.Bootstrap" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /var/www/laboral/web/yii/framework/YiiBase.php:318
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/YiiBase.php(198): YiiBase::import('ext.bootstrap.c...', true)
+#1 /var/www/laboral/web/yii/framework/base/CModule.php(387): YiiBase::createComponent(Array)
+#2 /var/www/laboral/web/yii/framework/base/CModule.php(493): CModule->getComponent('bootstrap')
+#3 /var/www/laboral/web/yii/framework/base/CApplication.php(146): CModule->preloadComponents()
+#4 /var/www/laboral/web/yii/framework/YiiBase.php(127): CApplication->__construct('/var/www/labora...')
+#5 /var/www/laboral/web/yii/framework/YiiBase.php(100): YiiBase::createApplication('CWebApplication', '/var/www/labora...')
+#6 /var/www/laboral/web/index.php(13): YiiBase::createWebApplication('/var/www/labora...')
+#7 {main}
+REQUEST_URI=/laboral/web/
+---
+2012/12/10 00:41:45 [error] [exception.CException] exception 'CException' with message 'Alias "ext.bootstrap.components.Bootstrap" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /var/www/laboral/web/yii/framework/YiiBase.php:318
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/YiiBase.php(198): YiiBase::import('ext.bootstrap.c...', true)
+#1 /var/www/laboral/web/yii/framework/base/CModule.php(387): YiiBase::createComponent(Array)
+#2 /var/www/laboral/web/yii/framework/base/CModule.php(493): CModule->getComponent('bootstrap')
+#3 /var/www/laboral/web/yii/framework/base/CApplication.php(146): CModule->preloadComponents()
+#4 /var/www/laboral/web/yii/framework/YiiBase.php(127): CApplication->__construct('/var/www/labora...')
+#5 /var/www/laboral/web/yii/framework/YiiBase.php(100): YiiBase::createApplication('CWebApplication', '/var/www/labora...')
+#6 /var/www/laboral/web/index.php(13): YiiBase::createWebApplication('/var/www/labora...')
+#7 {main}
+REQUEST_URI=/laboral/web/
+---
+2012/12/10 00:41:57 [error] [exception.CException] exception 'CException' with message 'Alias "ext.bootstrap.components.Bootstrap" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /var/www/laboral/web/yii/framework/YiiBase.php:318
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/YiiBase.php(198): YiiBase::import('ext.bootstrap.c...', true)
+#1 /var/www/laboral/web/yii/framework/base/CModule.php(387): YiiBase::createComponent(Array)
+#2 /var/www/laboral/web/yii/framework/base/CModule.php(493): CModule->getComponent('bootstrap')
+#3 /var/www/laboral/web/yii/framework/base/CApplication.php(146): CModule->preloadComponents()
+#4 /var/www/laboral/web/yii/framework/YiiBase.php(127): CApplication->__construct('/var/www/labora...')
+#5 /var/www/laboral/web/yii/framework/YiiBase.php(100): YiiBase::createApplication('CWebApplication', '/var/www/labora...')
+#6 /var/www/laboral/web/index.php(13): YiiBase::createWebApplication('/var/www/labora...')
+#7 {main}
+REQUEST_URI=/laboral/web/
+---
+2012/12/10 00:41:58 [error] [exception.CException] exception 'CException' with message 'Alias "ext.bootstrap.components.Bootstrap" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /var/www/laboral/web/yii/framework/YiiBase.php:318
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/YiiBase.php(198): YiiBase::import('ext.bootstrap.c...', true)
+#1 /var/www/laboral/web/yii/framework/base/CModule.php(387): YiiBase::createComponent(Array)
+#2 /var/www/laboral/web/yii/framework/base/CModule.php(493): CModule->getComponent('bootstrap')
+#3 /var/www/laboral/web/yii/framework/base/CApplication.php(146): CModule->preloadComponents()
+#4 /var/www/laboral/web/yii/framework/YiiBase.php(127): CApplication->__construct('/var/www/labora...')
+#5 /var/www/laboral/web/yii/framework/YiiBase.php(100): YiiBase::createApplication('CWebApplication', '/var/www/labora...')
+#6 /var/www/laboral/web/index.php(13): YiiBase::createWebApplication('/var/www/labora...')
+#7 {main}
+REQUEST_URI=/laboral/web/
+---
+2012/12/10 00:42:34 [error] [exception.CException] exception 'CException' with message 'Alias "ext.bootstrap.components.Bootstrap" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /var/www/laboral/web/yii/framework/YiiBase.php:318
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/YiiBase.php(198): YiiBase::import('ext.bootstrap.c...', true)
+#1 /var/www/laboral/web/yii/framework/base/CModule.php(387): YiiBase::createComponent(Array)
+#2 /var/www/laboral/web/yii/framework/base/CModule.php(493): CModule->getComponent('bootstrap')
+#3 /var/www/laboral/web/yii/framework/base/CApplication.php(146): CModule->preloadComponents()
+#4 /var/www/laboral/web/yii/framework/YiiBase.php(127): CApplication->__construct('/var/www/labora...')
+#5 /var/www/laboral/web/yii/framework/YiiBase.php(100): YiiBase::createApplication('CWebApplication', '/var/www/labora...')
+#6 /var/www/laboral/web/index.php(13): YiiBase::createWebApplication('/var/www/labora...')
+#7 {main}
+REQUEST_URI=/laboral/web/
+---
+2012/12/10 00:43:58 [error] [exception.CException] exception 'CException' with message 'Alias "ext.bootstrap.components.Bootstrap" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /var/www/laboral/web/yii/framework/YiiBase.php:318
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/YiiBase.php(198): YiiBase::import('ext.bootstrap.c...', true)
+#1 /var/www/laboral/web/yii/framework/base/CModule.php(387): YiiBase::createComponent(Array)
+#2 /var/www/laboral/web/yii/framework/base/CModule.php(493): CModule->getComponent('bootstrap')
+#3 /var/www/laboral/web/yii/framework/base/CApplication.php(146): CModule->preloadComponents()
+#4 /var/www/laboral/web/yii/framework/YiiBase.php(127): CApplication->__construct('/var/www/labora...')
+#5 /var/www/laboral/web/yii/framework/YiiBase.php(100): YiiBase::createApplication('CWebApplication', '/var/www/labora...')
+#6 /var/www/laboral/web/index.php(13): YiiBase::createWebApplication('/var/www/labora...')
+#7 {main}
+REQUEST_URI=/laboral/web/
+---
+2012/12/10 01:00:53 [error] [php] Invalid argument supplied for foreach() (/var/www/laboral/web/yii/framework/db/schema/CDbCommandBuilder.php:546)
+Stack trace:
+#0 unknown(0): PostulacionesController->actionRegistrar()
+#1 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#2 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#3 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#4 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): PostulacionesController->runAction()
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#7 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): PostulacionesController->filterAccessControl()
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /var/www/laboral/web/yii/framework/web/CController.php(266): PostulacionesController->runActionWithFilters()
+#11 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): PostulacionesController->run()
+#12 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#13 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar&oferta_laboral_fk=23&estudiante_fk=4&fecha=10-12-2012
+in /var/www/laboral/web/protected/controllers/PostulacionesController.php (86)
+in /var/www/laboral/web/index.php (13)
+2012/12/10 01:01:15 [error] [php] Invalid argument supplied for foreach() (/var/www/laboral/web/yii/framework/db/schema/CDbCommandBuilder.php:546)
+Stack trace:
+#0 unknown(0): PostulacionesController->actionRegistrar()
+#1 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#2 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#3 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#4 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): PostulacionesController->runAction()
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#7 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): PostulacionesController->filterAccessControl()
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /var/www/laboral/web/yii/framework/web/CController.php(266): PostulacionesController->runActionWithFilters()
+#11 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): PostulacionesController->run()
+#12 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#13 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar&oferta_laboral_fk=23&estudiante_fk=4&fecha=10-12-2012
+in /var/www/laboral/web/protected/controllers/PostulacionesController.php (86)
+in /var/www/laboral/web/index.php (13)
+2012/12/10 01:01:19 [error] [php] Invalid argument supplied for foreach() (/var/www/laboral/web/yii/framework/db/schema/CDbCommandBuilder.php:546)
+Stack trace:
+#0 unknown(0): PostulacionesController->actionRegistrar()
+#1 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#2 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#3 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#4 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): PostulacionesController->runAction()
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#7 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): PostulacionesController->filterAccessControl()
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /var/www/laboral/web/yii/framework/web/CController.php(266): PostulacionesController->runActionWithFilters()
+#11 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): PostulacionesController->run()
+#12 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#13 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar&oferta_laboral_fk=23&estudiante_fk=4&fecha=10-12-2012
+in /var/www/laboral/web/protected/controllers/PostulacionesController.php (86)
+in /var/www/laboral/web/index.php (13)

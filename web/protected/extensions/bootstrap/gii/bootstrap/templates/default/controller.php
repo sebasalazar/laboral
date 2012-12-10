@@ -1,6 +1,13 @@
 <?php
+/**
+ * This is the template for generating a controller class file for CRUD feature.
+ * The following variables are available in this template:
+ * - $this: the BootCrudCode object
+ */
+?>
+<?php echo "<?php\n"; ?>
 
-class PostulacionesController extends Controller
+class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseControllerClass."\n"; ?>
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -15,7 +22,6 @@ class PostulacionesController extends Controller
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
-			'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
 
@@ -24,7 +30,7 @@ class PostulacionesController extends Controller
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-/*	public function accessRules()
+	public function accessRules()
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
@@ -62,48 +68,22 @@ class PostulacionesController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Postulaciones;
+		$model=new <?php echo $this->modelClass; ?>;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Postulaciones']))
+		if(isset($_POST['<?php echo $this->modelClass; ?>']))
 		{
-			$model->attributes=$_POST['Postulaciones'];
+			$model->attributes=$_POST['<?php echo $this->modelClass; ?>'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->pk));
+				$this->redirect(array('view','id'=>$model-><?php echo $this->tableSchema->primaryKey; ?>));
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
 		));
 	}
-        
-        public function actionRegistrar($oferta_laboral_fk,$estudiante_fk,$fecha)
-	{
-            
-            $modelEstudiante = new Estudiantes;
-            //$modelEstudiante->findByAttributes($estudiante_fk);
-            //Verificamos si efectivamente el estudiante posee todo el cv completo en el sistema
-            //sino es asi redirecciono para que realice dicha accion
-            if(!$modelEstudiante->completo)
-            {
-                //$this->redirect(array('view','id'=>$modelEstudiante->pk));
-                 $this->redirect(array('OfertasLaborales/index'));
-            }
-            else
-            {
-                $model=new Postulaciones;
-                $model->oferta_laboral_fk = $oferta_laboral_fk;
-                $model->estudiante_fk = $estudiante_fk;
-                $model->fecha = $fecha;
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-                $model->save();
-                $this->redirect(array('OfertasLaborales/index'));
-            }
-	}
-
 
 	/**
 	 * Updates a particular model.
@@ -117,11 +97,11 @@ class PostulacionesController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Postulaciones']))
+		if(isset($_POST['<?php echo $this->modelClass; ?>']))
 		{
-			$model->attributes=$_POST['Postulaciones'];
+			$model->attributes=$_POST['<?php echo $this->modelClass; ?>'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->pk));
+				$this->redirect(array('view','id'=>$model-><?php echo $this->tableSchema->primaryKey; ?>));
 		}
 
 		$this->render('update',array(
@@ -136,11 +116,17 @@ class PostulacionesController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
+		if(Yii::app()->request->isPostRequest)
+		{
+			// we only allow deletion via POST request
+			$this->loadModel($id)->delete();
 
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+			if(!isset($_GET['ajax']))
+				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+		}
+		else
+			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
 	}
 
 	/**
@@ -148,7 +134,7 @@ class PostulacionesController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Postulaciones');
+		$dataProvider=new CActiveDataProvider('<?php echo $this->modelClass; ?>');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -159,10 +145,10 @@ class PostulacionesController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Postulaciones('search');
+		$model=new <?php echo $this->modelClass; ?>('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Postulaciones']))
-			$model->attributes=$_GET['Postulaciones'];
+		if(isset($_GET['<?php echo $this->modelClass; ?>']))
+			$model->attributes=$_GET['<?php echo $this->modelClass; ?>'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -176,7 +162,7 @@ class PostulacionesController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Postulaciones::model()->findByPk($id);
+		$model=<?php echo $this->modelClass; ?>::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -188,7 +174,7 @@ class PostulacionesController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='postulaciones-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='<?php echo $this->class2id($this->modelClass); ?>-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

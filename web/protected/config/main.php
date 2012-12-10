@@ -11,7 +11,7 @@ return array(
         'sourceLanguage' => 'es',
         'language' => 'es',
 	// preloading 'log' component
-	'preload'=>array('log'),
+	'preload'=>array('log', 'bootstrap'),
 
 	// autoloading model and component classes
 	'import'=>array(
@@ -27,6 +27,9 @@ return array(
 			'password'=>'123456',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
+                        'generatorPaths'=>array(
+                                                    'bootstrap.gii',
+                                                ),
 		),
 		
 	),
@@ -75,7 +78,7 @@ return array(
          'db'=>array(
          'connectionString' => 'pgsql:host=localhost;port=5432;dbname=bolsaLaboral',
          'username' => 'postgres',
-         'password' => 'cris1955',
+         'password' => 'computador',
          'charset' => 'utf8',
          ),
 
@@ -98,6 +101,9 @@ return array(
 				*/
 			),
 		),
+            'bootstrap'=>array(
+                'class'=>'ext.bootstrap.components.Bootstrap', // assuming you extracted bootstrap under extensions
+                ),
 	),
 
 	// using Yii::app()->params['paramName']
