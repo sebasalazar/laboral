@@ -11,16 +11,28 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'pk',
 		'nombres',
 		'apellidos',
 		'rut',
-		'fecha_nacimiento',
+		array(
+                    'label'=>'Fecha Nacimiento',
+                    'value'=>Yii::app()->dateFormatter->format("d MMMM y",strtotime($model->fecha_nacimiento)),
+                    
+                ),
 		'genero',
 		'direccion',
-		'comuna_id',
-		'ec_fk',
-		'departamento_fk',
+		array(
+                    'label'=>'Comuna',
+                    'value'=>$model->comuna->nombre,
+                ),
+		array(
+                    'label'=>'Estado Civil',
+                    'value'=>$model->ecFk->estado,
+                ),
+		array(
+                    'label'=>'Departamento',
+                    'value'=>$model->departamentoFk->departamento,
+                ),
 		'telefono',
 		'celular',
 		'email',

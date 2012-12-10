@@ -1232,3 +1232,101 @@ Stack trace:
 REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar&oferta_laboral_fk=13&estudiante_fk=2&fecha=09-12-2012
 HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=13
 ---
+2012/12/09 22:31:17 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] FATAL:  la autentificaci?n password fall? para el usuario <<laboralutem>>
+FATAL:  la autentificaci?n password fall? para el usuario <<laboralutem>>' in /var/www/laboral/web/yii/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/laboral/web/yii/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/laboral/web/yii/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/laboral/web/yii/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(624): CApplication->getDb()
+#5 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(2311): CActiveRecord->getDbConnection()
+#6 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(388): CActiveRecordMetaData->__construct(Object(OfertasLaborales))
+#7 /var/www/laboral/web/protected/models/OfertasLaborales.php(44): CActiveRecord::model('OfertasLaborale...')
+#8 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(156): OfertasLaborales::model()
+#9 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(56): OfertasLaboralesController->loadModel('18')
+#10 [internal function]: OfertasLaboralesController->actionView('18')
+#11 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(OfertasLaboralesController), Array)
+#12 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(OfertasLaboralesController), Object(ReflectionMethod), Array)
+#13 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#14 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#15 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#16 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#17 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#18 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#19 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#20 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('view')
+#22 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('ofertasLaborale...')
+#23 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#24 /var/www/laboral/web/index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/view&id=18
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=OfertasLaborales/index
+---
+2012/12/09 22:31:21 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] FATAL:  la autentificaci?n password fall? para el usuario <<laboralutem>>
+FATAL:  la autentificaci?n password fall? para el usuario <<laboralutem>>' in /var/www/laboral/web/yii/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/laboral/web/yii/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/laboral/web/yii/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/laboral/web/yii/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(624): CApplication->getDb()
+#5 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(2311): CActiveRecord->getDbConnection()
+#6 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(388): CActiveRecordMetaData->__construct(Object(OfertasLaborales))
+#7 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(403): CActiveRecord::model('OfertasLaborale...')
+#8 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(78): CActiveRecord->getMetaData()
+#9 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(127): CActiveRecord->__construct('search')
+#10 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(50): OfertasLaboralesController->actionIndex()
+#11 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('index')
+#20 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('OfertasLaborale...')
+#21 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/laboral/web/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/laboral/web/index.php?r=OfertasLaborales/index
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=15
+---
+2012/12/09 22:31:31 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] FATAL:  la autentificaci?n password fall? para el usuario <<laboralutem>>
+FATAL:  la autentificaci?n password fall? para el usuario <<laboralutem>>' in /var/www/laboral/web/yii/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/laboral/web/yii/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/laboral/web/yii/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/laboral/web/yii/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(624): CApplication->getDb()
+#5 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(2311): CActiveRecord->getDbConnection()
+#6 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(388): CActiveRecordMetaData->__construct(Object(Usuarios))
+#7 /var/www/laboral/web/protected/models/Usuarios.php(22): CActiveRecord::model('Usuarios')
+#8 /var/www/laboral/web/protected/components/WebUser.php(8): Usuarios::model()
+#9 /var/www/laboral/web/protected/views/layouts/main.php(27): WebUser->getModel(2)
+#10 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#11 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#12 /var/www/laboral/web/yii/framework/web/widgets/CContentDecorator.php(77): CBaseController->renderFile('/var/www/labora...', Array, true)
+#13 /var/www/laboral/web/yii/framework/web/widgets/CContentDecorator.php(55): CContentDecorator->decorate('<div id="conten...')
+#14 /var/www/laboral/web/yii/framework/web/widgets/COutputProcessor.php(45): CContentDecorator->processOutput('<div id="conten...')
+#15 /var/www/laboral/web/yii/framework/web/CBaseController.php(207): COutputProcessor->run()
+#16 /var/www/laboral/web/yii/framework/web/CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#17 /var/www/laboral/web/protected/views/layouts/column1.php(6): CBaseController->endContent()
+#18 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#19 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#20 /var/www/laboral/web/yii/framework/web/CController.php(785): CBaseController->renderFile('/var/www/labora...', Array, true)
+#21 /var/www/laboral/web/protected/controllers/SiteController.php(32): CController->render('index')
+#22 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#23 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#24 /var/www/laboral/web/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#25 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('')
+#27 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('')
+#28 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#29 /var/www/laboral/web/index.php(13): CApplication->run()
+#30 {main}
+REQUEST_URI=/laboral/web/
+---
