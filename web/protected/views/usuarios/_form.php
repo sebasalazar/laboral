@@ -243,7 +243,7 @@ $("#content > ul").tabs();
                             <p class="hint">
                                 Ejemplo: Chilectra S.A.
                             </p>
-                            <?php echo $form->textField(Empresas::model(),'nombre',array('size'=>60,'maxlength'=>255)); ?>
+                            <?php echo $form->textField(Empresas::model(),'nombre',array('size'=>60,'maxlength'=>255, 'required'=>'required')); ?>
                             <?php echo $form->error(Empresas::model(),'nombre'); ?>
                         </div>
                     </div>     

@@ -48,6 +48,7 @@ class Empresas extends CActiveRecord
 			array('rut, comuna_fk, codigo_postal, actividad_fk', 'numerical', 'integerOnly'=>true),
 			array('nombre, direccion, email, descripcion_negocio, web', 'length', 'max'=>255),
 			array('telefono', 'length', 'max'=>50),
+                        array('email','email'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('pk, rut, nombre, direccion, comuna_fk, codigo_postal, telefono, email, actividad_fk, descripcion_negocio, web', 'safe', 'on'=>'search'),
