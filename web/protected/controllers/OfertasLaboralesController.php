@@ -130,6 +130,7 @@ class OfertasLaboralesController extends Controller
 	 */
 	public function actionIndex()
 	{
+            $this->layout = 'column1';
             $model=new OfertasLaborales('search');
             $model->unsetAttributes();  // clear any default values
             if(isset($_GET['OfertasLaborales']))

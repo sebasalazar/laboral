@@ -5,7 +5,7 @@
 $this->pageTitle=Yii::app()->name;
 ?>
 
-
+<!--
 
 <h1>Bienvenido a <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
 <br />
@@ -39,3 +39,14 @@ $this->pageTitle=Yii::app()->name;
    </div>
 </div>
 <br />
+
+-->
+<div class="carr">
+    <?php $this->widget('bootstrap.widgets.TbCarousel', array(
+        'items'=>array(
+            array('image'=>'images/i1.jpeg','label'=>'First Thumbnail label', 'caption'=>'Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.'),
+            array('image'=>'images/i2.jpeg', 'label'=>'Second Thumbnail label', 'caption'=>'Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.'),
+            array('image'=>'images/i3.jpeg', 'label'=>'Third Thumbnail label', 'caption'=>'Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.'),
+        ),
+    )); ?>
+</div>

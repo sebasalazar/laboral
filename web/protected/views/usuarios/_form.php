@@ -61,10 +61,8 @@ $("#content > ul").tabs();
                 <div class="columna">
                     <?php echo $form->labelEx($model,'Rut: <span class="required">*</span>'); ?>
                     <p class="hint">
-                       Nota: Sin puntos ni guion.<br />
-                       Ej: 171548928
                     </p>
-                    <?php echo $form->textField($model,'username',array('id'=>'rut_demo_2','name'=>'rut_demo_2', 'required'=>'required')); ?>
+                    <?php echo $form->textField($model,'username',array('id'=>'rut_demo_2','name'=>'rut_demo_2', 'required'=>'required', 'size'=>50)); ?>
                     <?php echo $form->error($model,'username'); ?>
                 </div>
                 <div class="columna">
@@ -78,9 +76,8 @@ $("#content > ul").tabs();
                 <div class="columna">
                     <?php echo $form->labelEx($model,'contraseña: <span class="required">*</span>'); ?>
                     <p class="hint">
-                       Nota: 5 min, 40 Max.
                     </p>
-                    <?php echo $form->passwordField($model,'password',array('size'=>20, 'maxlength'=>40, 'required'=>'required')); ?>
+                    <?php echo $form->passwordField($model,'password',array('size'=>30, 'maxlength'=>40, 'required'=>'required')); ?>
                     <?php echo $form->error($model,'password'); ?>
                 </div>
                 <div class="columna">
@@ -97,7 +94,6 @@ $("#content > ul").tabs();
                         <div class="columna">
                             <?php echo $form->labelEx(Docentes::model(),'Nombres: <span class="required">*</span>'); ?>
                             <p class="hint">
-                                Ej: Marcelo Fernando.
                             </p>
                             <?php echo $form->textField(Docentes::model(),'nombres', array('required'=>'required')); ?>
                             <?php echo $form->error(Docentes::model(),'nombres'); ?>
@@ -110,7 +106,6 @@ $("#content > ul").tabs();
                         <div class="columna">
                             <?php echo $form->labelEx(Docentes::model(),'Apellidos: <span class="required">*</span>'); ?>
                             <p class="hint">
-                                Ej: Perez Gonzales.
                             </p>
                             <?php echo $form->textField(Docentes::model(),'apellidos', array('required'=>'required')); ?>
                             <?php echo $form->error(Docentes::model(),'apellidos'); ?>
@@ -123,7 +118,6 @@ $("#content > ul").tabs();
                         <div class="columna">
                             <?php echo $form->labelEx(Docentes::model(),'Fecha de Nacimiento: <span class="required">*</span>'); ?>
                             <p class="hint">
-                                Ej: dd/mm/aa.
                             </p>
                             <?php echo $form->dateField(Docentes::model(),'fecha_nacimiento', array('required'=>'required')); ?>
                             <?php echo $form->error(Docentes::model(),'fecha_nacimiento'); ?>
@@ -145,7 +139,11 @@ $("#content > ul").tabs();
                     <div class="contenido">
                         <div class="columna">
                             <?php echo $form->labelEx(Docentes::model(),'Direccion: <span class="required">*</span>'); ?>
-                            <?php echo $form->textArea(Docentes::model(),'direccion',array('size'=>255,'maxlength'=>255, 'required'=>'required')); ?>
+                            <?php echo $form->textField(Docentes::model(),'direccion',array('size'=>255,'maxlength'=>255, 'required'=>'required')); ?>
+                            <br />
+                            <?php echo $form->textField(Docentes::model(),'direccion',array('size'=>255,'maxlength'=>255, 'required'=>'required')); ?>
+                            <br />
+                            <?php echo $form->textField(Docentes::model(),'direccion',array('size'=>255,'maxlength'=>255, 'required'=>'required')); ?>
                             <?php echo $form->error(Docentes::model(),'direccion'); ?>
                         </div>
                     </div>
@@ -195,7 +193,6 @@ $("#content > ul").tabs();
                         <div class="columna">
                             <?php echo $form->labelEx(Docentes::model(),'Celular: <span class="required">*</span>'); ?>
                             <p class="hint">
-                                Nota: Celular de contacto del alumno.
                             </p>
                             <?php echo $form->textField(Docentes::model(), 'celular', array('required'=>'required')); ?>
                             <?php echo $form->error(Docentes::model(),'celular'); ?>
@@ -208,7 +205,6 @@ $("#content > ul").tabs();
                         <div class="columna">
                             <?php echo $form->labelEx(Docentes::model(),'Telefono: <span class="required">*</span>'); ?>
                             <p class="hint">
-                                Nota: Telefono fijo de contacto.
                             </p>
                             <?php echo $form->textField(Docentes::model(), 'telefono', array('required'=>'required')); ?>
                             <?php echo $form->error(Docentes::model(),'telefono'); ?>
@@ -221,7 +217,6 @@ $("#content > ul").tabs();
                         <div class="columna">
                             <?php echo $form->labelEx(Docentes::model(),'Email: <span class="required">*</span>'); ?>
                             <p class="hint">
-                                Nota: E-mail de Contacto.
                             </p>
                             <?php echo $form->textField(Docentes::model(), 'email', array('required'=>'required')); ?>
                             <?php echo $form->error(Docentes::model(),'email'); ?>
@@ -450,13 +445,10 @@ $("#content > ul").tabs();
             }
         ?>
 
-	<div class="row buttons">
-             <div class="contenido">
-                <div class="columna">
-                    <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('id'=>'quitar')); ?>
-                </div>
-             </div>
-	</div>
+	<div class="form-actions">
+            <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>'Submit')); ?>
+            <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'reset', 'label'=>'Reset')); ?>
+        </div>
 
 <?php $this->endWidget(); ?>
 

@@ -5,6 +5,12 @@
    display: table;
 }
 
+.grillac{
+    width: 90%;
+    display: block;
+    margin: 0 auto 0 auto;
+}
+
 .columna{
     display: table-row;
     float: left;
@@ -24,11 +30,11 @@
 }
 
 .centrar1{
-    margin-left: 6%;
+    margin-left: 5%;
 }
 
 .registro{
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 .panelAdmin{
@@ -44,5 +50,11 @@
 }
 
 input[name="OfertasLaborales[cargo]"]{	
-    max-width: 120px;	
+    max-width: 195px;	
+}
+
+.carr{
+    width: 80%;
+    display: block;
+    margin: 0 auto 0 auto;
 }
