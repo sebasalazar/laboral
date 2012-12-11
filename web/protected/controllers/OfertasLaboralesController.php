@@ -70,10 +70,14 @@ class OfertasLaboralesController extends Controller
                 
 		if(isset($_POST['OfertasLaborales']))
 		{
-			$model->attributes=$_POST['OfertasLaborales'];
+                    $valor =$_POST['OfertasLaborales'];
+			$model->attributes=$valor;
+                        $model->fecha_publicacion = date("Y-m-d H:i:s");
                         $model->activo = 1;
-			if($model->save())
-                            Yii::app()->user->setFlash('sucess', "La oferta laboral a sido creada");
+                        WebUser::loguear(__METHOD__ . " Listado: " . count($valor));
+                        WebUser::loguear(__METHOD__ . " " . print_r($valor, false));
+			if($model->save() && $model->validate())
+                            Yii::app()->user->setFlash('sucess', "");
 				$this->redirect(array('view','id'=>$model->pk));
 		}
 
@@ -97,6 +101,7 @@ class OfertasLaboralesController extends Controller
 		if(isset($_POST['OfertasLaborales']))
 		{
 			$model->attributes=$_POST['OfertasLaborales'];
+                        WebUser::loguear(__METHOD__ . " " . print_r($model->attributes, false));
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->pk));
 		}

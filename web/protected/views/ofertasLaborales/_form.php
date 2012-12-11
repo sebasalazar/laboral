@@ -96,14 +96,6 @@
 	</div>
 
 	<div class="row">
-
-		<?php echo $form->labelEx($model,'Fecha Publicación: <span class="required">*</span> '); ?>
-		<?php echo $form->dateField(OfertasLaborales::model(),'fecha_publicacion', array('required'=>'required')); ?>
-
-		<?php echo $form->error($model,'fecha_publicacion'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->labelEx($model,'Beneficios: <span class="required">*</span> '); ?>
 		<?php echo $form->textArea(OfertasLaborales::model(),'beneficios', array('required'=>'required')); ?>
 		<?php echo $form->error($model,'beneficios'); ?>
