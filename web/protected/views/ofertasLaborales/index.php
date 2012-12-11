@@ -7,34 +7,22 @@ $this->breadcrumbs=array(
 );
 
 ?>
-<?php
-if(Yii::app()->user->getModel(Yii::app()->user->id) != null)
-{
-    $tipo = Yii::app()->user->getTipoUsuario(Yii::app()->user->name);
-    if ($tipo == 1){
-          $this->menu=array(
-                    array('label'=>'Ofertas Laborales', 'url'=>array('ofertasLaborales/index')),
-                    array('label'=>'Buscar', 'url'=>array('')),
-    );}
-    else{
-          $this->menu=array(
-                    array('label'=>'Ofertas Laborales', 'url'=>array('ofertasLaborales/index')),
-                    array('label'=>'Buscar', 'url'=>array('')),
-                    array('label'=>'Publicar una Oferta Laboral', 'url'=>array('ofertasLaborales/create'), 'visible'=>!Yii::app()->user->isGuest),
-                    array('label'=>'Publicar Practica', 'url'=>array('#'), 'visible'=>!Yii::app()->user->isGuest),
-          );
 
-    }
-}
-?>
 
 <h1>Ofertas Laborales</h1>
+
+<?php $this->menu=array(
+                array('label'=>'Ofertas Laborales', 'url'=>array('ofertasLaborales/index')),
+                array('label'=>'Buscar', 'url'=>array('')),
+                array('label'=>'Publicar una Oferta Laboral', 'url'=>array('ofertasLaborales/create'), 'visible'=>!Yii::app()->user->isGuest),
+                array('label'=>'Publicar Practica', 'url'=>array('#'), 'visible'=>!Yii::app()->user->isGuest),
+        ); ?>
 
 <?php 
     $this->widget('ext.groupgridview.GroupGridView', array(
       'id' => 'ofertas',
       'dataProvider' => $model->search(),
-      //'mergeColumns' => array('fecha_publicacion', 'rubro_fk'),
+      'mergeColumns' => array('fecha_publicacion', 'rubro_fk'),
       'filter'=>$model,
       'columns' => array(
           array(
@@ -49,7 +37,10 @@ if(Yii::app()->user->getModel(Yii::app()->user->id) != null)
             'filter' => CHtml::listData(Rubros::model()->findAll(), 'pk', 'rubro'),
             'value' => '$data->rubroFk->rubro',
           ),
-          'cargo',
+          array(
+              'header'=>'Cargo',
+              'name'=>'cargo',
+          ),
           array(
               'header'=>'Nivel de estudios Deseable',
               'name'=>'nivel_estudio_fk',

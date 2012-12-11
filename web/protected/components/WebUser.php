@@ -61,6 +61,11 @@ public function getAdmin()
 return '174018367';
 }
 
+public static function usuario(){
+    $us = new Usuarios;
+    return $us;
+}
+
 public function roles($rolDB){   //funcion que recibe un numero entero (decimal) y lo pasa a binario (para el mapa bit de roles)
 $i = 3;                      //Visto en Clases.
 while($rolDB != 0){
