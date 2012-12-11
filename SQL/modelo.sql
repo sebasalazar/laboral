@@ -17,13 +17,11 @@ CREATE TABLE roles (
 -- 
 DROP TABLE IF EXISTS usuarios CASCADE;
 CREATE TABLE usuarios (
-    id serial NOT NULL,
     username int NOT NULL, --rut
     password varchar(40) NOT NULL, -- SHA1
     salt varchar(32) NOT NULL,
     roles int NOT NULL DEFAULT '0', -- Mapa de Bits con los roles del sistema
-    UNIQUE (username),
-    PRIMARY KEY(id)
+    PRIMARY KEY(username)
 );
 
 --
@@ -35,6 +33,29 @@ CREATE TABLE accesos (
     rut int NOT NULL,
     fecha timestamptz NOT NULL DEFAULT NOW(),
     ip varchar(255) DEFAULT '127.0.0.1',
+    PRIMARY KEY (pk)
+);
+
+--
+-- Rubros
+-- industria -- informatica -- gestion -- etc
+--
+DROP TABLE IF EXISTS rubros CASCADE;
+CREATE TABLE rubros (
+    pk serial NOT NULL,
+    rubro varchar(255) NOT NULL,
+    descripcion text,
+    UNIQUE (rubro),
+    PRIMARY KEY (pk)
+);
+
+
+DROP TABLE IF EXISTS niveles_estudios CASCADE;
+CREATE TABLE niveles_estudios (
+    pk serial NOT NULL,
+    estudios varchar(255) NOT NULL,
+    descripcion text,
+    UNIQUE(estudios),
     PRIMARY KEY (pk)
 );
 
@@ -291,29 +312,6 @@ CREATE TABLE tipos_contratos (
     PRIMARY KEY(pk)
 );
 
-
---
--- Rubros
--- industria -- informatica -- gestion -- etc
---
-DROP TABLE IF EXISTS rubros CASCADE;
-CREATE TABLE rubros (
-    pk serial NOT NULL,
-    rubro varchar(255) NOT NULL,
-    descripcion text,
-    UNIQUE (rubro),
-    PRIMARY KEY (pk)
-);
-
-
-DROP TABLE IF EXISTS niveles_estudios CASCADE;
-CREATE TABLE niveles_estudios (
-    pk serial NOT NULL,
-    estudios varchar(255) NOT NULL,
-    descripcion text,
-    UNIQUE(estudios),
-    PRIMARY KEY (pk)
-);
 
 --
 -- oferta laboral de la empresa, ésta la verán las empresas para saber a quien contratar o qué perfil corresponde
