@@ -90,7 +90,7 @@ class PostulacionesController extends Controller
             {
                 //$this->redirect(array('view','id'=>$modelEstudiante->pk));
                  Yii::app()->user->setFlash('error', "Ustedes debe completar el Curriculum primero"); 
-                 $this->redirect(array('estudiantes/update2','id'=>Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk));
+                 $this->redirect(array('estudiantes/update3','id'=>Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk));
             }
             else
             {

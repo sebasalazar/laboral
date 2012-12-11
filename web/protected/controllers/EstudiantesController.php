@@ -28,11 +28,11 @@ class EstudiantesController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view', 'create','view2'),
+				'actions'=>array('index','view', 'create','view2','view3'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','update2'),
+				'actions'=>array('create','update','update2','update3'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -61,7 +61,12 @@ class EstudiantesController extends Controller
 			'model'=>$this->loadModel($id),
 		));
 	}
-
+        	public function actionView3($id)
+	{
+		$this->render('view3',array(
+			'model'=>$this->loadModel($id),
+		));
+	}
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
@@ -124,6 +129,24 @@ class EstudiantesController extends Controller
 		}
 
 		$this->render('update2',array(
+			'model'=>$model,
+		));
+	}
+                public function actionUpdate3($id)
+	{
+		$model=$this->loadModel($id);
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['Estudiantes']))
+		{
+			$model->attributes=$_POST['Estudiantes'];
+			if($model->save())
+				$this->redirect(array('view3','id'=>$model->pk));
+		}
+
+		$this->render('update3',array(
 			'model'=>$model,
 		));
 	}
