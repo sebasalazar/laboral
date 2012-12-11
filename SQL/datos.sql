@@ -430,41 +430,6 @@ INSERT INTO comunas (nombre,provincia_fk) VALUES ('Santiago',(SELECT pk FROM pro
 INSERT INTO comunas (nombre,provincia_fk) VALUES ('Vitacura',(SELECT pk FROM provincias WHERE nombre='Santiago'));
 
 --
--- Carreras
---
-
-INSERT INTO carreras (cod_carrera, nombre_carrera) VALUES ('21002','Bibliotecología y Documentación');
-INSERT INTO carreras (cod_carrera, nombre_carrera) VALUES ('21004','Cartografía');
-INSERT INTO carreras (cod_carrera, nombre_carrera) VALUES ('21012','Contador Público y Auditor');
-INSERT INTO carreras (cod_carrera, nombre_carrera) VALUES ('21015','Ingeniería en Administración Agroindustrial');
-INSERT INTO carreras (cod_carrera, nombre_carrera) VALUES ('21023','Diseño Industrial');
-INSERT INTO carreras (cod_carrera, nombre_carrera) VALUES ('21024','Diseño en Comunicación Visual');
-INSERT INTO carreras (cod_carrera, nombre_carrera) VALUES ('21025','Ingeniería en Transporte y Tránsito');
-INSERT INTO carreras (cod_carrera, nombre_carrera) VALUES ('21030','Ingeniería en Informática');
-INSERT INTO carreras (cod_carrera, nombre_carrera) VALUES ('21031','Ingeniería en Geomensura');
-INSERT INTO carreras (cod_carrera, nombre_carrera) VALUES ('21032','Ingeniería en Construcción');
-INSERT INTO carreras (cod_carrera, nombre_carrera) VALUES ('21036','Ingeniería en Electrónica');
-INSERT INTO carreras (cod_carrera, nombre_carrera) VALUES ('21037','Ingeniería en Mecánica');
-INSERT INTO carreras (cod_carrera, nombre_carrera) VALUES ('21038','Ingeniería en Industria de la Madera');
-INSERT INTO carreras (cod_carrera, nombre_carrera) VALUES ('21039','Ingeniería en Industria Alimentaria');
-INSERT INTO carreras (cod_carrera, nombre_carrera) VALUES ('21040','Ingeniería Civil Industrial mención Agroindustria');
-INSERT INTO carreras (cod_carrera, nombre_carrera) VALUES ('21041','Ingeniería Civil en Computación con Mención en Informática');
-INSERT INTO carreras (cod_carrera, nombre_carrera) VALUES ('21042','Ingeniería en Prevención de Riesgos y Medioambiente');
-INSERT INTO carreras (cod_carrera, nombre_carrera) VALUES ('21043','Trabajo Social');
-INSERT INTO carreras (cod_carrera, nombre_carrera) VALUES ('21044','Ingeniería Civil Industrial mención Sistemas de Gestión');
-INSERT INTO carreras (cod_carrera, nombre_carrera) VALUES ('21045','Ingeniería Industrial');
-INSERT INTO carreras (cod_carrera, nombre_carrera) VALUES ('21046','Bachillerato en Ciencias de la Ingeniería');
-INSERT INTO carreras (cod_carrera, nombre_carrera) VALUES ('21047','Arquitectura');
-INSERT INTO carreras (cod_carrera, nombre_carrera) VALUES ('21048','Ingeniería Comercial');
-INSERT INTO carreras (cod_carrera, nombre_carrera) VALUES ('21071','Dibujante Proyectista');
-INSERT INTO carreras (cod_carrera, nombre_carrera) VALUES ('21073','Ingeniería en Biotecnología');
-INSERT INTO carreras (cod_carrera, nombre_carrera) VALUES ('21074','Ingeniería Civil en Obras Civiles');
-INSERT INTO carreras (cod_carrera, nombre_carrera) VALUES ('21080','Ingeniería en Química');
-INSERT INTO carreras (cod_carrera, nombre_carrera) VALUES ('21081','Ingeniería en Comercio Internacional');
-INSERT INTO carreras (cod_carrera, nombre_carrera) VALUES ('21082','Ingeniería en Gestión Turística');
-INSERT INTO carreras (cod_carrera, nombre_carrera) VALUES ('21083','Química Industrial');
-
---
 -- Facultades
 --
 INSERT INTO facultades (facultad) VALUES ('Humanidades y Tecnologías de la Comunicación Social');
@@ -522,6 +487,41 @@ INSERT INTO escuelas (departamento_fk, escuela) VALUES ('17','Geomensura');
 INSERT INTO escuelas (departamento_fk, escuela) VALUES ('17','Transporte y Tránsito');
 INSERT INTO escuelas (departamento_fk, escuela) VALUES ('19','Electrónica');
 INSERT INTO escuelas (departamento_fk, escuela) VALUES ('20','Mecánica');
+
+--
+-- Carreras
+--
+
+INSERT INTO carreras (cod_carrera, nombre_carrera, escuela_fk) VALUES ('21002','Bibliotecología y Documentación',(SELECT pk FROM escuelas WHERE escuela='Bibliotecología'));
+INSERT INTO carreras (cod_carrera, nombre_carrera, escuela_fk) VALUES ('21004','Cartografía',(SELECT pk FROM escuelas WHERE escuela='Cartografía'));
+INSERT INTO carreras (cod_carrera, nombre_carrera, escuela_fk) VALUES ('21012','Contador Público y Auditor',(SELECT pk FROM escuelas WHERE escuela='Contadores Auditores'));
+INSERT INTO carreras (cod_carrera, nombre_carrera, escuela_fk) VALUES ('21015','Ingeniería en Administración Agroindustrial',(SELECT pk FROM escuelas WHERE escuela='Administración'));
+INSERT INTO carreras (cod_carrera, nombre_carrera, escuela_fk) VALUES ('21023','Diseño Industrial',(SELECT pk FROM escuelas WHERE escuela='Diseño'));
+INSERT INTO carreras (cod_carrera, nombre_carrera, escuela_fk) VALUES ('21024','Diseño en Comunicación Visual',(SELECT pk FROM escuelas WHERE escuela='Diseño'));
+INSERT INTO carreras (cod_carrera, nombre_carrera, escuela_fk) VALUES ('21025','Ingeniería en Transporte y Tránsito',(SELECT pk FROM escuelas WHERE escuela='Transporte y Tránsito'));
+INSERT INTO carreras (cod_carrera, nombre_carrera, escuela_fk) VALUES ('21030','Ingeniería en Informática',(SELECT pk FROM escuelas WHERE escuela='Informática'));
+INSERT INTO carreras (cod_carrera, nombre_carrera, escuela_fk) VALUES ('21031','Ingeniería en Geomensura',(SELECT pk FROM escuelas WHERE escuela='Geomensura'));
+INSERT INTO carreras (cod_carrera, nombre_carrera, escuela_fk) VALUES ('21032','Ingeniería en Construcción',(SELECT pk FROM escuelas WHERE escuela='Construcción Civil'));
+INSERT INTO carreras (cod_carrera, nombre_carrera, escuela_fk) VALUES ('21036','Ingeniería en Electrónica',(SELECT pk FROM escuelas WHERE escuela='Electrónica'));
+INSERT INTO carreras (cod_carrera, nombre_carrera, escuela_fk) VALUES ('21037','Ingeniería en Mecánica',(SELECT pk FROM escuelas WHERE escuela='Mecánica'));
+INSERT INTO carreras (cod_carrera, nombre_carrera, escuela_fk) VALUES ('21038','Ingeniería en Industria de la Madera',(SELECT pk FROM escuelas WHERE escuela='Ingeniería en Industria de la Madera'));
+INSERT INTO carreras (cod_carrera, nombre_carrera, escuela_fk) VALUES ('21039','Ingeniería en Industria Alimentaria',(SELECT pk FROM escuelas WHERE escuela='Ingeniería en Industria Alimentaria'));
+INSERT INTO carreras (cod_carrera, nombre_carrera, escuela_fk) VALUES ('21040','Ingeniería Civil Industrial mención Agroindustria',(SELECT pk FROM escuelas WHERE escuela='Industria'));
+INSERT INTO carreras (cod_carrera, nombre_carrera, escuela_fk) VALUES ('21041','Ingeniería Civil en Computación con Mención en Informática',(SELECT pk FROM escuelas WHERE escuela='Informática'));
+INSERT INTO carreras (cod_carrera, nombre_carrera, escuela_fk) VALUES ('21042','Ingeniería en Prevención de Riesgos y Medioambiente',(SELECT pk FROM escuelas WHERE escuela='Prevención de Riesgos y Medio Ambiente'));
+INSERT INTO carreras (cod_carrera, nombre_carrera, escuela_fk) VALUES ('21043','Trabajo Social',(SELECT pk FROM escuelas WHERE escuela='Trabajo Social'));
+INSERT INTO carreras (cod_carrera, nombre_carrera, escuela_fk) VALUES ('21044','Ingeniería Civil Industrial mención Sistemas de Gestión',(SELECT pk FROM escuelas WHERE escuela='Industria'));
+INSERT INTO carreras (cod_carrera, nombre_carrera, escuela_fk) VALUES ('21045','Ingeniería Industrial',(SELECT pk FROM escuelas WHERE escuela='Industria'));
+INSERT INTO carreras (cod_carrera, nombre_carrera, escuela_fk) VALUES ('21046','Bachillerato en Ciencias de la Ingeniería',(SELECT pk FROM escuelas WHERE escuela='Industria'));
+INSERT INTO carreras (cod_carrera, nombre_carrera, escuela_fk) VALUES ('21047','Arquitectura',(SELECT pk FROM escuelas WHERE escuela='Arquitectura'));
+INSERT INTO carreras (cod_carrera, nombre_carrera, escuela_fk) VALUES ('21048','Ingeniería Comercial',(SELECT pk FROM escuelas WHERE escuela='Ingeniería Comercial'));
+INSERT INTO carreras (cod_carrera, nombre_carrera, escuela_fk) VALUES ('21071','Dibujante Proyectista',(SELECT pk FROM escuelas WHERE escuela='Industria'));
+INSERT INTO carreras (cod_carrera, nombre_carrera, escuela_fk) VALUES ('21073','Ingeniería en Biotecnología',(SELECT pk FROM escuelas WHERE escuela='Química'));
+INSERT INTO carreras (cod_carrera, nombre_carrera, escuela_fk) VALUES ('21074','Ingeniería Civil en Obras Civiles',(SELECT pk FROM escuelas WHERE escuela='Construcción Civil'));
+INSERT INTO carreras (cod_carrera, nombre_carrera, escuela_fk) VALUES ('21080','Ingeniería en Química',(SELECT pk FROM escuelas WHERE escuela='Química'));
+INSERT INTO carreras (cod_carrera, nombre_carrera, escuela_fk) VALUES ('21081','Ingeniería en Comercio Internacional',(SELECT pk FROM escuelas WHERE escuela='Comercio Internacional'));
+INSERT INTO carreras (cod_carrera, nombre_carrera, escuela_fk) VALUES ('21082','Ingeniería en Gestión Turística',(SELECT pk FROM escuelas WHERE escuela='Comercio Internacional'));
+INSERT INTO carreras (cod_carrera, nombre_carrera, escuela_fk) VALUES ('21083','Química Industrial',(SELECT pk FROM escuelas WHERE escuela='Química'));
 
 --
 -- Estados Civiles
