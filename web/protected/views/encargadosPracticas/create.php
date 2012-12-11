@@ -13,6 +13,6 @@ $this->menu=array(
 );*/
 ?>
 
-<h1>Añadir encargado de practica</h1>
+<h1>Añadir Encargado de Practica</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

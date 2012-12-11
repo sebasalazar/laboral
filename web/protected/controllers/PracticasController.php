@@ -28,11 +28,11 @@ class PracticasController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('create','index','view'),
+				'actions'=>array('index','view'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('update'),
+				'actions'=>array('create','update'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -119,13 +119,23 @@ class PracticasController extends Controller
 
 	/**
 	 * Lists all models.
-	 */
+	 *//*
 	public function actionIndex()
 	{
 		$dataProvider=new CActiveDataProvider('Practicas');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
+	}*/
+        
+        
+        public function actionIndex()
+	{
+            $model=new Practicas('search');
+            $model->unsetAttributes();  // clear any default values
+            if(isset($_GET['Practicas']))
+                    $model->attributes=$_GET['Practicas'];
+            $this->render('index', array('model'=>$model));
 	}
 
 	/**

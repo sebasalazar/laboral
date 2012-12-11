@@ -4,6 +4,7 @@
 /* @var $form CActiveForm */
 ?>
 
+
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(

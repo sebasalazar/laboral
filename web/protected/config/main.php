@@ -64,16 +64,13 @@ return array(
 		/**/
 		/*'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=laboral',
-
 			'emulatePrepare' => true,
-			'username' => '',
+			'username' => 'root',
 			'password' => '1234',
 			'charset' => 'utf8',
-		),
+		),*/
             
-		), 
-                 
-                 */
+
         //Configuracion para postgresql
          'db'=>array(
          'connectionString' => 'pgsql:host=localhost;port=5432;dbname=bolsaLaboral',
