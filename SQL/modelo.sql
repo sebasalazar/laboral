@@ -327,8 +327,7 @@ CREATE TABLE ofertas_laborales (
     ubicacion VARCHAR(255) NOT NULL DEFAULT '', 
     cargo VARCHAR(255) NOT NULL,
     fecha_publicacion TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    beneficios VARCHAR(255) NOT NULL DEFAULT '', 
-    nivel_estudios VARCHAR(255) NOT NULL, 
+    beneficios VARCHAR(255) NOT NULL DEFAULT '',
     jornada_fk int NOT NULL REFERENCES jornadas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     contrato_fk int NOT NULL REFERENCES tipos_contratos(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     activo smallint NOT NULL DEFAULT '1', -- 0: Inactivo / 1: Activo
