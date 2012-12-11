@@ -57,6 +57,9 @@ class Practicas extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+                    'empresaFk' => array(self::BELONGS_TO, 'Empresas', 'empresa_fk'),
+                    'rubroFk' => array(self::BELONGS_TO, 'Rubros', 'area_practica_fk'),
+                    'jornadaFk' => array(self::BELONGS_TO, 'Jornadas', 'horario_fk'),
 		);
 	}
 

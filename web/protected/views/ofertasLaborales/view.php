@@ -21,7 +21,7 @@ if(Yii::app()->user->getModel(Yii::app()->user->id) != null)
     {
         $this->menu=array(
                 array('label'=>'Lista Ofertas Laborales', 'url'=>array('index')),
-                array('label'=>'Create Ofertas Laborales', 'url'=>array('create')),
+                array('label'=>'Crear Ofertas Laborales', 'url'=>array('create')),
         );
     }
     elseif($tipo == 1)
