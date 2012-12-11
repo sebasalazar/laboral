@@ -73,6 +73,7 @@ class OfertasLaboralesController extends Controller
 			$model->attributes=$_POST['OfertasLaborales'];
                         $model->activo = 1;
 			if($model->save())
+                            Yii::app()->user->setFlash('sucess', "La oferta laboral a sido creada");
 				$this->redirect(array('view','id'=>$model->pk));
 		}
 

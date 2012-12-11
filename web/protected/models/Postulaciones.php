@@ -32,7 +32,11 @@ class Postulaciones extends CActiveRecord
 	{
 		return 'postulaciones';
 	}
-
+        public function afterFind()
+{
+$this->fecha_publicacion= Yii::app()->dateformatter->format("dd-MM-yyyy",$this->fecha);
+parent::afterFind();
+}
 	/**
 	 * @return array validation rules for model attributes.
 	 */

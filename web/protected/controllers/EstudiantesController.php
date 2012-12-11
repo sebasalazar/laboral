@@ -28,11 +28,11 @@ class EstudiantesController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view', 'create'),
+				'actions'=>array('index','view', 'create','view2'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','update2'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -52,6 +52,12 @@ class EstudiantesController extends Controller
 	public function actionView($id)
 	{
 		$this->render('view',array(
+			'model'=>$this->loadModel($id),
+		));
+	}
+        	public function actionView2($id)
+	{
+		$this->render('view2',array(
 			'model'=>$this->loadModel($id),
 		));
 	}
@@ -103,6 +109,24 @@ class EstudiantesController extends Controller
 		));
 	}
 
+        public function actionUpdate2($id)
+	{
+		$model=$this->loadModel($id);
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['Estudiantes']))
+		{
+			$model->attributes=$_POST['Estudiantes'];
+			if($model->save())
+				$this->redirect(array('view2','id'=>$model->pk));
+		}
+
+		$this->render('update2',array(
+			'model'=>$model,
+		));
+	}
 	/**
 	 * Deletes a particular model.
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.

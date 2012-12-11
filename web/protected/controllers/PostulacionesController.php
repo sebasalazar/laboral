@@ -89,14 +89,16 @@ class PostulacionesController extends Controller
             if(!$modelEstudiante->completo)
             {
                 //$this->redirect(array('view','id'=>$modelEstudiante->pk));
-                 $this->redirect(array('OfertasLaborales/index'));
+                 Yii::app()->user->setFlash('error', "Ustedes debe completar el Curriculum primero"); 
+                 $this->redirect(array('estudiantes/update2','id'=>Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk));
             }
             else
             {
+                Yii::app()->user->setFlash('sucess', "Si postulacion a sido satisfactoria");
                 $model=new Postulaciones;
                 $model->oferta_laboral_fk = $oferta_laboral_fk;
                 $model->estudiante_fk = $estudiante_fk;
-                $model->fecha = $fecha;
+                $model->fecha = $fecha;               
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
                 $model->save();

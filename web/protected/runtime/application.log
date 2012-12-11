@@ -1533,3 +1533,420 @@ Stack trace:
 REQUEST_URI=/laboral/web/index.php?r=Postulaciones/registrar&oferta_laboral_fk=23&estudiante_fk=4&fecha=10-12-2012
 in /var/www/laboral/web/protected/controllers/PostulacionesController.php (86)
 in /var/www/laboral/web/index.php (13)
+2012/12/10 02:21:28 [error] [php] Undefined variable: tipo (/var/www/laboral/web/protected/views/ofertasLaborales/index.php:11)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(870): OfertasLaboralesController->renderFile()
+#1 /var/www/laboral/web/yii/framework/web/CController.php(783): OfertasLaboralesController->renderPartial()
+#2 /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php(131): OfertasLaboralesController->render()
+#3 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(50): OfertasLaboralesController->actionIndex()
+#4 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): OfertasLaboralesController->runAction()
+#6 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#8 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): OfertasLaboralesController->filterAccessControl()
+#9 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#10 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /var/www/laboral/web/yii/framework/web/CController.php(266): OfertasLaboralesController->runActionWithFilters()
+#12 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): OfertasLaboralesController->run()
+#13 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#14 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=ofertasLaborales/index
+in /var/www/laboral/web/protected/views/ofertasLaborales/index.php (11)
+in /var/www/laboral/web/protected/controllers/OfertasLaboralesController.php (131)
+in /var/www/laboral/web/index.php (13)
+2012/12/10 02:59:45 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/laboral/web/yii/framework/web/CController.php:337
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#3 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('update')
+#9 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('OfertasLaborale...')
+#10 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /var/www/laboral/web/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/laboral/web/index.php?r=OfertasLaborales/update
+---
+2012/12/10 03:00:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "perfil" solicitada.' in /var/www/laboral/web/yii/framework/web/CController.php:484
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(271): CController->missingAction('perfil')
+#1 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('perfil')
+#2 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('estudiantes/per...')
+#3 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/www/laboral/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/laboral/web/index.php?r=estudiantes/perfil&id=163237628
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/index
+---
+2012/12/10 03:16:18 [error] [php] Missing argument 2 for CActiveForm::labelEx(), called in /var/www/laboral/web/protected/views/estudiantes/_form.php on line 19 and defined (/var/www/laboral/web/yii/framework/web/widgets/CActiveForm.php:561)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): EstudiantesController->renderInternal()
+#1 /var/www/laboral/web/yii/framework/web/CController.php(870): EstudiantesController->renderFile()
+#2 /var/www/laboral/web/protected/views/estudiantes/update.php(21): EstudiantesController->renderPartial()
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require()
+#4 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): EstudiantesController->renderInternal()
+#5 /var/www/laboral/web/yii/framework/web/CController.php(870): EstudiantesController->renderFile()
+#6 /var/www/laboral/web/yii/framework/web/CController.php(783): EstudiantesController->renderPartial()
+#7 /var/www/laboral/web/protected/controllers/EstudiantesController.php(103): EstudiantesController->render()
+#8 unknown(0): EstudiantesController->actionUpdate()
+#9 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#10 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#11 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): EstudiantesController->runAction()
+#13 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#15 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): EstudiantesController->filterAccessControl()
+#16 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#17 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/laboral/web/yii/framework/web/CController.php(266): EstudiantesController->runActionWithFilters()
+#19 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): EstudiantesController->run()
+#20 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#21 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=estudiantes/update&id=2
+in /var/www/laboral/web/protected/views/estudiantes/_form.php (19)
+in /var/www/laboral/web/protected/views/estudiantes/update.php (21)
+in /var/www/laboral/web/protected/controllers/EstudiantesController.php (103)
+2012/12/10 03:22:05 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (104)
+in /var/www/laboral/web/index.php (13)
+2012/12/10 03:25:01 [error] [php] Use of undefined constant php - assumed 'php' (/var/www/laboral/web/protected/views/estudiantes/_form.php:35)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(870): EstudiantesController->renderFile()
+#1 /var/www/laboral/web/protected/views/estudiantes/update.php(21): EstudiantesController->renderPartial()
+#2 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require()
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): EstudiantesController->renderInternal()
+#4 /var/www/laboral/web/yii/framework/web/CController.php(870): EstudiantesController->renderFile()
+#5 /var/www/laboral/web/yii/framework/web/CController.php(783): EstudiantesController->renderPartial()
+#6 /var/www/laboral/web/protected/controllers/EstudiantesController.php(103): EstudiantesController->render()
+#7 unknown(0): EstudiantesController->actionUpdate()
+#8 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#9 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#10 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): EstudiantesController->runAction()
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#14 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): EstudiantesController->filterAccessControl()
+#15 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#16 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/laboral/web/yii/framework/web/CController.php(266): EstudiantesController->runActionWithFilters()
+#18 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): EstudiantesController->run()
+#19 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#20 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=estudiantes/update&id=5
+in /var/www/laboral/web/protected/views/estudiantes/_form.php (35)
+in /var/www/laboral/web/protected/views/estudiantes/update.php (21)
+in /var/www/laboral/web/protected/controllers/EstudiantesController.php (103)
+2012/12/10 03:27:55 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/EstudiantesController.php (96)
+in /var/www/laboral/web/index.php (13)
+2012/12/10 03:28:54 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/EstudiantesController.php (96)
+in /var/www/laboral/web/index.php (13)
+2012/12/10 03:29:43 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/EstudiantesController.php (96)
+in /var/www/laboral/web/index.php (13)
+2012/12/10 03:36:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "update2" solicitada.' in /var/www/laboral/web/yii/framework/web/CController.php:484
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(271): CController->missingAction('update2')
+#1 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('update2')
+#2 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('estudiantes/upd...')
+#3 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/www/laboral/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/laboral/web/index.php?r=estudiantes/update2&id=5
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=13
+---
+2012/12/10 03:37:14 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/laboral/web/yii/framework/web/auth/CAccessControlFilter.php:170
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/auth/CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(WebUser), 'Usted no se enc...')
+#1 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#6 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('update2')
+#8 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('estudiantes/upd...')
+#9 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /var/www/laboral/web/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/laboral/web/index.php?r=estudiantes/update2&id=5
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=13
+---
+2012/12/10 03:37:41 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/laboral/web/yii/framework/web/auth/CAccessControlFilter.php:170
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/auth/CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(WebUser), 'Usted no se enc...')
+#1 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#6 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('update2')
+#8 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('estudiantes/upd...')
+#9 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /var/www/laboral/web/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/laboral/web/index.php?r=estudiantes/update2&id=5
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=ofertasLaborales/view&id=13
+---
+2012/12/10 03:49:37 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/EstudiantesController.php (115)
+in /var/www/laboral/web/index.php (13)
+2012/12/10 03:51:01 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/EstudiantesController.php (115)
+in /var/www/laboral/web/index.php (13)
+2012/12/10 03:55:00 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/EstudiantesController.php (115)
+in /var/www/laboral/web/index.php (13)
+2012/12/10 03:55:43 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/EstudiantesController.php (96)
+in /var/www/laboral/web/index.php (13)
+2012/12/10 04:00:14 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/EstudiantesController.php (115)
+in /var/www/laboral/web/index.php (13)
+2012/12/10 04:00:59 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/EstudiantesController.php (115)
+in /var/www/laboral/web/index.php (13)
+2012/12/10 04:01:36 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/EstudiantesController.php (115)
+in /var/www/laboral/web/index.php (13)
+2012/12/10 04:02:04 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/EstudiantesController.php (115)
+in /var/www/laboral/web/index.php (13)
+2012/12/10 04:02:38 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/EstudiantesController.php (115)
+in /var/www/laboral/web/index.php (13)
+2012/12/10 04:02:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "view2" solicitada.' in /var/www/laboral/web/yii/framework/web/CController.php:484
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(271): CController->missingAction('view2')
+#1 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('view2')
+#2 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('estudiantes/vie...')
+#3 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/www/laboral/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/laboral/web/index.php?r=estudiantes/view2&id=5
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=estudiantes/update2&id=5
+---
+2012/12/10 04:03:08 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/EstudiantesController.php (121)
+in /var/www/laboral/web/index.php (13)
+2012/12/10 04:03:08 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/laboral/web/yii/framework/web/auth/CAccessControlFilter.php:170
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/auth/CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(WebUser), 'Usted no se enc...')
+#1 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#6 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('view2')
+#8 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('estudiantes/vie...')
+#9 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /var/www/laboral/web/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/laboral/web/index.php?r=estudiantes/view2&id=5
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=estudiantes/update2&id=5
+---
+2012/12/10 04:03:27 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/EstudiantesController.php (121)
+in /var/www/laboral/web/index.php (13)
+2012/12/10 04:08:38 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/EstudiantesController.php (121)
+in /var/www/laboral/web/index.php (13)
+2012/12/10 04:08:38 [error] [exception.CException] exception 'CException' with message 'Propiedad "Estudiantes"."Comuna" no se encuentra definida.' in /var/www/laboral/web/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('Comuna')
+#1 /var/www/laboral/web/protected/views/estudiantes/view2.php(27): CActiveRecord->__get('Comuna')
+#2 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#4 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#5 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('view2', Array, true)
+#6 /var/www/laboral/web/protected/controllers/EstudiantesController.php(62): CController->render('view2', Array)
+#7 [internal function]: EstudiantesController->actionView2('5')
+#8 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(EstudiantesController), Array)
+#9 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(EstudiantesController), Object(ReflectionMethod), Array)
+#10 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('view2')
+#19 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('estudiantes/vie...')
+#20 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/laboral/web/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/laboral/web/index.php?r=estudiantes/view2&id=5
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=estudiantes/update2&id=5
+---
+2012/12/10 04:09:49 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/EstudiantesController.php (121)
+in /var/www/laboral/web/index.php (13)
+2012/12/10 04:09:49 [error] [php] Trying to get property of non-object (/var/www/laboral/web/protected/views/estudiantes/view2.php:27)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(870): EstudiantesController->renderFile()
+#1 /var/www/laboral/web/yii/framework/web/CController.php(783): EstudiantesController->renderPartial()
+#2 /var/www/laboral/web/protected/controllers/EstudiantesController.php(62): EstudiantesController->render()
+#3 unknown(0): EstudiantesController->actionView2()
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): EstudiantesController->runAction()
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): EstudiantesController->filterAccessControl()
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): EstudiantesController->runActionWithFilters()
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): EstudiantesController->run()
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=estudiantes/view2&id=5
+in /var/www/laboral/web/protected/views/estudiantes/view2.php (27)
+in /var/www/laboral/web/protected/controllers/EstudiantesController.php (62)
+in /var/www/laboral/web/index.php (13)
+2012/12/10 04:10:53 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/EstudiantesController.php (121)
+in /var/www/laboral/web/index.php (13)
+2012/12/10 04:12:04 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/EstudiantesController.php (121)
+in /var/www/laboral/web/index.php (13)
+2012/12/10 04:12:04 [error] [php] Trying to get property of non-object (/var/www/laboral/web/protected/views/estudiantes/view2.php:27)
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/web/CController.php(870): EstudiantesController->renderFile()
+#1 /var/www/laboral/web/yii/framework/web/CController.php(783): EstudiantesController->renderPartial()
+#2 /var/www/laboral/web/protected/controllers/EstudiantesController.php(62): EstudiantesController->render()
+#3 unknown(0): EstudiantesController->actionView2()
+#4 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#5 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#6 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#7 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): EstudiantesController->runAction()
+#8 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/www/laboral/web/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#10 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): EstudiantesController->filterAccessControl()
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#12 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(266): EstudiantesController->runActionWithFilters()
+#14 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): EstudiantesController->run()
+#15 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#16 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/laboral/web/index.php(13): CWebApplication->run()
+REQUEST_URI=/laboral/web/index.php?r=estudiantes/view2&id=5
+in /var/www/laboral/web/protected/views/estudiantes/view2.php (27)
+in /var/www/laboral/web/protected/controllers/EstudiantesController.php (62)
+in /var/www/laboral/web/index.php (13)
+2012/12/10 04:13:27 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/EstudiantesController.php (121)
+in /var/www/laboral/web/index.php (13)
+2012/12/10 04:14:55 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/EstudiantesController.php (121)
+in /var/www/laboral/web/index.php (13)
+2012/12/10 04:14:55 [error] [exception.CException] exception 'CException' with message 'Propiedad "Estudiantes"."ecFK" no se encuentra definida.' in /var/www/laboral/web/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('ecFK')
+#1 /var/www/laboral/web/protected/views/estudiantes/view2.php(31): CActiveRecord->__get('ecFK')
+#2 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#4 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#5 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('view2', Array, true)
+#6 /var/www/laboral/web/protected/controllers/EstudiantesController.php(62): CController->render('view2', Array)
+#7 [internal function]: EstudiantesController->actionView2('5')
+#8 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(EstudiantesController), Array)
+#9 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(EstudiantesController), Object(ReflectionMethod), Array)
+#10 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('view2')
+#19 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('estudiantes/vie...')
+#20 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/laboral/web/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/laboral/web/index.php?r=estudiantes/view2&id=5
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=estudiantes/update2&id=5
+---
+2012/12/10 04:15:38 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/EstudiantesController.php (121)
+in /var/www/laboral/web/index.php (13)
+2012/12/10 04:16:48 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/EstudiantesController.php (121)
+in /var/www/laboral/web/index.php (13)
+2012/12/10 04:16:48 [error] [exception.CException] exception 'CException' with message 'Propiedad "Estados"."estado" no se encuentra definida.' in /var/www/laboral/web/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/laboral/web/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('estado')
+#1 /var/www/laboral/web/protected/views/estudiantes/view2.php(37): CActiveRecord->__get('estado')
+#2 /var/www/laboral/web/yii/framework/web/CBaseController.php(127): require('/var/www/labora...')
+#3 /var/www/laboral/web/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/labora...', Array, true)
+#4 /var/www/laboral/web/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/labora...', Array, true)
+#5 /var/www/laboral/web/yii/framework/web/CController.php(783): CController->renderPartial('view2', Array, true)
+#6 /var/www/laboral/web/protected/controllers/EstudiantesController.php(62): CController->render('view2', Array)
+#7 [internal function]: EstudiantesController->actionView2('5')
+#8 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(EstudiantesController), Array)
+#9 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(EstudiantesController), Object(ReflectionMethod), Array)
+#10 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('view2')
+#19 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('estudiantes/vie...')
+#20 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/laboral/web/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/laboral/web/index.php?r=estudiantes/view2&id=5
+HTTP_REFERER=http://localhost/laboral/web/index.php?r=estudiantes/update2&id=5
+---
+2012/12/10 04:17:15 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/EstudiantesController.php (121)
+in /var/www/laboral/web/index.php (13)
+2012/12/11 02:12:18 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/EstudiantesController.php (121)
+in /var/www/laboral/web/index.php (13)
+2012/12/11 02:32:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /var/www/laboral/web/protected/controllers/EstudiantesController.php:179
+Stack trace:
+#0 /var/www/laboral/web/protected/controllers/EstudiantesController.php(95): EstudiantesController->loadModel('4')
+#1 [internal function]: EstudiantesController->actionUpdate('4')
+#2 /var/www/laboral/web/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(EstudiantesController), Array)
+#3 /var/www/laboral/web/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(EstudiantesController), Object(ReflectionMethod), Array)
+#4 /var/www/laboral/web/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/laboral/web/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /var/www/laboral/web/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /var/www/laboral/web/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/laboral/web/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/laboral/web/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /var/www/laboral/web/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/laboral/web/yii/framework/web/CWebApplication.php(283): CController->run('update')
+#13 /var/www/laboral/web/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('estudiantes/upd...')
+#14 /var/www/laboral/web/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/laboral/web/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/laboral/web/index.php?r=estudiantes/update&id=4
+---
+2012/12/11 02:38:06 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (104)
+in /var/www/laboral/web/index.php (13)
+2012/12/11 02:39:22 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (104)
+in /var/www/laboral/web/index.php (13)
+2012/12/11 02:41:15 [warning] [application] Failed to set unsafe attribute "archivo_curriculum" of "Estudiantes".
+in /var/www/laboral/web/protected/controllers/UsuariosController.php (104)
+in /var/www/laboral/web/index.php (13)

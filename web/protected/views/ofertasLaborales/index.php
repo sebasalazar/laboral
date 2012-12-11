@@ -8,12 +8,20 @@ $this->breadcrumbs=array(
 
 ?>
 <?php
+$tipo = Yii::app()->user->getTipoUsuario(Yii::app()->user->name);
+if ($tipo == 1){
 $this->menu=array(
+                array('label'=>'Ofertas Laborales', 'url'=>array('ofertasLaborales/index')),
+                array('label'=>'Buscar', 'url'=>array('')),
+);}
+else{$this->menu=array(
                 array('label'=>'Ofertas Laborales', 'url'=>array('ofertasLaborales/index')),
                 array('label'=>'Buscar', 'url'=>array('')),
                 array('label'=>'Publicar una Oferta Laboral', 'url'=>array('ofertasLaborales/create'), 'visible'=>!Yii::app()->user->isGuest),
                 array('label'=>'Publicar Practica', 'url'=>array('#'), 'visible'=>!Yii::app()->user->isGuest),
 );
+    
+}
 ?>
 
 <h1>Ofertas Laborales</h1>
