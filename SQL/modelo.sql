@@ -103,6 +103,46 @@ CREATE TABLE estados (
     PRIMARY KEY(pk)
 );
 
+
+-- 
+-- Tabla almacena las facultades de la Universidad.
+-- 
+DROP TABLE IF EXISTS facultades CASCADE;
+CREATE TABLE facultades (
+        pk serial NOT NULL,
+        facultad varchar(255) NOT NULL,
+        descripcion text,
+        UNIQUE(facultad),
+        PRIMARY KEY(pk)
+);
+
+-- 
+-- Tabla almacena los departamentos de las Facultades
+-- 
+DROP TABLE IF EXISTS departamentos CASCADE;
+CREATE TABLE departamentos (
+        pk serial NOT NULL,
+        facultad_fk int NOT NULL REFERENCES facultades(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+        departamento varchar(255) NOT NULL,
+        descripcion text,
+        UNIQUE(departamento),
+        PRIMARY KEY(pk)
+);
+
+-- 
+-- Esta tabla almacena las escuelas de los departamentos.
+-- 
+DROP TABLE IF EXISTS escuelas CASCADE;
+CREATE TABLE escuelas (
+        pk serial NOT NULL,
+        departamento_fk int NOT NULL REFERENCES departamentos(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+        escuela varchar(255) NOT NULL,
+        descripcion text,
+        UNIQUE(escuela),
+        PRIMARY KEY(pk)
+);
+
+
 --
 -- Tabla almacena carrera de la Universidad
 --
@@ -111,7 +151,8 @@ CREATE TABLE carreras (
     pk serial NOT NULL,
     cod_carrera int NOT NULL,
     nombre_carrera varchar(255) NOT NULL,
-    UNIQUE(cod_carrera),
+    escuela_fk int NOT NULL REFERENCES escuelas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    UNIQUE(cod_carrera, escuela_fk),
     UNIQUE(nombre_carrera),
     PRIMARY KEY(pk)
 );
@@ -145,43 +186,6 @@ CREATE TABLE estudiantes (
 );
 
 
--- 
--- Tabla almacena las facultades de la Universidad.
--- 
-DROP TABLE IF EXISTS facultades CASCADE;
-CREATE TABLE facultades (
-        pk serial NOT NULL,
-        facultad varchar(255) NOT NULL,
-        descripcion text,
-        UNIQUE(facultad),
-        PRIMARY KEY(pk)
-);
-
--- 
--- Tabla almacena los departamentos de las Facultades
--- 
-DROP TABLE IF EXISTS departamentos CASCADE;
-CREATE TABLE departamentos (
-        pk serial NOT NULL,
-        facultad_fk int NOT NULL REFERENCES facultades(pk) ON UPDATE CASCADE ON DELETE CASCADE,
-        departamento varchar(255) NOT NULL,
-        descripcion text,
-        UNIQUE(departamento),
-        PRIMARY KEY(pk)
-);
-
--- 
--- Esta tabla almacena las escuelas de los departamentos.
--- 
-DROP TABLE IF EXISTS escuelas CASCADE;
-CREATE TABLE escuelas (
-        escuela_id serial NOT NULL,
-        departamento_fk int NOT NULL REFERENCES departamentos(pk) ON UPDATE CASCADE ON DELETE CASCADE,
-        escuela varchar(255) NOT NULL,
-        descripcion text,
-        UNIQUE(escuela),
-        PRIMARY KEY(escuela_id)
-);
 
 
 -- 
@@ -326,7 +330,7 @@ CREATE TABLE ofertas_laborales (
     descripcion VARCHAR(255) NOT NULL,
     ubicacion VARCHAR(255) NOT NULL DEFAULT '', 
     cargo VARCHAR(255) NOT NULL,
-    fecha_publicacion TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    fecha_publicacion TIMESTAMP NOT NULL DEFAULT NOW(),
     beneficios VARCHAR(255) NOT NULL DEFAULT '',
     jornada_fk int NOT NULL REFERENCES jornadas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     contrato_fk int NOT NULL REFERENCES tipos_contratos(pk) ON UPDATE CASCADE ON DELETE CASCADE,
