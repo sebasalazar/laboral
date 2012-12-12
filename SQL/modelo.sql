@@ -453,4 +453,12 @@ CREATE TABLE evaluaciones_practicas (
     PRIMARY KEY(pk)
 );
 
+DROP TABLE IF EXISTS tips CASCADE;
+CREATE TABLE tips(
+    pk serial NOT NULL,
+    titulo varchar(255) NOT NULL,
+    contenido varchar(255) NOT NULL,
+    PRIMARY KEY(pk)
+);
+
 COMMIT;
