@@ -81,7 +81,7 @@ class UsuariosController extends Controller
                                     }
                                     else
                                     {
-                                            $model1->deleteByPk($model1->pk);
+                                            $model->deleteByPk($model1->pk);
                                             $model1->deleteByPk($model->id);
                                     }
 			}

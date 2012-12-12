@@ -11,7 +11,6 @@ class WebUser extends CWebUser {
 
     public function getModelUsuarioCompletoId($id) {
         $docente = Docentes::model()->model()->findByPK($id);
-        ;
         if ($docente != null)
             return $docente;
         else {
