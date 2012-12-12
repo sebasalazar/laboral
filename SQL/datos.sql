@@ -1,6 +1,16 @@
 BEGIN TRANSACTION;
 
 --
+-- Roles
+-- 1 - 2 - 4 - 8 
+--
+INSERT INTO roles (pk, rol) VALUES ('1','Estudiante');
+INSERT INTO roles (pk, rol) VALUES ('2','Docente');
+INSERT INTO roles (pk, rol) VALUES ('4','Empresa');
+INSERT INTO roles (pk, rol) VALUES ('8','Administrador');
+
+
+--
 --  Datos de Regiones
 --
 

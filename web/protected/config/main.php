@@ -79,9 +79,9 @@ return array(
 
         //Configuracion para postgresql
          'db'=>array(
-         'connectionString' => 'pgsql:host=localhost;port=5432;dbname=bolsaLaboral',
-         'username' => 'laboralutem',
-         'password' => 'computador',
+         'connectionString' => 'pgsql:host=192.168.0.153;port=5432;dbname=laboraldb',
+         'username' => 'laboral',
+         'password' => 'laboral',
          'charset' => 'utf8',
          ),
 
@@ -112,6 +112,6 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'adminEmail'=>'webmaster@example.com',
+		'adminEmail'=>'soporte@informatica.utem.cl',
 	),
 );

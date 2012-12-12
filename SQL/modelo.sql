@@ -5,7 +5,7 @@
 --
 DROP TABLE IF EXISTS roles CASCADE;
 CREATE TABLE roles (
-    pk serial NOT NULL,
+    pk int NOT NULL, -- Rol númerico manual: 1 - 2 - 4 - 8
     rol varchar(255) NOT NULL, -- nombre del rol
     descripcion text, -- descripción del rol
     UNIQUE (rol),
