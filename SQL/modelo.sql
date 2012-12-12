@@ -237,7 +237,6 @@ CREATE TABLE docentes (
 -- 
 --  Tabla que almacenará los docentes que cumplen un cago administrativo en la universidad.
 --
-
 DROP TABLE IF EXISTS cargos_adm CASCADE;
 CREATE TABLE cargos_adm (
     pk serial NOT NULL,
@@ -339,7 +338,6 @@ CREATE TABLE ofertas_laborales (
 --
 -- Sugerencia trabajo, algunos academicos pidieron que se pudiera sugerir trabajos a alumnos que estuvieran siguiendo
 -- 
-
 DROP TABLE IF EXISTS sugerencias_trabajo CASCADE;
 CREATE TABLE sugerencias_trabajo (
         pk bigserial NOT NULL,
@@ -395,7 +393,6 @@ CREATE TABLE experiencias (
 --
 -- Tabla de curriculums
 --
-
 DROP TABLE IF EXISTS curriculums CASCADE;
 CREATE TABLE curriculums (
     pk int NOT NULL, -- hay que definir que debe llevar el curriculum
@@ -406,7 +403,6 @@ CREATE TABLE curriculums (
 --
 -- Tabla de practicas
 --
-
 DROP TABLE IF EXISTS practicas CASCADE;
 CREATE TABLE practicas (
     pk serial NOT NULL,
@@ -440,7 +436,6 @@ CREATE TABLE encargados_practicas (
 --
 --Tablas evaluacion de practicas
 --
-
 DROP TABLE IF EXISTS evaluaciones_practicas CASCADE;
 CREATE TABLE evaluaciones_practicas (
     pk serial NOT NULL,
