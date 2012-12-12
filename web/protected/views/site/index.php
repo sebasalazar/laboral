@@ -5,48 +5,13 @@
 $this->pageTitle=Yii::app()->name;
 ?>
 
-<!--
-
-<h1>Bienvenido a <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
-<br />
-<div class="contenido">
-   <div class="columna columna_1">
-           <div class="fila">
-            <h3>Misión</h3>
-            <p align="justify">La Universidad Tecnológica Metropolitana, es una Institución de Educación superior estatal y autónoma socialmente responsable, ubicada en la Región Metropolitana, y tiene como Misión:
-            Formar personas con altas capacidades académicas y profesionales, en el ámbito preferentemente tecnológico, apoyada en la generación, transferencia, aplicación y difusión del conocimiento en las áreas del saber que le son propias, para contribuir al desarrollo sustentable del país y de la sociedad de la que forma parte.</p>
-       </div>
-       <br />
-       <div class="fila">
-            <h3>Visión</h3>
-            <p align="justify">La Universidad Tecnológica Metropolitana, será reconocida por
-            la formación de sus egresados, la calidad de su educación continua,
-            por la construcción de capacidades de investigación y creación,
-            innovación y transferencia en algunas áreas del saber, por
-            la equidad social en su acceso, su tolerancia y pluralismo, por su
-            cuerpo académico de excelencia y por una gestión institucional
-            que asegura su sustentabilidad y la práctica de mecanismos de
-            aseguramiento de la calidad en todo su quehacer.</p>
-       </div>
-   </div>
-
-   <div class="columna columna_2">
-       <div class="fila">
-            <br /><br />
-            <?php echo CHtml::image('images/bolsaempleo.jpg','Bolsa de Trabajo',array('width'=>300,'height'=>230,'class'=>'centar')); ?>
-       </div>
-   </div>
-   </div>
-</div>
-<br />
-
--->
+<br /><br />
 <div class="carr">
     <?php $this->widget('bootstrap.widgets.TbCarousel', array(
         'items'=>array(
-            array('image'=>'images/i1.jpeg','label'=>'First Thumbnail label', 'caption'=>'Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.'),
-            array('image'=>'images/i2.jpeg', 'label'=>'Second Thumbnail label', 'caption'=>'Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.'),
-            array('image'=>'images/i3.jpeg', 'label'=>'Third Thumbnail label', 'caption'=>'Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.'),
+            array('image'=>'images/i1.jpeg','label'=>'Primera Imagen', 'caption'=>'Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.'),
+            array('image'=>'images/i2.jpeg', 'label'=>'Segunda Imagen', 'caption'=>'Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.'),
+            array('image'=>'images/i3.jpeg', 'label'=>'Tercera Imagen', 'caption'=>'Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.'),
         ),
     )); ?>
 </div>

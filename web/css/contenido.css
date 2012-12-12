@@ -50,11 +50,19 @@
 }
 
 input[name="OfertasLaborales[cargo]"]{	
-    max-width: 195px;	
+    max-width: 75px;	
 }
 
 .carr{
     width: 80%;
     display: block;
     margin: 0 auto 0 auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+.navbar-inner{
+    height: 10px;
 }
