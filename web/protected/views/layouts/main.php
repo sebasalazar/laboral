@@ -212,7 +212,7 @@
                         <ul class="uls">
                             <li class="text-left"><?php echo CHtml::link('UTEM','http://www.utem.cl'); ?></li>
                             <li class="text-left"><?php echo CHtml::link('Escuela Informática','http://informatica.utem.cl'); ?></li>
-                            <li class="text-left"><?php echo CHtml::link('Bienestar UTEM','http://'); ?></li>
+                            <li class="text-left"><?php echo CHtml::link('Bienestar UTEM','http://bienestarestudiantil.blogutem.cl/'); ?></li>
                             <li class="text-left"><?php echo CHtml::link('FEUTEM','http://www.feutem.cl'); ?></li>
                         </ul>
                     </div>

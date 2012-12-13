@@ -1,8 +1,7 @@
 .contenido {
    display: block;
-   width: 90%;
+   width: 100%;
    margin: 0 auto 0 auto;
-   padding: 10px;
    display: table;
 }
 
@@ -27,6 +26,10 @@
 .columna_2{
     width: 33%;
     height: 100px;
+}
+
+.columna_50{
+    width: 20%;
 }
 
 .fila{
