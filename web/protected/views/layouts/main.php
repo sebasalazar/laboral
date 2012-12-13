@@ -195,10 +195,10 @@
                 <div class="fila">
                     <div class="columna columna_1">
                         <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
+                            <li><?php echo CHtml::link('Inicio',array('site/index')); ?></li>
+                            <li><?php echo CHtml::link('Ofertas Laborales',array('ofertasLaborales/index')); ?></li>
+                            <li><?php echo CHtml::link('Registrarse',array('usuarios/pcreate')); ?></li>
+                            <li><?php echo CHtml::link('',array('controller/action')); ?></li>
                         </ul>
                     </div>
                     <div class="columna columna_1">
