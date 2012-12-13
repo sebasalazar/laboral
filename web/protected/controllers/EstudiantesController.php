@@ -28,15 +28,15 @@ class EstudiantesController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view', 'create','perfil','view3'),
+				'actions'=>array('index','view','view3'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','updateperfil','update3'),
+				'actions'=>array('update','updateperfil','update3','perfil'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete','create'),
 				'users'=>array(Yii::app()->user->getAdmin()),
 			),
 			array('deny',  // deny all users
@@ -56,11 +56,15 @@ class EstudiantesController extends Controller
 		));
 	}
         	public function actionPerfil($id)
-	{
-		$this->render('perfil',array(
-			'model'=>$this->loadModel($id),
-		));
-	}
+        {
+            $model= Estudiantes::model()->findByPk(Yii::app()->user->getModelUsuarioEstudiante(Yii::app()->user->name)->pk);
+            if($id == Yii::app()->user->name)
+                $this->render('perfil', array(
+                        'model'=>$model
+                ));
+            else
+                throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
+        }
         	public function actionView3($id)
 	{
 		$this->render('view3',array(
@@ -116,21 +120,24 @@ class EstudiantesController extends Controller
 
         public function actionUpdateperfil($id)
 	{
-		$model=$this->loadModel($id);
+            if(Yii::app()->user->getModelUsuarioEstudianteId($id)->rut == Yii::app()->user->name)
+            {
+                    $model=$this->loadModel($id);
+                    if(isset($_POST['Estudiantes']))
+                    {
+                            $model->attributes=$_POST['Estudiantes'];
+                            if($model->save())
+                                    $this->redirect(array('view','id'=>$model->pk));
+                    }
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Estudiantes']))
-		{
-			$model->attributes=$_POST['Estudiantes'];
-			if($model->save())
-				$this->redirect(array('perfil','id'=>$model->pk));
-		}
-
-		$this->render('updateperfil',array(
-			'model'=>$model,
-		));
+                    $this->render('updateperfil',array(
+                            'model'=>$model,
+                    ));
+            }
+            else
+            {
+                    throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
+            }
 	}
                 public function actionUpdate3($id)
 	{

@@ -25,6 +25,13 @@ class WebUser extends CWebUser {
             }
         }
     }
+    
+        public function getModelUsuarioEstudianteId($id) {
+       $estudiante = Estudiantes::model()->model()->findByPK($id);
+                if ($estudiante != null) {
+                    return $estudiante;
+                }
+        }
 
     public function getModelUsuarioCompleto($rut) {
         $docente = Docentes::model()->findByAttributes(array('rut' => $rut));
@@ -43,6 +50,13 @@ class WebUser extends CWebUser {
         }
     }
 
+    public function getModelUsuarioEstudiante($rut) {
+                 $estudiante = Estudiantes::model()->findByAttributes(array('rut' => $rut));
+                if ($estudiante != null) {
+                    return $estudiante;
+    }
+    }
+    
     public function getAdmin() {
         return '174018367';
     }

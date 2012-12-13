@@ -42,9 +42,9 @@
 	</div>
 
 	<div class="row">
-                <?php echo $form->labelEx(Estudiantes::model(),'genero <span class="required">*</span>'); ?>
-                <?php echo $form->radioButtonList(Estudiantes::model(),'genero',array('F'=>'Femenino','M'=>'Masculino'),array('separator'=>'  ', 'labelOptions'=>array('style'=>'display:inline'))); ?>
-                <?php echo $form->error(Estudiantes::model(),'genero'); ?>
+		<?php echo $form->labelEx($model,'genero'); ?>
+		<?php echo $form->radioButtonList($model,'genero',array('F'=>'Femenino','M'=>'Masculino'),array('separator'=>'  ', 'labelOptions'=>array('style'=>'display:inline'))); ?>
+		<?php echo $form->error($model,'genero'); ?>
 	</div>
 
 	<div class="row">
@@ -55,15 +55,19 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'comuna_id'); ?>
-                <?php      $datos = CHtml::listData(Comunas::model()->findAll(),'pk','nombre');
-                      echo $form->DropDownList(Docentes::model(),'comuna_id',$datos, array('empty'=>'Seleccione una Comuna', 'required'=>'required'));?>
+		<?php 
+                                  $datos = CHtml::listData(Comunas::model()->findAll(),'pk','nombre');
+                                  echo $form->DropDownList($model,'comuna_id',$datos, array('empty'=>'Seleccione una Comuna', 'required'=>'required'));
+                ?>
 		<?php echo $form->error($model,'comuna_id'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'Estado civil'); ?>
-                <?php $datos = CHtml::listData(EstadosCiviles::model()->findAll(),'pk','estado');
-                      echo $form->DropDownList(Docentes::model(),'ec_fk',$datos, array('empty'=>'Seleccione un Estado Civil', 'required'=>'required'));?>
+		<?php echo $form->labelEx($model,'Estado Civil'); ?>
+		<?php 
+                                  $datos = CHtml::listData(EstadosCiviles::model()->findAll(),'pk','estado');
+                                  echo $form->DropDownList($model,'ec_fk',$datos, array('empty'=>'Seleccione un Departamento', 'required'=>'required'));
+                ?>
 		<?php echo $form->error($model,'ec_fk'); ?>
 	</div>
 
@@ -88,7 +92,7 @@
 	<div class="row">
                         <?php echo $form->labelEx(Estudiantes::model(),'Estado en UTEM <span class="required">*</span>'); ?>   
                         <?php $datos = CHtml::listData(Estados::model()->findAll(),'pk','nombre'); ?>
-                        <?php echo $form->DropDownList(Estudiantes::model(),'estado',$datos, array('empty'=>'Seleccione...', 'required'=>'required')); ?>
+                        <?php echo $form->DropDownList($model,'estado',$datos, array('empty'=>'Seleccione...', 'required'=>'required')); ?>
 		<?php echo $form->error($model,'estado'); ?>
 	</div>
 

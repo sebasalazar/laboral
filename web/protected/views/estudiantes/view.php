@@ -8,32 +8,38 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Estudiantes', 'url'=>array('index')),
-	array('label'=>'Create Estudiantes', 'url'=>array('create')),
-	array('label'=>'Update Estudiantes', 'url'=>array('update', 'id'=>$model->pk)),
-	array('label'=>'Delete Estudiantes', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Estudiantes', 'url'=>array('admin')),
+	array('label'=>'Modificar perfil', 'url'=>array('updateperfil', 'id'=>Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk)),
 );
 ?>
 
-<h1>Estudiante <?php $model->pk; ?></h1>
+<h1>Mi perfil <?php //$model->pk; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
-	'attributes'=>array(
-		'pk',
+	'attributes'=>array(		
 		'nombres',
 		'apellidos',
 		'rut',
-		'fecha_nacimiento',
+		array(
+                    'label'=>'Fecha Nacimiento',
+                    'value'=>Yii::app()->dateFormatter->format("d MMMM y",strtotime($model->fecha_nacimiento)),
+                    
+                ),
 		'genero',
 		'direccion',
-		'comuna_id',
-		'ec_fk',
+                array('label'=>'Comuna',
+                    'value'=>$model->comuna->nombre,
+                 ),
+		
+                array('label'=>'Estado civil',
+                    'value'=>$model->ecFk->estado,
+                 ),
 		'telefono',
 		'celular',
 		'email',
-		'estado',
+                array('label'=>'Estado en UTEM',
+                   'value'=>$model->estado0->nombre,
+                 ),
 		'busqueda',
 		'archivo_curriculum',
 	),

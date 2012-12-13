@@ -81,8 +81,8 @@ return array(
         //Configuracion para postgresql
          'db'=>array(
          'connectionString' => 'pgsql:host=localhost;port=5432;dbname=bolsaLaboral',
-         'username' => 'laboralutem',
-         'password' => 'computador',
+         'username' => 'postgres',
+         'password' => 'cris1955',
          'charset' => 'utf8',
          ),
 

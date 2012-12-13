@@ -16,6 +16,6 @@ $this->breadcrumbs=array(
 );*/
 ?>
 
-<h1>Update Estudiantes <?php echo $model->pk; ?></h1>
+<h1>Modificando mi perfil <?php //echo $model->pk; ?></h1>
 
 <?php echo $this->renderPartial('_formperfil', array('model'=>$model)); ?>
