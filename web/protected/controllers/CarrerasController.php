@@ -28,7 +28,7 @@ class CarrerasController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','create'),
+				'actions'=>array('index','view','SelectCarrera'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -37,7 +37,7 @@ class CarrerasController extends Controller
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
-				'users'=>array(Yii::app()->user->getAdmin()),
+				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -168,4 +168,18 @@ class CarrerasController extends Controller
 			Yii::app()->end();
 		}
 	}
+        
+        public function actionSelectCarrera()
+        {
+            $idEscuela = $_POST['Escuelas']['pk'];
+            $lista = Carreras::model()->findAll('escuela_fk = :idEscuela', array(':idEscuela'=> $idEscuela));
+            $lista = CHtml::listData($lista,'pk','nombre_carrera');
+            
+            echo CHtml::tag('option', array('value'=>''), 'Seleccione...', true);
+            
+            foreach($lista as $val => $descripcion)
+            {
+                echo CHtml::tag('option', array('value'=>$val), CHtml::encode($descripcion), true);
+            }
+        }
 }

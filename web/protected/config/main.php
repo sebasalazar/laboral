@@ -82,7 +82,7 @@ return array(
          'db'=>array(
          'connectionString' => 'pgsql:host=localhost;port=5432;dbname=bolsaLaboral',
          'username' => 'postgres',
-         'password' => 'cris1955',
+         'password' => 'computador',
          'charset' => 'utf8',
          ),
 

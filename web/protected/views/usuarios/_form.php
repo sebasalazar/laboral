@@ -446,16 +446,20 @@ $("#content > ul").tabs();
                 </div>
         
                 <div class="row">
-                        <?php echo $form->labelEx(Facultades::model(),'Facultad'); ?>
-                        <?php $datos = CHtml::listData(Facultades::model()->findAll(),'pk','facultad'); ?>
-                        <?php echo $form->DropDownList(Facultades::model(),'pk',$datos, array('empty'=>'Seleccione...')); ?>
+                        <?php echo $form->labelEx(Escuelas::model(),'Escuela'); ?>
+                        <?php $datos = CHtml::listData(Escuelas::model()->findAll(),'pk','escuela'); ?>
+                        <?php echo $form->DropDownList(Escuelas::model(),'pk',$datos, array('ajax'=>array(
+                                                                                                    'type'=>'POST',
+                                                                                                    'url'=>CController::createurl('Carreras/SelectCarrera'),
+                                                                                                    'update'=>'#escuelaCombo',
+                                                                                                     ),'prompt' => 'Selecione...')); ?>
                         <?php echo $form->error(Facultades::model(),'pk'); ?>
                 </div>
                 
                 <div class="row">
                         <?php echo $form->labelEx(Estudiantes::model(),'Carrera <span class="required">*</span>'); ?>
-                        <?php $datos = CHtml::listData(Carreras::model()->findAll(),'pk','nombre_carrera'); ?>
-                        <?php echo $form->DropDownList(Estudiantes::model(),'carrera_fk',$datos, array('empty'=>'Seleccione...', 'required'=>'required')); ?>
+                        <?php //$datos = CHtml::listData(Carreras::model()->findAll(),'pk','nombre_carrera'); ?>
+                        <?php echo $form->DropDownList(Estudiantes::model(),'carrera_fk',array(), array('id'=>'escuelaCombo', 'name' => 'escuelaCombo','empty'=>'Seleccione...', 'required'=>'required')); ?>
                         <?php echo $form->error(Estudiantes::model(),'carrera_fk'); ?>
                 </div>
         

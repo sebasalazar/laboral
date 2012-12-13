@@ -23,8 +23,14 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'nombre_carrera'); ?>
-		<?php echo $form->textField($model,'nombre_carrera',array('size'=>50,'maxlength'=>50)); ?>
+		<?php echo $form->textField($model,'nombre_carrera',array('size'=>60,'maxlength'=>255)); ?>
 		<?php echo $form->error($model,'nombre_carrera'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'escuela_fk'); ?>
+		<?php echo $form->textField($model,'escuela_fk'); ?>
+		<?php echo $form->error($model,'escuela_fk'); ?>
 	</div>
 
 	<div class="row buttons">
