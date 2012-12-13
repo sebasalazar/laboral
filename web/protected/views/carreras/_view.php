@@ -17,5 +17,9 @@
 	<?php echo CHtml::encode($data->nombre_carrera); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('escuela_fk')); ?>:</b>
+	<?php echo CHtml::encode($data->escuela_fk); ?>
+	<br />
+
 
 </div>

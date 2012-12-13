@@ -24,5 +24,6 @@ $this->menu=array(
 		'pk',
 		'cod_carrera',
 		'nombre_carrera',
+		'escuela_fk',
 	),
 )); ?>
