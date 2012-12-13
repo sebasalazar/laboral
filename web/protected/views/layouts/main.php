@@ -25,58 +25,30 @@
         if(Yii::app()->user->getModel(Yii::app()->user->id) == null)
         {
             $this->widget('bootstrap.widgets.TbNavbar', array(
-<<<<<<< HEAD
-                'type'=>'inverse', // null or 'inverse'
-                'brand'=>'Bolsa Laboral',
-                'brandUrl'=>array('site/index'),
-                'collapse'=>true, // requires bootstrap-responsive.css
-                'items'=>array(
-                    array(
-                        'class'=>'bootstrap.widgets.TbMenu',
-                        'items'=>array(
-                            array('label'=>'Inicio', 'url'=>array('site/index')),
-                            array('label'=>'Ofertas Laborales', 'url'=>array('ofertasLaborales/index')),
-                            array('label'=>'Registrarse', 'url'=>array('usuarios/pcreate'), 'visible'=>Yii::app()->user->isGuest),
-                            array('label'=>'Contacto', 'url'=>array('site/contact'), 'visible'=>Yii::app()->user->isGuest),
+                    'type'=>'inverse', // null or 'inverse'
+                    'brand'=>'Bolsa Laboral',
+                    'brandUrl'=>array('site/index'),
+                    'collapse'=>true, // requires bootstrap-responsive.css
+                    'items'=>array(
+                        array(
+                            'class'=>'bootstrap.widgets.TbMenu',
+                            'items'=>array(
+                                array('label'=>'Inicio', 'url'=>array('site/index')),
+                                array('label'=>'Ofertas Laborales', 'url'=>array('ofertasLaborales/index')),
+                                array('label'=>'Registrarse', 'url'=>array('usuarios/pcreate'), 'visible'=>Yii::app()->user->isGuest),
+                                array('label'=>'Contacto', 'url'=>array('site/contact')),
+                            ),
+                        ),
+                        array(
+                            'class'=>'bootstrap.widgets.TbMenu',
+                            'htmlOptions'=>array('class'=>'pull-right'),
+                            'items'=>array(
+                                '---',
+                                array('label'=>'Iniciar Sesion', 'url'=>array('site/login'))
+                            ),
                         ),
                     ),
-                    array(
-                        'class'=>'bootstrap.widgets.TbMenu',
-                        'htmlOptions'=>array('class'=>'pull-right'),
-                        'items'=>array(
-                            '---',
-                            array('label'=>'Iniciar Sesion', 'url'=>array('site/login'), 'visible'=>Yii::app()->user->isGuest),
-                        ),
-=======
-            'type'=>'inverse', // null or 'inverse'
-            'brand'=>'Bolsa Laboral',
-            'brandUrl'=>array('site/index'),
-            'collapse'=>true, // requires bootstrap-responsive.css
-            'items'=>array(
-                array(
-                    'class'=>'bootstrap.widgets.TbMenu',
-                    'items'=>array(
-                        array('label'=>'Inicio', 'url'=>array('site/index')),
-                        array('label'=>'Ofertas Laborales', 'url'=>array('ofertasLaborales/index'), 'items'=>array(
-                            array('label'=>'Lista Ofertas Laborales', 'url'=>array('ofertasLaborales/index')),
-                            array('label'=>'Publicar una Oferta Laboral', 'url'=>array('ofertasLaborales/create')),
-                            array('label'=>'Busqueda Avanzada', 'url'=>'#'),
-                        )),
-                        array('label'=>'Contacto', 'url'=>array('site/contact'), 'visible'=>Yii::app()->user->isGuest),
-                        array('label'=>'Logout', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-                    ),
-                ),
-                array(
-                    'class'=>'bootstrap.widgets.TbMenu',
-                    'htmlOptions'=>array('class'=>'pull-right'),
-                    'items'=>array(
-                        array('label'=>'Registrarse', 'url'=>array('/usuarios/pcreate','visible'=>Yii::app()->user->isGuest)),
-                        '---',
-                        array('label'=>'Iniciar Sesion', 'url'=>array('site/login'), 'visible'=>Yii::app()->user->isGuest),
->>>>>>> 094b092414b60dd3d921a47c96e974136ab33919
-                    ),
-                ),
-            ));
+                ));
         }
         ?>
 
