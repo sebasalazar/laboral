@@ -137,7 +137,7 @@ a:hover{
     border: 1px solid black;
     width: 90%;
     height: 450px;
-    border-color: #DDD;
+    border-color: #AAA;
     border-radius: 0px 0px 5px 5px;
     padding: 3px;
 }
@@ -148,7 +148,20 @@ a:hover{
     border: 1px solid black;
     width: 90%;
     height: 200px;
-    border-color: #DDD;
+    border-color: #AAA;
     border-radius: 0px 0px 5px 5px;
     padding: 3px;
+}
+
+.just{
+    text-align: justify;
+}
+
+.separador{
+    background: transparent;
+	color: transparent;
+	border-left:  none;
+	border-right: none;
+	border-top:   none;
+	border-bottom: 1px dashed #AAA;
 }
