@@ -402,7 +402,7 @@ $("#content > ul").tabs();
                                                                                              'name'=>'provinciaCombo',
                                                                                                     'ajax'=>array(
                                                                                                     'type'=>'POST',
-                                                                                                    'url'=>CController::createurl('Provincias/selectProvincias'),
+                                                                                                    'url'=>CController::createurl('Comunas/selectComuna'),
                                                                                                     'update'=>'#comboComuna',
                                                                                                      ),
                                                                                                 'prompt' => 'Seleccione...')); ?>
@@ -443,6 +443,13 @@ $("#content > ul").tabs();
                         <?php echo $form->labelEx(Estudiantes::model(),'email <span class="required">*</span>'); ?>
                         <?php echo $form->textField(Estudiantes::model(),'email',array('size'=>60,'maxlength'=>255, 'required'=>'required')); ?>
                         <?php echo $form->error(Estudiantes::model(),'email'); ?>
+                </div>
+        
+                <div class="row">
+                        <?php echo $form->labelEx(Facultades::model(),'Facultad'); ?>
+                        <?php $datos = CHtml::listData(Facultades::model()->findAll(),'pk','facultad'); ?>
+                        <?php echo $form->DropDownList(Facultades::model(),'pk',$datos, array('empty'=>'Seleccione...')); ?>
+                        <?php echo $form->error(Facultades::model(),'pk'); ?>
                 </div>
                 
                 <div class="row">

@@ -28,7 +28,7 @@ class ComunasController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view', 'create'),
+				'actions'=>array('index','view', 'create','SelectComuna'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -168,4 +168,18 @@ class ComunasController extends Controller
 			Yii::app()->end();
 		}
 	}
+        
+         public function actionSelectComuna()
+        {
+            $idProvincia = $_POST['provinciaCombo'];
+            $lista = Comunas::model()->findAll('provincia_fk = :idProvincia', array(':idProvincia'=> $idProvincia));
+            $lista = CHtml::listData($lista,'pk','nombre');
+            
+            echo CHtml::tag('option', array('value'=>''), 'Seleccione...', true);
+            
+            foreach($lista as $val => $descripcion)
+            {
+                echo CHtml::tag('option', array('value'=>$val), CHtml::encode($descripcion), true);
+            }
+        }
 }
