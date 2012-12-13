@@ -61,10 +61,11 @@ a{
     text-decoration: none;
 }
 
-.yw0_c0{
-    width: 500px;
+a:hover{
+    text-decoration: none;
 }
 
 .navbar-inner{
     height: 10px;
 }
+
