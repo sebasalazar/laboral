@@ -28,7 +28,7 @@ class ProvinciasController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','create'),
+				'actions'=>array('index','view','create', 'SelectProvincias'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -168,4 +168,18 @@ class ProvinciasController extends Controller
 			Yii::app()->end();
 		}
 	}
+        
+        public function actionSelectProvincias()
+        {
+            $idRegion = $_POST['Regiones']['pk'];
+            $lista = Provincias::model()->findAll('region_fk = :idRegion', array(':idRegion'=> $idRegion));
+            $lista = CHtml::listData($lista,'pk','nombre');
+            
+            echo CHtml::tag('option', array('value'=>''), 'Seleccione...', true);
+            
+            foreach($lista as $val => $descripcion)
+            {
+                echo CHtml::tag('option', array('value'=>$val), CHtml::encode($descripcion), true);
+            }
+        }
 }

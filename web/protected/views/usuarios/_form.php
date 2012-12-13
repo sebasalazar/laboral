@@ -32,8 +32,7 @@ $('#rut_demo_2').Rut({
       $("#rut_demo_2").val("");
   }
 });
-$("#content > ul").tabs();
-});
+$("#content > ul").tabs();	
 </script>
 
 <div class="form">
@@ -381,15 +380,46 @@ $("#content > ul").tabs();
                         <?php echo $form->textField(Estudiantes::model(),'direccion',array('size'=>35,'maxlength'=>35, 'required'=>'required')); ?>
                         <?php echo $form->error(Estudiantes::model(),'direccion'); ?>
                 </div>
+        
+                 <div class="row">
+                        <?php echo $form->labelEx(Regiones::model(), 'Region') ?>                    
+                             <?php  echo $form->dropdownList(Regiones::model(),'pk', 
+        
+                                        CHtml::listData(Regiones::model()->findAll(), 'pk', 'nombre'),
+                                        array(
+                                        'empty'=>'Seleccione...',
+                                        'ajax'=>array(
+                                        'type'=>'POST',
+                                        'url'=>CController::createurl('Provincias/selectProvincias'),
+                                        'update'=>'#provinciaCombo',
+                                )));  ?>  
+                        <?php echo $form->error(Regiones::model(),'pk'); ?>
+                </div>
+        
+                <div class="row">
+                     <?php echo $form->labelEx(Provincias::model(),'Provincia'); ?>
+                       <?php echo $form->DropDownList(Provincias::model(),'pk',array(),array('id'=> 'provinciaCombo', 
+                                                                                             'name'=>'provinciaCombo',
+                                                                                                    'ajax'=>array(
+                                                                                                    'type'=>'POST',
+                                                                                                    'url'=>CController::createurl('Provincias/selectProvincias'),
+                                                                                                    'update'=>'#comboComuna',
+                                                                                                     ),
+                                                                                                'prompt' => 'Seleccione...')); ?>
+                       <?php echo $form->error(Provincias::model(),'pk'); ?>
+                    
+                </div>
+        
+               
 
                 <div class="row">
                         <?php echo $form->labelEx(Estudiantes::model(),'Comuna <span class="required">*</span>'); ?>
-                         <?php $datos = CHtml::listData(Comunas::model()->findAll(),'pk','nombre'); ?>
-                        <?php echo $form->DropDownList(Estudiantes::model(),'comuna_id',$datos, array('empty'=>'Seleccione...', 'required'=>'required')); ?>
+                       
+                        <?php echo $form->DropDownList(Estudiantes::model(),'comuna_id',array(), array('id' => 'comboComuna', 'name'=>'comboComuna','required'=>'required', 'prompt' => 'Selecione...')); ?>
                         
                         <?php echo $form->error(Estudiantes::model(),'comuna_id'); ?>
                 </div>
-
+        
                 <div class="row">
                         <?php echo $form->labelEx(Estudiantes::model(),'Estado Civil <span class="required">*</span>'); ?>
                         <?php $datos = CHtml::listData(EstadosCiviles::model()->findAll(),'pk','estado'); ?>
