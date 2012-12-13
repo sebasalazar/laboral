@@ -4,7 +4,7 @@
 
 $this->breadcrumbs=array(
 	'Estudiantes'=>array('index'),
-	$model->pk=>array('view3','id'=>$model->pk),
+	$model->pk=>array('perfil','id'=>$model->pk),
 	'Update',
 );
 
@@ -18,4 +18,4 @@ $this->breadcrumbs=array(
 
 <h1>Update Estudiantes <?php echo $model->pk; ?></h1>
 
-<?php echo $this->renderPartial('_form3', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_formperfil', array('model'=>$model)); ?>
