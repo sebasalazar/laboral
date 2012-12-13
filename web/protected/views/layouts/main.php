@@ -39,10 +39,10 @@
                             array('label'=>'Publicar una Oferta Laboral', 'url'=>array('ofertasLaborales/create')),
                             array('label'=>'Busqueda Avanzada', 'url'=>'#'),
                         )),
+                        array('label'=>'Registrarse', 'url'=>array('usuarios/pcreate'), 'visible'=>Yii::app()->user->isGuest),
                         array('label'=>'Contacto', 'url'=>array('site/contact'), 'visible'=>Yii::app()->user->isGuest),
                     ),
                 ),
-                '<form class="navbar-search pull-left" action=""><input type="text" class="search-query span2" placeholder="Search"></form>',
                 array(
                     'class'=>'bootstrap.widgets.TbMenu',
                     'htmlOptions'=>array('class'=>'pull-right'),
@@ -124,7 +124,6 @@
                                     array('label'=>'Contacto', 'url'=>array('site/contact'), 'visible'=>Yii::app()->user->isGuest),
                                 ),
                             ),
-                            '<form class="navbar-search pull-left" action=""><input type="text" class="search-query span2" placeholder="Search"></form>',
                             array(
                                 'class'=>'bootstrap.widgets.TbMenu',
                                 'htmlOptions'=>array('class'=>'pull-right'),
