@@ -85,6 +85,11 @@ $this->breadcrumbs=array(
                           'filter'=> CHtml::listData(NivelesEstudios::model()->findAll(), 'pk', 'estudios'),
                           'value' => '$data->nivelEstudioFk->estudios',
                       ),
+                      array(
+                            'header'=>'Detalle',
+                            'class'=>'CButtonColumn',
+                            'template'=>'{view}',
+                    ),    
                     ),
                 ));
         ?>
