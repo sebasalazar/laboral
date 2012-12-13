@@ -188,13 +188,32 @@
 
 	<div class="clear"></div>
 
-	<div id="footer">
-		Derechos de Autor &copy; <?php echo date('Y'); ?> por UTEM.<br/>
-		Todos los derechos reservados.<br/>
-		<?php echo CHtml::link('Acerca del Sitio',array('/site/page', 'view'=>'about'));?>
-	</div><!-- footer -->
-
 </div><!-- page -->
-
+<div class="pfooter">
+    <div id="footer">
+        <div class="contenido">
+                <div class="fila">
+                    <div class="columna columna_1">
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="columna columna_1">
+                        hola2
+                    </div>
+                    <div class="columna columna_2">
+                        hola3
+                    </div>
+                </div>
+        </div>
+        <hr class="separador"/>
+                    Derechos de Autor &copy; <?php echo date('Y'); ?> por UTEM.<br/>
+                    Todos los derechos reservados.<br/>
+                    <?php echo CHtml::link('Acerca del Sitio',array('/site/page', 'view'=>'about'));?>
+    </div><!-- footer -->
+</div>
 </body>
 </html>
