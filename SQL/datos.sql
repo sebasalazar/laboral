@@ -730,4 +730,21 @@ INSERT INTO niveles_estudios (estudios) VALUES ('Universitario Completa');
 INSERT INTO niveles_estudios (estudios) VALUES ('PostTítulo');
 INSERT INTO niveles_estudios (estudios) VALUES ('Otros Estudios');
 
+--
+-- Estados
+--
+INSERT INTO estados (nombre) VALUES ('Regular');
+INSERT INTO estados (nombre) VALUES ('Egreso');
+INSERT INTO estados (nombre) VALUES ('Titulado');
+INSERT INTO estados (nombre) VALUES ('Traslado');
+INSERT INTO estados (nombre) VALUES ('Fallecido');
+INSERT INTO estados (nombre) VALUES ('Eliminado');
+INSERT INTO estados (nombre) VALUES ('Moroso');
+INSERT INTO estados (nombre) VALUES ('Transferido');
+INSERT INTO estados (nombre) VALUES ('Sin inscripción');
+INSERT INTO estados (nombre) VALUES ('Abandono Voluntario');
+INSERT INTO estados (nombre) VALUES ('Renuncia');
+INSERT INTO estados (nombre) VALUES ('Postergado');
+INSERT INTO estados (nombre) VALUES ('Permiso');
+
 COMMIT;

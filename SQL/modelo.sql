@@ -191,12 +191,12 @@ CREATE TABLE estudiantes (
     fecha_nacimiento date NOT NULL,
     genero char(1) NOT NULL DEFAULT 'F', -- M: Masculino -- F: Femenino
     direccion varchar(255) NOT NULL,
-    comuna_id int NOT NULL REFERENCES comunas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    comuna_fk int NOT NULL REFERENCES comunas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     ec_fk int NOT NULL REFERENCES estados_civiles(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     carrera_fk int NOT NULL REFERENCES carreras(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     telefono varchar(50),
     celular varchar(50),
-    email varchar(255),
+    email varchar(255) NOT NULL, -- muy importante el email
     estado int NOT NULL REFERENCES estados(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     busqueda boolean NOT NULL DEFAULT FALSE, -- Si se encuentra o no buscando trabajo (solicitado por docentes y adm)
     archivo_curriculum varchar(255), -- ubicación del curriculum (dirección archivo) (solicitado por adm actual)
@@ -221,13 +221,13 @@ CREATE TABLE docentes (
     fecha_nacimiento date NOT NULL,
     genero char(1) NOT NULL DEFAULT 'F', -- M: Masculino -- F: Femenino
     direccion varchar(255) NOT NULL,
-    comuna_id int NOT NULL REFERENCES comunas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    comuna_fk int NOT NULL REFERENCES comunas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     ec_fk int NOT NULL REFERENCES estados_civiles(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     departamento_fk int NOT NULL REFERENCES departamentos(pk) ON UPDATE CASCADE ON DELETE CASCADE,
   --usuario_fk int NOT NULL REFERENCES usuarios(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     telefono varchar(50),
     celular varchar(50),
-    email varchar(255),
+    email varchar(255) NOT NULL,
     UNIQUE (rut),
     UNIQUE(email),
     PRIMARY KEY (pk)
@@ -280,7 +280,7 @@ CREATE TABLE encargados_empresas (
     apellidos varchar(255) NOT NULL,
     genero char(1) NOT NULL DEFAULT 'F', -- M: Masculino -- F: Femenino
     direccion varchar(255) NOT NULL,
-    comun_fk int NOT NULL REFERENCES comunas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    comuna_fk int NOT NULL REFERENCES comunas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     email varchar(255) NOT NULL,
     telefono varchar(50) NOT NULL,
     UNIQUE (empresa_fk, email),
