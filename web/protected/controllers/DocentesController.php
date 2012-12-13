@@ -52,7 +52,7 @@ class DocentesController extends Controller
 	public function actionView($id)
 	{
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+			'model'=>$this->loadModel((int) $id),
 		));
 	}
 
@@ -88,7 +88,7 @@ class DocentesController extends Controller
 	{
             if(Yii::app()->user->getModelUsuarioCompletoId($id)->rut == Yii::app()->user->name)
             {
-                    $model=$this->loadModel($id);
+                    $model=$this->loadModel((int) $id);
                     if(isset($_POST['Docentes']))
                     {
                             $model->attributes=$_POST['Docentes'];
@@ -108,7 +108,7 @@ class DocentesController extends Controller
 
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
+		$this->loadModel((int) $id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
@@ -145,7 +145,7 @@ class DocentesController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Docentes::model()->findByPk($id);
+		$model=Docentes::model()->findByPk((int) $id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

@@ -57,7 +57,7 @@ class WebUser extends CWebUser {
     }
     }
     
-    public function getAdmin() {
+    public static function getAdmin() {
         return '174018367';
     }
 

@@ -31,7 +31,6 @@
                 <MARQUEE behavior="scroll" direction="up" scrollAmount="3" width="420" hiegth="195" onMouseOver="this.scrollAmount=1" onMouseOut="this.scrollAmount=3">
                     <?php
                         foreach($model as $i){
-                            echo '<hr class="separador" />';
                             echo '<b>'.$i->titulo.'</b><br /><br />';
                             echo '<text class="just">'.$i->contenido.'</text>';
                             echo '<hr class="separador" />';

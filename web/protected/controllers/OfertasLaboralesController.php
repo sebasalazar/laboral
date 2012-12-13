@@ -53,7 +53,7 @@ class OfertasLaboralesController extends Controller
 	public function actionView($id)
 	{
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+			'model'=>$this->loadModel((int) $id),
 		));
 	}
 
@@ -93,7 +93,7 @@ class OfertasLaboralesController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
+		$model=$this->loadModel((int) $id);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -160,7 +160,7 @@ class OfertasLaboralesController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=OfertasLaborales::model()->findByPk($id);
+		$model=OfertasLaborales::model()->findByPk((int) $id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
