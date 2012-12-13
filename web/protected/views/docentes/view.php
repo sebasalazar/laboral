@@ -28,7 +28,7 @@ $this->menu=array(
 		'fecha_nacimiento',
 		'genero',
 		'direccion',
-		'comuna_id',
+		'comuna_fk',
 		'ec_fk',
 		'departamento_fk',
 		'telefono',

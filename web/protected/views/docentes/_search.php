@@ -47,8 +47,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'comuna_id'); ?>
-		<?php echo $form->textField($model,'comuna_id'); ?>
+		<?php echo $form->label($model,'comuna_fk'); ?>
+		<?php echo $form->textField($model,'comuna_fk'); ?>
 	</div>
 
 	<div class="row">
