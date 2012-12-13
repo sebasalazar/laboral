@@ -16,18 +16,18 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-                <?php echo $form->labelEx($model,'Estudiante'); ?>
-                <?php  echo $model->nombres." ".$model->apellidos ?>
-		<?php //echo $form->labelEx($model,'nombres'); ?>
-		<?php //echo $form->textField($model,'nombres',array('size'=>60,'maxlength'=>30)); ?>
-		<?php //echo $form->error($model,'nombres'); ?>
+                <?php //echo $form->labelEx($model,'Estudiante'); ?>
+                <?php  //echo $model->nombres." ".$model->apellidos ?>
+		<?php echo $form->labelEx($model,'nombres'); ?>
+		<?php echo $form->textField($model,'nombres',array('size'=>60,'maxlength'=>30)); ?>
+		<?php echo $form->error($model,'nombres'); ?>
 	</div>
-<!--
+
 	<div class="row">
-		<?php //echo $form->labelEx($model,'apellidos'); ?>
-		<?php //echo $form->textField($model,'apellidos',array('size'=>60,'maxlength'=>30)); ?>
-		<?php //echo $form->error($model,'apellidos'); ?>
-	</div>-->
+		<?php echo $form->labelEx($model,'apellidos'); ?>
+		<?php echo $form->textField($model,'apellidos',array('size'=>60,'maxlength'=>30)); ?>
+		<?php echo $form->error($model,'apellidos'); ?>
+	</div>
 
 	<div class="row">
 		<?php //echo $form->labelEx($model,'rut'); ?>
@@ -36,15 +36,15 @@
 	</div>
 
 	<div class="row">
-		<?php // echo $form->labelEx($model,'fecha_nacimiento'); ?>
-		<?php //echo $form->textField($model,'fecha_nacimiento'); ?>
-		<?php //echo $form->error($model,'fecha_nacimiento'); ?>
+		<?php echo $form->labelEx($model,'fecha_nacimiento'); ?>
+		<?php echo $form->textField($model,'fecha_nacimiento'); ?>
+		<?php echo $form->error($model,'fecha_nacimiento'); ?>
 	</div>
 
 	<div class="row">
-		<?php //echo $form->labelEx($model,'genero'); ?>
-		<?php //echo $form->textField($model,'genero',array('size'=>1,'maxlength'=>1)); ?>
-		<?php //echo $form->error($model,'genero'); ?>
+                <?php echo $form->labelEx(Estudiantes::model(),'genero <span class="required">*</span>'); ?>
+                <?php echo $form->radioButtonList(Estudiantes::model(),'genero',array('F'=>'Femenino','M'=>'Masculino'),array('separator'=>'  ', 'labelOptions'=>array('style'=>'display:inline'))); ?>
+                <?php echo $form->error(Estudiantes::model(),'genero'); ?>
 	</div>
 
 	<div class="row">
@@ -93,9 +93,9 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'busqueda'); ?>
-		<?php echo $form->textField($model,'busqueda'); ?>
-		<?php echo $form->error($model,'busqueda'); ?>
+                        <?php echo $form->labelEx(Estudiantes::model(),'¿Buscando trabajo en la actualidad?'); ?>
+                        <?php echo $form->checkBox(Estudiantes::model(),'busqueda'); ?>  
+                        <?php echo $form->error(Estudiantes::model(),'busqueda'); ?>
 	</div>
 
 	<div class="row">

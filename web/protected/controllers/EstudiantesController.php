@@ -28,11 +28,11 @@ class EstudiantesController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view', 'create','view2','view3'),
+				'actions'=>array('index','view', 'create','perfil','view3'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','update2','update3'),
+				'actions'=>array('create','update','updateperfil','update3'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -55,9 +55,9 @@ class EstudiantesController extends Controller
 			'model'=>$this->loadModel($id),
 		));
 	}
-        	public function actionView2($id)
+        	public function actionPerfil($id)
 	{
-		$this->render('view2',array(
+		$this->render('perfil',array(
 			'model'=>$this->loadModel($id),
 		));
 	}
@@ -114,7 +114,7 @@ class EstudiantesController extends Controller
 		));
 	}
 
-        public function actionUpdate2($id)
+        public function actionUpdateperfil($id)
 	{
 		$model=$this->loadModel($id);
 
@@ -125,10 +125,10 @@ class EstudiantesController extends Controller
 		{
 			$model->attributes=$_POST['Estudiantes'];
 			if($model->save())
-				$this->redirect(array('view2','id'=>$model->pk));
+				$this->redirect(array('perfil','id'=>$model->pk));
 		}
 
-		$this->render('update2',array(
+		$this->render('updateperfil',array(
 			'model'=>$model,
 		));
 	}
