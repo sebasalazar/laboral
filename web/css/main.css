@@ -20,8 +20,6 @@ body
 
 }
 
-
-
 #content
 {
     margin: 10px;
@@ -35,7 +33,6 @@ body
 
 #footer
 {
-	padding: 10px;
 	margin: 10px 20px;
 	font-size: 0.8em;
 	text-align: center;

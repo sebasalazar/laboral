@@ -194,25 +194,30 @@
         <div class="contenido">
                 <div class="fila">
                     <div class="columna columna_1">
-                        <ul>
-                            <li><?php echo CHtml::link('Inicio',array('site/index')); ?></li>
-                            <li><?php echo CHtml::link('Ofertas Laborales',array('ofertasLaborales/index')); ?></li>
-                            <li><?php echo CHtml::link('Registrarse',array('usuarios/pcreate')); ?></li>
-                            <li><?php echo CHtml::link('',array('controller/action')); ?></li>
+                        <ul class="uls">
+                            <li class="text-left"><?php echo CHtml::link('Inicio',array('site/index')); ?></li>
+                            <li class="text-left"><?php echo CHtml::link('Ofertas Laborales',array('ofertasLaborales/index')); ?></li>
+                            <li class="text-left"><?php echo CHtml::link('Registrarse',array('usuarios/pcreate')); ?></li>
+                            <li class="text-left"><?php echo CHtml::link('Contacto',array('/site/contact', 'view'=>'about')); ?></li>
                         </ul>
                     </div>
                     <div class="columna columna_1">
-                        hola2
+                        <br />
+                                            <p class="text-footer">Derechos de Autor &copy; <?php echo date('Y'); ?> por UTEM.<br/>
+                                            Todos los derechos reservados.<br/>
+                                            <?php echo CHtml::link('Acerca del Sitio',array('/site/page', 'view'=>'about'));?>
+                                            </p>
                     </div>
                     <div class="columna columna_2">
-                        hola3
+                        <ul class="uls">
+                            <li class="text-left"><?php echo CHtml::link('UTEM','http://www.utem.cl'); ?></li>
+                            <li class="text-left"><?php echo CHtml::link('Escuela Informática','http://informatica.utem.cl'); ?></li>
+                            <li class="text-left"><?php echo CHtml::link('Bienestar UTEM','http://'); ?></li>
+                            <li class="text-left"><?php echo CHtml::link('FEUTEM','http://www.feutem.cl'); ?></li>
+                        </ul>
                     </div>
                 </div>
         </div>
-        <hr class="separador"/>
-                    Derechos de Autor &copy; <?php echo date('Y'); ?> por UTEM.<br/>
-                    Todos los derechos reservados.<br/>
-                    <?php echo CHtml::link('Acerca del Sitio',array('/site/page', 'view'=>'about'));?>
     </div><!-- footer -->
 </div>
 </body>
