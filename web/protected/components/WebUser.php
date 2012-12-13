@@ -25,13 +25,13 @@ class WebUser extends CWebUser {
             }
         }
     }
-    
-        public function getModelUsuarioEstudianteId($id) {
-       $estudiante = Estudiantes::model()->model()->findByPK($id);
-                if ($estudiante != null) {
-                    return $estudiante;
-                }
+
+    public function getModelUsuarioEstudianteId($id) {
+        $estudiante = Estudiantes::model()->model()->findByPK($id);
+        if ($estudiante != null) {
+            return $estudiante;
         }
+    }
 
     public function getModelUsuarioCompleto($rut) {
         $docente = Docentes::model()->findByAttributes(array('rut' => $rut));
@@ -51,12 +51,12 @@ class WebUser extends CWebUser {
     }
 
     public function getModelUsuarioEstudiante($rut) {
-                 $estudiante = Estudiantes::model()->findByAttributes(array('rut' => $rut));
-                if ($estudiante != null) {
-                    return $estudiante;
+        $estudiante = Estudiantes::model()->findByAttributes(array('rut' => $rut));
+        if ($estudiante != null) {
+            return $estudiante;
+        }
     }
-    }
-    
+
     public function getAdmin() {
         return '174018367';
     }
@@ -99,7 +99,7 @@ class WebUser extends CWebUser {
             $archivo = "php://stderr";
             $fecha = date("D M d H:i:s Y");
             $mensaje = print_r($texto, false);
-            
+
             $contenido = "\n[$fecha] [LABORAL] el sistema ejecutó: \"$mensaje\"\n";
 
             $fpt = fopen("$archivo", "a+");
@@ -110,6 +110,64 @@ class WebUser extends CWebUser {
         } catch (Exception $e) {
             // Hacer algo con la excepción
         }
+    }
+
+    /**
+     * @fn obtener_ip()
+     * funcion copiada de http://www.eslomas.com/index.php/archives/2005/04/26/obtencion-ip-real-php/
+     * hay que ver si esto realmente nos sirve, dado que algunos visitantes provienen de ip internas
+     * Apliqué un cambio, en caso de que no encuentre una ip, retorne el valor 127.0.0.1 (lo cuál por
+     * cierto no puede suceder)
+     */
+    public static function getIp() {
+        $client_ip = "127.0.0.1";
+        try {
+
+            if ($_SERVER['HTTP_X_FORWARDED_FOR'] != '') {
+                $client_ip = (!empty($_SERVER['REMOTE_ADDR']) ) ? $_SERVER['REMOTE_ADDR'] : ( (!empty($_ENV['REMOTE_ADDR']) ) ? $_ENV['REMOTE_ADDR'] :
+                                "unknown" );
+
+                /**
+                 * los proxys van añadiendo al final de esta cabecera
+                 * las direcciones ip que van "ocultando". Para localizar la ip real
+                 * del usuario se comienza a mirar por el principio hasta encontrar
+                 * una dirección ip que no sea del rango privado. En caso de no
+                 * encontrarse ninguna se toma como valor el REMOTE_ADDR
+                 */
+                $entries = split('[, ]', $_SERVER['HTTP_X_FORWARDED_FOR']);
+                reset($entries);
+
+                while (list(, $entry) = each($entries)) {
+                    $entry = trim($entry);
+                    if (preg_match("/^([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)/", $entry, $ip_list)) {
+                        /**
+                         * Visitar: http://www.faqs.org/rfcs/rfc1918.html
+                         */
+                        $private_ip = array(
+                            '/^0\./',
+                            '/^127\.0\.0\.1/',
+                            '/^192\.168\..*/',
+                            '/^172\.((1[6-9])|(2[0-9])|(3[0-1]))\..*/',
+                            '/^10\..*/');
+
+                        $found_ip = preg_replace($private_ip, $client_ip, $ip_list[1]);
+
+                        if ($client_ip != $found_ip) {
+                            $client_ip = $found_ip;
+                            break;
+                        }
+                    }
+                }
+            } else {
+                $client_ip = (!empty($_SERVER['REMOTE_ADDR']) ) ? $_SERVER['REMOTE_ADDR'] : ( (!empty($_ENV['REMOTE_ADDR']) ) ? $_ENV['REMOTE_ADDR'] :
+                                "127.0.0.1" );
+            }
+        } catch (Exception $e) {
+            // En caso de caida, retornamos esta ip, de tal modo que al ver el log sea claro que ese registro es erroneo.
+            $client_ip = "127.0.0.1";
+            // logguear la Excepción en Yii
+        }
+        return $client_ip;
     }
 
 }
