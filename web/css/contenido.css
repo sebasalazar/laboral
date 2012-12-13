@@ -30,11 +30,13 @@
 }
 
 .centrar1{
-    margin-left: 5%;
+    width: 70%;
+    display: block;
+    margin: 0 auto 0 auto;
 }
 
 .registro{
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 .panelAdmin{

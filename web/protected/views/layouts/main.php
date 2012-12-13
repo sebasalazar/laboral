@@ -25,7 +25,7 @@
         if(Yii::app()->user->getModel(Yii::app()->user->id) == null)
         {
             $this->widget('bootstrap.widgets.TbNavbar', array(
-            'type'=>'null', // null or 'inverse'
+            'type'=>'inverse', // null or 'inverse'
             'brand'=>'Bolsa Laboral',
             'brandUrl'=>array('site/index'),
             'collapse'=>true, // requires bootstrap-responsive.css

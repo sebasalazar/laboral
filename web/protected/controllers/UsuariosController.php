@@ -186,6 +186,7 @@ class UsuariosController extends Controller
         
         public function actionPcreate()
         {
+            $this->layout = 'column1';
             $this->render('pcreate');
         }
 
