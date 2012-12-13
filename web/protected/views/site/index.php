@@ -11,3 +11,31 @@
             )); ?>
         </div>
 </div>
+
+<div class="contenido">
+        <div class="fila fila-grande">
+            <div class="columna_c_1">
+                <div class="con">
+                    <text class="text-footer">Noticias</text>
+                </div>
+                <div class="con2">
+                    asddasdasdsa
+                </div>
+            </div>
+        </div>
+        <div class="fila">
+            <div class="con">
+                    <text class="text-footer">Tips</text>
+            </div>
+            <div class="con3">
+                    asddasdasdsa
+            </div>
+            <br />
+            <div class="con">
+                    <text class="text-footer">Tips</text>
+            </div>
+            <div class="con3">
+                    asddasdasdsa
+            </div>
+        </div>
+</div>
