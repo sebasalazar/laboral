@@ -46,12 +46,12 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'comuna_id'); ?>
+		<?php echo $form->labelEx($model,'comuna_fk'); ?>
 		<?php 
                                   $datos = CHtml::listData(Comunas::model()->findAll(),'pk','nombre');
-                                  echo $form->DropDownList($model,'comuna_id',$datos, array('empty'=>'Seleccione una Comuna', 'required'=>'required'));
+                                  echo $form->DropDownList($model,'comuna_fk',$datos, array('empty'=>'Seleccione una Comuna', 'required'=>'required'));
                 ?>
-		<?php echo $form->error($model,'comuna_id'); ?>
+		<?php echo $form->error($model,'comuna_fk'); ?>
 	</div>
 
 	<div class="row">

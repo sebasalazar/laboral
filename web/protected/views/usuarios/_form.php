@@ -154,9 +154,9 @@ $("#content > ul").tabs();
                             <?php echo $form->labelEx(Docentes::model(),'Comuna: <span class="required">*</span>'); ?>
                             <?php 
                                   $datos = CHtml::listData(Comunas::model()->findAll(),'pk','nombre');
-                                  echo $form->DropDownList(Docentes::model(),'comuna_id',$datos, array('empty'=>'Seleccione una Comuna', 'required'=>'required'));
+                                  echo $form->DropDownList(Docentes::model(),'comuna_fk',$datos, array('empty'=>'Seleccione una Comuna', 'required'=>'required'));
                             ?>
-                            <?php echo $form->error(Docentes::model(),'comuna_id'); ?>
+                            <?php echo $form->error(Docentes::model(),'comunaco_fk'); ?>
                         </div>
                     </div>
                 </div>

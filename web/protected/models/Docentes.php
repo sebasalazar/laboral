@@ -53,8 +53,8 @@ class Docentes extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('rut, nombres, apellidos, rut, fecha_nacimiento, direccion, comuna_id, ec_fk, departamento_fk', 'required'),
-			array('comuna_id, ec_fk, departamento_fk', 'numerical', 'integerOnly'=>true),
+			array('rut, nombres, apellidos, rut, fecha_nacimiento, direccion, comuna_fk, ec_fk, departamento_fk', 'required'),
+			array('comuna_fk, ec_fk, departamento_fk', 'numerical', 'integerOnly'=>true),
 			array('nombres, apellidos, direccion, email', 'length', 'max'=>255),
 			array('genero', 'length', 'max'=>1),
 			array('telefono', 'length', 'min'=>7,'max'=>7),
@@ -63,7 +63,7 @@ class Docentes extends CActiveRecord
                         array('email', 'unique'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('pk, nombres, apellidos, rut, fecha_nacimiento, genero, direccion, comuna_id, ec_fk, departamento_fk, telefono, celular, email', 'safe', 'on'=>'search'),
+			array('pk, nombres, apellidos, rut, fecha_nacimiento, genero, direccion, comuna_fk, ec_fk, departamento_fk, telefono, celular, email', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -76,7 +76,7 @@ class Docentes extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'sugerenciasTrabajos' => array(self::HAS_MANY, 'SugerenciasTrabajo', 'docente_fk'),
-			'comuna' => array(self::BELONGS_TO, 'Comunas', 'comuna_id'),
+			'comuna' => array(self::BELONGS_TO, 'Comunas', 'comuna_fk'),
 			'ecFk' => array(self::BELONGS_TO, 'EstadosCiviles', 'ec_fk'),
 			'departamentoFk' => array(self::BELONGS_TO, 'Departamentos', 'departamento_fk'),
 			'cargosAdms' => array(self::HAS_MANY, 'CargosAdm', 'docente_fk'),
@@ -96,7 +96,7 @@ class Docentes extends CActiveRecord
 			'fecha_nacimiento' => 'Fecha Nacimiento',
 			'genero' => 'Genero',
 			'direccion' => 'Direccion',
-			'comuna_id' => 'Comuna',
+			'comuna_fk' => 'Comuna',
 			'ec_fk' => 'Ec Fk',
 			'departamento_fk' => 'Departamento Fk',
 			'telefono' => 'Telefono',
@@ -123,7 +123,7 @@ class Docentes extends CActiveRecord
 		$criteria->compare('fecha_nacimiento',$this->fecha_nacimiento,true);
 		$criteria->compare('genero',$this->genero,true);
 		$criteria->compare('direccion',$this->direccion,true);
-		$criteria->compare('comuna_id',$this->comuna_id);
+		$criteria->compare('comuna_fk',$this->comuna_id);
 		$criteria->compare('ec_fk',$this->ec_fk);
 		$criteria->compare('departamento_fk',$this->departamento_fk);
 		$criteria->compare('telefono',$this->telefono,true);
