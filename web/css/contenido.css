@@ -51,10 +51,6 @@
        background: #BCE774;
 }
 
-input[name="OfertasLaborales[cargo]"]{	
-    max-width: 75px;	
-}
-
 .carr{
     width: 80%;
     display: block;
@@ -63,6 +59,10 @@ input[name="OfertasLaborales[cargo]"]{
 
 a{
     text-decoration: none;
+}
+
+.yw0_c0{
+    width: 500px;
 }
 
 .navbar-inner{

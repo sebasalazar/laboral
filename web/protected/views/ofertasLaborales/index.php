@@ -19,7 +19,7 @@ $this->breadcrumbs=array(
                 array('label'=>'Publicar Practica', 'url'=>array('#'), 'visible'=>!Yii::app()->user->isGuest),
         ); */?>
 <div class="grillac">
-        <?php 
+        <?php /*
             $this->widget('ext.groupgridview.GroupGridView', array(
               'id' => 'ofertas',
               'dataProvider' => $model->search(),
@@ -54,6 +54,38 @@ $this->breadcrumbs=array(
                     'template'=>'{view}',
             ),    
               ),
-            ));
+            ));*/
+        
+            $this->widget('bootstrap.widgets.TbGridView', array(
+                    'type'=>'striped bordered condensed',
+                    'dataProvider'=>$model->search(),
+                    'template'=>"{items}",
+                    'filter'=>$model,
+                    'columns'=>array(
+                     array(
+                        'header'=>'Fecha',
+                        'name'=>'fecha_publicacion',
+                        'filter'=>false,
+                        'value'=>'Yii::app()->dateFormatter->format("d MMM y",strtotime($data->fecha_publicacion))',
+                        'htmlOptions'=>array('style'=>'width: 100px'),
+                      ),
+                      array(
+                        'header'=>'Rubro',
+                        'name' => 'rubro_fk',
+                        'filter' => CHtml::listData(Rubros::model()->findAll(), 'pk', 'rubro'),
+                        'value' => '$data->rubroFk->rubro',
+                      ),
+                      array(
+                          'header'=>'Cargo',
+                          'name'=>'cargo',
+                      ),
+                      array(
+                          'header'=>'Nivel de estudios Deseable',
+                          'name'=>'nivel_estudio_fk',
+                          'filter'=> CHtml::listData(NivelesEstudios::model()->findAll(), 'pk', 'estudios'),
+                          'value' => '$data->nivelEstudioFk->estudios',
+                      ),
+                    ),
+                ));
         ?>
 </div>

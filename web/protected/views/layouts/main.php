@@ -25,6 +25,29 @@
         if(Yii::app()->user->getModel(Yii::app()->user->id) == null)
         {
             $this->widget('bootstrap.widgets.TbNavbar', array(
+<<<<<<< HEAD
+                'type'=>'inverse', // null or 'inverse'
+                'brand'=>'Bolsa Laboral',
+                'brandUrl'=>array('site/index'),
+                'collapse'=>true, // requires bootstrap-responsive.css
+                'items'=>array(
+                    array(
+                        'class'=>'bootstrap.widgets.TbMenu',
+                        'items'=>array(
+                            array('label'=>'Inicio', 'url'=>array('site/index')),
+                            array('label'=>'Ofertas Laborales', 'url'=>array('ofertasLaborales/index')),
+                            array('label'=>'Registrarse', 'url'=>array('usuarios/pcreate'), 'visible'=>Yii::app()->user->isGuest),
+                            array('label'=>'Contacto', 'url'=>array('site/contact'), 'visible'=>Yii::app()->user->isGuest),
+                        ),
+                    ),
+                    array(
+                        'class'=>'bootstrap.widgets.TbMenu',
+                        'htmlOptions'=>array('class'=>'pull-right'),
+                        'items'=>array(
+                            '---',
+                            array('label'=>'Iniciar Sesion', 'url'=>array('site/login'), 'visible'=>Yii::app()->user->isGuest),
+                        ),
+=======
             'type'=>'inverse', // null or 'inverse'
             'brand'=>'Bolsa Laboral',
             'brandUrl'=>array('site/index'),
@@ -50,10 +73,10 @@
                         array('label'=>'Registrarse', 'url'=>array('/usuarios/pcreate','visible'=>Yii::app()->user->isGuest)),
                         '---',
                         array('label'=>'Iniciar Sesion', 'url'=>array('site/login'), 'visible'=>Yii::app()->user->isGuest),
+>>>>>>> 094b092414b60dd3d921a47c96e974136ab33919
                     ),
                 ),
-            ),
-        ));
+            ));
         }
         ?>
 
@@ -107,7 +130,7 @@
              elseif($tipo == 3)
              {
                     $this->widget('bootstrap.widgets.TbNavbar', array(
-                        'type'=>'null', // null or 'inverse'
+                        'type'=>'inverse', // null or 'inverse'
                         'brand'=>'Bolsa Laboral',
                         'brandUrl'=>array('site/index'),
                         'collapse'=>true, // requires bootstrap-responsive.css
@@ -121,14 +144,13 @@
                                         array('label'=>'Publicar una Oferta Laboral', 'url'=>array('ofertasLaborales/create')),
                                         array('label'=>'Busqueda Avanzada', 'url'=>'#'),
                                     )),
-                                    array('label'=>'Contacto', 'url'=>array('site/contact'), 'visible'=>Yii::app()->user->isGuest),
+                                    array('label'=>'Contacto', 'url'=>array('site/contact')),
                                 ),
                             ),
                             array(
                                 'class'=>'bootstrap.widgets.TbMenu',
                                 'htmlOptions'=>array('class'=>'pull-right'),
                                 'items'=>array(
-                                    array('label'=>'Acerca de', 'url'=>array('/site/page', 'view'=>'about')),
                                     '---',
                                     array('label'=>'Iniciar Sesion', 'url'=>array('site/login'), 'visible'=>Yii::app()->user->isGuest),
                                     array('label'=>Yii::app()->user->name, 'url'=>'#', 'items'=>array(
@@ -144,18 +166,36 @@
              }
              elseif($tipo == 1)
              {
-                  echo '<div id="mainmenu">';
-                    $this->widget('zii.widgets.CMenu',array(
-                           'items'=>array(
-                                            array('label'=>'Inicio', 'url'=>array('/site/index', 'visible'=>!Yii::app()->user->isGuest)),
-                                            array('label'=>'Ofertas de Trabajo', 'url'=>array('/ofertasLaborales/index')),
-                                            array('label'=>'Acerca de', 'url'=>array('/site/page', 'view'=>'about', 'visible'=>!Yii::app()->user->isGuest)),
-                                            array('label'=>'Contacto', 'url'=>array('/site/contact', 'visible'=>!Yii::app()->user->isGuest)),                                                              
-                                            array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-                                            array('label'=>'Logout', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-                          ),
-                    )              
-             );
+                    $this->widget('bootstrap.widgets.TbNavbar', array(
+                    'type'=>'inverse', // null or 'inverse'
+                    'brand'=>'Bolsa Laboral',
+                    'brandUrl'=>array('site/index'),
+                    'collapse'=>true, // requires bootstrap-responsive.css
+                    'items'=>array(
+                        array(
+                            'class'=>'bootstrap.widgets.TbMenu',
+                            'items'=>array(
+                                array('label'=>'Inicio', 'url'=>array('site/index')),
+                                array('label'=>'Ofertas Laborales', 'url'=>array('ofertasLaborales/index')),
+                                array('label'=>'Registrarse', 'url'=>array('usuarios/pcreate'), 'visible'=>Yii::app()->user->isGuest),
+                                array('label'=>'Contacto', 'url'=>array('site/contact')),
+                            ),
+                        ),
+                        array(
+                            'class'=>'bootstrap.widgets.TbMenu',
+                            'htmlOptions'=>array('class'=>'pull-right'),
+                            'items'=>array(
+                                '---',
+                                array('label'=>Yii::app()->user->name, 'url'=>'#', 'items'=>array(
+                                        array('label'=>'Perfil', 'url'=>array('estudiantes/perfil', 'id'=>  Yii::app()->user->name)),
+                                        array('label'=>'Cambiar Rol', 'url'=>'#'),
+                                        '---',
+                                        array('label'=>'Logout', 'url'=>array('site/logout')),
+                                    ), 'visible'=>!Yii::app()->user->isGuest),
+                            ),
+                        ),
+                    ),
+                ));
              }
         }
         ?>
