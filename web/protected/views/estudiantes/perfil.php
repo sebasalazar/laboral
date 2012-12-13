@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Modificar perfil', 'url'=>array('updateperfil', 'id'=>$model->pk)),
+	array('label'=>'Modificar perfil', 'url'=>array('updateperfil', 'id'=>Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk)),
 );
 ?>
 
-<h1>Estudiante <?php $model->pk; ?></h1>
+<h1>Mi perfil <?php //$model->pk; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -20,7 +20,11 @@ $this->menu=array(
 		'nombres',
 		'apellidos',
 		'rut',
-		'fecha_nacimiento',
+		array(
+                    'label'=>'Fecha Nacimiento',
+                    'value'=>Yii::app()->dateFormatter->format("d MMMM y",strtotime($model->fecha_nacimiento)),
+                    
+                ),
 		'genero',
 		'direccion',
                 array('label'=>'Comuna',
