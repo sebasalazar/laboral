@@ -22,16 +22,16 @@ $this->breadcrumbs=array(
 	),
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> Son Obligatorios.</p>
+	<p class="note">Los campos con <span class="required">*</span> son obligatorios.</p>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'Usuario: '); ?>
+		<?php echo $form->labelEx($model,'Usuario: <span class="required">*</span>'); ?>
 		<?php echo $form->textField($model,'username'); ?>
 		<?php echo $form->error($model,'username'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'Contraseña: '); ?>
+		<?php echo $form->labelEx($model,'Contraseña: <span class="required">*</span>'); ?>
 		<?php echo $form->passwordField($model,'password'); ?>
 		<?php echo $form->error($model,'password'); ?>
 	</div>
@@ -43,7 +43,7 @@ $this->breadcrumbs=array(
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Login'); ?>
+		<?php echo CHtml::submitButton('Entrar'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

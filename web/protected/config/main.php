@@ -68,22 +68,22 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=bollaboral',
 
 		/**/
-		/*'db'=>array(
+		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=laboral',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => '1234',
 			'charset' => 'utf8',
-		),*/
+		),
             
 
         //Configuracion para postgresql
-         'db'=>array(
+         /*'db'=>array(
          'connectionString' => 'pgsql:host=localhost;port=5432;dbname=bolsaLaboral',
          'username' => 'laboralutem',
          'password' => 'computador',
          'charset' => 'utf8',
-         ),
+         ),*/
 
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
@@ -112,6 +112,6 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'adminEmail'=>'soporte@informatica.utem.cl',
+		'adminEmail'=>'contacto@informatica.utem.cl',
 	),
 );

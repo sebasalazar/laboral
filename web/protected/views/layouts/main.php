@@ -39,15 +39,15 @@
                             array('label'=>'Publicar una Oferta Laboral', 'url'=>array('ofertasLaborales/create')),
                             array('label'=>'Busqueda Avanzada', 'url'=>'#'),
                         )),
-                        array('label'=>'Registrarse', 'url'=>array('usuarios/pcreate'), 'visible'=>Yii::app()->user->isGuest),
                         array('label'=>'Contacto', 'url'=>array('site/contact'), 'visible'=>Yii::app()->user->isGuest),
+                        array('label'=>'Logout', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
                     ),
                 ),
                 array(
                     'class'=>'bootstrap.widgets.TbMenu',
                     'htmlOptions'=>array('class'=>'pull-right'),
                     'items'=>array(
-                        array('label'=>'Acerca de', 'url'=>array('/site/page', 'view'=>'about')),
+                        array('label'=>'Registrarse', 'url'=>array('/usuarios/pcreate','visible'=>Yii::app()->user->isGuest)),
                         '---',
                         array('label'=>'Iniciar Sesion', 'url'=>array('site/login'), 'visible'=>Yii::app()->user->isGuest),
                     ),
@@ -178,9 +178,9 @@
 	<div class="clear"></div>
 
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by UTEM.<br/>
-		All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
+		Derechos de Autor &copy; <?php echo date('Y'); ?> por UTEM.<br/>
+		Todos los derechos reservados.<br/>
+		<?php echo CHtml::link('Acerca del Sitio',array('/site/page', 'view'=>'about'));?>
 	</div><!-- footer -->
 
 </div><!-- page -->
