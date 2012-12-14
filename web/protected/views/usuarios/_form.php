@@ -126,8 +126,6 @@ $("#content > ul").tabs();
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="columna columna_50">
                         <div class="row">
                             <div class="contenido">
                                 <div class="columna">
@@ -137,7 +135,8 @@ $("#content > ul").tabs();
                                 </div>
                             </div>
                         </div>
-
+                    </div>
+                    <div class="columna columna_50">
                         <div class="row">
                             <div class="contenido">
                                 <div class="columna">
@@ -259,7 +258,8 @@ $("#content > ul").tabs();
                         </div>
                     </div>
                                        </div>
-
+                 </div>
+                    <div class="columna columna_50">                       
                 <div class="row">
                     <div class="contenido">
                         <div class="columna">
@@ -334,7 +334,9 @@ $("#content > ul").tabs();
                         </div>
                     </div>
                 </div>
-        
+        </div>
+                </div>
+            </div>
         <?php
             }
         ?>
@@ -412,7 +414,8 @@ $("#content > ul").tabs();
                         
                         <?php echo $form->error(Estudiantes::model(),'comuna_fk'); ?>
                 </div>
-        
+                </div>
+                    <div class="columna columna_50">
                 <div class="row">
                         <?php echo $form->labelEx(Estudiantes::model(),'Estado Civil <span class="required">*</span>'); ?>
                         <?php $datos = CHtml::listData(EstadosCiviles::model()->findAll(),'pk','estado'); ?>
@@ -474,7 +477,10 @@ $("#content > ul").tabs();
                         <?php echo $form->labelEx(Estudiantes::model(),'archivo_curriculum'); ?>
                         <?php echo $form->fileField(Estudiantes::model(),'archivo_curriculum',array('size'=>60,'maxlength'=>255)); ?>
                         <?php echo $form->error(Estudiantes::model(),'archivo_curriculum'); ?>
-                </div>       
+                </div>      
+                </div> 
+                </div> 
+                </div> 
         <?php
             }
         ?>
