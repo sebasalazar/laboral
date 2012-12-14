@@ -162,12 +162,12 @@ parent::afterFind();
 	}
         
         public function customSearch(){
-                $criteria=new CDbCriteria(array(
-                        'select'=>'*',
-                        'condition'=>'activo=\'1\'',
-                        'order'=>'fecha_publicacion DESC',
-                        'limit'=>2,
-                ));
+                $criteria=new CDbCriteria;
+                $criteria->select = array('*');
+                $criteria->condition = 'activo=\'1\'';
+                $criteria->order = 'cargo DESC';
+                $criteria->limit = 5;
+                
                 $criteria->compare('pk',$this->pk);
 		$criteria->compare('empresa_fk',$this->empresa_fk);
 		$criteria->compare('rubro_fk',$this->rubro_fk);
@@ -185,6 +185,7 @@ parent::afterFind();
 		$criteria->compare('activo',$this->activo);
                 return new CActiveDataProvider($this, array(
                         'criteria'=>$criteria,
+                        'pagination' => false
                 ));
         }
 }
