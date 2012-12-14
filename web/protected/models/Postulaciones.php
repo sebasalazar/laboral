@@ -34,7 +34,7 @@ class Postulaciones extends CActiveRecord
 	}
         public function afterFind()
 {
-$this->fecha_publicacion= Yii::app()->dateformatter->format("dd-MM-yyyy",$this->fecha);
+$this->fecha= Yii::app()->dateformatter->format("dd-MM-yyyy",$this->fecha);
 parent::afterFind();
 }
 	/**
@@ -93,6 +93,24 @@ parent::afterFind();
 		$criteria->compare('pk',$this->pk,true);
 		$criteria->compare('oferta_laboral_fk',$this->oferta_laboral_fk);
 		$criteria->compare('estudiante_fk',$this->estudiante_fk);
+		$criteria->compare('fecha',$this->fecha,true);
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
+
+
+	public function search2($estudiante_fk)
+	{
+		// Warning: Please modify the following code to remove attributes that
+		// should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('pk',$this->pk,true);
+		$criteria->compare('oferta_laboral_fk',$this->oferta_laboral_fk);
+		$criteria->compare('estudiante_fk',$estudiante_fk);
 		$criteria->compare('fecha',$this->fecha,true);
 
 		return new CActiveDataProvider($this, array(

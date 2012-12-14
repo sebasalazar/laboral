@@ -147,7 +147,10 @@
                             'class'=>'bootstrap.widgets.TbMenu',
                             'items'=>array(
                                 array('label'=>'Inicio', 'url'=>array('site/index')),
-                                array('label'=>'Ofertas Laborales', 'url'=>array('ofertasLaborales/index')),
+                                array('label'=>'Ofertas Laborales', 'url'=>array('ofertasLaborales/index'), 'items'=>array(
+                                        array('label'=>'Lista Ofertas Laborales', 'url'=>array('ofertasLaborales/index')),
+                                        array('label'=>'Mis Postulaciones', 'url'=>array('postulaciones/mispostulaciones','estudiante_fk'=>Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk)),
+                                    )),
                                 array('label'=>'Registrarse', 'url'=>array('usuarios/pcreate'), 'visible'=>Yii::app()->user->isGuest),
                                 array('label'=>'Contacto', 'url'=>array('site/contact')),
                             ),

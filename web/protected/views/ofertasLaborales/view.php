@@ -28,6 +28,7 @@ if(Yii::app()->user->getModel(Yii::app()->user->id) != null)
     {
         $this->menu=array(
                 array('label'=>'Lista Ofertas Laborales', 'url'=>array('index')),
+                array('label'=>'Mis postulaciones', 'url'=>array('postulaciones/mispostulaciones')),
             
         );
 
@@ -99,12 +100,10 @@ if(Yii::app()->user->getModel(Yii::app()->user->id) != null)
 <?php 
 
 if($tipo == 1){
-   // if($datos==false){
-    echo CHtml::link(
-    'Postular',
-     array('Postulaciones/registrar','oferta_laboral_fk'=>$model->pk,'estudiante_fk'=>Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk,'fecha'=>date("d-m-Y")),    
-     array('confirm' => '¿Esta seguro que desea postular?')
-);}
+   echo CHtml::button('Postular', array('submit' => array('Postulaciones/registrar','oferta_laboral_fk'=>$model->pk,'estudiante_fk'=>Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk,'fecha'=>date("d-m-Y")),
+       'confirm' => '¿Esta seguro que desea postular?'
+       ));           
+}
 
 
 ?>

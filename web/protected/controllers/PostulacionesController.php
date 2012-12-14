@@ -24,7 +24,7 @@ class PostulacionesController extends Controller
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-/*	public function accessRules()
+	public function accessRules()
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
@@ -32,7 +32,7 @@ class PostulacionesController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','mispostulaciones','registrar'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -56,6 +56,17 @@ class PostulacionesController extends Controller
 		));
 	}
 
+        
+       	public function actionMispostulaciones($estudiante_fk)
+	{
+            //foreach($model=new Postulaciones)
+         //   $this->layout = 'column1';
+            $model=new Postulaciones('search2');
+            $model->unsetAttributes();  // clear any default values
+            if(isset($_GET['Postulaciones']))
+                    $model->attributes=$_GET['Postulaciones'];
+            $this->render('mispostulaciones', array('model'=>$model,'estudiante_fk'=>$estudiante_fk));
+	}
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
@@ -94,7 +105,7 @@ class PostulacionesController extends Controller
             }
             else
             {
-                Yii::app()->user->setFlash('sucess', "Si postulacion a sido satisfactoria");
+                Yii::app()->user->setFlash('success', "Su postulacion a sido satisfactoria");
                 $model=new Postulaciones;
                 $model->oferta_laboral_fk = $oferta_laboral_fk;
                 $model->estudiante_fk = $estudiante_fk;
@@ -102,7 +113,7 @@ class PostulacionesController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
                 $model->save();
-                $this->redirect(array('OfertasLaborales/index'));
+                $this->redirect(array('OfertasLaborales/view','id'=>$oferta_laboral_fk));
             }
 	}
 
