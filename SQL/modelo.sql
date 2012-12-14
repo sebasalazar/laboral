@@ -461,4 +461,12 @@ CREATE TABLE tips(
     PRIMARY KEY(pk)
 );
 
+DROP TABLE IF EXISTS propietario_oferta CASCADE;
+CREATE TABLE propietario_oferta(
+    pk serial NOT NULL,
+    oferta_laboral_fk int NOT NULL,
+    rut_propietario int NOT NULL,
+    PRIMARY KEY(pk)
+);
+
 COMMIT;
