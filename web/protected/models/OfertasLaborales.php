@@ -160,4 +160,31 @@ parent::afterFind();
 			'criteria'=>$criteria,
 		));
 	}
+        
+        public function customSearch(){
+                $criteria=new CDbCriteria(array(
+                        'select'=>'*',
+                        'condition'=>'activo=\'1\'',
+                        'order'=>'fecha_publicacion DESC',
+                        'limit'=>2,
+                ));
+                $criteria->compare('pk',$this->pk);
+		$criteria->compare('empresa_fk',$this->empresa_fk);
+		$criteria->compare('rubro_fk',$this->rubro_fk);
+		$criteria->compare('nivel_estudio_fk',$this->nivel_estudio_fk);
+		$criteria->compare('renta',$this->renta,true);
+		$criteria->compare('vacantes',$this->vacantes);
+		$criteria->compare('plazo',$this->plazo,true);
+		$criteria->compare('descripcion',$this->descripcion,true);
+		$criteria->compare('ubicacion',$this->ubicacion,true);
+		$criteria->compare('cargo',$this->cargo,true);
+		$criteria->compare('fecha_publicacion',$this->fecha_publicacion,true);
+		$criteria->compare('beneficios',$this->beneficios,true);
+		$criteria->compare('jornada_fk',$this->jornada_fk);
+		$criteria->compare('contrato_fk',$this->contrato_fk);
+		$criteria->compare('activo',$this->activo);
+                return new CActiveDataProvider($this, array(
+                        'criteria'=>$criteria,
+                ));
+        }
 }

@@ -29,8 +29,14 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-                $model=  Tips::model()->findAll();
-		$this->render('index',array('model'=>$model));
+                $model=Tips::model()->findAll();
+                /*
+                $ofertas=new OfertasLaborales();
+                $ofertas->unsetAttributes();  // clear any default values
+                if(isset($_GET['OfertasLaborales']))
+                        $ofertas->attributes=$_GET['OfertasLaborales'];*/
+                $ofertas = new OfertasLaborales;
+		$this->render('index',array('model'=>$model,'ofertas'=>$ofertas));
 	}
 
 	/**
