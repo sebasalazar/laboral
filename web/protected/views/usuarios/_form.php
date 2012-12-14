@@ -8,7 +8,7 @@
 <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/assets/7b79631/Rut/jquery.Rut.js'); ?>
 
 <!-- si van a implementar jquery haganlo con registerScriptFile y que los script de los demás. -->
-
+<!--
 <script type="text/javascript">
 $(document).ready(function(){
 $('#rut_demo_int').Rut({ 
@@ -23,7 +23,7 @@ $('#rut_demo_int').Rut({
 $("#content > ul").tabs();
 });
 </script>
-            
+-->    
 
 <div class="form">
     
