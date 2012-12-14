@@ -1,6 +1,6 @@
 <?php
 
-class DocentesController extends Controller
+class PropietarioOfertaController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -14,8 +14,8 @@ class DocentesController extends Controller
 	public function filters()
 	{
 		return array(
-			'accessControl', // perform access control for CRUD operations// we only allow deletion via POST request
-                        'postOnly + delete',
+			'accessControl', // perform access control for CRUD operations
+			'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
 
@@ -32,12 +32,12 @@ class DocentesController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('update','perfil'),
+				'actions'=>array('create','update'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','create'),
-				'users'=>array(Yii::app()->user->getAdmin()),
+				'actions'=>array('admin','delete'),
+				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -52,7 +52,7 @@ class DocentesController extends Controller
 	public function actionView($id)
 	{
 		$this->render('view',array(
-			'model'=>$this->loadModel((int) $id),
+			'model'=>$this->loadModel($id),
 		));
 	}
 
@@ -62,14 +62,14 @@ class DocentesController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Docentes;
+		$model=new PropietarioOferta;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Docentes']))
+		if(isset($_POST['PropietarioOferta']))
 		{
-			$model->attributes=$_POST['Docentes'];
+			$model->attributes=$_POST['PropietarioOferta'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->pk));
 		}
@@ -86,33 +86,35 @@ class DocentesController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-            if(Yii::app()->user->getModelUsuarioCompletoId($id)->rut == Yii::app()->user->name)
-            {
-                    $model=$this->loadModel((int) $id);
-                    if(isset($_POST['Docentes']))
-                    {
-                            $model->attributes=$_POST['Docentes'];
-                            if($model->save())
-                                    $this->redirect(array('view','id'=>$model->pk));
-                    }
+		$model=$this->loadModel($id);
 
-                    $this->render('update',array(
-                            'model'=>$model,
-                    ));
-            }
-            else
-            {
-                    throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
-            }
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['PropietarioOferta']))
+		{
+			$model->attributes=$_POST['PropietarioOferta'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->pk));
+		}
+
+		$this->render('update',array(
+			'model'=>$model,
+		));
 	}
 
+	/**
+	 * Deletes a particular model.
+	 * If deletion is successful, the browser will be redirected to the 'admin' page.
+	 * @param integer $id the ID of the model to be deleted
+	 */
 	public function actionDelete($id)
 	{
-                $usuarios = Usuarios::model()->deleteByPk(Yii::app()->user->rutDocente($id));
 		$this->loadModel($id)->delete();
+
+		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-
 	}
 
 	/**
@@ -120,18 +122,21 @@ class DocentesController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Docentes');
+		$dataProvider=new CActiveDataProvider('PropietarioOferta');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
 	}
 
+	/**
+	 * Manages all models.
+	 */
 	public function actionAdmin()
 	{
-		$model=new Docentes('search');
+		$model=new PropietarioOferta('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Docentes']))
-			$model->attributes=$_GET['Docentes'];
+		if(isset($_GET['PropietarioOferta']))
+			$model->attributes=$_GET['PropietarioOferta'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -145,31 +150,19 @@ class DocentesController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Docentes::model()->findByPk((int) $id);
+		$model=PropietarioOferta::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
 	}
-        
-        public function actionPerfil($id)
-        {
-            $model= Docentes::model()->findByPk(Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk);
-            if($id == Yii::app()->user->name)
-                $this->render('perfil', array(
-                        'model'=>$model
-                ));
-            else
-                throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
-        }
-        
-        
+
 	/**
 	 * Performs the AJAX validation.
 	 * @param CModel the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='docentes-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='propietario-oferta-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

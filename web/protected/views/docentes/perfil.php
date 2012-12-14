@@ -3,7 +3,6 @@
 $this->menu=array(
 	array('label'=>'Actualizar datos personales', 'url'=>array('update', 'id'=>Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk)),
 	array('label'=>'Publicar Ofertas de Trabajo', 'url'=>array('ofertasLaborales/create')),
-        array('label'=>'Darme de Baja', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete2','id'=>$model->pk, 'rut'=>Yii::app()->user->name),'confirm'=>'¿Estás Seguro que quieres darte de baja? Se eliminará tu usuario')),
 );
 
 ?>

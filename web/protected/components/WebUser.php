@@ -8,7 +8,12 @@ class WebUser extends CWebUser {
         $usuario = Usuarios::model()->findByPK($id);
         return $usuario;
     }
-
+    
+    public function rutDocente($id) {
+        $docente = Docentes::model()->findByPk($id);
+        return $docente->rut;
+    }
+    
     public function getModelUsuarioCompletoId($id) {
         $docente = Docentes::model()->model()->findByPK($id);
         if ($docente != null)
@@ -58,7 +63,7 @@ class WebUser extends CWebUser {
     }
 
     public function getAdmin() {
-        return '1740218367';
+        return '174018367';
     }
 
     public static function usuario() {
