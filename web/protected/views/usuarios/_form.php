@@ -408,9 +408,9 @@ $("#content > ul").tabs();
                 <div class="row">
                         <?php echo $form->labelEx(Estudiantes::model(),'Comuna <span class="required">*</span>'); ?>
                        
-                        <?php echo $form->DropDownList(Estudiantes::model(),'comuna_id',array(), array('id' => 'comboComuna', 'name'=>'comboComuna','required'=>'required', 'prompt' => 'Selecione...')); ?>
+                        <?php echo $form->DropDownList(Estudiantes::model(),'comuna_fk',array(), array('id' => 'comboComuna', 'name'=>'comboComuna','required'=>'required', 'prompt' => 'Selecione...')); ?>
                         
-                        <?php echo $form->error(Estudiantes::model(),'comuna_id'); ?>
+                        <?php echo $form->error(Estudiantes::model(),'comuna_fk'); ?>
                 </div>
         
                 <div class="row">

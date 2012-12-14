@@ -11,7 +11,7 @@
  * @property string $fecha_nacimiento
  * @property string $genero
  * @property string $direccion
- * @property integer $comuna_id
+ * @property integer $comuna_fk
  * @property integer $ec_fk
  * @property integer $carrera_fk
  * @property string $telefono
@@ -22,10 +22,14 @@
  * @property string $archivo_curriculum
  *
  * The followings are the available model relations:
- * @property Comunas $comuna
+ * @property EvaluacionesPracticas[] $evaluacionesPracticases
+ * @property Comunas $comunaFk
  * @property EstadosCiviles $ecFk
  * @property Carreras $carreraFk
  * @property Estados $estado0
+ * @property Postulaciones[] $postulaciones
+ * @property SugerenciasTrabajo[] $sugerenciasTrabajos
+ * @property Curriculums[] $curriculums
  */
 class Estudiantes extends CActiveRecord
 {
@@ -55,22 +59,15 @@ class Estudiantes extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-                    
-			array('apellidos, rut, fecha_nacimiento, direccion, comuna_id, ec_fk, carrera_fk, estado','required'),
-                        array('email','required', 'message'=>'debe ingresar mail'),
-                        array('nombres','required', 'message'=>'debe ingresar Nombres'),
-			array('rut, comuna_id, ec_fk, carrera_fk, estado', 'numerical', 'integerOnly'=>true),
-			array('nombres, apellidos, direccion, archivo_curriculum', 'length', 'max'=>30),
+			array('nombres, apellidos, rut, fecha_nacimiento, direccion, comuna_fk, ec_fk, carrera_fk, email, estado', 'required'),
+			array('rut, comuna_fk, ec_fk, carrera_fk, estado', 'numerical', 'integerOnly'=>true),
+			array('nombres, apellidos, direccion, email, archivo_curriculum', 'length', 'max'=>255),
 			array('genero', 'length', 'max'=>1),
-                    	array('telefono', 'length', 'min'=>9,'max'=>9),
-                        array('celular', 'length', 'min'=>8, 'max'=>8),
-                        array('email', 'email'),
+			array('telefono, celular', 'length', 'max'=>50),
 			array('busqueda', 'safe'),
-                        array('archivo_curriculum','file', 'types' => 'pdf','allowEmpty' => true ),
-                        array('email', 'unique'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('pk,completo, nombres, apellidos, rut, fecha_nacimiento, genero, direccion, comuna_id, ec_fk, carrera_fk, telefono, celular, email, estado, busqueda, archivo_curriculum', 'safe', 'on'=>'search'),
+			array('pk, nombres, apellidos, rut, fecha_nacimiento, genero, direccion, comuna_fk, ec_fk, carrera_fk, telefono, celular, email, estado, busqueda, archivo_curriculum', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -82,11 +79,14 @@ class Estudiantes extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-                    'postulaciones' => array(self::HAS_MANY, 'Postulaciones', 'estudiantes_fk'),
-			'comuna' => array(self::BELONGS_TO, 'Comunas', 'comuna_id'),
+			'evaluacionesPracticases' => array(self::HAS_MANY, 'EvaluacionesPracticas', 'estudiant_fk'),
+			'comunaFk' => array(self::BELONGS_TO, 'Comunas', 'comuna_fk'),
 			'ecFk' => array(self::BELONGS_TO, 'EstadosCiviles', 'ec_fk'),
 			'carreraFk' => array(self::BELONGS_TO, 'Carreras', 'carrera_fk'),
 			'estado0' => array(self::BELONGS_TO, 'Estados', 'estado'),
+			'postulaciones' => array(self::HAS_MANY, 'Postulaciones', 'estudiante_fk'),
+			'sugerenciasTrabajos' => array(self::HAS_MANY, 'SugerenciasTrabajo', 'estudiante_fk'),
+			'curriculums' => array(self::HAS_MANY, 'Curriculums', 'estudiante_fk'),
 		);
 	}
 
@@ -103,7 +103,7 @@ class Estudiantes extends CActiveRecord
 			'fecha_nacimiento' => 'Fecha Nacimiento',
 			'genero' => 'Genero',
 			'direccion' => 'Direccion',
-			'comuna_id' => 'Comuna',
+			'comuna_fk' => 'Comuna Fk',
 			'ec_fk' => 'Ec Fk',
 			'carrera_fk' => 'Carrera Fk',
 			'telefono' => 'Telefono',
@@ -112,7 +112,6 @@ class Estudiantes extends CActiveRecord
 			'estado' => 'Estado',
 			'busqueda' => 'Busqueda',
 			'archivo_curriculum' => 'Archivo Curriculum',
-                        'completo' =>  'Completo'   ,
 		);
 	}
 
@@ -134,7 +133,7 @@ class Estudiantes extends CActiveRecord
 		$criteria->compare('fecha_nacimiento',$this->fecha_nacimiento,true);
 		$criteria->compare('genero',$this->genero,true);
 		$criteria->compare('direccion',$this->direccion,true);
-		$criteria->compare('comuna_id',$this->comuna_id);
+		$criteria->compare('comuna_fk',$this->comuna_fk);
 		$criteria->compare('ec_fk',$this->ec_fk);
 		$criteria->compare('carrera_fk',$this->carrera_fk);
 		$criteria->compare('telefono',$this->telefono,true);
@@ -143,7 +142,6 @@ class Estudiantes extends CActiveRecord
 		$criteria->compare('estado',$this->estado);
 		$criteria->compare('busqueda',$this->busqueda);
 		$criteria->compare('archivo_curriculum',$this->archivo_curriculum,true);
-                $criteria->compare('completo',$this->completo);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
