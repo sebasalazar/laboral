@@ -166,7 +166,7 @@ parent::afterFind();
                 $criteria->select = array('*');
                 $criteria->condition = 'activo=\'1\'';
                 $criteria->order = 'cargo DESC';
-                $criteria->limit = 5;
+                $criteria->limit = 7;
                 
                 $criteria->compare('pk',$this->pk);
 		$criteria->compare('empresa_fk',$this->empresa_fk);
