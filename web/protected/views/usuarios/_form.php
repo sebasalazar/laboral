@@ -28,7 +28,7 @@ $("#content > ul").tabs();
 <div class="form">
     
 <?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'jq-validation',
+	'id'=>'usuarios-validation',
 	'enableAjaxValidation'=>false,
         'htmlOptions' => array('enctype' => 'multipart/form-data')
 )); ?>
