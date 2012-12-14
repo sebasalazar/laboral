@@ -96,13 +96,13 @@
     text-align: center;
 }
 
-.validarRut{
+#cruz_error{
        display: none;
-       margin: 25px 20px 20px 20px;  
-       padding: 10px 30px 10px 30px;
-       border-radius: 10px;
-       background: #BCE774;
+       margin-top: 22px;
+       margin-left: 10px;
 }
+
+
 
 .carr{
     width: 80%;

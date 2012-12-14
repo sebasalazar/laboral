@@ -11,34 +11,15 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-// Demo 1
-$('#rut_demo_int').Rut();
-// Demo 2
-$('#rut_demo_2').Rut({ 
-  on_error: function(){ alert('Rut incorrecto'); } 
+$('#rut_demo_int').Rut({ 
+  on_error: function(){ 
+      $('#cruz_error').show("fast");
+      $('#rut_demo_int').val("");
+  },
+  on_success: function(){ 
+      $('#cruz_error').hide();
+  }
 });
-// Demo 3
-$('#rut_demo_3, #rut_demo_4').Rut({
-  on_error: function(){ alert('Rut incorrecto'); }, 
-  on_success: function(){ alert('Rut correcto') } 
-});
-// Demo 5
-$('#rut_demo_5').Rut({
-  on_error: function(){ alert('Rut incorrecto'); },
-  format_on: 'keyup' 
-});
-// Demo 6
-$('#rut_demo_6').Rut({
-  validation: false,
-  format_on: 'keyup',
-  digito_verificador: '#digito_verificador_demo_6' 
-});
-
-$('#rut_demo_7').Rut({
-  digito_verificador: '#digito_verificador_demo_7',
-  on_error: function(){ alert('Rut incorrecto'); }
-});
-
 $("#content > ul").tabs();
 });
 </script>
@@ -75,6 +56,9 @@ $("#content > ul").tabs();
                             </p>
                             <?php echo $form->textField($model,'username',array('id'=>'rut_demo_int', 'name'=>'rut_demo_int', 'required'=>'required', 'size'=>50)); ?>
                             <?php echo $form->error($model,'username'); ?>
+                        </div>
+                        <div class="columna">
+                            <?php echo CHtml::image('images/cruz.gif','Error',array('id'=>'cruz_error')); ?>
                         </div>
                     </div>
                 </div>
