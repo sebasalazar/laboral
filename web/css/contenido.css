@@ -216,3 +216,7 @@ a:hover{
 .titulo{
     margin-left: 9%;
 }
+
+[class*="span"] {
+    margin-left: 0;
+}

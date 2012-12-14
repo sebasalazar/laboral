@@ -53,7 +53,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'genero',
 		/*
 		'direccion',
-		'comuna_id',
+		'comuna_fk',
 		'ec_fk',
 		'departamento_fk',
 		'telefono',

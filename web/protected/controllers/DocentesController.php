@@ -14,8 +14,8 @@ class DocentesController extends Controller
 	public function filters()
 	{
 		return array(
-			'accessControl', // perform access control for CRUD operations
-			'postOnly + delete', // we only allow deletion via POST request
+			'accessControl', // perform access control for CRUD operations// we only allow deletion via POST request
+                        'postOnly + delete',
 		);
 	}
 
@@ -32,7 +32,7 @@ class DocentesController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('update','perfil'),
+				'actions'=>array('update','perfil','delete2'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -108,13 +108,27 @@ class DocentesController extends Controller
 
 	public function actionDelete($id)
 	{
-		$this->loadModel((int) $id)->delete();
-
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+		$this->loadModel($id)->delete();
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-	}
 
+	}
+        
+        public function actionDelete2($id,$rut)
+	{
+            if($rut == Yii::app()->user->name)
+            {
+                    $this->loadModel($id)->delete();
+                    $usuario = Usuarios::model()->deleteByPk($rut);
+                    if(!isset($_GET['ajax']))
+                            $this->redirect(array('site/logout'));
+            }
+            else
+            {
+                    throw new CHttpException(403,'No tienes permisos suficientes realizar esta accion.');
+            }
+
+	}
 	/**
 	 * Lists all models.
 	 */

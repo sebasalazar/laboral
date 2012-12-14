@@ -58,7 +58,7 @@ class WebUser extends CWebUser {
     }
 
     public function getAdmin() {
-        return '174018367';
+        return '1740218367';
     }
 
     public static function usuario() {

@@ -90,6 +90,6 @@
 		<?php echo CHtml::submitButton('Search'); ?>
 	</div>
     
-
+<?php $this->endWidget(); ?>
 
 </div><!-- search-form -->

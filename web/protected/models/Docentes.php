@@ -11,7 +11,7 @@
  * @property string $fecha_nacimiento
  * @property string $genero
  * @property string $direccion
- * @property integer $comuna_id
+ * @property integer $comuna_fk
  * @property integer $ec_fk
  * @property integer $departamento_fk
  * @property string $telefono
@@ -123,7 +123,7 @@ class Docentes extends CActiveRecord
 		$criteria->compare('fecha_nacimiento',$this->fecha_nacimiento,true);
 		$criteria->compare('genero',$this->genero,true);
 		$criteria->compare('direccion',$this->direccion,true);
-		$criteria->compare('comuna_fk',$this->comuna_id);
+		$criteria->compare('comuna_fk',$this->comuna_fk);
 		$criteria->compare('ec_fk',$this->ec_fk);
 		$criteria->compare('departamento_fk',$this->departamento_fk);
 		$criteria->compare('telefono',$this->telefono,true);

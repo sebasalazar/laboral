@@ -3,15 +3,17 @@
 $this->menu=array(
 	array('label'=>'Actualizar datos personales', 'url'=>array('update', 'id'=>Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk)),
 	array('label'=>'Publicar Ofertas de Trabajo', 'url'=>array('ofertasLaborales/create')),
-        array('label'=>'Ofertas de Trabajo Publicadas', 'url'=>array('')),
+        array('label'=>'Darme de Baja', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete2','id'=>$model->pk, 'rut'=>Yii::app()->user->name),'confirm'=>'¿Estás Seguro que quieres darte de baja? Se eliminará tu usuario')),
 );
 
 ?>
 <br /> <br />
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'nombres',
+<div class="centrar1">
+<?php
+    $this->widget('bootstrap.widgets.TbDetailView', array(
+    'data'=>$model,
+    'attributes'=>array(
+        'nombres',
 		'apellidos',
 		'rut',
 		array(
@@ -36,5 +38,9 @@ $this->menu=array(
 		'telefono',
 		'celular',
 		'email',
-	),
-)); ?>
+    ),
+));
+
+?>
+
+</div>
