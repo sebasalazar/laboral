@@ -1,9 +1,13 @@
 .contenido {
    display: block;
    width: 100%;
-   margin: 0 auto 0 auto;
+   margin-right: 10%;
    display: table;
+}
 
+.contenido2 {
+   width: 90%;
+   display: table;
 }
 
 .contenido-carrusel {
@@ -62,7 +66,8 @@
 
 .columna_50{
     display: block;
-    width: 45%;
+    width: 30%;
+    margin-left: 10%;
 }
 
 .fila{
@@ -200,4 +205,14 @@ a:hover{
    display: block;
     margin: 0 auto 0 auto;
     width: 90%;
+}
+
+.form-actions{
+    width: 80%;
+    display: block;
+    margin: 0 auto 0 auto;
+}
+
+.titulo{
+    margin-left: 9%;
 }

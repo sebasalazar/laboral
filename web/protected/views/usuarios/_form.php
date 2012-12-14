@@ -33,7 +33,7 @@ $("#content > ul").tabs();
         'htmlOptions' => array('enctype' => 'multipart/form-data')
 )); ?>
 
-	<p class="note">Los campos con <span class="required">*</span> son obligatorios.</p>
+    <div class="titulo"><p class="note">Los campos con <span class="required">*</span> son obligatorios.</p></div>
 
         
         <?php
@@ -44,7 +44,7 @@ $("#content > ul").tabs();
             elseif($tipoUsuario == 1)
                 echo $form->errorSummary(array($model,$model3)); 
         ?>
-        <div class="contenido">
+        <div class="contenido2">
           <div class="fila">
               <div class="columna columna_50">
 

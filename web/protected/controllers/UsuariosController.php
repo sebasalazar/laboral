@@ -62,6 +62,7 @@ class UsuariosController extends Controller
 	 */
 	public function actionCreate($tipo)
 	{
+                $this->layout = 'column1';
 		$model= new Usuarios;
                 $model1 = new Docentes;
                 $model2 = new Empresas;
