@@ -214,7 +214,7 @@
                     </div>
                     <div class="columna columna_1">
                         <br />
-                                            <p class="text-footer">Derechos de Autor &copy; <?php echo date('Y'); ?> por UTEM.<br/>
+                                            <p class="text-footer">Derechos de Autor &copy; <?php echo date('Y'); ?> por <?php echo CHtml::link('UTEM','http://www.utem.cl'); ?>.<br/>
                                             Todos los derechos reservados.<br/>
                                             <?php echo CHtml::link('Acerca del Sitio',array('/site/page', 'view'=>'about'));?>
                                             </p>
