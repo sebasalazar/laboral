@@ -11,13 +11,16 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Los campos con <span class="required">*</span> son obligatorios.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'provincia_fk'); ?>
-		<?php echo $form->textField($model,'provincia_fk'); ?>
+                <?php
+                        $datos = CHtml::listData(Provincias::model()->findAll(),'pk','nombre');
+                        echo $form->DropDownList($model,'provincia_fk',$datos, array('empty'=>'Seleccione una provincia', 'required'=>'required'));
+                ?>
 		<?php echo $form->error($model,'provincia_fk'); ?>
 	</div>
 
