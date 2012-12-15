@@ -747,4 +747,21 @@ INSERT INTO estados (nombre) VALUES ('Renuncia');
 INSERT INTO estados (nombre) VALUES ('Postergado');
 INSERT INTO estados (nombre) VALUES ('Permiso');
 
+--
+-- Jornadas
+--
+INSERT INTO jornadas (jornada) VALUES ('Jornada Completa');
+INSERT INTO jornadas (jornada) VALUES ('Media Jornada');
+INSERT INTO jornadas (jornada) VALUES ('Fin de Semana');
+INSERT INTO jornadas (jornada) VALUES ('A convenir');
+
+--
+-- Tipos de Contrato
+--
+INSERT INTO tipos_contratos (contrato) VALUES ('Contrato indefinido');
+INSERT INTO tipos_contratos (contrato) VALUES ('Contrato a Plazo Fijo');
+INSERT INTO tipos_contratos (contrato) VALUES ('Boleta de Honorarios');
+
+
+
 COMMIT;
