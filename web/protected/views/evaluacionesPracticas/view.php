@@ -8,30 +8,44 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List EvaluacionesPracticas', 'url'=>array('index')),
-	array('label'=>'Create EvaluacionesPracticas', 'url'=>array('create')),
-	array('label'=>'Update EvaluacionesPracticas', 'url'=>array('update', 'id'=>$model->pk)),
-	array('label'=>'Delete EvaluacionesPracticas', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage EvaluacionesPracticas', 'url'=>array('admin')),
+	array('label'=>'Listar Evaluaciones de practicas', 'url'=>array('index')),
+	//array('label'=>'Crear EvaluacionesPracticas', 'url'=>array('create')),
+	array('label'=>'Modificar la Evaluacion de practica', 'url'=>array('update', 'id'=>$model->pk)),
+	array('label'=>'Eliminar la  Evaluacion de practicas', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'¿Está seguro que quiere eliminar esta evaluación?')),
+	//array('label'=>'Manage EvaluacionesPracticas', 'url'=>array('admin')),
+        array('label'=>'Generar PDF', 'url'=>array('generarPdf', 'id'=>$model->pk)),
 );
 ?>
 
-<h1>View EvaluacionesPracticas #<?php echo $model->pk; ?></h1>
+<h1>Evaluación de Practica de: <?php echo $model->estudiantes->nombres; ?></h1>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'pk',
-		'estudiant_fk',
-		'encar_practicas_fk',
-		'cargo_asignado',
-		'conocimientos_demostrados',
-		'eficacia',
-		'grado_cumplimiento',
-		'puntualidad_respeto',
-		'integracion_adaptacion',
-		'responsabilidad_superacion',
-		'capacidades_personales',
-		'iniciativa_creativi_improvi',
-	),
-)); ?>
+
+<?php
+    $this->widget('bootstrap.widgets.TbDetailView', array(
+    'data'=>$model,
+    'attributes'=>array(
+        array(
+            'label'=>'Estudiante',
+            'value'=>$model->estudiantes->nombres,
+         ),
+        array(
+            'label'=>'Apellidos',
+            'value'=>$model->estudiantes->apellidos,
+         ),
+        array(
+            'label'=>'Encargado de Practica',
+            'value'=>$model->EncargadosPracticas->nombre_encargado,
+         ),
+        'cargo_asignado',
+        'conocimientos_demostrados',
+        'eficacia',
+        'grado_cumplimiento',
+        'puntualidad_respeto',
+        'integracion_adaptacion',
+        'responsabilidad_superacion',
+        'capacidades_personales',
+        'iniciativa_creativi_improvi',
+    ),
+        
+));
+?>

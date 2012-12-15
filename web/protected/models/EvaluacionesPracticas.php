@@ -62,6 +62,8 @@ class EvaluacionesPracticas extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+                    'estudiantes' => array(self::BELONGS_TO, 'Estudiantes', 'estudiant_fk'),
+                    'EncargadosPracticas' => array(self::BELONGS_TO, 'encargadosPracticas', 'encar_practicas_fk'),
 		);
 	}
 
@@ -75,14 +77,14 @@ class EvaluacionesPracticas extends CActiveRecord
 			'estudiant_fk' => 'Estudiant Fk',
 			'encar_practicas_fk' => 'Encar Practicas Fk',
 			'cargo_asignado' => 'Cargo Asignado',
-			'conocimientos_demostrados' => 'Conocimientos Demostrados',
-			'eficacia' => 'Eficacia',
-			'grado_cumplimiento' => 'Grado Cumplimiento',
-			'puntualidad_respeto' => 'Puntualidad Respeto',
-			'integracion_adaptacion' => 'Integracion Adaptacion',
-			'responsabilidad_superacion' => 'Responsabilidad Superacion',
-			'capacidades_personales' => 'Capacidades Personales',
-			'iniciativa_creativi_improvi' => 'Iniciativa Creativi Improvi',
+			'conocimientos_demostrados' => 'Conocimintos técnicos demostrados',
+			'eficacia' => 'Eficacia para llegar a resultados concretos en su labor',
+			'grado_cumplimiento' => 'Grado de cumplimiento y dedicación',
+			'puntualidad_respeto' => 'Puntualidad y respeto de las normas etablecidas',
+			'integracion_adaptacion' => 'Capacidad de integración y/o adaptación',
+			'responsabilidad_superacion' => 'Responsabilidad, autocrítica y superación',
+			'capacidades_personales' => 'Personalidad, lenguaje, presencia y seguridad',
+			'iniciativa_creativi_improvi' => 'Iniciativa, creatividad y capacidad de improvisación',
 		);
 	}
 

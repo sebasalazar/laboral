@@ -1,3 +1,4 @@
+
 <?php
 
 class EvaluacionesPracticasController extends Controller
@@ -28,15 +29,15 @@ class EvaluacionesPracticasController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('create','index','view'),
+				'actions'=>array('index','view'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('update'),
+				'actions'=>array('update','delete','create','generarPdf'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete','create','update'),
 				'users'=>array(Yii::app()->user->getAdmin()),
 			),
 			array('deny',  // deny all users
@@ -143,6 +144,14 @@ class EvaluacionesPracticasController extends Controller
 		));
 	}
 
+        
+        public function actionGenerarPdf($id)
+	{
+		$this->render('generarPdf',array(
+			'model'=>$this->loadModel($id),
+		));
+	}
+        
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
@@ -155,6 +164,7 @@ class EvaluacionesPracticasController extends Controller
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
 	}
+
 
 	/**
 	 * Performs the AJAX validation.

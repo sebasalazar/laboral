@@ -20,6 +20,13 @@ class WebUser extends CWebUser {
             return $estudiante;
         }
     }
+    
+     public function getModelUsuarioEmpresaId($id) {
+        $empresa = Empresas::model()->model()->findByPK($id);
+        if ($empresa != null) {
+            return $empresa;
+        }
+    }
 
     public function getModelUsuarioCompleto($rut) {
         $docente = Docentes::model()->findByAttributes(array('rut' => $rut));
