@@ -86,7 +86,7 @@ class EmpresasController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-            if(Yii::app()->user->getModelUsuarioCompletoId($id)->rut == Yii::app()->user->name)
+            if(Yii::app()->user->getModelUsuarioEmpresaId($id)->rut == Yii::app()->user->name)
             {
 		$model=$this->loadModel((int) $id);
 
