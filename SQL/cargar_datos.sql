@@ -22,7 +22,7 @@ INSERT INTO docentes (nombres, apellidos, rut, fecha_nacimiento, genero, direcci
 
 -- Empresa  (Usuario: 44.444.444-4 / Password: utem)
 INSERT INTO usuarios (username, password, salt, roles) VALUES ('44444444','22abd99950e28b5d3953ecc800e4bce7','50c8b5d98ba193.37411008', '4');
-INSERT INTO empresas (rut, nombre, direccion, comuna_fk, codigo_postal, telefono, email, actividad_fk, descripcion_negocio, web) VALUES ('33333333', 'OrangePeople Software Ltda.', 'Enrique Mac-Iver 255 Oficina 401', '345', '123456', '26385898', 'contacto@orangepeople.cl', '26', 'Desarrollo de Software, Ingeniería de Sistemas e Integración Continua', 'http://orangepeople.cl');
+INSERT INTO empresas (rut, nombre, direccion, comuna_fk, codigo_postal, telefono, email, actividad_fk, descripcion_negocio, web) VALUES ('44444444', 'OrangePeople Software Ltda.', 'Enrique Mac-Iver 255 Oficina 401', '345', '123456', '26385898', 'contacto@orangepeople.cl', '26', 'Desarrollo de Software, Ingeniería de Sistemas e Integración Continua', 'http://orangepeople.cl');
 INSERT INTO encargados_empresas (empresa_fk, rut_encargado, nombre, apellidos, genero, direccion, comuna_fk, email, telefono) VALUES ('1', '44444444', 'Pedro', 'Zapata', 'M', 'Enrique Mac-Iver 255 Oficina 401', '345', 'pzapata@op.cl', '26385898');
 
 -- Administrador  (Usuario: 88.888.888-8 / Password: utem)
