@@ -27,7 +27,7 @@
 		<?php echo $form->error($model,'descripcion'); ?>
 	</div>
 
-	<div class="form-actions">
+        <div class="form-actions">
             <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>'Enviar')); ?>
             <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'reset', 'label'=>'Limpiar')); ?>
         </div>
