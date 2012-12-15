@@ -9,12 +9,12 @@
 	<?php echo CHtml::link(CHtml::encode($data->pk), array('view', 'id'=>$data->pk)); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('region')); ?>:</b>
-	<?php echo CHtml::encode($data->region); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('nombre')); ?>:</b>
+	<?php echo CHtml::encode($data->nombre); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('corfo')); ?>:</b>
-	<?php echo CHtml::encode($data->corfo); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('zona_corfo')); ?>:</b>
+	<?php echo CHtml::encode($data->zona_corfo); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('codigo')); ?>:</b>

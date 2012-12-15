@@ -26,9 +26,9 @@
 
 .contenidoPage{
     display: block;
-    width: 85%;
+    width: 90%;
     margin: 0 auto 0 auto;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .grillac{
@@ -232,10 +232,6 @@ a:hover{
 
 [class*="span"] {
     margin-left: 0;
-}
-
-#yw1 a{
-    color: #999;
 }
 
 .grid-view {

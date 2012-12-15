@@ -38,6 +38,14 @@
                                 array('label'=>'Contacto', 'url'=>array('site/contact')),
                             ),
                         ),
+                        array(
+                            'class'=>'bootstrap.widgets.TbMenu',
+                            'htmlOptions'=>array('class'=>'pull-right'),
+                            'items'=>array(
+                                '---',
+                                array('label'=>'Iniciar Sesion', 'url'=>array('site/login'))
+                            ),
+                        ),
                     ),
                 ));
         }

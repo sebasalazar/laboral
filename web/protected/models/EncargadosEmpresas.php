@@ -11,7 +11,7 @@
  * @property string $apellidos
  * @property string $genero
  * @property string $direccion
- * @property integer $comun_fk
+ * @property integer $comuna_fk
  * @property string $email
  * @property string $telefono
  */
@@ -43,14 +43,14 @@ class EncargadosEmpresas extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('empresa_fk, rut_encargado, nombre, apellidos, direccion, comun_fk, email, telefono', 'required'),
-			array('empresa_fk, rut_encargado, comun_fk', 'numerical', 'integerOnly'=>true),
+			array('empresa_fk, rut_encargado, nombre, apellidos, direccion, comuna_fk, email, telefono', 'required'),
+			array('empresa_fk, rut_encargado, comuna_fk', 'numerical', 'integerOnly'=>true),
 			array('nombre, apellidos, direccion, email', 'length', 'max'=>255),
 			array('genero', 'length', 'max'=>1),
 			array('telefono', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('pk, empresa_fk, rut_encargado, nombre, apellidos, genero, direccion, comun_fk, email, telefono', 'safe', 'on'=>'search'),
+			array('pk, empresa_fk, rut_encargado, nombre, apellidos, genero, direccion, comuna_fk, email, telefono', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -78,7 +78,7 @@ class EncargadosEmpresas extends CActiveRecord
 			'apellidos' => 'Apellidos',
 			'genero' => 'Genero',
 			'direccion' => 'Direccion',
-			'comun_fk' => 'Comun Fk',
+			'comuna_fk' => 'Comuna Fk',
 			'email' => 'Email',
 			'telefono' => 'Telefono',
 		);
@@ -102,7 +102,7 @@ class EncargadosEmpresas extends CActiveRecord
 		$criteria->compare('apellidos',$this->apellidos,true);
 		$criteria->compare('genero',$this->genero,true);
 		$criteria->compare('direccion',$this->direccion,true);
-		$criteria->compare('comun_fk',$this->comun_fk);
+		$criteria->compare('comuna_fk',$this->comuna_fk);
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('telefono',$this->telefono,true);
 

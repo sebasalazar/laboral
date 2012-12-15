@@ -16,15 +16,15 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'region'); ?>
-		<?php echo $form->textField($model,'region',array('size'=>60,'maxlength'=>255)); ?>
-		<?php echo $form->error($model,'region'); ?>
+		<?php echo $form->labelEx($model,'nombre'); ?>
+		<?php echo $form->textField($model,'nombre',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'nombre'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'corfo'); ?>
-		<?php echo $form->textField($model,'corfo',array('size'=>60,'maxlength'=>255)); ?>
-		<?php echo $form->error($model,'corfo'); ?>
+		<?php echo $form->labelEx($model,'zona_corfo'); ?>
+		<?php echo $form->textField($model,'zona_corfo',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'zona_corfo'); ?>
 	</div>
 
 	<div class="row">

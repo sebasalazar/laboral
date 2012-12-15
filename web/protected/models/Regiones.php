@@ -5,8 +5,8 @@
  *
  * The followings are the available columns in table 'regiones':
  * @property integer $pk
- * @property string $region
- * @property string $corfo
+ * @property string $nombre
+ * @property string $zona_corfo
  * @property string $codigo
  * @property integer $numero
  *
@@ -41,13 +41,13 @@ class Regiones extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('region, corfo, codigo, numero', 'required'),
+			array('nombre, zona_corfo, codigo, numero', 'required'),
 			array('numero', 'numerical', 'integerOnly'=>true),
-			array('region, corfo', 'length', 'max'=>255),
+			array('nombre, zona_corfo', 'length', 'max'=>255),
 			array('codigo', 'length', 'max'=>5),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('pk, region, corfo, codigo, numero', 'safe', 'on'=>'search'),
+			array('pk, nombre, zona_corfo, codigo, numero', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -70,8 +70,8 @@ class Regiones extends CActiveRecord
 	{
 		return array(
 			'pk' => 'Pk',
-			'region' => 'Region',
-			'corfo' => 'Corfo',
+			'nombre' => 'Nombre',
+			'zona_corfo' => 'Zona Corfo',
 			'codigo' => 'Codigo',
 			'numero' => 'Numero',
 		);
@@ -89,8 +89,8 @@ class Regiones extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('pk',$this->pk);
-		$criteria->compare('region',$this->region,true);
-		$criteria->compare('corfo',$this->corfo,true);
+		$criteria->compare('nombre',$this->nombre,true);
+		$criteria->compare('zona_corfo',$this->zona_corfo,true);
 		$criteria->compare('codigo',$this->codigo,true);
 		$criteria->compare('numero',$this->numero);
 
