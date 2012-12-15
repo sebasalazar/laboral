@@ -29,190 +29,177 @@
  * @property TiposContratos $contratoFk
  * @property SugerenciasTrabajo[] $sugerenciasTrabajos
  */
+class OfertasLaborales extends CActiveRecord {
 
+    /**
+     * Returns the static model of the specified AR class.
+     * @param string $className active record class name.
+     * @return OfertasLaborales the static model class
+     */
+    public static function model($className = __CLASS__) {
+        return parent::model($className);
+    }
 
+    /**
+     * @return string the associated database table name
+     */
+    public function tableName() {
+        return 'ofertas_laborales';
+    }
 
-class OfertasLaborales extends CActiveRecord
-{
-	/**
-	 * Returns the static model of the specified AR class.
-	 * @param string $className active record class name.
-	 * @return OfertasLaborales the static model class
-	 */
-	public static function model($className=__CLASS__)
-	{
-		return parent::model($className);
-	}
+    /**
+     * @return array validation rules for model attributes.
+     */
+    public function completo($pkestudiante) {
+        $sql = "SELECT completo FROM estudiantes WHERE pk='$pkestudiante'";
 
-	/**
-	 * @return string the associated database table name
-	 */
-	public function tableName()
-	{
-		return 'ofertas_laborales';
-	}
+        $connection = Yii::app()->db;
+        $command = $connection->createCommand($sql);
+        $dataReader = $command->queryAll();
+        return $dataReader;
+    }
 
-	/**
-	 * @return array validation rules for model attributes.
-	 */
-        
-        public function completo($pkestudiante)
-        {
-            $sql = "SELECT completo FROM estudiantes WHERE pk='$pkestudiantes'";            
-            
-            $connection = Yii::app()->db;
-            $command = $connection->createCommand($sql);
-            $dataReader = $command->queryAll();
-            return $dataReader;
-        }
-        
-        
-	public function rules()
-	{
-		// NOTE: you should only define rules for those attributes that
-		// will receive user inputs.
-		return array(
-			array('empresa_fk, rubro_fk, nivel_estudio_fk, renta, vacantes, descripcion, cargo, fecha_publicacion, jornada_fk, contrato_fk, activo', 'required'),
-			array('empresa_fk, rubro_fk, nivel_estudio_fk, vacantes, jornada_fk, contrato_fk, activo', 'numerical', 'integerOnly'=>true),
-			array('descripcion, ubicacion, cargo, beneficios', 'length', 'max'=>255),
-			array('plazo', 'safe'),
-			// The following rule is used by search().
-			// Please remove those attributes that should not be searched.
-			array('pk, empresa_fk, rubro_fk, nivel_estudio_fk, renta, vacantes, plazo, descripcion, ubicacion, cargo, fecha_publicacion, beneficios, jornada_fk, contrato_fk, activo', 'safe', 'on'=>'search'),
-		
+    public function rules() {
+        // NOTE: you should only define rules for those attributes that
+        // will receive user inputs.
+        return array(
+            array('empresa_fk, rubro_fk, nivel_estudio_fk, renta, vacantes, descripcion, cargo, fecha_publicacion, jornada_fk, contrato_fk, activo', 'required'),
+            array('empresa_fk, rubro_fk, nivel_estudio_fk, vacantes, jornada_fk, contrato_fk, activo', 'numerical', 'integerOnly' => true),
+            array('descripcion, ubicacion, cargo, beneficios', 'length', 'max' => 255),
+            array('plazo', 'safe'),
+            // The following rule is used by search().
+            // Please remove those attributes that should not be searched.
+            array('pk, empresa_fk, rubro_fk, nivel_estudio_fk, renta, vacantes, plazo, descripcion, ubicacion, cargo, fecha_publicacion, beneficios, jornada_fk, contrato_fk, activo', 'safe', 'on' => 'search'),
         );
-	}
+    }
 
-	/**
-	 * @return array relational rules.
-	 */
-	public function relations()
-	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
-		return array(
-			'postulaciones' => array(self::HAS_MANY, 'Postulaciones', 'oferta_laboral_fk'),
-			'empresaFk' => array(self::BELONGS_TO, 'Empresas', 'empresa_fk'),
-			'rubroFk' => array(self::BELONGS_TO, 'Rubros', 'rubro_fk'),
-			'nivelEstudioFk' => array(self::BELONGS_TO, 'NivelesEstudios', 'nivel_estudio_fk'),
-			'jornadaFk' => array(self::BELONGS_TO, 'Jornadas', 'jornada_fk'),
-			'contratoFk' => array(self::BELONGS_TO, 'TiposContratos', 'contrato_fk'),
-			'sugerenciasTrabajos' => array(self::HAS_MANY, 'SugerenciasTrabajo', 'oferta_laboral_fk'),
-		);
-	}
+    /**
+     * @return array relational rules.
+     */
+    public function relations() {
+        // NOTE: you may need to adjust the relation name and the related
+        // class name for the relations automatically generated below.
+        return array(
+            'postulaciones' => array(self::HAS_MANY, 'Postulaciones', 'oferta_laboral_fk'),
+            'empresaFk' => array(self::BELONGS_TO, 'Empresas', 'empresa_fk'),
+            'rubroFk' => array(self::BELONGS_TO, 'Rubros', 'rubro_fk'),
+            'nivelEstudioFk' => array(self::BELONGS_TO, 'NivelesEstudios', 'nivel_estudio_fk'),
+            'jornadaFk' => array(self::BELONGS_TO, 'Jornadas', 'jornada_fk'),
+            'contratoFk' => array(self::BELONGS_TO, 'TiposContratos', 'contrato_fk'),
+            'sugerenciasTrabajos' => array(self::HAS_MANY, 'SugerenciasTrabajo', 'oferta_laboral_fk'),
+        );
+    }
 
-        public function afterFind()
-{
-$this->fecha_publicacion= Yii::app()->dateformatter->format("dd-MM-yyyy",$this->fecha_publicacion);
-parent::afterFind();
-}
-	/**
-	 * @return array customized attribute labels (name=>label)
-	 */
-	public function attributeLabels()
-	{
-		return array(
-			'pk' => 'Pk',
-			'empresa_fk' => 'Empresa Fk',
-			'rubro_fk' => 'Rubro Fk',
-			'nivel_estudio_fk' => 'Nivel Estudio Fk',
-			'renta' => 'Renta',
-			'vacantes' => 'Vacantes',
-			'plazo' => 'Plazo',
-			'descripcion' => 'Descripcion',
-			'ubicacion' => 'Ubicacion',
-			'cargo' => 'Cargo',
-			'fecha_publicacion' => 'Fecha Publicacion',
-			'beneficios' => 'Beneficios',
-			'jornada_fk' => 'Jornada Fk',
-			'contrato_fk' => 'Contrato Fk',
-			'activo' => 'Activo',
-		);
-	}
+    public function afterFind() {
+        $this->fecha_publicacion = Yii::app()->dateformatter->format("dd-MM-yyyy", $this->fecha_publicacion);
+        parent::afterFind();
+    }
 
-	/**
-	 * Retrieves a list of models based on the current search/filter conditions.
-	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
-	 */
-	public function search()
-	{
-		// Warning: Please modify the following code to remove attributes that
-		// should not be searched.
+    /**
+     * @return array customized attribute labels (name=>label)
+     */
+    public function attributeLabels() {
+        return array(
+            'pk' => 'Pk',
+            'empresa_fk' => 'Empresa Fk',
+            'rubro_fk' => 'Rubro Fk',
+            'nivel_estudio_fk' => 'Nivel Estudio Fk',
+            'renta' => 'Renta',
+            'vacantes' => 'Vacantes',
+            'plazo' => 'Plazo',
+            'descripcion' => 'Descripcion',
+            'ubicacion' => 'Ubicacion',
+            'cargo' => 'Cargo',
+            'fecha_publicacion' => 'Fecha Publicacion',
+            'beneficios' => 'Beneficios',
+            'jornada_fk' => 'Jornada Fk',
+            'contrato_fk' => 'Contrato Fk',
+            'activo' => 'Activo',
+        );
+    }
 
-		$criteria=new CDbCriteria;
+    /**
+     * Retrieves a list of models based on the current search/filter conditions.
+     * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
+     */
+    public function search() {
+        // Warning: Please modify the following code to remove attributes that
+        // should not be searched.
 
-		$criteria->compare('pk',$this->pk);
-		$criteria->compare('empresa_fk',$this->empresa_fk);
-		$criteria->compare('rubro_fk',$this->rubro_fk);
-		$criteria->compare('nivel_estudio_fk',$this->nivel_estudio_fk);
-		$criteria->compare('renta',$this->renta,true);
-		$criteria->compare('vacantes',$this->vacantes);
-		$criteria->compare('plazo',$this->plazo,true);
-		$criteria->compare('descripcion',$this->descripcion,true);
-		$criteria->compare('ubicacion',$this->ubicacion,true);
-		$criteria->compare('cargo',$this->cargo,true);
-		$criteria->compare('fecha_publicacion',$this->fecha_publicacion,true);
-		$criteria->compare('beneficios',$this->beneficios,true);
-		$criteria->compare('jornada_fk',$this->jornada_fk);
-		$criteria->compare('contrato_fk',$this->contrato_fk);
-		$criteria->compare('activo',$this->activo);
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
-	}
-        
-        public function customSearch(){
-                $criteria=new CDbCriteria;
-                $criteria->select = array('*');
-                $criteria->condition = 'activo=\'1\'';
-                $criteria->order = 'cargo DESC';
-                $criteria->limit = 7;
-                
-                $criteria->compare('pk',$this->pk);
-		$criteria->compare('empresa_fk',$this->empresa_fk);
-		$criteria->compare('rubro_fk',$this->rubro_fk);
-		$criteria->compare('nivel_estudio_fk',$this->nivel_estudio_fk);
-		$criteria->compare('renta',$this->renta,true);
-		$criteria->compare('vacantes',$this->vacantes);
-		$criteria->compare('plazo',$this->plazo,true);
-		$criteria->compare('descripcion',$this->descripcion,true);
-		$criteria->compare('ubicacion',$this->ubicacion,true);
-		$criteria->compare('cargo',$this->cargo,true);
-		$criteria->compare('fecha_publicacion',$this->fecha_publicacion,true);
-		$criteria->compare('beneficios',$this->beneficios,true);
-		$criteria->compare('jornada_fk',$this->jornada_fk);
-		$criteria->compare('contrato_fk',$this->contrato_fk);
-		$criteria->compare('activo',$this->activo);
-                return new CActiveDataProvider($this, array(
-                        'criteria'=>$criteria,
-                        'pagination' => false
+        $criteria = new CDbCriteria;
+
+        $criteria->compare('pk', $this->pk);
+        $criteria->compare('empresa_fk', $this->empresa_fk);
+        $criteria->compare('rubro_fk', $this->rubro_fk);
+        $criteria->compare('nivel_estudio_fk', $this->nivel_estudio_fk);
+        $criteria->compare('renta', $this->renta, true);
+        $criteria->compare('vacantes', $this->vacantes);
+        $criteria->compare('plazo', $this->plazo, true);
+        $criteria->compare('descripcion', $this->descripcion, true);
+        $criteria->compare('ubicacion', $this->ubicacion, true);
+        $criteria->compare('cargo', $this->cargo, true);
+        $criteria->compare('fecha_publicacion', $this->fecha_publicacion, true);
+        $criteria->compare('beneficios', $this->beneficios, true);
+        $criteria->compare('jornada_fk', $this->jornada_fk);
+        $criteria->compare('contrato_fk', $this->contrato_fk);
+        $criteria->compare('activo', $this->activo);
+        return new CActiveDataProvider($this, array(
+                    'criteria' => $criteria,
                 ));
-        }
-        
-        public function custom2Search(){
-                $criteria=new CDbCriteria;
-                $criteria->select = array('*');
-                $criteria->join = 'INNER JOIN propietario_oferta p ON (t.pk = p.oferta_laboral_fk) AND p.rut ='.Yii::app()->user->name.';';
-                
-                $criteria->compare('pk',$this->pk);
-		$criteria->compare('empresa_fk',$this->empresa_fk);
-		$criteria->compare('rubro_fk',$this->rubro_fk);
-		$criteria->compare('nivel_estudio_fk',$this->nivel_estudio_fk);
-		$criteria->compare('renta',$this->renta,true);
-		$criteria->compare('vacantes',$this->vacantes);
-		$criteria->compare('plazo',$this->plazo,true);
-		$criteria->compare('descripcion',$this->descripcion,true);
-		$criteria->compare('ubicacion',$this->ubicacion,true);
-		$criteria->compare('cargo',$this->cargo,true);
-		$criteria->compare('fecha_publicacion',$this->fecha_publicacion,true);
-		$criteria->compare('beneficios',$this->beneficios,true);
-		$criteria->compare('jornada_fk',$this->jornada_fk);
-		$criteria->compare('contrato_fk',$this->contrato_fk);
-		$criteria->compare('activo',$this->activo);
-                return new CActiveDataProvider($this, array(
-                        'criteria'=>$criteria,
-                        'pagination' => false
+    }
+
+    public function customSearch() {
+        $criteria = new CDbCriteria;
+        $criteria->select = array('*');
+        $criteria->condition = 'activo=\'1\'';
+        $criteria->order = 'cargo DESC';
+        $criteria->limit = 7;
+
+        $criteria->compare('pk', $this->pk);
+        $criteria->compare('empresa_fk', $this->empresa_fk);
+        $criteria->compare('rubro_fk', $this->rubro_fk);
+        $criteria->compare('nivel_estudio_fk', $this->nivel_estudio_fk);
+        $criteria->compare('renta', $this->renta, true);
+        $criteria->compare('vacantes', $this->vacantes);
+        $criteria->compare('plazo', $this->plazo, true);
+        $criteria->compare('descripcion', $this->descripcion, true);
+        $criteria->compare('ubicacion', $this->ubicacion, true);
+        $criteria->compare('cargo', $this->cargo, true);
+        $criteria->compare('fecha_publicacion', $this->fecha_publicacion, true);
+        $criteria->compare('beneficios', $this->beneficios, true);
+        $criteria->compare('jornada_fk', $this->jornada_fk);
+        $criteria->compare('contrato_fk', $this->contrato_fk);
+        $criteria->compare('activo', $this->activo);
+        return new CActiveDataProvider($this, array(
+                    'criteria' => $criteria,
+                    'pagination' => false
                 ));
-        }
-       
+    }
+
+    public function custom2Search() {
+        $criteria = new CDbCriteria;
+        $criteria->select = array('*');
+        $criteria->join = 'INNER JOIN propietario_oferta p ON (t.pk = p.oferta_laboral_fk) AND p.rut =' . Yii::app()->user->name . ';';
+
+        $criteria->compare('pk', $this->pk);
+        $criteria->compare('empresa_fk', $this->empresa_fk);
+        $criteria->compare('rubro_fk', $this->rubro_fk);
+        $criteria->compare('nivel_estudio_fk', $this->nivel_estudio_fk);
+        $criteria->compare('renta', $this->renta, true);
+        $criteria->compare('vacantes', $this->vacantes);
+        $criteria->compare('plazo', $this->plazo, true);
+        $criteria->compare('descripcion', $this->descripcion, true);
+        $criteria->compare('ubicacion', $this->ubicacion, true);
+        $criteria->compare('cargo', $this->cargo, true);
+        $criteria->compare('fecha_publicacion', $this->fecha_publicacion, true);
+        $criteria->compare('beneficios', $this->beneficios, true);
+        $criteria->compare('jornada_fk', $this->jornada_fk);
+        $criteria->compare('contrato_fk', $this->contrato_fk);
+        $criteria->compare('activo', $this->activo);
+        return new CActiveDataProvider($this, array(
+                    'criteria' => $criteria,
+                    'pagination' => false
+                ));
+    }
+
 }
