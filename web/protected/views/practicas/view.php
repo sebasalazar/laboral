@@ -16,18 +16,24 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Practicas #<?php echo $model->pk; ?></h1>
+<h1>Practica: #<?php echo $model->pk; ?></h1>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'pk',
-		'empresa_fk',
-		'encargado_fk',
-		'area_practica_fk',
-		'inicio_practica',
-		'fin_practica',
-		'horario_fk',
-		'remuneracion',
-	),
-)); ?>
+<?php
+    $this->widget('bootstrap.widgets.TbDetailView', array(
+    'data'=>$model,
+    'attributes'=>array(
+                    array(
+                        'label'=>'Empresa',
+                        'value'=>$model->empresaFk->nombre,
+                    ),
+                    array(
+                        'label'=>'Rubro',
+                        'value'=>$model->rubroFk->rubro,
+                    ),
+                    array(
+                        'label'=>'Jornada',
+                        'value'=>$model->jornadaFk->jornada,
+                    ),
+                    'remuneracion',
+            ),
+  )); ?>

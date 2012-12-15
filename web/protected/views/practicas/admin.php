@@ -12,51 +12,90 @@ $this->menu=array(
 	array('label'=>'Create Practicas', 'url'=>array('create')),
 );
 
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('practicas-grid', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
 ?>
 
-<h1>Manage Practicases</h1>
+<div class="menupanel">
+    
+    <?php 
+        $this->widget('bootstrap.widgets.TbMenu', array(
+        'type'=>'tabs', // '', 'tabs', 'pills' (or 'list')
+        'stacked'=>false, // whether this is a stacked menu
+        'items'=>array(
+            array('label'=>'Inicio', 'url'=>array('usuarios/paneladmin')),
+            array('label'=>'Datos Personales', 'items'=>array(
+                                        array('label'=>'Estados Civiles', 'url'=>array('estadosCiviles/admin')),
+                                        array('label'=>'Niveles de Estudios', 'url'=>array('nivelesEstudios/admin')),
+                                        array('label'=>'Regiones', 'url'=>array('regiones/admin')),
+                                        array('label'=>'Provincias', 'url'=>array('provincias/admin')),
+                                        array('label'=>'Comunas', 'url'=>array('comunas/admin')),
+            )),
+            array('label'=>'Universidad', 'items'=>array(
+                                        array('label'=>'Facultades', 'url'=>array('facultades/admin')),
+                                        array('label'=>'Departamentos', 'url'=>array('departamentos/admin')),
+                                        array('label'=>'Carreras', 'url'=>array('carreras/admin')),
+                                        array('label'=>'Docentes', 'url'=>array('docentes/admin')),
+                                        array('label'=>'Estudiantes', 'url'=>array('estudiantes/admin')),
+            )),
+            array('label'=>'Empresa', 'items'=>array(
+                                        array('label'=>'Rubros', 'url'=>array('rubros/admin')),
+                                        array('label'=>'Jornadas', 'url'=>array('jornadas/admin')),
+                                        array('label'=>'Tipos Contratos', 'url'=>array('tiposContratos/admin')),
+                                        array('label'=>'Empresas', 'url'=>array('empresas/admin')),
+                                        array('label'=>'Encargados Empresas', 'url'=>array('encargadosEmpresas/admin')),
+                                        array('label'=>'Encargados Practicas', 'url'=>array('encargadosPracticas/admin')),
+                                        array('label'=>'Evaluaciones Practicas', 'url'=>array('evaluacionesPracticas/admin')),
+            )),
+            array('label'=>'Ofertas Laborales', 'items'=>array(
+                                        array('label'=>'Ofertas Laborales', 'url'=>array('ofertasLaborales/admin')),
+                                        array('label'=>'Postulaciones', 'url'=>array('postulaciones/admin')),
+                                        array('label'=>'Practicas', 'url'=>array('practicas/admin')),
+                                        array('label'=>'Propietarios Ofertas Laborales', 'url'=>array('propietarioOferta/admin')),
+            ), 'active'=>true),
+            
+        ),
+        )); 
+    ?>
+    
+</div>
 
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
+<div class="contenidoPage">
+    <h1>Administración Rubros</h1>
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
+    <p>
+    Dentro de la busqueda, opcionalmente puede utilizar (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
+    o <b>=</b>) para filtrar en caso de valores numericos.
+    </p>
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'practicas-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
-		'pk',
-		'empresa_fk',
-		'encargado_fk',
-		'area_practica_fk',
-		'inicio_practica',
-		'fin_practica',
-		/*
-		'horario_fk',
-		'remuneracion',
-		*/
-		array(
-			'class'=>'CButtonColumn',
-		),
-	),
-)); ?>
+    <?php
+                $this->widget('bootstrap.widgets.TbGridView', array(
+                        'type'=>'striped bordered condensed',
+                        'dataProvider'=>$model->search(),
+                        'template'=>"{items}",
+                        'filter'=>$model,
+                        'template'=>"{items}\n{pager}",
+                        'columns'=>array(
+                        'pk',
+                        array(
+                            'header'=>'Empresa',
+                            'name'=>'empresa_fk',
+                            'filter'=> CHtml::listData(Empresas::model()->findAll(), 'pk', 'nombre'),
+                            'value' => '$data->empresaFk->nombre',
+                        ),
+                        array(
+                            'header'=>'Rubro',
+                            'name'=>'area_practica_fk',
+                            'filter'=> CHtml::listData(Rubros::model()->findAll(), 'pk', 'rubro'),
+                            'value' => '$data->rubroFk->rubro',
+                        ),
+                        'inicio_practica',
+                        'fin_practica',
+                         array(
+                                'header'=>'Detalle',
+                                'class'=>'bootstrap.widgets.TbButtonColumn',
+                                'template'=>'{view}{update}{delete}',
+                         ),   
+                         ),
+                         
+                    ));
+    ?>
+</div>

@@ -59,7 +59,7 @@ $this->menu=array(
 </div>
 
 <div class="contenidoPage">
-    <h1>Administración Rubros</h1>
+    <h1>Administración Ofertas Laborales</h1>
 
     <p>
     Dentro de la busqueda, opcionalmente puede utilizar (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
