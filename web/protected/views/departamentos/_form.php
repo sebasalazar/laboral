@@ -11,13 +11,16 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Los Campos con <span class="required">*</span> son obligatorios.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'facultad_fk'); ?>
-		<?php echo $form->textField($model,'facultad_fk'); ?>
+                <?php
+                        $datos = CHtml::listData(Facultades::model()->findAll(),'pk','facultad');
+                        echo $form->DropDownList($model,'facultad_fk',$datos, array('empty'=>'Seleccione una facultad', 'required'=>'required'));
+                ?>
 		<?php echo $form->error($model,'facultad_fk'); ?>
 	</div>
 

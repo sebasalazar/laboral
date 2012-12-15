@@ -29,13 +29,17 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'escuela_fk'); ?>
-		<?php echo $form->textField($model,'escuela_fk'); ?>
+                <?php
+                        $datos = CHtml::listData(Escuelas::model()->findAll(),'pk','escuela');
+                        echo $form->DropDownList($model,'escuela_fk',$datos, array('empty'=>'Seleccione una escuela', 'required'=>'required'));
+                ?>
 		<?php echo $form->error($model,'escuela_fk'); ?>
 	</div>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>
+        <div class="form-actions">
+            <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>'Enviar')); ?>
+            <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'reset', 'label'=>'Limpiar')); ?>
+        </div>
 
 <?php $this->endWidget(); ?>
 
