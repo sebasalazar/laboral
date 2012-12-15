@@ -65,6 +65,7 @@ class Empresas extends CActiveRecord
 		return array(
                     'comuna' => array(self::BELONGS_TO, 'Comunas', 'comuna_fk'),
                     'actividad' => array(self::BELONGS_TO, 'Rubros', 'actividad_fk'),
+                    'EncargadoEmpresa' => array(self::HAS_MANY, 'CargosAdm', 'empresa_fk'),
 		);
 	}
 

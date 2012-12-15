@@ -62,6 +62,8 @@ class EncargadosEmpresas extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+                    'empresa' => array(self::BELONGS_TO, 'empresaFk', 'empresa_fk'),
+                    'comuna' => array(self::BELONGS_TO, 'comunaFk', 'comuna_fk'),                    
 		);
 	}
 
