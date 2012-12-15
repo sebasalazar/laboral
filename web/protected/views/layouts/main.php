@@ -99,7 +99,7 @@
                                         array('label'=>'Perfil', 'url'=>array('empresas/perfil', 'id'=>Yii::app()->user->name)),
                                         array('label'=>'Cambiar Rol', 'url'=>'#'),
                                         '---',
-                                        array('label'=>'Logout', 'url'=>array('site/logout')),
+                                        array('label'=>'Cerrar Sesión', 'url'=>array('site/logout')),
                                     ), 'visible'=>!Yii::app()->user->isGuest),
                                 ),
                             ),
