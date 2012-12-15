@@ -117,7 +117,8 @@ class EmpresasController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		$this->loadModel((int) $id)->delete();
+                $usuarios = Usuarios::model()->deleteByPk(Yii::app()->user->getModelUsuarioEmpresaId($id)->rut);
+		$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))

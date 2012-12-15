@@ -83,6 +83,7 @@
                                         array('label'=>'Modificar Practica', 'url'=>'#'),
                                         array('label'=>'Eliminar Practica', 'url'=>'#'),
                                         '---',
+                                        array('label'=>'Ver Evaluaciones', 'url'=>array('/evaluacionesPracticas/index')),
                                         array('label'=>'Evaluar Practicas', 'url'=>array('/evaluacionesPracticas/create')),
                                         //array('label'=>'Busqueda Avanzada', 'url'=>'#'),
                                     )),

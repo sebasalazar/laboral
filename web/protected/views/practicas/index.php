@@ -5,11 +5,11 @@
 $this->breadcrumbs=array(
 	'Practicas',
 );
-
+/*
 $this->menu=array(
 	array('label'=>'Create Practicas', 'url'=>array('create')),
 	array('label'=>'Manage Practicas', 'url'=>array('admin')),
-);
+);*/
 ?>
 
 <h1>Practicas</h1>

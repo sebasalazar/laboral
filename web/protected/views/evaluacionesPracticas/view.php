@@ -11,7 +11,7 @@ $this->menu=array(
 	array('label'=>'Listar Evaluaciones de practicas', 'url'=>array('index')),
 	//array('label'=>'Crear EvaluacionesPracticas', 'url'=>array('create')),
 	array('label'=>'Modificar la Evaluacion de practica', 'url'=>array('update', 'id'=>$model->pk)),
-	array('label'=>'Eliminar la  Evaluacion de practicas', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'¿Está seguro que quiere eliminar esta evaluación?')),
+	array('label'=>'Eliminar la  Evaluacion de practicas', 'url'=>'practicas/index', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'¿Está seguro que quiere eliminar esta evaluación?')),
 	//array('label'=>'Manage EvaluacionesPracticas', 'url'=>array('admin')),
         array('label'=>'Generar PDF', 'url'=>array('generarPdf', 'id'=>$model->pk)),
 );
