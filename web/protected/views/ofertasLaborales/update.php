@@ -17,5 +17,4 @@ $this->menu=array(
 ?>
 
 <h1>Update OfertasLaborales <?php echo $model->pk; ?></h1>
-
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

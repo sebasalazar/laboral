@@ -35,13 +35,15 @@ if(Yii::app()->user->getModel(Yii::app()->user->id) != null)
     }
 }
 ?>
-
+<div class="titulo">
 <h1>Detalle Oferta Laboral</h1>
-
-
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
+</div>
+<br />
+<div class="centrar1">
+<?php 
+        $this->widget('bootstrap.widgets.TbDetailView', array(
+            'data'=>$model,
+            'attributes'=>array(
                 array(
                    'label'=>'Fecha Publicación: ',
                    'value'=>Yii::app()->dateFormatter->format("d MMMM y",strtotime($model->fecha_publicacion)),
@@ -55,7 +57,7 @@ if(Yii::app()->user->getModel(Yii::app()->user->id) != null)
                    'value'=>$model->rubroFk->rubro,
                  ),
 		array(
-                   'label'=>'Nivel Estudios Solicitados: ',
+                   'label'=>'Nivel Estudios: ',
                    'value'=>$model->nivelEstudioFk->estudios,
                  ),
                 array(
@@ -91,12 +93,10 @@ if(Yii::app()->user->getModel(Yii::app()->user->id) != null)
                    'label'=>'Beneficios: ',
                    'value'=> $model->contratoFk->contrato,
                  ),
-	),
-            
-)
-        );
+            ),
+        ));
 ?>
-
+</div>
 <?php 
 
 if($tipo == 1){

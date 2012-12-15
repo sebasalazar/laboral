@@ -70,15 +70,22 @@ class OfertasLaboralesController extends Controller
                 
 		if(isset($_POST['OfertasLaborales']))
 		{
-                    $valor =$_POST['OfertasLaborales'];
+                        $propietario = new PropietarioOferta;
+                        $valor =$_POST['OfertasLaborales'];
 			$model->attributes=$valor;
                         $model->fecha_publicacion = date("Y-m-d H:i:s");
                         $model->activo = 1;
                         WebUser::loguear(__METHOD__ . " Listado: " . count($valor));
                         WebUser::loguear(__METHOD__ . " " . print_r($valor, false));
-			if($model->save() && $model->validate())
-                            Yii::app()->user->setFlash('sucess', "");
-				$this->redirect(array('view','id'=>$model->pk));
+			if($model->save() && $model->validate()){
+                            $propietario->rut = Yii::app()->user->name;
+                            $propietario->oferta_laboral_fk = $model->pk;
+                            if($propietario->save())
+                            {
+                                Yii::app()->user->setFlash('sucess', "");
+                                $this->redirect(array('view','id'=>$model->pk));
+                            }
+                        }
 		}
 
 		$this->render('create',array(
@@ -93,22 +100,17 @@ class OfertasLaboralesController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel((int) $id);
+                    $model=$this->loadModel((int) $id);
+                    if(isset($_POST['ofertasLaborales']))
+                    {
+                            $model->attributes=$_POST['ofertasLaborales'];
+                            if($model->save())
+                                    $this->redirect(array('view','id'=>$model->pk));
+                    }
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['OfertasLaborales']))
-		{
-			$model->attributes=$_POST['OfertasLaborales'];
-                        WebUser::loguear(__METHOD__ . " " . print_r($model->attributes, false));
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->pk));
-		}
-
-		$this->render('update',array(
-			'model'=>$model,
-		));
+                    $this->render('update',array(
+                            'model'=>$model,
+                    ));
 	}
 
 	/**

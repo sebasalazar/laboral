@@ -6,7 +6,7 @@
  * The followings are the available columns in table 'propietario_oferta':
  * @property integer $pk
  * @property integer $oferta_laboral_fk
- * @property integer $rut_propietario
+ * @property integer $rut
  */
 class PropietarioOferta extends CActiveRecord
 {
@@ -36,11 +36,11 @@ class PropietarioOferta extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('oferta_laboral_fk, rut_propietario', 'required'),
-			array('oferta_laboral_fk, rut_propietario', 'numerical', 'integerOnly'=>true),
+			array('oferta_laboral_fk, rut', 'required'),
+			array('oferta_laboral_fk, rut', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('pk, oferta_laboral_fk, rut_propietario', 'safe', 'on'=>'search'),
+			array('pk, oferta_laboral_fk, rut', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -63,7 +63,7 @@ class PropietarioOferta extends CActiveRecord
 		return array(
 			'pk' => 'Pk',
 			'oferta_laboral_fk' => 'Oferta Laboral Fk',
-			'rut_propietario' => 'Rut Propietario',
+			'rut' => 'Rut Propietario',
 		);
 	}
 
@@ -80,7 +80,7 @@ class PropietarioOferta extends CActiveRecord
 
 		$criteria->compare('pk',$this->pk);
 		$criteria->compare('oferta_laboral_fk',$this->oferta_laboral_fk);
-		$criteria->compare('rut_propietario',$this->rut_propietario);
+		$criteria->compare('rut',$this->rut);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -220,3 +220,7 @@ a:hover{
 [class*="span"] {
     margin-left: 0;
 }
+
+#yw1 a{
+    color: #999;
+}

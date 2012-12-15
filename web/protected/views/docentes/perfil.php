@@ -3,6 +3,7 @@
 $this->menu=array(
 	array('label'=>'Actualizar datos personales', 'url'=>array('update', 'id'=>Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk)),
 	array('label'=>'Publicar Ofertas de Trabajo', 'url'=>array('ofertasLaborales/create')),
+        array('label'=>'Mis Ofertas Laborales', 'url'=>array('docentes/pupdate', 'rut'=>Yii::app()->user->name)),
 );
 
 ?>
@@ -18,7 +19,6 @@ $this->menu=array(
 		array(
                     'label'=>'Fecha Nacimiento',
                     'value'=>Yii::app()->dateFormatter->format("d MMMM y",strtotime($model->fecha_nacimiento)),
-                    
                 ),
 		'genero',
 		'direccion',

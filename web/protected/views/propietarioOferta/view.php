@@ -23,6 +23,6 @@ $this->menu=array(
 	'attributes'=>array(
 		'pk',
 		'oferta_laboral_fk',
-		'rut_propietario',
+		'rut',
 	),
 )); ?>

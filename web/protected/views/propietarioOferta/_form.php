@@ -22,9 +22,9 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'rut_propietario'); ?>
-		<?php echo $form->textField($model,'rut_propietario'); ?>
-		<?php echo $form->error($model,'rut_propietario'); ?>
+		<?php echo $form->labelEx($model,'rut'); ?>
+		<?php echo $form->textField($model,'rut'); ?>
+		<?php echo $form->error($model,'rut'); ?>
 	</div>
 
 	<div class="row buttons">
