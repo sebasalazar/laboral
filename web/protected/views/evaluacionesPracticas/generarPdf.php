@@ -9,10 +9,17 @@ $pdf = Yii::createComponent('application.extensions.MPDF54.mpdf');
 $html='
 <link rel="stylesheet" type="text/css" href="'.Yii::app()->request->baseUrl.'/css/pdf.css" />
 
-<table id="yw0" class="detail-view2">
-<tr class="principal">
-<td colspan="2" align="center"><b>Evaluacion de Practicas</b></td>
+<div class="encabezado">
+    <h2>Universidad Tecnológica Metropolitana</h2>
+    <h3>Facultad de Ingeniería</h3>
+    <h4>Departamento de Computación e Informática</h4>
+    <br/><br/>
+</div>
+<table>
 <tr>
+    <td>Evaluacion de Practica</td>
+    <br/><br/><br/>
+</tr>
     <tr class="odd"><td> <b>Nombre: </b> </td><td> '.$model->estudiantes->nombres.'</td></tr>
     <tr class="odd"><td> <b>Apellidos: </b> </td><td> '.$model->estudiantes->apellidos.'</td></tr>
     <tr class="odd"><td> <b>Encargado de Practica: </b> </td><td> '.$model->EncargadosPracticas->nombre_encargado.'</td></tr>
@@ -27,6 +34,16 @@ $html='
     <tr class="odd"><td> <b>Iniciativa, creatividad y capacidad de improvisación: </b> </td><td> '.$model->iniciativa_creativi_improvi.'</td></tr>
 </table>
 
+<br/>
+<p>Observaciones: ________________________________________________________________________________________</p>
+<p>________________________________________________________________________________________________________</p>
+<p>________________________________________________________________________________________________________</p>
+<p>________________________________________________________________________________________________________</p>
+<br/><br/>
+<p>Fecha: ______________________</p>
+<br/><br/>
+<p class="firma">_________________________________</p>
+<p class="firma">Firma de Profesional Guia </p>
 ';
 
 $mpdf=new mPDF('win-1252','LETTER','','',15,15,25,12,5,7);
