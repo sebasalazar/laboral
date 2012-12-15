@@ -42,5 +42,5 @@
     
 </div>
 <div class="contenidoPage">
-    hola mundo
+    hola mundo!
 </div>
