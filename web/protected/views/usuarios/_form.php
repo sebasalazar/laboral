@@ -240,7 +240,7 @@ $("#content > ul").tabs();
                     <div class="contenido">
                         <div class="columna">
                             <?php echo $form->labelEx(Empresas::model(),'Direccion: <span class="required">*</span>'); ?>
-                            <?php echo $form->textField(Empresas::model(),'direccion',array('size'=>60,'maxlength'=>255)); ?>
+                            <?php echo $form->textField(Empresas::model(),'direccion',array('size'=>60,'maxlength'=>255, 'required'=>'required')); ?>
                             <?php echo $form->error(Empresas::model(),'direccion'); ?>
                         </div>
                     </div>    
@@ -252,7 +252,7 @@ $("#content > ul").tabs();
                             <?php echo $form->labelEx(Empresas::model(),'Comuna: <span class="required">*</span>'); ?>
                             <?php
                                 $datos = CHtml::listData(Comunas::model()->findAll(),'pk','nombre');
-                                echo $form->DropDownList(Empresas::model(),'comuna_fk',$datos,array('empty'=>'Seleccione una Comuna'));
+                                echo $form->DropDownList(Empresas::model(),'comuna_fk',$datos,array('empty'=>'Seleccione una Comuna', 'required'=>'required'));
                             ?>
                             <?php echo $form->error(Empresas::model(),'comuna_fk'); ?>
                         </div>
@@ -264,7 +264,7 @@ $("#content > ul").tabs();
                     <div class="contenido">
                         <div class="columna">
                             <?php echo $form->labelEx(Empresas::model(),'Código Postal: <span class="required">*</span>'); ?>
-                            <?php echo $form->textField(Empresas::model(),'codigo_postal'); ?>
+                            <?php echo $form->textField(Empresas::model(),'codigo_postal', array('required'=>'required')); ?>
                             <?php echo $form->error(Empresas::model(),'codigo_postal'); ?>
                         </div>
                     </div>
@@ -277,7 +277,7 @@ $("#content > ul").tabs();
                             <p class="hint">
                                 Nota: Teléfono fijo de la Empresa.
                             </p>
-                            <?php echo $form->textField(Empresas::model(),'telefono',array('size'=>50,'maxlength'=>50)); ?>
+                            <?php echo $form->textField(Empresas::model(),'telefono',array('size'=>50,'maxlength'=>50, 'required'=>'required')); ?>
                             <?php echo $form->error(Empresas::model(),'telefono'); ?>
                         </div>
                     </div>
@@ -290,7 +290,7 @@ $("#content > ul").tabs();
                             <p class="hint">
                                 Ejemplo: empresa@empresa.cl
                             </p>
-                            <?php echo $form->textField(Empresas::model(),'email',array('size'=>60,'maxlength'=>255)); ?>
+                            <?php echo $form->textField(Empresas::model(),'email',array('size'=>60,'maxlength'=>255, 'required'=>'required')); ?>
                             <?php echo $form->error(Empresas::model(),'email'); ?>
                         </div>
                     </div>
@@ -302,7 +302,7 @@ $("#content > ul").tabs();
                             <?php echo $form->labelEx(Empresas::model(),'Actividad de la Empresa: <span class="required">*</span>'); ?>
                             <?php
                                 $datos = CHtml::listData(Rubros::model()->findAll(),'pk','rubro');
-                                 echo $form->DropDownList(Empresas::model(),'actividad_fk',$datos,array('empty'=>'Seleccione un área'));
+                                 echo $form->DropDownList(Empresas::model(),'actividad_fk',$datos,array('empty'=>'Seleccione un área', 'required'=>'required'));
                             ?>
                             <?php echo $form->error(Empresas::model(),'actividad_fk'); ?>
                         </div>
@@ -316,7 +316,7 @@ $("#content > ul").tabs();
                             <p class="hint">
                                 Ejemplo: Empresa dedicada a la venta de dispositivos electrónicos.
                             </p>
-                            <?php echo $form->textArea(Empresas::model(),'descripcion_negocio',array('size'=>60,'maxlength'=>255)); ?>
+                            <?php echo $form->textArea(Empresas::model(),'descripcion_negocio',array('size'=>60,'maxlength'=>255, 'required'=>'required')); ?>
                             <?php echo $form->error(Empresas::model(),'descripcion_negocio'); ?>
                         </div>
                     </div>
@@ -329,7 +329,7 @@ $("#content > ul").tabs();
                             <p class="hint">
                                 Ejemplo: www.empresa1.cl
                             </p>
-                            <?php echo $form->textField(Empresas::model(),'web',array('size'=>60,'maxlength'=>255)); ?>
+                            <?php echo $form->textField(Empresas::model(),'web',array('size'=>60,'maxlength'=>255, 'required'=>'required')); ?>
                             <?php echo $form->error(Empresas::model(),'web'); ?>
                         </div>
                     </div>
@@ -447,7 +447,7 @@ $("#content > ul").tabs();
                         <?php echo $form->DropDownList(Escuelas::model(),'pk',$datos, array('ajax'=>array(
                                                                                                     'type'=>'POST',
                                                                                                     'url'=>CController::createurl('Carreras/SelectCarrera'),
-                                                                                                    'update'=>'#escuelaCombo',
+                                                                                                    'update'=>'#carrerafk',
                                                                                                      ),'prompt' => 'Selecione...')); ?>
                         <?php echo $form->error(Facultades::model(),'pk'); ?>
                 </div>
@@ -455,7 +455,7 @@ $("#content > ul").tabs();
                 <div class="row">
                         <?php echo $form->labelEx(Estudiantes::model(),'Carrera <span class="required">*</span>'); ?>
                         <?php //$datos = CHtml::listData(Carreras::model()->findAll(),'pk','nombre_carrera'); ?>
-                        <?php echo $form->DropDownList(Estudiantes::model(),'carrera_fk',array(), array('id'=>'escuelaCombo', 'name' => 'escuelaCombo','empty'=>'Seleccione...', 'required'=>'required')); ?>
+                        <?php echo $form->DropDownList(Estudiantes::model(),'carrera_fk',array(), array('id'=>'carrerafk', 'name' => 'carrerafk', 'required'=>'required', 'prompt'=>'Seleccione...')); ?>
                         <?php echo $form->error(Estudiantes::model(),'carrera_fk'); ?>
                 </div>
         

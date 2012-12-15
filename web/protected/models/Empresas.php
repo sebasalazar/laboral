@@ -47,7 +47,7 @@ class Empresas extends CActiveRecord
 			array('rut, nombre, direccion, comuna_fk, codigo_postal, telefono, actividad_fk, descripcion_negocio', 'required'),
 			array('rut, comuna_fk, codigo_postal, actividad_fk', 'numerical', 'integerOnly'=>true),
 			array('nombre, direccion, email, descripcion_negocio, web', 'length', 'max'=>255),
-			array('telefono', 'length', 'max'=>50),
+			array('telefono', 'length', 'min'=>8, 'max'=>8),
                         array('email','email'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
@@ -63,6 +63,8 @@ class Empresas extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+                    'comuna' => array(self::BELONGS_TO, 'Comunas', 'comuna_fk'),
+                    'actividad' => array(self::BELONGS_TO, 'Rubros', 'actividad_fk'),
 		);
 	}
 

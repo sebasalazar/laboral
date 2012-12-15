@@ -32,11 +32,11 @@ class EmpresasController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('update','perfil','delete'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete','create'),
 				'users'=>array(Yii::app()->user->getAdmin()),
 			),
 			array('deny',  // deny all users
@@ -86,6 +86,8 @@ class EmpresasController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+            if(Yii::app()->user->getModelUsuarioCompletoId($id)->rut == Yii::app()->user->name)
+            {
 		$model=$this->loadModel((int) $id);
 
 		// Uncomment the following line if AJAX validation is needed
@@ -101,6 +103,11 @@ class EmpresasController extends Controller
 		$this->render('update',array(
 			'model'=>$model,
 		));
+            }
+            else
+            {
+                    throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
+            }
 	}
 
 	/**
@@ -152,10 +159,22 @@ class EmpresasController extends Controller
 	{
 		$model=Empresas::model()->findByPk((int) $id);
 		if($model===null)
-			throw new CHttpException(404,'The requested page does not exist.');
+			throw new CHttpException(404,'La página a la cual intenta accesar no existe.');
 		return $model;
 	}
 
+        
+        public function actionPerfil($id)
+        {
+            $model= Empresas::model()->findByPk(Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk);
+            if($id == Yii::app()->user->name)
+                $this->render('perfil', array(
+                        'model'=>$model
+                ));
+            else
+                throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
+        }
+        
 	/**
 	 * Performs the AJAX validation.
 	 * @param CModel the model to be validated

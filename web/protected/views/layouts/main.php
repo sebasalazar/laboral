@@ -57,46 +57,54 @@
             $tipo = Yii::app()->user->getTipoUsuario(Yii::app()->user->name);
             if($tipo == 2)
             {
-                echo "<div id='btn-toolbar'>";
-                        $this->widget('bootstrap.widgets.TbButton', array(
-                            'label'=>'Inicio','url'=>array('site/index','visible'=>!Yii::app()->user->isGuest),
-                            'type'=>'info', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
-                            'size'=>'null', // null, 'large', 'small' or 'mini'
-                        ));
-                        $this->widget('bootstrap.widgets.TbButton', array(
-                            'label'=>'Ofertas de Trabajo','url'=>array('/ofertasLaborales/index'),
-                            'type'=>'primary', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
-                            'size'=>'null', // null, 'large', 'small' or 'mini'
-                        ));
-                        $this->widget('bootstrap.widgets.TbButton', array(
-                            'label'=>'Encargado de Empresa','url'=>array('/encargadosEmpresas/create'),
-                            'type'=>'primary', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
-                            'size'=>'null', // null, 'large', 'small' or 'mini'
-                        ));
-                        $this->widget('bootstrap.widgets.TbButton', array(
-                            'label'=>'Encargado de Practica','url'=>array('/encargadosPracticas/create'),
-                            'type'=>'primary', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
-                            'size'=>'null', // null, 'large', 'small' or 'mini'
-                        ));
-                        $this->widget('bootstrap.widgets.TbButtonGroup', array(
-                            'type'=>'primary', // '', 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
-                                'buttons'=>array(
+                $this->widget('bootstrap.widgets.TbNavbar', array(
+                        'type'=>'inverse', // null or 'inverse'
+                        'brand'=>'Bolsa Laboral',
+                        'brandUrl'=>array('site/index'),
+                        'collapse'=>true, // requires bootstrap-responsive.css
+                        'items'=>array(
+                            array(
+                                'class'=>'bootstrap.widgets.TbMenu',
+                                'items'=>array(
+                                    array('label'=>'Inicio', 'url'=>array('site/index')),
+                                    array('label'=>'Ofertas Laborales', 'url'=>array('/ofertasLaborales/index'), 'items'=>array(
+                                        array('label'=>'Lista Ofertas Laborales', 'url'=>array('/ofertasLaborales/index')),
+                                        array('label'=>'Publicar una Oferta Laboral', 'url'=>array('/ofertasLaborales/create')),
+                                        array('label'=>'Busqueda Avanzada', 'url'=>'#'),
+                                    )),
+                                    array('label'=>'Encargados', 'items'=>array(
+                                        array('label'=>'Crear encargado de Empresa', 'url'=>array('/encargadosEmpresas/create')),
+                                        array('label'=>'Crear encargado de Practica', 'url'=>array('/encargadosPracticas/create')),
+                                        //array('label'=>'Busqueda Avanzada', 'url'=>'#'),
+                                    )),
                                     array('label'=>'Practicas', 'items'=>array(
-                                        array('label'=>'Ver Practica', 'url'=>array('/practicas/index')),
-                                        array('label'=>'Crear Practica', 'url'=>array('/practicas/create')),
+                                        array('label'=>'Ver Practicas', 'url'=>array('/practicas/index')),
+                                        array('label'=>'Crear Practicas', 'url'=>array('/practicas/create')),
                                         array('label'=>'Modificar Practica', 'url'=>'#'),
                                         array('label'=>'Eliminar Practica', 'url'=>'#'),
                                         '---',
-                                        array('label'=>'Evaluar Practica', 'url'=>array('/evaluacionesPracticas/create')),
+                                        array('label'=>'Evaluar Practicas', 'url'=>array('/evaluacionesPracticas/create')),
+                                        //array('label'=>'Busqueda Avanzada', 'url'=>'#'),
                                     )),
+                                    array('label'=>'Contacto', 'url'=>array('site/contact')),
                                 ),
-                            ));
-                        $this->widget('bootstrap.widgets.TbButton', array(
-                            'label'=>'Log Out','url'=>array('/site/logout', 'visible'=>!Yii::app()->user->isGuest),
-                            'type'=>'warning', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
-                            'size'=>'null', // null, 'large', 'small' or 'mini'
-                        ));
-                echo '</div><!-- mainmenu -->';
+                            ),
+                            array(
+                                'class'=>'bootstrap.widgets.TbMenu',
+                                'htmlOptions'=>array('class'=>'pull-right'),
+                                'items'=>array(
+                                    '---',
+                                    array('label'=>'Iniciar Sesion', 'url'=>array('site/login'), 'visible'=>Yii::app()->user->isGuest),
+                                    array('label'=>Yii::app()->user->name, 'url'=>'#', 'items'=>array(
+                                        array('label'=>'Perfil', 'url'=>array('empresas/perfil', 'id'=>Yii::app()->user->name)),
+                                        array('label'=>'Cambiar Rol', 'url'=>'#'),
+                                        '---',
+                                        array('label'=>'Logout', 'url'=>array('site/logout')),
+                                    ), 'visible'=>!Yii::app()->user->isGuest),
+                                ),
+                            ),
+                        ),
+                    ));
              }
              elseif($tipo == 3)
              {

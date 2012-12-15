@@ -68,16 +68,15 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=bollaboral',
 
 		/**/
-            /*
-		'db'=>array(
+            
+		/*'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=laboral',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => '1234',
 			'charset' => 'utf8',
-		),
-            */
-
+		),*/
+            
         //Configuracion para postgresql
          'db'=>array(
          'connectionString' => 'pgsql:host=localhost;dbname=laboraldb',
