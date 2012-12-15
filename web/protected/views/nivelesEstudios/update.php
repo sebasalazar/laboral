@@ -61,7 +61,7 @@ $this->menu=array(
 </div>
 
 <div class="contenidoPage">
-    <h1>Update NivelesEstudios <?php echo $model->pk; ?></h1>
+    <h1>Actualizar Nivel Estudio <?php echo $model->estudios; ?></h1>
 
     <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
 </div>
