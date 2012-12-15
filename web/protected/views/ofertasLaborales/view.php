@@ -28,7 +28,7 @@ if(Yii::app()->user->getModel(Yii::app()->user->id) != null)
     {
         $this->menu=array(
                 array('label'=>'Lista Ofertas Laborales', 'url'=>array('index')),
-                array('label'=>'Mis postulaciones', 'url'=>array('postulaciones/mispostulaciones')),
+                array('label'=>'Mis postulaciones', 'url'=>array('postulaciones/mispostulaciones','estudiante_fk'=>Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk)),
             
         );
 

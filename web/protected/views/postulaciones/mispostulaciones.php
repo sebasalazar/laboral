@@ -58,7 +58,8 @@ $this->breadcrumbs=array(
                      array(
                           'header'=>'Nivel de estudios Deseable',
                           'name'=>'oferta_laboral_fk',
-                          'filter'=> CHtml::listData(NivelesEstudios::model()->findAll(), 'pk', 'estudios'),
+                          'filter'=>false,
+                         // 'filter'=> CHtml::listData(NivelesEstudios::model()->findAll(), 'pk', 'estudios'),
                           'value' => '$data->ofertaLaboralFk->nivelEstudioFk->estudios',
                       ),
                      array(
