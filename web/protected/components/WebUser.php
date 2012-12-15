@@ -62,9 +62,26 @@ class WebUser extends CWebUser {
             $rol[$i] = $resto;
             $i = $i - 1;
         }
-        return $rol;
+        $roles['admin'] = $rol[0];
+        $roles['docente'] = $rol[1];
+        $roles['empresa'] = $rol[2];
+        $roles['estudiante'] = $rol[3];
+        return $roles;
     }
 
+    public function isAdmin(){
+        $usuario = Usuarios::model()->findByPk(Yii::app()->user->name);
+        $rol = $this->roles($usuario->roles);
+        if($rol['admin'] == 1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
     public function getTipoUsuario($rut) {
         $docente = Docentes::model()->findByAttributes(array('rut' => $rut));
         if ($docente != null) {

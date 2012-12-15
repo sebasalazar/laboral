@@ -18,6 +18,19 @@
 
 }
 
+.menupanel{
+    display: block;
+    margin: 40px auto 0 auto;
+    width: 90%;
+}
+
+.contenidoPage{
+    display: block;
+    width: 85%;
+    margin: 0 auto 0 auto;
+    margin-top: 40px;
+}
+
 .grillac{
     width: 90%;
     display: block;
@@ -119,7 +132,6 @@
 
 a{
     text-decoration: none;
-    color: #FFFFFF;
 }
 
 thead th {

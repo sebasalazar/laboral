@@ -38,14 +38,6 @@
                                 array('label'=>'Contacto', 'url'=>array('site/contact')),
                             ),
                         ),
-                        array(
-                            'class'=>'bootstrap.widgets.TbMenu',
-                            'htmlOptions'=>array('class'=>'pull-right'),
-                            'items'=>array(
-                                '---',
-                                array('label'=>'Iniciar Sesion', 'url'=>array('site/login'))
-                            ),
-                        ),
                     ),
                 ));
         }
@@ -136,7 +128,7 @@
                                         array('label'=>'Perfil', 'url'=>array('docentes/perfil', 'id'=>  Yii::app()->user->name)),
                                         array('label'=>'Cambiar Rol', 'url'=>'#'),
                                         '---',
-                                        array('label'=>'Administrar', 'url'=>'#', 'visible'=>Yii::app()->user->isAdmin()),
+                                        array('label'=>'Administrar', 'url'=>array('usuarios/paneladmin'), 'visible'=>Yii::app()->user->isAdmin()),
                                         array('label'=>'Cerrar Sesión', 'url'=>array('site/logout')),
                                     ), 'visible'=>!Yii::app()->user->isGuest),
                                 ),

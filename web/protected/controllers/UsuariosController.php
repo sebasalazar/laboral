@@ -36,7 +36,7 @@ class UsuariosController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete','paneladmin'),
 				'users'=>array(Yii::app()->user->getAdmin()),
 			),
 			array('deny',  // deny all users
@@ -186,6 +186,11 @@ class UsuariosController extends Controller
 			'model'=>$model,
 		));
 	}
+        
+        public function actionPaneladmin(){
+            $this->layout = 'column1';
+            $this->render('paneladmin');
+        }
         
         public function actionPcreate()
         {
