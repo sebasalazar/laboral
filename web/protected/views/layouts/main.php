@@ -67,9 +67,9 @@
                                 'class'=>'bootstrap.widgets.TbMenu',
                                 'items'=>array(
                                     array('label'=>'Inicio', 'url'=>array('site/index')),
-                                    array('label'=>'Ofertas Laborales', 'url'=>array('ofertasLaborales/index'), 'items'=>array(
-                                        array('label'=>'Lista Ofertas Laborales', 'url'=>array('ofertasLaborales/index')),
-                                        array('label'=>'Publicar una Oferta Laboral', 'url'=>array('ofertasLaborales/create')),
+                                    array('label'=>'Ofertas Laborales', 'url'=>array('/ofertasLaborales/index'), 'items'=>array(
+                                        array('label'=>'Lista Ofertas Laborales', 'url'=>array('/ofertasLaborales/index')),
+                                        array('label'=>'Publicar una Oferta Laboral', 'url'=>array('/ofertasLaborales/create')),
                                         array('label'=>'Busqueda Avanzada', 'url'=>'#'),
                                     )),
                                     array('label'=>'Encargados', 'items'=>array(
@@ -82,6 +82,7 @@
                                         array('label'=>'Crear Practicas', 'url'=>array('/practicas/create')),
                                         array('label'=>'Modificar Practica', 'url'=>'#'),
                                         array('label'=>'Eliminar Practica', 'url'=>'#'),
+                                        '---',
                                         array('label'=>'Evaluar Practicas', 'url'=>array('/evaluacionesPracticas/create')),
                                         //array('label'=>'Busqueda Avanzada', 'url'=>'#'),
                                     )),
@@ -95,10 +96,10 @@
                                     '---',
                                     array('label'=>'Iniciar Sesion', 'url'=>array('site/login'), 'visible'=>Yii::app()->user->isGuest),
                                     array('label'=>Yii::app()->user->name, 'url'=>'#', 'items'=>array(
-                                        array('label'=>'Perfil', 'url'=>array('docentes/perfil', 'id'=>  Yii::app()->user->name)),
+                                        array('label'=>'Perfil', 'url'=>array('empresas/perfil', 'id'=>Yii::app()->user->name)),
                                         array('label'=>'Cambiar Rol', 'url'=>'#'),
                                         '---',
-                                        array('label'=>'Logout', 'url'=>array('site/logout')),
+                                        array('label'=>'Cerrar Sesión', 'url'=>array('site/logout')),
                                     ), 'visible'=>!Yii::app()->user->isGuest),
                                 ),
                             ),
@@ -135,7 +136,7 @@
                                         array('label'=>'Perfil', 'url'=>array('docentes/perfil', 'id'=>  Yii::app()->user->name)),
                                         array('label'=>'Cambiar Rol', 'url'=>'#'),
                                         '---',
-                                        array('label'=>'Logout', 'url'=>array('site/logout')),
+                                        array('label'=>'Cerrar Sesión', 'url'=>array('site/logout')),
                                     ), 'visible'=>!Yii::app()->user->isGuest),
                                 ),
                             ),
@@ -171,7 +172,7 @@
                                         array('label'=>'Perfil', 'url'=>array('estudiantes/perfil', 'id'=>  Yii::app()->user->name)),
                                         array('label'=>'Cambiar Rol', 'url'=>'#'),
                                         '---',
-                                        array('label'=>'Logout', 'url'=>array('site/logout')),
+                                        array('label'=>'Cerrar Sesión', 'url'=>array('site/logout')),
                                     ), 'visible'=>!Yii::app()->user->isGuest),
                             ),
                         ),
@@ -213,7 +214,7 @@
                     </div>
                     <div class="columna columna_1">
                         <br />
-                                            <p class="text-footer">Derechos de Autor &copy; <?php echo date('Y'); ?> por UTEM.<br/>
+                                            <p class="text-footer">Derechos de Autor &copy; <?php echo date('Y'); ?> por <?php echo CHtml::link('UTEM','http://www.utem.cl'); ?>.<br/>
                                             Todos los derechos reservados.<br/>
                                             <?php echo CHtml::link('Acerca del Sitio',array('/site/page', 'view'=>'about'));?>
                                             </p>

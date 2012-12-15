@@ -13,23 +13,6 @@ class WebUser extends CWebUser {
         $docente = Docentes::model()->findByPk($id);
         return $docente->rut;
     }
-    
-    public function getModelUsuarioCompletoId($id) {
-        $docente = Docentes::model()->model()->findByPK($id);
-        if ($docente != null)
-            return $docente;
-        else {
-            $empresa = Empresas::model()->model()->findByPK($id);
-            if ($empresa != null) {
-                return $empresa;
-            } else {
-                $estudiante = Estudiantes::model()->model()->findByPK($id);
-                if ($estudiante != null) {
-                    return $estudiante;
-                }
-            }
-        }
-    }
 
     public function getModelUsuarioEstudianteId($id) {
         $estudiante = Estudiantes::model()->model()->findByPK($id);

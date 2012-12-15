@@ -56,7 +56,9 @@
 }
 
 .columna_c_1{
-    width: 100%;
+    width: 90%;
+    display: block;
+    margin: 0 auto 0 auto;
     height: 500px;
 }
 
@@ -171,7 +173,7 @@ a:hover{
     margin: 0 auto 0 auto;
     border: 1px solid black;
     width: 90%;
-    height: 450px;
+    height: 200px;
     border-color: #DDD;
     border-radius: 0px 0px 5px 5px;
     padding: 3px;
@@ -204,7 +206,8 @@ a:hover{
 .con4{
    display: block;
     margin: 0 auto 0 auto;
-    width: 90%;
+    width: 100%;
+    border: 1px solid black;
 }
 
 .form-actions{
@@ -219,4 +222,8 @@ a:hover{
 
 [class*="span"] {
     margin-left: 0;
+}
+
+#yw1 a{
+    color: #999;
 }

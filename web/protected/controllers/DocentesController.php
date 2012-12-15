@@ -28,15 +28,15 @@ class DocentesController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','create'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('update','perfil'),
+				'actions'=>array('update','perfil','pupdate'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','create'),
+				'actions'=>array('admin','delete'),
 				'users'=>array(Yii::app()->user->getAdmin()),
 			),
 			array('deny',  // deny all users
@@ -86,7 +86,7 @@ class DocentesController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-            if(Yii::app()->user->getModelUsuarioCompletoId($id)->rut == Yii::app()->user->name)
+            if(Yii::app()->user->rutDocente($id) == Yii::app()->user->name)
             {
                     $model=$this->loadModel((int) $id);
                     if(isset($_POST['Docentes']))
@@ -137,8 +137,24 @@ class DocentesController extends Controller
 			'model'=>$model,
 		));
 	}
+        
+        public function actionPupdate($rut){
+            if($rut == Yii::app()->user->name)
+            {
+                $ofertas = new OfertasLaborales('Search');
+                $ofertas->unsetAttributes();  // clear any default values
+		if(isset($_GET['OfertasLaborales']))
+			$ofertas->attributes=$_GET['OfertasLaborales'];
+                $this->render('pupdate', array('ofertas'=>$ofertas));
+            }
+            else
+            {
+                throw new CHttpException(403,'No tienes permisos suficientes para efectuar esta accion');
+            }
+        }
 
-	/**
+
+        /**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer the ID of the model to be loaded
@@ -153,7 +169,7 @@ class DocentesController extends Controller
         
         public function actionPerfil($id)
         {
-            $model= Docentes::model()->findByPk(Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk);
+            $model= Docentes::model()->findByPk(Yii::app()->user->getModelUsuarioCompleto($id)->pk);
             if($id == Yii::app()->user->name)
                 $this->render('perfil', array(
                         'model'=>$model

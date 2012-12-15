@@ -15,15 +15,31 @@
 <div class="contenido">
         <div class="fila fila-grande">
             <div class="columna_c_1">
-                <div class="con">
-                    <text class="text-footer">Noticias</text>
-                </div>
-                <div class="con2">
-                    Aquí van las noticias.
-                </div>
+                <?php $this->widget('bootstrap.widgets.TbGridView', array(
+                    'type'=>'striped bordered condensed',
+                    'dataProvider'=>$ofertas->customSearch(),
+                    'template'=>"{items}",
+                    'columns'=>array(
+                        array('name'=>'cargo', 'header'=>'Cargo'),
+                        array('name'=>'jornada_fk', 'header'=>'Jornada', 'value'=>'$data->jornadaFk->jornada'),
+                        array('name'=>'empresa_fk', 'header'=>'Empresa', 'value'=>'$data->empresaFk->nombre'),
+                        array(
+                            'header'=>'Detalle',
+                            'class'=>'CButtonColumn',
+                            'template'=>'{view}',
+                    ),    
+                    ),
+                )); ?>
             </div>
         </div>
         <div class="fila">
+             <div class="con">
+                    <text class="text-footer">Noticias</text>
+                </div>
+             <div class="con2">
+                    Aquí van las noticias.
+             </div>
+            <br />
             <div class="con">
                     <text class="text-footer">Tips</text>
             </div>
@@ -37,18 +53,6 @@
                         }
                     ?>
                 </MARQUEE>
-            </div>
-            <div class="con4">
-                <?php $this->widget('bootstrap.widgets.TbGridView', array(
-                    'type'=>'striped bordered condensed',
-                    'dataProvider'=>$ofertas->customSearch(),
-                    'template'=>"{items}",
-                    'columns'=>array(
-                        array('name'=>'cargo', 'header'=>'Cargo'),
-                        array('name'=>'jornada_fk', 'header'=>'Jornada', 'value'=>'$data->jornadaFk->jornada'),
-                        array('name'=>'empresa_fk', 'header'=>'Empresa', 'value'=>'$data->empresaFk->nombre'),
-                    ),
-                )); ?>
             </div>
         </div>
 </div>

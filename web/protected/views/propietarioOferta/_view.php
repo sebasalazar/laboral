@@ -13,8 +13,8 @@
 	<?php echo CHtml::encode($data->oferta_laboral_fk); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('rut_propietario')); ?>:</b>
-	<?php echo CHtml::encode($data->rut_propietario); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('rut')); ?>:</b>
+	<?php echo CHtml::encode($data->rut); ?>
 	<br />
 
 

@@ -11,7 +11,7 @@ $this->menu=array(
 	array('label'=>'List Empresas', 'url'=>array('index')),
 	array('label'=>'Create Empresas', 'url'=>array('create')),
 	array('label'=>'Update Empresas', 'url'=>array('update', 'id'=>$model->pk)),
-	array('label'=>'Delete Empresas', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Delete Empresas', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'¿Está seguro que quiere eliminar esta empresa?')),
 	array('label'=>'Manage Empresas', 'url'=>array('admin')),
 );
 ?>

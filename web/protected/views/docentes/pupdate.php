@@ -1,30 +1,18 @@
 <?php
-/* @var $this OfertasLaboralesController */
-/* @var $dataProvider CActiveDataProvider */
-
-$this->breadcrumbs=array(
-	'Ofertas Laborales',
+$this->menu=array(
+	array('label'=>'Actualizar datos personales', 'url'=>array('update', 'id'=>Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk)),
+	array('label'=>'Publicar Ofertas de Trabajo', 'url'=>array('ofertasLaborales/create')),
+        array('label'=>'Mis Ofertas Laborales', 'url'=>array('docentes/pupdate', 'rut'=>Yii::app()->user->name)),
 );
-
 ?>
-
 <br />
-<div class="titulo"><h1>Ofertas Laborales</h1></div>
-<?php
-    /*
-        $this->menu=array(
-                array('label'=>'Ofertas Laborales', 'url'=>array('ofertasLaborales/index')),
-                array('label'=>'Buscar', 'url'=>array('')),
-                array('label'=>'Publicar una Oferta Laboral', 'url'=>array('ofertasLaborales/create'), 'visible'=>!Yii::app()->user->isGuest),
-                array('label'=>'Publicar Practica', 'url'=>array('#'), 'visible'=>!Yii::app()->user->isGuest),
-        ); */?>
 <div class="grillac">
     <?php
             $this->widget('bootstrap.widgets.TbGridView', array(
                     'type'=>'striped bordered condensed',
-                    'dataProvider'=>$model->search(),
+                    'dataProvider'=>$ofertas->custom2Search(),
                     'template'=>"{items}",
-                    'filter'=>$model,
+                    'filter'=>$ofertas,
                     'template'=>"{items}\n{pager}",
                     'columns'=>array(
                      array(
@@ -51,10 +39,20 @@ $this->breadcrumbs=array(
                           'value' => '$data->nivelEstudioFk->estudios',
                       ),
                       array(
-                            'header'=>'Detalle',
-                            'class'=>'CButtonColumn',
-                            'template'=>'{view}',
-                    ),    
+                            'class'=>'bootstrap.widgets.TbButtonColumn',
+                            'template'=>'{view}{update}{delete}',
+                            'buttons'=>array(
+                                    'view' => array(
+                                      'url'=>'Yii::app()->controller->createUrl("ofertasLaborales/view", array("id"=>$data->pk))',
+                                    ),
+                                    'update' => array(
+                                      'url'=>'Yii::app()->controller->createUrl("ofertasLaborales/update", array("id"=>$data->pk))',
+                                    ),
+                                    'delete' => array(
+                                      'url'=>'Yii::app()->controller->createUrl("ofertasLaborales/delete", array("id"=>$data->pk,"command"=>"delete"))',
+                                    ),
+                            ),
+                      ),          
                     ),
                 ));
         ?>
