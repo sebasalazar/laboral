@@ -28,7 +28,7 @@ $this->menu=array(
 		'genero',
 		'direccion',
                 array('label'=>'Comuna',
-                    'value'=>$model->comuna->nombre,
+                    'value'=>$model->comunaFk->nombre,
                  ),
 		
                 array('label'=>'Estado civil',

@@ -25,7 +25,7 @@
 		<?php echo $form->labelEx($model,'apellidos'); ?>
 		<?php echo $form->textField($model,'apellidos',array('size'=>60,'maxlength'=>30)); ?>
 		<?php echo $form->error($model,'apellidos'); ?>
-	</div>-
+	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'rut'); ?>
@@ -52,14 +52,20 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'comuna_id'); ?>
-		<?php echo $form->textField($model,'comuna_id'); ?>
-		<?php echo $form->error($model,'comuna_id'); ?>
+		<?php echo $form->labelEx($model,'comuna'); ?>
+		<?php
+                        $datos = CHtml::listData(Comunas::model()->findAll(),'pk','nombre');
+                        echo $form->DropDownList($model,'comuna_fk',$datos, array('empty'=>'Seleccione una comuna', 'required'=>'required'));
+                ?>
+		<?php echo $form->error($model,'comuna_fk'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'ec_fk'); ?>
-		<?php echo $form->textField($model,'ec_fk'); ?>
+		<?php echo $form->labelEx($model,'Estado Civil'); ?>
+		<?php
+                        $datos = CHtml::listData(EstadosCiviles::model()->findAll(),'pk','estado');
+                        echo $form->DropDownList($model,'ec_fk',$datos, array('empty'=>'Seleccione un estado civil', 'required'=>'required'));
+                ?>
 		<?php echo $form->error($model,'ec_fk'); ?>
 	</div>
 
@@ -99,9 +105,10 @@
 		<?php echo $form->error($model,'archivo_curriculum'); ?>
 	</div>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>
+        <div class="form-actions">
+            <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>'Enviar')); ?>
+            <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'reset', 'label'=>'Limpiar')); ?>
+        </div>
 
 <?php $this->endWidget(); ?>
 
