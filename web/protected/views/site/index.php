@@ -24,7 +24,7 @@
                         array('name'=>'jornada_fk', 'header'=>'Jornada', 'value'=>'$data->jornadaFk->jornada'),
                         array('name'=>'empresa_fk', 'header'=>'Empresa', 'value'=>'$data->empresaFk->nombre'),
                         array(
-                            'header'=>'Detalle',
+                            'header'=>'Ver',
                             'class'=>'CButtonColumn',
                             'template'=>'{view}',
                     ),    
