@@ -104,6 +104,8 @@ class UsuariosController extends Controller
 			{
                             $model3->attributes=$_POST['Estudiantes'];
                             $model3->rut = $model->username;  
+                            $model3->carrera_fk = $_POST['carrerafk'] ;
+                            $model3->comuna_fk = $_POST['comboComuna'];
                             $model3->archivo_curriculum = $model3->rut;
                             if($model->validate() && $model3->validate()){
                                 if($model->save()){                                       
@@ -113,9 +115,9 @@ class UsuariosController extends Controller
                                         $cv->saveAs('cv/' . $model3->rut . '.pdf');
                                     }
                                         $this->redirect(array('site/index'));   
+                                }
                             }
-			}
-                    } 
+                        } 
                 }
                 $this->render('create',array('model'=>$model,'model1'=>$model1,'model2'=>$model2,'model3'=>$model3,'tipo'=>$tipo));
 	}

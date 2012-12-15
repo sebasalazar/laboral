@@ -447,7 +447,7 @@ $("#content > ul").tabs();
                         <?php echo $form->DropDownList(Escuelas::model(),'pk',$datos, array('ajax'=>array(
                                                                                                     'type'=>'POST',
                                                                                                     'url'=>CController::createurl('Carreras/SelectCarrera'),
-                                                                                                    'update'=>'#escuelaCombo',
+                                                                                                    'update'=>'#carrerafk',
                                                                                                      ),'prompt' => 'Selecione...')); ?>
                         <?php echo $form->error(Facultades::model(),'pk'); ?>
                 </div>
@@ -455,7 +455,7 @@ $("#content > ul").tabs();
                 <div class="row">
                         <?php echo $form->labelEx(Estudiantes::model(),'Carrera <span class="required">*</span>'); ?>
                         <?php //$datos = CHtml::listData(Carreras::model()->findAll(),'pk','nombre_carrera'); ?>
-                        <?php echo $form->DropDownList(Estudiantes::model(),'carrera_fk',array(), array('id'=>'escuelaCombo', 'name' => 'escuelaCombo','empty'=>'Seleccione...', 'required'=>'required')); ?>
+                        <?php echo $form->DropDownList(Estudiantes::model(),'carrera_fk',array(), array('id'=>'carrerafk', 'name' => 'carrerafk', 'required'=>'required', 'prompt'=>'Seleccione...')); ?>
                         <?php echo $form->error(Estudiantes::model(),'carrera_fk'); ?>
                 </div>
         
