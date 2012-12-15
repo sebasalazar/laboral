@@ -9,7 +9,6 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'List EvaluacionesPracticas', 'url'=>array('index')),
-	array('label'=>'Create EvaluacionesPracticas', 'url'=>array('create')),
 );
 
 ?>
