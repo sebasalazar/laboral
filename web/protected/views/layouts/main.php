@@ -136,6 +136,7 @@
                                         array('label'=>'Perfil', 'url'=>array('docentes/perfil', 'id'=>  Yii::app()->user->name)),
                                         array('label'=>'Cambiar Rol', 'url'=>'#'),
                                         '---',
+                                        array('label'=>'Administrar', 'url'=>'#', 'visible'=>Yii::app()->user->isAdmin()),
                                         array('label'=>'Cerrar Sesión', 'url'=>array('site/logout')),
                                     ), 'visible'=>!Yii::app()->user->isGuest),
                                 ),
