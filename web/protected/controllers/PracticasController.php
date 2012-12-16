@@ -28,11 +28,11 @@ class PracticasController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','delete'),
+				'actions'=>array('create','update','delete','view'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -62,7 +62,9 @@ class PracticasController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Practicas;
+            if(Yii::app()->user->isEmpresa())
+            {
+                $model=new Practicas;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -77,6 +79,11 @@ class PracticasController extends Controller
 		$this->render('create',array(
 			'model'=>$model,
 		));
+            }
+            else
+            {
+                throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
+            }
 	}
 
 	/**
@@ -86,7 +93,9 @@ class PracticasController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel((int) $id);
+            if(Yii::app()->user->isEmpresa())
+            {
+                $model=$this->loadModel((int) $id);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -101,6 +110,11 @@ class PracticasController extends Controller
 		$this->render('update',array(
 			'model'=>$model,
 		));
+            }
+            else
+            {
+                throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
+            }
         }
 	
 
@@ -111,11 +125,18 @@ class PracticasController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		$this->loadModel((int) $id)->delete();
+            if(Yii::app()->user->isEmpresa())
+            {
+                $this->loadModel((int) $id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+            }
+            else
+            {
+                throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
+            }
 	}
 
 	/**

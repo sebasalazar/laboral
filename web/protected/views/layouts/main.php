@@ -56,6 +56,7 @@ function formateo_rut($rut_param){
                                     array('label'=>'Practicas', 'items'=>array(
                                         array('label'=>'Ver Practicas', 'url'=>array('/practicas/index')),
                                         array('label'=>'Crear Practicas', 'url'=>array('/practicas/create'), 'visible'=>Yii::app()->user->isEmpresa()),
+                                        '---',
                                         array('label'=>'Ver Evaluaciones', 'url'=>array('/evaluacionesPracticas/index'), 'visible'=>Yii::app()->user->isDocente() || Yii::app()->user->isEmpresa()),
                                         array('label'=>'Evaluar Practicas', 'url'=>array('/evaluacionesPracticas/create'), 'visible'=>Yii::app()->user->isEmpresa()),
                                     ), 'visible'=>!Yii::app()->user->isGuest && !Yii::app()->user->isEstudiante()),

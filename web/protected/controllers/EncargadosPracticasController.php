@@ -28,11 +28,11 @@ class EncargadosPracticasController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('create','index','view'),
+				'actions'=>array(''),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('update'),
+				'actions'=>array('update','index','create','delete','view'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -51,9 +51,16 @@ class EncargadosPracticasController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
+            if(Yii::app()->user->isEmpresa())
+            {
+                $this->render('view',array(
 			'model'=>$this->loadModel((int) $id),
 		));
+            }
+            else
+            {
+                throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
+            }
 	}
 
 	/**
@@ -62,7 +69,9 @@ class EncargadosPracticasController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new EncargadosPracticas;
+            if(Yii::app()->user->isEmpresa())
+            {
+                $model=new EncargadosPracticas;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -77,6 +86,12 @@ class EncargadosPracticasController extends Controller
 		$this->render('create',array(
 			'model'=>$model,
 		));
+            }
+            else
+            {
+                throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
+            }
+		
 	}
 
 	/**
@@ -86,7 +101,9 @@ class EncargadosPracticasController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel((int) $id);
+            if(Yii::app()->user->isEmpresa())
+            {
+                $model=$this->loadModel((int) $id);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -101,6 +118,12 @@ class EncargadosPracticasController extends Controller
 		$this->render('update',array(
 			'model'=>$model,
 		));
+            }
+            else
+            {
+                throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
+            }
+		
 	}
 
 	/**
@@ -110,11 +133,19 @@ class EncargadosPracticasController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		$this->loadModel((int) $id)->delete();
+            if(Yii::app()->user->isEmpresa())
+            {
+                $this->loadModel((int) $id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+            }
+            else
+            {
+                throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
+            }
+		
 	}
 
 	/**
@@ -122,17 +153,24 @@ class EncargadosPracticasController extends Controller
 	 */
 	public function actionIndex()
 	{
+            if(Yii::app()->user->isEmpresa())
             {
-            $model=new EncargadosPracticas('search');
-            $model->unsetAttributes();  // clear any default values
-            if(isset($_GET['EncargadosPracticas']))
-                    $model->attributes=$_GET['EncargadosPracticas'];
-            $this->render('index', array('model'=>$model));
-            }   
-		/*$dataProvider=new CActiveDataProvider('EncargadosEmpresas');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));*/
+                $model=new EncargadosPracticas('search');
+                $model->unsetAttributes();  // clear any default values
+                if(isset($_GET['EncargadosPracticas']))
+                        $model->attributes=$_GET['EncargadosPracticas'];
+                $this->render('index', array('model'=>$model));
+
+                    /*$dataProvider=new CActiveDataProvider('EncargadosEmpresas');
+                    $this->render('index',array(
+                            'dataProvider'=>$dataProvider,
+                    ));*/
+            }
+            else
+            {
+                throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
+            }
+            
 	}
 
 	/**
