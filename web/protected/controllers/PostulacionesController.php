@@ -57,8 +57,9 @@ class PostulacionesController extends Controller
 	}
 
         
-       	public function actionMispostulaciones($estudiante_fk)
+       	public function actionMispostulaciones()
 	{
+            $estudiante_fk = Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk;
             //foreach($model=new Postulaciones)
          //   $this->layout = 'column1';
             $model=new Postulaciones('search2');

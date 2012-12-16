@@ -39,20 +39,20 @@ class WebUser extends CWebUser {
     }
 
     public function getModelUsuarioCompleto($rut) {
-        $docente = Docentes::model()->findByAttributes(array('rut' => $rut));
-        if ($docente != null)
-            return $docente;
-        else {
-            $empresa = Empresas::model()->findByAttributes(array('rut' => $rut));
-            if ($empresa != null) {
-                return $empresa;
-            } else {
-                $estudiante = Estudiantes::model()->findByAttributes(array('rut' => $rut));
-                if ($estudiante != null) {
-                    return $estudiante;
+            $docente = Docentes::model()->findByAttributes(array('rut' => $rut));
+            if ($docente != null)
+                return $docente;
+            else {
+                $empresa = Empresas::model()->findByAttributes(array('rut' => $rut));
+                if ($empresa != null) {
+                    return $empresa;
+                } else {
+                    $estudiante = Estudiantes::model()->findByAttributes(array('rut' => $rut));
+                    if ($estudiante != null) {
+                        return $estudiante;
+                    }
                 }
             }
-        }
     }
 
     public function getModelUsuarioEstudiante($rut) {
@@ -95,25 +95,61 @@ class WebUser extends CWebUser {
         $roles['estudiante'] = $rol[3];
         return $roles;
     }
-
-    public function isEstudiante() {
-        $usuario = Usuarios::model()->findByPk(Yii::app()->user->name);
-        $rol = $this->roles($usuario->roles);
-        if ($rol['estudiante'] == 1) {
-            return true;
-        } else {
-            return false;
+    
+    public function isDocente() {
+        if(!Yii::app()->user->isGuest){
+            $usuario = Usuarios::model()->findByPk(Yii::app()->user->name);
+            $rol = $this->roles($usuario->roles);
+            if ($rol['docente'] == 1) {
+                return true;
+            } else {
+                return false;
+            }
         }
+        else
+                return false;
+    }
+    
+    public function isEmpresa() {
+        if(!Yii::app()->user->isGuest){
+            $usuario = Usuarios::model()->findByPk(Yii::app()->user->name);
+            $rol = $this->roles($usuario->roles);
+            if ($rol['empresa'] == 1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        else
+                return false;
+    }
+    
+    public function isEstudiante() {
+        if(!Yii::app()->user->isGuest){
+            $usuario = Usuarios::model()->findByPk(Yii::app()->user->name);
+            $rol = $this->roles($usuario->roles);
+            if ($rol['estudiante'] == 1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        else
+                return false;
     }
     
     public function isAdmin() {
-        $usuario = Usuarios::model()->findByPk(Yii::app()->user->name);
-        $rol = $this->roles($usuario->roles);
-        if ($rol['admin'] == 1) {
-            return true;
-        } else {
-            return false;
+        if(!Yii::app()->user->isGuest){
+            $usuario = Usuarios::model()->findByPk(Yii::app()->user->name);
+            $rol = $this->roles($usuario->roles);
+            if ($rol['admin'] == 1) {
+                return true;
+            } else {
+                return false;
+            }
         }
+        else
+                return false;
     }
 
     public function getTipoUsuario($rut) {
