@@ -28,15 +28,15 @@ class ComunasController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view', 'create','SelectComuna'),
+				'actions'=>array('SelectComuna'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array(),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete','index','view', 'create','create','update'),
 				'users'=>array(Yii::app()->user->getAdmin()),
 			),
 			array('deny',  // deny all users

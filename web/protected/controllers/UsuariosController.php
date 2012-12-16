@@ -28,7 +28,7 @@ class UsuariosController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','create','pcreate'),
+				'actions'=>array('create','pcreate'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -36,7 +36,7 @@ class UsuariosController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','paneladmin'),
+				'actions'=>array('admin','delete','paneladmin','index','view'),
 				'users'=>array(Yii::app()->user->getAdmin()),
 			),
 			array('deny',  // deny all users
@@ -83,7 +83,7 @@ class UsuariosController extends Controller
                                     else
                                     {
                                             $model->deleteByPk($model1->pk);
-                                            $model1->deleteByPk($model->id);
+                                            $model1->deleteByPk($model->username);
                                     }
 			}
 			if(isset($_POST['Empresas']))
@@ -97,7 +97,7 @@ class UsuariosController extends Controller
                                 else
                                 {
                                         $model1->deleteByPk($model2->pk);
-                                        $model1->deleteByPk($model->id);
+                                        $model1->deleteByPk($model->username);
                                 }
 			}
 			if(isset($_POST['Estudiantes']))
@@ -129,22 +129,21 @@ class UsuariosController extends Controller
 	 * @param integer $id the ID of the model to be updated
 	 */
 	public function actionUpdate($id)
-	{
-		$model=$this->loadModel((int) $id);
+	{   
+                if($id == Yii::app()->user->name || Yii::app()->user->isAdmin()){
+                    $model=$this->loadModel((int) $id);
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+                    if(isset($_POST['Usuarios']))
+                    {
+                            $model->attributes=$_POST['Usuarios'];
+                            if($model->save())
+                                    $this->redirect(array('view','id'=>$model->username));
+                    }
 
-		if(isset($_POST['Usuarios']))
-		{
-			$model->attributes=$_POST['Usuarios'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
-
-		$this->render('update',array(
-			'model'=>$model,
-		));
+                    $this->render('update',array(
+                            'model'=>$model,
+                    ));
+                }
 	}
 
 	/**

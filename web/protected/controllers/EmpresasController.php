@@ -28,15 +28,15 @@ class EmpresasController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array(),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('update','perfil','delete'),
+				'actions'=>array('update','perfil'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','create'),
+				'actions'=>array('admin','delete','create','index','view'),
 				'users'=>array(Yii::app()->user->getAdmin()),
 			),
 			array('deny',  // deny all users

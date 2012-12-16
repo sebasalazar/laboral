@@ -53,7 +53,16 @@ class WebUser extends CWebUser {
     }
 
     public function getAdmin() {
-        return '174018367';
+        $usuario = Usuarios::model()->findByPk(Yii::app()->user->name);
+        $rol = $this->roles($usuario->roles);
+        if($rol['admin'] == 1)
+        {
+            return Yii::app()->user->name;
+        }
+        else
+        {
+            return 'admin';
+        }
     }
 
     public static function usuario() {
