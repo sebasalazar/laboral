@@ -1,0 +1,8 @@
+-- Column: al cristian le gusta el completo
+
+-- ALTER TABLE estudiantes DROP COLUMN completo;
+
+ALTER TABLE estudiantes ADD COLUMN cv_completo boolean;
+ALTER TABLE estudiantes ALTER COLUMN cv_completo SET NOT NULL;
+ALTER TABLE estudiantes ALTER COLUMN cv_completo SET DEFAULT false;
+

@@ -191,12 +191,12 @@ CREATE TABLE estudiantes (
     fecha_nacimiento date NOT NULL,
     genero char(1) NOT NULL DEFAULT 'F', -- M: Masculino -- F: Femenino
     direccion varchar(255) NOT NULL,
-    comuna_id int NOT NULL REFERENCES comunas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    comuna_fk int NOT NULL REFERENCES comunas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     ec_fk int NOT NULL REFERENCES estados_civiles(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     carrera_fk int NOT NULL REFERENCES carreras(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     telefono varchar(50),
     celular varchar(50),
-    email varchar(255),
+    email varchar(255) NOT NULL, -- muy importante el email
     estado int NOT NULL REFERENCES estados(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     busqueda boolean NOT NULL DEFAULT FALSE, -- Si se encuentra o no buscando trabajo (solicitado por docentes y adm)
     archivo_curriculum varchar(255), -- ubicación del curriculum (dirección archivo) (solicitado por adm actual)
@@ -221,13 +221,13 @@ CREATE TABLE docentes (
     fecha_nacimiento date NOT NULL,
     genero char(1) NOT NULL DEFAULT 'F', -- M: Masculino -- F: Femenino
     direccion varchar(255) NOT NULL,
-    comuna_id int NOT NULL REFERENCES comunas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    comuna_fk int NOT NULL REFERENCES comunas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     ec_fk int NOT NULL REFERENCES estados_civiles(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     departamento_fk int NOT NULL REFERENCES departamentos(pk) ON UPDATE CASCADE ON DELETE CASCADE,
   --usuario_fk int NOT NULL REFERENCES usuarios(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     telefono varchar(50),
     celular varchar(50),
-    email varchar(255),
+    email varchar(255) NOT NULL,
     UNIQUE (rut),
     UNIQUE(email),
     PRIMARY KEY (pk)
@@ -280,7 +280,7 @@ CREATE TABLE encargados_empresas (
     apellidos varchar(255) NOT NULL,
     genero char(1) NOT NULL DEFAULT 'F', -- M: Masculino -- F: Femenino
     direccion varchar(255) NOT NULL,
-    comun_fk int NOT NULL REFERENCES comunas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    comuna_fk int NOT NULL REFERENCES comunas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     email varchar(255) NOT NULL,
     telefono varchar(50) NOT NULL,
     UNIQUE (empresa_fk, email),
@@ -390,6 +390,7 @@ CREATE TABLE experiencias (
     PRIMARY KEY(pk)
 );
 
+
 --
 -- Tabla de curriculums
 --
@@ -397,6 +398,52 @@ DROP TABLE IF EXISTS curriculums CASCADE;
 CREATE TABLE curriculums (
     pk int NOT NULL, -- hay que definir que debe llevar el curriculum
     estudiante_fk bigint NOT NULL REFERENCES estudiantes(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    educacion_secundaria VARCHAR(50) NOT NULL,
+    educacion_superior VARCHAR(60) NOT NULL DEFAULT 'Universidad Tecnológica Metropolitana',
+    PRIMARY KEY(pk)
+);
+
+
+--
+-- Tabla que almacena los conocimientos de los postulantes
+--
+DROP TABLE IF EXISTS conocimientos  CASCADE;
+CREATE TABLE conocimientos(
+    pk bigserial NOT NULL, 
+    conocimiento varchar(255) NOT NULL,
+    descripcion text,
+    curriculum_fk bigint NOT NULL REFERENCES curriculums(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    UNIQUE (conocimiento),
+    PRIMARY KEY(pk)
+);
+
+
+--
+-- Tabla que almacena la experiencia laboral  
+--
+DROP TABLE IF EXISTS experiencias CASCADE;
+CREATE TABLE experiencias (
+    pk bigserial NOT NULL, 
+    descripcion varchar(255) NOT NULL,
+    referencia varchar(255) NOT NULL,
+    email varchar(255) NOT NULL,
+    inicio date NOT NULL,
+    fin date,
+    curriculum_fk bigint NOT NULL REFERENCES curriculums(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    PRIMARY KEY(pk)
+);
+
+
+--
+-- Tabla de formacion complementaria la cual se registran algunas capacitaciones, cursos, etc que halla cursado el estudiante
+--
+DROP TABLE IF EXISTS formacion_complementaria CASCADE;
+CREATE TABLE formacion_complementaria (
+    pk int NOT NULL, 
+    nombre_formacion VARCHAR(60) NOT NULL, 
+    institucion VARCHAR(50) NOT NULL,
+    anio_formacion_complementaria INT NOT NULL,
+    curriculum_fk bigint NOT NULL REFERENCES curriculums(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     PRIMARY KEY(pk)
 );
 
@@ -459,6 +506,14 @@ CREATE TABLE tips(
     titulo varchar(255) NOT NULL,
     contenido varchar(255) NOT NULL,
     PRIMARY KEY(pk)
+);
+
+DROP TABLE IF EXISTS propietario_oferta CASCADE;
+CREATE TABLE propietario_oferta(
+    pk serial NOT NULL,
+    oferta_laboral_fk int NOT NULL REFERENCES ofertas_laborales(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    rut int NOT NULL,
+    PRIMARY KEY(oferta_laboral_fk, rut)
 );
 
 COMMIT;
