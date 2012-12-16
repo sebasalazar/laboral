@@ -33,7 +33,7 @@ class EvaluacionesPracticasController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('update','delete','generarPdf','index','create','view'),
+				'actions'=>array('update','delete','index','create','view','pdf'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -184,7 +184,7 @@ class EvaluacionesPracticasController extends Controller
 		));
 	}
 
-        
+        /*
         public function actionGenerarPdf($id)
 	{
             if(Yii::app()->user->isEmpresa())
@@ -197,7 +197,7 @@ class EvaluacionesPracticasController extends Controller
             {
                 throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
             }
-	}
+	}*/
         
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
@@ -211,6 +211,13 @@ class EvaluacionesPracticasController extends Controller
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
 	}
+
+        public function actionPdf($id)
+        {
+            $this->render('pdf',array(
+                'model'=>$this->loadModel($id),
+            ));
+        }
 
 
 	/**
