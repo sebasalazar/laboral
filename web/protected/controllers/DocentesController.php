@@ -167,15 +167,22 @@ class DocentesController extends Controller
 		return $model;
 	}
         
-        public function actionPerfil($id)
+        public function actionPerfil()
         {
-            $model= Docentes::model()->findByPk(Yii::app()->user->getModelUsuarioCompleto($id)->pk);
-            if($id == Yii::app()->user->name)
-                $this->render('perfil', array(
-                        'model'=>$model
-                ));
+            if(Yii::app()->user->isDocente()){
+                $model= Docentes::model()->findByPk(Yii::app()->user->idDocente(Yii::app()->user->name));
+                if($model != null)
+                    $this->render('perfil', array(
+                                'model'=>$model
+                    ));
+                else
+                    throw new CHttpException(404,'Tu Perfil de docente no existe.');
+                    
+            }
             else
-                throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
+            {
+                    throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
+            }
         }
         
         

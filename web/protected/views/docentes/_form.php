@@ -26,6 +26,12 @@
 		<?php echo $form->textField($model,'apellidos', array('required'=>'required')); ?>
 		<?php echo $form->error($model,'apellidos'); ?>
 	</div>
+        
+        <div class="row">
+		<?php echo $form->labelEx($model,'rut'); ?>
+		<?php echo $form->textField($model,'rut', array('required'=>'required')); ?>
+		<?php echo $form->error($model,'rut'); ?>
+	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'fecha_nacimiento'); ?>
