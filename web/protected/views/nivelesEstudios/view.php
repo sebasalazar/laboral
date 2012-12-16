@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List NivelesEstudios', 'url'=>array('index')),
-	array('label'=>'Create NivelesEstudios', 'url'=>array('create')),
-	array('label'=>'Update NivelesEstudios', 'url'=>array('update', 'id'=>$model->pk)),
-	array('label'=>'Delete NivelesEstudios', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage NivelesEstudios', 'url'=>array('admin')),
+	array('label'=>'Lista Niveles de Estudios', 'url'=>array('index')),
+	array('label'=>'Crear Nivel de Estudio', 'url'=>array('create')),
+	array('label'=>'Actualizar Nivel de Estudio', 'url'=>array('update', 'id'=>$model->pk)),
+	array('label'=>'Borrar Nivel de Estudio', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Administrar Niveles de Estudios', 'url'=>array('admin')),
 );
 ?>
 

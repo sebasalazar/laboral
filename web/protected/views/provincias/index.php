@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Provincias', 'url'=>array('create')),
-	array('label'=>'Manage Provincias', 'url'=>array('admin')),
+	array('label'=>'Crear Provincia', 'url'=>array('create')),
+	array('label'=>'Administrar Provincias', 'url'=>array('admin')),
 );
 ?>
 

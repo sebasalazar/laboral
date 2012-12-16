@@ -3,11 +3,11 @@
 /* @var $model Usuarios */
 
 $this->menu=array(
-	array('label'=>'List Usuarios', 'url'=>array('index')),
-	array('label'=>'Create Usuarios', 'url'=>array('create')),
-	array('label'=>'Update Usuarios', 'url'=>array('update', 'id'=>$model->username)),
-	array('label'=>'Delete Usuarios', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->username),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Usuarios', 'url'=>array('admin')),
+        array('label'=>'Administrar Usuarios', 'url'=>array('admin')),
+	array('label'=>'Lista de Usuarios', 'url'=>array('index')),
+	array('label'=>'Crear Usuario', 'url'=>array('pcreate')),
+	array('label'=>'Actualizar Usuario', 'url'=>array('update', 'id'=>$model->username)),
+	array('label'=>'Borrar Usuario', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->username),'confirm'=>'Are you sure you want to delete this item?')),
 );
 ?>
 

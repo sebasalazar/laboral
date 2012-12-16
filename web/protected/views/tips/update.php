@@ -9,13 +9,14 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Tips', 'url'=>array('index')),
-	array('label'=>'Create Tips', 'url'=>array('create')),
-	array('label'=>'View Tips', 'url'=>array('view', 'id'=>$model->pk)),
-	array('label'=>'Manage Tips', 'url'=>array('admin')),
+	array('label'=>'Lista de Tips', 'url'=>array('index')),
+	array('label'=>'Crear Tip', 'url'=>array('create')),
+	array('label'=>'Ver Tip', 'url'=>array('view', 'id'=>$model->pk)),
+	array('label'=>'Administrar Tips', 'url'=>array('admin')),
 );
 ?>
+<div class="contenidoPage">
+    <h1>Actualizar Tip: <?php echo $model->titulo; ?></h1>
 
-<h1>Update Tips <?php echo $model->pk; ?></h1>
-
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+    <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+</div>

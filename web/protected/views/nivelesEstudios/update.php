@@ -9,10 +9,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List NivelesEstudios', 'url'=>array('index')),
-	array('label'=>'Create NivelesEstudios', 'url'=>array('create')),
-	array('label'=>'View NivelesEstudios', 'url'=>array('view', 'id'=>$model->pk)),
-	array('label'=>'Manage NivelesEstudios', 'url'=>array('admin')),
+	array('label'=>'Lista Niveles de Estudios', 'url'=>array('index')),
+	array('label'=>'Crear Nivel de Estudio', 'url'=>array('create')),
+	array('label'=>'Ver Nivel de Estudio', 'url'=>array('view', 'id'=>$model->pk)),
+	array('label'=>'Administrar Niveles de Estudios', 'url'=>array('admin')),
 );
 ?>
 

@@ -8,7 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List PropietarioOferta', 'url'=>array('index')),
+	array('label'=>'Lista Propietarios Ofertas', 'url'=>array('index')),
+        array('label'=>'Create PropietarioOferta', 'url'=>array('create')),
 );
 
 ?>

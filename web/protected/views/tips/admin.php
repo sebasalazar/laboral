@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Tips', 'url'=>array('index')),
-	array('label'=>'Create Tips', 'url'=>array('create')),
+	array('label'=>'Lista de Tips', 'url'=>array('index')),
+	array('label'=>'Crear Tip', 'url'=>array('create')),
 );
 ?>
 

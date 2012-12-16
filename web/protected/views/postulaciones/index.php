@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Postulaciones', 'url'=>array('create')),
-	array('label'=>'Manage Postulaciones', 'url'=>array('admin')),
+	array('label'=>'Crear Postulacion', 'url'=>array('create')),
+	array('label'=>'Administrar Postulacion', 'url'=>array('admin')),
 );
 ?>
 

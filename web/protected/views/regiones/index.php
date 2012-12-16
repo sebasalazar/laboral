@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Regiones', 'url'=>array('create')),
-	array('label'=>'Manage Regiones', 'url'=>array('admin')),
+	array('label'=>'Crear Region', 'url'=>array('create')),
+	array('label'=>'Administrar Regiones', 'url'=>array('admin')),
 );
 ?>
 

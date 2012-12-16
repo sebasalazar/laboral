@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List NivelesEstudios', 'url'=>array('index')),
-	array('label'=>'Manage NivelesEstudios', 'url'=>array('admin')),
+	array('label'=>'Lista Niveles de Estudios', 'url'=>array('index')),
+	array('label'=>'Administrar Niveles de Estudios', 'url'=>array('admin')),
 );
 ?>
 

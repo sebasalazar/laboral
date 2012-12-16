@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create PropietarioOferta', 'url'=>array('create')),
-	array('label'=>'Manage PropietarioOferta', 'url'=>array('admin')),
+	array('label'=>'Crear Propietario Oferta', 'url'=>array('create')),
+	array('label'=>'Administrar Propietarios Ofertas', 'url'=>array('admin')),
 );
 ?>
 

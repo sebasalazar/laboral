@@ -6,35 +6,14 @@ $this->breadcrumbs=array(
 	'Ofertas Laborales'=>array('index'),
 	$model->pk,
 );
-$tipo = 0;
-if(Yii::app()->user->getModel(Yii::app()->user->id) != null)
-{
-    $tipo = Yii::app()->user->getTipoUsuario(Yii::app()->user->name);
-    if($tipo == 3){
-        $this->menu=array(
-            array('label'=>'Actualizar datos personales', 'url'=>array('update', 'id'=>Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk)),
-            array('label'=>'Publicar Ofertas de Trabajo', 'url'=>array('ofertasLaborales/create')),
-            array('label'=>'Ofertas de Trabajo Publicadas', 'url'=>array('')),
-        );
-    }
-    elseif ($tipo == 2) 
-    {
-        $this->menu=array(
-                array('label'=>'Lista Ofertas Laborales', 'url'=>array('index')),
-                array('label'=>'Crear Ofertas Laborales', 'url'=>array('create')),
-        );
-    }
-    elseif($tipo == 1)
-    {
-        $this->menu=array(
-                array('label'=>'Lista Ofertas Laborales', 'url'=>array('index')),
-                array('label'=>'Mis postulaciones', 'url'=>array('postulaciones/mispostulaciones','estudiante_fk'=>Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk)),
-            
-        );
 
-    }
-}
+$this->menu=array(
+        array('label'=>'Ofertas Laborales', 'url'=>array('ofertasLaborales/index')),
+	array('label'=>'Publicar Oferta Laboral', 'url'=>array('ofertasLaborales/create')),
+);
 ?>
+
+
 <div class="titulo">
 <h1>Detalle Oferta Laboral</h1>
 </div>
@@ -99,7 +78,7 @@ if(Yii::app()->user->getModel(Yii::app()->user->id) != null)
 </div>
 <?php 
 
-if($tipo == 1){
+if(Yii::app()->user->isEstudiante()){
    echo CHtml::button('Postular', array('submit' => array('Postulaciones/registrar','oferta_laboral_fk'=>$model->pk,'estudiante_fk'=>Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk,'fecha'=>date("d-m-Y")),
        'confirm' => '¿Esta seguro que desea postular?'
        ));           

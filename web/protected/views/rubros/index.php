@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Rubros', 'url'=>array('create')),
-	array('label'=>'Manage Rubros', 'url'=>array('admin')),
+	array('label'=>'Crear Rubro', 'url'=>array('create')),
+	array('label'=>'Administar Rubros', 'url'=>array('admin')),
 );
 ?>
 

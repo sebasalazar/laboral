@@ -96,6 +96,16 @@ class WebUser extends CWebUser {
         return $roles;
     }
 
+    public function isEstudiante() {
+        $usuario = Usuarios::model()->findByPk(Yii::app()->user->name);
+        $rol = $this->roles($usuario->roles);
+        if ($rol['estudiante'] == 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
     public function isAdmin() {
         $usuario = Usuarios::model()->findByPk(Yii::app()->user->name);
         $rol = $this->roles($usuario->roles);

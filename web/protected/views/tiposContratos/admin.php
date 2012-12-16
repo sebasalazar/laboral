@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List TiposContratos', 'url'=>array('index')),
-	array('label'=>'Create TiposContratos', 'url'=>array('create')),
+	array('label'=>'Lista de Tipos de Contratos', 'url'=>array('index')),
+	array('label'=>'Crear Tipo de Contrato', 'url'=>array('create')),
 );
 
 ?>

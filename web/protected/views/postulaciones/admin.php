@@ -8,7 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Postulaciones', 'url'=>array('index')),
+	array('label'=>'Lista Postulaciones', 'url'=>array('index')),
+        array('label'=>'Crear Postulacion', 'url'=>array('create')),
 );
 
 ?>

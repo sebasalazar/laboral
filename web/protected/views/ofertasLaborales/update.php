@@ -9,10 +9,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List OfertasLaborales', 'url'=>array('index')),
-	array('label'=>'Create OfertasLaborales', 'url'=>array('create')),
-	array('label'=>'View OfertasLaborales', 'url'=>array('view', 'id'=>$model->pk)),
-	array('label'=>'Manage OfertasLaborales', 'url'=>array('admin')),
+	array('label'=>'Lista Ofertas Laborales', 'url'=>array('index')),
+	array('label'=>'Crear Oferta Laboral', 'url'=>array('create')),
+	array('label'=>'Ver Oferta Laboral', 'url'=>array('view', 'id'=>$model->pk)),
+	array('label'=>'Administrar Ofertas Laborales', 'url'=>array('admin')),
 );
 ?>
 

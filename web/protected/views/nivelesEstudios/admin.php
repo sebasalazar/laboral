@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List NivelesEstudios', 'url'=>array('index')),
-	array('label'=>'Create NivelesEstudios', 'url'=>array('create')),
+	array('label'=>'Lista Nivel de Estudios', 'url'=>array('index')),
+	array('label'=>'Crear Nivel de Estudio', 'url'=>array('create')),
 );
 ?>
 

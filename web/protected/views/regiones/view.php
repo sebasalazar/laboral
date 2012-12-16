@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Regiones', 'url'=>array('index')),
-	array('label'=>'Create Regiones', 'url'=>array('create')),
-	array('label'=>'Update Regiones', 'url'=>array('update', 'id'=>$model->pk)),
-	array('label'=>'Delete Regiones', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Regiones', 'url'=>array('admin')),
+	array('label'=>'Lista de Regiones', 'url'=>array('index')),
+	array('label'=>'Crear Region', 'url'=>array('create')),
+	array('label'=>'Actualizar Region', 'url'=>array('update', 'id'=>$model->pk)),
+	array('label'=>'Borrar Region', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Administrar Regiones', 'url'=>array('admin')),
 );
 ?>
 
