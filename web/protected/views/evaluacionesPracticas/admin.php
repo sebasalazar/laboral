@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List EvaluacionesPracticas', 'url'=>array('index')),
+	array('label'=>'Listar Evaluaciones de Practicas', 'url'=>array('index')),
 );
 
 ?>

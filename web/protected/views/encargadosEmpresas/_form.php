@@ -75,7 +75,7 @@
                     <p class="hint">
                         Nota: M o F
                     </p>
-                    <?php echo $form->textField(EncargadosEmpresas::model(),'genero',array('size'=>1,'maxlength'=>1)); ?>
+                    <?php echo $form->radioButtonList($model,'genero',array('F'=>'Femenino','M'=>'Masculino'),array('separator'=>'  ', 'labelOptions'=>array('style'=>'display:inline'))); ?>
                     <?php echo $form->error(EncargadosEmpresas::model(),'genero'); ?>
                 </div>
             </div>
@@ -100,9 +100,9 @@
                     <?php echo $form->labelEx(EncargadosEmpresas::model(),'Comuna: <span class="required">*</span>'); ?>
                     <?php
                         $datos = CHtml::listData(Comunas::model()->findAll(),'pk','nombre');
-                        echo $form->DropDownList(EncargadosEmpresas::model(),'comun_fk',$datos,array('empty'=>'Seleccione una Comuna'));
+                        echo $form->DropDownList(EncargadosEmpresas::model(),'comuna_fk',$datos,array('empty'=>'Seleccione una Comuna'));
                     ?>
-                    <?php echo $form->error(EncargadosEmpresas::model(),'comun_fk'); ?>
+                    <?php echo $form->error(EncargadosEmpresas::model(),'comuna_fk'); ?>
                 </div>
             </div>
 	</div>

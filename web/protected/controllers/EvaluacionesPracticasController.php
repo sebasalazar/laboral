@@ -37,7 +37,7 @@ class EvaluacionesPracticasController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','create','update'),
+				'actions'=>array('admin','delete','update'),
 				'users'=>array(Yii::app()->user->getAdmin()),
 			),
 			array('deny',  // deny all users
@@ -87,6 +87,7 @@ class EvaluacionesPracticasController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+            
 		$model=$this->loadModel((int) $id);
 
 		// Uncomment the following line if AJAX validation is needed
@@ -102,6 +103,7 @@ class EvaluacionesPracticasController extends Controller
 		$this->render('update',array(
 			'model'=>$model,
 		));
+             
 	}
 
 	/**
@@ -111,10 +113,12 @@ class EvaluacionesPracticasController extends Controller
 	 */
 	public function actionDelete($id)
 	{
+            
 		$this->loadModel($id)->delete();
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+            
 	}
 
 	/**

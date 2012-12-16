@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Lista Practicas', 'url'=>array('index')),
-	array('label'=>'Crear Practica', 'url'=>array('create')),
+	//array('label'=>'Lista de Practicas', 'url'=>array('index')),
+	array('label'=>'Crear Practicas', 'url'=>array('create')),
 );
 
 ?>

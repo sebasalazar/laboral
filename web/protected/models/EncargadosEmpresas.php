@@ -62,8 +62,8 @@ class EncargadosEmpresas extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-                    'empresa' => array(self::BELONGS_TO, 'empresaFk', 'empresa_fk'),
-                    'comuna' => array(self::BELONGS_TO, 'comunaFk', 'comuna_fk'),                    
+                    'empresaFk' => array(self::BELONGS_TO, 'Empresas', 'empresa_fk'),
+                    'comunaFk' => array(self::BELONGS_TO, 'Comunas', 'comuna_fk'),                    
 		);
 	}
 
@@ -74,15 +74,15 @@ class EncargadosEmpresas extends CActiveRecord
 	{
 		return array(
 			'pk' => 'Pk',
-			'empresa_fk' => 'Empresa Fk',
+			'empresa_fk' => 'Nombre de Empresa',
 			'rut_encargado' => 'Rut Encargado',
 			'nombre' => 'Nombre',
 			'apellidos' => 'Apellidos',
 			'genero' => 'Genero',
 			'direccion' => 'Direccion',
-			'comuna_fk' => 'Comuna Fk',
+			'comuna_fk' => 'Comuna',
 			'email' => 'Email',
-			'telefono' => 'Telefono',
+			'telefono' => 'Teléfono',
 		);
 	}
 

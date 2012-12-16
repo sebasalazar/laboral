@@ -21,18 +21,18 @@ $html='
     <td>Evaluacion de Practica</td>
     <br/><br/><br/>
 </tr>
-    <tr class="odd"><td> <b>Nombre: </b> </td><td> '.$model->estudiantes->nombres.'</td></tr>
-    <tr class="odd"><td> <b>Apellidos: </b> </td><td> '.$model->estudiantes->apellidos.'</td></tr>
-    <tr class="odd"><td> <b>Encargado de Practica: </b> </td><td> '.$model->EncargadosPracticas->nombre_encargado.'</td></tr>
-    <tr class="odd"><td> <b>Cargo: </b> </td><td> '.$model->cargo_asignado.'</td></tr>
-    <tr class="odd"><td> <b>Conocimintos técnicos demostrados: </b> </td><td> '.$model->conocimientos_demostrados.'</td></tr>
-    <tr class="odd"><td> <b>Eficacia para llegar a resultados concretos en su labor: </b> </td><td> '.$model->eficacia.'</td></tr>
-    <tr class="odd"><td> <b>Grado de cumplimiento y dedicación: </b> </td><td> '.$model->grado_cumplimiento.'</td></tr>
-    <tr class="odd"><td> <b>Puntualidad y respeto de las normas etablecidas: </b> </td><td> '.$model->puntualidad_respeto.'</td></tr>
-    <tr class="odd"><td> <b>Capacidad de integración y/o adaptación: </b> </td><td> '.$model->integracion_adaptacion.'</td></tr>
-    <tr class="odd"><td> <b>Responsabilidad, autocrítica y superación: </b> </td><td> '.$model->responsabilidad_superacion.'</td></tr>
-    <tr class="odd"><td> <b>Personalidad, lenguaje, presencia y seguridad: </b> </td><td> '.$model->capacidades_personales.'</td></tr>
-    <tr class="odd"><td> <b>Iniciativa, creatividad y capacidad de improvisación: </b> </td><td> '.$model->iniciativa_creativi_improvi.'</td></tr>
+    <tr class="odd"><td> <b>Nombre: </b> </td><td class="fila2"> '.$model->estudiantes->nombres.'</td></tr>
+    <tr class="odd"><td> <b>Apellidos: </b> </td><td class="fila2"> '.$model->estudiantes->apellidos.'</td></tr>
+    <tr class="odd"><td> <b>Encargado de Practica: </b> </td><td class="fila2"> '.$model->EncargadosPracticas->nombre_encargado.'</td></tr>
+    <tr class="odd"><td> <b>Cargo: </b> </td><td class="fila2"> '.$model->cargo_asignado.'</td></tr>
+    <tr class="odd"><td> <b>Conocimintos técnicos demostrados: </b> </td><td class="fila2"> '.$model->conocimientos_demostrados.'</td></tr>
+    <tr class="odd"><td> <b>Eficacia para llegar a resultados concretos en su labor: </b> </td><td class="fila2"> '.$model->eficacia.'</td></tr>
+    <tr class="odd"><td> <b>Grado de cumplimiento y dedicación: </b> </td><td class="fila2"> '.$model->grado_cumplimiento.'</td></tr>
+    <tr class="odd"><td> <b>Puntualidad y respeto de las normas etablecidas: </b> </td><td class="fila2"> '.$model->puntualidad_respeto.'</td></tr>
+    <tr class="odd"><td> <b>Capacidad de integración y/o adaptación: </b> </td><td class="fila2"> '.$model->integracion_adaptacion.'</td></tr>
+    <tr class="odd"><td> <b>Responsabilidad, autocrítica y superación: </b> </td><td class="fila2"> '.$model->responsabilidad_superacion.'</td></tr>
+    <tr class="odd"><td> <b>Personalidad, lenguaje, presencia y seguridad: </b> </td><td class="fila2"> '.$model->capacidades_personales.'</td></tr>
+    <tr class="odd"><td> <b>Iniciativa, creatividad y capacidad de improvisación: </b> </td><td class="fila2"> '.$model->iniciativa_creativi_improvi.'</td></tr>
 </table>
 
 <br/>
@@ -41,13 +41,13 @@ $html='
 <p>________________________________________________________________________________________________________</p>
 <p>________________________________________________________________________________________________________</p>
 <br/><br/>
-<p>Fecha: ______________________</p>
-<br/><br/>
 <p class="firma">_________________________________</p>
 <p class="firma">Firma de Profesional Guia </p>
 ';
 
 $mpdf=new mPDF('win-1252','LETTER','','',15,15,25,12,5,7);
+$mpdf->SetHTMLHeader($header);
+$mpdf->SetFooter(' {DATE j/m/Y}|Página {PAGENO}/{nbpg}|Sistema de Evaluación de Practicas UTEM');
 $mpdf->WriteHTML($html);
 $mpdf->Output();
 exit;

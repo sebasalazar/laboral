@@ -32,7 +32,7 @@ class EncargadosEmpresasController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','delete'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -120,13 +120,22 @@ class EncargadosEmpresasController extends Controller
 	/**
 	 * Lists all models.
 	 */
-	public function actionIndex()
+        
+        public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('EncargadosEmpresas');
+            {
+            $model=new EncargadosEmpresas('search');
+            $model->unsetAttributes();  // clear any default values
+            if(isset($_GET['EncargadosEmpresas']))
+                    $model->attributes=$_GET['EncargadosEmpresas'];
+            $this->render('index', array('model'=>$model));
+            }   
+		/*$dataProvider=new CActiveDataProvider('EncargadosEmpresas');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
-		));
+		));*/
 	}
+
 
 	/**
 	 * Manages all models.
