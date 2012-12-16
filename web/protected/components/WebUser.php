@@ -69,11 +69,11 @@ class WebUser extends CWebUser {
             if ($rol['admin'] == 1) {
                 return Yii::app()->user->name;
             } else {
-                return 'admin';
+                return 0;
             }
         }
         else
-            return 'admin';
+            return 0;
     }
 
     public static function usuario() {
