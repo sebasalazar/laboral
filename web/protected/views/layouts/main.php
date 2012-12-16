@@ -47,7 +47,8 @@ function formateo_rut($rut_param){
                                         array('label'=>'Lista Ofertas Laborales', 'url'=>array('/ofertasLaborales/index')),
                                         array('label'=>'Publicar una Oferta Laboral', 'url'=>array('/ofertasLaborales/create'), 'visible'=>Yii::app()->user->isDocente() || Yii::app()->user->isEmpresa()),
                                         array('label'=>'Mis Postulaciones', 'url'=>array('postulaciones/mispostulaciones'), 'visible'=>Yii::app()->user->isEstudiante()),
-                                    )),
+                                    ), 'visible'=>!Yii::app()->user->isGuest),
+                                    array('label'=>'Ofertas Laborales', 'url'=>array('/ofertasLaborales/index'), 'visible'=>Yii::app()->user->isGuest),
                                     array('label'=>'Encargados', 'items'=>array(
                                         array('label'=>'Crear encargado de Empresa', 'url'=>array('/encargadosEmpresas/create')),
                                         array('label'=>'Crear encargado de Practica', 'url'=>array('/encargadosPracticas/create')),
@@ -55,10 +56,10 @@ function formateo_rut($rut_param){
                                     array('label'=>'Practicas', 'items'=>array(
                                         array('label'=>'Ver Practicas', 'url'=>array('/practicas/index')),
                                         array('label'=>'Crear Practicas', 'url'=>array('/practicas/create'), 'visible'=>Yii::app()->user->isEmpresa()),
-                                        '---',
                                         array('label'=>'Ver Evaluaciones', 'url'=>array('/evaluacionesPracticas/index'), 'visible'=>Yii::app()->user->isDocente() || Yii::app()->user->isEmpresa() || Yii::app()->user->isEstudiante()),
                                         array('label'=>'Evaluar Practicas', 'url'=>array('/evaluacionesPracticas/create'), 'visible'=>Yii::app()->user->isEmpresa()),
-                                    )),
+                                    ), 'visible'=>!Yii::app()->user->isGuest),
+                                    array('label'=>'Practicas', 'url'=>array('/practicas/index'), 'visible'=>Yii::app()->user->isGuest),
                                     array('label'=>'Registrarse', 'url'=>array('usuarios/pcreate'), 'visible'=>Yii::app()->user->isGuest),
                                     array('label'=>'Contacto', 'url'=>array('site/contact')),
                                 ),
