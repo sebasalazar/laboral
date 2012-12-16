@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Practicas', 'url'=>array('index')),
-	array('label'=>'Create Practicas', 'url'=>array('create')),
-	array('label'=>'Update Practicas', 'url'=>array('update', 'id'=>$model->pk)),
-	array('label'=>'Delete Practicas', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Practicas', 'url'=>array('admin')),
+	//array('label'=>'List Practicas', 'url'=>array('index')),
+	array('label'=>'Crear Practica', 'url'=>array('create')),
+	array('label'=>'Modificiar Practica', 'url'=>array('update', 'id'=>$model->pk)),
+	array('label'=>'Eliminar Practica', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'¿Está seguro que quiere eliminar esta practica?')),
+	//array('label'=>'Manage Practicas', 'url'=>array('admin')),
 );
 ?>
 

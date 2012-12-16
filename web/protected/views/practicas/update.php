@@ -9,10 +9,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Practicas', 'url'=>array('index')),
-	array('label'=>'Create Practicas', 'url'=>array('create')),
-	array('label'=>'View Practicas', 'url'=>array('view', 'id'=>$model->pk)),
-	array('label'=>'Manage Practicas', 'url'=>array('admin')),
+	//array('label'=>'List Practicas', 'url'=>array('index')),
+	array('label'=>'Crear Practicas', 'url'=>array('create')),
+	//array('label'=>'View Practicas', 'url'=>array('view', 'id'=>$model->pk)),
+	//array('label'=>'Manage Practicas', 'url'=>array('admin')),
 );
 ?>
 

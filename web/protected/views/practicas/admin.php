@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Practicas', 'url'=>array('index')),
-	array('label'=>'Create Practicas', 'url'=>array('create')),
+	//array('label'=>'Lista de Practicas', 'url'=>array('index')),
+	array('label'=>'Crear Practicas', 'url'=>array('create')),
 );
 
 ?>
@@ -30,7 +30,6 @@ $this->menu=array(
                         'filter'=>$model,
                         'template'=>"{items}\n{pager}",
                         'columns'=>array(
-                        'pk',
                         array(
                             'header'=>'Empresa',
                             'name'=>'empresa_fk',
