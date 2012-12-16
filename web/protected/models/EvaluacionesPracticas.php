@@ -63,7 +63,7 @@ class EvaluacionesPracticas extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
                     'estudiantes' => array(self::BELONGS_TO, 'Estudiantes', 'estudiant_fk'),
-                    'EncargadosPracticas' => array(self::BELONGS_TO, 'encargadosPracticas', 'encar_practicas_fk'),
+                    'EncargadosPracticas' => array(self::BELONGS_TO, 'EncargadosPracticas', 'encar_practicas_fk'),
                     
 		);
 	}
