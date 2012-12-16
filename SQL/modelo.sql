@@ -391,7 +391,7 @@ CREATE TABLE conocimientos(
 DROP TABLE IF EXISTS conocimientos_curriculums CASCADE;
 CREATE TABLE conocimientos_curriculums(
     curriculum_fk int NOT NULL  REFERENCES curriculums(pk) ON UPDATE CASCADE ON DELETE CASCADE, 
-    experiencias_fk int NOT NULL REFERENCES conocimientos(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    experiencias_fk int NOT NULL REFERENCES conocimientos(pk) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 
@@ -401,7 +401,7 @@ CREATE TABLE conocimientos_curriculums(
 DROP TABLE IF EXISTS educacion CASCADE;
 CREATE TABLE educacion (
     pk bigint NOT NULL,
-    curriculum_fk bigint NOT NULL REFERENCES curriculms(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    curriculum_fk bigint NOT NULL REFERENCES curriculums(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     nombre_institucion VARCHAR(60) NOT NULL,
     carrera VARCHAR(60),    
     inicio date NOT NULL,

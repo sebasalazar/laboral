@@ -96,6 +96,18 @@ class WebUser extends CWebUser {
         return $roles;
     }
     
+    public function rolesToDec($rolBin){   //en base a un numero binario, se calcula el rol en numero decimal
+        $rol['estudiante'] = $rolBin%10;   //para guardar en base de datos. ej: 1011 = 11.
+        $rolBin = $rolBin/10;
+        $rol['empresa'] = $rolBin%10;
+        $rolBin = $rolBin/10;
+        $rol['docente'] = $rolBin%10;
+        $rolBin = $rolBin/10;
+        $rol['admin'] = $rolBin%10;
+        $rolBin = $rolBin/10;
+        return (int) (pow(2,3)*$rol['admin'] + pow(2,2)*$rol['docente'] + pow(2,1)*$rol['empresa'] + pow(2,0)*$rol['estudiante']);
+    }
+    
     public function isDocente() {
         if(!Yii::app()->user->isGuest){
             $usuario = Usuarios::model()->findByPk(Yii::app()->user->name);

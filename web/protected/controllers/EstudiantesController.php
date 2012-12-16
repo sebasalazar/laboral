@@ -154,7 +154,8 @@ class EstudiantesController extends Controller
         
         public function actionUpdate3($id)
 	{
-		$model=$this->loadModel((int) $id);
+		$model= Estudiantes::model()->findBypk($id);
+                $model->setAttributes( Estudiantes::model()->findBypk($id));
                 $modelCV = new Curriculums;
                 $modelConocimientos = new Conocimientos;
                 $modelExperiencias = new Experiencias;
@@ -174,6 +175,11 @@ class EstudiantesController extends Controller
 
 		$this->render('update3',array(
 			'model'=>$model,
+                        'modelCV'=>$modelCV,
+                        'modelConocimientos'=>$modelConocimientos,
+                        'modelExperiencias'=>$modelExperiencias,
+                        'modelFormacionComplementaria'=>$modelFormacionComplementaria,
+                        'modelEducacion'=>$modelEducacion,
 		));
 	}
 	/**
