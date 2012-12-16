@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Facultades', 'url'=>array('create')),
-	array('label'=>'Manage Facultades', 'url'=>array('admin')),
+	array('label'=>'Crear Facultad', 'url'=>array('create')),
+	array('label'=>'Administrar Facultades', 'url'=>array('admin')),
 );
 ?>
 
