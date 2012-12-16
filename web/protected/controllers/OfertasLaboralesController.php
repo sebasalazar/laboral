@@ -63,34 +63,39 @@ class OfertasLaboralesController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new OfertasLaborales;
+            if(Yii::app()->user->isEmpresa() || Yii::app()->user->isDocente() || Yii::app()->user->isAdmin())
+            {
+                    $model=new OfertasLaborales;
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-                
-		if(isset($_POST['OfertasLaborales']))
-		{
-                        $propietario = new PropietarioOferta;
-                        $valor =$_POST['OfertasLaborales'];
-			$model->attributes=$valor;
-                        $model->fecha_publicacion = date("Y-m-d H:i:s");
-                        $model->activo = 1;
-                        WebUser::loguear(__METHOD__ . " Listado: " . count($valor));
-                        WebUser::loguear(__METHOD__ . " " . print_r($valor, false));
-			if($model->save() && $model->validate()){
-                            $propietario->rut = Yii::app()->user->name;
-                            $propietario->oferta_laboral_fk = $model->pk;
-                            if($propietario->save())
-                            {
-                                Yii::app()->user->setFlash('sucess', "");
-                                $this->redirect(array('view','id'=>$model->pk));
+                    // Uncomment the following line if AJAX validation is needed
+                    // $this->performAjaxValidation($model);
+
+                    if(isset($_POST['OfertasLaborales']))
+                    {
+                            $propietario = new PropietarioOferta;
+                            $valor =$_POST['OfertasLaborales'];
+                            $model->attributes=$valor;
+                            $model->fecha_publicacion = date("Y-m-d H:i:s");
+                            $model->activo = 1;
+                            WebUser::loguear(__METHOD__ . " Listado: " . count($valor));
+                            WebUser::loguear(__METHOD__ . " " . print_r($valor, false));
+                            if($model->save() && $model->validate()){
+                                $propietario->rut = Yii::app()->user->name;
+                                $propietario->oferta_laboral_fk = $model->pk;
+                                if($propietario->save())
+                                {
+                                    Yii::app()->user->setFlash('sucess', "");
+                                    $this->redirect(array('view','id'=>$model->pk));
+                                }
                             }
-                        }
-		}
+                    }
 
-		$this->render('create',array(
-			'model'=>$model,
-		));
+                    $this->render('create',array(
+                            'model'=>$model,
+                    ));
+            }
+            else
+                throw new CHttpException(403,'No tienes permisos para ejecutar está acción.');
 	}
 
 	/**

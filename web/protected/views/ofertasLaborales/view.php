@@ -9,7 +9,8 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
         array('label'=>'Ofertas Laborales', 'url'=>array('ofertasLaborales/index')),
-	array('label'=>'Publicar Oferta Laboral', 'url'=>array('ofertasLaborales/create')),
+	array('label'=>'Publicar Oferta Laboral', 'url'=>array('ofertasLaborales/create'), 'visible'=>!Yii::app()->user->isGuest && !Yii::app()->user->isEstudiante()),
+    array('label'=>'Mis Postulaciones', 'url'=>array('postulaciones/mispostulaciones'), 'visible'=>Yii::app()->user->isEstudiante()),
 );
 ?>
 
