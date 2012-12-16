@@ -46,7 +46,6 @@ function formateo_rut($rut_param){
                                     array('label'=>'Ofertas Laborales', 'url'=>array('/ofertasLaborales/index'), 'items'=>array(
                                         array('label'=>'Lista Ofertas Laborales', 'url'=>array('/ofertasLaborales/index')),
                                         array('label'=>'Publicar una Oferta Laboral', 'url'=>array('/ofertasLaborales/create'), 'visible'=>Yii::app()->user->isDocente() || Yii::app()->user->isEmpresa()),
-                                        array('label'=>'Lista Ofertas Laborales', 'url'=>array('ofertasLaborales/index'), 'visible'=>Yii::app()->user->isEstudiante()),
                                         array('label'=>'Mis Postulaciones', 'url'=>array('postulaciones/mispostulaciones'), 'visible'=>Yii::app()->user->isEstudiante()),
                                     )),
                                     array('label'=>'Encargados', 'items'=>array(
