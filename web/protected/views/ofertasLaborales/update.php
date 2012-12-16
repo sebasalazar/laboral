@@ -16,5 +16,8 @@ $this->menu=array(
 );
 ?>
 
-<h1>Actualizar Oferta Laboral: <?php echo $model->pk; ?></h1>
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+
+<div class="contenidoPage">
+    <h1>Actualizar Oferta Laboral: <?php echo $model->pk; ?></h1>
+    <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+</div>

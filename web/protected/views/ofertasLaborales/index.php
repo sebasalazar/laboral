@@ -18,7 +18,7 @@ $this->breadcrumbs=array(
                 array('label'=>'Publicar una Oferta Laboral', 'url'=>array('ofertasLaborales/create'), 'visible'=>!Yii::app()->user->isGuest),
                 array('label'=>'Publicar Practica', 'url'=>array('#'), 'visible'=>!Yii::app()->user->isGuest),
         ); */?>
-<div class="grillac">
+<div id="grillac">
     <?php
             $this->widget('bootstrap.widgets.TbGridView', array(
                     'type'=>'striped bordered condensed',
