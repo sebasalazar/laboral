@@ -16,13 +16,16 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Tips #<?php echo $model->pk; ?></h1>
-
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'pk',
+<div class="contenidoPage">
+    <h1>Tips: <?php echo $model->titulo; ?></h1>
+    <br />
+    <?php
+    $this->widget('bootstrap.widgets.TbDetailView', array(
+    'data'=>$model,
+    'attributes'=>array(
+                'pk',
 		'titulo',
 		'contenido',
-	),
-)); ?>
+            ),
+    )); ?>
+</div>

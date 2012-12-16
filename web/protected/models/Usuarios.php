@@ -66,7 +66,6 @@ class Usuarios extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
 			'username' => 'Username',
 			'password' => 'Password',
 			'salt' => 'Salt',
@@ -85,7 +84,6 @@ class Usuarios extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
 		$criteria->compare('username',$this->username);
 		$criteria->compare('password',$this->password,true);
 		$criteria->compare('salt',$this->salt,true);

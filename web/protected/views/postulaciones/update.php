@@ -16,6 +16,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update Postulaciones <?php echo $model->pk; ?></h1>
+<h1>Actualizar Postulacion: <?php echo $model->pk; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
