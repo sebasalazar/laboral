@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Comunas', 'url'=>array('index')),
-	array('label'=>'Create Comunas', 'url'=>array('create')),
+	array('label'=>'Lista Comunas', 'url'=>array('index')),
+	array('label'=>'Crear Comuna', 'url'=>array('create')),
 );
 ?>
 

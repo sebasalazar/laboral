@@ -5,7 +5,7 @@
 $pdfLib = realpath(__DIR__ . '/../../../MPDF54/mpdf.php');
 require_once $pdfLib;
 
-$pdf = Yii::createComponent('application.extensions.MPDF54.mpdf');
+//$pdf = Yii::createComponent('application.extensions.MPDF54.mpdf');
 
 $html='
 <link rel="stylesheet" type="text/css" href="'.Yii::app()->request->baseUrl.'/css/pdf.css" />

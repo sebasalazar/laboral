@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Regiones', 'url'=>array('index')),
-	array('label'=>'Create Regiones', 'url'=>array('create')),
+	array('label'=>'Lista de Regiones', 'url'=>array('index')),
+	array('label'=>'Crear Region', 'url'=>array('create')),
 );
 
 ?>

@@ -32,11 +32,11 @@ class EmpresasController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('update','perfil'),
+				'actions'=>array('update','perfil','create'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','create','index','view'),
+				'actions'=>array('admin','delete','create','index','view','update'),
 				'users'=>array(Yii::app()->user->getAdmin()),
 			),
 			array('deny',  // deny all users
@@ -130,10 +130,15 @@ class EmpresasController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Empresas');
+                $model=new Empresas('search');
+                $model->unsetAttributes();  // clear any default values
+                if(isset($_GET['Empresas']))
+                        $model->attributes=$_GET['Empresas'];
+                $this->render('index', array('model'=>$model));
+		/*$dataProvider=new CActiveDataProvider('Empresas');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
-		));
+		));*/
 	}
 
 	/**

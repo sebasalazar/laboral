@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Jornadas', 'url'=>array('index')),
-	array('label'=>'Manage Jornadas', 'url'=>array('admin')),
+	array('label'=>'Lista Jornadas', 'url'=>array('index')),
+	array('label'=>'Administrar Jornadas', 'url'=>array('admin')),
 );
 ?>
 <div class="contenidoPage">

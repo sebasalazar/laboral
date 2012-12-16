@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Docentes', 'url'=>array('index')),
-	array('label'=>'Manage Docentes', 'url'=>array('admin')),
+	array('label'=>'Lista Docentes', 'url'=>array('index')),
+	array('label'=>'Administrar Docentes', 'url'=>array('admin')),
 );
 ?>
 <div class="contenidoPage">

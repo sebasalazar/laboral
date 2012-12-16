@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List EstadosCiviles', 'url'=>array('index')),
-	array('label'=>'Create EstadosCiviles', 'url'=>array('create')),
-	array('label'=>'Update EstadosCiviles', 'url'=>array('update', 'id'=>$model->pk)),
-	array('label'=>'Delete EstadosCiviles', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage EstadosCiviles', 'url'=>array('admin')),
+	array('label'=>'Lista  Estados Civiles', 'url'=>array('index')),
+	array('label'=>'Crear Estado Civil', 'url'=>array('create')),
+	array('label'=>'Actualizar Estado Civil', 'url'=>array('update', 'id'=>$model->pk)),
+	array('label'=>'Borrar Estado Civil', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Administrar Estados Civiles', 'url'=>array('admin')),
 );
 ?>
 

@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Facultades', 'url'=>array('index')),
-	array('label'=>'Create Facultades', 'url'=>array('create')),
+	array('label'=>'Lista Facultades', 'url'=>array('index')),
+	array('label'=>'Crear Facultad', 'url'=>array('create')),
 );
 ?>
 

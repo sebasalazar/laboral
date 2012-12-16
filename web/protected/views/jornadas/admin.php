@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Jornadas', 'url'=>array('index')),
-	array('label'=>'Create Jornadas', 'url'=>array('create')),
+	array('label'=>'Lista Jornadas', 'url'=>array('index')),
+	array('label'=>'Crear Jornada', 'url'=>array('create')),
 );
 
 ?>

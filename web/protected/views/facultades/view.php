@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Facultades', 'url'=>array('index')),
-	array('label'=>'Create Facultades', 'url'=>array('create')),
-	array('label'=>'Update Facultades', 'url'=>array('update', 'id'=>$model->pk)),
-	array('label'=>'Delete Facultades', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Facultades', 'url'=>array('admin')),
+	array('label'=>'Lista Facultades', 'url'=>array('index')),
+	array('label'=>'Crear Facultad', 'url'=>array('create')),
+	array('label'=>'Actualizar Facultad', 'url'=>array('update', 'id'=>$model->pk)),
+	array('label'=>'Borrar Facultad', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Administrar Facultades', 'url'=>array('admin')),
 );
 ?>
 

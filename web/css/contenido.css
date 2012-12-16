@@ -1,8 +1,13 @@
+
 .contenido {
    display: block;
    width: 100%;
    margin-right: 10%;
    display: table;
+}
+
+.button-column{
+    text-decoration-color: #FFFFFF;
 }
 
 .contenido2 {
@@ -28,13 +33,25 @@
     display: block;
     width: 90%;
     margin: 0 auto 0 auto;
-    margin-top: 20px;
+    margin-top: 5%;
 }
 
-.grillac{
+.contenidoPage a{
+    color: #ffffff;
+}
+
+#yw0_button{
+    color: #06C;
+}
+
+#grillac{
     width: 90%;
     display: block;
     margin: 0 auto 0 auto;
+}
+
+#grillac a{
+    color: #FFFFFF;
 }
 
 .columna{
@@ -68,11 +85,15 @@
     height: 100px;
 }
 
-.columna_c_1{
+#columna_c_1{
     width: 95%;
     display: block;
     margin: 0 auto 0 auto;
     height: 500px;
+}
+
+#columna_c_1 a{
+    color: #ffffff;
 }
 
 .columna_c_2{
@@ -100,6 +121,25 @@
     width: 100%;
     display: block;
     margin: 0 auto 0 auto;
+}
+
+#sidebar{
+    display: block;
+    margin: 50% auto 0 auto;
+    width: 100%;
+    padding: 0;
+}
+
+ul{
+    padding-left: 0;
+}
+
+ul#yw1{
+    margin: 0;
+}
+
+.span-19{
+    width:75%
 }
 
 .centrar1{
@@ -224,6 +264,17 @@ a:hover{
     display: block;
     width: 90%;
     border: 1px solid black;
+}
+
+.con5{
+    display: block;
+    margin: 0 auto 0 auto;
+    border: 1px #1B1B1B;
+    width: 92%;
+    text-align: center;
+    border-radius: 4px 4px 0px 0px;
+    background: #1B1B1B;
+    padding: 6px;
 }
 
 .form-actions{

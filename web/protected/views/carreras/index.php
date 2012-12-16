@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Carreras', 'url'=>array('create')),
-	array('label'=>'Manage Carreras', 'url'=>array('admin')),
+	array('label'=>'Crear Carrera', 'url'=>array('create')),
+	array('label'=>'Administrar Carreras', 'url'=>array('admin')),
 );
 ?>
 

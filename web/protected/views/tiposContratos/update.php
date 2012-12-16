@@ -9,10 +9,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List TiposContratos', 'url'=>array('index')),
-	array('label'=>'Create TiposContratos', 'url'=>array('create')),
-	array('label'=>'View TiposContratos', 'url'=>array('view', 'id'=>$model->pk)),
-	array('label'=>'Manage TiposContratos', 'url'=>array('admin')),
+	array('label'=>'Lista de Tipos Contratos', 'url'=>array('index')),
+	array('label'=>'Crear Tipo Contrato', 'url'=>array('create')),
+	array('label'=>'Ver Tipo Contrato', 'url'=>array('view', 'id'=>$model->pk)),
+	array('label'=>'Administrar Tipos de Contratos', 'url'=>array('admin')),
 );
 ?>
 

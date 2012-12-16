@@ -9,10 +9,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List EstadosCiviles', 'url'=>array('index')),
-	array('label'=>'Create EstadosCiviles', 'url'=>array('create')),
-	array('label'=>'View EstadosCiviles', 'url'=>array('view', 'id'=>$model->pk)),
-	array('label'=>'Manage EstadosCiviles', 'url'=>array('admin')),
+	array('label'=>'Lista Estados Civiles', 'url'=>array('index')),
+	array('label'=>'Crear Estado Civil', 'url'=>array('create')),
+	array('label'=>'Ver Estado Civil', 'url'=>array('view', 'id'=>$model->pk)),
+	array('label'=>'Administrar Estados Civiles', 'url'=>array('admin')),
 );
 ?>
 

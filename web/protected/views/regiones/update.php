@@ -9,10 +9,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Regiones', 'url'=>array('index')),
-	array('label'=>'Create Regiones', 'url'=>array('create')),
-	array('label'=>'View Regiones', 'url'=>array('view', 'id'=>$model->pk)),
-	array('label'=>'Manage Regiones', 'url'=>array('admin')),
+	array('label'=>'Lista de Regiones', 'url'=>array('index')),
+	array('label'=>'Crear Region', 'url'=>array('create')),
+	array('label'=>'Ver Region', 'url'=>array('view', 'id'=>$model->pk)),
+	array('label'=>'Administar Regiones', 'url'=>array('admin')),
 );
 ?>
 

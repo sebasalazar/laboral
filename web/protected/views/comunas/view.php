@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Comunas', 'url'=>array('index')),
-	array('label'=>'Create Comunas', 'url'=>array('create')),
-	array('label'=>'Update Comunas', 'url'=>array('update', 'id'=>$model->pk)),
-	array('label'=>'Delete Comunas', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Comunas', 'url'=>array('admin')),
+	array('label'=>'Lista Comunas', 'url'=>array('index')),
+	array('label'=>'Crear Comuna', 'url'=>array('create')),
+	array('label'=>'Actualizar Comuna', 'url'=>array('update', 'id'=>$model->pk)),
+	array('label'=>'Borrar Comuna', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Administrar Comunas', 'url'=>array('admin')),
 );
 ?>
 

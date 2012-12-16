@@ -27,6 +27,16 @@ class WebUser extends CWebUser {
             return $empresa;
         }
     }
+    
+    public function getFormateoRut($rut_param){ 
+     
+        $parte4 = substr($rut_param, -1); // seria solo el numero verificador 
+        $parte3 = substr($rut_param, -4,3); // la cuenta va de derecha a izq  
+        $parte2 = substr($rut_param, -7,3);  
+        $parte1 = substr($rut_param, 0,-7);   //de esta manera toma todos los caracteres desde el 8 hacia la izq 
+
+        return $parte1.".".$parte2.".".$parte3."-".$parte4; 
+    }
 
     public function getModelUsuarioCompleto($rut) {
         $docente = Docentes::model()->findByAttributes(array('rut' => $rut));
@@ -86,6 +96,16 @@ class WebUser extends CWebUser {
         return $roles;
     }
 
+    public function isEstudiante() {
+        $usuario = Usuarios::model()->findByPk(Yii::app()->user->name);
+        $rol = $this->roles($usuario->roles);
+        if ($rol['estudiante'] == 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
     public function isAdmin() {
         $usuario = Usuarios::model()->findByPk(Yii::app()->user->name);
         $rol = $this->roles($usuario->roles);

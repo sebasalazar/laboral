@@ -14,7 +14,11 @@
 
 <div class="contenido">
         <div class="fila fila-grande">
-            <div class="columna_c_1">
+            <div class="con5">
+                    <text class="text-footer"><b>Ultimas Ofertas Laborales</b></text>
+                </div>
+            <div id="columna_c_1">
+
                 <?php $this->widget('bootstrap.widgets.TbGridView', array(
                     'type'=>'striped bordered condensed',
                     'dataProvider'=>$ofertas->customSearch(),
@@ -34,14 +38,14 @@
         </div>
         <div class="fila">
              <div class="con">
-                    <text class="text-footer">Noticias</text>
+                    <text class="text-footer"><b>Noticias</b></text>
                 </div>
              <div class="con2">
                     Aquí van las noticias.
              </div>
             <br />
             <div class="con">
-                    <text class="text-footer">Tips</text>
+                    <text class="text-footer"><b>Tips</b></text>
             </div>
             <div class="con3">
                 <MARQUEE behavior="scroll" direction="up" scrollAmount="3" width="420" hiegth="195" onMouseOver="this.scrollAmount=1" onMouseOut="this.scrollAmount=3">

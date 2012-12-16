@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List OfertasLaborales', 'url'=>array('index')),
-	array('label'=>'Create OfertasLaborales', 'url'=>array('create')),
+	array('label'=>'Lista Ofertas Laborales', 'url'=>array('index')),
+	array('label'=>'Crear Oferta Laboral', 'url'=>array('create')),
 );
 
 ?>

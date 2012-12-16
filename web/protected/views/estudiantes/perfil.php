@@ -12,14 +12,15 @@ $this->menu=array(
 );
 ?>
 
-<h1>Mi perfil <?php //$model->pk; ?></h1>
+<h1>Mi perfil <?php $rut1=Yii::app()->user->getFormateoRut((Yii::app()->user->name)); //$model->pk; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(		
 		'nombres',
 		'apellidos',
-		'rut',
+		//'rut',
+            array('label'=>'Rut', 'value' =>$rut1,),
 		array(
                     'label'=>'Fecha Nacimiento',
                     'value'=>Yii::app()->dateFormatter->format("d MMMM y",strtotime($model->fecha_nacimiento)),

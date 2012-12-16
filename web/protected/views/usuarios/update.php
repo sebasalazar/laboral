@@ -9,10 +9,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Usuarios', 'url'=>array('index')),
-	array('label'=>'Create Usuarios', 'url'=>array('create')),
-	array('label'=>'View Usuarios', 'url'=>array('view', 'id'=>$model->username)),
-	array('label'=>'Manage Usuarios', 'url'=>array('admin')),
+        array('label'=>'Administrar Usuarios', 'url'=>array('admin')),
+	array('label'=>'Lista de Usuarios', 'url'=>array('index')),
+	array('label'=>'Crear Usuario', 'url'=>array('pcreate')),
+	array('label'=>'Ver Usuario', 'url'=>array('view', 'id'=>$model->username)),
 );
 ?>
 <div class="contenidoPage">

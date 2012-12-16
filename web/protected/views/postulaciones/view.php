@@ -8,15 +8,15 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Postulaciones', 'url'=>array('index')),
-	array('label'=>'Create Postulaciones', 'url'=>array('create')),
-	array('label'=>'Update Postulaciones', 'url'=>array('update', 'id'=>$model->pk)),
-	array('label'=>'Delete Postulaciones', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Postulaciones', 'url'=>array('admin')),
+	array('label'=>'Lista Postulaciones', 'url'=>array('index')),
+	array('label'=>'Crear Postulacion', 'url'=>array('create')),
+	array('label'=>'Actualizar Postulacion', 'url'=>array('update', 'id'=>$model->pk)),
+	array('label'=>'Borrar Postulacion', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Administrar Postulacion', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View Postulaciones #<?php echo $model->pk; ?></h1>
+<h1>Ver Postulacion: #<?php echo $model->pk; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

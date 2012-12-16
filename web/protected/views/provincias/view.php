@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Provincias', 'url'=>array('index')),
-	array('label'=>'Create Provincias', 'url'=>array('create')),
-	array('label'=>'Update Provincias', 'url'=>array('update', 'id'=>$model->pk)),
-	array('label'=>'Delete Provincias', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Provincias', 'url'=>array('admin')),
+	array('label'=>'Lista de Provincias', 'url'=>array('index')),
+	array('label'=>'Crear Provincia', 'url'=>array('create')),
+	array('label'=>'Actualizar Provincia', 'url'=>array('update', 'id'=>$model->pk)),
+	array('label'=>'Borrar Provincia', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Administrar Provincias', 'url'=>array('admin')),
 );
 ?>
 

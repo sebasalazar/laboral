@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Facultades', 'url'=>array('index')),
-	array('label'=>'Manage Facultades', 'url'=>array('admin')),
+	array('label'=>'Lista Facultades', 'url'=>array('index')),
+	array('label'=>'Administrar Facultad', 'url'=>array('admin')),
 );
 ?>
 

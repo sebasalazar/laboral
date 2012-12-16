@@ -9,10 +9,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Facultades', 'url'=>array('index')),
-	array('label'=>'Create Facultades', 'url'=>array('create')),
-	array('label'=>'View Facultades', 'url'=>array('view', 'id'=>$model->pk)),
-	array('label'=>'Manage Facultades', 'url'=>array('admin')),
+	array('label'=>'Lista Facultades', 'url'=>array('index')),
+	array('label'=>'Crear Facultad', 'url'=>array('create')),
+	array('label'=>'Ver Facultad', 'url'=>array('view', 'id'=>$model->pk)),
+	array('label'=>'Administrar Facultad', 'url'=>array('admin')),
 );
 ?>
 

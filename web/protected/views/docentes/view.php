@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Docentes', 'url'=>array('index')),
-	array('label'=>'Create Docentes', 'url'=>array('create')),
-	array('label'=>'Update Docentes', 'url'=>array('update', 'id'=>$model->pk)),
-	array('label'=>'Delete Docentes', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Docentes', 'url'=>array('admin')),
+	array('label'=>'Lista Docentes', 'url'=>array('index')),
+	array('label'=>'Crear Docente', 'url'=>array('create')),
+	array('label'=>'Actualizar Docentes', 'url'=>array('update', 'id'=>$model->pk)),
+	array('label'=>'Borrar Docentes', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Administrar Docentes', 'url'=>array('admin')),
 );
 ?>
 

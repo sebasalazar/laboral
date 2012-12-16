@@ -9,10 +9,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Carreras', 'url'=>array('index')),
-	array('label'=>'Create Carreras', 'url'=>array('create')),
-	array('label'=>'View Carreras', 'url'=>array('view', 'id'=>$model->pk)),
-	array('label'=>'Manage Carreras', 'url'=>array('admin')),
+	array('label'=>'Lista Carreras', 'url'=>array('index')),
+	array('label'=>'Crear Carrera', 'url'=>array('create')),
+	array('label'=>'Ver Carrera', 'url'=>array('view', 'id'=>$model->pk)),
+	array('label'=>'Administrar Carreras', 'url'=>array('admin')),
 );
 ?>
 

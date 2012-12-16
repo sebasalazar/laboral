@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Rubros', 'url'=>array('index')),
-	array('label'=>'Create Rubros', 'url'=>array('create')),
-	array('label'=>'Update Rubros', 'url'=>array('update', 'id'=>$model->pk)),
-	array('label'=>'Delete Rubros', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Rubros', 'url'=>array('admin')),
+	array('label'=>'Lista de Rubros', 'url'=>array('index')),
+	array('label'=>'Crear Rubro', 'url'=>array('create')),
+	array('label'=>'Actualizar Rubro', 'url'=>array('update', 'id'=>$model->pk)),
+	array('label'=>'Borrar Rubro', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Administrar Rubros', 'url'=>array('admin')),
 );
 ?>
 

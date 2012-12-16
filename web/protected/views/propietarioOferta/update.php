@@ -9,10 +9,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List PropietarioOferta', 'url'=>array('index')),
-	array('label'=>'Create PropietarioOferta', 'url'=>array('create')),
-	array('label'=>'View PropietarioOferta', 'url'=>array('view', 'id'=>$model->pk)),
-	array('label'=>'Manage PropietarioOferta', 'url'=>array('admin')),
+	array('label'=>'Lista Propietarios Ofertas', 'url'=>array('index')),
+	array('label'=>'Crear Propietario Oferta', 'url'=>array('create')),
+	array('label'=>'Ver Propietario Oferta', 'url'=>array('view', 'id'=>$model->pk)),
+	array('label'=>'Administrar Propietarios Ofertas', 'url'=>array('admin')),
 );
 ?>
 

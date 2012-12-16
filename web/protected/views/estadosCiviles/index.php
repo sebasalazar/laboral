@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create EstadosCiviles', 'url'=>array('create')),
-	array('label'=>'Manage EstadosCiviles', 'url'=>array('admin')),
+	array('label'=>'Crear Estado Civil', 'url'=>array('create')),
+	array('label'=>'Administrar Estados Civiles', 'url'=>array('admin')),
 );
 ?>
 

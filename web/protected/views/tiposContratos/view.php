@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List TiposContratos', 'url'=>array('index')),
-	array('label'=>'Create TiposContratos', 'url'=>array('create')),
-	array('label'=>'Update TiposContratos', 'url'=>array('update', 'id'=>$model->pk)),
-	array('label'=>'Delete TiposContratos', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage TiposContratos', 'url'=>array('admin')),
+	array('label'=>'Lista de Contratos', 'url'=>array('index')),
+	array('label'=>'Crear Tipo Contrato', 'url'=>array('create')),
+	array('label'=>'Actualizar Tipo Contrato', 'url'=>array('update', 'id'=>$model->pk)),
+	array('label'=>'Borrar Tipo Contrato', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Administrar Tipos de Contratos', 'url'=>array('admin')),
 );
 ?>
 

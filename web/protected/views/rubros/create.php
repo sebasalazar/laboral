@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Rubros', 'url'=>array('index')),
-	array('label'=>'Manage Rubros', 'url'=>array('admin')),
+	array('label'=>'Lista de Rubros', 'url'=>array('index')),
+	array('label'=>'Administar Rubros', 'url'=>array('admin')),
 );
 ?>
 

@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Jornadas', 'url'=>array('create')),
-	array('label'=>'Manage Jornadas', 'url'=>array('admin')),
+	array('label'=>'Crear Jornada', 'url'=>array('create')),
+	array('label'=>'Administrar Jornadas', 'url'=>array('admin')),
 );
 ?>
 

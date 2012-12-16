@@ -37,7 +37,8 @@ class Tips extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('titulo, contenido', 'required'),
-			array('titulo, contenido', 'length', 'max'=>255),
+			array('titulo','length', 'max'=>255),
+                        array('contenido', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('pk, titulo, contenido', 'safe', 'on'=>'search'),
