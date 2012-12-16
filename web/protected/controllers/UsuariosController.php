@@ -133,20 +133,37 @@ class UsuariosController extends Controller
 	 */
 	public function actionUpdate($id)
 	{   
-                if($id == Yii::app()->user->name || Yii::app()->user->isAdmin()){
-                    $model=$this->loadModel((int) $id);
+                    if($id == Yii::app()->user->name || Yii::app()->user->isAdmin()){
+                        $model=$this->loadModel((int) $id);
+                        if(isset($_POST['Usuarios']))
+                        {
+                                $rol = 0;
+                                if($_POST['Usuarios']['roles'][3])
+                                {
+                                    $rol = 1;
+                                }
+                                if($_POST['Usuarios']['roles'][2])
+                                {
+                                    $rol = $rol + 10;
+                                }
+                                if($_POST['Usuarios']['roles'][1])
+                                {
+                                    $rol = $rol + 100;
+                                }
+                                if($_POST['Usuarios']['roles'][0])
+                                {
+                                    $rol = $rol + 1000;
+                                }
+                                $model->attributes=$_POST['Usuarios'];
+                                $model->roles = Yii::app()->user->rolesToDec($rol);
+                                if($model->save())
+                                        $this->redirect(array('view','id'=>$model->username));
+                        }
 
-                    if(isset($_POST['Usuarios']))
-                    {
-                            $model->attributes=$_POST['Usuarios'];
-                            if($model->save())
-                                    $this->redirect(array('view','id'=>$model->username));
+                        $this->render('update',array(
+                                'model'=>$model,
+                        ));
                     }
-
-                    $this->render('update',array(
-                            'model'=>$model,
-                    ));
-                }
 	}
 
 	/**

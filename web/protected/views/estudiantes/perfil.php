@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Modificar perfil', 'url'=>array('updateperfil', 'id'=>Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk)),
+	array('label'=>'Modificar perfil', 'url'=>array('updateperfil', 'id'=>$model->pk)),
 );
 ?>
 
@@ -41,7 +41,7 @@ $this->menu=array(
                 array('label'=>'Estado en UTEM',
                    'value'=>$model->estado0->nombre,
                  ),
-		'busqueda',
+		//'busqueda',
 		'archivo_curriculum',
 	),
 )); ?>

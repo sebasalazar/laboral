@@ -4,20 +4,18 @@
 
 $this->breadcrumbs=array(
 	'Estudiantes'=>array('index'),
-	$model->pk=>array('view','id'=>$model->pk),
+	$model->pk=>array('perfil','id'=>$model->pk),
 	'Update',
 );
 
 $this->menu=array(
-	array('label'=>'List Estudiantes', 'url'=>array('index')),
-	array('label'=>'Create Estudiantes', 'url'=>array('create')),
-	array('label'=>'View Estudiantes', 'url'=>array('view', 'id'=>$model->pk)),
-	array('label'=>'Manage Estudiantes', 'url'=>array('admin')),
+
+	array('label'=>'Ver Estudiantes', 'url'=>array('admin')),
+	array('label'=>'Crear Estudiantes', 'url'=>array('create')),
 );
 ?>
 
-<div class="contenidoPage">
-    <h1>Actualizar Estudiante: <?php echo $model->nombres; ?></h1>
+<h1>Modificando mi perfil <?php //echo $model->pk; ?></h1>
 
-    <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
 </div>

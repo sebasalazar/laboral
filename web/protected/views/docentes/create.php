@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 <div class="contenidoPage">
-    <h1>Create Docentes</h1>
+    <h1>Crear Docentes</h1>
     <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
 </div>

@@ -56,6 +56,19 @@ $this->menu=array(
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="contenido">
+                <div class="columna">
+                    <?php echo $form->labelEx($model,'roles'); ?>
+                    <p class="hint">
+                    </p>
+                    <?php echo $form->checkBoxList($model, 'roles', array(1=>'Administrador', 2=>'Docente', 3=>'Empresa', 4=>'Estudiante'), array('separator'=>'  ', 'labelOptions'=>array('style'=>'display:inline'))); ?>
+                    <?php echo $form->error($model,'roles'); ?>
+                </div>
+                <div class="columna">
+                </div>
+            </div>
+        </div>
         <br/>
         <div class="form-actions">
                 <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>'Enviar')); ?>

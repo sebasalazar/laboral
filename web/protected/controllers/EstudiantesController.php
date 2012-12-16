@@ -45,7 +45,7 @@ class EstudiantesController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','create'),
+				'actions'=>array('admin','delete','create','update','admin','viewestudiante','updateperfil','updateperfil2'),
 				'users'=>array(Yii::app()->user->getAdmin()),
 			),
 			array('deny',  // deny all users
@@ -150,6 +150,22 @@ class EstudiantesController extends Controller
             {
                     throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
             }
+	}
+                public function actionUpdateperfil2($id)
+	{
+
+            
+                    $model=$this->loadModel($id);
+                    if(isset($_POST['Estudiantes']))
+                    {
+                            $model->attributes=$_POST['Estudiantes'];
+                            if($model->save())
+                                    $this->redirect(array('view','id'=>$model->pk));
+                    }
+
+                    $this->render('updateperfil',array(
+                            'model'=>$model,
+                    ));
 	}
         
         public function actionUpdate3($id)
