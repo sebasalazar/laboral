@@ -4,6 +4,8 @@
 /* @var $form CActiveForm */
 ?>
 
+<?php Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.'/css/tablaDinamica/estilo.css');
+Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/css/tablaDinamica/manipulacion.js'); ?>
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -62,6 +64,39 @@
         ));
 ?>
 </div>
+
+<div id="divContenedor">
+        <div id="divContenedorTabla">
+            <table align="center" width="450">
+                <caption>Educaci&oacute;n</caption>
+                <thead>
+                    <tr>
+                            <th>Nombre Instituci&oacute;n</th>
+                        <th>Carrera</th>
+                        <th>Año inicio</th>
+                        <th>Año fin</th>
+                        <th width="22">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" class="clsAnchoTotal"></td>
+                        <td><input type="text" class="clsAnchoTotal"></td>
+                        <td><input type="date" class="clsAnchoTotal" style="width:30px" maxlength="4"></td>
+                        <td><input type="date" class="clsAnchoTotal" style="width:30px" maxlength="4"></td>
+                        <td align="right"><input type="button" value="-" class="clsEliminarFila"></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4" align="right">
+                            <input type="button" value="Agregar una fila" class="clsAgregarFila">                        
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
 
 
 	
