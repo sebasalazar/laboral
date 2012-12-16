@@ -1,26 +1,25 @@
 <?php
 
 /**
- * This is the model class for table "experiencias".
+ * This is the model class for table "educacion".
  *
- * The followings are the available columns in table 'experiencias':
+ * The followings are the available columns in table 'educacion':
  * @property string $pk
- * @property string $descripcion
- * @property string $referencia
- * @property string $email
+ * @property string $curriculum_fk
+ * @property string $nombre_institucion
+ * @property string $carrera
  * @property string $inicio
  * @property string $fin
- * @property string $curriculum_fk
  *
  * The followings are the available model relations:
  * @property Curriculums $curriculumFk
  */
-class Experiencias extends CActiveRecord
+class Educacion extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Experiencias the static model class
+	 * @return Educacion the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -32,7 +31,7 @@ class Experiencias extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'experiencias';
+		return 'educacion';
 	}
 
 	/**
@@ -43,12 +42,11 @@ class Experiencias extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('descripcion, referencia, email, inicio, curriculum_fk', 'required'),
-			array('descripcion, referencia, email', 'length', 'max'=>255),
-			array('fin', 'safe'),
+			array('pk, curriculum_fk, nombre_institucion, inicio, fin', 'required'),
+			array('nombre_institucion, carrera', 'length', 'max'=>60),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('pk, descripcion, referencia, email, inicio, fin, curriculum_fk', 'safe', 'on'=>'search'),
+			array('pk, curriculum_fk, nombre_institucion, carrera, inicio, fin', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -71,12 +69,11 @@ class Experiencias extends CActiveRecord
 	{
 		return array(
 			'pk' => 'Pk',
-			'descripcion' => 'Descripcion',
-			'referencia' => 'Referencia',
-			'email' => 'Email',
+			'curriculum_fk' => 'Curriculum Fk',
+			'nombre_institucion' => 'Nombre Institucion',
+			'carrera' => 'Carrera',
 			'inicio' => 'Inicio',
 			'fin' => 'Fin',
-			'curriculum_fk' => 'Curriculum Fk',
 		);
 	}
 
@@ -92,12 +89,11 @@ class Experiencias extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('pk',$this->pk,true);
-		$criteria->compare('descripcion',$this->descripcion,true);
-		$criteria->compare('referencia',$this->referencia,true);
-		$criteria->compare('email',$this->email,true);
+		$criteria->compare('curriculum_fk',$this->curriculum_fk,true);
+		$criteria->compare('nombre_institucion',$this->nombre_institucion,true);
+		$criteria->compare('carrera',$this->carrera,true);
 		$criteria->compare('inicio',$this->inicio,true);
 		$criteria->compare('fin',$this->fin,true);
-		$criteria->compare('curriculum_fk',$this->curriculum_fk,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

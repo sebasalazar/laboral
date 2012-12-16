@@ -145,7 +145,13 @@ class EstudiantesController extends Controller
         public function actionUpdate3($id)
 	{
 		$model=$this->loadModel((int) $id);
-
+                $modelCV = new Curriculums;
+                $modelConocimientos = new Conocimientos;
+                $modelExperiencias = new Experiencias;
+                $modelFormacionComplementaria = new FormacionComplementaria;
+                $modelEducacion = new Educacion;
+                $modelConocimientosCV = new ConocimientosCurriculums;               
+                
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 

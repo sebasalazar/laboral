@@ -396,36 +396,6 @@ CREATE TABLE conocimientos_curriculums(
 
 
 --
--- Tabla que almacena la experiencia laboral  
---
-DROP TABLE IF EXISTS experiencias CASCADE;
-CREATE TABLE experiencias (
-    pk bigserial NOT NULL, 
-    descripcion varchar(255) NOT NULL,
-    referencia varchar(255) NOT NULL,
-    email varchar(255) NOT NULL,
-    inicio date NOT NULL,
-    fin date,
-    curriculum_fk bigint NOT NULL REFERENCES curriculums(pk) ON UPDATE CASCADE ON DELETE CASCADE,
-    PRIMARY KEY(pk)
-);
-
-
---
--- Tabla de formacion complementaria la cual se registran algunas capacitaciones, cursos, etc que halla cursado el estudiante
---
-DROP TABLE IF EXISTS formacion_complementaria CASCADE;
-CREATE TABLE formacion_complementaria (
-    pk int NOT NULL, 
-    nombre_formacion VARCHAR(60) NOT NULL, 
-    institucion VARCHAR(50) NOT NULL,
-    anio_formacion_complementaria INT NOT NULL,
-    curriculum_fk bigint NOT NULL REFERENCES curriculums(pk) ON UPDATE CASCADE ON DELETE CASCADE,
-    PRIMARY KEY(pk)
-);
-
-
---
 -- Tabla de educación
 --
 DROP TABLE IF EXISTS educacion CASCADE;

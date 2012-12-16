@@ -9,6 +9,9 @@
  * @property string $institucion
  * @property integer $anio_formacion_complementaria
  * @property string $curriculum_fk
+ *
+ * The followings are the available model relations:
+ * @property Curriculums $curriculumFk
  */
 class FormacionComplementaria extends CActiveRecord
 {
@@ -56,6 +59,7 @@ class FormacionComplementaria extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'curriculumFk' => array(self::BELONGS_TO, 'Curriculums', 'curriculum_fk'),
 		);
 	}
 

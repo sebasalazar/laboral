@@ -7,7 +7,9 @@
  * @property string $pk
  * @property string $conocimiento
  * @property string $descripcion
- * @property string $curriculum_fk
+ *
+ * The followings are the available model relations:
+ * @property ConocimientosCurriculums[] $conocimientosCurriculums
  */
 class Conocimientos extends CActiveRecord
 {
@@ -37,12 +39,12 @@ class Conocimientos extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('conocimiento, curriculum_fk', 'required'),
+			array('conocimiento', 'required'),
 			array('conocimiento', 'length', 'max'=>255),
 			array('descripcion', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('pk, conocimiento, descripcion, curriculum_fk', 'safe', 'on'=>'search'),
+			array('pk, conocimiento, descripcion', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -54,6 +56,7 @@ class Conocimientos extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'conocimientosCurriculums' => array(self::HAS_MANY, 'ConocimientosCurriculums', 'experiencias_fk'),
 		);
 	}
 
@@ -66,7 +69,6 @@ class Conocimientos extends CActiveRecord
 			'pk' => 'Pk',
 			'conocimiento' => 'Conocimiento',
 			'descripcion' => 'Descripcion',
-			'curriculum_fk' => 'Curriculum Fk',
 		);
 	}
 
@@ -84,7 +86,6 @@ class Conocimientos extends CActiveRecord
 		$criteria->compare('pk',$this->pk,true);
 		$criteria->compare('conocimiento',$this->conocimiento,true);
 		$criteria->compare('descripcion',$this->descripcion,true);
-		$criteria->compare('curriculum_fk',$this->curriculum_fk,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
