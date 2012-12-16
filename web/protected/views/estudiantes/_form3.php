@@ -10,31 +10,66 @@
 	'id'=>'estudiantes-form',
 	'enableAjaxValidation'=>false,
 )); ?>
-
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(		
-		'nombres',
-		'apellidos',
-		'rut',
-		'fecha_nacimiento',
-		'direccion',
-                array('label'=>'Comuna',
-                    'value'=>$model->comunaFk->nombre,
+    
+    
+    <div class="titulo">
+<h1>Datos Curriculum</h1>
+</div>
+<br />
+<div class="centrar1">
+<?php 
+        $this->widget('bootstrap.widgets.TbDetailView', array(
+            'data'=>$model,
+            'attributes'=>array(
+                array(
+                   'label'=>'Nombre:',
+                   'value'=>$model->nombres . ' ' . $model->apellidos,
+                 ),
+                array(
+                   'label'=>'Rut:',
+                   'value'=>$model->rut,
+                 ),
+                 array(
+                   'label'=>'Fecha nacimiento:',
+                   'value'=>Yii::app()->dateFormatter->format("d MMMM y",strtotime($model->fecha_nacimiento)),
+                 ),
+                array(
+                   'label'=>'Email:',
+                   'value'=>$model->email,
+                 ),
+                array(
+                   'label'=>'Estado Civil:',
+                   'value'=>$model->ecFk->descripcion,
+                 ),
+		array(
+                    'label'=>'Direccion:',
+                    'value'=>$model->direccion . ', ' . $model->comunaFk->nombre,
+                ),
+                array(
+                    'label'=>'Carrera:',
+                    'value'=>$model->carreraFk->nombre_carrera,
+                ),
+                 array(
+                   'label'=>'Telefono fijo:',
+                   'value'=>$model->telefono,
+                 ),
+                array(
+                   'label'=>'Telefono Movil:',
+                   'value'=>$model->celular,
                  ),
 		
-                array('label'=>'Estado civil',
-                    'value'=>$model->ecFk->estado,
-                 ),
-		'telefono',
-		'celular',
-		'email',
-            array('label'=>'Carrera','value'=>$model->carreraFk->nombre_carrera),
-	),
-)); ?>
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Guardar'); ?>
-	</div>
+            ),
+        ));
+?>
+</div>
+
+
+	
+    
+    <div class="form-actions">
+            <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>'Guardar')); ?>
+            <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'reset', 'label'=>'Borrar')); ?>
+        </div>
 
 <?php $this->endWidget(); ?>
 

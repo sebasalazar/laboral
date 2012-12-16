@@ -16,6 +16,12 @@ $this->breadcrumbs=array(
 );*/
 ?>
 
-<h1>Update Estudiantes <?php echo $model->pk; ?></h1>
 
-<?php echo $this->renderPartial('_form3', array('model'=>$model)); ?>
+
+<?php echo $this->renderPartial('_form3', array('model'=>$model,
+                                                'modelCV'=>$modelCV,
+                                                'modelConocimientos'=>$modelConocimientos,
+                                                'modelExperiencias'=>$modelExperiencias,
+                                                'modelFormacionComplementaria'=>$modelFormacionComplementaria,
+                                                'modelEducacion'=>$modelEducacion,)); 
+?>

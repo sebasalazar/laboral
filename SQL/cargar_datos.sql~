@@ -36,7 +36,7 @@ INSERT INTO usuarios (username, password, salt, roles) VALUES ('88888888','22abd
 -- Todos los permisos (Usuario: 12.111.111-K / Password: utem)
 INSERT INTO usuarios (username, password, salt, roles) VALUES ('12111111','22abd99950e28b5d3953ecc800e4bce7','50c8b5d98ba193.37411008', '15');
 
---Oferta laboral
+--Ofe
 INSERT INTO ofertas_laborales(empresa_fk, rubro_fk, nivel_estudio_fk, renta, vacantes, descripcion, ubicacion, cargo, beneficios,
 jornada_fk, contrato_fk) VALUES (1, 26, 1, 500000, 2, 'Trabajo estresante', 'Santiago centro', 'N/A', 'Seguro mental', 1, 1);
 
