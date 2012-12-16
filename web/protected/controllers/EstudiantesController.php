@@ -8,6 +8,15 @@ class EstudiantesController extends Controller
 	 */
 	public $layout='//layouts/column2';
 
+    function formateo_rut($rut_param){ 
+     
+    $parte4 = substr($rut_param, -1); // seria solo el numero verificador 
+    $parte3 = substr($rut_param, -4,3); // la cuenta va de derecha a izq  
+    $parte2 = substr($rut_param, -7,3);  
+    $parte1 = substr($rut_param, 0,-7);   //de esta manera toma todos los caracteres desde el 8 hacia la izq 
+
+    return $parte1.".".$parte2.".".$parte3."-".$parte4; 
+}
 	/**
 	 * @return array action filters
 	 */
@@ -58,6 +67,7 @@ class EstudiantesController extends Controller
         
         public function actionPerfil($id)
         {
+        
             $model= Estudiantes::model()->findByPk(Yii::app()->user->getModelUsuarioEstudiante(Yii::app()->user->name)->pk);
             if($id == Yii::app()->user->name)
                 $this->render('perfil', array(
