@@ -200,7 +200,7 @@ CREATE TABLE estudiantes (
     estado int NOT NULL REFERENCES estados(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     busqueda boolean NOT NULL DEFAULT FALSE, -- Si se encuentra o no buscando trabajo (solicitado por docentes y adm)
     archivo_curriculum varchar(255), -- ubicación del curriculum (dirección archivo) (solicitado por adm actual)
-    curriculum_completo boolean NOT NULL DEFAULT FALSE ON UPDATE CASCADE ON DELETE CASCADE,
+    curriculum_completo boolean NOT NULL DEFAULT FALSE,
     UNIQUE (rut),
     UNIQUE(email),
     UNIQUE(archivo_curriculum),
@@ -363,18 +363,6 @@ CREATE TABLE postulaciones (
     fecha timestamptz NOT NULL DEFAULT NOW(),
     UNIQUE (oferta_laboral_fk, estudiante_fk),
     PRIMARY KEY (pk)
-);
-
---
--- Tabla que almacena los conocimientos de los postulantes
---
-DROP TABLE IF EXISTS conocimientos  CASCADE;
-CREATE TABLE conocimientos(
-    pk bigserial NOT NULL, 
-    conocimiento varchar(255) NOT NULL,
-    descripcion text,
-    UNIQUE (conocimiento),
-    PRIMARY KEY(pk)
 );
 
 --
