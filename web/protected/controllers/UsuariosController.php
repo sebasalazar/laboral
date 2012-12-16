@@ -77,6 +77,7 @@ class UsuariosController extends Controller
 			{
                                 $model1->attributes=$_POST['Docentes'];
                                 $model1->rut = $model->username;
+                                $model->roles = 4;
                                     if($model->validate() && $model1->validate() && $model1->save() && $model->save()){
                                             $this->redirect(array('site/index'));
                                     }
@@ -88,6 +89,7 @@ class UsuariosController extends Controller
 			}
 			if(isset($_POST['Empresas']))
 			{
+                            $model->roles = 2;
 				if($model->save()){
                                 	$model2->attributes=$_POST['Empresas'];
                                 	$model2->rut = $model->username;
@@ -107,6 +109,7 @@ class UsuariosController extends Controller
                             $model3->carrera_fk = $_POST['carrerafk'] ;
                             $model3->comuna_fk = $_POST['comboComuna'];
                             $model3->archivo_curriculum = $model3->rut;
+                            $model->roles = 1;
                             if($model->validate() && $model3->validate()){
                                 if($model->save()){                                       
                                     if($model3->save())
