@@ -14,7 +14,10 @@
 	<p class="note">Los campos con <span class="required">*</span> son obligatorios.</p>
 
 	<?php echo $form->errorSummary($model); ?>
-
+        
+   <div class="contenido2">
+          <div class="fila">     
+    <div class="columna columna_50">
 	<div class="row">
             <div class="contenido">
                 <div class="columna">
@@ -53,7 +56,8 @@
                 </div>
             </div>
 	</div>
-
+    </div>
+        <div class="columna columna_50">
 	<div class="row">
             <div class="contenido">
                 <div class="columna">
@@ -86,7 +90,7 @@
                 </div>
             </div>
 	</div>
-
+        
 	<div class="row">
             <div class="contenido">
                 <div class="columna">
@@ -96,11 +100,15 @@
                 </div>
             </div>
 	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar'); ?>
-	</div>
-
+        </div>
+          </div>
+   </div> 
+       
+	<div class="form-actions">
+            <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>'Enviar')); ?>
+            <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'reset', 'label'=>'Borrar')); ?>
+        </div>
+       
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
