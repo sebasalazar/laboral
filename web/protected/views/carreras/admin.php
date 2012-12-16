@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Carreras', 'url'=>array('index')),
-	array('label'=>'Create Carreras', 'url'=>array('create')),
+	array('label'=>'Lista Carreras', 'url'=>array('index')),
+	array('label'=>'Crear Carrera', 'url'=>array('create')),
 );
 ?>
 

@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Carreras', 'url'=>array('index')),
-	array('label'=>'Create Carreras', 'url'=>array('create')),
-	array('label'=>'Update Carreras', 'url'=>array('update', 'id'=>$model->pk)),
-	array('label'=>'Delete Carreras', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Carreras', 'url'=>array('admin')),
+	array('label'=>'Lista Carreras', 'url'=>array('index')),
+	array('label'=>'Crear Carrera', 'url'=>array('create')),
+	array('label'=>'Actualizar Carrera', 'url'=>array('update', 'id'=>$model->pk)),
+	array('label'=>'Borrar Carrera', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Administrar Carreras', 'url'=>array('admin')),
 );
 ?>
 
