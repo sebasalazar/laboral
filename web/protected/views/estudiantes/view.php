@@ -6,10 +6,21 @@ $this->breadcrumbs=array(
 	'Estudiantes'=>array('index'),
 	$model->pk,
 );
+$tipoUsuario=Yii::app()->user->getTipoUsuario((Yii::app()->user->name));
+            if($tipoUsuario == 1){
 
+        
 $this->menu=array(
-	array('label'=>'Modificar perfil', 'url'=>array('updateperfil', 'id'=>Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk)),
+	array('label'=>'Modificar perfil', 'url'=>array('updateperfil', 'id'=>$model->pk)),);}
+        else{
+            $this->menu=array(
+
+	array('label'=>'Ver Estudiantes', 'url'=>array('admin')),
+	array('label'=>'Crear Estudiantes', 'url'=>array('create')),
 );
+            
+        }
+
 ?>
 
 <h1>Mi perfil <?php //$model->pk; ?></h1>

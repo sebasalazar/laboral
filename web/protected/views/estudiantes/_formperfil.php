@@ -11,10 +11,14 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Los campos con <span class="required">*</span> son obligatorios.</p>
 
 	<?php echo $form->errorSummary($model); ?>
+        <div class="contenido2">
+          <div class="fila">
+              <div class="columna columna_50">
 
+        
 	<div class="row">
                 <?php //echo $form->labelEx($model,'Estudiante'); ?>
                 <?php  //echo $model->nombres." ".$model->apellidos ?>
@@ -61,7 +65,8 @@
                 ?>
 		<?php echo $form->error($model,'comuna_fk'); ?>
 	</div>
-
+                   </div>
+                    <div class="columna columna_50">
 	<div class="row">
 		<?php echo $form->labelEx($model,'Estado Civil'); ?>
 		<?php 
@@ -107,10 +112,14 @@
 		<?php echo $form->fileField($model,'archivo_curriculum',array('size'=>60,'maxlength'=>255)); ?>
 		<?php echo $form->error($model,'archivo_curriculum'); ?>
 	</div>
+                                                                </div> 
+                </div> 
+                </div> 
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Guardar'); ?>
 	</div>
+
 
 <?php $this->endWidget(); ?>
 

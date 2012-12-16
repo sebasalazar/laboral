@@ -6,10 +6,9 @@ $this->breadcrumbs=array(
 	'Estudiantes'=>array('index'),
 	'Create',
 );
-
 $this->menu=array(
-	array('label'=>'List Estudiantes', 'url'=>array('index')),
-	array('label'=>'Manage Estudiantes', 'url'=>array('admin')),
+	array('label'=>'Ver Estudiantes', 'url'=>array('admin')),
+	array('label'=>'Crear Estudiantes', 'url'=>array('create')),
 );
 ?>
     
