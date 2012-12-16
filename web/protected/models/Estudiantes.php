@@ -20,6 +20,7 @@
  * @property integer $estado
  * @property boolean $busqueda
  * @property string $archivo_curriculum
+ * @property boolean $curriculum_completo
  *
  * The followings are the available model relations:
  * @property EvaluacionesPracticas[] $evaluacionesPracticases
@@ -27,9 +28,9 @@
  * @property EstadosCiviles $ecFk
  * @property Carreras $carreraFk
  * @property Estados $estado0
+ * @property Curriculums[] $curriculums
  * @property Postulaciones[] $postulaciones
  * @property SugerenciasTrabajo[] $sugerenciasTrabajos
- * @property Curriculums[] $curriculums
  */
 class Estudiantes extends CActiveRecord
 {
@@ -64,10 +65,10 @@ class Estudiantes extends CActiveRecord
 			array('nombres, apellidos, direccion, email, archivo_curriculum', 'length', 'max'=>255),
 			array('genero', 'length', 'max'=>1),
 			array('telefono, celular', 'length', 'max'=>50),
-			array('busqueda', 'safe'),
+			array('busqueda, curriculum_completo', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('pk, nombres, apellidos, rut, fecha_nacimiento, genero, direccion, comuna_fk, ec_fk, carrera_fk, telefono, celular, email, estado, busqueda, archivo_curriculum', 'safe', 'on'=>'search'),
+			array('pk, nombres, apellidos, rut, fecha_nacimiento, genero, direccion, comuna_fk, ec_fk, carrera_fk, telefono, celular, email, estado, busqueda, archivo_curriculum, curriculum_completo', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -84,9 +85,9 @@ class Estudiantes extends CActiveRecord
 			'ecFk' => array(self::BELONGS_TO, 'EstadosCiviles', 'ec_fk'),
 			'carreraFk' => array(self::BELONGS_TO, 'Carreras', 'carrera_fk'),
 			'estado0' => array(self::BELONGS_TO, 'Estados', 'estado'),
+			'curriculums' => array(self::HAS_MANY, 'Curriculums', 'estudiante_fk'),
 			'postulaciones' => array(self::HAS_MANY, 'Postulaciones', 'estudiante_fk'),
 			'sugerenciasTrabajos' => array(self::HAS_MANY, 'SugerenciasTrabajo', 'estudiante_fk'),
-			'curriculums' => array(self::HAS_MANY, 'Curriculums', 'estudiante_fk'),
 		);
 	}
 
@@ -112,6 +113,7 @@ class Estudiantes extends CActiveRecord
 			'estado' => 'Estado',
 			'busqueda' => 'Busqueda',
 			'archivo_curriculum' => 'Archivo Curriculum',
+			'curriculum_completo' => 'Curriculum Completo',
 		);
 	}
 
@@ -142,6 +144,7 @@ class Estudiantes extends CActiveRecord
 		$criteria->compare('estado',$this->estado);
 		$criteria->compare('busqueda',$this->busqueda);
 		$criteria->compare('archivo_curriculum',$this->archivo_curriculum,true);
+		$criteria->compare('curriculum_completo',$this->curriculum_completo);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -94,19 +94,16 @@ class PostulacionesController extends Controller
 	{
             
             $modelEstudiante = new Estudiantes;
-            //$modelEstudiante->findByAttributes($estudiante_fk);
+            $modelEstudiante->findByAttributes(array('pk'=>$estudiante_fk));
             //Verificamos si efectivamente el estudiante posee todo el cv completo en el sistema
             //sino es asi redirecciono para que realice dicha accion
-           /* if(!$modelEstudiante->completo)
+            if(!$modelEstudiante->curriculum_completo)
             {
-                //$this->redirect(array('view','id'=>$modelEstudiante->pk));
                  Yii::app()->user->setFlash('error', "Ustedes debe completar el Curriculum primero"); 
                  $this->redirect(array('estudiantes/update3','id'=>Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk));
             }
             else
-            {*/
-            
-                
+            {
                 $model=new Postulaciones;
                 $model->oferta_laboral_fk = $oferta_laboral_fk;
                 $model->estudiante_fk = $estudiante_fk;
@@ -119,7 +116,7 @@ class PostulacionesController extends Controller
                 $this->redirect(array('OfertasLaborales/view','id'=>$oferta_laboral_fk));}
                 else{Yii::app()->user->setFlash('notice', "Usted ya postulo a esta oferta laboral"); 
                     $this->redirect(array('OfertasLaborales/index'));}
-            //}
+            }
 	}
 
 

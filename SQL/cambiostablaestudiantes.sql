@@ -2,7 +2,7 @@
 
 -- ALTER TABLE estudiantes DROP COLUMN completo;
 
-ALTER TABLE estudiantes ADD COLUMN completo boolean;
-ALTER TABLE estudiantes ALTER COLUMN completo SET NOT NULL;
-ALTER TABLE estudiantes ALTER COLUMN completo SET DEFAULT false;
+ALTER TABLE estudiantes ADD COLUMN curriculum_completo boolean;
+ALTER TABLE estudiantes ALTER COLUMN curriculum_completo SET NOT NULL;
+ALTER TABLE estudiantes ALTER COLUMN curriculum_completo SET DEFAULT false;
 

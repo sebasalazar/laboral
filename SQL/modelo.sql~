@@ -200,6 +200,7 @@ CREATE TABLE estudiantes (
     estado int NOT NULL REFERENCES estados(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     busqueda boolean NOT NULL DEFAULT FALSE, -- Si se encuentra o no buscando trabajo (solicitado por docentes y adm)
     archivo_curriculum varchar(255), -- ubicación del curriculum (dirección archivo) (solicitado por adm actual)
+    
     UNIQUE (rut),
     UNIQUE(email),
     UNIQUE(archivo_curriculum),
@@ -375,21 +376,6 @@ CREATE TABLE conocimientos(
     UNIQUE (conocimiento),
     PRIMARY KEY(pk)
 );
-
---
--- Tabla que almacena la experiencia laboral  
---
-DROP TABLE IF EXISTS experiencias CASCADE;
-CREATE TABLE experiencias (
-    pk bigserial NOT NULL, 
-    descripcion varchar(255) NOT NULL,
-    referencia varchar(255) NOT NULL,
-    email varchar(255) NOT NULL,
-    inicio date NOT NULL,
-    fin date,
-    PRIMARY KEY(pk)
-);
-
 
 --
 -- Tabla de curriculums

@@ -200,6 +200,7 @@ CREATE TABLE estudiantes (
     estado int NOT NULL REFERENCES estados(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     busqueda boolean NOT NULL DEFAULT FALSE, -- Si se encuentra o no buscando trabajo (solicitado por docentes y adm)
     archivo_curriculum varchar(255), -- ubicación del curriculum (dirección archivo) (solicitado por adm actual)
+    curriculum_completo boolean NOT NULL DEFAULT FALSE ON UPDATE CASCADE ON DELETE CASCADE,
     UNIQUE (rut),
     UNIQUE(email),
     UNIQUE(archivo_curriculum),
