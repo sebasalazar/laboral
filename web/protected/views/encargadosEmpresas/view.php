@@ -8,29 +8,35 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List EncargadosEmpresas', 'url'=>array('index')),
-	array('label'=>'Create EncargadosEmpresas', 'url'=>array('create')),
-	array('label'=>'Update EncargadosEmpresas', 'url'=>array('update', 'id'=>$model->pk)),
-	array('label'=>'Delete EncargadosEmpresas', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage EncargadosEmpresas', 'url'=>array('admin')),
+	array('label'=>'Listar Encargados de Empresas', 'url'=>array('index')),
+	//array('label'=>'Crear Encargado de Empresa', 'url'=>array('create')),
+	array('label'=>'Modificiar Encargado de Empresa', 'url'=>array('update', 'id'=>$model->pk)),
+	array('label'=>'Eliminar Encargado de Empresa', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'¿Está seguro que desea eliminar este encargado?')),
+	//array('label'=>'Manage EncargadosEmpresas', 'url'=>array('admin')),
 );
 ?>
 
 <div class="contenidoPage">
-    <h1>Encragado Empresa: <?php echo $model->nombre; ?></h1>
+    <h1>Encargado de Empresa: <?php echo $model->nombre; ?></h1>
     <br />
     <?php
     $this->widget('bootstrap.widgets.TbDetailView', array(
     'data'=>$model,
     'attributes'=>array(
-                    'pk',
-                    'empresa_fk',
+                    //'pk',
+                    array(
+                        'label'=>'Empresa',
+                        'value'=>$model->empresaFk->nombre,
+                    ),
                     'rut_encargado',
                     'nombre',
                     'apellidos',
                     'genero',
                     'direccion',
-                    'comuna_fk',
+                    array(
+                        'label'=>'Comuna',
+                        'value'=>$model->comunaFk->nombre,
+                    ),
                     'email',
                     'telefono',
             ),

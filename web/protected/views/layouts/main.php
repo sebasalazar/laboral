@@ -49,8 +49,8 @@ function formateo_rut($rut_param){
                                         array('label'=>'Mis Postulaciones', 'url'=>array('postulaciones/mispostulaciones'), 'visible'=>Yii::app()->user->isEstudiante()),
                                     )),
                                     array('label'=>'Encargados', 'items'=>array(
-                                        array('label'=>'Crear encargado de Empresa', 'url'=>array('/encargadosEmpresas/create')),
-                                        array('label'=>'Crear encargado de Practica', 'url'=>array('/encargadosPracticas/create')),
+                                        array('label'=>'Encargados de Empresas', 'url'=>array('/encargadosEmpresas/index')),
+                                        array('label'=>'Encargados de Practicas', 'url'=>array('/encargadosPracticas/index')),
                                     ), 'visible'=>Yii::app()->user->isEmpresa()),
                                     array('label'=>'Practicas', 'items'=>array(
                                         array('label'=>'Ver Practicas', 'url'=>array('/practicas/index')),

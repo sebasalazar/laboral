@@ -122,10 +122,17 @@ class EncargadosPracticasController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('EncargadosPracticas');
+            {
+            $model=new EncargadosPracticas('search');
+            $model->unsetAttributes();  // clear any default values
+            if(isset($_GET['EncargadosPracticas']))
+                    $model->attributes=$_GET['EncargadosPracticas'];
+            $this->render('index', array('model'=>$model));
+            }   
+		/*$dataProvider=new CActiveDataProvider('EncargadosEmpresas');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
-		));
+		));*/
 	}
 
 	/**
