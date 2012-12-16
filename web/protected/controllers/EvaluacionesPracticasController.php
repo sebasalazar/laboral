@@ -133,12 +133,17 @@ class EvaluacionesPracticasController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-            
-		$this->loadModel($id)->delete();
+            if(Yii::app()->user->isEmpresa())
+            {
+                $this->loadModel($id)->delete();
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-            
+            }
+            else
+            {
+                throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
+            }
 	}
 
 	/**
@@ -182,9 +187,16 @@ class EvaluacionesPracticasController extends Controller
         
         public function actionGenerarPdf($id)
 	{
-		$this->render('generarPdf',array(
+            if(Yii::app()->user->isEmpresa())
+            {
+                $this->render('generarPdf',array(
 			'model'=>$this->loadModel($id),
 		));
+            }
+            else
+            {
+                throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
+            }
 	}
         
 	/**
