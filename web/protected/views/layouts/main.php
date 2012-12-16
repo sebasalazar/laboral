@@ -1,4 +1,14 @@
 <?php /* @var $this Controller */ ?>
+<?php
+function formateo_rut($rut_param){ 
+     
+    $parte4 = substr($rut_param, -1); // seria solo el numero verificador 
+    $parte3 = substr($rut_param, -4,3); // la cuenta va de derecha a izq  
+    $parte2 = substr($rut_param, -7,3);  
+    $parte1 = substr($rut_param, 0,-7);   //de esta manera toma todos los caracteres desde el 8 hacia la izq 
+
+    return $parte1.".".$parte2.".".$parte3."-".$parte4; 
+}?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -57,6 +67,8 @@
             $tipo = Yii::app()->user->getTipoUsuario(Yii::app()->user->name);
             if($tipo == 2)
             {
+                 $rutsinformato=Yii::app()->user->name;
+                 $rut=formateo_rut($rutsinformato);
                 $this->widget('bootstrap.widgets.TbNavbar', array(
                         'type'=>'inverse', // null or 'inverse'
                         'brand'=>'Bolsa Laboral',
@@ -96,7 +108,7 @@
                                 'items'=>array(
                                     '---',
                                     array('label'=>'Iniciar Sesion', 'url'=>array('site/login'), 'visible'=>Yii::app()->user->isGuest),
-                                    array('label'=>Yii::app()->user->name, 'url'=>'#', 'items'=>array(
+                                    array('label'=>$rut, 'url'=>'#', 'items'=>array(
                                         array('label'=>'Perfil', 'url'=>array('empresas/perfil', 'id'=>Yii::app()->user->name)),
                                         array('label'=>'Cambiar Rol', 'url'=>'#'),
                                         '---',
@@ -109,6 +121,8 @@
              }
              elseif($tipo == 3)
              {
+                 $rutsinformato=Yii::app()->user->name;
+                 $rut=formateo_rut($rutsinformato);
                     $this->widget('bootstrap.widgets.TbNavbar', array(
                         'type'=>'inverse', // null or 'inverse'
                         'brand'=>'Bolsa Laboral',
@@ -133,7 +147,7 @@
                                 'items'=>array(
                                     '---',
                                     array('label'=>'Iniciar Sesion', 'url'=>array('site/login'), 'visible'=>Yii::app()->user->isGuest),
-                                    array('label'=>Yii::app()->user->name, 'url'=>'#', 'items'=>array(
+                                    array('label'=>$rut, 'url'=>'#', 'items'=>array(
                                         array('label'=>'Perfil', 'url'=>array('docentes/perfil', 'id'=>  Yii::app()->user->name)),
                                         array('label'=>'Cambiar Rol', 'url'=>'#'),
                                         '---',
@@ -147,6 +161,8 @@
              }
              elseif($tipo == 1)
              {
+                 $rutsinformato=Yii::app()->user->name;
+                 $rut=formateo_rut($rutsinformato);
                     $this->widget('bootstrap.widgets.TbNavbar', array(
                     'type'=>'inverse', // null or 'inverse'
                     'brand'=>'Bolsa Laboral',
@@ -170,7 +186,7 @@
                             'htmlOptions'=>array('class'=>'pull-right'),
                             'items'=>array(
                                 '---',
-                                array('label'=>Yii::app()->user->name, 'url'=>'#', 'items'=>array(
+                                array('label'=>$rut, 'url'=>'#', 'items'=>array(
                                         array('label'=>'Perfil', 'url'=>array('estudiantes/perfil', 'id'=>  Yii::app()->user->name)),
                                         array('label'=>'Cambiar Rol', 'url'=>'#'),
                                         '---',
