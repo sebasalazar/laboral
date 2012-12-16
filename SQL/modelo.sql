@@ -366,17 +366,14 @@ CREATE TABLE postulaciones (
 );
 
 --
--- Tabla de curriculums
+-- Tabla de educación
 --
 DROP TABLE IF EXISTS curriculums CASCADE;
 CREATE TABLE curriculums (
-    pk int NOT NULL, -- hay que definir que debe llevar el curriculum
+    pk int NOT NULL,
     estudiante_fk bigint NOT NULL REFERENCES estudiantes(pk) ON UPDATE CASCADE ON DELETE CASCADE,
-    educacion_secundaria VARCHAR(50) NOT NULL,
-    educacion_superior VARCHAR(60) NOT NULL DEFAULT 'Universidad Tecnológica Metropolitana',
     PRIMARY KEY(pk)
 );
-
 
 --
 -- Tabla que almacena los conocimientos de los postulantes
@@ -386,8 +383,59 @@ CREATE TABLE conocimientos(
     pk bigserial NOT NULL, 
     conocimiento varchar(255) NOT NULL,
     descripcion text,
-    curriculum_fk bigint NOT NULL REFERENCES curriculums(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     UNIQUE (conocimiento),
+    PRIMARY KEY(pk)
+);
+
+
+DROP TABLE IF EXISTS conocimientos_curriculums CASCADE;
+CREATE TABLE conocimientos_curriculums(
+    curriculum_fk int NOT NULL  REFERENCES curriculums(pk) ON UPDATE CASCADE ON DELETE CASCADE, 
+    experiencias_fk int NOT NULL REFERENCES conocimientos(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+);
+
+
+--
+-- Tabla que almacena la experiencia laboral  
+--
+DROP TABLE IF EXISTS experiencias CASCADE;
+CREATE TABLE experiencias (
+    pk bigserial NOT NULL, 
+    descripcion varchar(255) NOT NULL,
+    referencia varchar(255) NOT NULL,
+    email varchar(255) NOT NULL,
+    inicio date NOT NULL,
+    fin date,
+    curriculum_fk bigint NOT NULL REFERENCES curriculums(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    PRIMARY KEY(pk)
+);
+
+
+--
+-- Tabla de formacion complementaria la cual se registran algunas capacitaciones, cursos, etc que halla cursado el estudiante
+--
+DROP TABLE IF EXISTS formacion_complementaria CASCADE;
+CREATE TABLE formacion_complementaria (
+    pk int NOT NULL, 
+    nombre_formacion VARCHAR(60) NOT NULL, 
+    institucion VARCHAR(50) NOT NULL,
+    anio_formacion_complementaria INT NOT NULL,
+    curriculum_fk bigint NOT NULL REFERENCES curriculums(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    PRIMARY KEY(pk)
+);
+
+
+--
+-- Tabla de educación
+--
+DROP TABLE IF EXISTS educacion CASCADE;
+CREATE TABLE educacion (
+    pk bigint NOT NULL,
+    curriculum_fk bigint NOT NULL REFERENCES curriculms(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    nombre_institucion VARCHAR(60) NOT NULL,
+    carrera VARCHAR(60),    
+    inicio date NOT NULL,
+    fin date NOT NULL,
     PRIMARY KEY(pk)
 );
 
