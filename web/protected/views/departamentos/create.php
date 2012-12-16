@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Departamentos', 'url'=>array('index')),
-	array('label'=>'Manage Departamentos', 'url'=>array('admin')),
+	array('label'=>'Lista Departamentos', 'url'=>array('index')),
+	array('label'=>'Administrar Departamentos', 'url'=>array('admin')),
 );
 ?>
 

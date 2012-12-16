@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Departamentos', 'url'=>array('index')),
-	array('label'=>'Create Departamentos', 'url'=>array('create')),
+	array('label'=>'Lista Departamentos', 'url'=>array('index')),
+	array('label'=>'Crear Departamento', 'url'=>array('create')),
 );
 
 ?>

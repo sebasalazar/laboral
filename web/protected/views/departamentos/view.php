@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Departamentos', 'url'=>array('index')),
-	array('label'=>'Create Departamentos', 'url'=>array('create')),
-	array('label'=>'Update Departamentos', 'url'=>array('update', 'id'=>$model->pk)),
-	array('label'=>'Delete Departamentos', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Departamentos', 'url'=>array('admin')),
+	array('label'=>'Lista de Departamentos', 'url'=>array('index')),
+	array('label'=>'Crear Departamento', 'url'=>array('create')),
+	array('label'=>'Actualizar Departamento', 'url'=>array('update', 'id'=>$model->pk)),
+	array('label'=>'Borrar Departamentos', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Administrar Departamentos', 'url'=>array('admin')),
 );
 ?>
 
