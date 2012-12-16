@@ -29,7 +29,7 @@ class OfertasLaboralesController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('view','index'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -100,17 +100,25 @@ class OfertasLaboralesController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-                    $model=$this->loadModel((int) $id);
-                    if(isset($_POST['ofertasLaborales']))
-                    {
-                            $model->attributes=$_POST['ofertasLaborales'];
-                            if($model->save())
-                                    $this->redirect(array('view','id'=>$model->pk));
-                    }
+            $dueño = PropietarioOferta::model()->findByAttributes(array('oferta_laboral_fk'=>$id));
+            if(Yii::app()->user->name == $dueño->rut || Yii::app()->user->isAdmin() == true)
+            {
+                        $model=$this->loadModel((int) $id);
+                        if(isset($_POST['ofertasLaborales']))
+                        {
+                                $model->attributes=$_POST['ofertasLaborales'];
+                                if($model->save())
+                                        $this->redirect(array('view','id'=>$model->pk));
+                        }
 
-                    $this->render('update',array(
-                            'model'=>$model,
-                    ));
+                        $this->render('update',array(
+                                'model'=>$model,
+                        ));
+            }
+            else
+            {
+                throw new CHttpException(403,'No tienes permisos para ejecutar está acción.');
+            }
 	}
 
 	/**
