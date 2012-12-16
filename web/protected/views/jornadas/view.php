@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Jornadas', 'url'=>array('index')),
-	array('label'=>'Create Jornadas', 'url'=>array('create')),
-	array('label'=>'Update Jornadas', 'url'=>array('update', 'id'=>$model->pk)),
-	array('label'=>'Delete Jornadas', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Jornadas', 'url'=>array('admin')),
+	array('label'=>'Lista Jornadas', 'url'=>array('index')),
+	array('label'=>'Crear Jornada', 'url'=>array('create')),
+	array('label'=>'Actualizar Jornada', 'url'=>array('update', 'id'=>$model->pk)),
+	array('label'=>'Borrar Jornada', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Administrar Jornada', 'url'=>array('admin')),
 );
 ?>
 
