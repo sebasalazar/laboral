@@ -2,7 +2,8 @@
 /* @var $this EvaluacionesPracticasController */
 /* @var $dataProvider CActiveDataProvider */
 
-include("/MPDF54/mpdf.php");
+$pdfLib = realpath(__DIR__ . '/../../../MPDF54/mpdf.php');
+require_once $pdfLib;
 
 $pdf = Yii::createComponent('application.extensions.MPDF54.mpdf');
 

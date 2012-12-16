@@ -8,7 +8,7 @@ class WebUser extends CWebUser {
         $usuario = Usuarios::model()->findByPK($id);
         return $usuario;
     }
-    
+
     public function rutDocente($id) {
         $docente = Docentes::model()->findByPk($id);
         return $docente->rut;
@@ -20,8 +20,8 @@ class WebUser extends CWebUser {
             return $estudiante;
         }
     }
-    
-     public function getModelUsuarioEmpresaId($id) {
+
+    public function getModelUsuarioEmpresaId($id) {
         $empresa = Empresas::model()->model()->findByPK($id);
         if ($empresa != null) {
             return $empresa;
@@ -53,15 +53,12 @@ class WebUser extends CWebUser {
     }
 
     public function getAdmin() {
-        if(!Yii::app()->user->isGuest){
+        if (!Yii::app()->user->isGuest) {
             $usuario = Usuarios::model()->findByPk(Yii::app()->user->name);
             $rol = $this->roles($usuario->roles);
-            if($rol['admin'] == 1)
-            {
+            if ($rol['admin'] == 1) {
                 return Yii::app()->user->name;
-            }
-            else
-            {
+            } else {
                 return 'admin';
             }
         }
@@ -89,19 +86,16 @@ class WebUser extends CWebUser {
         return $roles;
     }
 
-    public function isAdmin(){
+    public function isAdmin() {
         $usuario = Usuarios::model()->findByPk(Yii::app()->user->name);
         $rol = $this->roles($usuario->roles);
-        if($rol['admin'] == 1)
-        {
+        if ($rol['admin'] == 1) {
             return true;
-        }
-        else
-        {
+        } else {
             return false;
         }
     }
-    
+
     public function getTipoUsuario($rut) {
         $docente = Docentes::model()->findByAttributes(array('rut' => $rut));
         if ($docente != null) {
@@ -123,7 +117,14 @@ class WebUser extends CWebUser {
         try {
             $archivo = "php://stderr";
             $fecha = date("D M d H:i:s Y");
-            $mensaje = print_r($texto, false);
+
+            if (is_object($texto)) {
+                $mensaje = print_r($texto, false);
+            } else if (is_array($texto)) {
+                $mensaje = print_r($texto, false);
+            } else {
+                $mensaje = $texto;
+            }
 
             $contenido = "\n[$fecha] [LABORAL] el sistema ejecutó: \"$mensaje\"\n";
 
