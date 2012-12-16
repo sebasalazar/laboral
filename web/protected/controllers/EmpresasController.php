@@ -32,7 +32,7 @@ class EmpresasController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('update','perfil','create'),
+				'actions'=>array('update','perfil'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -86,9 +86,9 @@ class EmpresasController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-            if(Yii::app()->user->getModelUsuarioEmpresaId($id)->rut == Yii::app()->user->name)
+            if(Yii::app()->user->isEmpresa())
             {
-		$model=$this->loadModel((int) $id);
+               $model=$this->loadModel((int) $id);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -106,8 +106,8 @@ class EmpresasController extends Controller
             }
             else
             {
-                    throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
-            }
+                throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
+            } 
 	}
 
 	/**

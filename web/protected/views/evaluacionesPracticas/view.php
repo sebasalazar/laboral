@@ -13,8 +13,9 @@ $this->menu=array(
 	array('label'=>'Modificar la Evaluacion de practica', 'url'=>array('update', 'id'=>$model->pk)),
 	array('label'=>'Eliminar la  Evaluacion de practicas', 'url'=>'practicas/index', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'¿Está seguro que quiere eliminar esta evaluación?')),
 	//array('label'=>'Manage EvaluacionesPracticas', 'url'=>array('admin')),
-        array('label'=>'Generar PDF', 'url'=>array('generarPdf', 'id'=>$model->pk)),
-);
+        array('label'=>'Crear PDF', 'url'=>array('pdf','id'=>$model->pk)),
+    )
+
 ?>
 
 <h1>Evaluación de Practica de: <?php echo $model->estudiantes->nombres; ?></h1>

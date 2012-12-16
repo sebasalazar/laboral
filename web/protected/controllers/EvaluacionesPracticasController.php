@@ -29,15 +29,15 @@ class EvaluacionesPracticasController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array(''),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('update','delete','create','generarPdf'),
+				'actions'=>array('update','delete','index','create','view','pdf'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','update'),
+				'actions'=>array('admin','delete','update','create'),
 				'users'=>array(Yii::app()->user->getAdmin()),
 			),
 			array('deny',  // deny all users
@@ -52,9 +52,16 @@ class EvaluacionesPracticasController extends Controller
 	 */
 	public function actionView($id)
 	{
+            if(Yii::app()->user->isEmpresa() || Yii::app()->user->isDocente())
+            {
 		$this->render('view',array(
 			'model'=>$this->loadModel((int) $id),
 		));
+            }
+            else
+            {
+                throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
+            }
 	}
 
 	/**
@@ -63,6 +70,8 @@ class EvaluacionesPracticasController extends Controller
 	 */
 	public function actionCreate()
 	{
+            if(Yii::app()->user->isEmpresa())
+            {
 		$model=new EvaluacionesPracticas;
 
 		// Uncomment the following line if AJAX validation is needed
@@ -78,6 +87,11 @@ class EvaluacionesPracticasController extends Controller
 		$this->render('create',array(
 			'model'=>$model,
 		));
+            }
+            else
+            {
+                throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
+            }
 	}
 
 	/**
@@ -87,7 +101,8 @@ class EvaluacionesPracticasController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-            
+            if(Yii::app()->user->isEmpresa())
+            {
 		$model=$this->loadModel((int) $id);
 
 		// Uncomment the following line if AJAX validation is needed
@@ -104,6 +119,11 @@ class EvaluacionesPracticasController extends Controller
 			'model'=>$model,
 		));
              
+            }
+            else
+            {
+                throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
+            }
 	}
 
 	/**
@@ -113,12 +133,17 @@ class EvaluacionesPracticasController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-            
-		$this->loadModel($id)->delete();
+            if(Yii::app()->user->isEmpresa())
+            {
+                $this->loadModel($id)->delete();
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-            
+            }
+            else
+            {
+                throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
+            }
 	}
 
 	/**
@@ -126,7 +151,9 @@ class EvaluacionesPracticasController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$model=new EvaluacionesPracticas('search');
+            if(Yii::app()->user->isEmpresa() || Yii::app()->user->isDocente())
+            {
+                $model=new EvaluacionesPracticas('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['EvaluacionesPracticas']))
 			$model->attributes=$_GET['EvaluacionesPracticas'];
@@ -134,6 +161,12 @@ class EvaluacionesPracticasController extends Controller
 		$this->render('index',array(
 			'model'=>$model,
 		));
+            }
+            else
+            {
+                throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
+            }
+		
 	}
 
 	/**
@@ -151,13 +184,20 @@ class EvaluacionesPracticasController extends Controller
 		));
 	}
 
-        
+        /*
         public function actionGenerarPdf($id)
 	{
-		$this->render('generarPdf',array(
+            if(Yii::app()->user->isEmpresa())
+            {
+                $this->render('generarPdf',array(
 			'model'=>$this->loadModel($id),
 		));
-	}
+            }
+            else
+            {
+                throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
+            }
+	}*/
         
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
@@ -171,6 +211,13 @@ class EvaluacionesPracticasController extends Controller
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
 	}
+
+        public function actionPdf($id)
+        {
+            $this->render('pdf',array(
+                'model'=>$this->loadModel($id),
+            ));
+        }
 
 
 	/**

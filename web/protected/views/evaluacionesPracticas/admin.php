@@ -22,37 +22,19 @@ $this->menu=array(
     </p>
 
     <?php
-                $this->widget('bootstrap.widgets.TbGridView', array(
-                        'type'=>'striped bordered condensed',
-                        'dataProvider'=>$model->search(),
-                        'template'=>"{items}",
-                        'filter'=>$model,
-                        'template'=>"{items}\n{pager}",
-                        'columns'=>array(
-                        'pk',
-                        array(
-                            'header'=>'Estudiante',
-                            'name'=>'estudiant_fk',
+         array(
+                'class'=>'CButtonColumn',
+                'template' => '{view} {update} {delete} {pdf}',
+                'buttons'=>array(
+                        'pdf' => array(
+                        'label'=>'Generar PDF',
+                        'url'=>"CHtml::normalizeUrl(array('pdf', 'id'=>\$data->id
+                        ))",
+                        'imageUrl'=>Yii::app()->request->baseUrl.'/images/pdf_icon.png',
+                        'options' => array('class'=>'pdf'),
                         ),
-                        array(
-                            'header'=>'Encargado',
-                            'name'=>'encar_practicas_fk',
-                        ),
-                        'cargo_asignado',
-                        array(
-                            'header'=>'Conocimientos',
-                            'name'=>'conocimientos_demostrados',
-                        ),
-                        array(
-                            'header'=>'Eficacia',
-                            'name'=>'eficacia',
-                        ),
-                        array(
-                                'header'=>'Detalle',
-                                'class'=>'bootstrap.widgets.TbButtonColumn',
-                                'template'=>'{view}{delete}',
-                         ),    
-                         ),
-                    ));
+                ),
+        )
+
     ?>
 </div>

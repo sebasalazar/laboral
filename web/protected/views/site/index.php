@@ -41,7 +41,7 @@
                     <text class="text-footer"><b>Noticias</b></text>
                 </div>
              <div class="con2">
-                    Aquí van las noticias.
+                    <?php echo Yii::app()->user->getAdmin(); ?>
              </div>
             <br />
             <div class="con">
