@@ -9,15 +9,15 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Comunas', 'url'=>array('index')),
-	array('label'=>'Create Comunas', 'url'=>array('create')),
-	array('label'=>'View Comunas', 'url'=>array('view', 'id'=>$model->pk)),
-	array('label'=>'Manage Comunas', 'url'=>array('admin')),
+	array('label'=>'Lista Comunas', 'url'=>array('index')),
+	array('label'=>'Crear Comuna', 'url'=>array('create')),
+	array('label'=>'Ver Comuna', 'url'=>array('view', 'id'=>$model->pk)),
+	array('label'=>'Administrar Comunas', 'url'=>array('admin')),
 );
 ?>
 
 <div class="contenidoPage">
-    <h1>Actualizar Comun <?php echo $model->nombre; ?></h1>
+    <h1>Actualizar Comuna <?php echo $model->nombre; ?></h1>
 
     <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
 </div>

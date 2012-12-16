@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Comunas', 'url'=>array('index')),
-	array('label'=>'Manage Comunas', 'url'=>array('admin')),
+	array('label'=>'Lista Comunas', 'url'=>array('index')),
+	array('label'=>'Administrar Comunas', 'url'=>array('admin')),
 );
 ?>
 <div class="contenidoPage">

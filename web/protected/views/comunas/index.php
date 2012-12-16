@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Comunas', 'url'=>array('create')),
-	array('label'=>'Manage Comunas', 'url'=>array('admin')),
+	array('label'=>'Crear Comuna', 'url'=>array('create')),
+	array('label'=>'Administrar Comunas', 'url'=>array('admin')),
 );
 ?>
 
