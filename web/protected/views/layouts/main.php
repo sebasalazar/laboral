@@ -30,45 +30,9 @@ function formateo_rut($rut_param){
 
 <div class="container" id="page">
 
-        <?php // En caso de no haber naie logeado muestra las opciones por defecto
-        if(Yii::app()->user->getModel(Yii::app()->user->id) == null)
-        {
-            $this->widget('bootstrap.widgets.TbNavbar', array(
-                    'type'=>'inverse', // null or 'inverse'
-                    'brand'=>'Bolsa Laboral',
-                    'brandUrl'=>array('site/index'),
-                    'collapse'=>true, // requires bootstrap-responsive.css
-                    'items'=>array(
-                        array(
-                            'class'=>'bootstrap.widgets.TbMenu',
-                            'items'=>array(
-                                array('label'=>'Inicio', 'url'=>array('site/index')),
-                                array('label'=>'Ofertas Laborales', 'url'=>array('ofertasLaborales/index')),
-                                array('label'=>'Registrarse', 'url'=>array('usuarios/pcreate'), 'visible'=>Yii::app()->user->isGuest),
-                                array('label'=>'Contacto', 'url'=>array('site/contact')),
-                            ),
-                        ),
-                        array(
-                            'class'=>'bootstrap.widgets.TbMenu',
-                            'htmlOptions'=>array('class'=>'pull-right'),
-                            'items'=>array(
-                                '---',
-                                array('label'=>'Iniciar Sesion', 'url'=>array('site/login'))
-                            ),
-                        ),
-                    ),
-                ));
-        }
-        ?>
-
         <?php // en caso de login muestra opciones específicas
-        if(Yii::app()->user->getModel(Yii::app()->user->id) != null)
-        {
-            $tipo = Yii::app()->user->getTipoUsuario(Yii::app()->user->name);
-            if($tipo == 2)
-            {
-                 $rutsinformato=Yii::app()->user->name;
-                 $rut=formateo_rut($rutsinformato);
+                $rutsinformato=Yii::app()->user->name;
+                $rut=formateo_rut($rutsinformato);
                 $this->widget('bootstrap.widgets.TbNavbar', array(
                         'type'=>'inverse', // null or 'inverse'
                         'brand'=>'Bolsa Laboral',
@@ -81,63 +45,22 @@ function formateo_rut($rut_param){
                                     array('label'=>'Inicio', 'url'=>array('site/index')),
                                     array('label'=>'Ofertas Laborales', 'url'=>array('/ofertasLaborales/index'), 'items'=>array(
                                         array('label'=>'Lista Ofertas Laborales', 'url'=>array('/ofertasLaborales/index')),
-                                        array('label'=>'Publicar una Oferta Laboral', 'url'=>array('/ofertasLaborales/create')),
-                                        array('label'=>'Busqueda Avanzada', 'url'=>'#'),
-                                    )),
+                                        array('label'=>'Publicar una Oferta Laboral', 'url'=>array('/ofertasLaborales/create'), 'visible'=>Yii::app()->user->isDocente() || Yii::app()->user->isEmpresa()),
+                                        array('label'=>'Mis Postulaciones', 'url'=>array('postulaciones/mispostulaciones'), 'visible'=>Yii::app()->user->isEstudiante()),
+                                    ), 'visible'=>!Yii::app()->user->isGuest),
+                                    array('label'=>'Ofertas Laborales', 'url'=>array('/ofertasLaborales/index'), 'visible'=>Yii::app()->user->isGuest),
                                     array('label'=>'Encargados', 'items'=>array(
                                         array('label'=>'Crear encargado de Empresa', 'url'=>array('/encargadosEmpresas/create')),
                                         array('label'=>'Crear encargado de Practica', 'url'=>array('/encargadosPracticas/create')),
-                                        //array('label'=>'Busqueda Avanzada', 'url'=>'#'),
-                                    )),
+                                    ), 'visible'=>Yii::app()->user->isEmpresa()),
                                     array('label'=>'Practicas', 'items'=>array(
                                         array('label'=>'Ver Practicas', 'url'=>array('/practicas/index')),
-                                        array('label'=>'Crear Practicas', 'url'=>array('/practicas/create')),
-                                        //array('label'=>'Modificar Practica', 'url'=>array('/practicas/update')),
-                                        //array('label'=>'Eliminar Practica', 'url'=>'#'),
-                                        '---',
-                                        array('label'=>'Ver Evaluaciones', 'url'=>array('/evaluacionesPracticas/index')),
-                                        array('label'=>'Evaluar Practicas', 'url'=>array('/evaluacionesPracticas/create')),
-                                        //array('label'=>'Busqueda Avanzada', 'url'=>'#'),
-                                    )),
-                                    array('label'=>'Contacto', 'url'=>array('site/contact')),
-                                ),
-                            ),
-                            array(
-                                'class'=>'bootstrap.widgets.TbMenu',
-                                'htmlOptions'=>array('class'=>'pull-right'),
-                                'items'=>array(
-                                    '---',
-                                    array('label'=>'Iniciar Sesion', 'url'=>array('site/login'), 'visible'=>Yii::app()->user->isGuest),
-                                    array('label'=>$rut, 'url'=>'#', 'items'=>array(
-                                        array('label'=>'Perfil', 'url'=>array('empresas/perfil', 'id'=>Yii::app()->user->name)),
-                                        array('label'=>'Cambiar Rol', 'url'=>'#'),
-                                        '---',
-                                        array('label'=>'Cerrar Sesión', 'url'=>array('site/logout')),
+                                        array('label'=>'Crear Practicas', 'url'=>array('/practicas/create'), 'visible'=>Yii::app()->user->isEmpresa()),
+                                        array('label'=>'Ver Evaluaciones', 'url'=>array('/evaluacionesPracticas/index'), 'visible'=>Yii::app()->user->isDocente() || Yii::app()->user->isEmpresa() || Yii::app()->user->isEstudiante()),
+                                        array('label'=>'Evaluar Practicas', 'url'=>array('/evaluacionesPracticas/create'), 'visible'=>Yii::app()->user->isEmpresa()),
                                     ), 'visible'=>!Yii::app()->user->isGuest),
-                                ),
-                            ),
-                        ),
-                    ));
-             }
-             elseif($tipo == 3)
-             {
-                 $rutsinformato=Yii::app()->user->name;
-                 $rut=formateo_rut($rutsinformato);
-                    $this->widget('bootstrap.widgets.TbNavbar', array(
-                        'type'=>'inverse', // null or 'inverse'
-                        'brand'=>'Bolsa Laboral',
-                        'brandUrl'=>array('site/index'),
-                        'collapse'=>true, // requires bootstrap-responsive.css
-                        'items'=>array(
-                            array(
-                                'class'=>'bootstrap.widgets.TbMenu',
-                                'items'=>array(
-                                    array('label'=>'Inicio', 'url'=>array('site/index')),
-                                    array('label'=>'Ofertas Laborales', 'url'=>array('ofertasLaborales/index'), 'items'=>array(
-                                        array('label'=>'Lista Ofertas Laborales', 'url'=>array('ofertasLaborales/index')),
-                                        array('label'=>'Publicar una Oferta Laboral', 'url'=>array('ofertasLaborales/create')),
-                                        array('label'=>'Busqueda Avanzada', 'url'=>'#'),
-                                    )),
+                                    array('label'=>'Practicas', 'url'=>array('/practicas/index'), 'visible'=>Yii::app()->user->isGuest),
+                                    array('label'=>'Registrarse', 'url'=>array('usuarios/pcreate'), 'visible'=>Yii::app()->user->isGuest),
                                     array('label'=>'Contacto', 'url'=>array('site/contact')),
                                 ),
                             ),
@@ -148,8 +71,9 @@ function formateo_rut($rut_param){
                                     '---',
                                     array('label'=>'Iniciar Sesion', 'url'=>array('site/login'), 'visible'=>Yii::app()->user->isGuest),
                                     array('label'=>$rut, 'url'=>'#', 'items'=>array(
-                                        array('label'=>'Perfil', 'url'=>array('docentes/perfil', 'id'=>  Yii::app()->user->name)),
-                                        array('label'=>'Cambiar Rol', 'url'=>'#'),
+                                        array('label'=>'Perfil Empresa', 'url'=>array('empresas/perfil', 'id'=>Yii::app()->user->name), 'visible'=>Yii::app()->user->isEmpresa()),
+                                        array('label'=>'Perfil Docente', 'url'=>array('empresas/perfil', 'id'=>Yii::app()->user->name), 'visible'=>Yii::app()->user->isDocente()),
+                                        array('label'=>'Perfil Estudiante', 'url'=>array('empresas/perfil', 'id'=>Yii::app()->user->name), 'visible'=>Yii::app()->user->isEstudiante()),
                                         '---',
                                         array('label'=>'Administrar', 'url'=>array('usuarios/paneladmin'), 'visible'=>Yii::app()->user->isAdmin()),
                                         array('label'=>'Cerrar Sesión', 'url'=>array('site/logout')),
@@ -158,46 +82,6 @@ function formateo_rut($rut_param){
                             ),
                         ),
                     ));
-             }
-             elseif($tipo == 1)
-             {
-                 $rutsinformato=Yii::app()->user->name;
-                 $rut=formateo_rut($rutsinformato);
-                    $this->widget('bootstrap.widgets.TbNavbar', array(
-                    'type'=>'inverse', // null or 'inverse'
-                    'brand'=>'Bolsa Laboral',
-                    'brandUrl'=>array('site/index'),
-                    'collapse'=>true, // requires bootstrap-responsive.css
-                    'items'=>array(
-                        array(
-                            'class'=>'bootstrap.widgets.TbMenu',
-                            'items'=>array(
-                                array('label'=>'Inicio', 'url'=>array('site/index')),
-                                array('label'=>'Ofertas Laborales', 'url'=>array('ofertasLaborales/index'), 'items'=>array(
-                                        array('label'=>'Lista Ofertas Laborales', 'url'=>array('ofertasLaborales/index')),
-                                        array('label'=>'Mis Postulaciones', 'url'=>array('postulaciones/mispostulaciones','estudiante_fk'=>Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk)),
-                                    )),
-                                array('label'=>'Registrarse', 'url'=>array('usuarios/pcreate'), 'visible'=>Yii::app()->user->isGuest),
-                                array('label'=>'Contacto', 'url'=>array('site/contact')),
-                            ),
-                        ),
-                        array(
-                            'class'=>'bootstrap.widgets.TbMenu',
-                            'htmlOptions'=>array('class'=>'pull-right'),
-                            'items'=>array(
-                                '---',
-                                array('label'=>$rut, 'url'=>'#', 'items'=>array(
-                                        array('label'=>'Perfil', 'url'=>array('estudiantes/perfil', 'id'=>  Yii::app()->user->name)),
-                                        array('label'=>'Cambiar Rol', 'url'=>'#'),
-                                        '---',
-                                        array('label'=>'Cerrar Sesión', 'url'=>array('site/logout')),
-                                    ), 'visible'=>!Yii::app()->user->isGuest),
-                            ),
-                        ),
-                    ),
-                ));
-             }
-        }
         ?>
    
         
