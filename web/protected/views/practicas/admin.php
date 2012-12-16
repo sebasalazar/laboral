@@ -30,7 +30,6 @@ $this->menu=array(
                         'filter'=>$model,
                         'template'=>"{items}\n{pager}",
                         'columns'=>array(
-                        'pk',
                         array(
                             'header'=>'Empresa',
                             'name'=>'empresa_fk',

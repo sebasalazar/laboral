@@ -25,7 +25,7 @@
             array('label'=>'Empresa', 'items'=>array(
                                         array('label'=>'Rubros', 'url'=>array('rubros/admin')),
                                         array('label'=>'Jornadas', 'url'=>array('jornadas/admin')),
-                                        array('label'=>'Tipos Contratos', 'url'=>array('tiposContratos/admin')),
+                                        array('label'=>'Practicas', 'url'=>array('practicas/admin')),
                                         array('label'=>'Empresas', 'url'=>array('empresas/admin')),
                                         array('label'=>'Encargados Empresas', 'url'=>array('encargadosEmpresas/admin')),
                                         array('label'=>'Encargados Practicas', 'url'=>array('encargadosPracticas/admin')),

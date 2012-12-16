@@ -92,8 +92,8 @@ function formateo_rut($rut_param){
                                     array('label'=>'Practicas', 'items'=>array(
                                         array('label'=>'Ver Practicas', 'url'=>array('/practicas/index')),
                                         array('label'=>'Crear Practicas', 'url'=>array('/practicas/create')),
-                                        array('label'=>'Modificar Practica', 'url'=>'#'),
-                                        array('label'=>'Eliminar Practica', 'url'=>'#'),
+                                        //array('label'=>'Modificar Practica', 'url'=>array('/practicas/update')),
+                                        //array('label'=>'Eliminar Practica', 'url'=>'#'),
                                         '---',
                                         array('label'=>'Ver Evaluaciones', 'url'=>array('/evaluacionesPracticas/index')),
                                         array('label'=>'Evaluar Practicas', 'url'=>array('/evaluacionesPracticas/create')),
