@@ -138,7 +138,7 @@ class UsuariosController extends Controller
                         if(isset($_POST['Usuarios']))
                         {
                                 $rol = 0;
-                                if($_POST['Usuarios']['roles']['1'])
+                                if($_POST['Usuarios']['roles'][3])
                                 {
                                     $rol = 1;
                                 }
