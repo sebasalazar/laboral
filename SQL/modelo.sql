@@ -372,6 +372,7 @@ DROP TABLE IF EXISTS curriculums CASCADE;
 CREATE TABLE curriculums (
     pk int NOT NULL,
     estudiante_fk bigint NOT NULL REFERENCES estudiantes(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    presentacion VARCHAR(255), --PRESENTACION SOBRE POSTULANTE
     PRIMARY KEY(pk)
 );
 
