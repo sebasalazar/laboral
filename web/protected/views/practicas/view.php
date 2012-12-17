@@ -6,17 +6,25 @@ $this->breadcrumbs=array(
 	'Practicas'=>array('index'),
 	$model->pk,
 );
-
+    if(Yii::app()->user->isEstudiante()){
+        $this->menu=array(
+	//array('label'=>'List Practicas', 'url'=>array('index')),
+	array('label'=>'Ver Practicas', 'url'=>array('index')),
+	array('label'=>'Mis Postulaciones', 'url'=>array('postulacionesPracticas/mispostulaciones')),
+	//array('label'=>'Manage Practicas', 'url'=>array('admin')),
+);
+    }
+    else{
 $this->menu=array(
 	//array('label'=>'List Practicas', 'url'=>array('index')),
 	array('label'=>'Crear Practica', 'url'=>array('create')),
 	array('label'=>'Modificiar Practica', 'url'=>array('update', 'id'=>$model->pk)),
 	array('label'=>'Eliminar Practica', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'¿Está seguro que quiere eliminar esta practica?')),
 	//array('label'=>'Manage Practicas', 'url'=>array('admin')),
-);
+);}
 ?>
 
-<h1>Practica: #<?php echo $model->pk; ?></h1>
+<h1>Practica<?php // echo $model->pk; ?></h1>
 
 <?php
     $this->widget('bootstrap.widgets.TbDetailView', array(

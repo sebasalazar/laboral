@@ -51,11 +51,19 @@ $this->menu=array(
             'filter'=>false,
             'value'=>'Yii::app()->dateFormatter->format("d MMM y",strtotime($data->practicaFk->fin_practica))',
           ),
-        array(
-            'header'=>'Detalle',
-            'class'=>'CButtonColumn',
-            'template'=>'{view}',
-    ),    
+                      array(
+                            'header'=>'Detalle',
+                            'class'=>'CButtonColumn',
+                            'template'=>'{view}',
+                          'buttons'=>array(
+                             'view'=>array(
+                             'label'=>'Mostrar',
+                             'url'=>'Yii::app()->createUrl("practicas/view", array("id"=>$data->practica_fk))',
+                          //   'url'=> "Yii::app()->controller->createUrl('ofertasLaborales/view')",array("id"=>$model->oferta_laboral_fk)
+           ),
+     ),
+                          
+                    ), 
       ),
     ));
 ?>
