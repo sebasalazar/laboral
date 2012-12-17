@@ -97,7 +97,14 @@ class EstudiantesController extends Controller
 		if(isset($_POST['Estudiantes']))
 		{
 			$model->attributes=$_POST['Estudiantes'];
+                            $model->carrera_fk = $_POST['carrerafk'] ;
+                            $model->comuna_fk = $_POST['comboComuna'];
+                            $model->archivo_curriculum = $model->rut;
 			if($model->save())
+                                                                    $cv = CUploadedFile::getInstance ($model, 'archivo_curriculum');
+                                    if(!empty($cv)){
+                                        $cv->saveAs('cv/' . $model->rut . '.pdf');
+                                    }
 				$this->redirect(array('view','id'=>$model->pk));
 		}
 
@@ -153,8 +160,7 @@ class EstudiantesController extends Controller
 	}
                 public function actionUpdateperfil2($id)
 	{
-
-            
+   
                     $model=$this->loadModel($id);
                     if(isset($_POST['Estudiantes']))
                     {
@@ -163,10 +169,10 @@ class EstudiantesController extends Controller
                                     $this->redirect(array('view','id'=>$model->pk));
                     }
 
-                    $this->render('updateperfil',array(
+                    $this->render('updateperfil2',array(
                             'model'=>$model,
                     ));
-	}
+            }
         
         public function actionUpdate3($id)
 	{

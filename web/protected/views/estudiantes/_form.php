@@ -34,7 +34,7 @@ $("#content > ul").tabs();
 )); ?>
 
     <div class="titulo"><p class="note">Los campos con <span class="required">*</span> son obligatorios.</p></div>
-
+<?php echo $form->errorSummary($model); ?>
         <div class="contenido2">
           <div class="fila">
               <div class="columna columna_50">
@@ -51,7 +51,12 @@ $("#content > ul").tabs();
                     <?php echo $form->textField(Estudiantes::model(),'apellidos',array('required'=>'required')); ?>
                     <?php echo $form->error(Estudiantes::model(),'apellidos'); ?>
                 </div>
-
+	<div class="row">
+		<?php echo $form->labelEx($model,'rut'); ?>
+		<?php echo $form->textField($model,'rut'); ?>
+		<?php echo $form->error($model,'rut'); ?>
+	</div>
+                  
                 <div class="row">
                         <?php echo $form->labelEx(Estudiantes::model(),'fecha_nacimiento <span class="required">*</span>'); ?>
                         <?php echo $form->dateField(Estudiantes::model(),'fecha_nacimiento',array('required'=>'required')); ?>

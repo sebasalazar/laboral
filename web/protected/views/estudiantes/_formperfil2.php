@@ -35,7 +35,7 @@
 
 	<div class="row">
 		<?php //echo $form->labelEx($model,'rut'); ?>
-		<?php //echo $form->textField($model,'rut'); ?>
+		<?php // echo $form->textField($model,'rut'); ?>
 		<?php //echo $form->error($model,'rut'); ?>
 	</div>
 
@@ -93,12 +93,11 @@
 		<?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>255)); ?>
 		<?php echo $form->error($model,'email'); ?>
 	</div>
-
-	<div class="row">
-                        <?php // echo $form->labelEx(Estudiantes::model(),'Estado en UTEM <span class="required">*</span>'); ?>   
-                        <?php //$datos = CHtml::listData(Estados::model()->findAll(),'pk','nombre'); ?>
-                        <?php //echo $form->DropDownList($model,'estado',$datos, array('empty'=>'Seleccione...', 'required'=>'required')); ?>
-		<?php //echo $form->error($model,'estado'); ?>
+    	<div class="row">
+                <?php  echo $form->labelEx(Estudiantes::model(),'Estado en UTEM <span class="required">*</span>'); ?>   
+                <?php $datos = CHtml::listData(Estados::model()->findAll(),'pk','nombre'); ?>
+                <?php echo $form->DropDownList($model,'estado',$datos, array('empty'=>'Seleccione...', 'required'=>'required')); ?>
+		<?php echo $form->error($model,'estado'); ?>
 	</div>
 
 	<div class="row">
