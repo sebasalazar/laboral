@@ -60,7 +60,13 @@ function formateo_rut($rut_param){
                                         array('label'=>'Ver Evaluaciones', 'url'=>array('/evaluacionesPracticas/index'), 'visible'=>Yii::app()->user->isDocente() || Yii::app()->user->isEmpresa()),
                                         array('label'=>'Evaluar Practicas', 'url'=>array('/evaluacionesPracticas/create'), 'visible'=>Yii::app()->user->isEmpresa()),
                                     ), 'visible'=>!Yii::app()->user->isGuest && !Yii::app()->user->isEstudiante()),
-                                    array('label'=>'Practicas', 'url'=>array('/practicas/index'), 'visible'=>Yii::app()->user->isGuest || Yii::app()->user->isEstudiante()),
+                                    array('label'=>'CV','items'=>array(
+                                        array('label'=>'Actualizar Mis Datos','url'=>array('/'),'visible'=>Yii::app()->user->isEstudiante()),
+                                        array('label'=>'Subir Mi Curriculum','url'=>array('/'),'visible'=>Yii::app()->user->isEstudiante(),),)),
+                                     array('label'=>'Practicas', 'items'=>array(
+                                        array('label'=>'Ver Practicas', 'url'=>array('/practicas/index')),
+                                        array('label'=>'Mis Postulaciones', 'url'=>array('/practicas/mispostulaciones'), 'visible'=>Yii::app()->user->isEstudiante()),
+                                    ), 'visible'=>Yii::app()->user->isEstudiante()),
                                     array('label'=>'Registrarse', 'url'=>array('usuarios/pcreate'), 'visible'=>Yii::app()->user->isGuest),
                                     array('label'=>'Contacto', 'url'=>array('site/contact')),
                                 ),
@@ -74,7 +80,7 @@ function formateo_rut($rut_param){
                                     array('label'=>$rut, 'url'=>'#', 'items'=>array(
                                         array('label'=>'Perfil Empresa', 'url'=>array('empresas/perfil', 'id'=>Yii::app()->user->name), 'visible'=>Yii::app()->user->isEmpresa()),
                                         array('label'=>'Perfil Docente', 'url'=>array('docentes/perfil'), 'visible'=>Yii::app()->user->isDocente()),
-                                        array('label'=>'Perfil Estudiante', 'url'=>array('estudiantes/perfil', 'id'=>Yii::app()->user->name), 'visible'=>Yii::app()->user->isEstudiante()),
+                                        array('label'=>'Mis datos', 'url'=>array('estudiantes/perfil', 'id'=>Yii::app()->user->name), 'visible'=>Yii::app()->user->isEstudiante()),
                                         '---',
                                         array('label'=>'Administrar', 'url'=>array('usuarios/paneladmin'), 'visible'=>Yii::app()->user->isAdmin()),
                                         array('label'=>'Cerrar Sesión', 'url'=>array('site/logout')),

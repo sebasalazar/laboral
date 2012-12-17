@@ -81,7 +81,7 @@ return array(
          'db'=>array(
          'connectionString' => 'pgsql:host=localhost;dbname=laboraldb',
          'username' => 'postgres',
-         'password' => 'computador',
+         'password' => 'cris1955',
          'charset' => 'utf8',
          ),
 
