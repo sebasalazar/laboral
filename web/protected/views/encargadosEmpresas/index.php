@@ -13,12 +13,14 @@ $this->menu=array(
 ?>
 
 <h1>Encargado de Empresas</h1>
-
-<?php $this->widget('ext.groupgridview.GroupGridView', array(
-      'id' => 'EncargadosEmpresas',
-      'dataProvider'=>$model->search(),
-      //'mergeColumns' => array('fecha_publicacion', 'rubro_fk'),
-      'filter'=>$model,
+<div id="grillac">
+<?php $this->widget('bootstrap.widgets.TbGridView', array(
+        'type'=>'striped bordered condensed',
+      //'id' => 'EncargadosEmpresas',
+        'dataProvider'=>$model->search(),
+        'template'=>"{items}",
+        'filter'=>$model,
+        'template'=>"{items}\n{pager}",
       'columns' => array(
           array(
             'header'=>'Rut',
@@ -65,3 +67,4 @@ $this->menu=array(
 ));
 
 ?>
+</div>

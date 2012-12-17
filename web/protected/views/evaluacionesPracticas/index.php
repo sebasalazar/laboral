@@ -13,13 +13,15 @@ $this->menu=array(
 ?>
 
 <h1>Evaluaciones de Practicas</h1>
-
+<div id="grillac">
 <?php 
-    $this->widget('ext.groupgridview.GroupGridView', array(
-      'id' => 'evaluacionPractica',
+    $this->widget('bootstrap.widgets.TbGridView', array(
+        'type'=>'striped bordered condensed',
+      //'id' => 'evaluacionPractica',
       'dataProvider'=>$model->search(),
-      //'mergeColumns' => array('fecha_publicacion', 'rubro_fk'),
+        'template'=>"{items}",
       'filter'=>$model,
+       'template'=>"{items}\n{pager}",
       'columns' => array(
           array(
             'header'=>'Practicante',
@@ -47,3 +49,4 @@ $this->menu=array(
       ),
     ));
 ?>
+</div>
