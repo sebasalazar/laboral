@@ -125,7 +125,7 @@ class PracticasController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-            if(Yii::app()->user->isEmpresa())
+            if(Yii::app()->user->isEmpresa() || Yii::app()->user->isAdmin())
             {
                 $this->loadModel((int) $id)->delete();
 
