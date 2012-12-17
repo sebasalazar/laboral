@@ -1,9 +1,9 @@
 
 .contenido {
-   display: block;
-   width: 100%;
-   margin-right: 10%;
-   display: table;
+    display: block;
+    width: 100%;
+    margin-right: 10%;
+    display: table;
 }
 
 .button-column{
@@ -11,15 +11,15 @@
 }
 
 .contenido2 {
-   width: 90%;
-   display: table;
+    width: 90%;
+    display: table;
 }
 
 .contenido-carrusel {
-   display: block;
-   width: 95%;
-   margin: 0 auto 0 auto;
-   display: table;
+    display: block;
+    width: 95%;
+    margin: 0 auto 0 auto;
+    display: table;
 
 }
 
@@ -73,11 +73,11 @@
 }
 
 .contenido-ofe {
-   display: block;
-   width: 100%;
-   display: table;
-   border: 1px solid #AAA;
-   border-radius: 3px 3px 3px 3px;
+    display: block;
+    width: 100%;
+    display: table;
+    border: 1px solid #AAA;
+    border-radius: 3px 3px 3px 3px;
 }
 
 .columna_2{
@@ -163,9 +163,9 @@ ul#yw1{
 }
 
 #cruz_error{
-       display: none;
-       margin-top: 22px;
-       margin-left: 10px;
+    display: none;
+    margin-top: 22px;
+    margin-left: 10px;
 }
 
 
@@ -253,11 +253,11 @@ a:hover{
 
 .separador{
     background: transparent;
-	color: transparent;
-	border-left:  none;
-	border-right: none;
-	border-top:   none;
-	border-bottom: 1px dashed #AAA;
+    color: transparent;
+    border-left:  none;
+    border-right: none;
+    border-top:   none;
+    border-bottom: 1px dashed #AAA;
 }
 
 .con4{
@@ -294,3 +294,12 @@ a:hover{
 .grid-view {
     padding-top: 0px;
 }
+
+#yw1.yiiPager li.active a {
+    color: #000000;
+}
+
+#yw1.yiiPager li a {
+    color: #06C;
+}
+

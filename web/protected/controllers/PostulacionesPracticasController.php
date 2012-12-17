@@ -1,6 +1,6 @@
 <?php
 
-class PracticasController extends Controller
+class PostulacionesPracticasController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -28,16 +28,16 @@ class PracticasController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index'),
+				'actions'=>array('index','view'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','delete','view'),
+				'actions'=>array('create','update'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','create','update','index','index'),
-				'users'=>array(Yii::app()->user->getAdmin()),
+				'actions'=>array('admin','delete'),
+				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -52,25 +52,24 @@ class PracticasController extends Controller
 	public function actionView($id)
 	{
 		$this->render('view',array(
-			'model'=>$this->loadModel((int) $id),
+			'model'=>$this->loadModel($id),
 		));
 	}
+
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
 	public function actionCreate()
 	{
-            if(Yii::app()->user->isEmpresa())
-            {
-                $model=new Practicas;
+		$model=new PostulacionesPracticas;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Practicas']))
+		if(isset($_POST['PostulacionesPracticas']))
 		{
-			$model->attributes=$_POST['Practicas'];
+			$model->attributes=$_POST['PostulacionesPracticas'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->pk));
 		}
@@ -78,11 +77,6 @@ class PracticasController extends Controller
 		$this->render('create',array(
 			'model'=>$model,
 		));
-            }
-            else
-            {
-                throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
-            }
 	}
 
 	/**
@@ -92,16 +86,14 @@ class PracticasController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-            if(Yii::app()->user->isEmpresa())
-            {
-                $model=$this->loadModel((int) $id);
+		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Practicas']))
+		if(isset($_POST['PostulacionesPracticas']))
 		{
-			$model->attributes=$_POST['Practicas'];
+			$model->attributes=$_POST['PostulacionesPracticas'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->pk));
 		}
@@ -109,13 +101,7 @@ class PracticasController extends Controller
 		$this->render('update',array(
 			'model'=>$model,
 		));
-            }
-            else
-            {
-                throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
-            }
-        }
-	
+	}
 
 	/**
 	 * Deletes a particular model.
@@ -124,39 +110,22 @@ class PracticasController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-            if(Yii::app()->user->isEmpresa())
-            {
-                $this->loadModel((int) $id)->delete();
+		$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-            }
-            else
-            {
-                throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
-            }
 	}
 
 	/**
 	 * Lists all models.
-	 *//*
+	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Practicas');
+		$dataProvider=new CActiveDataProvider('PostulacionesPracticas');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
-	}*/
-        
-        
-        public function actionIndex()
-	{
-            $model=new Practicas('search');
-            $model->unsetAttributes();  // clear any default values
-            if(isset($_GET['Practicas']))
-                    $model->attributes=$_GET['Practicas'];
-            $this->render('index', array('model'=>$model));
 	}
 
 	/**
@@ -164,10 +133,10 @@ class PracticasController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Practicas('search');
+		$model=new PostulacionesPracticas('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Practicas']))
-			$model->attributes=$_GET['Practicas'];
+		if(isset($_GET['PostulacionesPracticas']))
+			$model->attributes=$_GET['PostulacionesPracticas'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -181,7 +150,7 @@ class PracticasController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Practicas::model()->findByPk((int) $id);
+		$model=PostulacionesPracticas::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -193,7 +162,7 @@ class PracticasController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='practicas-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='postulaciones-practicas-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
