@@ -28,10 +28,14 @@
                         array('name'=>'jornada_fk', 'header'=>'Jornada', 'value'=>'$data->jornadaFk->jornada'),
                         array('name'=>'empresa_fk', 'header'=>'Empresa', 'value'=>'$data->empresaFk->nombre'),
                         array(
-                            'header'=>'Ver',
-                            'class'=>'CButtonColumn',
+                            'class'=>'bootstrap.widgets.TbButtonColumn',
                             'template'=>'{view}',
-                    ),    
+                            'buttons'=>array(
+                                    'view' => array(
+                                      'url'=>'Yii::app()->controller->createUrl("ofertasLaborales/view", array("id"=>$data->pk))',
+                                    ),
+                            ),
+                      ),  
                     ),
                 )); ?>
             </div>
@@ -41,7 +45,7 @@
                     <text class="text-footer"><b>Noticias</b></text>
                 </div>
              <div class="con2">
-                    <?php echo Yii::app()->user->getAdmin(); ?>
+                    Aquí van las noticias.
              </div>
             <br />
             <div class="con">
