@@ -177,23 +177,56 @@ class EstudiantesController extends Controller
         public function actionUpdate3($id)
 	{
 		$model= Estudiantes::model()->findBypk($id);
-                $model->setAttributes( Estudiantes::model()->findBypk($id));
-                $modelCV = new Curriculums;
-                $modelConocimientos = new Conocimientos;
-                $modelExperiencias = new Experiencias;
+                $model->setAttributes(Estudiantes::model()->findBypk($id));
+                $modelCV = new Curriculums();
+                $modelConocimientos = new Conocimientos();
+                $modelExperiencias = new Experiencias();
                 $modelFormacionComplementaria = new FormacionComplementaria;
-                $modelEducacion = new Educacion;
-                $modelConocimientosCV = new ConocimientosCurriculums;               
+                $modelEducacion = new Educacion();
+                $modelConocimientosCV = new ConocimientosCurriculums();               
                 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_GET['Estudiantes']))
-		{
-			$model->attributes=$_POST['Estudiantes'];
-			if($model->save())
-				$this->redirect(array('view3','id'=>$model->pk));
-		}
+		if(isset($_GET['Educacion'])){
+                    $modelCV->presentacion=$_GET['Curriculums']['presentacion'];
+                    $modelCV->estudiante_fk=$_GET['id'];
+                    if($modelCV->save()){
+                        foreach($_GET as $nombre_campo => $valor){ 
+                                if($nombre_campo == 'Educacion'){
+                                    if(isset($_GET['Educacion'])){
+                                       $modelEducacion->attributes =  $_GET['Educacion'];
+                                       $modelEducacion->curriculum_fk = $modelCV->pk;
+                                       $modelEducacion->save();
+                                    }
+                                  
+                                }
+                                else if($nombre_campo == 'Experiencias'){
+                                     if(isset($_GET['Experiencas'])){
+                                       $modelExperiencias->attributes =  $_GET['Experiencas'];
+                                       $modelExperiencias->curriculum_fk = $modelCV->pk;
+                                       $modelExperiencias->save();
+                                    }
+                                }
+                                else if($nombre_campo == 'FormacionComplementaria' ){
+                                     if(isset($_GET['FormacionComplementaria'])){
+                                       $modelFormacionComplementaria->attributes =  $_GET['FormacionComplementaria'];
+                                       $modelFormacionComplementaria->curriculum_fk = $modelCV->pk;
+                                       $modelFormacionComplementaria->save();
+                                    }
+                                }
+                        } 
+                       $model->curriculum_completo = true;
+                       $this->redirect(array('ofertasLaborales/index'));
+                    }
+                    else
+                    {
+                       
+                        Yii::app()->user->setFlash('notice', "Problemas!!!"); 
+                        //$this->redirect(array('ofertasLaborales/index'));
+                    }
+                }
+		
 
 		$this->render('update3',array(
 			'model'=>$model,
