@@ -6,14 +6,13 @@
  * The followings are the available columns in table 'curriculums':
  * @property integer $pk
  * @property string $estudiante_fk
- * @property string $presentacion
  *
  * The followings are the available model relations:
  * @property FormacionComplementaria[] $formacionComplementarias
- * @property Estudiantes $estudianteFk
+ * @property ConocimientosCurriculums[] $conocimientosCurriculums
  * @property Experiencias[] $experienciases
  * @property Educacion[] $educacions
- * @property ConocimientosCurriculums[] $conocimientosCurriculums
+ * @property Estudiantes $estudianteFk
  */
 class Curriculums extends CActiveRecord
 {
@@ -45,10 +44,9 @@ class Curriculums extends CActiveRecord
 		return array(
 			array('pk, estudiante_fk', 'required'),
 			array('pk', 'numerical', 'integerOnly'=>true),
-			array('presentacion', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('pk, estudiante_fk, presentacion', 'safe', 'on'=>'search'),
+			array('pk, estudiante_fk', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -61,10 +59,10 @@ class Curriculums extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'formacionComplementarias' => array(self::HAS_MANY, 'FormacionComplementaria', 'curriculum_fk'),
-			'estudianteFk' => array(self::BELONGS_TO, 'Estudiantes', 'estudiante_fk'),
+			'conocimientosCurriculums' => array(self::HAS_MANY, 'ConocimientosCurriculums', 'curriculum_fk'),
 			'experienciases' => array(self::HAS_MANY, 'Experiencias', 'curriculum_fk'),
 			'educacions' => array(self::HAS_MANY, 'Educacion', 'curriculum_fk'),
-			'conocimientosCurriculums' => array(self::HAS_MANY, 'ConocimientosCurriculums', 'curriculum_fk'),
+			'estudianteFk' => array(self::BELONGS_TO, 'Estudiantes', 'estudiante_fk'),
 		);
 	}
 
@@ -76,7 +74,6 @@ class Curriculums extends CActiveRecord
 		return array(
 			'pk' => 'Pk',
 			'estudiante_fk' => 'Estudiante Fk',
-			'presentacion' => 'Presentacion',
 		);
 	}
 
@@ -93,7 +90,6 @@ class Curriculums extends CActiveRecord
 
 		$criteria->compare('pk',$this->pk);
 		$criteria->compare('estudiante_fk',$this->estudiante_fk,true);
-		$criteria->compare('presentacion',$this->presentacion,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

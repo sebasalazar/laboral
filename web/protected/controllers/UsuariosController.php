@@ -138,19 +138,19 @@ class UsuariosController extends Controller
                         if(isset($_POST['Usuarios']))
                         {
                                 $rol = 0;
-                                if(isset($_REQUEST['Estudiante']))
+                                if($_POST['Usuarios']['roles'][3])
                                 {
                                     $rol = 1;
                                 }
-                                if(isset($_REQUEST['Empresa']))
+                                if($_POST['Usuarios']['roles'][2])
                                 {
                                     $rol = $rol + 10;
                                 }
-                                if(isset($_REQUEST['Docente']))
+                                if($_POST['Usuarios']['roles'][1])
                                 {
                                     $rol = $rol + 100;
                                 }
-                                if(isset($_REQUEST['Admin']))
+                                if($_POST['Usuarios']['roles'][0])
                                 {
                                     $rol = $rol + 1000;
                                 }

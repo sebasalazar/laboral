@@ -101,7 +101,7 @@ class EstudiantesController extends Controller
                             $model->comuna_fk = $_POST['comboComuna'];
                             $model->archivo_curriculum = $model->rut;
 			if($model->save())
-                           $cv = CUploadedFile::getInstance ($model, 'archivo_curriculum');
+                                                                    $cv = CUploadedFile::getInstance ($model, 'archivo_curriculum');
                                     if(!empty($cv)){
                                         $cv->saveAs('cv/' . $model->rut . '.pdf');
                                     }
@@ -158,8 +158,7 @@ class EstudiantesController extends Controller
                     throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
             }
 	}
-                
-        public function actionUpdateperfil2($id)
+                public function actionUpdateperfil2($id)
 	{
    
                     $model=$this->loadModel($id);

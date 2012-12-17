@@ -25,78 +25,11 @@ $(document).ready(function(){
 		//almacenamos en una variable todo el contenido de la nueva fila que deseamos
 		//agregar. pueden incluirse id's, nombres y cualquier tag... sigue siendo html
 		var strNueva_Fila='<tr>'+
-                                    '<td><input class="clsAnchoTotal" name="Educacion[nombre_institucion]" id="Educacion_nombre_institucion" type="text" maxlength="60" /></td>' +
-                                    '<td><input class="clsAnchoTotal" name="Educacion[carrera]" id="Educacion_carrera" type="text" maxlength="60" /></td>' +
-                                    '<td><input class="clsAnchoTotal" style="width:30px" maxlength="4" name="Educacion[inicio]" id="Educacion_inicio" type="text" /></td>'+
-                                    '<td><input class="clsAnchoTotal" style="width:30px" maxlength="4" name="Educacion[fin]" id="Educacion_fin" type="text" /></td>'+
-                                    '<td align="right"><input type="button" value="-" class="clsEliminarFila"></td>'+
-                                    '</tr>';
-				
-		/*obtenemos el padre del boton presionado (en este caso queremos la tabla, por eso
-		utilizamos get(3)
-			table -> padre 3
-				tfoot -> padre 2
-					tr -> padre 1
-						td -> padre 0
-		nosotros queremos utilizar el padre 3 para agregarle en la etiqueta
-		tbody una nueva fila*/
-		var objTabla=$(this).parents().get(3);
-				
-		//agregamos la nueva fila a la tabla
-		$(objTabla).find('tbody').append(strNueva_Fila);
-				
-		//si el cuerpo la tabla esta oculto (al agregar una nueva fila) lo mostramos
-		if(!$(objTabla).find('tbody').is(':visible')){
-			//le hacemos clic al titulo de la tabla, para mostrar el contenido
-			$(objTabla).find('caption').click();
-		}
-	});
-        
-        
-        //evento que se dispara al hacer clic en el boton para agregar una nueva fila
-	$(document).on('click','.clsAgregarFilaExperiencia',function(){
-		//almacenamos en una variable todo el contenido de la nueva fila que deseamos
-		//agregar. pueden incluirse id's, nombres y cualquier tag... sigue siendo html
-		var strNueva_Fila='<tr>'+
-                        '<td><input class="clsAnchoTotal" name="Experiencias[descripcion]" id="Experiencias_descripcion" type="text" maxlength="255" /></td>' +
-                        '<td><input class="clsAnchoTotal" name="Experiencias[referencia]" id="Experiencias_referencia" type="text" maxlength="255" /></td>' +
-                        '<td><input class="clsAnchoTotal" name="Experiencias[email]" id="Experiencias_email" type="text" maxlength="255" /></td>' +
-                        '<td><input class="clsAnchoTotal" style="width:30px" maxlength="4" name="Experiencias[inicio]" id="Experiencias_inicio" type="text" /></td>' +
-                        '<td><input class="clsAnchoTotal" style="width:30px" maxlength="4" name="Experiencias[fin]" id="Experiencias_fin" type="text" /></td>' +
-                        '<td align="right"><input type="button" value="-" class="clsEliminarFila"></td>' +
-                        '</tr>';
-				
-		/*obtenemos el padre del boton presionado (en este caso queremos la tabla, por eso
-		utilizamos get(3)
-			table -> padre 3
-				tfoot -> padre 2
-					tr -> padre 1
-						td -> padre 0
-		nosotros queremos utilizar el padre 3 para agregarle en la etiqueta
-		tbody una nueva fila*/
-		var objTabla=$(this).parents().get(3);
-				
-		//agregamos la nueva fila a la tabla
-		$(objTabla).find('tbody').append(strNueva_Fila);
-				
-		//si el cuerpo la tabla esta oculto (al agregar una nueva fila) lo mostramos
-		if(!$(objTabla).find('tbody').is(':visible')){
-			//le hacemos clic al titulo de la tabla, para mostrar el contenido
-			$(objTabla).find('caption').click();
-		}
-	});
-        
-        
-         //evento que se dispara al hacer clic en el boton para agregar una nueva fila
-	$(document).on('click','.clsAgregarFilaComplementaria',function(){
-		//almacenamos en una variable todo el contenido de la nueva fila que deseamos
-		//agregar. pueden incluirse id's, nombres y cualquier tag... sigue siendo html
-		var strNueva_Fila='<tr>'+
-                        '<td><input class="clsAnchoTotal" name="FormacionComplementaria[nombre_formacion]" id="FormacionComplementaria_nombre_formacion" type="text" maxlength="60" /></td>'+
-                        '<td><input class="clsAnchoTotal" name="FormacionComplementaria[institucion]" id="FormacionComplementaria_institucion" type="text" maxlength="50" /></td>'+
-                        '<td><input class="clsAnchoTotal" style="width:30px" maxlength="4" name="FormacionComplementaria[anio_formacion_complementaria]" id="FormacionComplementaria_anio_formacion_complementaria" type="text" /></td>'+
-                        '<td align="right"><input type="button" value="-" class="clsEliminarFila"></td>'+     
-                        '</tr>';
+			'<td><input type="text" class="clsAnchoTotal"></td>'+
+			'<td><input type="text" class="clsAnchoTotal"></td>'+
+			'<td><input type="text" class="clsAnchoTotal"></td>'+
+			'<td align="right"><input type="button" value="-" class="clsEliminarFila"></td>'+
+		'</tr>';
 				
 		/*obtenemos el padre del boton presionado (en este caso queremos la tabla, por eso
 		utilizamos get(3)

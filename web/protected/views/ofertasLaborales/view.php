@@ -16,7 +16,7 @@ $this->menu=array(
 
 
 <div class="titulo">
-<?php  echo '<h2>Empresa <b>'.$model->empresaFk->nombre.'</b> necesita <b>'.$model->cargo.'</b></h2>';  ?>
+<h1>Detalle Oferta Laboral</h1>
 </div>
 <br />
 <div class="centrar1">
