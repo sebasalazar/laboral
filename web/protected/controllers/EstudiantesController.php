@@ -182,8 +182,7 @@ class EstudiantesController extends Controller
                 $modelConocimientos = new Conocimientos();
                 $modelExperiencias = new Experiencias();
                 $modelFormacionComplementaria = new FormacionComplementaria;
-                $modelEducacion = new Educacion();
-                $modelConocimientosCV = new ConocimientosCurriculums();               
+                $modelEducacion = new Educacion();          
                 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
