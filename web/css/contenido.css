@@ -294,3 +294,7 @@ a:hover{
 .grid-view {
     padding-top: 0px;
 }
+
+li.a{
+    color: #06C;
+}
