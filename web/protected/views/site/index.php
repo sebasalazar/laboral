@@ -28,10 +28,14 @@
                         array('name'=>'jornada_fk', 'header'=>'Jornada', 'value'=>'$data->jornadaFk->jornada'),
                         array('name'=>'empresa_fk', 'header'=>'Empresa', 'value'=>'$data->empresaFk->nombre'),
                         array(
-                            'header'=>'Ver',
-                            'class'=>'CButtonColumn',
+                            'class'=>'bootstrap.widgets.TbButtonColumn',
                             'template'=>'{view}',
-                    ),    
+                            'buttons'=>array(
+                                    'view' => array(
+                                      'url'=>'Yii::app()->controller->createUrl("ofertasLaborales/view", array("id"=>$data->pk))',
+                                    ),
+                            ),
+                      ),  
                     ),
                 )); ?>
             </div>
