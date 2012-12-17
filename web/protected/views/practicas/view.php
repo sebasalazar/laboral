@@ -36,4 +36,10 @@ $this->menu=array(
                     ),
                     'remuneracion',
             ),
-  )); ?>
+  ));
+    if(Yii::app()->user->isEstudiante()){
+   echo CHtml::button('Postular', array('submit' => array('PostulacionesPracticas/registrar','practica_fk'=>$model->pk,'estudiante_fk'=>Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk,'fecha'=>date("d-m-Y")),
+       'confirm' => '¿Esta seguro que desea postular?'
+       ));           
+}
+?>

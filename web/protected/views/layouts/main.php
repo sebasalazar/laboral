@@ -65,7 +65,7 @@ function formateo_rut($rut_param){
                                         array('label'=>'Subir Mi Curriculum','url'=>array('/'),'visible'=>Yii::app()->user->isEstudiante(),),)),
                                      array('label'=>'Practicas', 'items'=>array(
                                         array('label'=>'Ver Practicas', 'url'=>array('/practicas/index')),
-                                        array('label'=>'Mis Postulaciones', 'url'=>array('/practicas/mispostulaciones'), 'visible'=>Yii::app()->user->isEstudiante()),
+                                        array('label'=>'Mis Postulaciones', 'url'=>array('/postulacionesPracticas/mispostulaciones'), 'visible'=>Yii::app()->user->isEstudiante()),
                                     ), 'visible'=>Yii::app()->user->isEstudiante()),
                                     array('label'=>'Registrarse', 'url'=>array('usuarios/pcreate'), 'visible'=>Yii::app()->user->isGuest),
                                     array('label'=>'Contacto', 'url'=>array('site/contact')),
