@@ -84,6 +84,10 @@ if(Yii::app()->user->isEstudiante()){
        'confirm' => '¿Esta seguro que desea postular?'
        ));           
 }
+else
+{
+    
+}
 
 
 ?>
