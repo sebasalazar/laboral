@@ -1,6 +1,6 @@
 <?php
 
-class CurriculumsController extends Controller
+class EducacionController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -62,14 +62,14 @@ class CurriculumsController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Curriculums;
+		$model=new Educacion;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Curriculums']))
+		if(isset($_POST['Educacion']))
 		{
-			$model->attributes=$_POST['Curriculums'];
+			$model->attributes=$_POST['Educacion'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->pk));
 		}
@@ -91,9 +91,9 @@ class CurriculumsController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Curriculums']))
+		if(isset($_POST['Educacion']))
 		{
-			$model->attributes=$_POST['Curriculums'];
+			$model->attributes=$_POST['Educacion'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->pk));
 		}
@@ -122,7 +122,7 @@ class CurriculumsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Curriculums');
+		$dataProvider=new CActiveDataProvider('Educacion');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -133,10 +133,10 @@ class CurriculumsController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Curriculums('search');
+		$model=new Educacion('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Curriculums']))
-			$model->attributes=$_GET['Curriculums'];
+		if(isset($_GET['Educacion']))
+			$model->attributes=$_GET['Educacion'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -150,7 +150,7 @@ class CurriculumsController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Curriculums::model()->findByPk($id);
+		$model=Educacion::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -162,7 +162,7 @@ class CurriculumsController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='curriculums-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='educacion-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

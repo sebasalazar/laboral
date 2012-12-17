@@ -1,18 +1,18 @@
 <?php
-/* @var $this CurriculumsController */
+/* @var $this EducacionController */
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Curriculums',
+	'Educacions',
 );
 
 $this->menu=array(
-	array('label'=>'Create Curriculums', 'url'=>array('create')),
-	array('label'=>'Manage Curriculums', 'url'=>array('admin')),
+	array('label'=>'Create Educacion', 'url'=>array('create')),
+	array('label'=>'Manage Educacion', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Curriculums</h1>
+<h1>Educacions</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
