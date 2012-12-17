@@ -62,10 +62,10 @@ $this->menu=array(
                     <?php echo $form->labelEx($model,'roles'); ?>
                     <p class="hint">
                     </p>
-                    <input type="checkbox" name="admin">Administrador
-                    <input type="checkbox" name="docente">Docente
-                    <input type="checkbox" name="empresa">Empresa
-                    <input type="checkbox" name="estudiante">Estudiante
+                    <input type="checkbox" name="admin" <?php if (true) { echo 'checked="checked"'; } ?> />Administrador
+                    <input type="checkbox" name="docente" />Docente
+                    <input type="checkbox" name="empresa" />Empresa
+                    <input type="checkbox" name="estudiante" />Estudiante
                     <?php echo $form->error($model,'roles'); ?>
                 </div>
                 <div class="columna">
