@@ -55,6 +55,7 @@ class PracticasController extends Controller
 			'model'=>$this->loadModel((int) $id),
 		));
 	}
+
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.

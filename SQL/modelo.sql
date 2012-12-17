@@ -450,6 +450,7 @@ CREATE TABLE practicas (
     area_practica_fk int NOT NULL REFERENCES rubros(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     inicio_practica date NOT NULL,
     fin_practica date NOT NULL,
+    empresa_fk int NOT NULL,
     horario_fk int NOT NULL REFERENCES jornadas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     remuneracion int,
     PRIMARY KEY(pk)

@@ -19,6 +19,48 @@ class PostulacionesPracticasController extends Controller
 		);
 	}
 
+               	public function actionMispostulaciones()
+	{
+            $estudiante_fk = Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk;
+            //foreach($model=new Postulaciones)
+         //   $this->layout = 'column1';
+            $model=new PostulacionesPracticas('search2');
+            $model->unsetAttributes();  // clear any default values
+            if(isset($_GET['PostulacionesPracticas']))
+                    $model->attributes=$_GET['PostulacionesPracticas'];
+            $this->render('mispostulaciones', array('model'=>$model,'estudiante_fk'=>$estudiante_fk));
+	}
+            
+        public function actionRegistrar($practica_fk,$estudiante_fk,$fecha)
+	{
+            
+            $modelEstudiante = new Estudiantes;
+            $modelEstudiante->findByAttributes(array('pk'=>$estudiante_fk));
+            //Verificamos si efectivamente el estudiante posee todo el cv completo en el sistema
+            //sino es asi redirecciono para que realice dicha accion
+        /*    if(!$modelEstudiante->curriculum_completo)
+            {
+                 Yii::app()->user->setFlash('error', "Ustedes debe completar el Curriculum primero"); 
+                 $this->redirect(array('estudiantes/update3','id'=>Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk));
+            }
+            else
+            {*/
+                $model=new PostulacionesPracticas;
+                $model->practica_fk = $practica_fk;
+                $model->estudiante_fk = $estudiante_fk;
+                $model->fecha_postulacion = $fecha;  
+                $model->estado = 0;
+                if(PostulacionesPracticas::model()->findByAttributes(array('estudiante_fk'=>$estudiante_fk,'practica_fk'=>$practica_fk))===null){
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);   
+                Yii::app()->user->setFlash('success', "Su postulacion a sido satisfactoria");
+                $model->save();
+                $this->redirect(array('Practicas/view','id'=>$practica_fk));}
+                else{Yii::app()->user->setFlash('notice', "Usted ya postulo a esta practica"); 
+                    $this->redirect(array('Practicas/index'));}
+          //  }
+	}
+
 	/**
 	 * Specifies the access control rules.
 	 * This method is used by the 'accessControl' filter.
@@ -32,7 +74,7 @@ class PostulacionesPracticasController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','mispostulaciones','registrar'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions

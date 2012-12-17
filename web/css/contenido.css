@@ -295,6 +295,10 @@ a:hover{
     padding-top: 0px;
 }
 
+#yw1.yiiPager li.active a {
+    color: #000000;
+}
+
 #yw1.yiiPager li a {
     color: #06C;
 }

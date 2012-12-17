@@ -102,4 +102,23 @@ class PostulacionesPracticas extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        	public function search2($estudiante_fk)
+	{
+		// Warning: Please modify the following code to remove attributes that
+		// should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('pk',$this->pk,true);
+		$criteria->compare('fecha_postulacion',$this->fecha_postulacion,true);
+		$criteria->compare('practica_fk',$this->practica_fk,true);
+		$criteria->compare('estudiante_fk',$this->estudiante_fk,true);
+		$criteria->compare('estado',$this->estado);
+		$criteria->compare('motivo',$this->motivo,true);
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
+
 }
