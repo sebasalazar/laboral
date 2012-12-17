@@ -502,11 +502,12 @@ CREATE TABLE tips(
 );
 
 DROP TABLE IF EXISTS propietario_oferta CASCADE;
-CREATE TABLE propietario_oferta(
+CREATE TABLE propietario_oferta (
     pk serial NOT NULL,
     oferta_laboral_fk int NOT NULL REFERENCES ofertas_laborales(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     rut int NOT NULL,
-    PRIMARY KEY(oferta_laboral_fk, rut)
+    UNIQUE (oferta_laboral_fk, rut),
+    PRIMARY KEY (pk)
 );
 
 COMMIT;
