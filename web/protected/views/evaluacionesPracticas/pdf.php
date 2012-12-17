@@ -23,7 +23,7 @@ $html='
 </tr>
     <tr class="odd"><td> <b>Nombre: </b> </td><td class="fila2"> '.$model->estudiantes->nombres.'</td></tr>
     <tr class="odd"><td> <b>Apellidos: </b> </td><td class="fila2"> '.$model->estudiantes->apellidos.'</td></tr>
-    <tr class="odd"><td> <b>Encargado de Practica: </b> </td><td class="fila2"> '.$model->EncargadosPracticas->nombre_encargado.'</td></tr>
+    <tr class="odd"><td> <b>Encargado de Practica: </b> </td><td class="fila2"> '.$model->EncargadosPracticas->nombre_encargado.' '.$model->EncargadosPracticas->apellido_encargado.'</td></tr>
     <tr class="odd"><td> <b>Cargo: </b> </td><td class="fila2"> '.$model->cargo_asignado.'</td></tr>
     <tr class="odd"><td> <b>Conocimintos técnicos demostrados: </b> </td><td class="fila2"> '.$model->conocimientos_demostrados.'</td></tr>
     <tr class="odd"><td> <b>Eficacia para llegar a resultados concretos en su labor: </b> </td><td class="fila2"> '.$model->eficacia.'</td></tr>

@@ -37,15 +37,42 @@ $this->menu=array(
             'label'=>'Encargado de Practica',
             'value'=>$model->EncargadosPracticas->nombre_encargado,
          ),
-        'cargo_asignado',
-        'conocimientos_demostrados',
-        'eficacia',
-        'grado_cumplimiento',
-        'puntualidad_respeto',
-        'integracion_adaptacion',
-        'responsabilidad_superacion',
-        'capacidades_personales',
-        'iniciativa_creativi_improvi',
+        array(
+            'label'=>'Cargo Asignado',
+            'value'=>$model->cargo_asignado,
+         ),
+        array(
+            'label'=>'Conocimientos técnicos',
+            'value'=>$model->conocimientos_demostrados,
+         ),
+        array(
+            'label'=>'Eficacia en su labor',
+            'value'=>$model->eficacia,
+         ),
+        array(
+            'label'=>'Grado de cumplimiento',
+            'value'=>$model->grado_cumplimiento,
+         ),
+        array(
+            'label'=>'Puntualidad y respeto',
+            'value'=>$model->puntualidad_respeto,
+         ),
+        array(
+            'label'=>'Capacidad de integración',
+            'value'=>$model->integracion_adaptacion,
+         ),
+        array(
+            'label'=>'Responsabilidad y superación',
+            'value'=>$model->responsabilidad_superacion,
+         ),
+        array(
+            'label'=>'Capacidades interpersonales',
+            'value'=>$model->capacidades_personales,
+         ),
+        array(
+            'label'=>'Iniciativa, creatividad e improvisación',
+            'value'=>$model->iniciativa_creativi_improvi,
+         ),
     ),
         
 ));
