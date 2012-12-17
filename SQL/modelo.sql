@@ -445,8 +445,7 @@ CREATE TABLE formacion_complementaria (
 --
 DROP TABLE IF EXISTS practicas CASCADE;
 CREATE TABLE practicas (
-    pk serial NOT NULL,
-    empresa_fk int NOT NULL REFERENCES empresas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    pk bigserial NOT NULL,
     encargado_fk int NOT NULL REFERENCES encargados_empresas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     area_practica_fk int NOT NULL REFERENCES rubros(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     inicio_practica date NOT NULL,
@@ -454,6 +453,22 @@ CREATE TABLE practicas (
     horario_fk int NOT NULL REFERENCES jornadas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     remuneracion int,
     PRIMARY KEY(pk)
+);
+
+
+--
+-- Postulaciones Practicas
+--
+DROP TABLE IF EXISTS postulaciones_practicas CASCADE;
+CREATE TABLE postulaciones_practicas (
+    pk bigserial NOT NULL,
+    fecha_postulacion date NOT NULL DEFAULT NOW(),
+    practica_fk bigint NOT NULL REFERENCES practicas(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    estudiante_fk bigint NOT NULL REFERENCES estudiantes(pk) ON UPDATE CASCADE ON DELETE CASCADE,
+    estado smallint NOT NULL DEFAULT '0', -- 0 Postular - 1 Aceptado - 2 Rechazado
+    motivo text,
+    UNIQUE (practica_fk, estudiante_fk),
+    PRIMARY KEY (pk)
 );
 
 
