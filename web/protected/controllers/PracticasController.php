@@ -62,7 +62,7 @@ class PracticasController extends Controller
 	 */
 	public function actionCreate()
 	{
-            if(Yii::app()->user->isEmpresa())
+            if(Yii::app()->user->isEmpresa() || Yii::app()->user->isAdmin())
             {
                 $model=new Practicas;
 
@@ -93,7 +93,7 @@ class PracticasController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-            if(Yii::app()->user->isEmpresa())
+            if(Yii::app()->user->isEmpresa() || Yii::app()->user->isAdmin())
             {
                 $model=$this->loadModel((int) $id);
 

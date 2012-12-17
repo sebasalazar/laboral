@@ -86,7 +86,7 @@ class EmpresasController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-            if(Yii::app()->user->isEmpresa())
+            if(Yii::app()->user->isEmpresa() || Yii::app()->user->isAdmin())
             {
                $model=$this->loadModel((int) $id);
 

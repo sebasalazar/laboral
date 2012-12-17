@@ -51,7 +51,7 @@ class EncargadosEmpresasController extends Controller
 	 */
 	public function actionView($id)
 	{
-            if(Yii::app()->user->isEmpresa())
+            if(Yii::app()->user->isEmpresa() || Yii::app()->user->isAdmin())
             {
                 $this->render('view',array(
 			'model'=>$this->loadModel((int) $id),
@@ -100,7 +100,7 @@ class EncargadosEmpresasController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-            if(Yii::app()->user->isEmpresa())
+            if(Yii::app()->user->isEmpresa()|| Yii::app()->user->isAdmin())
             {
                $model=$this->loadModel((int) $id);
 
@@ -131,7 +131,7 @@ class EncargadosEmpresasController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-            if(Yii::app()->user->isEmpresa())
+            if(Yii::app()->user->isEmpresa() || Yii::app()->user->isAdmin())
             {
                $this->loadModel((int) $id)->delete();
 
@@ -151,7 +151,7 @@ class EncargadosEmpresasController extends Controller
         
         public function actionIndex()
 	{
-            if(Yii::app()->user->isEmpresa())
+            if(Yii::app()->user->isEmpresa()|| Yii::app()->user->isAdmin())
             {
                 $model=new EncargadosEmpresas('search');
                 $model->unsetAttributes();  // clear any default values

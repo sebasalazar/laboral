@@ -52,7 +52,7 @@ class EvaluacionesPracticasController extends Controller
 	 */
 	public function actionView($id)
 	{
-            if(Yii::app()->user->isEmpresa() || Yii::app()->user->isDocente())
+            if(Yii::app()->user->isEmpresa() || Yii::app()->user->isDocente()|| Yii::app()->user->isAdmin())
             {
 		$this->render('view',array(
 			'model'=>$this->loadModel((int) $id),
@@ -151,7 +151,7 @@ class EvaluacionesPracticasController extends Controller
 	 */
 	public function actionIndex()
 	{
-            if(Yii::app()->user->isEmpresa() || Yii::app()->user->isDocente())
+            if(Yii::app()->user->isEmpresa() || Yii::app()->user->isDocente() || Yii::app()->user->isAdmin())
             {
                 $model=new EvaluacionesPracticas('search');
 		$model->unsetAttributes();  // clear any default values
