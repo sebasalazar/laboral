@@ -188,7 +188,7 @@ class EstudiantesController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Estudiantes']))
+		if(isset($_GET['Estudiantes']))
 		{
 			$model->attributes=$_POST['Estudiantes'];
 			if($model->save())
