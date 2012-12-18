@@ -16,7 +16,6 @@ $this->menu=array(
                     'type'=>'striped bordered condensed',
                     'dataProvider'=>$ofertas->custom2Search(),
                     'template'=>"{items}",
-                    'filter'=>$ofertas,
                     'template'=>"{items}\n{pager}",
                     'columns'=>array(
                      array(

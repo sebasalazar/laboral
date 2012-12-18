@@ -30,9 +30,10 @@ $this->menu=array(
                         'filter'=>$model,
                         'template'=>"{items}\n{pager}",
                         'columns'=>array(
-                        'username',
-                        'password',
-                        'salt',
+                        array(
+                            'header'=>'Usuario',
+                            'value'=>'Yii::app()->user->getRut($data->username)',
+                        ),
                         'roles',
                         array(
                                 'header'=>'Detalle',

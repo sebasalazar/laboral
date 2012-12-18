@@ -16,7 +16,7 @@ $this->menu=array(
 );
 ?>
 <div class="contenidoPage">
-    <h1>Actualizar Usuario: <?php echo $model->username; ?></h1>
+    <h1>Actualizar Usuario: <?php echo Yii::app()->user->getRut($model->username); ?></h1>
     <br/>
     <div class="form">
 
@@ -42,7 +42,7 @@ $this->menu=array(
                 </div>
             </div>
         </div>
-
+<!--
         <div class="row">
             <div class="contenido">
                 <div class="columna">
@@ -56,6 +56,7 @@ $this->menu=array(
                 </div>
             </div>
         </div>
+  -->      
         <div class="row">
             <div class="contenido">
                 <div class="columna">

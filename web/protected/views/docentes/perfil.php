@@ -13,17 +13,29 @@ $this->menu=array(
 <h1>Perfil Docente</h1>
 <br/>
 <?php
+    if($model->genero == 'F'){
+        $gen = 'Femenino';
+    }
+    else {
+        $gen = 'Masculino';
+    }
     $this->widget('bootstrap.widgets.TbDetailView', array(
     'data'=>$model,
     'attributes'=>array(
         'nombres',
 		'apellidos',
-		'rut',
+		array(
+                    'label'=>'Rut',
+                    'value'=>Yii::app()->user->getRut($model->rut),
+                ),
 		array(
                     'label'=>'Fecha Nacimiento',
                     'value'=>Yii::app()->dateFormatter->format("d MMMM y",strtotime($model->fecha_nacimiento)),
                 ),
-		'genero',
+		array(
+                    'label'=>'Genero',
+                    'value'=>$gen,
+                ),
 		'direccion',
 		array(
                     'label'=>'Comuna',

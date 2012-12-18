@@ -56,7 +56,7 @@
                     <?php
                         foreach($model as $i){
                             echo CHtml::link($i->titulo,array('tips/view', 'id'=>$i->pk),array('rel'=>'tooltip', 'title'=>'Estudiante'));
-                            echo '<hr class="separador" />';
+                            echo '<hr class="separadosr" />';
                         }
                     ?>
                 </MARQUEE>

@@ -46,7 +46,7 @@ $this->menu=array(
                  ),
 		array(
                    'label'=>'Renta: ',
-                   'value'=> '$'.$model->renta,
+                   'value'=> '$ '. number_format($model->renta, 0, '', '.'),
                  ),
 		array(
                    'label'=>'Numero de Vacantes: ',
@@ -96,7 +96,7 @@ else if(Yii::app()->user->isEmpresa() || Yii::app()->user->isDocente() || Yii::a
                      array(
                         'header'=>'Rut Estudiante',
                         'name'=>'estudiante_fk',
-                        'value'=>'$data->estudianteFk->rut',
+                        'value'=>'Yii::app()->user->getRut($data->estudianteFk->rut)',
                       ),
                      array(
                         'header'=>'Estudiante',
@@ -106,7 +106,7 @@ else if(Yii::app()->user->isEmpresa() || Yii::app()->user->isDocente() || Yii::a
                      array(
                         'header'=>'Fecha',
                         'name' => 'fecha',
-                        'value' => '$data->fecha',
+                        'value' => 'Yii::app()->dateFormatter->format("d MMM y",strtotime($data->fecha))',
                      ),
                     ),
                 ));
