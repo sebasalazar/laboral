@@ -445,12 +445,12 @@ class WebUser extends CWebUser {
             $mailer = Yii::app()->swiftMailer;
 
             // Get config
-            $mailHost = 'servidor';
+            $mailHost = 'informatica.utem.cl';
             $mailPort = 25; // Optional
             // Transporte de Correo
             $transporte = $mailer->smtpTransport($mailHost, $mailPort)
-                    ->setUsername('usuario')
-                    ->setPassword('password');
+                    ->setUsername('ingsw')
+                    ->setPassword('isw2K12');
 
 
             // Motor
@@ -459,7 +459,7 @@ class WebUser extends CWebUser {
             // mensaje
             $mensaje = $mailer
                     ->newMessage($asunto)
-                    ->setFrom(array('cartero@informatica.utem.cl' => "Cartero Unidad de Informática"))
+                    ->setFrom(array('ingsw@informatica.utem.cl' => "Cartero Unidad de Informática"))
                     ->setTo(array("$correoDestinatario" => "$nombreDestinatario"))
                     ->setBody($mensaje);
 
