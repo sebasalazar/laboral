@@ -375,7 +375,7 @@ class WebUser extends CWebUser {
                 fclose($fpt);
             }
         } catch (Exception $e) {
-            // Hacer algo con la excepción
+            Yii::log($e);
         }
     }
 
@@ -435,6 +435,41 @@ class WebUser extends CWebUser {
             // logguear la Excepción en Yii
         }
         return $client_ip;
+    }
+
+    public function enviarEmail($nombreDestinatario, $correoDestinatario, $asunto, $mensaje) {
+        $resultado = false;
+        try {
+
+            // Cargo Mailer
+            $mailer = Yii::app()->swiftMailer;
+
+            // Get config
+            $mailHost = 'informatica.utem.cl';
+            $mailPort = 25; // Optional
+            
+            // Transporte de Correo
+            $transporte = $mailer->smtpTransport($mailHost, $mailPort)
+                ->setUsername('cartero')
+                ->setPassword('password');
+
+
+            // Motor
+            $motor = $mailer->mailer($transporte);
+
+            // mensaje
+            $mensaje = $mailer
+                    ->newMessage($asunto)
+                    ->setFrom(array('cartero@informatica.utem.cl' => "Cartero Unidad de Informática"))
+                    ->setTo(array("$correoDestinatario" => "$nombreDestinatario"))
+                    ->setBody($mensaje);
+
+            // Enviar Email
+            $resultado = (boolean) $motor->send($mensaje);
+        } catch (Exception $e) {
+            Yii::log($e);
+        }
+        return $resultado;
     }
 
 }
