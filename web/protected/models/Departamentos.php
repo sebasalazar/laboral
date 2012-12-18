@@ -92,8 +92,8 @@ class Departamentos extends CActiveRecord
 
 		$criteria->compare('pk',$this->pk);
 		$criteria->compare('facultad_fk',$this->facultad_fk);
-		$criteria->compare('departamento',$this->departamento,true);
-		$criteria->compare('descripcion',$this->descripcion,true);
+		$criteria->compare('LOWER(departamento)',strtolower($this->departamento),true);
+		$criteria->compare('LOWER(descripcion)',strtolower($this->descripcion),true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

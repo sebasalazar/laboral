@@ -91,7 +91,7 @@ class Comunas extends CActiveRecord
 
 		$criteria->compare('pk',$this->pk);
 		$criteria->compare('provincia_fk',$this->provincia_fk);
-		$criteria->compare('nombre',$this->nombre,true);
+		$criteria->compare('LOWER(nombre)',strtolower($this->nombre),true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
