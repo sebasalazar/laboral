@@ -45,6 +45,22 @@ $this->menu=array(
                //  ),
 		//'busqueda',
 	//	'archivo_curriculum',
-            
+           // if()
+          
+            //Verificamos si efectivamente el estudiante posee todo el cv completo en el sistema
+            //sino es asi redirecciono para que realice dicha accion
+        //    if(!$modelEstudiante->curriculum_completo)
 	),
-)); ?>
+
+)
+);
+$modelEstudiante = Estudiantes::model()->findByAttributes(array('pk'=>Yii::app()->user->getModelUsuarioEstudiante(Yii::app()->user->name)->pk));
+if(!$modelEstudiante->curriculum_completo){echo 'asdfsdg';}
+else{
+       echo CHtml::button('Llenar Curriculum', array('submit' => array('estudiantes/update3','oferta_laboral_fk'=>$model->pk,'estudiante_fk'=>Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk,'fecha'=>date("d-m-Y")),
+       'confirm' => '¿Esta seguro que desea postular?'
+       ));      
+    
+    
+}
+?>

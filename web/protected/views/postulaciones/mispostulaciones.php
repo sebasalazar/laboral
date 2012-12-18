@@ -53,6 +53,7 @@ $this->breadcrumbs=array(
                      array(
                           'header'=>'Cargo',
                           'name'=>'oferta_laboral_fk',
+                         'filter'=>false,
                          'value'=> '$data->ofertaLaboralFk->cargo',
                       ),
                      array(
