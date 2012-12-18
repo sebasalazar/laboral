@@ -62,10 +62,10 @@ $this->menu=array(
                     <?php echo $form->labelEx($model,'roles'); ?>
                     <p class="hint">
                     </p>
-                    <input type="checkbox" name="admin" <?php if (Yii::app()->user->rutIsAdmin($model->username)) { echo 'checked="checked"'; } ?> />Administrador
-                    <input type="checkbox" name="docente" <?php if (Yii::app()->user->rutIsDocente($model->username)) { echo 'checked="checked"'; } ?> />Docente
-                    <input type="checkbox" name="empresa" <?php if (Yii::app()->user->rutIsEmpresa($model->username)) { echo 'checked="checked"'; } ?> />Empresa
-                    <input type="checkbox" name="estudiante" <?php if (Yii::app()->user->rutIsEstudiante($model->username)) { echo 'checked="checked"'; } ?> />Estudiante
+                    <input type="checkbox" name="admin" <?php if (true) { echo 'checked="checked"'; } ?> />Administrador
+                    <input type="checkbox" name="docente" />Docente
+                    <input type="checkbox" name="empresa" />Empresa
+                    <input type="checkbox" name="estudiante" />Estudiante
                     <?php echo $form->error($model,'roles'); ?>
                 </div>
                 <div class="columna">

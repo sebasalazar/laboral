@@ -117,18 +117,18 @@ class Docentes extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('pk',$this->pk);
-		$criteria->compare('LOWER(nombres)',strtolower($this->nombres,true));
-		$criteria->compare('LOWER(apellidos)',strtolower($this->apellidos,true));
-		$criteria->compare('LOWER(rut)',strtolower($this->rut));
+		$criteria->compare('nombres',$this->nombres,true);
+		$criteria->compare('apellidos',$this->apellidos,true);
+		$criteria->compare('rut',$this->rut);
 		$criteria->compare('fecha_nacimiento',$this->fecha_nacimiento,true);
-		$criteria->compare('LOWER(genero)',strtolower($this->genero,true));
-		$criteria->compare('LOWER(direccion)',strtolower($this->direccion,true));
+		$criteria->compare('genero',$this->genero,true);
+		$criteria->compare('direccion',$this->direccion,true);
 		$criteria->compare('comuna_fk',$this->comuna_fk);
 		$criteria->compare('ec_fk',$this->ec_fk);
 		$criteria->compare('departamento_fk',$this->departamento_fk);
 		$criteria->compare('telefono',$this->telefono,true);
 		$criteria->compare('celular',$this->celular,true);
-		$criteria->compare('LOWER(email)',strtolower($this->email,true));
+		$criteria->compare('email',$this->email,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

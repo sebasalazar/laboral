@@ -90,8 +90,8 @@ class Educacion extends CActiveRecord
 
 		$criteria->compare('pk',$this->pk,true);
 		$criteria->compare('curriculum_fk',$this->curriculum_fk,true);
-		$criteria->compare('LOWER(nombre_institucion)',strtolower($this->nombre_institucion),true);
-		$criteria->compare('LOWER(carrera)',strtolower($this->carrera),true);
+		$criteria->compare('nombre_institucion',$this->nombre_institucion,true);
+		$criteria->compare('carrera',$this->carrera,true);
 		$criteria->compare('inicio',$this->inicio,true);
 		$criteria->compare('fin',$this->fin,true);
 

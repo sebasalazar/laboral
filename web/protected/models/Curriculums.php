@@ -93,7 +93,7 @@ class Curriculums extends CActiveRecord
 
 		$criteria->compare('pk',$this->pk);
 		$criteria->compare('estudiante_fk',$this->estudiante_fk,true);
-		$criteria->compare('LOWER(presentacion)',strtolower($this->presentacion),true);
+		$criteria->compare('presentacion',$this->presentacion,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

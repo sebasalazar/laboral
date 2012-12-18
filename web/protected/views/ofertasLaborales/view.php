@@ -84,33 +84,9 @@ if(Yii::app()->user->isEstudiante()){
        'confirm' => '¿Esta seguro que desea postular?'
        ));           
 }
-else if(Yii::app()->user->isEmpresa() || Yii::app()->user->isDocente() || Yii::app()->user->isAdmin())
+else
 {
-    echo '<div class="contenidoPage">';
-            $this->widget('bootstrap.widgets.TbGridView', array(
-                    'type'=>'striped bordered condensed',
-                    'dataProvider'=>$model1->searchCustom($id),
-                    'template'=>"{items}",
-                    'template'=>"{items}\n{pager}",
-                    'columns'=>array(
-                     array(
-                        'header'=>'Rut Estudiante',
-                        'name'=>'estudiante_fk',
-                        'value'=>'$data->estudianteFk->rut',
-                      ),
-                     array(
-                        'header'=>'Estudiante',
-                        'name'=>'estudiante_fk',
-                        'value'=>'$data->estudianteFk->nombres',
-                     ),
-                     array(
-                        'header'=>'Fecha',
-                        'name' => 'fecha',
-                        'value' => '$data->fecha',
-                     ),
-                    ),
-                ));
-    echo '</div>';
+    
 }
 
 

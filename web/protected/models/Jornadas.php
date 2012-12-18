@@ -84,8 +84,8 @@ class Jornadas extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('pk',$this->pk);
-		$criteria->compare('LOWER(jornada)',strtolower($this->jornada),true);
-		$criteria->compare('LOWER(descripcion)',strtolower($this->descripcion),true);
+		$criteria->compare('jornada',$this->jornada,true);
+		$criteria->compare('descripcion',$this->descripcion,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -52,14 +52,8 @@ class OfertasLaboralesController extends Controller
 	 */
 	public function actionView($id)
 	{
-                $model1=new Postulaciones('Search');
-                $model1->unsetAttributes();  // clear any default values
-                if(isset($_GET['Postulaciones']))
-                        $model1->attributes=$_GET['Postulaciones'];
 		$this->render('view',array(
 			'model'=>$this->loadModel((int) $id),
-                        'model1'=>$model1,
-                        'id'=>$id,
 		));
 	}
 

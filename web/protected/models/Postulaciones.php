@@ -100,21 +100,7 @@ class Postulaciones extends CActiveRecord
 		));
 	}
 
-        public function searchCustom($id){
-                $criteria=new CDbCriteria;
-                $criteria->select = array('*');
-                $criteria->condition = 'oferta_laboral_fk ='.$id;
 
-		$criteria->compare('pk',$this->pk,true);
-		$criteria->compare('oferta_laboral_fk',$this->oferta_laboral_fk);
-		$criteria->compare('estudiante_fk',$this->estudiante_fk);
-		$criteria->compare('fecha',$this->fecha,true);
-
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));  
-        }
-        
 	public function search2($estudiante_fk)
 	{
 		// Warning: Please modify the following code to remove attributes that

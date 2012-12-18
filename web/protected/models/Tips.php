@@ -80,8 +80,8 @@ class Tips extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('pk',$this->pk);
-		$criteria->compare('LOWER(titulo)',strtolower($this->titulo),true);
-		$criteria->compare('LOWER(contenido)',strtolower($this->contenido),true);
+		$criteria->compare('titulo',$this->titulo,true);
+		$criteria->compare('contenido',$this->contenido,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

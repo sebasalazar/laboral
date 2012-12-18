@@ -84,8 +84,8 @@ class Rubros extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('pk',$this->pk);
-		$criteria->compare('LOWER(rubro)',strtolower($this->rubro),true);
-		$criteria->compare('LOWER(descripcion)',strtolower($this->descripcion),true);
+		$criteria->compare('rubro',$this->rubro,true);
+		$criteria->compare('descripcion',$this->descripcion,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

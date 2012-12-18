@@ -90,8 +90,8 @@ class Escuelas extends CActiveRecord
 
 		$criteria->compare('pk',$this->pk);
 		$criteria->compare('departamento_fk',$this->departamento_fk);
-		$criteria->compare('LOWER(escuela)',  strtolower($this->escuela),true);
-		$criteria->compare('LOWER(descripcion)',strtolower($this->descripcion),true);
+		$criteria->compare('escuela',$this->escuela,true);
+		$criteria->compare('descripcion',$this->descripcion,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

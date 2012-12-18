@@ -89,8 +89,8 @@ class EncargadosPracticas extends CActiveRecord
 
 		$criteria->compare('pk',$this->pk,true);
 		$criteria->compare('rut_epracti',$this->rut_epracti);
-		$criteria->compare('LOWER(nombre_encargado)',strtolower($this->nombre_encargado),true);
-		$criteria->compare('LOWER(apellido_encargado)',strtolower($this->apellido_encargado),true);
+		$criteria->compare('nombre_encargado',$this->nombre_encargado,true);
+		$criteria->compare('apellido_encargado',$this->apellido_encargado,true);
 		$criteria->compare('empresa_fk',$this->empresa_fk);
 		$criteria->compare('area_practica_fk',$this->area_practica_fk);
 

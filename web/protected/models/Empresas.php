@@ -102,15 +102,15 @@ class Empresas extends CActiveRecord
 
 		$criteria->compare('pk',$this->pk,true);
 		$criteria->compare('rut',$this->rut);
-		$criteria->compare('LOWER(nombre)',strtolower($this->nombre),true);
-		$criteria->compare('LOWER(direccion)',strtolower($this->direccion),true);
+		$criteria->compare('nombre',$this->nombre,true);
+		$criteria->compare('direccion',$this->direccion,true);
 		$criteria->compare('comuna_fk',$this->comuna_fk);
 		$criteria->compare('codigo_postal',$this->codigo_postal);
 		$criteria->compare('telefono',$this->telefono,true);
-		$criteria->compare('LOWER(email)',strtolower($this->email),true);
+		$criteria->compare('email',$this->email,true);
 		$criteria->compare('actividad_fk',$this->actividad_fk);
-		$criteria->compare('LOWER(descripcion_negocio)',strtolower($this->descripcion_negocio),true);
-		$criteria->compare('LOWER(web)',strtolower($this->web),true);
+		$criteria->compare('descripcion_negocio',$this->descripcion_negocio,true);
+		$criteria->compare('web',$this->web,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

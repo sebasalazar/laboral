@@ -87,7 +87,7 @@ class Carreras extends CActiveRecord
 
 		$criteria->compare('pk',$this->pk);
 		$criteria->compare('cod_carrera',$this->cod_carrera);
-		$criteria->compare('LOWER(nombre_carrera)',strtolower($this->nombre_carrera),true);
+		$criteria->compare('nombre_carrera',$this->nombre_carrera,true);
 		$criteria->compare('escuela_fk',$this->escuela_fk);
 
 		return new CActiveDataProvider($this, array(
