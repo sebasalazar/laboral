@@ -100,7 +100,7 @@ class Postulaciones extends CActiveRecord
 		));
 	}
 
-        public function searchCustom($id){
+        public function search3($id){
                 $criteria=new CDbCriteria;
                 $criteria->select = array('*');
                 $criteria->condition = 'oferta_laboral_fk ='.$id;

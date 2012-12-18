@@ -22,7 +22,7 @@
 
         <?php // en caso de login muestra opciones específicas
                 $rutsinformato=Yii::app()->user->name;
-                $rut=Yii::app()->user->getRut();
+                $rut=Yii::app()->user->getRut($rutsinformato);
                 $this->widget('bootstrap.widgets.TbNavbar', array(
                         'type'=>'inverse', // null or 'inverse'
                         'brand'=>'Bolsa Laboral',

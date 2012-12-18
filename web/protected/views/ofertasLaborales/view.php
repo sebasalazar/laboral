@@ -89,7 +89,7 @@ else if(Yii::app()->user->isEmpresa() || Yii::app()->user->isDocente() || Yii::a
     echo '<div class="contenidoPage">';
             $this->widget('bootstrap.widgets.TbGridView', array(
                     'type'=>'striped bordered condensed',
-                    'dataProvider'=>$model1->searchCustom($id),
+                    'dataProvider'=>$model1->search3($id),
                     'template'=>"{items}",
                     'template'=>"{items}\n{pager}",
                     'columns'=>array(

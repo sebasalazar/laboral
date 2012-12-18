@@ -286,10 +286,10 @@ class WebUser extends CWebUser {
         return $nuevo_rut;
     }
 
-    public function getRut() {
+    public function getRut($rutsinformato) {
         $resultado = "";
         try {
-            $usuario = Yii::app()->user->name;
+            $usuario = $rutsinformato;
             if (is_numeric($usuario)) {
                 $nuevo_rut = number_format($usuario, 0, ",", ".");
                 $sub_dv = strtoupper($this->dv($usuario));
@@ -301,7 +301,7 @@ class WebUser extends CWebUser {
         }
         return $resultado;
     }
-
+    
     /**
      * @fn valida_rut($r)
      * @author Juan Pablo Aqueveque <jp@juque.cl >
