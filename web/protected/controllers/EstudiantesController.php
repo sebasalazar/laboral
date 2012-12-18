@@ -206,8 +206,8 @@ class EstudiantesController extends Controller
                                   
                                 }
                                 else if($nombre_campo == 'Experiencias'){
-                                     if(isset($_GET['Experiencas'])){
-                                       $modelExperiencias->attributes =  $_GET['Experiencas'];
+                                     if(isset($_GET['Experiencias'])){
+                                       $modelExperiencias->attributes =  $_GET['Experiencias'];
                                        $modelExperiencias->curriculum_fk = $modelCV->pk;
                                        $modelExperiencias->save(false);
                                     }
@@ -221,10 +221,10 @@ class EstudiantesController extends Controller
                                 }
                         } 
                         
-                        $sql = "update estudiantes set curriculum_completo = true
+                       $sql = "update estudiantes set curriculum_completo = true
                                 where pk = " . $id . ';';
-                        $comando = Yii::app()->db->createCommand($sql);
-                        $comando -> execute();
+                       $comando = Yii::app()->db->createCommand($sql);
+                       $comando -> execute();
                        $this->redirect(array('ofertasLaborales/index'));
                     }
                     else
@@ -243,6 +243,21 @@ class EstudiantesController extends Controller
                         'modelEducacion'=>$modelEducacion,
 		));
 	}
+        
+         public function deleteArchivo($rut){
+           
+             if($_POST['Estudiantes']){
+                   $sql = "update estudiantes set archivo_curriculum = ''
+                                where pk = " . $id . ';';
+                    $comando = Yii::app()->db->createCommand($sql);
+                    $comando -> execute();
+                    array_map('unlink', glob("cv/" . $rut . 'pdf')); 
+                    $cv = CUploadedFile::getInstance ($model3, 'archivo_curriculum');
+                 if(!empty($cv)){
+                    $cv->saveAs('cv/' . $model3->rut . '.pdf');
+                 }
+             }
+        }
 	/**
 	 * Deletes a particular model.
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
