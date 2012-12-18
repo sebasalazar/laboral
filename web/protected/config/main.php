@@ -76,7 +76,7 @@ return array(
 
         //Configuracion para postgresql
         'db' => array(
-            'connectionString' => 'pgsql:host=localhost;dbname=laboraldb',
+            'connectionString' => 'pgsql:dbname=laboraldb',
             'username' => 'laboral',
             'password' => 'laboral',
             'charset' => 'utf8',
