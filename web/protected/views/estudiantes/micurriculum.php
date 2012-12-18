@@ -54,12 +54,26 @@ $this->menu=array(
 
 )
 );
+?>
+<br br>
+<?php
 $modelEstudiante = Estudiantes::model()->findByAttributes(array('pk'=>Yii::app()->user->getModelUsuarioEstudiante(Yii::app()->user->name)->pk));
-if(!$modelEstudiante->curriculum_completo){echo 'asdfsdg';}
+
+
+if($modelEstudiante->curriculum_completo){$this->widget('zii.widgets.CDetailView', array(
+	'data'=>$model,
+	'attributes'=>array(
+            /*array('label'=>'Educacion',
+                    'value'=>$model->curriculums->educacions->nombre_institucion),
+                            //array('label' => 'carrera',
+                  //  'value' => $model->curriculums->presentacion ), */
+	//	'nombres',
+            ))
+        );}
+
 else{
-       echo CHtml::button('Llenar Curriculum', array('submit' => array('estudiantes/update3','oferta_laboral_fk'=>$model->pk,'estudiante_fk'=>Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk,'fecha'=>date("d-m-Y")),
-       'confirm' => '¿Esta seguro que desea postular?'
-       ));      
+       echo CHtml::button('Terminar Curriculum', array('submit' => array('estudiantes/update3', 'id'=>$modelEstudiante->pk
+       )));      
     
     
 }

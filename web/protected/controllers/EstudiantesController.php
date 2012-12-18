@@ -41,7 +41,7 @@ class EstudiantesController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('update','updateperfil','update3','perfil','micurriculum'),
+				'actions'=>array('update','updateperfil','update3','perfil','micurriculum','archivo','updateperfil4'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -173,8 +173,33 @@ class EstudiantesController extends Controller
                     throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
             }
 	}
+        
+            public function actionUpdateperfil4($rut)
+	{
+                $id=Yii::app()->user->getModelUsuarioEstudiante(Yii::app()->user->name)->pk;
+            if(Yii::app()->user->getModelUsuarioEstudianteId($id)->rut == Yii::app()->user->name)
+            {
+                    $model=$this->loadModel($id);
+                    if(isset($_POST['Estudiantes']))
+                    {
+                            $model->attributes=$_POST['Estudiantes'];
+                            if($model->save())
+                                    $this->redirect(array('view','id'=>$model->pk));
+                    }
+
+                    $this->render('updateperfil',array(
+                            'model'=>$model,
+                    ));
+            }
+            else
+            {
+                    throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
+            }
+	}
+        
                 public function actionUpdateperfil2($id)
 	{
+                    
    
                     $model=$this->loadModel($id);
                     if(isset($_POST['Estudiantes']))
@@ -235,7 +260,7 @@ class EstudiantesController extends Controller
                                 where pk = " . $id . ';';
                        $comando = Yii::app()->db->createCommand($sql);
                        $comando -> execute();
-                       $this->redirect(array('ofertasLaborales/index'));
+                       $this->redirect(array('estudiantes/micurriculum'));
                     }
                     else
                     {
@@ -254,19 +279,21 @@ class EstudiantesController extends Controller
 		));
 	}
         
-         public function deleteArchivo($rut){
+         public function actiondeleteArchivo($rut){
            
-             if($_POST['Estudiantes']){
+            // if($_POST['Estudiantes']){
+             $id=Yii::app()->user->getModelUsuarioEstudiante(Yii::app()->user->name)->pk;
                    $sql = "update estudiantes set archivo_curriculum = ''
                                 where pk = " . $id . ';';
                     $comando = Yii::app()->db->createCommand($sql);
                     $comando -> execute();
                     array_map('unlink', glob("cv/" . $rut . 'pdf')); 
-                    $cv = CUploadedFile::getInstance ($model3, 'archivo_curriculum');
+                    $cv = CUploadedFile::getInstance ($model, 'archivo_curriculum');
                  if(!empty($cv)){
-                    $cv->saveAs('cv/' . $model3->rut . '.pdf');
-                 }
+                    $cv->saveAs('cv/' . $model->rut . '.pdf');
+               //  }
              }
+             
         }
 	/**
 	 * Deletes a particular model.

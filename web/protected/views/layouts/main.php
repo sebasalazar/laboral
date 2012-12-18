@@ -52,8 +52,8 @@
                                         array('label'=>'Evaluar Practicas', 'url'=>array('/evaluacionesPracticas/create'), 'visible'=>Yii::app()->user->isEmpresa()),
                                     ), 'visible'=>!Yii::app()->user->isGuest && !Yii::app()->user->isEstudiante()),
                                     array('label'=>'CV','items'=>array(
-                                      //  array('label'=>'Actualizar Mis Datos','url'=>array('/estudiantes/updateperfil','id'=>Yii::app()->user->getModelUsuarioEstudiante(Yii::app()->user->name)->pk),'visible'=>Yii::app()->user->isEstudiante()),
-                                        array('label'=>'Subir Mi Curriculum','url'=>array('/estudiantes/deleteArchivo','rut'),'visible'=>Yii::app()->user->isEstudiante(),),)),
+                                        array('label'=>'Actualizar Mis Datos','url'=>array('/estudiantes/updateperfil4','rut'=>Yii::app()->user->name),'visible'=>Yii::app()->user->isEstudiante()),
+                                        array('label'=>'Subir Mi Curriculum','url'=>array('/site/index')/*/estudiantes/archivo','rut'=>Yii::app()->user->name)*/,'visible'=>Yii::app()->user->isEstudiante(),),)),
                                      array('label'=>'Practicas', 'items'=>array(
                                         array('label'=>'Ver Practicas', 'url'=>array('/practicas/index')),
                                         array('label'=>'Mis Postulaciones', 'url'=>array('/postulacionesPracticas/mispostulaciones'), 'visible'=>Yii::app()->user->isEstudiante()),
