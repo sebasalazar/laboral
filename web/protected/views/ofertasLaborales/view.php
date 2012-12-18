@@ -84,7 +84,7 @@ if(Yii::app()->user->isEstudiante()){
        'confirm' => '¿Esta seguro que desea postular?'
        ));           
 }
-else
+else if(Yii::app()->user->isEmpresa() || Yii::app()->user->isDocente() || Yii::app()->user->isAdmin())
 {
     echo '<div class="contenidoPage">';
             $this->widget('bootstrap.widgets.TbGridView', array(
