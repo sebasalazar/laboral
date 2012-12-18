@@ -101,10 +101,11 @@ class EstudiantesController extends Controller
                             $model->comuna_fk = $_POST['comboComuna'];
                             $model->archivo_curriculum = $model->rut;
 			if($model->save())
-                                                                    $cv = CUploadedFile::getInstance ($model, 'archivo_curriculum');
-                                    if(!empty($cv)){
+                        $cv = CUploadedFile::getInstance ($model, 'archivo_curriculum');
+                        if(!empty($cv)){
                                         $cv->saveAs('cv/' . $model->rut . '.pdf');
                                     }
+                                    
 				$this->redirect(array('view','id'=>$model->pk));
 		}
 
@@ -250,6 +251,18 @@ class EstudiantesController extends Controller
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 
+        public function actionSubircv($rut){
+            
+             $model->archivo_curriculum = $model->rut;
+                           
+                                        $cv = CUploadedFile::getInstance ($model, 'archivo_curriculum');
+                                    if(!empty($cv)){
+                                        $cv->saveAs('cv/' . $model->rut . '.pdf');
+                                    }
+            
+        }
+                            
+        
 	/**
 	 * Lists all models.
 	 */

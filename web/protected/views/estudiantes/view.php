@@ -48,10 +48,12 @@ $this->menu=array(
 		'telefono',
 		'celular',
 		'email',
+                            array('label' => 'carrera',
+                    'value' => $model->carreraFk->nombre_carrera ),
                 array('label'=>'Estado en UTEM',
                    'value'=>$model->estado0->nombre,
                  ),
-		'busqueda',
+		//'busqueda',
 		'archivo_curriculum',
 	),
 )); ?>
