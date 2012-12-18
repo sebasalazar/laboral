@@ -72,7 +72,9 @@ class UsuariosController extends Controller
 		if(isset($_POST['Usuarios']))
 		{
 			$model->attributes=$_POST['Usuarios'];
-                        $model->username = intval(preg_replace("/[^0-9]/", "", $_POST['rut_demo_int']));
+                        $rutsinformatostring = preg_replace("/[^0-9]/", "", $_POST['rut_demo_int']);
+                        $rutsinformato= intval(substr($rutsinformatostring, 0, -1));
+                        $model->username = $rutsinformato;
                         if(isset($_POST['Docentes']))
 			{
                                 $model1->attributes=$_POST['Docentes'];
