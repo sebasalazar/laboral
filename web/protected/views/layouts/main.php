@@ -1,21 +1,9 @@
 <?php /* @var $this Controller */ ?>
-<?php
-function formateo_rut($rut_param){ 
-    /*
-    $parte4 = substr($rut_param, -1); // seria solo el numero verificador 
-    $parte3 = substr($rut_param, -4,3); // la cuenta va de derecha a izq  
-    $parte2 = substr($rut_param, -7,3);  
-    $parte1 = substr($rut_param, 0,-7);   //de esta manera toma todos los caracteres desde el 8 hacia la izq 
-
-    return $parte1.".".$parte2.".".$parte3."-".$parte4;
-    */
-    return Yii::app()->user->getRut();
-}?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="language" content="en" />
+	<meta name="language" content="es" />
         <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 	<!-- blueprint CSS framework -->
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection" />
@@ -34,7 +22,7 @@ function formateo_rut($rut_param){
 
         <?php // en caso de login muestra opciones específicas
                 $rutsinformato=Yii::app()->user->name;
-                $rut=formateo_rut($rutsinformato);
+                $rut=Yii::app()->user->getRut();
                 $this->widget('bootstrap.widgets.TbNavbar', array(
                         'type'=>'inverse', // null or 'inverse'
                         'brand'=>'Bolsa Laboral',

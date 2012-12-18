@@ -157,7 +157,7 @@ class WebUser extends CWebUser {
         else
             return false;
     }
-    
+
     public function isAdmin() {
         if (!Yii::app()->user->isGuest) {
             $usuario = Usuarios::model()->findByPk(Yii::app()->user->name);
@@ -171,8 +171,8 @@ class WebUser extends CWebUser {
         else
             return false;
     }
-    
-        public function rutIsDocente($rut) {
+
+    public function rutIsDocente($rut) {
         if (!Yii::app()->user->isGuest) {
             $usuario = Usuarios::model()->findByPk($rut);
             $rol = $this->roles($usuario->roles);
@@ -185,7 +185,7 @@ class WebUser extends CWebUser {
         else
             return false;
     }
-    
+
     public function rutIsEmpresa($rut) {
         if (!Yii::app()->user->isGuest) {
             $usuario = Usuarios::model()->findByPk($rut);
@@ -227,7 +227,7 @@ class WebUser extends CWebUser {
         else
             return false;
     }
-    
+
     /**
      * @fn dv($rut)
      * @param $rut Parte numérica del rut.
@@ -447,11 +447,10 @@ class WebUser extends CWebUser {
             // Get config
             $mailHost = 'informatica.utem.cl';
             $mailPort = 25; // Optional
-            
             // Transporte de Correo
             $transporte = $mailer->smtpTransport($mailHost, $mailPort)
-                ->setUsername('cartero')
-                ->setPassword('password');
+                    ->setUsername('cartero')
+                    ->setPassword('password');
 
 
             // Motor
@@ -464,6 +463,8 @@ class WebUser extends CWebUser {
                     ->setTo(array("$correoDestinatario" => "$nombreDestinatario"))
                     ->setBody($mensaje);
 
+            //                    ->addPart($contenido, 'text/html')
+            
             // Enviar Email
             $resultado = (boolean) $motor->send($mensaje);
         } catch (Exception $e) {
