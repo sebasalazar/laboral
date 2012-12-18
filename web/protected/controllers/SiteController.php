@@ -57,7 +57,13 @@ class SiteController extends Controller {
         if (isset($_POST['ContactForm'])) {
             $model->attributes = $_POST['ContactForm'];
             if ($model->validate()) {
-                $salida = Yii::app()->user->enviarEmail($model->name, $model->email, $model->subject, $model->body);
+                
+                $nombre = "Admin Portal Laboral";
+                $correo = trim(Yii::app()->params['adminEmail']);
+                $asunto = trim("[Contacto] {$model->subject}");
+                $mensaje = trim("{$model->name} <{$model->email}>\r\n Consulta \r\n {$model->body}");
+                
+                $salida = Yii::app()->user->enviarEmail($nombre, $correo, $asunto, $mensaje);
                 if ($salida) {
                     Yii::app()->user->setFlash('contact', 'Gracias por contactarse con nosotros, le contestaremos a la brevedad.');
                 } else {
