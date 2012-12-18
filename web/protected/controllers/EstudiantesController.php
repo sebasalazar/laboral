@@ -41,7 +41,7 @@ class EstudiantesController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('update','updateperfil','update3','perfil'),
+				'actions'=>array('update','updateperfil','update3','perfil','micurriculum'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -64,7 +64,17 @@ class EstudiantesController extends Controller
 			'model'=>$this->loadModel((int) $id),
 		));
 	}
+      public function actionMicurriculum($id)
+        {
         
+            $model= Estudiantes::model()->findByPk(Yii::app()->user->getModelUsuarioEstudiante(Yii::app()->user->name)->pk);
+            if($id == Yii::app()->user->name)
+                $this->render('micurriculum', array(
+                        'model'=>$model
+                ));
+            else
+                throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
+        }
         public function actionPerfil($id)
         {
         

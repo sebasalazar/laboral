@@ -38,13 +38,13 @@ class PostulacionesPracticasController extends Controller
             $modelEstudiante->findByAttributes(array('pk'=>$estudiante_fk));
             //Verificamos si efectivamente el estudiante posee todo el cv completo en el sistema
             //sino es asi redirecciono para que realice dicha accion
-        /*    if(!$modelEstudiante->curriculum_completo)
+            if(!$modelEstudiante->curriculum_completo)
             {
                  Yii::app()->user->setFlash('error', "Ustedes debe completar el Curriculum primero"); 
                  $this->redirect(array('estudiantes/update3','id'=>Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk));
             }
             else
-            {*/
+            {
                 $model=new PostulacionesPracticas;
                 $model->practica_fk = $practica_fk;
                 $model->estudiante_fk = $estudiante_fk;
@@ -58,7 +58,7 @@ class PostulacionesPracticasController extends Controller
                 $this->redirect(array('Practicas/view','id'=>$practica_fk));}
                 else{Yii::app()->user->setFlash('notice', "Usted ya postulo a esta practica"); 
                     $this->redirect(array('Practicas/index'));}
-          //  }
+            }
 	}
 
 	/**

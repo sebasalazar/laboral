@@ -21,6 +21,13 @@ class WebUser extends CWebUser {
         else
             return 0;
     }
+        public function idEstudiante($rut) {
+        $estudiante = Estudiantes::model()->findByAttributes(array('rut' => $rut));
+        if ($estudiante != null)
+            return $estudiante->pk;
+        else
+            return 0;
+    }
 
     public function getModelUsuarioEstudianteId($id) {
         $estudiante = Estudiantes::model()->model()->findByPK($id);

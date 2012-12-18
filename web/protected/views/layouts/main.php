@@ -52,7 +52,7 @@
                                         array('label'=>'Evaluar Practicas', 'url'=>array('/evaluacionesPracticas/create'), 'visible'=>Yii::app()->user->isEmpresa()),
                                     ), 'visible'=>!Yii::app()->user->isGuest && !Yii::app()->user->isEstudiante()),
                                     array('label'=>'CV','items'=>array(
-                                        array('label'=>'Actualizar Mis Datos','url'=>array('/'),'visible'=>Yii::app()->user->isEstudiante()),
+                                        array('label'=>'Actualizar Mis Datos','url'=>array('/estudiantes/updateperfil','id'=>Yii::app()->user->getModelUsuarioEstudiante(Yii::app()->user->name)->pk),'visible'=>Yii::app()->user->isEstudiante()),
                                         array('label'=>'Subir Mi Curriculum','url'=>array('/'),'visible'=>Yii::app()->user->isEstudiante(),),)),
                                      array('label'=>'Practicas', 'items'=>array(
                                         array('label'=>'Ver Practicas', 'url'=>array('/practicas/index')),
@@ -74,6 +74,7 @@
                                         array('label'=>'Datos Empresa', 'url'=>array('empresas/perfil', 'id'=>Yii::app()->user->name), 'visible'=>Yii::app()->user->isEmpresa()),
                                         array('label'=>'Perfil Docente', 'url'=>array('docentes/perfil'), 'visible'=>Yii::app()->user->isDocente()),
                                         array('label'=>'Mis datos', 'url'=>array('estudiantes/perfil', 'id'=>Yii::app()->user->name), 'visible'=>Yii::app()->user->isEstudiante()),
+                                        array('label'=>'Mi Curriculum', 'url'=>array('estudiantes/micurriculum', 'id'=>Yii::app()->user->name), 'visible'=>Yii::app()->user->isEstudiante()),
                                         '---',
                                         array('label'=>'Administrar', 'url'=>array('usuarios/paneladmin'), 'visible'=>Yii::app()->user->isAdmin()),
                                         array('label'=>'Cerrar Sesión', 'url'=>array('site/logout')),
