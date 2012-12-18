@@ -84,8 +84,8 @@ class Conocimientos extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('pk',$this->pk,true);
-		$criteria->compare('conocimiento',$this->conocimiento,true);
-		$criteria->compare('descripcion',$this->descripcion,true);
+		$criteria->compare('LOWER(conocimiento)',strtolower($this->conocimiento),true);
+		$criteria->compare('LOWER(descripcion)',strtolower($this->descripcion),true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -135,7 +135,7 @@ class OfertasLaborales extends CActiveRecord {
         $criteria->compare('plazo', $this->plazo, true);
         $criteria->compare('descripcion', $this->descripcion, true);
         $criteria->compare('ubicacion', $this->ubicacion, true);
-        $criteria->compare('cargo', $this->cargo, true);
+        $criteria->compare('LOWER(cargo)', strtolower($this->cargo), true);
         $criteria->compare('fecha_publicacion', $this->fecha_publicacion, true);
         $criteria->compare('beneficios', $this->beneficios, true);
         $criteria->compare('jornada_fk', $this->jornada_fk);
@@ -188,7 +188,7 @@ class OfertasLaborales extends CActiveRecord {
         $criteria->compare('plazo', $this->plazo, true);
         $criteria->compare('descripcion', $this->descripcion, true);
         $criteria->compare('ubicacion', $this->ubicacion, true);
-        $criteria->compare('cargo', $this->cargo, true);
+        $criteria->compare('cargo',$this->cargo,true);
         $criteria->compare('fecha_publicacion', $this->fecha_publicacion, true);
         $criteria->compare('beneficios', $this->beneficios, true);
         $criteria->compare('jornada_fk', $this->jornada_fk);
