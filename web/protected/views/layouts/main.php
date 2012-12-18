@@ -56,7 +56,8 @@ function formateo_rut($rut_param){
                                         array('label'=>'Encargados de Practicas', 'url'=>array('/encargadosPracticas/index')),
                                     ), 'visible'=>Yii::app()->user->isEmpresa()),
                                     array('label'=>'Practicas', 'items'=>array(
-                                        array('label'=>'Ver Practicas', 'url'=>array('/practicas/index')),
+                                        array('label'=>'Ver Practicas Creadas', 'url'=>array('/practicas/index')),
+                                        array('label'=>'Ver Postulaciones a Practicas', 'url'=>array('/postulacionesPracticas/index')),
                                         array('label'=>'Crear Practicas', 'url'=>array('/practicas/create'), 'visible'=>Yii::app()->user->isEmpresa()),
                                         '---',
                                         array('label'=>'Ver Evaluaciones', 'url'=>array('/evaluacionesPracticas/index'), 'visible'=>Yii::app()->user->isDocente() || Yii::app()->user->isEmpresa()),
@@ -82,7 +83,7 @@ function formateo_rut($rut_param){
                                     '---',
                                     array('label'=>'Iniciar Sesion', 'url'=>array('site/login'), 'visible'=>Yii::app()->user->isGuest),
                                     array('label'=>$rut, 'url'=>'#', 'items'=>array(
-                                        array('label'=>'Perfil Empresa', 'url'=>array('empresas/perfil', 'id'=>Yii::app()->user->name), 'visible'=>Yii::app()->user->isEmpresa()),
+                                        array('label'=>'Datos Empresa', 'url'=>array('empresas/perfil', 'id'=>Yii::app()->user->name), 'visible'=>Yii::app()->user->isEmpresa()),
                                         array('label'=>'Perfil Docente', 'url'=>array('docentes/perfil'), 'visible'=>Yii::app()->user->isDocente()),
                                         array('label'=>'Mis datos', 'url'=>array('estudiantes/perfil', 'id'=>Yii::app()->user->name), 'visible'=>Yii::app()->user->isEstudiante()),
                                         '---',
