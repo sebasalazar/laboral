@@ -71,6 +71,8 @@ function formateo_rut($rut_param){
                                     ), 'visible'=>Yii::app()->user->isEstudiante()),
                                     array('label'=>'Registrarse', 'url'=>array('usuarios/pcreate'), 'visible'=>Yii::app()->user->isGuest),
                                     array('label'=>'Contacto', 'url'=>array('site/contact')),
+                                    /////////////////////////////////////////////////////////////////////////////////////////////////
+                                    //array('label'=>'TesteoMails', 'url'=>array('site/viewTest')), ///////BORRAR UNA VEZ TERMINADO EL MAIL
                                 ),
                             ),
                             array(

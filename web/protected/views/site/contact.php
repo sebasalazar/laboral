@@ -1,4 +1,17 @@
 <?php
+/*
+        Yii::import('ext.yii-mail.YiiMailMessage');
+      $message = new YiiMailMessage;
+      $message->setBody('Message content here with HTML', 'text/html');
+      $message->subject = 'My Subject';
+      $message->addTo('sabmus8@gmail.com');
+      $message->from = Yii::app()->params['adminEmail'];
+      Yii::app()->mail->send($message);
+ * 
+ */
+
+
+
 /* @var $this SiteController */
 /* @var $model ContactForm */
 /* @var $form CActiveForm */
@@ -74,9 +87,10 @@ Para cualquier duda o sugerencia, por favor llene el siguiente formulario.
 	</div>
 	<?php endif; ?>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Enviar'); ?>
-	</div>
+	<div class="form-actions">
+            <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>'Enviar')); ?>
+            <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'reset', 'label'=>'Borrar')); ?>
+        </div>
 
 <?php $this->endWidget(); ?>
 

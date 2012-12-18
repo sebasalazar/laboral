@@ -44,6 +44,14 @@ return array(
                         'class'=>'WebUser',
 		),
             
+            
+            //mails mails mails
+            /*'swiftMailer' => array(
+                'class' => 'ext.swiftMailer.lib.classes.Swift.Mailer',
+            ),*/
+            //************************//
+            
+            
                 'bootstrap'=>array(
                     'class'=>'ext.bootstrap.components.Bootstrap', // assuming you extracted bootstrap under extensions
                 ),
@@ -109,9 +117,10 @@ return array(
                 ),
 	),
 
+        
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'adminEmail'=>'contacto@informatica.utem.cl',
+		'adminEmail'=>'sabmus8@gmail.com',
 	),
 );
