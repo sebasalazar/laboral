@@ -13,12 +13,12 @@
  * The followings are the available model relations:
  * @property Curriculums $curriculumFk
  */
-class FormacionComplementaria extends CActiveRecord
+class Formacioncomplementaria extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return FormacionComplementaria the static model class
+	 * @return Formacioncomplementaria the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

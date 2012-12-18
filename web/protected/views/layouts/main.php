@@ -82,7 +82,7 @@ function formateo_rut($rut_param){
                                     '---',
                                     array('label'=>'Iniciar Sesion', 'url'=>array('site/login'), 'visible'=>Yii::app()->user->isGuest),
                                     array('label'=>$rut, 'url'=>'#', 'items'=>array(
-                                        array('label'=>'Datos Empresa', 'url'=>array('empresas/perfil', 'id'=>Yii::app()->user->name), 'visible'=>Yii::app()->user->isEmpresa()),
+                                        array('label'=>'Perfil Empresa', 'url'=>array('empresas/perfil', 'id'=>Yii::app()->user->name), 'visible'=>Yii::app()->user->isEmpresa()),
                                         array('label'=>'Perfil Docente', 'url'=>array('docentes/perfil'), 'visible'=>Yii::app()->user->isDocente()),
                                         array('label'=>'Mis datos', 'url'=>array('estudiantes/perfil', 'id'=>Yii::app()->user->name), 'visible'=>Yii::app()->user->isEstudiante()),
                                         '---',
