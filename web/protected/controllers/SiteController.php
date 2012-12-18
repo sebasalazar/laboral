@@ -72,7 +72,7 @@ class SiteController extends Controller
 					"Content-type: text/plain; charset=UTF-8";
 
 				mail(Yii::app()->params['adminEmail'],$subject,$model->body,$headers);
-				Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
+				Yii::app()->user->setFlash('contact','Gracias por contactarse con nosotros, le contestaremos a la brevedad.');
 				$this->refresh();
 			}
 		}
@@ -113,4 +113,43 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+        
+        
+        ////FUNCION DEL MAIL
+        /*
+           public function actionViewTest() {
+
+                // Render view and get content
+                // Notice the last argument being `true` on render()
+                $content = $this->render('viewTest', array(
+                    'Test' => 'TestText 123',
+                ), true);
+
+                // Plain text content
+                $plainTextContent = "This is my Plain Text Content for those with cheap emailclients ;-)\nThis is my second row of text";
+
+                // Get mailer
+                $SM = Yii::app()->swiftMailer;
+
+                // Get config
+                $mailHost = 'sabmus8@gmail.com';
+                $mailPort = 25; // Optional
+
+                // New transport
+                $Transport = $SM->smtpTransport($mailHost, $mailPort);
+
+                // Mailer
+                $Mailer = $SM->mailer($Transport);
+
+                // New message
+                $Message = $SM
+                    ->newMessage('My subject')
+                    ->setFrom(array('sabmus8@gmail.com' => 'Example Name'))
+                    ->setTo(array('toruk21@hotmail.com' => 'Recipient Name'))
+                    ->addPart($content, 'text/html')
+                    ->setBody($plainTextContent);
+
+                // Send mail
+                $result = $Mailer->send($Message);
+            }*/
 }
