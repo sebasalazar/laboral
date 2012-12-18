@@ -450,7 +450,7 @@ class WebUser extends CWebUser {
             // Transporte de Correo
             $transporte = $mailer->smtpTransport($mailHost, $mailPort)
                     ->setUsername('cartero')
-                    ->setPassword('password');
+                    ->setPassword('b8fa5c92');
 
 
             // Motor
@@ -466,7 +466,9 @@ class WebUser extends CWebUser {
             //                    ->addPart($contenido, 'text/html')
             
             // Enviar Email
-            $resultado = (boolean) $motor->send($mensaje);
+            $salida =  $motor->send($mensaje);
+            $this->loguear(__METHOD__ . " Salida: " . $salida);
+            $resultado = true;
         } catch (Exception $e) {
             Yii::log($e);
         }
