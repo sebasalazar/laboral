@@ -28,6 +28,7 @@
  * @property EstadosCiviles $ecFk
  * @property Carreras $carreraFk
  * @property Estados $estado0
+ * @property PostulacionesPracticas[] $postulacionesPracticases
  * @property Curriculums[] $curriculums
  * @property Postulaciones[] $postulaciones
  * @property SugerenciasTrabajo[] $sugerenciasTrabajos
@@ -85,6 +86,7 @@ class Estudiantes extends CActiveRecord
 			'ecFk' => array(self::BELONGS_TO, 'EstadosCiviles', 'ec_fk'),
 			'carreraFk' => array(self::BELONGS_TO, 'Carreras', 'carrera_fk'),
 			'estado0' => array(self::BELONGS_TO, 'Estados', 'estado'),
+			'postulacionesPracticases' => array(self::HAS_MANY, 'PostulacionesPracticas', 'estudiante_fk'),
 			'curriculums' => array(self::HAS_MANY, 'Curriculums', 'estudiante_fk'),
 			'postulaciones' => array(self::HAS_MANY, 'Postulaciones', 'estudiante_fk'),
 			'sugerenciasTrabajos' => array(self::HAS_MANY, 'SugerenciasTrabajo', 'estudiante_fk'),
@@ -104,9 +106,9 @@ class Estudiantes extends CActiveRecord
 			'fecha_nacimiento' => 'Fecha Nacimiento',
 			'genero' => 'Genero',
 			'direccion' => 'Direccion',
-			'comuna_fk' => 'Comuna',
+			'comuna_fk' => 'Comuna Fk',
 			'ec_fk' => 'Ec Fk',
-			'carrera_fk' => 'Carrera',
+			'carrera_fk' => 'Carrera Fk',
 			'telefono' => 'Telefono',
 			'celular' => 'Celular',
 			'email' => 'Email',

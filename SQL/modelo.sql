@@ -370,7 +370,7 @@ CREATE TABLE postulaciones (
 --
 DROP TABLE IF EXISTS curriculums CASCADE;
 CREATE TABLE curriculums (
-    pk int NOT NULL,
+    pk bigserial NOT NULL,
     estudiante_fk bigint NOT NULL REFERENCES estudiantes(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     presentacion VARCHAR(255), --PRESENTACION SOBRE POSTULANTE
     PRIMARY KEY(pk)
@@ -401,12 +401,12 @@ CREATE TABLE conocimientos_curriculums(
 --
 DROP TABLE IF EXISTS educacion CASCADE;
 CREATE TABLE educacion (
-    pk bigint NOT NULL,
+    pk bigserial NOT NULL,
     curriculum_fk bigint NOT NULL REFERENCES curriculums(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     nombre_institucion VARCHAR(60) NOT NULL,
     carrera VARCHAR(60),    
-    inicio date NOT NULL,
-    fin date NOT NULL,
+    inicio int NOT NULL,
+    fin int NOT NULL,
     PRIMARY KEY(pk)
 );
 
@@ -420,8 +420,8 @@ CREATE TABLE experiencias (
     descripcion varchar(255) NOT NULL,
     referencia varchar(255) NOT NULL,
     email varchar(255) NOT NULL,
-    inicio date NOT NULL,
-    fin date,
+    inicio int NOT NULL,
+    fin int,
     curriculum_fk bigint NOT NULL REFERENCES curriculums(pk) ON UPDATE CASCADE ON DELETE CASCADE,
     PRIMARY KEY(pk)
 );
@@ -432,7 +432,7 @@ CREATE TABLE experiencias (
 --
 DROP TABLE IF EXISTS formacion_complementaria CASCADE;
 CREATE TABLE formacion_complementaria (
-    pk int NOT NULL, 
+    pk bigserial NOT NULL, 
     nombre_formacion VARCHAR(60) NOT NULL, 
     institucion VARCHAR(50) NOT NULL,
     anio_formacion_complementaria INT NOT NULL,

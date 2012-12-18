@@ -93,14 +93,12 @@ class PostulacionesController extends Controller
         
         public function actionRegistrar($oferta_laboral_fk,$estudiante_fk,$fecha)
 	{
-            
-            $modelEstudiante = new Estudiantes;
-            $modelEstudiante->findByAttributes(array('pk'=>$estudiante_fk));
+            $modelEstudiante = Estudiantes::model()->findByAttributes(array('pk'=>$estudiante_fk));
             //Verificamos si efectivamente el estudiante posee todo el cv completo en el sistema
             //sino es asi redirecciono para que realice dicha accion
             if(!$modelEstudiante->curriculum_completo)
             {
-                 Yii::app()->user->setFlash('error', "Ustedes debe completar el Curriculum primero"); 
+                 Yii::app()->user->setFlash('error', "Ustedes debe completar el Curriculum primero ..." . $modelEstudiante->nombres); 
                  $this->redirect(array('estudiantes/update3','id'=>Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk));
             }
             else

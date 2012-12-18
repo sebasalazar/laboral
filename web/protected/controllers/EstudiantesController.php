@@ -101,7 +101,7 @@ class EstudiantesController extends Controller
                             $model->comuna_fk = $_POST['comboComuna'];
                             $model->archivo_curriculum = $model->rut;
 			if($model->save())
-                                                                    $cv = CUploadedFile::getInstance ($model, 'archivo_curriculum');
+                             $cv = CUploadedFile::getInstance ($model, 'archivo_curriculum');
                                     if(!empty($cv)){
                                         $cv->saveAs('cv/' . $model->rut . '.pdf');
                                     }
@@ -190,13 +190,13 @@ class EstudiantesController extends Controller
 		if(isset($_GET['Educacion'])){
                     $modelCV->presentacion=$_GET['Curriculums']['presentacion'];
                     $modelCV->estudiante_fk=$_GET['id'];
-                    if($modelCV->save()){
+                    if($modelCV->save(false)){
                         foreach($_GET as $nombre_campo => $valor){ 
                                 if($nombre_campo == 'Educacion'){
                                     if(isset($_GET['Educacion'])){
                                        $modelEducacion->attributes =  $_GET['Educacion'];
                                        $modelEducacion->curriculum_fk = $modelCV->pk;
-                                       $modelEducacion->save();
+                                       $modelEducacion->save(false);
                                     }
                                   
                                 }
@@ -204,25 +204,31 @@ class EstudiantesController extends Controller
                                      if(isset($_GET['Experiencas'])){
                                        $modelExperiencias->attributes =  $_GET['Experiencas'];
                                        $modelExperiencias->curriculum_fk = $modelCV->pk;
-                                       $modelExperiencias->save();
+                                       $modelExperiencias->save(false);
                                     }
                                 }
                                 else if($nombre_campo == 'FormacionComplementaria' ){
                                      if(isset($_GET['FormacionComplementaria'])){
                                        $modelFormacionComplementaria->attributes =  $_GET['FormacionComplementaria'];
                                        $modelFormacionComplementaria->curriculum_fk = $modelCV->pk;
-                                       $modelFormacionComplementaria->save();
+                                       $modelFormacionComplementaria->save(false);
                                     }
                                 }
                         } 
-                       $model->curriculum_completo = true;
+                        
+                        $sql = "update estudiantes set curriculum_completo = true
+                                where pk = " . $id . ';';
+                        $comando = Yii::app()->db->createCommand($sql);
+                       // $comando -> bindParam(":valor", $id, PDO::PARAM_STR);  
+                        
+                        $comando -> execute();
+//                       $model->curriculum_completo = true;
+//                       $model->save(false);
                        $this->redirect(array('ofertasLaborales/index'));
                     }
                     else
                     {
-                       
                         Yii::app()->user->setFlash('notice', "Problemas!!!"); 
-                        //$this->redirect(array('ofertasLaborales/index'));
                     }
                 }
 		
