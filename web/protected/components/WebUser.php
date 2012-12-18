@@ -157,7 +157,7 @@ class WebUser extends CWebUser {
         else
             return false;
     }
-
+    
     public function isAdmin() {
         if (!Yii::app()->user->isGuest) {
             $usuario = Usuarios::model()->findByPk(Yii::app()->user->name);
@@ -171,7 +171,63 @@ class WebUser extends CWebUser {
         else
             return false;
     }
+    
+        public function rutIsDocente($rut) {
+        if (!Yii::app()->user->isGuest) {
+            $usuario = Usuarios::model()->findByPk($rut);
+            $rol = $this->roles($usuario->roles);
+            if ($rol['docente'] == 1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        else
+            return false;
+    }
+    
+    public function rutIsEmpresa($rut) {
+        if (!Yii::app()->user->isGuest) {
+            $usuario = Usuarios::model()->findByPk($rut);
+            $rol = $this->roles($usuario->roles);
+            if ($rol['empresa'] == 1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        else
+            return false;
+    }
 
+    public function rutIsEstudiante($rut) {
+        if (!Yii::app()->user->isGuest) {
+            $usuario = Usuarios::model()->findByPk($rut);
+            $rol = $this->roles($usuario->roles);
+            if ($rol['estudiante'] == 1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        else
+            return false;
+    }
+
+    public function rutIsAdmin($rut) {
+        if (!Yii::app()->user->isGuest) {
+            $usuario = Usuarios::model()->findByPk($rut);
+            $rol = $this->roles($usuario->roles);
+            if ($rol['admin'] == 1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        else
+            return false;
+    }
+    
     /**
      * @fn dv($rut)
      * @param $rut Parte numérica del rut.

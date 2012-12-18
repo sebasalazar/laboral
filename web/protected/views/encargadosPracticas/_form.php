@@ -22,7 +22,7 @@
                     <p class="hint">
                         Nota: sin puntos ni guion, ejemplo: 171234560
                     </p>
-                    <?php echo $form->textField(EncargadosPracticas::model(),'rut_epracti',array('required'=>'required')); ?>
+                    <?php echo $form->textField(EncargadosPracticas::model(),'rut_epracti'); ?>
                     <?php echo $form->error(EncargadosPracticas::model(),'rut_epracti'); ?>
                 </div>
             </div>
@@ -35,7 +35,7 @@
                     <p class="hint">
                         Ejemplo: Pablo
                     </p>
-                    <?php echo $form->textField(EncargadosPracticas::model(),'nombre_encargado',array('size'=>60,'maxlength'=>255,'required'=>'required')); ?>
+                    <?php echo $form->textField(EncargadosPracticas::model(),'nombre_encargado',array('size'=>60,'maxlength'=>255)); ?>
                     <?php echo $form->error(EncargadosPracticas::model(),'nombre_encargado'); ?>
                 </div>
             </div>
@@ -48,7 +48,7 @@
                     <p class="hint">
                         Ejemplo: Rosas Pérez
                     </p>
-                    <?php echo $form->textField(EncargadosPracticas::model(),'apellido_encargado',array('size'=>60,'maxlength'=>255,'required'=>'required')); ?>
+                    <?php echo $form->textField(EncargadosPracticas::model(),'apellido_encargado',array('size'=>60,'maxlength'=>255)); ?>
                     <?php echo $form->error(EncargadosPracticas::model(),'apellido_encargado'); ?>
                 </div>
             </div>
@@ -60,7 +60,7 @@
                     <?php echo $form->labelEx(EncargadosPracticas::model(),'Empresa: '); ?>
                     <?php
                         $datos = CHtml::listData(Empresas::model()->findAll(),'pk','nombre');
-                        echo $form->DropDownList(EncargadosPracticas::model(),'empresa_fk',$datos,array('empty'=>'Seleccione un Empresa','required'=>'required'));
+                        echo $form->DropDownList(EncargadosPracticas::model(),'empresa_fk',$datos,array('empty'=>'Seleccione un Empresa'));
                     ?>
                     <?php echo $form->error(EncargadosPracticas::model(),'empresa_fk'); ?>
                 </div>
@@ -73,7 +73,7 @@
                     <?php echo $form->labelEx(EncargadosPracticas::model(),'Área de practica: '); ?>
                     <?php
                         $datos = CHtml::listData(Rubros::model()->findAll(),'pk','rubro');
-                        echo $form->DropDownList(EncargadosPracticas::model(),'area_practica_fk',$datos,array('empty'=>'Seleccione un Área','required'=>'required'));
+                        echo $form->DropDownList(EncargadosPracticas::model(),'area_practica_fk',$datos,array('empty'=>'Seleccione un Área'));
                     ?>
                     <?php echo $form->error(EncargadosPracticas::model(),'area_practica_fk'); ?>
                 </div>

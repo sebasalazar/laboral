@@ -85,8 +85,8 @@ class EstadosCiviles extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('pk',$this->pk);
-		$criteria->compare('estado',$this->estado,true);
-		$criteria->compare('descripcion',$this->descripcion,true);
+		$criteria->compare('LOWER(estado)',strtolower($this->estado),true);
+		$criteria->compare('LOWER(descripcion)',strtolower($this->descripcion),true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
