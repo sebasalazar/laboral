@@ -84,8 +84,8 @@ class TiposContratos extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('pk',$this->pk);
-		$criteria->compare('contrato',$this->contrato,true);
-		$criteria->compare('descripcion',$this->descripcion,true);
+		$criteria->compare('LOWER(contrato)',strtolower($this->contrato),true);
+		$criteria->compare('LOWER(descripcion)',strtolower($this->descripcion),true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

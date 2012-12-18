@@ -89,9 +89,9 @@ class Regiones extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('pk',$this->pk);
-		$criteria->compare('nombre',$this->nombre,true);
-		$criteria->compare('zona_corfo',$this->zona_corfo,true);
-		$criteria->compare('codigo',$this->codigo,true);
+		$criteria->compare('LOWER(nombre)',strtolower($this->nombre),true);
+		$criteria->compare('LOWER(zona_corfo)',strtolower($this->zona_corfo),true);
+		$criteria->compare('LOWER(codigo)',strtolower($this->codigo),true);
 		$criteria->compare('numero',$this->numero);
 
 		return new CActiveDataProvider($this, array(

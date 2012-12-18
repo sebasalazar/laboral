@@ -16,7 +16,7 @@ $this->menu=array(
 
 
 <div class="titulo">
-<h1>Detalle Oferta Laboral</h1>
+<?php echo '<h2>Empresa <b>'.$model->empresaFk->nombre.'</b> solicita <b>'.$model->cargo.'</b</h2>'?>
 </div>
 <br />
 <div class="centrar1">
@@ -83,6 +83,34 @@ if(Yii::app()->user->isEstudiante()){
    echo CHtml::button('Postular', array('submit' => array('Postulaciones/registrar','oferta_laboral_fk'=>$model->pk,'estudiante_fk'=>Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk,'fecha'=>date("d-m-Y")),
        'confirm' => '¿Esta seguro que desea postular?'
        ));           
+}
+else if(Yii::app()->user->isEmpresa() || Yii::app()->user->isDocente() || Yii::app()->user->isAdmin())
+{
+    echo '<div class="contenidoPage">';
+            $this->widget('bootstrap.widgets.TbGridView', array(
+                    'type'=>'striped bordered condensed',
+                    'dataProvider'=>$model1->searchCustom($id),
+                    'template'=>"{items}",
+                    'template'=>"{items}\n{pager}",
+                    'columns'=>array(
+                     array(
+                        'header'=>'Rut Estudiante',
+                        'name'=>'estudiante_fk',
+                        'value'=>'$data->estudianteFk->rut',
+                      ),
+                     array(
+                        'header'=>'Estudiante',
+                        'name'=>'estudiante_fk',
+                        'value'=>'$data->estudianteFk->nombres',
+                     ),
+                     array(
+                        'header'=>'Fecha',
+                        'name' => 'fecha',
+                        'value' => '$data->fecha',
+                     ),
+                    ),
+                ));
+    echo '</div>';
 }
 
 

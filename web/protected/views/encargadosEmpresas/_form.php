@@ -26,7 +26,7 @@
                     <?php echo $form->labelEx(EncargadosEmpresas::model(),'Empresa: <span class="required">*</span>'); ?>
                     <?php
                         $datos = CHtml::listData(Empresas::model()->findAll(),'pk','nombre');
-                        echo $form->DropDownList(EncargadosEmpresas::model(),'empresa_fk',$datos,array('empty'=>'Seleccione un Empresa'));
+                        echo $form->DropDownList(EncargadosEmpresas::model(),'empresa_fk',$datos,array('empty'=>'Seleccione un Empresa','required'=>'required'));
                     ?>
                     <?php echo $form->error(EncargadosEmpresas::model(),'empresa_fk'); ?>
                 </div>
@@ -40,7 +40,7 @@
                     <p class="hint">
                         Ejemplo: 6.080.693-9
                     </p>
-                    <?php echo $form->textField(EncargadosEmpresas::model(),'rut_encargado',array('size'=>60,'maxlength'=>255)); ?>
+                    <?php echo $form->textField(EncargadosEmpresas::model(),'rut_encargado',array('size'=>60,'maxlength'=>255,'required'=>'required')); ?>
                     <?php echo $form->error(EncargadosEmpresas::model(),'rut_encargado'); ?>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                     <p class="hint">
                         Ejemplo: Juan
                     </p>
-                    <?php echo $form->textField(EncargadosEmpresas::model(),'nombre',array('size'=>60,'maxlength'=>255)); ?>
+                    <?php echo $form->textField(EncargadosEmpresas::model(),'nombre',array('size'=>60,'maxlength'=>255,'required'=>'required')); ?>
                     <?php echo $form->error(EncargadosEmpresas::model(),'nombre'); ?>
                 </div>
             </div>
@@ -66,7 +66,7 @@
                     <p class="hint">
                         Ejemplo: Soto Castilla
                     </p>
-                    <?php echo $form->textField(EncargadosEmpresas::model(),'apellidos',array('size'=>60,'maxlength'=>255)); ?>
+                    <?php echo $form->textField(EncargadosEmpresas::model(),'apellidos',array('size'=>60,'maxlength'=>255,'required'=>'required')); ?>
                     <?php echo $form->error(EncargadosEmpresas::model(),'apellidos'); ?>
                 </div>
             </div>
@@ -92,7 +92,7 @@
                     <p class="hint">
                         Ejemplo: Av. Macul 1265
                     </p>
-                    <?php echo $form->textField(EncargadosEmpresas::model(),'direccion',array('size'=>60,'maxlength'=>255)); ?>
+                    <?php echo $form->textField(EncargadosEmpresas::model(),'direccion',array('size'=>60,'maxlength'=>255,'required'=>'required')); ?>
                     <?php echo $form->error(EncargadosEmpresas::model(),'direccion'); ?>
                 </div>
             </div>
@@ -104,7 +104,7 @@
                     <?php echo $form->labelEx(EncargadosEmpresas::model(),'Comuna: <span class="required">*</span>'); ?>
                     <?php
                         $datos = CHtml::listData(Comunas::model()->findAll(),'pk','nombre');
-                        echo $form->DropDownList(EncargadosEmpresas::model(),'comuna_fk',$datos,array('empty'=>'Seleccione una Comuna'));
+                        echo $form->DropDownList(EncargadosEmpresas::model(),'comuna_fk',$datos,array('empty'=>'Seleccione una Comuna','required'=>'required'));
                     ?>
                     <?php echo $form->error(EncargadosEmpresas::model(),'comuna_fk'); ?>
                 </div>
@@ -118,7 +118,7 @@
                     <p class="hint">
                         Ejemplo: ejemplo@ejemplo.com
                     </p>
-                    <?php echo $form->textField(EncargadosEmpresas::model(),'email',array('size'=>60,'maxlength'=>255)); ?>
+                    <?php echo $form->textField(EncargadosEmpresas::model(),'email',array('size'=>60,'maxlength'=>255,'required'=>'required')); ?>
                     <?php echo $form->error(EncargadosEmpresas::model(),'email'); ?>
                 </div>
             </div>
@@ -131,7 +131,7 @@
                     <p class="hint">
                         Nota: Red fija o movil
                     </p>
-                    <?php echo $form->textField(EncargadosEmpresas::model(),'telefono',array('size'=>50,'maxlength'=>50)); ?>
+                    <?php echo $form->textField(EncargadosEmpresas::model(),'telefono',array('size'=>8,'maxlength'=>8,'required'=>'required')); ?>
                     <?php echo $form->error(EncargadosEmpresas::model(),'telefono'); ?>
                 </div>
             </div>

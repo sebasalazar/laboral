@@ -3,9 +3,7 @@
 $this->menu=array(
 	array('label'=>'Modificar datos', 'url'=>array('update', 
             'id'=>Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk)),
-        array('label'=>'Eliminar Empresa', 'url'=>'/site/index', 
-            'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),
-                'confirm'=>'¿Está seguro que quiere eliminar esta empresa?')),
+        //array('label'=>'Eliminar Empresa', 'url'=>'/site/index', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'¿Está seguro que quiere eliminar esta empresa?')),
 );
 
 ?>

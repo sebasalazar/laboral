@@ -78,14 +78,14 @@ class EvaluacionesPracticas extends CActiveRecord
 			'estudiant_fk' => 'Estudiant Fk',
 			'encar_practicas_fk' => 'Encar Practicas Fk',
 			'cargo_asignado' => 'Cargo Asignado',
-			'conocimientos_demostrados' => 'Conocimintos técnicos demostrados',
-			'eficacia' => 'Eficacia para llegar a resultados concretos en su labor',
-			'grado_cumplimiento' => 'Grado de cumplimiento y dedicación',
-			'puntualidad_respeto' => 'Puntualidad y respeto de las normas etablecidas',
-			'integracion_adaptacion' => 'Capacidad de integración y/o adaptación',
-			'responsabilidad_superacion' => 'Responsabilidad, autocrítica y superación',
-			'capacidades_personales' => 'Personalidad, lenguaje, presencia y seguridad',
-			'iniciativa_creativi_improvi' => 'Iniciativa, creatividad y capacidad de improvisación',
+			'conocimientos_demostrados' => 'Conocimintos Demostrados',
+			'eficacia' => 'Eficacia',
+			'grado_cumplimiento' => 'Grado Cumplimiento',
+			'puntualidad_respeto' => 'Puntualidad Respeto',
+			'integracion_adaptacion' => 'Integracion Adaptación',
+			'responsabilidad_superacion' => 'Responsabilidad Supe1ración',
+			'capacidades_personales' => 'Capacidades Personales',
+			'iniciativa_creativi_improvi' => 'Iniciativa Creativi Improvi',
 		);
 	}
 

@@ -101,10 +101,15 @@ class EstudiantesController extends Controller
                             $model->comuna_fk = $_POST['comboComuna'];
                             $model->archivo_curriculum = $model->rut;
 			if($model->save())
+
                              $cv = CUploadedFile::getInstance ($model, 'archivo_curriculum');
-                                    if(!empty($cv)){
+
+                        $cv = CUploadedFile::getInstance ($model, 'archivo_curriculum');
+                        if(!empty($cv)){
+
                                         $cv->saveAs('cv/' . $model->rut . '.pdf');
                                     }
+                                    
 				$this->redirect(array('view','id'=>$model->pk));
 		}
 
@@ -219,11 +224,7 @@ class EstudiantesController extends Controller
                         $sql = "update estudiantes set curriculum_completo = true
                                 where pk = " . $id . ';';
                         $comando = Yii::app()->db->createCommand($sql);
-                       // $comando -> bindParam(":valor", $id, PDO::PARAM_STR);  
-                        
                         $comando -> execute();
-//                       $model->curriculum_completo = true;
-//                       $model->save(false);
                        $this->redirect(array('ofertasLaborales/index'));
                     }
                     else
@@ -256,6 +257,18 @@ class EstudiantesController extends Controller
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 
+        public function actionSubircv($rut){
+            
+             $model->archivo_curriculum = $model->rut;
+                           
+                                        $cv = CUploadedFile::getInstance ($model, 'archivo_curriculum');
+                                    if(!empty($cv)){
+                                        $cv->saveAs('cv/' . $model->rut . '.pdf');
+                                    }
+            
+        }
+                            
+        
 	/**
 	 * Lists all models.
 	 */

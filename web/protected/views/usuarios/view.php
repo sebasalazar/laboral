@@ -56,7 +56,7 @@ $this->menu=array(
 </div>
 
 <div class="contenidoPage">
-    <h1>Usuarios: <?php echo $model->username; ?></h1>
+    <h1>Usuario: <?php echo $model->username; ?></h1>
     <br />
     <?php
     $this->widget('bootstrap.widgets.TbDetailView', array(

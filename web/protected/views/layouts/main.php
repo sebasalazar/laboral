@@ -1,19 +1,9 @@
 <?php /* @var $this Controller */ ?>
-<?php
-function formateo_rut($rut_param){ 
-     
-    $parte4 = substr($rut_param, -1); // seria solo el numero verificador 
-    $parte3 = substr($rut_param, -4,3); // la cuenta va de derecha a izq  
-    $parte2 = substr($rut_param, -7,3);  
-    $parte1 = substr($rut_param, 0,-7);   //de esta manera toma todos los caracteres desde el 8 hacia la izq 
-
-    return $parte1.".".$parte2.".".$parte3."-".$parte4; 
-}?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="language" content="en" />
+	<meta name="language" content="es" />
         <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 	<!-- blueprint CSS framework -->
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection" />
@@ -32,7 +22,7 @@ function formateo_rut($rut_param){
 
         <?php // en caso de login muestra opciones específicas
                 $rutsinformato=Yii::app()->user->name;
-                $rut=formateo_rut($rutsinformato);
+                $rut=Yii::app()->user->getRut();
                 $this->widget('bootstrap.widgets.TbNavbar', array(
                         'type'=>'inverse', // null or 'inverse'
                         'brand'=>'Bolsa Laboral',
@@ -54,7 +44,8 @@ function formateo_rut($rut_param){
                                         array('label'=>'Encargados de Practicas', 'url'=>array('/encargadosPracticas/index')),
                                     ), 'visible'=>Yii::app()->user->isEmpresa()),
                                     array('label'=>'Practicas', 'items'=>array(
-                                        array('label'=>'Ver Practicas', 'url'=>array('/practicas/index')),
+                                        array('label'=>'Ver Practicas Creadas', 'url'=>array('/practicas/index')),
+                                        array('label'=>'Ver Postulaciones a Practicas', 'url'=>array('/postulacionesPracticas/index')),
                                         array('label'=>'Crear Practicas', 'url'=>array('/practicas/create'), 'visible'=>Yii::app()->user->isEmpresa()),
                                         '---',
                                         array('label'=>'Ver Evaluaciones', 'url'=>array('/evaluacionesPracticas/index'), 'visible'=>Yii::app()->user->isDocente() || Yii::app()->user->isEmpresa()),
@@ -69,6 +60,8 @@ function formateo_rut($rut_param){
                                     ), 'visible'=>Yii::app()->user->isEstudiante()),
                                     array('label'=>'Registrarse', 'url'=>array('usuarios/pcreate'), 'visible'=>Yii::app()->user->isGuest),
                                     array('label'=>'Contacto', 'url'=>array('site/contact')),
+                                    /////////////////////////////////////////////////////////////////////////////////////////////////
+                                    //array('label'=>'TesteoMails', 'url'=>array('site/viewTest')), ///////BORRAR UNA VEZ TERMINADO EL MAIL
                                 ),
                             ),
                             array(
@@ -78,7 +71,7 @@ function formateo_rut($rut_param){
                                     '---',
                                     array('label'=>'Iniciar Sesion', 'url'=>array('site/login'), 'visible'=>Yii::app()->user->isGuest),
                                     array('label'=>$rut, 'url'=>'#', 'items'=>array(
-                                        array('label'=>'Perfil Empresa', 'url'=>array('empresas/perfil', 'id'=>Yii::app()->user->name), 'visible'=>Yii::app()->user->isEmpresa()),
+                                        array('label'=>'Datos Empresa', 'url'=>array('empresas/perfil', 'id'=>Yii::app()->user->name), 'visible'=>Yii::app()->user->isEmpresa()),
                                         array('label'=>'Perfil Docente', 'url'=>array('docentes/perfil'), 'visible'=>Yii::app()->user->isDocente()),
                                         array('label'=>'Mis datos', 'url'=>array('estudiantes/perfil', 'id'=>Yii::app()->user->name), 'visible'=>Yii::app()->user->isEstudiante()),
                                         '---',

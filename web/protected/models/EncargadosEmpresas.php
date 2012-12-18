@@ -100,12 +100,12 @@ class EncargadosEmpresas extends CActiveRecord
 		$criteria->compare('pk',$this->pk,true);
 		$criteria->compare('empresa_fk',$this->empresa_fk);
 		$criteria->compare('rut_encargado',$this->rut_encargado);
-		$criteria->compare('nombre',$this->nombre,true);
-		$criteria->compare('apellidos',$this->apellidos,true);
-		$criteria->compare('genero',$this->genero,true);
-		$criteria->compare('direccion',$this->direccion,true);
+		$criteria->compare('LOWER(nombre)',strtolower($this->nombre),true);
+		$criteria->compare('LOWER(apellidos)',strtolower($this->apellidos),true);
+		$criteria->compare('LOWER(genero)',strtolower($this->genero),true);
+		$criteria->compare('LOWER(direccion)',strtolower($this->direccion),true);
 		$criteria->compare('comuna_fk',$this->comuna_fk);
-		$criteria->compare('email',$this->email,true);
+		$criteria->compare('LOWER(email)',strtolower($this->email),true);
 		$criteria->compare('telefono',$this->telefono,true);
 
 		return new CActiveDataProvider($this, array(

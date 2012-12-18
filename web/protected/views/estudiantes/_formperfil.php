@@ -93,14 +93,8 @@
 		<?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>255)); ?>
 		<?php echo $form->error($model,'email'); ?>
 	</div>
-
-	<div class="row">
-                        <?php // echo $form->labelEx(Estudiantes::model(),'Estado en UTEM <span class="required">*</span>'); ?>   
-                        <?php //$datos = CHtml::listData(Estados::model()->findAll(),'pk','nombre'); ?>
-                        <?php //echo $form->DropDownList($model,'estado',$datos, array('empty'=>'Seleccione...', 'required'=>'required')); ?>
-		<?php //echo $form->error($model,'estado'); ?>
-	</div>
-
+                        
+                        	
 	<div class="row">
                         <?php echo $form->labelEx(Estudiantes::model(),'¿Buscando trabajo en la actualidad?'); ?>
                         <?php echo $form->checkBox(Estudiantes::model(),'busqueda'); ?>  

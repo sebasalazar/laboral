@@ -28,10 +28,14 @@
                         array('name'=>'jornada_fk', 'header'=>'Jornada', 'value'=>'$data->jornadaFk->jornada'),
                         array('name'=>'empresa_fk', 'header'=>'Empresa', 'value'=>'$data->empresaFk->nombre'),
                         array(
-                            'header'=>'Ver',
-                            'class'=>'CButtonColumn',
+                            'class'=>'bootstrap.widgets.TbButtonColumn',
                             'template'=>'{view}',
-                    ),    
+                            'buttons'=>array(
+                                    'view' => array(
+                                      'url'=>'Yii::app()->controller->createUrl("ofertasLaborales/view", array("id"=>$data->pk))',
+                                    ),
+                            ),
+                      ),  
                     ),
                 )); ?>
             </div>
@@ -41,7 +45,7 @@
                     <text class="text-footer"><b>Noticias</b></text>
                 </div>
              <div class="con2">
-                    <?php echo Yii::app()->user->getAdmin(); ?>
+                    Aquí van las noticias.
              </div>
             <br />
             <div class="con">
@@ -51,8 +55,7 @@
                 <MARQUEE behavior="scroll" direction="up" scrollAmount="3" width="420" hiegth="195" onMouseOver="this.scrollAmount=1" onMouseOut="this.scrollAmount=3">
                     <?php
                         foreach($model as $i){
-                            echo '<b>'.$i->titulo.'</b><br /><br />';
-                            echo '<text class="just">'.$i->contenido.'</text>';
+                            echo CHtml::link($i->titulo,array('tips/view', 'id'=>$i->pk),array('rel'=>'tooltip', 'title'=>'Estudiante'));
                             echo '<hr class="separador" />';
                         }
                     ?>
