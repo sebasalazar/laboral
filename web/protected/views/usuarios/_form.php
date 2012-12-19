@@ -6,6 +6,9 @@
 
 <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
 <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/assets/7b79631/Rut/jquery.Rut.js'); ?>
+<?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/modernizr.js'); ?>
+
+
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -18,6 +21,17 @@ $('#rut_demo_int').Rut({
       $('#cruz_error').hide();
   }
 });
+});
+</script>
+<script src="js/modernizr.js"></script>
+<script type="text/javascript">Modernizr.load({
+  test: Modernizr.inputtypes.date,
+  nope: ['http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js', 'jquery-ui.css'],
+  complete: function () {
+    $('input[type=date]').datepicker({
+      dateFormat: 'yy-mm-dd'
+    }); 
+  }
 });
 </script>
 
