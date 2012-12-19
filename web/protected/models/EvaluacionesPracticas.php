@@ -103,7 +103,7 @@ class EvaluacionesPracticas extends CActiveRecord
 		$criteria->compare('pk',$this->pk,true);
 		$criteria->compare('estudiant_fk',$this->estudiant_fk);
 		$criteria->compare('encar_practicas_fk',$this->encar_practicas_fk);
-		$criteria->compare('cargo_asignado',$this->cargo_asignado,true);
+		$criteria->compare('LOWER(cargo_asignado)', strtolower($this->cargo_asignado), true);
 		$criteria->compare('conocimientos_demostrados',$this->conocimientos_demostrados);
 		$criteria->compare('eficacia',$this->eficacia);
 		$criteria->compare('grado_cumplimiento',$this->grado_cumplimiento);
@@ -117,4 +117,5 @@ class EvaluacionesPracticas extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+       
 }

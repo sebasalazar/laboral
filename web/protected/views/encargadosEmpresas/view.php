@@ -20,6 +20,12 @@ $this->menu=array(
     <h1>Encargado de Empresa: <?php echo $model->nombre; ?></h1>
     <br />
     <?php
+    if($model->genero == 'F'){
+        $gen = 'Femenino';
+    }
+    else {
+        $gen = 'Masculino';
+    }
     $this->widget('bootstrap.widgets.TbDetailView', array(
     'data'=>$model,
     'attributes'=>array(
@@ -28,10 +34,16 @@ $this->menu=array(
                         'label'=>'Empresa',
                         'value'=>$model->empresaFk->nombre,
                     ),
-                    'rut_encargado',
+                    array(
+                            'label'=>'Rut',
+                            'value'=>Yii::app()->user->getRut($model->rut_encargado),
+                        ),
                     'nombre',
                     'apellidos',
-                    'genero',
+                    array(
+                        'label'=>'Genero',
+                        'value'=>$gen,
+                     ),
                     'direccion',
                     array(
                         'label'=>'Comuna',

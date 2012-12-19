@@ -15,20 +15,27 @@ $this->menu=array(
 	//array('label'=>'Manage EncargadosPracticas', 'url'=>array('admin')),
 );
 ?>
-
+<div class="contenidoPage">
 <h1>Encargado de Practica: <?php echo $model->nombre_encargado; ?></h1>
-
+<br />
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		//'pk',
-		'rut_epracti',
+		array(
+                    'label'=>'Rut',
+                    'value'=>Yii::app()->user->getRut($model->rut_epracti),
+                ),
 		'nombre_encargado',
 		'apellido_encargado',
-		'empresa_fk',
+		array(
+                    'label'=>'Empresa',
+                    'value'=>$model->empresaFk->nombre,
+                ),
 		array(
                         'label'=>'Area de practica',
                         'value'=>$model->actividad->rubro,
                     ),
 	),
 )); ?>
+</div>

@@ -13,6 +13,10 @@ $this->menu=array(
     $this->widget('bootstrap.widgets.TbDetailView', array(
     'data'=>$model,
     'attributes'=>array(
+        array(
+                'label'=>'Rut',
+                'value'=>Yii::app()->user->getRut($model->rut),
+             ),
         'nombre',
 		'direccion',
 		array(

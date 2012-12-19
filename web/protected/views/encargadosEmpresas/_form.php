@@ -129,7 +129,7 @@
                 <div class="columna">
                     <?php echo $form->labelEx(EncargadosEmpresas::model(),'Teléfono: <span class="required">*</span>'); ?>
                     <p class="hint">
-                        Nota: Red fija o movil
+                        Nota: Para red fija anteponer un 2
                     </p>
                     <?php echo $form->textField(EncargadosEmpresas::model(),'telefono',array('size'=>8,'maxlength'=>8,'required'=>'required')); ?>
                     <?php echo $form->error(EncargadosEmpresas::model(),'telefono'); ?>
