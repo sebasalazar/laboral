@@ -47,7 +47,7 @@ class EncargadosEmpresas extends CActiveRecord
 			array('empresa_fk, rut_encargado, comuna_fk', 'numerical', 'integerOnly'=>true),
 			array('nombre, apellidos, direccion, email', 'length', 'max'=>255),
 			array('genero', 'length', 'max'=>1),
-			array('telefono', 'length', 'max'=>50),
+			array('telefono', 'length', 'max'=>8),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('pk, empresa_fk, rut_encargado, nombre, apellidos, genero, direccion, comuna_fk, email, telefono', 'safe', 'on'=>'search'),

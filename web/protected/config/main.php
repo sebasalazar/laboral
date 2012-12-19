@@ -103,10 +103,13 @@ return array(
         'bootstrap' => array(
             'class' => 'ext.bootstrap.components.Bootstrap', // assuming you extracted bootstrap under extensions
         ),
-        
         'swiftMailer' => array(
             'class' => 'ext.swiftMailer.SwiftMailer',
         ),
+    ),
+    
+    'controllerMap' => array(
+        'YiiFeedWidget' => 'ext.yii-feed-widget.YiiFeedWidgetController'
     ),
     // using Yii::app()->params['paramName']
     'params' => array(

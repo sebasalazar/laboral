@@ -185,19 +185,7 @@ class EvaluacionesPracticasController extends Controller
 	}
 
         /*
-        public function actionGenerarPdf($id)
-	{
-            if(Yii::app()->user->isEmpresa())
-            {
-                $this->render('generarPdf',array(
-			'model'=>$this->loadModel($id),
-		));
-            }
-            else
-            {
-                throw new CHttpException(403,'No tienes permisos suficientes para ingresar a este perfil.');
-            }
-	}*/
+       
         
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

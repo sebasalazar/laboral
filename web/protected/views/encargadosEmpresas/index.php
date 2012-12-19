@@ -21,7 +21,7 @@ $this->menu=array(
         'template'=>"{items}",
         'filter'=>$model,
         'template'=>"{items}\n{pager}",
-      'columns' => array(
+        'columns' => array(
           array(
             'header'=>'Rut',
             'name' => 'rut_encargado',

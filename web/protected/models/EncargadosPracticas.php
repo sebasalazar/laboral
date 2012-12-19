@@ -57,7 +57,7 @@ class EncargadosPracticas extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
                     'actividad' => array(self::BELONGS_TO, 'Rubros', 'area_practica_fk'),
-                    //'empresaFk' => array(self::BELONGS_TO, 'Empresas', 'empresa_fk'),
+                    'empresaFk' => array(self::BELONGS_TO, 'Empresas', 'empresa_fk'),
 		);
 	}
 
@@ -68,11 +68,11 @@ class EncargadosPracticas extends CActiveRecord
 	{
 		return array(
 			'pk' => 'Pk',
-			'rut_epracti' => 'Rut Encargado',
-			'nombre_encargado' => 'Nombre',
-			'apellido_encargado' => 'Apellido',
-			'empresa_fk' => 'Empresa',
-			'area_practica_fk' => 'Area de Practica',
+			'rut_epracti' => 'Rut Epracti',
+			'nombre_encargado' => 'Nombre Encargado',
+			'apellido_encargado' => 'Apellido Encargado',
+			'empresa_fk' => 'Empresa Fk',
+			'area_practica_fk' => 'Area Practica Fk',
 		);
 	}
 

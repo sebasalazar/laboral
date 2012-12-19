@@ -10,19 +10,22 @@ $this->menu=array(
 	array('label'=>'Create EvaluacionesPracticas', 'url'=>array('create')),
 	array('label'=>'Manage EvaluacionesPracticas', 'url'=>array('admin')),
 );*/
+
 ?>
+
 
 <h1>Evaluaciones de Practicas</h1>
 <div id="grillac">
 <?php 
+           
     $this->widget('bootstrap.widgets.TbGridView', array(
         'type'=>'striped bordered condensed',
       //'id' => 'evaluacionPractica',
-      'dataProvider'=>$model->search(),
+        'dataProvider'=>$model->search(),
         'template'=>"{items}",
-      'filter'=>$model,
-       'template'=>"{items}\n{pager}",
-      'columns' => array(
+        'filter'=>$model,
+        'template'=>"{items}\n{pager}",
+        'columns' => array(
           array(
             'header'=>'Practicante',
             'name'=>'estudiant_fk',
@@ -38,8 +41,8 @@ $this->menu=array(
           array(
             'header'=>'Cargo',
             'name'=>'cargo_asignado',
-            'filter'=> false,
-            'value'=> '$data->cargo_asignado',
+            //'filter'=> false,
+            //'value'=> '$data->cargo_asignado',
           ),
         array(
             'header'=>'Detalle',
@@ -48,5 +51,7 @@ $this->menu=array(
     ),    
       ),
     ));
+    
+    
 ?>
 </div>
