@@ -26,7 +26,7 @@ $this->menu=array(
             'htmlOptions' => array('enctype' => 'multipart/form-data')
     )); ?>
 
-     <?php echo $form->errorSummary(array($model)); ?>
+     <?php echo $form->errorSummary($model); ?>
 
         <div class="row">
             <div class="contenido">
@@ -42,7 +42,6 @@ $this->menu=array(
                 </div>
             </div>
         </div>
-<!--
         <div class="row">
             <div class="contenido">
                 <div class="columna">
@@ -56,7 +55,6 @@ $this->menu=array(
                 </div>
             </div>
         </div>
-  -->      
         <div class="row">
             <div class="contenido">
                 <div class="columna">

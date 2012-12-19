@@ -8,7 +8,15 @@ class WebUser extends CWebUser {
         $usuario = Usuarios::model()->findByPK($id);
         return $usuario;
     }
-
+    
+    public function isUpdate($rut){
+        $model = Usuarios::model()->findAllByAttributes(array('username'=>$rut));
+        if($model != null)
+            return true;
+        else
+            return false;
+    }
+    
     public function rutDocente($id) {
         $docente = Docentes::model()->findByPk($id);
         return $docente->rut;

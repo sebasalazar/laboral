@@ -136,32 +136,31 @@ class UsuariosController extends Controller
 	public function actionUpdate($id)
 	{   
                     if($id == Yii::app()->user->name || Yii::app()->user->isAdmin()){
-                        $model=$this->loadModel((int) $id);
-                        if(isset($_POST['Usuarios']))
-                        {
-                                $rol = 0;
-                                if(isset($_REQUEST['estudiante']))
-                                {
-                                    $rol = 1;
-                                }
-                                if(isset($_REQUEST['empresa']))
-                                {
-                                    $rol = $rol + 10;
-                                }
-                                if(isset($_REQUEST['docente']))
-                                {
-                                    $rol = $rol + 100;
-                                }
-                                if(isset($_REQUEST['admin']))
-                                {
-                                    $rol = $rol + 1000;
-                                }
-                                $model->attributes=$_POST['Usuarios'];
-                                $model->roles = Yii::app()->user->rolesToDec($rol);
-                                if($model->save())
-                                        $this->redirect(array('view','id'=>$model->username));
+                        $model=  Usuarios::model()->findByAttributes(array('username'=>$id));
+                        $rol = 0;
+                        if(isset($_POST['Usuarios'])){
+                            if(isset($_REQUEST['estudiante']))
+                            {
+                                $rol = 1;
+                            }
+                            if(isset($_REQUEST['empresa']))
+                            {
+                                $rol = $rol + 10;
+                            }
+                            if(isset($_REQUEST['docente']))
+                            {
+                                $rol = $rol + 100;
+                            }
+                            if(isset($_REQUEST['admin']))
+                            {
+                                $rol = $rol + 1000;
+                            }
+                            if($rol == 0)
+                                $rol = 1;
+                            $model->roles = Yii::app()->user->rolesToDec($rol);
+                            if($model->save())
+                                    $this->redirect(array('view','id'=>$model->username));
                         }
-
                         $this->render('update',array(
                                 'model'=>$model,
                         ));

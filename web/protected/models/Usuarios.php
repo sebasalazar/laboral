@@ -93,15 +93,14 @@ class Usuarios extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
-        
         public function validatePassword($password)
         {
-           return $this->hashPassword($password)===$this->password;
+                return $this->hashPassword($password)===$this->password;
         }
-        
+
         public function hashPassword($password)
         {
-           return md5($password);
+                return md5($password);
         }
         
         public function generateSalt()
@@ -117,7 +116,14 @@ class Usuarios extends CActiveRecord
 
         public function beforeSave()
         {
-            $this->password = $this->hashPassword($this->password, $this->salt);
-            return parent::beforeSave();
+            if(!Yii::app()->user->isUpdate($this->username))
+            {
+                $this->password = $this->hashPassword($this->password, $this->salt);
+                return parent::beforeSave();
+            }
+            else
+            {
+                return parent::beforeSave();
+            }
         }
 }
