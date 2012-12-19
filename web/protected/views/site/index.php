@@ -45,7 +45,12 @@
                     <text class="text-footer"><b>Noticias</b></text>
                 </div>
              <div class="con2">
-                    Aquí van las noticias.
+                    <?php 
+                $this->widget(
+                            'ext.yii-feed-widget.YiiFeedWidget',
+                            array('url'=>'http://www.mysite.com/feed','limit'=>3)
+                             ); 
+?>
              </div>
             <br />
             <div class="con">
