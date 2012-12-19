@@ -395,7 +395,7 @@ class WebUser extends CWebUser {
     }
 
     /**
-     * @fn obtener_ip()
+     * @fn getIp()
      * funcion copiada de http://www.eslomas.com/index.php/archives/2005/04/26/obtencion-ip-real-php/
      * hay que ver si esto realmente nos sirve, dado que algunos visitantes provienen de ip internas
      * Apliqué un cambio, en caso de que no encuentre una ip, retorne el valor 127.0.0.1 (lo cuál por
@@ -405,9 +405,11 @@ class WebUser extends CWebUser {
         $client_ip = "127.0.0.1";
         try {
 
-            if ($_SERVER['HTTP_X_FORWARDED_FOR'] != '') {
-                $client_ip = (!empty($_SERVER['REMOTE_ADDR']) ) ? $_SERVER['REMOTE_ADDR'] : ( (!empty($_ENV['REMOTE_ADDR']) ) ? $_ENV['REMOTE_ADDR'] :
-                                "unknown" );
+            $proxy = (isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] : "");
+            if (!empty($proxy)) {
+                $remote_addr = ( isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : "");
+                $env_remote = ( isset($_ENV['REMOTE_ADDR']) ? $_ENV['REMOTE_ADDR'] : "127.0.0.1" );
+                $client_ip = (!empty($remote_addr) ) ? $remote_addr : ( (!empty($env_remote) ) ? $env_remote : "127.0.0.1" );
 
                 /**
                  * los proxys van añadiendo al final de esta cabecera
@@ -416,7 +418,7 @@ class WebUser extends CWebUser {
                  * una dirección ip que no sea del rango privado. En caso de no
                  * encontrarse ninguna se toma como valor el REMOTE_ADDR
                  */
-                $entries = split('[, ]', $_SERVER['HTTP_X_FORWARDED_FOR']);
+                $entries = split('[, ]', $proxy);
                 reset($entries);
 
                 while (list(, $entry) = each($entries)) {
@@ -441,8 +443,9 @@ class WebUser extends CWebUser {
                     }
                 }
             } else {
-                $client_ip = (!empty($_SERVER['REMOTE_ADDR']) ) ? $_SERVER['REMOTE_ADDR'] : ( (!empty($_ENV['REMOTE_ADDR']) ) ? $_ENV['REMOTE_ADDR'] :
-                                "127.0.0.1" );
+                $remote_addr = ( isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : "");
+                $env_remote = ( isset($_ENV['REMOTE_ADDR']) ? $_ENV['REMOTE_ADDR'] : "127.0.0.1" );
+                $client_ip = (!empty($remote_addr) ) ? $remote_addr : ( (!empty($env_remote) ) ? $env_remote : "127.0.0.1" );
             }
         } catch (Exception $e) {
             // En caso de caida, retornamos esta ip, de tal modo que al ver el log sea claro que ese registro es erroneo.
