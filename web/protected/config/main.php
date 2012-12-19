@@ -77,8 +77,8 @@ return array(
         //Configuracion para postgresql
         'db' => array(
             'connectionString' => 'pgsql:host=localhost;dbname=laboraldb',
-            'username' => 'postgres',
-            'password' => 'cris1955',
+            'username' => 'laboral',
+            'password' => 'laboral',
             'charset' => 'utf8',
         ),
         'errorHandler' => array(
@@ -103,15 +103,14 @@ return array(
         'bootstrap' => array(
             'class' => 'ext.bootstrap.components.Bootstrap', // assuming you extracted bootstrap under extensions
         ),
-        
         'swiftMailer' => array(
             'class' => 'ext.swiftMailer.SwiftMailer',
         ),
-        'controllerMap'=>array(
-     'YiiFeedWidget' => 'ext.yii-feed-widget.YiiFeedWidgetController'
-),
     ),
     
+    'controllerMap' => array(
+        'YiiFeedWidget' => 'ext.yii-feed-widget.YiiFeedWidgetController'
+    ),
     // using Yii::app()->params['paramName']
     'params' => array(
         // this is used in contact page
