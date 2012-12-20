@@ -56,16 +56,22 @@ class Estudiantes extends CActiveRecord
 	/**
 	 * @return array validation rules for model attributes.
 	 */
+  
 	public function rules()
-	{
+	{  
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nombres, apellidos, rut, fecha_nacimiento, direccion, comuna_fk, ec_fk, carrera_fk, email, estado', 'required'),
+			array('nombres, apellidos, rut, fecha_nacimiento, direccion, comuna_fk, ec_fk, carrera_fk, email', 'required'),
 			array('rut, comuna_fk, ec_fk, carrera_fk, estado', 'numerical', 'integerOnly'=>true),
 			array('nombres, apellidos, direccion, email, archivo_curriculum', 'length', 'max'=>255),
 			array('genero', 'length', 'max'=>1),
-			array('telefono, celular', 'length', 'max'=>50),
+                        array('email','email'),
+                        array('rut','unique'),
+                    	array('telefono', 'length', 'min'=>11,'max'=>14),
+                       // array('telefono','match','patttern'=>'/^([+]?[0-9 ]+)$/'),
+                        array('celular', 'length', 'min'=>8, 'max'=>8),
+                        array('email','unique'),
 			array('busqueda, curriculum_completo', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.

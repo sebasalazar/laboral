@@ -436,13 +436,13 @@ $('#rut_demo_int').Rut({
 
                 <div class="row">
                         <?php echo $form->labelEx(Estudiantes::model(),'telefono: <span class="required">*</span>'); ?>
-                        <?php echo $form->textField(Estudiantes::model(),'telefono',array('required'=>'required')); ?>
+                        <?php echo $form->textField(Estudiantes::model(),'telefono',array('required'=>'required','value'=>'+56')); ?>
                         <?php echo $form->error(Estudiantes::model(),'telefono'); ?>
                 </div>
 
                 <div class="row">
                         <?php echo $form->labelEx(Estudiantes::model(),'celular'); ?>
-                        <?php echo $form->textField(Estudiantes::model(),'celular'); ?>
+                        <?php echo $form->textField(Estudiantes::model(),'celular',array('value'=>'+569')); ?>
                         <?php echo $form->error(Estudiantes::model(),'celular'); ?>
                 </div>
 
@@ -468,15 +468,7 @@ $('#rut_demo_int').Rut({
                         <?php //$datos = CHtml::listData(Carreras::model()->findAll(),'pk','nombre_carrera'); ?>
                         <?php echo $form->DropDownList(Estudiantes::model(),'carrera_fk',array(), array('id'=>'carrerafk', 'name' => 'carrerafk', 'required'=>'required', 'prompt'=>'Seleccione...')); ?>
                         <?php echo $form->error(Estudiantes::model(),'carrera_fk'); ?>
-                </div>
-        
-                <div class="row">
-                        <?php echo $form->labelEx(Estudiantes::model(),'Estado en UTEM <span class="required">*</span>'); ?>
-                       
-                        <?php $datos = CHtml::listData(Estados::model()->findAll(),'pk','nombre'); ?>
-                        <?php echo $form->DropDownList(Estudiantes::model(),'estado',$datos, array('empty'=>'Seleccione...', 'required'=>'required')); ?>
-                        <?php echo $form->error(Estudiantes::model(),'estado'); ?>
-                </div>
+                </div>        
 
                 <div class="row">
                         <?php echo $form->labelEx(Estudiantes::model(),'¿Buscando trabajo en la actualidad?'); ?>
