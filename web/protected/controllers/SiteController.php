@@ -105,7 +105,10 @@ class SiteController extends Controller {
         Yii::app()->user->logout();
         $this->redirect(Yii::app()->homeUrl);
     }
-
+	public function actionFeed()
+	{
+		$this->render('feed');
+	}
     ////FUNCION DEL MAIL
     /*
       public function actionViewTest() {
