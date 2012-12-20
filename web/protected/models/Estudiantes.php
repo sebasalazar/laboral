@@ -68,9 +68,10 @@ class Estudiantes extends CActiveRecord
 			array('genero', 'length', 'max'=>1),
                         array('email','email'),
                         array('rut','unique'),
-                    	array('telefono', 'length', 'min'=>11,'max'=>14),
-                       // array('telefono','match','patttern'=>'/^([+]?[0-9 ]+)$/'),
-                        array('celular', 'length', 'min'=>8, 'max'=>8),
+                    	array('telefono', 'length', 'min'=>8,'max'=>15),
+                        array('telefono','match','pattern'=>'/^[+]{0,1}[0-9 ]+$/'),
+                        array('celular', 'length', 'min'=>8, 'max'=>12),
+                        array('celular','match','pattern'=>'/^[+]{0,1}[0-9 ]+$/'),
                         array('email','unique'),
 			array('busqueda, curriculum_completo', 'safe'),
 			// The following rule is used by search().
