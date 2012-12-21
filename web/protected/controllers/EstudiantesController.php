@@ -261,7 +261,7 @@ class EstudiantesController extends Controller
                                 where pk = " . $id . ';';
                        $comando = Yii::app()->db->createCommand($sql);
                        $comando -> execute();
-                       $this->redirect(array('estudiantes/micurriculum','id'=>Estudiantes::model()->findBypk($id)->rut));
+                       $this->redirect(array('estudiantes/micurriculum','id'=>Yii::app()->user->name));
                     }
                     else
                     {
