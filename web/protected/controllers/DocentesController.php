@@ -47,11 +47,11 @@ class DocentesController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('perfil','pupdate','contacto'),
+				'actions'=>array('perfil','pupdate','contacto','update'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','index','view','create','update'),
+				'actions'=>array('admin','delete','index','view','create'),
 				'users'=>array(Yii::app()->user->getAdmin()),
 			),
 			array('deny',  // deny all users
