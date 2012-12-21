@@ -60,14 +60,14 @@
             <text class="text-footer"><b>Tips</b></text>
         </div>
         <div class="con3">
-            <MARQUEE behavior="scroll" direction="up" scrollAmount="3" width="420" hiegth="195" onMouseOver="this.scrollAmount=1" onMouseOut="this.scrollAmount=3">
+            <div class="mar">
                 <?php
                 foreach ($model as $i) {
                     echo CHtml::link($i->titulo, array('tips/view', 'id' => $i->pk), array('rel' => 'tooltip', 'title' => 'Estudiante'));
                     echo '<hr class="separadosr" />';
                 }
                 ?>
-            </MARQUEE>
+            </div>
         </div>
     </div>
 </div>

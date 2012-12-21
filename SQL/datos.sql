@@ -1,4 +1,3 @@
-BEGIN TRANSACTION;
 
 --
 -- Roles
@@ -763,5 +762,3 @@ INSERT INTO tipos_contratos (contrato) VALUES ('Contrato a Plazo Fijo');
 INSERT INTO tipos_contratos (contrato) VALUES ('Boleta de Honorarios');
 
 
-
-COMMIT;

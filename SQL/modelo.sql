@@ -1,4 +1,4 @@
-﻿BEGIN TRANSACTION;
+
 
 --
 -- Roles dentro del sistema
@@ -525,4 +525,3 @@ CREATE TABLE propietario_oferta (
     PRIMARY KEY (pk)
 );
 
-COMMIT;

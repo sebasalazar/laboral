@@ -303,3 +303,20 @@ a:hover{
     color: #06C;
 }
 
+.mar{
+  width: 430px; 
+  height: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  overflow-x:-webkit-marquee;
+  -webkit-marquee-direction: up;
+  -webkit-marquee-style: scroll;
+  -webkit-marquee-speed: normal;
+  -webkit-marquee-increment: small;
+  -webkit-marquee-repetition: infinite;
+  overflow-x: marquee-block down;
+  marquee-direction: forward;
+  marquee-style: scroll;
+  marquee-speed: normal;
+  marquee-play-count: 5;
+}
