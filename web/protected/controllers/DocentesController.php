@@ -7,7 +7,22 @@ class DocentesController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout='//layouts/column2';
-
+        
+        public function actions() {
+            return array(
+                // captcha action renders the CAPTCHA image displayed on the contact page
+                'captcha' => array(
+                    'class' => 'CCaptchaAction',
+                    'backColor' => 0xFFFFFF,
+                ),
+                // page action renders "static" pages stored under 'protected/views/site/pages'
+                // They can be accessed via: index.php?r=site/page&view=FileName
+                'page' => array(
+                    'class' => 'CViewAction',
+                ),
+            );
+        }
+        
 	/**
 	 * @return array action filters
 	 */
@@ -28,11 +43,11 @@ class DocentesController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array(''),
+				'actions'=>array('captcha'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('perfil','pupdate'),
+				'actions'=>array('perfil','pupdate','contacto'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -125,6 +140,29 @@ class DocentesController extends Controller
 			'dataProvider'=>$dataProvider,
 		));
 	}
+        
+        public function actionContacto(){
+                $model = new ContactForm;
+                if (isset($_POST['ContactForm'])) {
+                    $model->attributes = $_POST['ContactForm'];
+                    if ($model->validate()) {
+
+                        $nombre = "Admin Portal Laboral";
+                        $correo = trim('smenendez@icci.cl');
+                        $asunto = trim("[Contacto] {$model->subject}");
+                        $mensaje = trim("{$model->name} <{$model->email}>\r\n Consulta \r\n {$model->body}");
+
+                        $salida = Yii::app()->user->enviarEmail($nombre, $correo, $asunto, $mensaje);
+                        if ($salida) {
+                            Yii::app()->user->setFlash('contact', 'Gracias por contactarse con nosotros, le contestaremos a la brevedad.');
+                        } else {
+                            Yii::app()->user->setFlash('contact', 'Lo sentimos ocurrió un problema al enviar su email, por favor intentelo nuevamente.');
+                        }
+                        $this->refresh();
+                    }
+                }
+                $this->render('contacto', array('model' => $model));
+        }
 
 	public function actionAdmin()
 	{
