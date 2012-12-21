@@ -80,6 +80,7 @@ class UsuariosController extends Controller
                                 $model1->attributes=$_POST['Docentes'];
                                 $model1->rut = $model->username;
                                 $model->roles = 4;
+                                $model1->comuna_fk = $_POST['comboComuna'];
                                     if($model->validate() && $model1->validate() && $model1->save() && $model->save()){
                                             $this->redirect(array('site/index'));
                                     }

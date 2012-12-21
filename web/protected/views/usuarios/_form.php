@@ -95,11 +95,11 @@ $('#rut_demo_int').Rut({
                         <div class="row">
                             <div class="contenido">
                                 <div class="columna">
-                                    <?php echo $form->labelEx(Docentes::model(),'Nombres: <span class="required">*</span>'); ?>
+                                    <?php echo $form->labelEx($model1,'Nombres: <span class="required">*</span>'); ?>
                                     <p class="hint">
                                     </p>
-                                    <?php echo $form->textField(Docentes::model(),'nombres', array('required'=>'required')); ?>
-                                    <?php echo $form->error(Docentes::model(),'nombres'); ?>
+                                    <?php echo $form->textField($model1,'nombres', array('required'=>'required')); ?>
+                                    <?php echo $form->error($model1,'nombres'); ?>
                                 </div>
                             </div>
                         </div>
@@ -107,11 +107,11 @@ $('#rut_demo_int').Rut({
                         <div class="row">
                             <div class="contenido">
                                 <div class="columna">
-                                    <?php echo $form->labelEx(Docentes::model(),'Apellidos: <span class="required">*</span>'); ?>
+                                    <?php echo $form->labelEx($model1,'Apellidos: <span class="required">*</span>'); ?>
                                     <p class="hint">
                                     </p>
-                                    <?php echo $form->textField(Docentes::model(),'apellidos', array('required'=>'required')); ?>
-                                    <?php echo $form->error(Docentes::model(),'apellidos'); ?>
+                                    <?php echo $form->textField($model1,'apellidos', array('required'=>'required')); ?>
+                                    <?php echo $form->error($model1,'apellidos'); ?>
                                 </div>
                             </div>
                         </div>
@@ -119,11 +119,11 @@ $('#rut_demo_int').Rut({
                         <div class="row">
                             <div class="contenido">
                                 <div class="columna">
-                                    <?php echo $form->labelEx(Docentes::model(),'Fecha de Nacimiento: <span class="required">*</span>'); ?>
+                                    <?php echo $form->labelEx($model1,'Fecha de Nacimiento: <span class="required">*</span>'); ?>
                                     <p class="hint">
                                     </p>
-                                    <?php echo $form->dateField(Docentes::model(),'fecha_nacimiento', array('required'=>'required')); ?>
-                                    <?php echo $form->error(Docentes::model(),'fecha_nacimiento'); ?>
+                                    <?php echo $form->dateField($model1,'fecha_nacimiento', array('required'=>'required')); ?>
+                                    <?php echo $form->error($model1,'fecha_nacimiento'); ?>
                                 </div>
                             </div>
                         </div>
@@ -131,40 +131,66 @@ $('#rut_demo_int').Rut({
                         <div class="row">
                             <div class="contenido">
                                 <div class="columna">
-                                    <?php echo $form->labelEx(Docentes::model(),'Genero: '); ?>
-                                    <?php echo $form->radioButtonList(Docentes::model(),'genero',array('F'=>'Femenino','M'=>'Masculino'),array('separator'=>'  ', 'labelOptions'=>array('style'=>'display:inline'))); ?>
-                                    <?php echo $form->error(Docentes::model(),'genero'); ?>
+                                    <?php echo $form->labelEx($model1,'Genero: '); ?>
+                                    <?php echo $form->radioButtonList($model1,'genero',array('F'=>'Femenino','M'=>'Masculino'),array('separator'=>'  ', 'labelOptions'=>array('style'=>'display:inline'))); ?>
+                                    <?php echo $form->error($model1,'genero'); ?>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="contenido">
                                 <div class="columna">
-                                    <?php echo $form->labelEx(Docentes::model(),'Direccion: <span class="required">*</span>'); ?>
-                                    <?php echo $form->textField(Docentes::model(),'direccion',array('size'=>255,'maxlength'=>255, 'required'=>'required')); ?>
-                                    <?php echo $form->error(Docentes::model(),'direccion'); ?>
+                                    <?php echo $form->labelEx($model1,'Direccion: <span class="required">*</span>'); ?>
+                                    <?php echo $form->textField($model1,'direccion',array('size'=>255,'maxlength'=>255, 'required'=>'required')); ?>
+                                    <?php echo $form->error($model1,'direccion'); ?>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="columna columna_50">
                         <div class="row">
-                            <div class="contenido">
-                                <div class="columna">
-                                    <?php echo $form->labelEx(Docentes::model(),'Comuna: <span class="required">*</span>'); ?>
-                                    <?php 
-                                          $datos = CHtml::listData(Comunas::model()->findAll(),'pk','nombre');
-                                          echo $form->DropDownList(Docentes::model(),'comuna_fk',$datos, array('empty'=>'Seleccione una Comuna', 'required'=>'required'));
-                                    ?>
-                                    <?php echo $form->error(Docentes::model(),'comunaco_fk'); ?>
-                                </div>
-                            </div>
-                        </div>
+                        <?php echo $form->labelEx(Regiones::model(), 'Region') ?>                    
+                             <?php  echo $form->dropdownList(Regiones::model(),'pk', 
+        
+                                        CHtml::listData(Regiones::model()->findAll(), 'pk', 'nombre'),
+                                        array(
+                                        'empty'=>'Seleccione...',
+                                        'ajax'=>array(
+                                        'type'=>'POST',
+                                        'url'=>CController::createurl('Provincias/selectProvincias'),
+                                        'update'=>'#provinciaCombo',
+                                )));  ?>  
+                        <?php echo $form->error(Regiones::model(),'pk'); ?>
+                </div>
+        
+                <div class="row">
+                     <?php echo $form->labelEx(Provincias::model(),'Provincia'); ?>
+                       <?php echo $form->DropDownList(Provincias::model(),'pk',array(),array('id'=> 'provinciaCombo', 
+                                                                                             'name'=>'provinciaCombo',
+                                                                                                    'ajax'=>array(
+                                                                                                    'type'=>'POST',
+                                                                                                    'url'=>CController::createurl('Comunas/selectComuna'),
+                                                                                                    'update'=>'#comboComuna',
+                                                                                                     ),
+                                                                                                'prompt' => 'Seleccione...')); ?>
+                       <?php echo $form->error(Provincias::model(),'pk'); ?>
+                    
+                </div>
+        
+               
+
+                <div class="row">
+                        <?php echo $form->labelEx($model1,'Comuna <span class="required">*</span>'); ?>
+                       
+                        <?php echo $form->DropDownList($model1,'comuna_fk',array(), array('id' => 'comboComuna', 'name'=>'comboComuna','required'=>'required', 'prompt' => 'Selecione...')); ?>
+                        
+                        <?php echo $form->error($model1,'comuna_fk'); ?>
+                </div>
 
                         <div class="row">
                             <div class="contenido">
                                 <div class="columna">
-                                    <?php echo $form->labelEx(Docentes::model(),'Departamentos: <span class="required">*</span>'); ?>
+                                    <?php echo $form->labelEx($model1,'Departamentos: <span class="required">*</span>'); ?>
                                     <?php 
                                           $datos = CHtml::listData(Departamentos::model()->findAll(),'pk','departamento');
                                           echo $form->DropDownList(Docentes::model(),'departamento_fk',$datos, array('empty'=>'Seleccione un Departamento', 'required'=>'required'));
@@ -177,12 +203,12 @@ $('#rut_demo_int').Rut({
                         <div class="row">
                             <div class="contenido">
                                 <div class="columna">
-                                    <?php echo $form->labelEx(Docentes::model(),'Estado Civil: <span class="required">*</span>'); ?>
+                                    <?php echo $form->labelEx($model1,'Estado Civil: <span class="required">*</span>'); ?>
                                     <?php 
                                           $datos = CHtml::listData(EstadosCiviles::model()->findAll(),'pk','estado');
-                                          echo $form->DropDownList(Docentes::model(),'ec_fk',$datos, array('empty'=>'Seleccione un Estado Civil', 'required'=>'required'));
+                                          echo $form->DropDownList($model1,'ec_fk',$datos, array('empty'=>'Seleccione un Estado Civil', 'required'=>'required'));
                                     ?>
-                                    <?php echo $form->error(Docentes::model(),'ec_fk'); ?>
+                                    <?php echo $form->error($model1,'ec_fk'); ?>
                                 </div>
                             </div>
                         </div>
@@ -190,11 +216,11 @@ $('#rut_demo_int').Rut({
                         <div class="row">
                             <div class="contenido">
                                 <div class="columna">
-                                    <?php echo $form->labelEx(Docentes::model(),'Celular: <span class="required">*</span>'); ?>
+                                    <?php echo $form->labelEx($model1,'Celular: <span class="required">*</span>'); ?>
                                     <p class="hint">
                                     </p>
-                                    <?php echo $form->textField(Docentes::model(), 'celular', array('required'=>'required')); ?>
-                                    <?php echo $form->error(Docentes::model(),'celular'); ?>
+                                    <?php echo $form->textField($model1, 'celular', array('required'=>'required', 'value'=>'+569')); ?>
+                                    <?php echo $form->error($model1,'celular'); ?>
                                 </div>
                             </div>
                         </div>
@@ -202,11 +228,11 @@ $('#rut_demo_int').Rut({
                         <div class="row">
                             <div class="contenido">
                                 <div class="columna">
-                                    <?php echo $form->labelEx(Docentes::model(),'Telefono: <span class="required">*</span>'); ?>
+                                    <?php echo $form->labelEx($model1,'Telefono: <span class="required">*</span>'); ?>
                                     <p class="hint">
                                     </p>
-                                    <?php echo $form->textField(Docentes::model(), 'telefono', array('required'=>'required')); ?>
-                                    <?php echo $form->error(Docentes::model(),'telefono'); ?>
+                                    <?php echo $form->textField($model1, 'telefono', array('required'=>'required', 'value'=>'+56')); ?>
+                                    <?php echo $form->error($model1,'telefono'); ?>
                                 </div>
                             </div>
                         </div>
@@ -214,11 +240,11 @@ $('#rut_demo_int').Rut({
                         <div class="row">
                             <div class="contenido">
                                 <div class="columna">
-                                    <?php echo $form->labelEx(Docentes::model(),'Email: <span class="required">*</span>'); ?>
+                                    <?php echo $form->labelEx($model1,'Email: <span class="required">*</span>'); ?>
                                     <p class="hint">
                                     </p>
-                                    <?php echo $form->textField(Docentes::model(), 'email', array('required'=>'required')); ?>
-                                    <?php echo $form->error(Docentes::model(),'email'); ?>
+                                    <?php echo $form->textField($model1, 'email', array('required'=>'required')); ?>
+                                    <?php echo $form->error($model1,'email'); ?>
                                 </div>
                             </div>
                         </div>
