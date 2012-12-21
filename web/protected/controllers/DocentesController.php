@@ -155,7 +155,7 @@ class DocentesController extends Controller
                         $mensaje = trim("{$model->name} <{$model->email}>\r\n Consulta \r\n {$model->body}");
                         foreach($estudiantes as $i)
                         {
-                            if(Yii::app()->user->estudianteDepartamento($i->rut,$docente->departamento_fk)){
+                            if(Yii::app()->user->estudiantePertenece($i->rut,$docente->departamento_fk)){
                                 $correo = trim($i->email);
                                 $salida = Yii::app()->user->enviarEmail($nombre, $correo, $asunto, $mensaje);
                             }
