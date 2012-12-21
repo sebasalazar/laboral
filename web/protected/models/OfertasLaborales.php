@@ -63,7 +63,7 @@ class OfertasLaborales extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('empresa_fk, rubro_fk, nivel_estudio_fk, renta, vacantes, descripcion, cargo, fecha_publicacion, jornada_fk, contrato_fk, activo', 'required'),
+            array('empresa_fk, rubro_fk, nivel_estudio_fk, vacantes, descripcion, cargo, fecha_publicacion, jornada_fk, contrato_fk, activo', 'required'),
             array('empresa_fk, rubro_fk, nivel_estudio_fk, vacantes, jornada_fk, contrato_fk, activo', 'numerical', 'integerOnly' => true),
             array('descripcion, ubicacion, cargo, beneficios', 'length', 'max' => 255),
             array('plazo', 'safe'),

@@ -63,8 +63,11 @@
             <div class="mar">
                 <?php
                 foreach ($model as $i) {
-                    echo CHtml::link($i->titulo, array('tips/view', 'id' => $i->pk), array('rel' => 'tooltip', 'title' => 'Estudiante'));
-                    echo '<hr class="separadosr" />';
+                    $c=0;
+                    if($c < 5 && rand(0, 100) > 30){
+                        echo CHtml::link($i->titulo, array('tips/view', 'id' => $i->pk), array('rel' => 'tooltip', 'title' => 'Estudiante'));
+                        echo '<hr class="separadosr" />';
+                    }
                 }
                 ?>
             </div>

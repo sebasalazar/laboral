@@ -21,6 +21,15 @@ $this->menu=array(
 <br />
 <div class="centrar1">
 <?php 
+        if($model->renta == 0)
+        {
+            $rentavalue = 'No especificado';
+        }
+        else
+        {
+            $rentavalue = '$ '. number_format($model->renta, 0, '', '.');
+        }
+        
         $this->widget('bootstrap.widgets.TbDetailView', array(
             'data'=>$model,
             'attributes'=>array(
@@ -46,7 +55,7 @@ $this->menu=array(
                  ),
 		array(
                    'label'=>'Renta: ',
-                   'value'=> '$ '. number_format($model->renta, 0, '', '.'),
+                   'value'=> $rentavalue,
                  ),
 		array(
                    'label'=>'Numero de Vacantes: ',

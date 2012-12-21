@@ -74,6 +74,7 @@
                                     array('label'=>$rut, 'url'=>'#', 'items'=>array(
                                         array('label'=>'Datos Empresa', 'url'=>array('empresas/perfil', 'id'=>Yii::app()->user->name), 'visible'=>Yii::app()->user->isEmpresa()),
                                         array('label'=>'Perfil Docente', 'url'=>array('docentes/perfil'), 'visible'=>Yii::app()->user->isDocente()),
+                                        array('label'=>'Envio de E-mails', 'url'=>array('docentes/contacto'), 'visible'=>Yii::app()->user->isDocente()),
                                         array('label'=>'Mis datos', 'url'=>array('estudiantes/perfil', 'id'=>Yii::app()->user->name), 'visible'=>Yii::app()->user->isEstudiante()),
                                         array('label'=>'Mi Curriculum', 'url'=>array('estudiantes/micurriculum', 'id'=>Yii::app()->user->name), 'visible'=>Yii::app()->user->isEstudiante()),
                                         '---',

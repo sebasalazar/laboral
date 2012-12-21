@@ -82,6 +82,10 @@ class OfertasLaboralesController extends Controller
                             $valor =$_POST['OfertasLaborales'];
                             $model->attributes=$valor;
                             $model->fecha_publicacion = date("Y-m-d H:i:s");
+                            if($model->renta == null)
+                            {
+                                $model->renta = 0;
+                            }
                             $model->activo = 1;
                             WebUser::loguear(__METHOD__ . " Listado: " . count($valor));
                             WebUser::loguear(__METHOD__ . " " . print_r($valor, false));
