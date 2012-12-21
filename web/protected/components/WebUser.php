@@ -21,6 +21,10 @@ class WebUser extends CWebUser {
         $docente = Docentes::model()->findByPk($id);
         return $docente->rut;
     }
+        public function rutEstudiante($id) {
+        $estudiantes = Estudiantes::model()->findByPk($id);
+        return $estudiantes->rut;
+    }
 
     public function idDocente($rut) {
         $docente = Docentes::model()->findByAttributes(array('rut' => $rut));

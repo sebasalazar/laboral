@@ -110,7 +110,7 @@ class UsuariosController extends Controller
                             $model3->rut = $model->username;  
                             $model3->carrera_fk = $_POST['carrerafk'] ;
                             $model3->comuna_fk = $_POST['comboComuna'];
-                            $model3->archivo_curriculum = $model3->rut;
+                           // $model3->archivo_curriculum = $model3->rut;
                             $model->roles = 1;
                             if($model->validate() && $model3->validate()){
                                 if($model->save()){                                       
@@ -118,6 +118,12 @@ class UsuariosController extends Controller
                                         $cv = CUploadedFile::getInstance ($model3, 'archivo_curriculum');
                                     if(!empty($cv)){
                                         $cv->saveAs('cv/' . $model3->rut . '.pdf');
+                                         $sql = "update estudiantes set archivo_curriculum = $model3->rut 
+                                         where pk = " . $model3->pk . ';';
+                       $comando = Yii::app()->db->createCommand($sql);
+                       $comando -> execute();
+                                        
+                                        
                                     }
                                         $this->redirect(array('site/index'));   
                                 }

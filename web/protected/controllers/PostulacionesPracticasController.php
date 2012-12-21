@@ -34,8 +34,7 @@ class PostulacionesPracticasController extends Controller
         public function actionRegistrar($practica_fk,$estudiante_fk,$fecha)
 	{
             
-            $modelEstudiante = new Estudiantes;
-            $modelEstudiante->findByAttributes(array('pk'=>$estudiante_fk));
+          $modelEstudiante = Estudiantes::model()->findByAttributes(array('pk'=>$estudiante_fk));
             //Verificamos si efectivamente el estudiante posee todo el cv completo en el sistema
             //sino es asi redirecciono para que realice dicha accion
             if(!$modelEstudiante->curriculum_completo)

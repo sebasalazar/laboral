@@ -49,11 +49,11 @@
             <text class="text-footer"><b>Noticias</b></text>
         </div>
         <div class="con2">
+            <MARQUEE behavior="scroll" direction="up" marquee-speed="slower" scrollAmount="3" width="420" hiegth="195" onMouseOver="this.scrollAmount=1" onMouseOut="this.scrollAmount=3">
             <?php
-            $this->widget(
-                    'ext.yii-feed-widget.YiiFeedWidget', array('url' => 'http://www.utem.cl/feed/', 'limit' => 5)
-            );
+                 $this->renderPartial('feed') ;
             ?>
+                </MARQUEE>
         </div>
         <br />
         <div class="con">

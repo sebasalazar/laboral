@@ -203,6 +203,7 @@ CREATE TABLE estudiantes (
     curriculum_completo boolean NOT NULL DEFAULT FALSE,
     UNIQUE (rut),
     UNIQUE(email),
+    UNIQUE(archivo_curriculum),
     PRIMARY KEY (pk)
 );
 

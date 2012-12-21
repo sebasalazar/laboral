@@ -53,9 +53,8 @@
                    'label'=>'Email:',
                    'value'=>$model->email,
                  ),
-                array(
-                   'label'=>'Estado Civil:',
-                   'value'=>$model->ecFk->descripcion,
+                array('label'=>'Estado civil',
+                    'value'=>$model->ecFk->estado,
                  ),
 		array(
                     'label'=>'Direccion:',
