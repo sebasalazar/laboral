@@ -45,10 +45,10 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'Renta: <span class="required">*</span> '); ?>
+		<?php echo $form->labelEx($model,'Renta:'); ?>
 		<?php 
                         echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ ";
-                        echo $form->textField($model,'renta', array('required'=>'required')); 
+                        echo $form->textField($model,'renta'); 
                 ?>
 		<?php echo $form->error($model,'renta'); ?>
 	</div>
