@@ -26,19 +26,22 @@ $this->menu=array(
           array(
             'header'=>'Empresa',
             'name'=>'practica_fk',
-            'filter'=> CHtml::listData(Empresas::model()->findAll(), 'pk', 'nombre'),
+            'filter'=>false,
+          //  'filter'=> CHtml::listData(Empresas::model()->findAll(), 'pk', 'nombre'),
             'value'=> '$data->practicaFk->empresaFk->nombre',
           ),
           array(
             'header'=>'Área',
             'name' => 'practica_fk',
-            'filter' => CHtml::listData(Rubros::model()->findAll(), 'pk', 'rubro'),
+             'filter'=>false,
+          //  'filter' => CHtml::listData(Rubros::model()->findAll(), 'pk', 'rubro'),
             'value' => '$data->practicaFk->rubroFk->rubro',
           ),
          array(
             'header'=>'Horario',
             'name' => 'practica_fk',
-            'filter' => CHtml::listData(Jornadas::model()->findAll(), 'pk', 'jornada'),
+            'filter'=>false,
+           // 'filter' => CHtml::listData(Jornadas::model()->findAll(), 'pk', 'jornada'),
             'value' => '$data->practicaFk->jornadaFk->jornada',
           ),
           array(

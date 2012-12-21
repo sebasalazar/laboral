@@ -152,8 +152,9 @@ class EstudiantesController extends Controller
 		));
 	}
 
-        public function actionUpdateperfil($id)
+        public function actionUpdateperfil($rut)
 	{
+                $id=Yii::app()->user->getModelUsuarioEstudiante(Yii::app()->user->name)->pk;
             if(Yii::app()->user->getModelUsuarioEstudianteId($id)->rut == Yii::app()->user->name)
             {
                     $model=$this->loadModel($id);

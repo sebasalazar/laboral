@@ -47,7 +47,8 @@ $this->breadcrumbs=array(
                       array(
                         'header'=>'Rubro',
                         'name' => 'oferta_laboral_fk',
-                        'filter' => CHtml::listData(Rubros::model()->findAll(), 'pk', 'rubro'),
+                          'filter'=>false,
+                       // 'filter' => CHtml::listData(Rubros::model()->findAll(), 'pk', 'rubro'),
                         'value' => '$data->ofertaLaboralFk->rubroFk->rubro',
                       ),                        
                      array(

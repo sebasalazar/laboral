@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Modificar perfil', 'url'=>array('updateperfil', 'id'=>$model->pk)),
+	array('label'=>'Modificar perfil', 'url'=>array('updateperfil', 'rut'=>$model->rut)),
 );
 ?>
 
