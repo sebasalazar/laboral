@@ -173,9 +173,9 @@ $("#content > ul").tabs();
                 </div>
 
                 <div class="row">
-                        <?php echo $form->labelEx(Estudiantes::model(),'archivo_curriculum'); ?>
-                        <?php echo $form->fileField(Estudiantes::model(),'archivo_curriculum',array('size'=>60,'maxlength'=>255)); ?>
-                        <?php echo $form->error(Estudiantes::model(),'archivo_curriculum'); ?>
+                        <?php // echo $form->labelEx(Estudiantes::model(),'archivo_curriculum'); ?>
+                        <?php // echo $form->fileField(Estudiantes::model(),'archivo_curriculum',array('size'=>60,'maxlength'=>255)); ?>
+                        <?php // echo $form->error(Estudiantes::model(),'archivo_curriculum'); ?>
                 </div>      
                 </div> 
                 </div> 
