@@ -145,7 +145,7 @@ class DocentesController extends Controller
                 $model = new ContactForm;
                 if (isset($_POST['ContactForm'])) {
                     $docente = Docentes::model()->findByAttributes(array('rut'=>Yii::app()->user->name));
-                    $estudiantes = Estudiantes::model()->findAllByAttributes(array('carreraFk'=>array('escuelaFk'=>array('departamentoFk'=>$docente->departamento_fk))));
+                    $estudiantes = Estudiantes::model()->findAllByAttributes(array('carrera_fk'=>array('escuela_fk'=>array('departamento_fk'=>$docente->departamento_fk))));
                     $model->attributes = $_POST['ContactForm'];
                     if ($model->validate()) {
 
