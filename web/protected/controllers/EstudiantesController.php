@@ -231,10 +231,11 @@ class EstudiantesController extends Controller
                     {
                         
                             $model->attributes=$_POST['Estudiantes'];
+                           
                             if($model->save())
                                     $this->redirect(array('view','id'=>$model->pk));
                     }
-                    
+
                     $this->render('updateperfil2',array(
                             'model'=>$model,
                     ));
