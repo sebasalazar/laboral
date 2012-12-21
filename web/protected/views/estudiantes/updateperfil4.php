@@ -18,4 +18,4 @@ $this->breadcrumbs=array(
 
 <h1>Modificando mi perfil <?php //echo $model->pk; ?></h1>
 
-<?php echo $this->renderPartial('_formperfil', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_formperfilcv', array('model'=>$model)); ?>

@@ -188,7 +188,7 @@ class EstudiantesController extends Controller
                                     $this->redirect(array('view','id'=>$model->pk));
                     }
 
-                    $this->render('updateperfil',array(
+                    $this->render('updateperfil4',array(
                             'model'=>$model,
                     ));
             }
