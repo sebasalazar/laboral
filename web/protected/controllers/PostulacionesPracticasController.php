@@ -161,14 +161,16 @@ class PostulacionesPracticasController extends Controller
 	/**
 	 * Lists all models.
 	 */
-	public function actionIndex()
+        
+        public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('PostulacionesPracticas');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+            $model=new PostulacionesPracticas('search');
+            $model->unsetAttributes();  // clear any default values
+            if(isset($_GET['PostulacionesPracticas']))
+                    $model->attributes=$_GET['PostulacionesPracticas'];
+            $this->render('index', array('model'=>$model));
 	}
-
+        
 	/**
 	 * Manages all models.
 	 */

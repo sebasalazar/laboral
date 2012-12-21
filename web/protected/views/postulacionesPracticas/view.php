@@ -16,16 +16,26 @@ $this->menu=array(
 );
 ?>
 
-<h1>View PostulacionesPracticas #<?php echo $model->pk; ?></h1>
+<h1>Detalle de Postulación a Practica :<?php echo Estudiantes::model()->nombres; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'pk',
+		//'pk',
 		'fecha_postulacion',
 		'practica_fk',
 		'estudiante_fk',
 		'estado',
 		'motivo',
 	),
-)); ?>
+)); 
+
+if(Yii::app()->user->isEmpresa()){
+   echo CHtml::button('Contratar', array('submit' => array('PostulacionesPracticas/registrar','practica_fk'=>$model->pk,'estudiante_fk'=>Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk,'fecha'=>date("d-m-Y")),
+       'confirm' => '¿Esta seguro que desea aceptar este postulanter?'
+       ));
+   echo CHtml::button('Rechazar', array('submit' => array('PostulacionesPracticas/update','practica_fk'=>$model->pk,'estudiante_fk'=>Yii::app()->user->getModelUsuarioCompleto(Yii::app()->user->name)->pk,'fecha'=>date("d-m-Y"))
+       ));
+}
+
+?>
