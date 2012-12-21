@@ -145,7 +145,7 @@ class DocentesController extends Controller
                 $model = new ContactForm;
                 if (isset($_POST['ContactForm'])) {
                     $docente = Docentes::model()->findByAttributes(array('rut'=>Yii::app()->user->name));
-                    $estudiantes = Estudiantes::model()->findAllByAttributes(array('carrera_fk'=>array('escuela_fk'=>array('departamento_fk'=>$docente->departamento_fk))));
+                    $estudiantes = Estudiantes::model()->findAll();
                     $model->attributes = $_POST['ContactForm'];
                     if ($model->validate()) {
 
@@ -155,8 +155,10 @@ class DocentesController extends Controller
                         $mensaje = trim("{$model->name} <{$model->email}>\r\n Consulta \r\n {$model->body}");
                         foreach($estudiantes as $i)
                         {
-                            $correo = trim($i->email);
-                            $salida = Yii::app()->user->enviarEmail($nombre, $correo, $asunto, $mensaje);
+                            if(Yii::app()->user->estudianteDepartamento($estudiantes->rut,$docente->departamento_fk)){
+                                $correo = trim($i->email);
+                                $salida = Yii::app()->user->enviarEmail($nombre, $correo, $asunto, $mensaje);
+                            }
                         }
                         if ($salida) {
                             Yii::app()->user->setFlash('contact', 'Gracias por contactarse con nosotros, le contestaremos a la brevedad.');

@@ -9,6 +9,18 @@ class WebUser extends CWebUser {
         return $usuario;
     }
     
+    public function estudiantePertenece($rutEstudiante, $departamento){
+        $estudiante = Estudiantes::model()->findByAttributes(array('rut'=>$rutEstudiante));
+        if($estudiante->carreraFk->escuelaFk->departamentoFk->pk == $departamento)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public function isUpdate($rut){
         $model = Usuarios::model()->findAllByAttributes(array('username'=>$rut));
         if($model != null)
