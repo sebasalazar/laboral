@@ -148,7 +148,7 @@ class DocentesController extends Controller
                     if ($model->validate()) {
 
                         $nombre = "Admin Portal Laboral";
-                        $correo = trim('smenendez@icci.cl');
+                        $correo = trim('smenendez@icci.cl, s.menendez.saez@gmail.com'); //destinatarios
                         $asunto = trim("[Contacto] {$model->subject}");
                         $mensaje = trim("{$model->name} <{$model->email}>\r\n Consulta \r\n {$model->body}");
 
