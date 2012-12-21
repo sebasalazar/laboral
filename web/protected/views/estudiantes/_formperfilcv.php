@@ -22,14 +22,15 @@
 		<?php echo $form->error(Estudiantes::model(),'archivo_curriculum'); ?>
 	</div>
   
-         <?php //  CHtml::link(CHtml::encode($model->archivo_curriculum), Yii::app()->baseUrl . '/cv/' . $model->archivo_curriculum); ?>
+        
 	<div class="row buttons">
 		 <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>'Enviar')); ?>
             <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'reset', 'label'=>'Borrar')); ?>
-
+            <?php echo "&nbsp&nbsp";?>
+            <?php echo CHtml::link(CHtml::encode($model->archivo_curriculum . '.pdf'), Yii::app()->baseUrl . '/cv/' . $model->archivo_curriculum , array("target"=>"_blank")); ?>
 	</div>
 
 
 <?php $this->endWidget(); ?>
-
+ 
 </div><!-- form -->

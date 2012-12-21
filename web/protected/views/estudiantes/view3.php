@@ -13,15 +13,26 @@ $this->menu=array(
 ?>
 
 <h1>Estudiante <?php $model->pk; ?></h1>
-
+ <?php if($model->genero == 'F'){
+        $gen = 'Femenino';
+    }
+    else {
+        $gen = 'Masculino';
+    } ?>
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(		
 		'nombres',
 		'apellidos',
-		'rut',
+		array(
+                    'label'=>'Rut',
+                    'value'=>Yii::app()->user->getRut($model->rut),
+                ),
 		'fecha_nacimiento',
-		'genero',
+		array(
+                    'label'=>'Genero',
+                    'value'=>$gen,
+                ),
 		'direccion',
                 array('label'=>'Comuna',
                     'value'=>$model->comuna->nombre,

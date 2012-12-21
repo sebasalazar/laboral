@@ -103,7 +103,7 @@
 
 	<div class="row">
 		<?php // echo $form->labelEx($model,'archivo_curriculum'); ?>
-		<?php // echo $form->fileField($model,'archivo_curriculum',array('size'=>60,'maxlength'=>255)); ?>
+		<?php // echo $form->fileField($model,'archivo_curriculum',array('size'=>60,'maxlength'=>255, 'value'=>'11111111')); ?>
 		<?php // echo $form->error($model,'archivo_curriculum'); ?>
 	</div>
                                                                 </div> 
