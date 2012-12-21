@@ -112,7 +112,7 @@ class EstudiantesController extends Controller
                             $model->archivo_curriculum = $model->rut;
 			if($model->save())
 
-                             $cv = CUploadedFile::getInstance ($model, 'archivo_curriculum');
+                        $cv = CUploadedFile::getInstance ($model, 'archivo_curriculum');
 
                         $cv = CUploadedFile::getInstance ($model, 'archivo_curriculum');
                         if(!empty($cv)){
@@ -154,7 +154,7 @@ class EstudiantesController extends Controller
 
         public function actionUpdateperfil($rut)
 	{
-                $id=Yii::app()->user->getModelUsuarioEstudiante(Yii::app()->user->name)->pk;
+            $id=Yii::app()->user->getModelUsuarioEstudiante(Yii::app()->user->name)->pk;
             if(Yii::app()->user->getModelUsuarioEstudianteId($id)->rut == Yii::app()->user->name)
             {
                     $model=$this->loadModel($id);
@@ -175,22 +175,48 @@ class EstudiantesController extends Controller
             }
 	}
         
-            public function actionUpdateperfil4($rut)
-	{
-                $id=Yii::app()->user->getModelUsuarioEstudiante(Yii::app()->user->name)->pk;
+        public function actionUpdateperfil4($rut)
+	{             
+            $id=Yii::app()->user->getModelUsuarioEstudiante(Yii::app()->user->name)->pk;
             if(Yii::app()->user->getModelUsuarioEstudianteId($id)->rut == Yii::app()->user->name)
             {
-                    $model=$this->loadModel($id);
-                    if(isset($_POST['Estudiantes']))
-                    {
-                            $model->attributes=$_POST['Estudiantes'];
-                            if($model->save())
-                                    $this->redirect(array('view','id'=>$model->pk));
-                    }
-
-                    $this->render('updateperfil4',array(
-                            'model'=>$model,
-                    ));
+                $model = new Estudiantes();
+                $model= Estudiantes::model()->findBypk($id);
+                   
+                if(isset($_POST['Estudiantes']))
+                {
+                    $model->attributes=$_POST['Estudiantes'];
+                        if($model->archivo_curriculum == '')
+                        {
+                            $model->archivo_curriculum = $rut;
+                            $cv = CUploadedFile::getInstance($model, 'archivo_curriculum');
+                            if(!empty($cv))
+                            {
+                                if($model->save()){
+                                    $cv->saveAs('cv/' . $rut . '.pdf');
+                                    Yii::app()->user->setFlash('success', "Archivo guardado");
+                                     $this->render('updateperfil4',array(
+                                        'model'=>$model,
+                                    ));
+                                }
+                           }
+                       }
+                       else
+                       {
+                                array_map('unlink', glob("cv/" . $rut . 'pdf')); 
+                                $cv = CUploadedFile::getInstance ($model, 'archivo_curriculum');
+                                if(!empty($cv))
+                                {
+                                        $cv->saveAs('cv/' . $model->rut . '.pdf');
+                                        Yii::app()->user->setFlash('success', "Curriculum actualizado");
+                                }
+                       }
+                            
+                }                    
+                        $this->render('updateperfil4',array(
+                                        'model'=>$model,
+                                    ));
+                       
             }
             else
             {
@@ -198,14 +224,14 @@ class EstudiantesController extends Controller
             }
 	}
         
-                public function actionUpdateperfil2($id)
+        public function actionUpdateperfil2($id)
 	{
-                    
-   
                     $model=$this->loadModel($id);
                     if(isset($_POST['Estudiantes']))
                     {
+                        
                             $model->attributes=$_POST['Estudiantes'];
+                           
                             if($model->save())
                                     $this->redirect(array('view','id'=>$model->pk));
                     }
@@ -213,7 +239,7 @@ class EstudiantesController extends Controller
                     $this->render('updateperfil2',array(
                             'model'=>$model,
                     ));
-            }
+        }
         
         public function actionUpdate3($id)
 	{
