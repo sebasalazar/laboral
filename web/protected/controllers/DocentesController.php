@@ -144,15 +144,20 @@ class DocentesController extends Controller
         public function actionContacto(){
                 $model = new ContactForm;
                 if (isset($_POST['ContactForm'])) {
+                    $docente = Docentes::model()->findByAttributes(array('rut'=>Yii::app()->user->name));
+                    $estudiantes = Estudiantes::model()->findAllByAttributes(array('carreraFk'=>array('escuelaFk'=>array('departamentoFk'=>$docente->departamento_fk))));
                     $model->attributes = $_POST['ContactForm'];
                     if ($model->validate()) {
 
                         $nombre = "Admin Portal Laboral";
-                        $correo = trim('smenendez@icci.cl;s.menendez.saez@gmail.com'); //destinatarios
+                        
                         $asunto = trim("[Contacto] {$model->subject}");
                         $mensaje = trim("{$model->name} <{$model->email}>\r\n Consulta \r\n {$model->body}");
-
-                        $salida = Yii::app()->user->enviarEmail($nombre, $correo, $asunto, $mensaje);
+                        foreach($estudiantes as $i)
+                        {
+                            $correo = trim($i->email);
+                            $salida = Yii::app()->user->enviarEmail($nombre, $correo, $asunto, $mensaje);
+                        }
                         if ($salida) {
                             Yii::app()->user->setFlash('contact', 'Gracias por contactarse con nosotros, le contestaremos a la brevedad.');
                         } else {
