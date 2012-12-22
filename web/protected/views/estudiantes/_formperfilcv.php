@@ -27,7 +27,7 @@
 		 <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>'Enviar')); ?>
             <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'reset', 'label'=>'Borrar')); ?>
             <?php echo "&nbsp&nbsp";?>
-            <?php if($model->archivo_curriculum != ''){ echo CHtml::link(CHtml::encode($model->archivo_curriculum . '.pdf'), Yii::app()->baseUrl . '/cv/' . $model->archivo_curriculum , array("target"=>"_blank"));}?>
+            <?php if($model->archivo_curriculum != ''){ echo CHtml::link(CHtml::encode($model->archivo_curriculum . '.pdf'), Yii::app()->baseUrl . '/cv/' . $model->archivo_curriculum .'.pdf' , array("target"=>"_blank"));}?>
 	</div>
 
 

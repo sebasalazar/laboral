@@ -283,15 +283,17 @@ class EstudiantesController extends Controller
                                 }
                         } 
                         
-                       $sql = "update estudiantes set curriculum_completo = true
+                   /*    $sql = "update estudiantes set curriculum_completo = true
                                 where pk = " . $id . ';';
                        $comando = Yii::app()->db->createCommand($sql);
                        $comando -> execute();
                        $this->redirect(array('estudiantes/micurriculum','id'=>Yii::app()->user->name));
-                    }
+                   */ }
                     else
                     {
+                       
                         Yii::app()->user->setFlash('notice', "Problemas!!!"); 
+                        $this->redirect(array('view','id'=>$model->pk));
                     }
                 }
 		
