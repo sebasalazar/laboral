@@ -162,9 +162,9 @@ class DocentesController extends Controller
                             }
                         }
                         if ($salida) {
-                            Yii::app()->user->setFlash('contact', 'Gracias por contactarse con nosotros, le contestaremos a la brevedad.');
+                            Yii::app()->user->setFlash('contact', 'Los email a los alumnos correspondiente a su departamento, fueron enviados correctamente.');
                         } else {
-                            Yii::app()->user->setFlash('contact', 'Lo sentimos ocurrió un problema al enviar su email, por favor intentelo nuevamente.');
+                            Yii::app()->user->setFlash('contact', 'Lo sentimos ocurrió un problema al enviar sus emails, por favor intentelo nuevamente.');
                         }
                         $this->refresh();
                     }
