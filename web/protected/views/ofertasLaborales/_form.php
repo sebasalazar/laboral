@@ -63,9 +63,20 @@
 
 	<div class="row">
 
-		<?php echo $form->labelEx($model,'Plazo: <span class="required">*</span> '); ?>
-		<?php echo $form->dateField($model,'plazo', array('required'=>'required')); ?>
-
+		<?php echo $form->labelEx($model,'Cierre Postulación: <span class="required">*</span> '); ?>
+                        <?php Yii::import('application.extensions.CJuiDateTimePicker.CJuiDateTimePicker');
+                        $this->widget('CJuiDateTimePicker',array(
+                            'model'=>$model, //Model object
+                            'attribute'=>'plazo', //attribute name
+                                    'mode'=>'date', //use "time","date" or "datetime" (default)
+                            'options'=>array(
+                                'dateFormat'=>'dd-mm-yy',
+                                'changeYear'=>true,
+                                'changeMonth'=>true,
+                                'yearRange'=>'2012:2050',
+                            ) // jquery plugin options
+                        ));
+                    ?>
 		<?php echo $form->error($model,'plazo'); ?>
 	</div>
 

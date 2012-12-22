@@ -6,10 +6,6 @@ $this->breadcrumbs=array(
 	'Postulaciones Practicases',
 );
 
-$this->menu=array(
-	//array('label'=>'Create PostulacionesPracticas', 'url'=>array('create')),
-	//array('label'=>'Manage PostulacionesPracticas', 'url'=>array('admin')),
-);
 ?>
 
 <h1 class="titulo">Postulaciones a Practicas</h1>

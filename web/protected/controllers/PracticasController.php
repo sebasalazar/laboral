@@ -153,6 +153,7 @@ class PracticasController extends Controller
         
         public function actionIndex()
 	{
+            $this->layout = 'column1';
             $model=new Practicas('search');
             $model->unsetAttributes();  // clear any default values
             if(isset($_GET['Practicas']))

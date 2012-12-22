@@ -95,7 +95,9 @@ if(Yii::app()->user->isEstudiante()){
 }
 else if(Yii::app()->user->isEmpresa() || Yii::app()->user->isDocente() || Yii::app()->user->isAdmin())
 {
+    
     echo '<div class="contenidoPage">';
+    echo '<br /><h2>Alumnos que han postulado a la Oferta Laboral</h2> ';
             $this->widget('bootstrap.widgets.TbGridView', array(
                     'type'=>'striped bordered condensed',
                     'dataProvider'=>$model1->search3($id),

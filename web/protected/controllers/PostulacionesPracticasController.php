@@ -164,6 +164,7 @@ class PostulacionesPracticasController extends Controller
         
         public function actionIndex()
 	{
+            $this->layout = 'column1';
             $model=new PostulacionesPracticas('search');
             $model->unsetAttributes();  // clear any default values
             if(isset($_GET['PostulacionesPracticas']))
