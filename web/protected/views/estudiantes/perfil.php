@@ -18,7 +18,9 @@ $this->menu=array(
     }
     else {
         $gen = 'Masculino';
-    } ?>
+    }
+    
+    ?>
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(		

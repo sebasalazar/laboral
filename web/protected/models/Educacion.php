@@ -44,7 +44,9 @@ class Educacion extends CActiveRecord
 		return array(
 			array('pk, curriculum_fk, nombre_institucion, inicio, fin', 'required'),
 			array('nombre_institucion, carrera', 'length', 'max'=>60),
-			// The following rule is used by search().
+                        array('inicio,fin', 'numerical', 'integerOnly'=>true, 'min'=>4,'max'=>4),
+                        array('inicio,fin','match','pattern'=>'/^[0-9 ]+$/'),
+			// The following rule is used by search().                   
 			// Please remove those attributes that should not be searched.
 			array('pk, curriculum_fk, nombre_institucion, carrera, inicio, fin', 'safe', 'on'=>'search'),
 		);

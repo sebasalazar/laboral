@@ -46,6 +46,7 @@ class Experiencias extends CActiveRecord
 			array('descripcion, referencia, email, inicio, curriculum_fk', 'required'),
 			array('descripcion, referencia, email', 'length', 'max'=>255),
 			array('fin', 'safe'),
+                        array('email','email'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('pk, descripcion, referencia, email, inicio, fin, curriculum_fk', 'safe', 'on'=>'search'),

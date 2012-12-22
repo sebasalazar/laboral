@@ -39,11 +39,11 @@
 		<?php //echo $form->error($model,'rut'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'fecha_nacimiento'); ?>
-		<?php echo $form->textField($model,'fecha_nacimiento'); ?>
-		<?php echo $form->error($model,'fecha_nacimiento'); ?>
-	</div>
+                <div class="row">
+                        <?php echo $form->labelEx(Estudiantes::model(),'fecha_nacimiento <span class="required">*</span>'); ?>
+                        <?php echo $form->dateField(Estudiantes::model(),'fecha_nacimiento',array('required'=>'required')); ?>
+                        <?php echo $form->error(Estudiantes::model(),'fecha_nacimiento'); ?>
+                </div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'genero'); ?>
@@ -71,11 +71,27 @@
 		<?php echo $form->labelEx($model,'Estado Civil'); ?>
 		<?php 
                                   $datos = CHtml::listData(EstadosCiviles::model()->findAll(),'pk','estado');
-                                  echo $form->DropDownList($model,'ec_fk',$datos, array('empty'=>'Seleccione un Departamento', 'required'=>'required'));
+                                  echo $form->DropDownList($model,'ec_fk',$datos, array('empty'=>'Seleccione un Estado civil', 'required'=>'required'));
                 ?>
 		<?php echo $form->error($model,'ec_fk'); ?>
 	</div>
-
+                <div class="row">
+                        <?php echo $form->labelEx(Escuelas::model(),'Escuela'); ?>
+                        <?php $datos = CHtml::listData(Escuelas::model()->findAll(),'pk','escuela'); ?>
+                        <?php echo $form->DropDownList(Escuelas::model(),'pk',$datos, array('ajax'=>array(
+                                                                                                    'type'=>'POST',
+                                                                                                    'url'=>CController::createurl('Carreras/SelectCarrera'),
+                                                                                                    'update'=>'#carrerafk',
+                                                                                                     ),'prompt' => 'Selecione...')); ?>
+                        <?php echo $form->error(Facultades::model(),'pk'); ?>
+                </div>
+                
+                <div class="row">
+                        <?php echo $form->labelEx(Estudiantes::model(),'Carrera <span class="required">*</span>'); ?>
+                        <?php //$datos = CHtml::listData(Carreras::model()->findAll(),'pk','nombre_carrera'); ?>
+                        <?php echo $form->DropDownList(Estudiantes::model(),'carrera_fk',array(), array('id'=>'carrerafk', 'name' => 'carrerafk', 'required'=>'required', 'prompt'=>'Seleccione...')); ?>
+                        <?php echo $form->error(Estudiantes::model(),'carrera_fk'); ?>
+                </div>        
 	<div class="row">
 		<?php echo $form->labelEx($model,'telefono'); ?>
 		<?php echo $form->textField($model,'telefono',array('size'=>9,'maxlength'=>9)); ?>
