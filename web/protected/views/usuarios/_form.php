@@ -131,6 +131,7 @@ $('#rut_demo_int').Rut({
                                             'dateFormat'=>'dd-mm-yy',
                                             'changeYear'=>true,
                                             'changeMonth'=>true,
+                                            'yearRange'=>'1920',
                                         ) // jquery plugin options
                                     ));
                                 ?>
@@ -417,6 +418,7 @@ $('#rut_demo_int').Rut({
                                     'dateFormat'=>'dd-mm-yy',
                                     'changeYear'=>true,
                                     'changeMonth'=>true,
+                                    'yearRange'=>'1920',
                                 ) // jquery plugin options
                             ));
                         ?>
