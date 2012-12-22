@@ -57,8 +57,10 @@ class Docentes extends CActiveRecord
 			array('comuna_fk, ec_fk, departamento_fk', 'numerical', 'integerOnly'=>true),
 			array('nombres, apellidos, direccion, email', 'length', 'max'=>255),
 			array('genero', 'length', 'max'=>1),
-			array('telefono', 'length', 'min'=>7,'max'=>7),
-                        array('celular', 'length', 'min'=>8, 'max'=>8),
+			array('telefono', 'length', 'min'=>7,'max'=>15),
+                        array('telefono','match','pattern'=>'/^[+]{0,1}[0-9 ]+$/'),
+                        array('celular', 'length', 'min'=>8, 'max'=>12),
+                        array('celular','match','pattern'=>'/^[+]{0,1}[0-9 ]+$/'),
                         array('email', 'email'),
                         array('email', 'unique'),
 			// The following rule is used by search().

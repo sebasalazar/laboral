@@ -22,7 +22,16 @@ $this->breadcrumbs=array(
 );
 ?>
 <div class="contenidoPage">
-<h1>Contáctenos</h1>
+<?php $this->beginWidget('bootstrap.widgets.TbHeroUnit', array(
+    'heading'=>'Envio de Email Masivo',
+)); ?>
+    <br/>
+    <p>
+        Atraves de este formulario, usted podrá enviar un correo electronico a todos los alumnos pertenecientes a su carrera, puede
+        pegar los link a las <b>Ofertas Laborales</b> y/o <b>Practicas</b> que usted desee.
+    </p>
+ 
+<?php $this->endWidget(); ?>
 
 <?php if(Yii::app()->user->hasFlash('contact')): ?>
 

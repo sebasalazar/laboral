@@ -142,6 +142,7 @@ class DocentesController extends Controller
 	}
         
         public function actionContacto(){
+                $this->layout = "column1";
                 $model = new ContactForm;
                 if (isset($_POST['ContactForm'])) {
                     $docente = Docentes::model()->findByAttributes(array('rut'=>Yii::app()->user->name));
