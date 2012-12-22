@@ -9,13 +9,15 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Accesos', 'url'=>array('index')),
-	array('label'=>'Create Accesos', 'url'=>array('create')),
-	array('label'=>'View Accesos', 'url'=>array('view', 'id'=>$model->pk)),
-	array('label'=>'Manage Accesos', 'url'=>array('admin')),
+	array('label'=>'Lista de Accesos', 'url'=>array('index')),
+	array('label'=>'Crear Acceso', 'url'=>array('create')),
+	array('label'=>'Ver Acceso', 'url'=>array('view', 'id'=>$model->pk)),
+	array('label'=>'Administrar Accesos', 'url'=>array('admin')),
 );
 ?>
+<div class="contenidoPage">
 
-<h1>Update Accesos <?php echo $model->pk; ?></h1>
-
+<h1>Actualizar Acceso <?php echo $model->pk; ?></h1>
+ <br />
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+</div>

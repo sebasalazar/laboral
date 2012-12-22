@@ -122,8 +122,19 @@ $('#rut_demo_int').Rut({
                                     <?php echo $form->labelEx($model1,'Fecha de Nacimiento: <span class="required">*</span>'); ?>
                                     <p class="hint">
                                     </p>
-                                    <?php echo $form->dateField($model1,'fecha_nacimiento', array('required'=>'required')); ?>
-                                    <?php echo $form->error($model1,'fecha_nacimiento'); ?>
+                                    <?php Yii::import('application.extensions.CJuiDateTimePicker.CJuiDateTimePicker');
+                                    $this->widget('CJuiDateTimePicker',array(
+                                        'model'=>$model1, //Model object
+                                        'attribute'=>'fecha_nacimiento', //attribute name
+                                                'mode'=>'date', //use "time","date" or "datetime" (default)
+                                        'options'=>array(
+                                            'dateFormat'=>'dd-mm-yy',
+                                            'changeYear'=>true,
+                                            'changeMonth'=>true,
+                                        ) // jquery plugin options
+                                    ));
+                                ?>
+                                <?php echo $form->error($model1,'fecha_nacimiento'); ?>
                                 </div>
                             </div>
                         </div>
@@ -397,7 +408,19 @@ $('#rut_demo_int').Rut({
 
                 <div class="row">
                         <?php echo $form->labelEx(Estudiantes::model(),'fecha_nacimiento <span class="required">*</span>'); ?>
-                        <?php echo $form->dateField(Estudiantes::model(),'fecha_nacimiento',array('required'=>'required')); ?>
+                        <?php Yii::import('application.extensions.CJuiDateTimePicker.CJuiDateTimePicker');
+                            $this->widget('CJuiDateTimePicker',array(
+                                'model'=>$model1, //Model object
+                                'attribute'=>'fecha_nacimiento', //attribute name
+                                        'mode'=>'date', //use "time","date" or "datetime" (default)
+                                'options'=>array(
+                                    'dateFormat'=>'dd-mm-yy',
+                                    'changeYear'=>true,
+                                    'changeMonth'=>true,
+                                ) // jquery plugin options
+                            ));
+                        ?>
+                        <?php echo $form->error($model1,'fecha_nacimiento'); ?>
                         <?php echo $form->error(Estudiantes::model(),'fecha_nacimiento'); ?>
                 </div>
 
@@ -521,4 +544,6 @@ $('#rut_demo_int').Rut({
 
 <?php $this->endWidget(); ?>
 
+                
+                
 </div><!-- form -->

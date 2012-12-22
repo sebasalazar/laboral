@@ -52,7 +52,7 @@ class LoginForm extends CFormModel
 			if (!$this->_identity->authenticate()) {
 				$this->addError('password','Incorrect username or password.');
                         } else {
-                            $acceso = new Acceso();
+                            $acceso = new Accesos();
                             $acceso->rut = $this->username;
                             $acceso->fecha = new CDbExpression('NOW()');
                             $acceso->ip = Yii::app()->user->getIp();

@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Accesos', 'url'=>array('create')),
-	array('label'=>'Manage Accesos', 'url'=>array('admin')),
+	array('label'=>'Crear Acceso', 'url'=>array('create')),
+	array('label'=>'Administrar Accesos', 'url'=>array('admin')),
 );
 ?>
 

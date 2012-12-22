@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Accesos', 'url'=>array('index')),
-	array('label'=>'Create Accesos', 'url'=>array('create')),
+	array('label'=>'Lista de Accesos', 'url'=>array('index')),
+	array('label'=>'Crear Acceso', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,31 +26,37 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Accesoses</h1>
+<div class="contenidoPage">
+    <h1>Administración Accesos</h1>
 
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
+    <p>
+    Dentro de la busqueda, opcionalmente puede utilizar (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
+    o <b>=</b>) para filtrar en caso de valores numericos.
+    <br/><br/>
+    <b>Importante:</b> La busqueda por Rut es sin puntos, sin guion, ni digito verificador.
+    </p>
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
-
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'accesos-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
-		'pk',
-		'rut',
-		'fecha',
-		'ip',
-		array(
-			'class'=>'CButtonColumn',
-		),
-	),
-)); ?>
+    <?php
+                $this->widget('bootstrap.widgets.TbGridView', array(
+                        'type'=>'striped bordered condensed',
+                        'dataProvider'=>$model->search(),
+                        'template'=>"{items}",
+                        'filter'=>$model,
+                        'template'=>"{items}\n{pager}",
+                        'columns'=>array(
+                             array(
+                                 'header'=>'Rut',
+                                 'name'=>'rut',
+                                 'value'=>'Yii::app()->user->getRut($data->rut)',
+                             ),
+                            'fecha',
+                            'ip',
+                         array(
+                                'header'=>'Detalle',
+                                'class'=>'bootstrap.widgets.TbButtonColumn',
+                                'template'=>'{view}{update}{delete}',
+                         ),    
+                         ),
+                    ));
+    ?>
+</div>

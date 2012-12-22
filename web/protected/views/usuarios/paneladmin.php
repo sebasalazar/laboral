@@ -8,6 +8,7 @@
             array('label'=>'Inicio', 'url'=>array('usuarios/paneladmin'), 'active'=>true),
             array('label'=>'Usuarios', 'url'=>array('usuarios/admin')),
             array('label'=>'Tips', 'url'=>array('tips/admin')),
+            array('label'=>'Accesos', 'url'=>array('accesos/admin')),
             array('label'=>'Datos Personales', 'items'=>array(
                                         array('label'=>'Estados Civiles', 'url'=>array('estadosCiviles/admin')),
                                         array('label'=>'Niveles de Estudios', 'url'=>array('nivelesEstudios/admin')),

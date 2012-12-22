@@ -8,22 +8,29 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Accesos', 'url'=>array('index')),
-	array('label'=>'Create Accesos', 'url'=>array('create')),
-	array('label'=>'Update Accesos', 'url'=>array('update', 'id'=>$model->pk)),
-	array('label'=>'Delete Accesos', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Accesos', 'url'=>array('admin')),
+	array('label'=>'Lista de Accesos', 'url'=>array('index')),
+	array('label'=>'Crear Acceso', 'url'=>array('create')),
+	array('label'=>'Actualizar Acceso', 'url'=>array('update', 'id'=>$model->pk)),
+	array('label'=>'Borrar Acceso', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pk),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Administrar Accesos', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View Accesos #<?php echo $model->pk; ?></h1>
-
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'pk',
-		'rut',
-		'fecha',
-		'ip',
-	),
-)); ?>
+<div class="contenidoPage">
+    <h1>Acceso: <?php echo '#'.$model->pk.' de '.Yii::app()->user->getRut($model->rut); ?></h1>
+    <br />
+    <?php
+    $this->widget('bootstrap.widgets.TbDetailView', array(
+    'data'=>$model,
+    'attributes'=>array(
+                   'pk',
+                    array(
+                        'label'=>'Rut',
+                        'name'=>'rut',
+                        'value'=>Yii::app()->user->getRut($model->rut),
+                    ),
+                    'fecha',
+                    'ip',
+            ),
+    )); ?>
+</div>
