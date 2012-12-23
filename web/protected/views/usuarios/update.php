@@ -55,6 +55,10 @@ $this->menu=array(
                 </div>
             </div>
         </div>
+        <?php 
+            if(Yii::app()->user->isAdmin())
+            {
+        ?>
         <div class="row">
             <div class="contenido">
                 <div class="columna">
@@ -71,6 +75,9 @@ $this->menu=array(
                 </div>
             </div>
         </div>
+        <?php
+         }
+        ?>
         <br/>
         <div class="form-actions">
                 <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>'Enviar')); ?>

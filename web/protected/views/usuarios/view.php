@@ -1,7 +1,8 @@
 <?php
 /* @var $this UsuariosController */
 /* @var $model Usuarios */
-
+if(Yii::app()->user->isAdmin())
+{
 $this->menu=array(
         array('label'=>'Administrar Usuarios', 'url'=>array('admin')),
 	array('label'=>'Lista de Usuarios', 'url'=>array('index')),
@@ -9,6 +10,7 @@ $this->menu=array(
 	array('label'=>'Actualizar Usuario', 'url'=>array('update', 'id'=>$model->username)),
 	array('label'=>'Borrar Usuario', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->username),'confirm'=>'Are you sure you want to delete this item?')),
 );
+}
 ?>
 
 
