@@ -8,10 +8,12 @@ $this->breadcrumbs=array(
 
 ?>
 
-<h1 class="titulo">Postulaciones a Practicas</h1>
+<h1 class="titulo">En Mantención</h1>
 <br/>
+
 <div id="grillac">
-    <?php 
+    
+    <?php /*
             $this->widget('bootstrap.widgets.TbGridView', array(
                     'type'=>'striped bordered condensed',
                     //'id' => 'practica',
@@ -26,13 +28,6 @@ $this->breadcrumbs=array(
                           'filter'=> false,
                           'value'=> 'Yii::app()->dateFormatter->format("d MMM y",strtotime($data->fecha_publicacion))',
                         ),
-                        /*array(
-                          'header'=>'Practica',
-                          'name' => 'practica_fk',
-                          'filter' => CHtml::listData(Practicas::model()->findAll(), 'pk', 'nombre'),
-                          'value' => '$data->practicaFk->nombre',
-
-                        ),*/
                         array(
                           'header'=>'Postulante',
                           'name' => 'estudiante_fk',
@@ -53,7 +48,7 @@ $this->breadcrumbs=array(
                           'template'=>'{view}',
                   ),    
               ),
-            ));
+            ));*/
 
     ?>
 </div>

@@ -25,7 +25,7 @@
                 <div class="columna">
                     <?php echo $form->labelEx(EncargadosEmpresas::model(),'Empresa: <span class="required">*</span>'); ?>
                     <?php
-                        $datos = CHtml::listData(Empresas::model()->findAll(),'pk','nombre');
+                        $datos = CHtml::listData(Empresas::model()->findAll(),'pk', 'nombre');
                         echo $form->DropDownList(EncargadosEmpresas::model(),'empresa_fk',$datos,array('empty'=>'Seleccione un Empresa','required'=>'required'));
                     ?>
                     <?php echo $form->error(EncargadosEmpresas::model(),'empresa_fk'); ?>

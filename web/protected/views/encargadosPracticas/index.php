@@ -31,13 +31,13 @@ $this->menu=array(
           array(
             'header'=>'Nombre',
             'name' => 'nombre_encargado',
-            'filter' => CHtml::listData(EncargadosPracticas::model()->findAll(), 'pk', 'nombre_encargado'),
+            //'filter' => CHtml::listData(EncargadosPracticas::model()->findAll(), 'pk', 'nombre_encargado'),
             'value' => '$data->nombre_encargado',
           ),
           array(
             'header'=>'Apellidos',
             'name' => 'apellido_encargado',
-            'filter' => CHtml::listData(EncargadosPracticas::model()->findAll(), 'pk', 'apellido_encargado'),
+            //'filter' => CHtml::listData(EncargadosPracticas::model()->findAll(), 'pk', 'apellido_encargado'),
             'value' => '$data->apellido_encargado',
           ),
           array(

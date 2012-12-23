@@ -62,7 +62,21 @@
             <div class="contenido">
                 <div class="columna">
                     <?php echo $form->labelEx(Practicas::model(),'Inicio de Prácticas: <span class="required">*</span>'); ?>
-                    <?php echo $form->dateField(Practicas::model(),'inicio_practica',array('required'=>'required')); ?>
+                    <?php
+                        Yii::import('application.extensions.CJuiDateTimePicker.CJuiDateTimePicker');
+                                    $this->widget('CJuiDateTimePicker',array(
+                                        'model'=>$model, //Model object
+                                        'attribute'=>'inicio_practica', //attribute name
+                                                'mode'=>'date', //use "time","date" or "datetime" (default)
+                                        'options'=>array(
+                                            'dateFormat'=>'dd-mm-yy',
+                                            'changeYear'=>true,
+                                            'changeMonth'=>true,
+                                            'yearRange'=>'1920',
+                                        ) // jquery plugin options
+                                    ));
+                                
+                    ?>
                     <?php echo $form->error(Practicas::model(),'inicio_practica'); ?>
                 </div>
             </div>
@@ -72,7 +86,19 @@
             <div class="contenido">
                 <div class="columna">
                     <?php echo $form->labelEx(Practicas::model(),'Fin de Prácticas: <span class="required">*</span>'); ?>
-                    <?php echo $form->dateField(Practicas::model(),'fin_practica',array('required'=>'required')); ?>
+                    <?php Yii::import('application.extensions.CJuiDateTimePicker.CJuiDateTimePicker');
+                                    $this->widget('CJuiDateTimePicker',array(
+                                        'model'=>$model, //Model object
+                                        'attribute'=>'fin_practica', //attribute name
+                                                'mode'=>'date', //use "time","date" or "datetime" (default)
+                                        'options'=>array(
+                                            'dateFormat'=>'dd-mm-yy',
+                                            'changeYear'=>true,
+                                            'changeMonth'=>true,
+                                            'yearRange'=>'1920',
+                                        ) // jquery plugin options
+                                    ));
+                                ?>
                     <?php echo $form->error(Practicas::model(),'fin_practica'); ?>
                 </div>
             </div>
