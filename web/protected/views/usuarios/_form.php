@@ -64,6 +64,7 @@ $('#rut_demo_int').Rut({
                         <div class="columna">
                             <?php echo $form->labelEx($model,'Rut: <span class="required">*</span>'); ?>
                             <p class="hint">
+                                Ej: 174563020
                             </p>
                             <?php echo $form->textField($model,'username',array('id'=>'rut_demo_int', 'name'=>'rut_demo_int', 'required'=>'required', 'size'=>50)); ?>
                             <?php echo $form->error($model,'username'); ?>
@@ -97,6 +98,7 @@ $('#rut_demo_int').Rut({
                                 <div class="columna">
                                     <?php echo $form->labelEx($model1,'Nombres: <span class="required">*</span>'); ?>
                                     <p class="hint">
+                                        Ej: Juan Antonio
                                     </p>
                                     <?php echo $form->textField($model1,'nombres', array('required'=>'required')); ?>
                                     <?php echo $form->error($model1,'nombres'); ?>
@@ -109,6 +111,7 @@ $('#rut_demo_int').Rut({
                                 <div class="columna">
                                     <?php echo $form->labelEx($model1,'Apellidos: <span class="required">*</span>'); ?>
                                     <p class="hint">
+                                        Ej: Perez Gonzalez
                                     </p>
                                     <?php echo $form->textField($model1,'apellidos', array('required'=>'required')); ?>
                                     <?php echo $form->error($model1,'apellidos'); ?>
@@ -254,6 +257,7 @@ $('#rut_demo_int').Rut({
                                 <div class="columna">
                                     <?php echo $form->labelEx($model1,'Email: <span class="required">*</span>'); ?>
                                     <p class="hint">
+                                        Ej: ejemplo@email.cl
                                     </p>
                                     <?php echo $form->textField($model1, 'email', array('required'=>'required')); ?>
                                     <?php echo $form->error($model1,'email'); ?>
