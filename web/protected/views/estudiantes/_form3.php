@@ -106,10 +106,10 @@ function validateEmail($email) {
                 </thead>
                 <tbody>
                     <tr>
-                        <td><?php echo $form->textField(Educacion::model(), 'nombre_institucion', array('class'=>'clsAnchoTotal','required'=>'required','value'=>'Nombre Instuticion')); ?></td>
-                        <td><?php echo $form->textField(Educacion::model(), 'carrera', array('class'=>'clsAnchoTotal','required'=>'required','value'=>'Estudio')); ?></td>
-                         <td><?php echo $form->textField(Educacion::model(), 'inicio', array('class'=>'clsAnchoTotal','style'=>'width:30px','maxlength'=>"4",'required'=>'required','value'=>'Año')); ?></td>
-                        <td><?php echo $form->textField(Educacion::model(), 'fin', array('class'=>'clsAnchoTotal','style'=>'width:30px','maxlength'=>"4",'required'=>'required','value'=>'Año')); ?></td>
+                        <td><?php echo $form->textField(Educacion::model(), '[]nombre_institucion', array('class'=>'clsAnchoTotal','required'=>'required','value'=>'Nombre Instuticion')); ?></td>
+                        <td><?php echo $form->textField(Educacion::model(), '[]carrera', array('class'=>'clsAnchoTotal','required'=>'required','value'=>'Estudio')); ?></td>
+                         <td><?php echo $form->textField(Educacion::model(), '[]inicio', array('class'=>'clsAnchoTotal','style'=>'width:30px','maxlength'=>"4",'required'=>'required','value'=>'Año')); ?></td>
+                        <td><?php echo $form->textField(Educacion::model(), '[]fin', array('class'=>'clsAnchoTotal','style'=>'width:30px','maxlength'=>"4",'required'=>'required','value'=>'Año')); ?></td>
                         <td align="right"><input type="button" value="-" class="clsEliminarFila"></td>
                     </tr>
                 </tbody>
@@ -146,11 +146,11 @@ function validateEmail($email) {
                 </thead>
                 <tbody>
                     <tr>
-                        <td><?php echo $form->textField(Experiencias::model(), 'descripcion', array('class'=>'clsAnchoTotal','value'=>'Sin experiencia')); ?></td>
-                        <td><?php echo $form->textField(Experiencias::model(), 'referencia', array('class'=>'clsAnchoTotal')); ?></td>
-                        <td><?php echo $form->textField(Experiencias::model(), 'email', array('class'=>'clsAnchoTotal')); ?></td>
-                        <td><?php echo $form->textField(Experiencias::model(), 'inicio', array('class'=>'clsAnchoTotal','style'=>'width:30px','maxlength'=>"4")); ?></td>
-                        <td><?php echo $form->textField(Experiencias::model(), 'fin', array('class'=>'clsAnchoTotal','style'=>'width:30px','maxlength'=>"4")); ?></td>
+                        <td><?php echo $form->textField(Experiencias::model(), '[]descripcion', array('class'=>'clsAnchoTotal','value'=>'Sin experiencia')); ?></td>
+                        <td><?php echo $form->textField(Experiencias::model(), '[]referencia', array('class'=>'clsAnchoTotal')); ?></td>
+                        <td><?php echo $form->textField(Experiencias::model(), '[]email', array('class'=>'clsAnchoTotal')); ?></td>
+                        <td><?php echo $form->textField(Experiencias::model(), '[]inicio', array('class'=>'clsAnchoTotal','style'=>'width:30px','maxlength'=>"4")); ?></td>
+                        <td><?php echo $form->textField(Experiencias::model(), '[]fin', array('class'=>'clsAnchoTotal','style'=>'width:30px','maxlength'=>"4")); ?></td>
                         <td align="right"><input type="button" value="-" class="clsEliminarFila"></td>
                     </tr>
                 </tbody>
@@ -184,9 +184,9 @@ function validateEmail($email) {
                 </thead>
                 <tbody>
                     <tr>
-                        <td><?php echo $form->textField(FormacionComplementaria::model(), 'nombre_formacion', array('class'=>'clsAnchoTotal','value'=>'-')); ?></td>
-                        <td><?php echo $form->textField(FormacionComplementaria::model(), 'institucion', array('class'=>'clsAnchoTotal')); ?></td>
-                        <td><?php echo $form->textField(FormacionComplementaria::model(), 'anio_formacion_complementaria', array('class'=>'clsAnchoTotal','style'=>'width:30px','maxlength'=>"4")); ?></td>
+                        <td><?php echo $form->textField(FormacionComplementaria::model(), '[]nombre_formacion', array('class'=>'clsAnchoTotal','value'=>'-')); ?></td>
+                        <td><?php echo $form->textField(FormacionComplementaria::model(), '[]institucion', array('class'=>'clsAnchoTotal')); ?></td>
+                        <td><?php echo $form->textField(FormacionComplementaria::model(), '[]anio_formacion_complementaria', array('class'=>'clsAnchoTotal','style'=>'width:30px','maxlength'=>"4")); ?></td>
                         <td align="right"><input type="button" value="-" class="clsEliminarFila"></td>     
                     </tr>
                 </tbody>

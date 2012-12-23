@@ -249,55 +249,60 @@ class EstudiantesController extends Controller
                 $modelConocimientos = new Conocimientos();
                 $modelExperiencias = new Experiencias();
                 $modelFormacionComplementaria = new FormacionComplementaria;
-                $modelEducacion = new Educacion();          
-                
+                $modelEducacion = new Educacion();        
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
 		if(isset($_GET['Educacion'])){
                     $modelCV->presentacion=$_GET['Curriculums']['presentacion'];
                     $modelCV->estudiante_fk=$_GET['id'];
                     if($modelCV->save(false)){
-                        foreach($_GET as $nombre_campo => $valor){ 
-                                if($nombre_campo == 'Educacion'){
-                                    if(isset($_GET['Educacion'])){
-                                       $modelEducacion->attributes =  $_GET['Educacion'];
+                        $lista2 = '';
+                        $modelEducacion = new Educacion();
+                            foreach($_GET['Educacion'] as $i=>$valor){
+                                 if(isset($_GET['Educacion'])){
+                                    $modelEducacion->setAttributes($valor);
+                                    $modelEducacion->attributes = $valor;                  
+                                    if(($i + 1) % 4 == 0){
                                        $modelEducacion->curriculum_fk = $modelCV->pk;
                                        $modelEducacion->save(false);
-                                    }
-                                  
+                                       $modelEducacion = new Educacion();
+                                    }         
                                 }
-                                else if($nombre_campo == 'Experiencias'){
-                                     if(isset($_GET['Experiencias'])){
-                                       $modelExperiencias->attributes =  $_GET['Experiencias'];
+                            }
+                            foreach($_GET['Experiencias'] as $i=>$valor){
+                                if(isset($_GET['Experiencias'])){
+                                    $modelExperiencias->attributes = $valor;
+                                    $modelExperiencias->setAttributes($valor);
+                                    if(($i + 1) % 5 == 0){
                                        $modelExperiencias->curriculum_fk = $modelCV->pk;
                                        $modelExperiencias->save(false);
-                                    }
+                                       $modelExperiencias = new Experiencias();
+                                    }         
                                 }
-                                else if($nombre_campo == 'FormacionComplementaria' ){
-                                     if(isset($_GET['FormacionComplementaria'])){
-                                       $modelFormacionComplementaria->attributes =  $_GET['FormacionComplementaria'];
+                            }
+                            foreach($_GET['FormacionComplementaria'] as $i=>$valor){
+                                if(isset($_GET['FormacionComplementaria'])){
+                                    $modelFormacionComplementaria->attributes = $valor;
+                                    if(($i + 1) % 3 == 0){
                                        $modelFormacionComplementaria->curriculum_fk = $modelCV->pk;
                                        $modelFormacionComplementaria->save(false);
-                                    }
+                                       $modelFormacionComplementaria = new FormacionComplementaria();
+                                    }         
                                 }
-                        } 
-                        
+                            }
                        $sql = "update estudiantes set curriculum_completo = true
                                 where pk = " . $id . ';';
                        $comando = Yii::app()->db->createCommand($sql);
                        $comando -> execute();
                        $this->redirect(array('estudiantes/micurriculum','id'=>Yii::app()->user->name));
+                        Yii::app()->user->setFlash('notice', $lista); 
                     }
                     else
                     {
-                       
                         Yii::app()->user->setFlash('notice', "Problemas!!!"); 
                         $this->redirect(array('view','id'=>$model->pk));
                     }
                 }
-		
-
 		$this->render('update3',array(
 			'model'=>$model,
                         'modelCV'=>$modelCV,

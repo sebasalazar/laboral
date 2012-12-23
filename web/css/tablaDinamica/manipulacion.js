@@ -25,10 +25,10 @@ $(document).ready(function(){
 		//almacenamos en una variable todo el contenido de la nueva fila que deseamos
 		//agregar. pueden incluirse id's, nombres y cualquier tag... sigue siendo html
 		var strNueva_Fila='<tr>'+
-                                    '<td><input class="clsAnchoTotal" name="Educacion[nombre_institucion]" id="Educacion_nombre_institucion" type="text" maxlength="60" /></td>' +
-                                    '<td><input class="clsAnchoTotal" name="Educacion[carrera]" id="Educacion_carrera" type="text" maxlength="60" /></td>' +
-                                    '<td><input class="clsAnchoTotal" style="width:30px" maxlength="4" name="Educacion[inicio]" id="Educacion_inicio" type="text" /></td>'+
-                                    '<td><input class="clsAnchoTotal" style="width:30px" maxlength="4" name="Educacion[fin]" id="Educacion_fin" type="text" /></td>'+
+                                    '<td><input class="clsAnchoTotal" name="Educacion[][nombre_institucion]" id="Educacion_nombre_institucion" type="text" maxlength="60" /></td>' +
+                                    '<td><input class="clsAnchoTotal" name="Educacion[][carrera]" id="Educacion_carrera" type="text" maxlength="60" /></td>' +
+                                    '<td><input class="clsAnchoTotal" style="width:30px" maxlength="4" name="Educacion[][inicio]" id="Educacion_inicio" type="text" /></td>'+
+                                    '<td><input class="clsAnchoTotal" style="width:30px" maxlength="4" name="Educacion[][fin]" id="Educacion_fin" type="text" /></td>'+
                                     '<td align="right"><input type="button" value="-" class="clsEliminarFila"></td>'+
                                     '</tr>';
 
@@ -58,11 +58,11 @@ $(document).ready(function(){
 		//almacenamos en una variable todo el contenido de la nueva fila que deseamos
 		//agregar. pueden incluirse id's, nombres y cualquier tag... sigue siendo html
 		var strNueva_Fila='<tr>'+
-                        '<td><input class="clsAnchoTotal" name="Experiencias[descripcion]" id="Experiencias_descripcion" type="text" maxlength="255" /></td>' +
-                        '<td><input class="clsAnchoTotal" name="Experiencias[referencia]" id="Experiencias_referencia" type="text" maxlength="255" /></td>' +
-                        '<td><input class="clsAnchoTotal" name="Experiencias[email]" id="Experiencias_email" type="text" maxlength="255" /></td>' +
-                        '<td><input class="clsAnchoTotal" style="width:30px" maxlength="4" name="Experiencias[inicio]" id="Experiencias_inicio" type="text" /></td>' +
-                        '<td><input class="clsAnchoTotal" style="width:30px" maxlength="4" name="Experiencias[fin]" id="Experiencias_fin" type="text" /></td>' +
+                        '<td><input class="clsAnchoTotal" name="Experiencias[][descripcion]" id="Experiencias_descripcion" type="text" maxlength="255" /></td>' +
+                        '<td><input class="clsAnchoTotal" name="Experiencias[][referencia]" id="Experiencias_referencia" type="text" maxlength="255" /></td>' +
+                        '<td><input class="clsAnchoTotal" name="Experiencias[][email]" id="Experiencias_email" type="text" maxlength="255" /></td>' +
+                        '<td><input class="clsAnchoTotal" style="width:30px" maxlength="4" name="Experiencias[][inicio]" id="Experiencias_inicio" type="text" /></td>' +
+                        '<td><input class="clsAnchoTotal" style="width:30px" maxlength="4" name="Experiencias[][fin]" id="Experiencias_fin" type="text" /></td>' +
                         '<td align="right"><input type="button" value="-" class="clsEliminarFila"></td>' +
                         '</tr>';
 
@@ -92,9 +92,9 @@ $(document).ready(function(){
 		//almacenamos en una variable todo el contenido de la nueva fila que deseamos
 		//agregar. pueden incluirse id's, nombres y cualquier tag... sigue siendo html
 		var strNueva_Fila='<tr>'+
-                        '<td><input class="clsAnchoTotal" name="FormacionComplementaria[nombre_formacion]" id="FormacionComplementaria_nombre_formacion" type="text" maxlength="60" /></td>'+
-                        '<td><input class="clsAnchoTotal" name="FormacionComplementaria[institucion]" id="FormacionComplementaria_institucion" type="text" maxlength="50" /></td>'+
-                        '<td><input class="clsAnchoTotal" style="width:30px" maxlength="4" name="FormacionComplementaria[anio_formacion_complementaria]" id="FormacionComplementaria_anio_formacion_complementaria" type="text" /></td>'+
+                        '<td><input class="clsAnchoTotal" name="FormacionComplementaria[][nombre_formacion]" id="FormacionComplementaria_nombre_formacion" type="text" maxlength="60" /></td>'+
+                        '<td><input class="clsAnchoTotal" name="FormacionComplementaria[][institucion]" id="FormacionComplementaria_institucion" type="text" maxlength="50" /></td>'+
+                        '<td><input class="clsAnchoTotal" style="width:30px" maxlength="4" name="FormacionComplementaria[][anio_formacion_complementaria]" id="FormacionComplementaria_anio_formacion_complementaria" type="text" /></td>'+
                         '<td align="right"><input type="button" value="-" class="clsEliminarFila"></td>'+     
                         '</tr>';
 
