@@ -59,4 +59,6 @@ $this->menu=array(
 		//'busqueda',
 		'archivo_curriculum',
 	),
-)); ?>
+));
+ if($model->archivo_curriculum != ''){ echo "archivo curriculum:".CHtml::link(CHtml::encode($model->archivo_curriculum . '.pdf'), Yii::app()->baseUrl . '/cv/' . $model->archivo_curriculum .'.pdf' , array("target"=>"_blank"));}
+ else{echo "No hay archivo curriculum aun";}?>
