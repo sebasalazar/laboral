@@ -89,6 +89,10 @@ class SiteController extends Controller {
         // collect user input data
         if (isset($_POST['LoginForm'])) {
             $model->attributes = $_POST['LoginForm'];
+            $prerutsinformato = substr($_POST['rut_demo_int'], 0, -1);
+            $rutsinformatostring = preg_replace("/[^0-9]/", "", $prerutsinformato);
+            $rutsinformato= intval($rutsinformatostring);
+            $model->username = $rutsinformato;
             // validate user input and redirect to the previous page if valid
             if ($model->validate() && $model->login())
             {

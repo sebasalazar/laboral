@@ -116,6 +116,7 @@ class Usuarios extends CActiveRecord
 
         public function beforeSave()
         {
+            $model = Usuarios::model()->findByPk($this->username);
             if(!Yii::app()->user->isUpdate($this->username))
             {
                 $this->password = $this->hashPassword($this->password, $this->salt);
@@ -123,7 +124,16 @@ class Usuarios extends CActiveRecord
             }
             else
             {
-                return parent::beforeSave();
+                if($model->password == $this->password)
+                {
+                    return parent::beforeSave();
+                }
+                else
+                {
+                    $this->password = $this->hashPassword($this->password, $this->salt);
+                    return parent::beforeSave();
+                }
+                
             }
         }
 }

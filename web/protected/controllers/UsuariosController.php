@@ -32,7 +32,7 @@ class UsuariosController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('update'),
+				'actions'=>array('update','view'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -51,9 +51,15 @@ class UsuariosController extends Controller
 	 */
 	public function actionView($id)
 	{
+            if($id == Yii::app()->user->name || Yii::app()->user->isAdmin()){
 		$this->render('view',array(
 			'model'=>$this->loadModel((int) $id),
 		));
+            }
+            else {
+                        throw new CHttpException(403,'No tienes los permisos suficientes para entrar a este perfil.');
+            }
+                
 	}
         
 	/**
@@ -72,8 +78,9 @@ class UsuariosController extends Controller
 		if(isset($_POST['Usuarios']))
 		{
 			$model->attributes=$_POST['Usuarios'];
-                        $rutsinformatostring = preg_replace("/[^0-9]/", "", $_POST['rut_demo_int']);
-                        $rutsinformato= intval(substr($rutsinformatostring, 0, -1));
+                        $prerutsinformato = substr($_POST['rut_demo_int'], 0, -1);
+                        $rutsinformatostring = preg_replace("/[^0-9]/", "", $prerutsinformato);
+                        $rutsinformato= intval($rutsinformatostring);
                         $model->username = $rutsinformato;
                         if(isset($_POST['Docentes']))
 			{
@@ -145,32 +152,50 @@ class UsuariosController extends Controller
                     if($id == Yii::app()->user->name || Yii::app()->user->isAdmin()){
                         $model=  Usuarios::model()->findByAttributes(array('username'=>$id));
                         $rol = 0;
+                        $algo = 0;
                         if(isset($_POST['Usuarios'])){
+                            $model->attributes=$_POST['Usuarios'];
                             if(isset($_REQUEST['estudiante']))
                             {
                                 $rol = 1;
+                                $algo = 1;
                             }
+
                             if(isset($_REQUEST['empresa']))
                             {
                                 $rol = $rol + 10;
+                                $algo = 1;
                             }
+                            
                             if(isset($_REQUEST['docente']))
                             {
                                 $rol = $rol + 100;
+                                $algo = 1;
                             }
+                            
                             if(isset($_REQUEST['admin']))
                             {
                                 $rol = $rol + 1000;
+                                $algo = 1;
                             }
+                            
                             if($rol == 0)
                                 $rol = 1;
-                            $model->roles = Yii::app()->user->rolesToDec($rol);
+                            
+                            if($algo == 1)
+                            {
+                                $model->roles = Yii::app()->user->rolesToDec($rol);
+                            }
+                            
                             if($model->save())
                                     $this->redirect(array('view','id'=>$model->username));
                         }
                         $this->render('update',array(
                                 'model'=>$model,
                         ));
+                    }
+                    else {
+                        throw new CHttpException(403,'No tienes los permisos suficientes para entrar a este perfil.');
                     }
 	}
 
