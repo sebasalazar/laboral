@@ -64,7 +64,7 @@
                 <?php
                 $c=0;
                 foreach ($model as $i) {
-                    if($c < 5 && rand(0, 100) > 30){
+                    if($c <= 7 && rand(0, 100) > 30){
                         echo CHtml::link($i->titulo, array('tips/view', 'id' => $i->pk), array('rel' => 'tooltip', 'title' => 'Tips Utem Laboral'));
                         echo '<hr class="separadosr" />';
                         $c=$c+1;
